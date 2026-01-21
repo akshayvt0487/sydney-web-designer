@@ -9,7 +9,8 @@
       "Bash(npm run lint)",
       "Bash(npm run build:*)",
       "Bash(git add:*)",
-      "Bash(git commit -m \"$\\(cat <<''EOF''\nInitial commit - Sydney Web Designer website\n\nComplete Next.js 14 website with 11 pages and zero errors.\n\nFeatures:\n- 11 fully functional pages \\(Homepage, About, Services, Portfolio, Testimonials, Blog, Careers, Pricing pages, Career Application\\)\n- Professional navy/orange design system\n- Responsive mega menu with 20 services\n- 4 popup form types for lead generation\n- Portfolio cards with gradient backgrounds\n- Blog cards with enhanced styling\n- SEO optimized with Schema.org markup\n- TypeScript throughout for type safety\n- Tailwind CSS with custom design system\n- Zero runtime errors, zero build errors\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")"
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nInitial commit - Sydney Web Designer website\n\nComplete Next.js 14 website with 11 pages and zero errors.\n\nFeatures:\n- 11 fully functional pages \\(Homepage, About, Services, Portfolio, Testimonials, Blog, Careers, Pricing pages, Career Application\\)\n- Professional navy/orange design system\n- Responsive mega menu with 20 services\n- 4 popup form types for lead generation\n- Portfolio cards with gradient backgrounds\n- Blog cards with enhanced styling\n- SEO optimized with Schema.org markup\n- TypeScript throughout for type safety\n- Tailwind CSS with custom design system\n- Zero runtime errors, zero build errors\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(find:*)"
     ]
   }
 }

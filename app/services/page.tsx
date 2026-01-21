@@ -200,7 +200,6 @@ export default function ServicesPage() {
         description="Let&apos;s discuss which services are right for your business. Get a free consultation and custom quote."
         primaryButtonText="Get Free Quote"
         primaryButtonAction="contact"
-        secondaryButtonText="View Our Portfolio"
       />
     </>
   );
