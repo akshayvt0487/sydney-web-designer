@@ -25,8 +25,9 @@ export default function MegaMenu() {
       </button>
 
       {isOpen && (
-        <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[900px] bg-white rounded-lg shadow-2xl border-t-4 border-primary-orange overflow-hidden animate-fadeIn">
-          <div className="grid grid-cols-3 divide-x divide-gray-200">
+        <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 w-[900px]">
+          <div className="bg-white rounded-lg shadow-2xl border-t-4 border-primary-orange overflow-hidden animate-fadeIn">
+            <div className="grid grid-cols-3 divide-x divide-gray-200">
             {/* Web Design Column */}
             <div className="p-6 bg-gradient-to-b from-gray-50 to-white hover:border-l-4 hover:border-primary-orange transition-all">
               <h3 className="text-lg font-bold text-primary-navy mb-4 flex items-center gap-2">
@@ -97,6 +98,7 @@ export default function MegaMenu() {
                   </li>
                 ))}
               </ul>
+            </div>
             </div>
           </div>
         </div>
