@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ export default function BlogPage() {
       date: "January 15, 2026",
       readTime: "8 min read",
       category: "Web Design",
+      image: "/images/blog/web-design-trends-2026.jpg",
     },
     {
       slug: "seo-tips-sydney-businesses",
@@ -25,6 +27,7 @@ export default function BlogPage() {
       date: "January 12, 2026",
       readTime: "10 min read",
       category: "SEO",
+      image: "/images/blog/seo-tips-sydney.jpg",
     },
     {
       slug: "how-to-choose-web-designer-sydney",
@@ -33,6 +36,7 @@ export default function BlogPage() {
       date: "January 8, 2026",
       readTime: "6 min read",
       category: "Web Design",
+      image: "/images/blog/choose-web-designer.jpg",
     },
   ];
 
@@ -64,7 +68,14 @@ export default function BlogPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.map((post) => (
               <div key={post.slug} className="card group hover:shadow-card-hover h-full flex flex-col">
-                <div className="h-48 bg-gradient-navy-orange rounded-lg mb-4"></div>
+                <div className="relative h-48 bg-gradient-navy-orange rounded-lg mb-4 overflow-hidden">
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
                 <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
                   <span>📅 {post.date}</span>
                   <span>⏱️ {post.readTime}</span>

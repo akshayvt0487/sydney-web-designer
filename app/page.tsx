@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { services, portfolioProjects, googleReviews, trustBadges, contactInfo } from "@/lib/constants";
 import { generateLocalBusinessSchema, generateOrganizationSchema } from "@/lib/schemas";
 import StatsGrid from "@/components/StatsGrid";
@@ -311,8 +312,13 @@ export default function HomePage() {
 
           <div className="grid-3">
             <div className="card group hover:shadow-xl h-full flex flex-col transition-all duration-300">
-              <div className="h-56 bg-gradient-to-br from-primary-navy via-amber-700 to-primary-orange rounded-xl mb-6 overflow-hidden">
-                <div className="w-full h-full group-hover:scale-110 transition-transform duration-500"></div>
+              <div className="relative h-56 bg-gradient-to-br from-primary-navy via-amber-700 to-primary-orange rounded-xl mb-6 overflow-hidden">
+                <Image
+                  src="/images/blog/web-design-trends-2026.jpg"
+                  alt="Web Design Trends 2026"
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                />
               </div>
               <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
                 <span className="flex items-center gap-1">
@@ -346,8 +352,13 @@ export default function HomePage() {
             </div>
 
             <div className="card group hover:shadow-xl h-full flex flex-col transition-all duration-300">
-              <div className="h-56 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl mb-6 overflow-hidden">
-                <div className="w-full h-full group-hover:scale-110 transition-transform duration-500"></div>
+              <div className="relative h-56 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl mb-6 overflow-hidden">
+                <Image
+                  src="/images/blog/seo-tips-sydney.jpg"
+                  alt="SEO Tips for Sydney Businesses"
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                />
               </div>
               <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
                 <span className="flex items-center gap-1">
@@ -381,8 +392,13 @@ export default function HomePage() {
             </div>
 
             <div className="card group hover:shadow-xl h-full flex flex-col transition-all duration-300">
-              <div className="h-56 bg-gradient-to-br from-primary-navy to-blue-900 rounded-xl mb-6 overflow-hidden">
-                <div className="w-full h-full group-hover:scale-110 transition-transform duration-500"></div>
+              <div className="relative h-56 bg-gradient-to-br from-primary-navy to-blue-900 rounded-xl mb-6 overflow-hidden">
+                <Image
+                  src="/images/blog/choose-web-designer.jpg"
+                  alt="How to Choose the Right Web Designer"
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                />
               </div>
               <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
                 <span className="flex items-center gap-1">
