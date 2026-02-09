@@ -3,6 +3,7 @@ export interface PortfolioProject {
   id: string;
   name: string;
   industry: string;
+  description: string;
   services: string[];
   image: string;
   caseStudyUrl?: string;
@@ -13,6 +14,7 @@ export const portfolioProjects: PortfolioProject[] = [
     id: "actuate-property",
     name: "Actuate Property",
     industry: "Property Buyers Agent",
+    description: "Modern website design with clean branding for Sydney's trusted property buyers agent",
     services: ["Web Design", "Branding"],
     image: "/images/portfolio/actuate-property.webp",
   },
@@ -20,6 +22,7 @@ export const portfolioProjects: PortfolioProject[] = [
     id: "gps-vehicle-inspections",
     name: "GPS Vehicle Inspections",
     industry: "Vehicle Inspections",
+    description: "Comprehensive digital solution with branding, web design, and multi-channel marketing",
     services: ["Branding", "Web Design", "SEO", "Google Ads", "Social Media"],
     image: "/images/portfolio/gps-vehicle.webp",
   },
@@ -27,6 +30,7 @@ export const portfolioProjects: PortfolioProject[] = [
     id: "satisfinance",
     name: "Satisfinance",
     industry: "Financial Services",
+    description: "Professional branding and website for financial services provider",
     services: ["Branding", "Web Design"],
     image: "/images/portfolio/satisfinance.webp",
   },
@@ -34,6 +38,7 @@ export const portfolioProjects: PortfolioProject[] = [
     id: "jabbs-excavations",
     name: "Jabbs Excavations",
     industry: "Construction",
+    description: "Robust website design showcasing excavation services and project portfolio",
     services: ["Web Design"],
     image: "/images/portfolio/jabbs.webp",
   },
@@ -41,6 +46,7 @@ export const portfolioProjects: PortfolioProject[] = [
     id: "rmb-constructions",
     name: "RMB Constructions",
     industry: "Construction",
+    description: "Professional construction company website with project showcase",
     services: ["Web Design"],
     image: "/images/portfolio/rmb.webp",
   },
@@ -48,6 +54,7 @@ export const portfolioProjects: PortfolioProject[] = [
     id: "advanced-tree-lopping",
     name: "Advanced Tree Lopping",
     industry: "Tree Services",
+    description: "Complete branding and web design for tree care specialists",
     services: ["Branding", "Web Design"],
     image: "/images/portfolio/tree-lopping.webp",
   },
@@ -55,6 +62,7 @@ export const portfolioProjects: PortfolioProject[] = [
     id: "osan-ability",
     name: "OSAN Ability",
     industry: "NDIS Provider",
+    description: "Full-service digital marketing including branding, website, SEO, and advertising",
     services: ["Branding", "Web Design", "Google Ads", "SEO", "Social Media"],
     image: "/images/portfolio/osan.webp",
   },
@@ -62,6 +70,7 @@ export const portfolioProjects: PortfolioProject[] = [
     id: "tente",
     name: "Tente",
     industry: "Industrial Equipment",
+    description: "Industrial equipment website with SEO optimization for better visibility",
     services: ["Web Design", "SEO"],
     image: "/images/portfolio/tente.webp",
   },
@@ -69,6 +78,7 @@ export const portfolioProjects: PortfolioProject[] = [
     id: "castor-master",
     name: "Castor Master",
     industry: "Industrial Equipment",
+    description: "Complete digital solution with branding, website, SEO, and Google Ads",
     services: ["Branding", "Web Design", "SEO", "Google Ads"],
     image: "/images/portfolio/castor-master.webp",
   },
@@ -76,6 +86,7 @@ export const portfolioProjects: PortfolioProject[] = [
     id: "two-brothers-removalist",
     name: "Two Brothers Removalist",
     industry: "Removalist Services",
+    description: "SEO-optimized website driving leads for Sydney removalist services",
     services: ["Web Design", "SEO"],
     image: "/images/portfolio/two-brothers.webp",
     caseStudyUrl: "/portfolio/two-brothers",
@@ -84,6 +95,7 @@ export const portfolioProjects: PortfolioProject[] = [
     id: "tspoon-cafe",
     name: "The Tspoon Cafe",
     industry: "Hospitality",
+    description: "Stylish branding and website design for trendy Sydney cafe",
     services: ["Branding", "Web Design"],
     image: "/images/portfolio/tspoon.webp",
   },
@@ -91,6 +103,7 @@ export const portfolioProjects: PortfolioProject[] = [
     id: "deepslice-pizza",
     name: "Deepslice Pizza",
     industry: "Hospitality",
+    description: "Bold branding and web design for authentic pizza restaurant",
     services: ["Branding", "Web Design"],
     image: "/images/portfolio/deepslice.webp",
   },

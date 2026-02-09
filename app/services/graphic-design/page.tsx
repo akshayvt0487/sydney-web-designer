@@ -112,7 +112,7 @@ export default function GraphicDesignPage() {
             <div className="inline-block bg-primary-orange/20 text-primary-orange px-4 py-2 rounded-full text-sm font-semibold mb-6">
               {service.icon} {service.name}
             </div>
-            <h1 className="text-5xl font-bold mb-6">Graphic Design That Communicates and Engages</h1>
+            <h1 className="text-5xl font-bold mb-6 text-white">Graphic Design That Communicates and Engages</h1>
             <p className="text-xl text-gray-300 mb-8">
               Design compelling visual content for print and digital that communicates your message, engages your audience, and reflects your brand professionally.
             </p>

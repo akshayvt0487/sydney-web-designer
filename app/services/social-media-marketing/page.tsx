@@ -47,7 +47,7 @@ export default function SocialMediaMarketingPage() {
         <div className="container">
           <div className="max-w-3xl">
             <div className="inline-block bg-primary-orange/20 text-primary-orange px-4 py-2 rounded-full text-sm font-semibold mb-6">{service.icon} {service.name}</div>
-            <h1 className="text-5xl font-bold mb-6">Social Media Marketing That Builds Your Brand</h1>
+            <h1 className="text-5xl font-bold mb-6 text-white">Social Media Marketing That Builds Your Brand</h1>
             <p className="text-xl text-gray-300 mb-8">Build a strong social media presence and connect with customers where they spend time. Engaging content that grows your audience and drives business results.</p>
             <div className="flex flex-wrap gap-4">
               <button data-popup="contact" className="btn btn-primary">Start Social Media</button>

@@ -191,7 +191,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid-4">
+          <div className="grid-3">
             {portfolioProjects.map((project) => (
               <PortfolioCard key={project.id} project={project} />
             ))}

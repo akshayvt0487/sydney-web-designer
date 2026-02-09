@@ -119,7 +119,7 @@ export default function GoogleAdsPage() {
             <div className="inline-block bg-primary-orange/20 text-primary-orange px-4 py-2 rounded-full text-sm font-semibold mb-6">
               {service.icon} {service.name}
             </div>
-            <h1 className="text-5xl font-bold mb-6">
+            <h1 className="text-5xl font-bold mb-6 text-white">
               Google Ads Management That Delivers Quality Leads
             </h1>
             <p className="text-xl text-gray-300 mb-8">
