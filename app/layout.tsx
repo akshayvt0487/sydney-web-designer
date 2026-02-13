@@ -7,6 +7,7 @@ import ThreeBackground from "@/components/ThreeBackground";
 import { generateOrganizationSchema } from "@/lib/schemas";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://sydneywebdesigner.com.au"),
   title: "Sydney Web Designer | Professional Web Design & Digital Marketing Services",
   description: "Sydney's premier web design and digital marketing agency. 13+ years experience, 500+ websites delivered. Custom web design, SEO, branding & more. Get a free quote today!",
   keywords: "web design sydney, digital marketing sydney, seo services sydney, web development sydney, sydney web designer",
