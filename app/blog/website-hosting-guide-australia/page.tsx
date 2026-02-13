@@ -1,15 +1,45 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
+import { generateMetadata } from "@/lib/metadata";
+import { generateArticleSchema, generateBreadcrumbSchema } from "@/lib/schemas";
 
-export const metadata: Metadata = {
-  title: "Website Hosting Guide for Australian Businesses | Sydney Web Designer",
-  description: "Choose the right website hosting for your Sydney business. Compare shared, VPS, and dedicated hosting with expert recommendations.",
-};
+export const metadata = generateMetadata({
+  title: "Website Hosting Guide for Australian Businesses",
+  description: "Choose the right website hosting for your business. Compare shared, VPS, cloud, and dedicated hosting with expert recommendations for Australian businesses.",
+  keywords: "website hosting australia, web hosting sydney, shared hosting, vps hosting, dedicated hosting, cloud hosting, australian web hosting, hosting comparison",
+  canonicalUrl: "https://sydneywebdesigner.com.au/blog/website-hosting-guide-australia",
+  ogImage: "/images/og/blog.svg",
+  type: "article",
+  publishedTime: "2024-01-20",
+  modifiedTime: "2024-10-05",
+  author: "DSIGNS Team",
+});
 
 export default function WebsiteHostingPage() {
+  const breadcrumbs = [
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Blog", url: "https://sydneywebdesigner.com.au/blog" },
+    { name: "Website Hosting Guide for Australia", url: "https://sydneywebdesigner.com.au/blog/website-hosting-guide-australia" }
+  ];
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateArticleSchema(
+          "Website Hosting Guide for Australian Businesses",
+          "Choose the right website hosting for your business. Compare shared, VPS, cloud, and dedicated hosting with expert recommendations for Australian businesses.",
+          "DSIGNS Team",
+          "2024-01-20",
+          "2024-10-05",
+          "https://sydneywebdesigner.com.au/images/og/blog.svg"
+        )) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
+      />
       <section className="bg-primary-navy text-white py-20">
         <div className="container">
           <div className="max-w-4xl mx-auto">

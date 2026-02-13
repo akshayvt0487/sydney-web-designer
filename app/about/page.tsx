@@ -1,15 +1,22 @@
 import { Metadata } from "next";
-import { generateLocalBusinessSchema, generateOrganizationSchema } from "@/lib/schemas";
+import { generateLocalBusinessSchema, generateOrganizationSchema, generateBreadcrumbSchema } from "@/lib/schemas";
+import { generateMetadata } from "@/lib/metadata";
 import StatsGrid from "@/components/StatsGrid";
 import CTASection from "@/components/CTASection";
 
-export const metadata: Metadata = {
-  title: "About Us - Sydney Web Designer | 13+ Years of Digital Excellence",
-  description: "Learn about Sydney Web Designer - 13+ years helping Sydney businesses grow online. Meet our team and discover our commitment to excellence.",
-  keywords: "about sydney web designer, web design company sydney, digital marketing agency sydney",
-};
+export const metadata: Metadata = generateMetadata({
+  title: "About Us | 13+ Years of Excellence",
+  description: "Meet the team behind Sydney's premier web design agency. 13+ years experience, 500+ websites, award-winning service. Learn about our story and values.",
+  keywords: "about sydney web designer, web design agency sydney, about dsigns",
+  canonicalUrl: "https://sydneywebdesigner.com.au/about",
+});
 
 export default function AboutPage() {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "About", url: "https://sydneywebdesigner.com.au/about" },
+  ]);
+
   return (
     <>
       {/* Schema Markup */}
@@ -23,6 +30,12 @@ export default function AboutPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(generateLocalBusinessSchema()),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
         }}
       />
 

@@ -1,15 +1,45 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
+import { generateMetadata } from "@/lib/metadata";
+import { generateArticleSchema, generateBreadcrumbSchema } from "@/lib/schemas";
 
-export const metadata: Metadata = {
-  title: "Website Analytics Guide for Beginners: Track What Matters | Sydney Web Designer",
-  description: "Learn how to use Google Analytics and other tools to track website performance and make data-driven decisions for your Sydney business.",
-};
+export const metadata = generateMetadata({
+  title: "Website Analytics Guide for Beginners: Track What Matters",
+  description: "Learn how to use Google Analytics and other tools to track website performance and make data-driven decisions. Complete beginner's guide to website analytics.",
+  keywords: "website analytics, google analytics guide, web analytics, track website performance, analytics for beginners, website metrics, data-driven decisions",
+  canonicalUrl: "https://sydneywebdesigner.com.au/blog/website-analytics-guide-beginners",
+  ogImage: "/images/og/blog.svg",
+  type: "article",
+  publishedTime: "2024-02-10",
+  modifiedTime: "2024-10-12",
+  author: "DSIGNS Team",
+});
 
 export default function WebsiteAnalyticsPage() {
+  const breadcrumbs = [
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Blog", url: "https://sydneywebdesigner.com.au/blog" },
+    { name: "Website Analytics Guide for Beginners", url: "https://sydneywebdesigner.com.au/blog/website-analytics-guide-beginners" }
+  ];
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateArticleSchema(
+          "Website Analytics Guide for Beginners: Track What Matters",
+          "Learn how to use Google Analytics and other tools to track website performance and make data-driven decisions. Complete beginner's guide to website analytics.",
+          "DSIGNS Team",
+          "2024-02-10",
+          "2024-10-12",
+          "https://sydneywebdesigner.com.au/images/og/blog.svg"
+        )) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
+      />
       <section className="bg-primary-navy text-white py-20">
         <div className="container">
           <div className="max-w-4xl mx-auto">

@@ -1,19 +1,28 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { services, portfolioProjects, googleReviews } from "@/lib/constants";
-import { generateServiceSchema } from "@/lib/schemas";
+import { generateMetadata } from "@/lib/metadata";
+import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema } from "@/lib/schemas";
 import StatsGrid from "@/components/StatsGrid";
 import TestimonialCard from "@/components/TestimonialCard";
 import PortfolioCard from "@/components/PortfolioCard";
 import CTASection from "@/components/CTASection";
 
-export const metadata: Metadata = {
+export const metadata = generateMetadata({
   title: "Conversion Optimization Sydney | CRO Services That Increase Sales",
-  description: "Professional conversion optimization in Sydney. Maximize your marketing ROI by optimizing every step of your customer journey. Data-driven CRO that increases conversions.",
-};
+  description: "Professional conversion rate optimization in Sydney. Maximize marketing ROI with data-driven CRO. 60+ websites optimized, 400+ tests conducted, average 127% conversion lift, $5M+ revenue.",
+  keywords: "conversion optimization sydney, cro services, conversion rate optimization, ab testing sydney, landing page optimization, funnel optimization, cro agency sydney",
+  canonicalUrl: "https://sydneywebdesigner.com.au/services/conversion-optimization",
+  ogImage: "/images/og/services.svg",
+});
 
 export default function ConversionOptimizationPage() {
   const service = services.find((s) => s.slug === "conversion-optimization")!;
+
+  const breadcrumbs = [
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Services", url: "https://sydneywebdesigner.com.au/services" },
+    { name: "Conversion Optimization", url: "https://sydneywebdesigner.com.au/services/conversion-optimization" }
+  ];
   const projects = portfolioProjects.slice(0, 6);
   const reviews = googleReviews.slice(3, 6);
 
@@ -42,7 +51,15 @@ export default function ConversionOptimizationPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateServiceSchema(service.name, service.heroDescription)) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessSchema()) }}
+      />
       <section className="bg-[#1e293b] text-white py-20">
         <div className="container">
           <div className="max-w-3xl">

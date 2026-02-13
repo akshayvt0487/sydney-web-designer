@@ -1,16 +1,32 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
+import { generateMetadata } from "@/lib/metadata";
+import { generateBreadcrumbSchema } from "@/lib/schemas";
 
-export const metadata: Metadata = {
-  title: "Web Design Plans & Pricing | Sydney Web Designer",
-  description: "Affordable web design packages from $3,000. Choose from Basic, Advanced, or Premium plans. Professional websites for Sydney businesses.",
-  keywords: "web design pricing, website packages, web design plans, affordable web design sydney",
-};
+export const metadata: Metadata = generateMetadata({
+  title: "Web Design Plans & Pricing",
+  description: "Transparent web design pricing for Sydney businesses. Custom packages for every budget. From startups to enterprise. Get a free quote today!",
+  keywords: "web design pricing sydney, website cost, web design packages",
+  canonicalUrl: "https://sydneywebdesigner.com.au/web-design-plans",
+});
 
 export default function WebDesignPlansPage() {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Web Design Plans", url: "https://sydneywebdesigner.com.au/web-design-plans" },
+  ]);
+
   return (
     <>
+      {/* Schema Markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
+
       {/* Hero Section */}
       <section className="bg-[#1e293b] text-white py-20">
         <div className="container">

@@ -1,19 +1,28 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { services, portfolioProjects, googleReviews } from "@/lib/constants";
-import { generateServiceSchema } from "@/lib/schemas";
+import { generateMetadata } from "@/lib/metadata";
+import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema } from "@/lib/schemas";
 import StatsGrid from "@/components/StatsGrid";
 import TestimonialCard from "@/components/TestimonialCard";
 import PortfolioCard from "@/components/PortfolioCard";
 import CTASection from "@/components/CTASection";
 
-export const metadata: Metadata = {
+export const metadata = generateMetadata({
   title: "Landing Page Design Sydney | High-Converting Landing Pages",
-  description: "Professional landing page design in Sydney. Design focused landing pages that turn traffic into leads with compelling copy and strategic CTAs. Optimize for conversions.",
-};
+  description: "Professional landing page design in Sydney. Create conversion-focused pages that turn traffic into leads. Average 12.5% conversion rate with strategic CTAs and compelling copy.",
+  keywords: "landing page design sydney, high converting landing pages, landing page development, sales page design sydney, lead generation pages, conversion landing pages sydney",
+  canonicalUrl: "https://sydneywebdesigner.com.au/services/landing-pages",
+  ogImage: "/images/og/services.svg",
+});
 
 export default function LandingPagesPage() {
   const service = services.find((s) => s.slug === "landing-pages")!;
+
+  const breadcrumbs = [
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Services", url: "https://sydneywebdesigner.com.au/services" },
+    { name: "Landing Pages", url: "https://sydneywebdesigner.com.au/services/landing-pages" }
+  ];
   const webProjects = portfolioProjects.filter((p) => p.services.includes("Web Design"));
   const webReviews = googleReviews.slice(6, 9);
 
@@ -107,9 +116,17 @@ export default function LandingPagesPage() {
     <>
       <script
         type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
+      />
+      <script
+        type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(generateServiceSchema(service.name, service.heroDescription)),
         }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessSchema()) }}
       />
 
       {/* Hero Section */}

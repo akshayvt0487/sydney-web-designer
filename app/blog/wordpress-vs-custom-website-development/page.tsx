@@ -1,15 +1,45 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
+import { generateMetadata } from "@/lib/metadata";
+import { generateArticleSchema, generateBreadcrumbSchema } from "@/lib/schemas";
 
-export const metadata: Metadata = {
-  title: "WordPress vs Custom Website Development: Which is Right for You? | Sydney Web Designer",
-  description: "Compare WordPress and custom web development to choose the best solution for your Sydney business. Expert analysis of costs, benefits, and use cases.",
-};
+export const metadata = generateMetadata({
+  title: "WordPress vs Custom Website Development: Which is Right for Your Business?",
+  description: "Compare WordPress and custom web development to choose the best solution for your business. Expert analysis of costs, benefits, flexibility, and ideal use cases.",
+  keywords: "wordpress vs custom development, wordpress website, custom web development, cms comparison, wordpress or custom, website platform, sydney web development",
+  canonicalUrl: "https://sydneywebdesigner.com.au/blog/wordpress-vs-custom-website-development",
+  ogImage: "/images/og/blog.svg",
+  type: "article",
+  publishedTime: "2024-04-18",
+  modifiedTime: "2024-09-10",
+  author: "DSIGNS Team",
+});
 
 export default function WordPressVsCustomPage() {
+  const breadcrumbs = [
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Blog", url: "https://sydneywebdesigner.com.au/blog" },
+    { name: "WordPress vs Custom Website Development", url: "https://sydneywebdesigner.com.au/blog/wordpress-vs-custom-website-development" }
+  ];
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateArticleSchema(
+          "WordPress vs Custom Website Development: Which is Right for Your Business?",
+          "Compare WordPress and custom web development to choose the best solution for your business. Expert analysis of costs, benefits, flexibility, and ideal use cases.",
+          "DSIGNS Team",
+          "2024-04-18",
+          "2024-09-10",
+          "https://sydneywebdesigner.com.au/images/og/blog.svg"
+        )) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
+      />
       <section className="bg-primary-navy text-white py-20">
         <div className="container">
           <div className="max-w-4xl mx-auto">

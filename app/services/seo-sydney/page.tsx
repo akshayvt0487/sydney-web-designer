@@ -1,19 +1,28 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { services, portfolioProjects, googleReviews } from "@/lib/constants";
-import { generateServiceSchema } from "@/lib/schemas";
+import { generateMetadata } from "@/lib/metadata";
+import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema } from "@/lib/schemas";
 import StatsGrid from "@/components/StatsGrid";
 import TestimonialCard from "@/components/TestimonialCard";
 import PortfolioCard from "@/components/PortfolioCard";
 import CTASection from "@/components/CTASection";
 
-export const metadata: Metadata = {
+export const metadata = generateMetadata({
   title: "SEO Services Sydney | Professional Search Engine Optimization",
-  description: "Expert SEO services in Sydney. Dominate search results and drive qualified traffic with comprehensive SEO strategies. Get your free SEO audit today.",
-};
+  description: "Expert SEO services in Sydney. Dominate search results with comprehensive strategies. Average 215% traffic increase, 1,500+ keywords ranked, 94% client retention. Free SEO audit!",
+  keywords: "seo services sydney, search engine optimization sydney, seo company sydney, seo expert sydney, local seo sydney, seo consultant, organic seo sydney",
+  canonicalUrl: "https://sydneywebdesigner.com.au/services/seo-sydney",
+  ogImage: "/images/og/services.svg",
+});
 
 export default function SEOServicesPage() {
   const service = services.find((s) => s.slug === "seo-sydney")!;
+
+  const breadcrumbs = [
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Services", url: "https://sydneywebdesigner.com.au/services" },
+    { name: "SEO Services", url: "https://sydneywebdesigner.com.au/services/seo-sydney" }
+  ];
   const seoProjects = portfolioProjects.filter((p) => p.services.includes("SEO"));
   const seoReviews = googleReviews.slice(0, 3);
 
@@ -107,9 +116,17 @@ export default function SEOServicesPage() {
     <>
       <script
         type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
+      />
+      <script
+        type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(generateServiceSchema(service.name, service.heroDescription)),
         }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessSchema()) }}
       />
 
       {/* Hero Section */}

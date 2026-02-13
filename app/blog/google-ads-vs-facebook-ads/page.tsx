@@ -1,15 +1,45 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
+import { generateMetadata } from "@/lib/metadata";
+import { generateArticleSchema, generateBreadcrumbSchema } from "@/lib/schemas";
 
-export const metadata: Metadata = {
-  title: "Google Ads vs Facebook Ads: Which is Best for Sydney Businesses? | Sydney Web Designer",
-  description: "Compare Google Ads and Facebook Ads to find the best advertising platform for your Sydney business. Expert analysis and recommendations.",
-};
+export const metadata = generateMetadata({
+  title: "Google Ads vs Facebook Ads: Which Platform is Right for Your Business?",
+  description: "Compare Google Ads and Facebook Ads to find the best advertising platform for your business. Expert analysis on costs, targeting, ROI, and when to use each platform.",
+  keywords: "google ads vs facebook ads, ppc advertising, facebook advertising, google advertising, paid ads comparison, sydney advertising, digital advertising",
+  canonicalUrl: "https://sydneywebdesigner.com.au/blog/google-ads-vs-facebook-ads",
+  ogImage: "/images/og/blog.svg",
+  type: "article",
+  publishedTime: "2024-08-15",
+  modifiedTime: "2024-11-12",
+  author: "DSIGNS Team",
+});
 
 export default function GoogleAdsVsFacebookAdsPage() {
+  const breadcrumbs = [
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Blog", url: "https://sydneywebdesigner.com.au/blog" },
+    { name: "Google Ads vs Facebook Ads", url: "https://sydneywebdesigner.com.au/blog/google-ads-vs-facebook-ads" }
+  ];
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateArticleSchema(
+          "Google Ads vs Facebook Ads: Which Platform is Right for Your Business?",
+          "Compare Google Ads and Facebook Ads to find the best advertising platform for your business. Expert analysis on costs, targeting, ROI, and when to use each platform.",
+          "DSIGNS Team",
+          "2024-08-15",
+          "2024-11-12",
+          "https://sydneywebdesigner.com.au/images/og/blog.svg"
+        )) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
+      />
       <section className="bg-primary-navy text-white py-20">
         <div className="container">
           <div className="max-w-4xl mx-auto">

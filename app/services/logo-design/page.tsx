@@ -1,19 +1,28 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { services, portfolioProjects, googleReviews } from "@/lib/constants";
-import { generateServiceSchema } from "@/lib/schemas";
+import { generateMetadata } from "@/lib/metadata";
+import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema } from "@/lib/schemas";
 import StatsGrid from "@/components/StatsGrid";
 import TestimonialCard from "@/components/TestimonialCard";
 import PortfolioCard from "@/components/PortfolioCard";
 import CTASection from "@/components/CTASection";
 
-export const metadata: Metadata = {
+export const metadata = generateMetadata({
   title: "Logo Design Sydney | Professional Logo Design Services",
-  description: "Professional logo design in Sydney. Create a memorable visual identity with a custom logo that captures your brand's personality and makes you instantly recognizable.",
-};
+  description: "Professional logo design services in Sydney. Create a memorable visual identity with custom logos that capture your brand's personality. 180+ logos designed, 99% client satisfaction.",
+  keywords: "logo design sydney, professional logo designer, custom logo design, business logo sydney, logo creator sydney, brand logo design",
+  canonicalUrl: "https://sydneywebdesigner.com.au/services/logo-design",
+  ogImage: "/images/og/services.svg",
+});
 
 export default function LogoDesignPage() {
   const service = services.find((s) => s.slug === "logo-design")!;
+
+  const breadcrumbs = [
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Services", url: "https://sydneywebdesigner.com.au/services" },
+    { name: "Logo Design", url: "https://sydneywebdesigner.com.au/services/logo-design" }
+  ];
   const brandingProjects = portfolioProjects.filter((p) => p.services.includes("Branding"));
   const brandingReviews = googleReviews.slice(3, 6);
 
@@ -107,9 +116,17 @@ export default function LogoDesignPage() {
     <>
       <script
         type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
+      />
+      <script
+        type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(generateServiceSchema(service.name, service.heroDescription)),
         }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessSchema()) }}
       />
 
       {/* Hero Section */}

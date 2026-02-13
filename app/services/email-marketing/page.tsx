@@ -1,19 +1,28 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { services, portfolioProjects, googleReviews } from "@/lib/constants";
-import { generateServiceSchema } from "@/lib/schemas";
+import { generateMetadata } from "@/lib/metadata";
+import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema } from "@/lib/schemas";
 import StatsGrid from "@/components/StatsGrid";
 import TestimonialCard from "@/components/TestimonialCard";
 import PortfolioCard from "@/components/PortfolioCard";
 import CTASection from "@/components/CTASection";
 
-export const metadata: Metadata = {
+export const metadata = generateMetadata({
   title: "Email Marketing Sydney | Email Campaign Management Services",
-  description: "Professional email marketing in Sydney. Build customer relationships and drive repeat business with effective email marketing campaigns. High ROI email strategies.",
-};
+  description: "Professional email marketing services in Sydney. Build customer relationships and drive repeat business. 200+ campaigns, 32% average open rate, $2M+ revenue generated. High ROI strategies.",
+  keywords: "email marketing sydney, email campaign management, email newsletter design, marketing automation sydney, email marketing agency, mailchimp expert sydney",
+  canonicalUrl: "https://sydneywebdesigner.com.au/services/email-marketing",
+  ogImage: "/images/og/services.svg",
+});
 
 export default function EmailMarketingPage() {
   const service = services.find((s) => s.slug === "email-marketing")!;
+
+  const breadcrumbs = [
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Services", url: "https://sydneywebdesigner.com.au/services" },
+    { name: "Email Marketing", url: "https://sydneywebdesigner.com.au/services/email-marketing" }
+  ];
   const projects = portfolioProjects.slice(0, 6);
   const reviews = googleReviews.slice(6, 9);
 
@@ -42,7 +51,15 @@ export default function EmailMarketingPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateServiceSchema(service.name, service.heroDescription)) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessSchema()) }}
+      />
       <section className="bg-[#1e293b] text-white py-20">
         <div className="container">
           <div className="max-w-3xl">

@@ -1,8 +1,30 @@
 import Link from "next/link";
+import { generateMetadata } from "@/lib/metadata";
+import { generateBreadcrumbSchema } from "@/lib/schemas";
+
+export const metadata = generateMetadata({
+  title: "Privacy Policy",
+  description: "Read our privacy policy to understand how we collect, use, and protect your personal information at Sydney Web Designer.",
+  canonicalUrl: "https://sydneywebdesigner.com.au/privacy-policy",
+  ogImage: "/images/og/homepage.svg",
+});
 
 export default function PrivacyPolicyPage() {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Privacy Policy", url: "https://sydneywebdesigner.com.au/privacy-policy" },
+  ]);
+
   return (
     <>
+      {/* Schema Markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
+
       {/* Page Hero */}
       <section className="bg-[#1e293b] text-white py-16 text-center">
         <div className="container max-w-[900px] mx-auto px-8">

@@ -1,19 +1,28 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { services, portfolioProjects, googleReviews } from "@/lib/constants";
-import { generateServiceSchema } from "@/lib/schemas";
+import { generateMetadata } from "@/lib/metadata";
+import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema } from "@/lib/schemas";
 import StatsGrid from "@/components/StatsGrid";
 import TestimonialCard from "@/components/TestimonialCard";
 import PortfolioCard from "@/components/PortfolioCard";
 import CTASection from "@/components/CTASection";
 
-export const metadata: Metadata = {
+export const metadata = generateMetadata({
   title: "Local SEO Sydney | Get Found by Local Customers",
-  description: "Professional local SEO services in Sydney. Get found by customers in your area with targeted local SEO strategies. Dominate Google Maps and local search results.",
-};
+  description: "Professional local SEO services in Sydney. Dominate Google Maps and local search with targeted strategies. 1,000+ local rankings, 80+ Google Business Profiles, 285% average call increase.",
+  keywords: "local seo sydney, google business profile optimization, google maps ranking, local search sydney, local seo services, near me optimization, local seo expert sydney",
+  canonicalUrl: "https://sydneywebdesigner.com.au/services/local-seo",
+  ogImage: "/images/og/services.svg",
+});
 
 export default function LocalSEOPage() {
   const service = services.find((s) => s.slug === "local-seo")!;
+
+  const breadcrumbs = [
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Services", url: "https://sydneywebdesigner.com.au/services" },
+    { name: "Local SEO", url: "https://sydneywebdesigner.com.au/services/local-seo" }
+  ];
   const seoProjects = portfolioProjects.filter((p) => p.services.includes("SEO"));
   const seoReviews = googleReviews.slice(0, 3);
 
@@ -42,7 +51,15 @@ export default function LocalSEOPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateServiceSchema(service.name, service.heroDescription)) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessSchema()) }}
+      />
       <section className="bg-[#1e293b] text-white py-20">
         <div className="container">
           <div className="max-w-3xl">

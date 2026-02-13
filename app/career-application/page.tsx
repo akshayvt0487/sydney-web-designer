@@ -2,8 +2,14 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { generateBreadcrumbSchema } from '@/lib/schemas';
 
 export default function CareerApplicationPage() {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: 'https://sydneywebdesigner.com.au' },
+    { name: 'Careers', url: 'https://sydneywebdesigner.com.au/careers' },
+    { name: 'Career Application', url: 'https://sydneywebdesigner.com.au/career-application' },
+  ]);
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -39,6 +45,14 @@ export default function CareerApplicationPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* Schema Markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
+
       {/* Hero Section */}
       <div className="bg-[#1e293b] text-white py-16 px-4 text-center">
         <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">Job Application</h1>

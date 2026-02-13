@@ -1,8 +1,29 @@
 import Link from "next/link";
+import { generateMetadata } from "@/lib/metadata";
+import { generateBreadcrumbSchema } from "@/lib/schemas";
+
+export const metadata = generateMetadata({
+  title: "Terms & Conditions",
+  description: "Read our terms and conditions for using Sydney Web Designer services and website. Legal information and service agreements.",
+  canonicalUrl: "https://sydneywebdesigner.com.au/terms-conditions",
+});
 
 export default function TermsConditionsPage() {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Terms & Conditions", url: "https://sydneywebdesigner.com.au/terms-conditions" },
+  ]);
+
   return (
     <>
+      {/* Schema Markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
+
       {/* Page Hero */}
       <section className="bg-[#1e293b] text-white py-16 text-center">
         <div className="container max-w-[900px] mx-auto px-8">

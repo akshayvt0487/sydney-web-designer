@@ -1,13 +1,27 @@
-import type { Metadata } from "next";
 import Link from "next/link";
+import { generateMetadata } from "@/lib/metadata";
+import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema } from "@/lib/schemas";
 
-export const metadata: Metadata = {
-  title: "Brand Identity Design Sydney | Complete Branding | Sydney Web Designer",
-  description: "Complete brand identity systems that create consistent, memorable brand experiences. Full branding packages from Sydney Web Designer.",
-  keywords: "brand identity design sydney, branding sydney, logo design, brand guidelines, complete branding package",
-};
+export const metadata = generateMetadata({
+  title: "Brand Identity Design Sydney | Complete Branding Packages",
+  description: "Complete brand identity design services in Sydney. Full branding packages including logo, color systems, typography, and brand guidelines. Create consistent, memorable brand experiences.",
+  keywords: "brand identity design sydney, branding sydney, logo design, brand guidelines, complete branding package, visual identity sydney, corporate identity design",
+  canonicalUrl: "https://sydneywebdesigner.com.au/services/brand-identity",
+  ogImage: "/images/og/services.svg",
+});
 
 export default function BrandIdentityPage() {
+  const breadcrumbs = [
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Services", url: "https://sydneywebdesigner.com.au/services" },
+    { name: "Brand Identity", url: "https://sydneywebdesigner.com.au/services/brand-identity" }
+  ];
+
+  const serviceData = {
+    name: "Brand Identity Design",
+    description: "Complete brand identity systems that create consistent, memorable brand experiences. Includes logo design, color systems, typography, brand guidelines, and marketing materials.",
+    provider: "Sydney Web Designer"
+  };
   const stats = [
     { number: "200+", label: "Brands Created" },
     { number: "85%", label: "Brand Recall" },
@@ -142,6 +156,19 @@ export default function BrandIdentityPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateServiceSchema(serviceData.name, serviceData.description)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessSchema()) }}
+      />
+
       {/* Hero Section */}
       <section className="bg-[#1e293b] text-white py-20">
         <div className="container mx-auto px-4">

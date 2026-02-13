@@ -1,15 +1,46 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { generateMetadata } from "@/lib/metadata";
+import { generateArticleSchema, generateBreadcrumbSchema } from "@/lib/schemas";
 
-export const metadata: Metadata = {
-  title: "SEO Tips for Sydney Businesses: Rank Higher on Google in 2025 | Sydney Web Designer",
-  description: "Expert SEO tips for Sydney businesses. Learn how to improve your Google rankings, drive organic traffic, and generate more leads in 2025.",
-};
+export const metadata = generateMetadata({
+  title: "SEO Tips for Sydney Businesses: Rank Higher on Google in 2025",
+  description: "Expert SEO tips for Sydney businesses. Learn proven strategies to improve Google rankings, drive organic traffic, and generate quality leads with local SEO tactics.",
+  keywords: "seo tips sydney, local seo sydney, google rankings sydney, seo for sydney businesses, sydney seo strategies, organic traffic, google my business",
+  canonicalUrl: "https://sydneywebdesigner.com.au/blog/seo-tips-sydney-businesses",
+  ogImage: "/images/og/blog.svg",
+  type: "article",
+  publishedTime: "2024-11-12",
+  modifiedTime: "2024-12-05",
+  author: "DSIGNS Team",
+});
 
 export default function SEOTipsSydneyBusinesses() {
+  const breadcrumbs = [
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Blog", url: "https://sydneywebdesigner.com.au/blog" },
+    { name: "SEO Tips for Sydney Businesses", url: "https://sydneywebdesigner.com.au/blog/seo-tips-sydney-businesses" }
+  ];
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateArticleSchema(
+          "SEO Tips for Sydney Businesses: Rank Higher on Google in 2025",
+          "Expert SEO tips for Sydney businesses. Learn proven strategies to improve Google rankings, drive organic traffic, and generate quality leads with local SEO tactics.",
+          "DSIGNS Team",
+          "2024-11-12",
+          "2024-12-05",
+          "https://sydneywebdesigner.com.au/images/blog/seo-tips-sydney.jpg"
+        )) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
+      />
+
       {/* Hero Section */}
       <section className="bg-[#1e293b] text-white py-20">
         <div className="container max-w-6xl mx-auto px-4">

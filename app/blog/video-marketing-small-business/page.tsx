@@ -1,15 +1,45 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
+import { generateMetadata } from "@/lib/metadata";
+import { generateArticleSchema, generateBreadcrumbSchema } from "@/lib/schemas";
 
-export const metadata: Metadata = {
-  title: "Video Marketing for Small Business: Complete Guide | Sydney Web Designer",
-  description: "Learn how to use video marketing to engage customers and grow your Sydney business. Practical tips for creating effective video content.",
-};
+export const metadata = generateMetadata({
+  title: "Video Marketing for Small Business: Drive Engagement and Sales",
+  description: "Learn how to use video marketing to engage customers and grow your business. Practical tips for creating effective video content on YouTube, social media, and your website.",
+  keywords: "video marketing, video content creation, youtube marketing, video advertising, business videos, video marketing strategy, sydney video marketing",
+  canonicalUrl: "https://sydneywebdesigner.com.au/blog/video-marketing-small-business",
+  ogImage: "/images/og/blog.svg",
+  type: "article",
+  publishedTime: "2024-03-15",
+  modifiedTime: "2024-10-18",
+  author: "DSIGNS Team",
+});
 
 export default function VideoMarketingPage() {
+  const breadcrumbs = [
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Blog", url: "https://sydneywebdesigner.com.au/blog" },
+    { name: "Video Marketing for Small Business", url: "https://sydneywebdesigner.com.au/blog/video-marketing-small-business" }
+  ];
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateArticleSchema(
+          "Video Marketing for Small Business: Drive Engagement and Sales",
+          "Learn how to use video marketing to engage customers and grow your business. Practical tips for creating effective video content on YouTube, social media, and your website.",
+          "DSIGNS Team",
+          "2024-03-15",
+          "2024-10-18",
+          "https://sydneywebdesigner.com.au/images/og/blog.svg"
+        )) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
+      />
       <section className="bg-primary-navy text-white py-20">
         <div className="container">
           <div className="max-w-4xl mx-auto">

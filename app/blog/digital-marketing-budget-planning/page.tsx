@@ -1,15 +1,45 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
+import { generateMetadata } from "@/lib/metadata";
+import { generateArticleSchema, generateBreadcrumbSchema } from "@/lib/schemas";
 
-export const metadata: Metadata = {
-  title: "Digital Marketing Budget Planning Guide for Sydney Businesses | Sydney Web Designer",
-  description: "Learn how to plan and allocate your digital marketing budget effectively. Expert guidance for Sydney businesses on maximizing ROI from marketing spend.",
-};
+export const metadata = generateMetadata({
+  title: "Digital Marketing Budget Planning: How to Allocate Your Spend",
+  description: "Learn how to plan and allocate your digital marketing budget effectively. Expert guidance on maximizing ROI from your marketing spend with strategic budget allocation.",
+  keywords: "digital marketing budget, marketing budget planning, marketing roi, advertising budget, sydney marketing budget, marketing spend allocation",
+  canonicalUrl: "https://sydneywebdesigner.com.au/blog/digital-marketing-budget-planning",
+  ogImage: "/images/og/blog.svg",
+  type: "article",
+  publishedTime: "2024-10-28",
+  modifiedTime: "2024-12-02",
+  author: "DSIGNS Team",
+});
 
 export default function DigitalMarketingBudgetPage() {
+  const breadcrumbs = [
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Blog", url: "https://sydneywebdesigner.com.au/blog" },
+    { name: "Digital Marketing Budget Planning", url: "https://sydneywebdesigner.com.au/blog/digital-marketing-budget-planning" }
+  ];
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateArticleSchema(
+          "Digital Marketing Budget Planning: How to Allocate Your Spend",
+          "Learn how to plan and allocate your digital marketing budget effectively. Expert guidance on maximizing ROI from your marketing spend with strategic budget allocation.",
+          "DSIGNS Team",
+          "2024-10-28",
+          "2024-12-02",
+          "https://sydneywebdesigner.com.au/images/og/blog.svg"
+        )) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
+      />
       <section className="bg-[#1e293b] text-white py-20">
         <div className="container">
           <div className="max-w-4xl mx-auto">

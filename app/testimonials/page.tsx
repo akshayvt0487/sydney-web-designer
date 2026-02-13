@@ -1,13 +1,35 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { generateMetadata } from "@/lib/metadata";
+import { generateBreadcrumbSchema } from "@/lib/schemas";
 
-export const metadata: Metadata = {
-  title: "Client Testimonials - Sydney Web Designer | Real Reviews",
-  description: "Read what our clients say about working with Sydney Web Designer. Real testimonials from Sydney businesses we've helped grow online.",
-  keywords: "client reviews, testimonials, google reviews, dsigns reviews, web design reviews sydney",
-};
+export const metadata: Metadata = generateMetadata({
+  title: "Client Testimonials | Sydney Web Designer Reviews",
+  description: "Read what our clients say about our web design and digital marketing services. 5-star reviews from satisfied Sydney businesses.",
+  keywords: "web designer reviews sydney, testimonials, client feedback",
+  canonicalUrl: "https://sydneywebdesigner.com.au/testimonials",
+});
 
 export default function TestimonialsPage() {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Testimonials", url: "https://sydneywebdesigner.com.au/testimonials" },
+  ]);
+
+  // AggregateRating schema for testimonials page
+  const aggregateRatingSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Sydney Web Designer",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "50",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  };
+
   const testimonials = [
     {
       stars: 5,
@@ -73,6 +95,20 @@ export default function TestimonialsPage() {
 
   return (
     <>
+      {/* Schema Markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(aggregateRatingSchema),
+        }}
+      />
+
       {/* Hero Section */}
       <section className="bg-[#1e293b] text-white py-32 text-center">
         <div className="container max-w-4xl mx-auto px-4">

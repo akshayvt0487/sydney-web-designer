@@ -1,19 +1,28 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { services, portfolioProjects, googleReviews } from "@/lib/constants";
-import { generateServiceSchema } from "@/lib/schemas";
+import { generateMetadata } from "@/lib/metadata";
+import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema } from "@/lib/schemas";
 import StatsGrid from "@/components/StatsGrid";
 import TestimonialCard from "@/components/TestimonialCard";
 import PortfolioCard from "@/components/PortfolioCard";
 import CTASection from "@/components/CTASection";
 
-export const metadata: Metadata = {
+export const metadata = generateMetadata({
   title: "Marketing Materials Design Sydney | Brochures & Flyers",
-  description: "Professional marketing materials design in Sydney. Design persuasive brochures, flyers, and promotional materials that showcase your offerings and generate interest.",
-};
+  description: "Professional marketing materials design in Sydney. Create persuasive brochures, flyers, catalogs, and promotional materials. 800+ materials designed, 600+ print projects delivered.",
+  keywords: "marketing materials sydney, brochure design sydney, flyer design, catalog design, promotional materials, print design sydney, marketing collateral",
+  canonicalUrl: "https://sydneywebdesigner.com.au/services/marketing-materials",
+  ogImage: "/images/og/services.svg",
+});
 
 export default function MarketingMaterialsPage() {
   const service = services.find((s) => s.slug === "marketing-materials")!;
+
+  const breadcrumbs = [
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Services", url: "https://sydneywebdesigner.com.au/services" },
+    { name: "Marketing Materials", url: "https://sydneywebdesigner.com.au/services/marketing-materials" }
+  ];
   const brandingProjects = portfolioProjects.filter((p) => p.services.includes("Branding"));
   const brandingReviews = googleReviews.slice(3, 6);
 
@@ -42,7 +51,15 @@ export default function MarketingMaterialsPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateServiceSchema(service.name, service.heroDescription)) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessSchema()) }}
+      />
       <section className="bg-[#1e293b] text-white py-20">
         <div className="container">
           <div className="max-w-3xl">

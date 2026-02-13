@@ -1,19 +1,28 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { services, portfolioProjects, googleReviews } from "@/lib/constants";
-import { generateServiceSchema } from "@/lib/schemas";
+import { generateMetadata } from "@/lib/metadata";
+import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema } from "@/lib/schemas";
 import StatsGrid from "@/components/StatsGrid";
 import TestimonialCard from "@/components/TestimonialCard";
 import PortfolioCard from "@/components/PortfolioCard";
 import CTASection from "@/components/CTASection";
 
-export const metadata: Metadata = {
+export const metadata = generateMetadata({
   title: "Brand Strategy Sydney | Strategic Brand Positioning Services",
-  description: "Professional brand strategy services in Sydney. Define your brand's unique value proposition and create a roadmap for consistent growth. Strategic positioning that works.",
-};
+  description: "Professional brand strategy services in Sydney. Define your brand's unique value proposition and positioning. 60+ strategy projects, average 240% client growth. Get your brand roadmap.",
+  keywords: "brand strategy sydney, brand positioning, brand development, strategic branding, brand consulting sydney, brand workshop, brand architecture",
+  canonicalUrl: "https://sydneywebdesigner.com.au/services/brand-strategy",
+  ogImage: "/images/og/services.svg",
+});
 
 export default function BrandStrategyPage() {
   const service = services.find((s) => s.slug === "brand-strategy")!;
+
+  const breadcrumbs = [
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Services", url: "https://sydneywebdesigner.com.au/services" },
+    { name: "Brand Strategy", url: "https://sydneywebdesigner.com.au/services/brand-strategy" }
+  ];
   const brandingProjects = portfolioProjects.filter((p) => p.services.includes("Branding"));
   const brandingReviews = googleReviews.slice(3, 6);
 
@@ -107,9 +116,17 @@ export default function BrandStrategyPage() {
     <>
       <script
         type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
+      />
+      <script
+        type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(generateServiceSchema(service.name, service.heroDescription)),
         }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessSchema()) }}
       />
 
       <section className="bg-[#1e293b] text-white py-20">

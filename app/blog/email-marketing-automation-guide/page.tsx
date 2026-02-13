@@ -1,15 +1,45 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
+import { generateMetadata } from "@/lib/metadata";
+import { generateArticleSchema, generateBreadcrumbSchema } from "@/lib/schemas";
 
-export const metadata: Metadata = {
-  title: "Email Marketing Automation Guide for Sydney Businesses | Sydney Web Designer",
-  description: "Learn how to implement email marketing automation to nurture leads and increase sales. Complete guide for Sydney businesses.",
-};
+export const metadata = generateMetadata({
+  title: "Email Marketing Automation: Save Time and Boost Engagement",
+  description: "Learn how to implement email marketing automation to nurture leads and increase sales. Complete guide to automated campaigns, workflows, and personalization.",
+  keywords: "email marketing automation, email automation guide, automated email campaigns, email workflows, marketing automation, lead nurturing, sydney email marketing",
+  canonicalUrl: "https://sydneywebdesigner.com.au/blog/email-marketing-automation-guide",
+  ogImage: "/images/og/blog.svg",
+  type: "article",
+  publishedTime: "2024-08-22",
+  modifiedTime: "2024-11-15",
+  author: "DSIGNS Team",
+});
 
 export default function EmailMarketingAutomationPage() {
+  const breadcrumbs = [
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Blog", url: "https://sydneywebdesigner.com.au/blog" },
+    { name: "Email Marketing Automation Guide", url: "https://sydneywebdesigner.com.au/blog/email-marketing-automation-guide" }
+  ];
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateArticleSchema(
+          "Email Marketing Automation: Save Time and Boost Engagement",
+          "Learn how to implement email marketing automation to nurture leads and increase sales. Complete guide to automated campaigns, workflows, and personalization.",
+          "DSIGNS Team",
+          "2024-08-22",
+          "2024-11-15",
+          "https://sydneywebdesigner.com.au/images/og/blog.svg"
+        )) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
+      />
       <section className="bg-primary-navy text-white py-20">
         <div className="container">
           <div className="max-w-4xl mx-auto">

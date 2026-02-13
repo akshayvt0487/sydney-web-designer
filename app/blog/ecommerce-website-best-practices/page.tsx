@@ -1,15 +1,45 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
+import { generateMetadata } from "@/lib/metadata";
+import { generateArticleSchema, generateBreadcrumbSchema } from "@/lib/schemas";
 
-export const metadata: Metadata = {
-  title: "E-commerce Website Best Practices for Sydney Businesses | Sydney Web Designer",
-  description: "Discover essential e-commerce best practices to increase sales and improve customer experience. Expert tips for Sydney online stores.",
-};
+export const metadata = generateMetadata({
+  title: "E-commerce Website Best Practices: Drive More Sales Online",
+  description: "Discover essential e-commerce best practices to increase sales and improve customer experience. Expert tips for optimizing product pages, checkout, and conversions.",
+  keywords: "ecommerce best practices, online store optimization, ecommerce website design, increase ecommerce sales, sydney ecommerce, online shopping optimization",
+  canonicalUrl: "https://sydneywebdesigner.com.au/blog/ecommerce-website-best-practices",
+  ogImage: "/images/og/blog.svg",
+  type: "article",
+  publishedTime: "2024-09-10",
+  modifiedTime: "2024-11-18",
+  author: "DSIGNS Team",
+});
 
 export default function EcommerceBestPracticesPage() {
+  const breadcrumbs = [
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Blog", url: "https://sydneywebdesigner.com.au/blog" },
+    { name: "E-commerce Website Best Practices", url: "https://sydneywebdesigner.com.au/blog/ecommerce-website-best-practices" }
+  ];
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateArticleSchema(
+          "E-commerce Website Best Practices: Drive More Sales Online",
+          "Discover essential e-commerce best practices to increase sales and improve customer experience. Expert tips for optimizing product pages, checkout, and conversions.",
+          "DSIGNS Team",
+          "2024-09-10",
+          "2024-11-18",
+          "https://sydneywebdesigner.com.au/images/og/blog.svg"
+        )) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
+      />
       <section className="bg-primary-navy text-white py-20">
         <div className="container">
           <div className="max-w-4xl mx-auto">

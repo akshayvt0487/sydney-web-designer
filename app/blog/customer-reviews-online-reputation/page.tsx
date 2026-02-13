@@ -1,15 +1,45 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
+import { generateMetadata } from "@/lib/metadata";
+import { generateArticleSchema, generateBreadcrumbSchema } from "@/lib/schemas";
 
-export const metadata: Metadata = {
-  title: "Customer Reviews & Online Reputation Management Guide | Sydney Web Designer",
-  description: "Learn how to manage customer reviews and build a strong online reputation for your Sydney business. Expert tips for review management and reputation building.",
-};
+export const metadata = generateMetadata({
+  title: "Customer Reviews & Online Reputation Management: Complete Guide",
+  description: "Learn how to manage customer reviews and build a strong online reputation. Expert tips for handling reviews, responding to feedback, and building trust online.",
+  keywords: "customer reviews, online reputation management, review management, google reviews, business reputation, sydney online reputation, customer feedback",
+  canonicalUrl: "https://sydneywebdesigner.com.au/blog/customer-reviews-online-reputation",
+  ogImage: "/images/og/blog.svg",
+  type: "article",
+  publishedTime: "2024-09-25",
+  modifiedTime: "2024-11-20",
+  author: "DSIGNS Team",
+});
 
 export default function CustomerReviewsPage() {
+  const breadcrumbs = [
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Blog", url: "https://sydneywebdesigner.com.au/blog" },
+    { name: "Customer Reviews & Online Reputation", url: "https://sydneywebdesigner.com.au/blog/customer-reviews-online-reputation" }
+  ];
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateArticleSchema(
+          "Customer Reviews & Online Reputation Management: Complete Guide",
+          "Learn how to manage customer reviews and build a strong online reputation. Expert tips for handling reviews, responding to feedback, and building trust online.",
+          "DSIGNS Team",
+          "2024-09-25",
+          "2024-11-20",
+          "https://sydneywebdesigner.com.au/images/og/blog.svg"
+        )) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
+      />
       <section className="bg-[#1e293b] text-white py-20">
         <div className="container">
           <div className="max-w-4xl mx-auto">

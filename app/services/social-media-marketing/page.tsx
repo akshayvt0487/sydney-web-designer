@@ -1,12 +1,27 @@
-import type { Metadata } from "next";
 import Link from "next/link";
+import { generateMetadata } from "@/lib/metadata";
+import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema } from "@/lib/schemas";
 
-export const metadata: Metadata = {
-  title: "Social Media Marketing Sydney | Facebook, Instagram & LinkedIn | Sydney Web Designer",
-  description: "Engage your audience and grow your business with strategic social media marketing. Content creation and management by Sydney Web Designer.",
-};
+export const metadata = generateMetadata({
+  title: "Social Media Marketing Sydney | Facebook, Instagram & LinkedIn",
+  description: "Strategic social media marketing services in Sydney. Engage your audience and grow your business. 500K+ followers managed, 15% average engagement, 1000+ posts created for 50+ clients.",
+  keywords: "social media marketing sydney, facebook marketing, instagram marketing, linkedin marketing, social media management sydney, social media advertising, content creation sydney",
+  canonicalUrl: "https://sydneywebdesigner.com.au/services/social-media-marketing",
+  ogImage: "/images/og/services.svg",
+});
 
 export default function SocialMediaMarketingPage() {
+  const breadcrumbs = [
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Services", url: "https://sydneywebdesigner.com.au/services" },
+    { name: "Social Media Marketing", url: "https://sydneywebdesigner.com.au/services/social-media-marketing" }
+  ];
+
+  const serviceData = {
+    name: "Social Media Marketing",
+    description: "Strategic social media marketing services including content creation, platform management, and paid advertising across Facebook, Instagram, LinkedIn, and more. Engage your audience and grow your business.",
+    provider: "Sydney Web Designer"
+  };
   const stats = [
     { number: "500K+", label: "Followers Managed" },
     { number: "15%", label: "Avg Engagement" },
@@ -117,6 +132,19 @@ export default function SocialMediaMarketingPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateServiceSchema(serviceData.name, serviceData.description)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessSchema()) }}
+      />
+
       {/* Hero Section */}
       <section className="bg-[#1e293b] text-white py-32">
         <div className="container">

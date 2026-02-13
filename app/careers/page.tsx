@@ -1,12 +1,21 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { generateMetadata } from "@/lib/metadata";
+import { generateBreadcrumbSchema } from "@/lib/schemas";
 
-export const metadata: Metadata = {
-  title: "Careers Sydney | Join Our Digital Marketing Team | Sydney Web Designer",
-  description: "Join Sydney Web Designer - Sydney's leading digital agency. We're hiring Web Designers, SEO Specialists, Google Ads Experts, and more. Apply today!",
-};
+export const metadata: Metadata = generateMetadata({
+  title: "Careers | Join Our Team",
+  description: "Join Sydney's leading web design agency. Explore exciting career opportunities in web design, development, and digital marketing. View open positions.",
+  keywords: "web design jobs sydney, careers, join our team, digital marketing jobs",
+  canonicalUrl: "https://sydneywebdesigner.com.au/careers",
+});
 
 export default function CareersPage() {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Careers", url: "https://sydneywebdesigner.com.au/careers" },
+  ]);
+
   const jobs = [
     {
       title: "Web Designer",
@@ -110,6 +119,14 @@ export default function CareersPage() {
 
   return (
     <>
+      {/* Schema Markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
+
       {/* Hero Section */}
       <section className="bg-[#1e293b] text-white py-32 text-center">
         <div className="container max-w-4xl mx-auto px-4">

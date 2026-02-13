@@ -1,12 +1,27 @@
-import type { Metadata } from "next";
 import Link from "next/link";
+import { generateMetadata } from "@/lib/metadata";
+import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema } from "@/lib/schemas";
 
-export const metadata: Metadata = {
-  title: "Google Ads Management Sydney | PPC Advertising | Sydney Web Designer",
-  description: "Expert Google Ads management that delivers qualified leads and maximum ROI. Professional PPC campaign management by Sydney Web Designer.",
-};
+export const metadata = generateMetadata({
+  title: "Google Ads Management Sydney | PPC Advertising Services",
+  description: "Expert Google Ads management in Sydney. Deliver qualified leads and maximum ROI with professional PPC campaigns. $2M+ ad spend managed, average 300% ROI, 100+ successful campaigns.",
+  keywords: "google ads management sydney, ppc advertising sydney, google adwords sydney, paid search sydney, google ads expert, ppc management sydney, sem services",
+  canonicalUrl: "https://sydneywebdesigner.com.au/services/google-ads",
+  ogImage: "/images/og/services.svg",
+});
 
 export default function GoogleAdsPage() {
+  const breadcrumbs = [
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Services", url: "https://sydneywebdesigner.com.au/services" },
+    { name: "Google Ads", url: "https://sydneywebdesigner.com.au/services/google-ads" }
+  ];
+
+  const serviceData = {
+    name: "Google Ads Management",
+    description: "Expert Google Ads management services that deliver qualified leads and maximum ROI. Professional PPC campaign setup, optimization, and ongoing management for Sydney businesses.",
+    provider: "Sydney Web Designer"
+  };
   const stats = [
     { number: "$2M+", label: "Ad Spend Managed" },
     { number: "300%", label: "Average ROI" },
@@ -106,6 +121,19 @@ export default function GoogleAdsPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateServiceSchema(serviceData.name, serviceData.description)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessSchema()) }}
+      />
+
       {/* Hero Section */}
       <section className="bg-[#1e293b] text-white py-32">
         <div className="container">

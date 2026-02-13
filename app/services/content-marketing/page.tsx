@@ -1,19 +1,28 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { services, portfolioProjects, googleReviews } from "@/lib/constants";
-import { generateServiceSchema } from "@/lib/schemas";
+import { generateMetadata } from "@/lib/metadata";
+import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema } from "@/lib/schemas";
 import StatsGrid from "@/components/StatsGrid";
 import TestimonialCard from "@/components/TestimonialCard";
 import PortfolioCard from "@/components/PortfolioCard";
 import CTASection from "@/components/CTASection";
 
-export const metadata: Metadata = {
+export const metadata = generateMetadata({
   title: "Content Marketing Sydney | Strategic Content Creation Services",
-  description: "Professional content marketing in Sydney. Create valuable content that establishes authority and drives customer action. Blog writing, video content, and more.",
-};
+  description: "Professional content marketing services in Sydney. Create valuable content that establishes authority and drives action. 1200+ content pieces, average 320% traffic increase, 92% client retention.",
+  keywords: "content marketing sydney, content creation sydney, blog writing sydney, content strategy, video content sydney, seo content writing, content marketing agency",
+  canonicalUrl: "https://sydneywebdesigner.com.au/services/content-marketing",
+  ogImage: "/images/og/services.svg",
+});
 
 export default function ContentMarketingPage() {
   const service = services.find((s) => s.slug === "content-marketing")!;
+
+  const breadcrumbs = [
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Services", url: "https://sydneywebdesigner.com.au/services" },
+    { name: "Content Marketing", url: "https://sydneywebdesigner.com.au/services/content-marketing" }
+  ];
   const projects = portfolioProjects.slice(0, 6);
   const reviews = googleReviews.slice(3, 6);
 
@@ -42,7 +51,15 @@ export default function ContentMarketingPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateServiceSchema(service.name, service.heroDescription)) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessSchema()) }}
+      />
       <section className="bg-[#1e293b] text-white py-20">
         <div className="container">
           <div className="max-w-3xl">

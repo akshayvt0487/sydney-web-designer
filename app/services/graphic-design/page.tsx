@@ -1,19 +1,28 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { services, portfolioProjects, googleReviews } from "@/lib/constants";
-import { generateServiceSchema } from "@/lib/schemas";
+import { generateMetadata } from "@/lib/metadata";
+import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema } from "@/lib/schemas";
 import StatsGrid from "@/components/StatsGrid";
 import TestimonialCard from "@/components/TestimonialCard";
 import PortfolioCard from "@/components/PortfolioCard";
 import CTASection from "@/components/CTASection";
 
-export const metadata: Metadata = {
+export const metadata = generateMetadata({
   title: "Graphic Design Sydney | Professional Design Services",
-  description: "Professional graphic design services in Sydney. Design compelling visual content that communicates your message and engages your audience. Print and digital design.",
-};
+  description: "Professional graphic design services in Sydney. Create compelling visual content for print and digital. 2000+ designs created, 13+ years experience. Brochures, flyers, social media graphics.",
+  keywords: "graphic design sydney, graphic designer sydney, print design, digital design, brochure design sydney, flyer design, social media graphics, visual design sydney",
+  canonicalUrl: "https://sydneywebdesigner.com.au/services/graphic-design",
+  ogImage: "/images/og/services.svg",
+});
 
 export default function GraphicDesignPage() {
   const service = services.find((s) => s.slug === "graphic-design")!;
+
+  const breadcrumbs = [
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Services", url: "https://sydneywebdesigner.com.au/services" },
+    { name: "Graphic Design", url: "https://sydneywebdesigner.com.au/services/graphic-design" }
+  ];
   const brandingProjects = portfolioProjects.filter((p) => p.services.includes("Branding"));
   const brandingReviews = googleReviews.slice(6, 9);
 
@@ -105,7 +114,15 @@ export default function GraphicDesignPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateServiceSchema(service.name, service.heroDescription)) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessSchema()) }}
+      />
       <section className="bg-[#1e293b] text-white py-20">
         <div className="container">
           <div className="max-w-3xl">

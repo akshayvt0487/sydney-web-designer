@@ -1,15 +1,46 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
+import { generateMetadata } from "@/lib/metadata";
+import { generateArticleSchema, generateBreadcrumbSchema } from "@/lib/schemas";
 
-export const metadata: Metadata = {
-  title: "10 Branding Mistakes Small Businesses Make (And How to Avoid Them) | Sydney Web Designer",
-  description: "Discover the most common branding mistakes that hurt small businesses and learn proven strategies to build a strong, memorable brand identity in Sydney.",
-};
+export const metadata = generateMetadata({
+  title: "10 Branding Mistakes Small Businesses Make (And How to Avoid Them)",
+  description: "Discover the most common branding mistakes that hurt small businesses and learn proven strategies to build a strong, memorable brand identity that drives growth.",
+  keywords: "branding mistakes, small business branding, brand identity, sydney branding, business branding tips, brand strategy, brand consistency",
+  canonicalUrl: "https://sydneywebdesigner.com.au/blog/branding-mistakes-small-businesses",
+  ogImage: "/images/og/blog.svg",
+  type: "article",
+  publishedTime: "2024-10-20",
+  modifiedTime: "2024-11-28",
+  author: "DSIGNS Team",
+});
 
 export default function BrandingMistakesPage() {
+  const breadcrumbs = [
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Blog", url: "https://sydneywebdesigner.com.au/blog" },
+    { name: "Branding Mistakes Small Businesses Make", url: "https://sydneywebdesigner.com.au/blog/branding-mistakes-small-businesses" }
+  ];
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateArticleSchema(
+          "10 Branding Mistakes Small Businesses Make (And How to Avoid Them)",
+          "Discover the most common branding mistakes that hurt small businesses and learn proven strategies to build a strong, memorable brand identity that drives growth.",
+          "DSIGNS Team",
+          "2024-10-20",
+          "2024-11-28",
+          "https://sydneywebdesigner.com.au/images/og/blog.svg"
+        )) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
+      />
+
       {/* Hero Section */}
       <section className="bg-[#1e293b] text-white py-20">
         <div className="container">

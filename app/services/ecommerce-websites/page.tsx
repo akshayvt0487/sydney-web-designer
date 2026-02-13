@@ -1,23 +1,40 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { services, portfolioProjects, googleReviews } from "@/lib/constants";
-import { generateServiceSchema } from "@/lib/schemas";
+import { generateMetadata } from "@/lib/metadata";
+import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema } from "@/lib/schemas";
 
-export const metadata: Metadata = {
-  title: "E-commerce Website Design Sydney | Online Stores | Sydney Web Designer",
-  description: "Powerful e-commerce websites that sell. Complete online store solutions for Sydney businesses.",
-};
+export const metadata = generateMetadata({
+  title: "E-commerce Website Design Sydney | Online Store Development",
+  description: "Professional e-commerce website design in Sydney. Build profitable online stores with WooCommerce and custom solutions. Secure payment gateways, inventory management, and more.",
+  keywords: "ecommerce website sydney, online store design sydney, woocommerce sydney, ecommerce development, online shop design, shopping cart website sydney",
+  canonicalUrl: "https://sydneywebdesigner.com.au/services/ecommerce-websites",
+  ogImage: "/images/og/services.svg",
+});
 
 export default function EcommerceWebsitesPage() {
   const service = services.find((s) => s.slug === "ecommerce-websites")!;
+
+  const breadcrumbs = [
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Services", url: "https://sydneywebdesigner.com.au/services" },
+    { name: "E-commerce Websites", url: "https://sydneywebdesigner.com.au/services/ecommerce-websites" }
+  ];
 
   return (
     <>
       <script
         type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
+      />
+      <script
+        type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(generateServiceSchema(service.name, service.heroDescription)),
         }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessSchema()) }}
       />
 
       {/* Hero Section */}

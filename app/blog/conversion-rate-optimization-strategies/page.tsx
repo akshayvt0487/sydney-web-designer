@@ -1,15 +1,45 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
+import { generateMetadata } from "@/lib/metadata";
+import { generateArticleSchema, generateBreadcrumbSchema } from "@/lib/schemas";
 
-export const metadata: Metadata = {
-  title: "Conversion Rate Optimization Strategies That Actually Work | Sydney Web Designer",
-  description: "Learn proven conversion rate optimization strategies to turn more website visitors into customers. Expert CRO tips for Sydney businesses.",
-};
+export const metadata = generateMetadata({
+  title: "Conversion Rate Optimization Strategies That Actually Work",
+  description: "Learn proven conversion rate optimization strategies to turn more website visitors into customers. Expert CRO tips including A/B testing and user experience design.",
+  keywords: "conversion rate optimization, cro strategies, conversion optimization, increase conversions, a/b testing, user experience, landing page optimization",
+  canonicalUrl: "https://sydneywebdesigner.com.au/blog/conversion-rate-optimization-strategies",
+  ogImage: "/images/og/blog.svg",
+  type: "article",
+  publishedTime: "2024-10-25",
+  modifiedTime: "2024-11-30",
+  author: "DSIGNS Team",
+});
 
 export default function ConversionRateOptimizationPage() {
+  const breadcrumbs = [
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Blog", url: "https://sydneywebdesigner.com.au/blog" },
+    { name: "Conversion Rate Optimization Strategies", url: "https://sydneywebdesigner.com.au/blog/conversion-rate-optimization-strategies" }
+  ];
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateArticleSchema(
+          "Conversion Rate Optimization Strategies That Actually Work",
+          "Learn proven conversion rate optimization strategies to turn more website visitors into customers. Expert CRO tips including A/B testing and user experience design.",
+          "DSIGNS Team",
+          "2024-10-25",
+          "2024-11-30",
+          "https://sydneywebdesigner.com.au/images/og/blog.svg"
+        )) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
+      />
       <section className="bg-[#1e293b] text-white py-20">
         <div className="container">
           <div className="max-w-4xl mx-auto">

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { generateLocalBusinessSchema, generateBreadcrumbSchema } from "@/lib/schemas";
 
 export default function ContactPage() {
   const router = useRouter();
@@ -42,8 +43,27 @@ export default function ContactPage() {
     }
   };
 
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Contact", url: "https://sydneywebdesigner.com.au/contact" },
+  ]);
+
   return (
     <>
+      {/* Schema Markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateLocalBusinessSchema()),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
+
       {/* Page Hero */}
       <section className="bg-[#1e293b] text-white py-24 text-center">
         <div className="container max-w-[900px] mx-auto px-8">

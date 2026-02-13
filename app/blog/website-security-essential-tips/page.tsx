@@ -1,15 +1,45 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
+import { generateMetadata } from "@/lib/metadata";
+import { generateArticleSchema, generateBreadcrumbSchema } from "@/lib/schemas";
 
-export const metadata: Metadata = {
-  title: "Website Security: Essential Tips to Protect Your Sydney Business | Sydney Web Designer",
-  description: "Learn essential website security tips to protect your Sydney business from hackers, malware, and data breaches. Complete security guide.",
-};
+export const metadata = generateMetadata({
+  title: "Website Security: Essential Tips to Protect Your Business",
+  description: "Learn essential website security tips to protect your business from hackers, malware, and data breaches. Complete security guide including SSL, backups, and monitoring.",
+  keywords: "website security, website protection, ssl certificate, website backup, malware protection, cyber security, secure website, wordpress security",
+  canonicalUrl: "https://sydneywebdesigner.com.au/blog/website-security-essential-tips",
+  ogImage: "/images/og/blog.svg",
+  type: "article",
+  publishedTime: "2024-02-28",
+  modifiedTime: "2024-09-20",
+  author: "DSIGNS Team",
+});
 
 export default function WebsiteSecurityPage() {
+  const breadcrumbs = [
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Blog", url: "https://sydneywebdesigner.com.au/blog" },
+    { name: "Website Security Essential Tips", url: "https://sydneywebdesigner.com.au/blog/website-security-essential-tips" }
+  ];
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateArticleSchema(
+          "Website Security: Essential Tips to Protect Your Business",
+          "Learn essential website security tips to protect your business from hackers, malware, and data breaches. Complete security guide including SSL, backups, and monitoring.",
+          "DSIGNS Team",
+          "2024-02-28",
+          "2024-09-20",
+          "https://sydneywebdesigner.com.au/images/og/blog.svg"
+        )) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
+      />
       <section className="bg-primary-navy text-white py-20">
         <div className="container">
           <div className="max-w-4xl mx-auto">

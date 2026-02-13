@@ -1,15 +1,45 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
+import { generateMetadata } from "@/lib/metadata";
+import { generateArticleSchema, generateBreadcrumbSchema } from "@/lib/schemas";
 
-export const metadata: Metadata = {
-  title: "Website Speed Optimization Tips: Make Your Site Lightning Fast | Sydney Web Designer",
-  description: "Learn how to optimize your website speed for better user experience and SEO. Practical tips for Sydney businesses to improve page load times.",
-};
+export const metadata = generateMetadata({
+  title: "Website Speed Optimization: Make Your Sydney Site Lightning Fast",
+  description: "Learn how to optimize your website speed for better user experience and SEO. Practical tips to improve page load times, Core Web Vitals, and boost conversions.",
+  keywords: "website speed optimization, page speed, site performance, core web vitals, website loading time, improve website speed, page load optimization",
+  canonicalUrl: "https://sydneywebdesigner.com.au/blog/website-speed-optimization-tips",
+  ogImage: "/images/og/blog.svg",
+  type: "article",
+  publishedTime: "2024-03-22",
+  modifiedTime: "2024-09-15",
+  author: "DSIGNS Team",
+});
 
 export default function WebsiteSpeedOptimizationPage() {
+  const breadcrumbs = [
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Blog", url: "https://sydneywebdesigner.com.au/blog" },
+    { name: "Website Speed Optimization Tips", url: "https://sydneywebdesigner.com.au/blog/website-speed-optimization-tips" }
+  ];
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateArticleSchema(
+          "Website Speed Optimization: Make Your Sydney Site Lightning Fast",
+          "Learn how to optimize your website speed for better user experience and SEO. Practical tips to improve page load times, Core Web Vitals, and boost conversions.",
+          "DSIGNS Team",
+          "2024-03-22",
+          "2024-09-15",
+          "https://sydneywebdesigner.com.au/images/og/blog.svg"
+        )) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
+      />
       <section className="bg-primary-navy text-white py-20">
         <div className="container">
           <div className="max-w-4xl mx-auto">

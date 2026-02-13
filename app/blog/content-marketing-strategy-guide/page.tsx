@@ -1,15 +1,46 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
+import { generateMetadata } from "@/lib/metadata";
+import { generateArticleSchema, generateBreadcrumbSchema } from "@/lib/schemas";
 
-export const metadata: Metadata = {
-  title: "Content Marketing Strategy: Build Authority and Drive Organic Traffic | Sydney Web Designer",
-  description: "Learn how to create a powerful content marketing strategy that builds authority, drives organic traffic, and generates qualified leads for your Sydney business.",
-};
+export const metadata = generateMetadata({
+  title: "Content Marketing Strategy: Build Authority and Drive Organic Traffic",
+  description: "Learn how to create a powerful content marketing strategy that builds authority, drives organic traffic, and generates qualified leads for your business.",
+  keywords: "content marketing strategy, content marketing guide, build authority, organic traffic, content creation, sydney content marketing, inbound marketing",
+  canonicalUrl: "https://sydneywebdesigner.com.au/blog/content-marketing-strategy-guide",
+  ogImage: "/images/og/blog.svg",
+  type: "article",
+  publishedTime: "2024-09-18",
+  modifiedTime: "2024-11-22",
+  author: "DSIGNS Team",
+});
 
 export default function ContentMarketingStrategyPage() {
+  const breadcrumbs = [
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Blog", url: "https://sydneywebdesigner.com.au/blog" },
+    { name: "Content Marketing Strategy Guide", url: "https://sydneywebdesigner.com.au/blog/content-marketing-strategy-guide" }
+  ];
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateArticleSchema(
+          "Content Marketing Strategy: Build Authority and Drive Organic Traffic",
+          "Learn how to create a powerful content marketing strategy that builds authority, drives organic traffic, and generates qualified leads for your business.",
+          "DSIGNS Team",
+          "2024-09-18",
+          "2024-11-22",
+          "https://sydneywebdesigner.com.au/images/og/blog.svg"
+        )) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
+      />
+
       {/* Hero Section */}
       <section className="bg-[#1e293b] text-white py-20">
         <div className="container">

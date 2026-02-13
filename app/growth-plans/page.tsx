@@ -1,15 +1,31 @@
 import { Metadata } from "next";
 import CTASection from "@/components/CTASection";
+import { generateMetadata } from "@/lib/metadata";
+import { generateBreadcrumbSchema } from "@/lib/schemas";
 
-export const metadata: Metadata = {
-  title: "Growth Plans & Monthly Packages | Sydney Web Designer",
-  description: "Affordable monthly plans from $250/month. Website care, SEO, Google Ads, and complete marketing packages. Grow your business with Sydney Web Designer.",
-  keywords: "monthly seo packages, website maintenance, google ads management, digital marketing retainer, growth plans sydney",
-};
+export const metadata: Metadata = generateMetadata({
+  title: "Growth Plans | Ongoing Support & Optimization",
+  description: "Grow your online presence with our ongoing support plans. Website updates, SEO, content marketing, and more. Flexible monthly packages for Sydney businesses.",
+  keywords: "website maintenance sydney, ongoing seo, growth marketing plans",
+  canonicalUrl: "https://sydneywebdesigner.com.au/growth-plans",
+});
 
 export default function GrowthPlansPage() {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Growth Plans", url: "https://sydneywebdesigner.com.au/growth-plans" },
+  ]);
+
   return (
     <>
+      {/* Schema Markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
+
       {/* Hero Section */}
       <section className="bg-[#1e293b] text-white py-20">
         <div className="container">

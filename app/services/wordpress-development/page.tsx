@@ -1,13 +1,41 @@
-import type { Metadata } from "next";
+import { generateMetadata } from "@/lib/metadata";
+import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema } from "@/lib/schemas";
 
-export const metadata: Metadata = {
-  title: "WordPress Development Sydney | Custom WordPress | Sydney Web Designer",
-  description: "Expert WordPress development in Sydney. Custom themes, plugins, and complete solutions.",
-};
+export const metadata = generateMetadata({
+  title: "WordPress Development Sydney | Custom WordPress Websites",
+  description: "Professional WordPress development services in Sydney. Custom themes, plugins, and complete WooCommerce solutions. 13+ years experience with 200+ WordPress sites delivered.",
+  keywords: "wordpress development sydney, custom wordpress sydney, wordpress developer, woocommerce sydney, wordpress website design, wordpress expert sydney",
+  canonicalUrl: "https://sydneywebdesigner.com.au/services/wordpress-development",
+  ogImage: "/images/og/services.svg",
+});
 
 export default function WordPressDevelopmentPage() {
+  const breadcrumbs = [
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Services", url: "https://sydneywebdesigner.com.au/services" },
+    { name: "WordPress Development", url: "https://sydneywebdesigner.com.au/services/wordpress-development" }
+  ];
+
+  const serviceData = {
+    name: "WordPress Development",
+    description: "Expert WordPress development services including custom themes, plugin development, WooCommerce integration, and complete WordPress solutions for Sydney businesses. Fast, secure, and optimized.",
+    provider: "Sydney Web Designer"
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateServiceSchema(serviceData.name, serviceData.description)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessSchema()) }}
+      />
       {/* Hero Section */}
       <section className="bg-[#1e293b] text-white py-32 px-8 text-center">
         <div className="max-w-5xl mx-auto">

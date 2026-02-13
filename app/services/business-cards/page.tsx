@@ -1,19 +1,28 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { services, portfolioProjects, googleReviews } from "@/lib/constants";
-import { generateServiceSchema } from "@/lib/schemas";
+import { generateMetadata } from "@/lib/metadata";
+import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema } from "@/lib/schemas";
 import StatsGrid from "@/components/StatsGrid";
 import TestimonialCard from "@/components/TestimonialCard";
 import PortfolioCard from "@/components/PortfolioCard";
 import CTASection from "@/components/CTASection";
 
-export const metadata: Metadata = {
+export const metadata = generateMetadata({
   title: "Business Card Design Sydney | Professional Business Cards",
-  description: "Professional business card design in Sydney. Create memorable business cards that reflect your brand and help you network effectively. Quality print and design.",
-};
+  description: "Professional business card design services in Sydney. Create memorable cards that reflect your brand and network effectively. 400+ cards designed, quality print and design services.",
+  keywords: "business card design sydney, professional business cards, business card printing sydney, custom business cards, corporate business cards sydney",
+  canonicalUrl: "https://sydneywebdesigner.com.au/services/business-cards",
+  ogImage: "/images/og/services.svg",
+});
 
 export default function BusinessCardsPage() {
   const service = services.find((s) => s.slug === "business-cards")!;
+
+  const breadcrumbs = [
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Services", url: "https://sydneywebdesigner.com.au/services" },
+    { name: "Business Cards", url: "https://sydneywebdesigner.com.au/services/business-cards" }
+  ];
   const brandingProjects = portfolioProjects.filter((p) => p.services.includes("Branding"));
   const brandingReviews = googleReviews.slice(0, 3);
 
@@ -105,7 +114,15 @@ export default function BusinessCardsPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateServiceSchema(service.name, service.heroDescription)) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessSchema()) }}
+      />
       <section className="bg-[#1e293b] text-white py-20">
         <div className="container">
           <div className="max-w-3xl">

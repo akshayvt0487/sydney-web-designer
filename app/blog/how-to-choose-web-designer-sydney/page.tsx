@@ -1,14 +1,45 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { generateMetadata } from "@/lib/metadata";
+import { generateArticleSchema, generateBreadcrumbSchema } from "@/lib/schemas";
 
-export const metadata: Metadata = {
-  title: "How to Choose the Right Web Designer in Sydney: Complete Guide 2026 | Sydney Web Designer",
-  description: "Expert guide to choosing the perfect web designer in Sydney. Learn what to look for, questions to ask, and red flags to avoid. Get it right the first time!",
-};
+export const metadata = generateMetadata({
+  title: "How to Choose the Right Web Designer in Sydney: Complete Guide 2026",
+  description: "Expert guide to choosing the perfect web designer in Sydney. Learn what to look for, questions to ask, and red flags to avoid when hiring a web design agency.",
+  keywords: "choose web designer sydney, hire web designer, web design agency sydney, sydney web designer, web design questions, web designer selection guide",
+  canonicalUrl: "https://sydneywebdesigner.com.au/blog/how-to-choose-web-designer-sydney",
+  ogImage: "/images/og/blog.svg",
+  type: "article",
+  publishedTime: "2024-11-08",
+  modifiedTime: "2024-12-03",
+  author: "DSIGNS Team",
+});
 
 export default function HowToChooseWebDesigner() {
+  const breadcrumbs = [
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Blog", url: "https://sydneywebdesigner.com.au/blog" },
+    { name: "How to Choose a Web Designer", url: "https://sydneywebdesigner.com.au/blog/how-to-choose-web-designer-sydney" }
+  ];
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateArticleSchema(
+          "How to Choose the Right Web Designer in Sydney: Complete Guide 2026",
+          "Expert guide to choosing the perfect web designer in Sydney. Learn what to look for, questions to ask, and red flags to avoid when hiring a web design agency.",
+          "DSIGNS Team",
+          "2024-11-08",
+          "2024-12-03",
+          "https://sydneywebdesigner.com.au/images/blog/choose-web-designer.jpg"
+        )) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
+      />
+
       {/* Hero Section */}
       <section className="bg-[#1e293b] text-white py-20">
         <div className="container max-w-6xl mx-auto px-4">

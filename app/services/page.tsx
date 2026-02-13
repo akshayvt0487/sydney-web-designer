@@ -1,22 +1,48 @@
-import { Metadata } from "next";
 import Link from "next/link";
 import { services } from "@/lib/constants";
 import ServiceCard from "@/components/ServiceCard";
 import CTASection from "@/components/CTASection";
+import { generateMetadata } from "@/lib/metadata";
+import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema } from "@/lib/schemas";
 
-export const metadata: Metadata = {
-  title: "Services | Web Design & Digital Marketing Sydney | Sydney Web Designer",
-  description: "Professional web design, branding, and digital marketing services in Sydney. SEO, Google Ads, social media, and more.",
-  keywords: "web design services, digital marketing services, seo sydney, google ads, branding services",
-};
+export const metadata = generateMetadata({
+  title: "Services | Web Design & Digital Marketing Sydney",
+  description: "Comprehensive web design, branding, and digital marketing services in Sydney. 13+ years experience delivering SEO, Google Ads, social media marketing, and more. Get a free quote today!",
+  keywords: "web design services sydney, digital marketing services sydney, seo sydney, google ads sydney, branding services, wordpress development, ecommerce websites, social media marketing sydney",
+  canonicalUrl: "https://sydneywebdesigner.com.au/services",
+  ogImage: "/images/og/services.svg",
+});
 
 export default function ServicesPage() {
+  const breadcrumbs = [
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Services", url: "https://sydneywebdesigner.com.au/services" }
+  ];
+
+  const serviceData = {
+    name: "Web Design & Digital Marketing Services",
+    description: "Comprehensive digital solutions including web design, branding, and digital marketing services for Sydney businesses. 13+ years of proven expertise.",
+    provider: "Sydney Web Designer"
+  };
   const webDesignServices = services.filter(s => s.category === "web-design");
   const brandingServices = services.filter(s => s.category === "branding");
   const marketingServices = services.filter(s => s.category === "digital-marketing");
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateServiceSchema(serviceData.name, serviceData.description)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessSchema()) }}
+      />
+
       {/* Hero Section */}
       <section className="bg-[#1e293b] text-white py-20">
         <div className="container">

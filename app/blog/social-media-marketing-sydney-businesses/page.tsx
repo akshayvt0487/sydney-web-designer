@@ -1,15 +1,45 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
+import { generateMetadata } from "@/lib/metadata";
+import { generateArticleSchema, generateBreadcrumbSchema } from "@/lib/schemas";
 
-export const metadata: Metadata = {
-  title: "Social Media Marketing for Sydney Businesses: Platform Comparison Guide | Sydney Web Designer",
-  description: "Compare Facebook, Instagram, LinkedIn, and TikTok for Sydney businesses. Which platforms drive results? Expert social media strategy guide.",
-};
+export const metadata = generateMetadata({
+  title: "Social Media Marketing for Sydney Businesses: Platform Comparison Guide",
+  description: "Compare Facebook, Instagram, LinkedIn, and TikTok for your business. Which platforms drive results? Expert guide to choosing and optimizing social media channels.",
+  keywords: "social media marketing sydney, facebook marketing, instagram marketing, linkedin marketing, tiktok marketing, social media strategy, sydney social media",
+  canonicalUrl: "https://sydneywebdesigner.com.au/blog/social-media-marketing-sydney-businesses",
+  ogImage: "/images/og/blog.svg",
+  type: "article",
+  publishedTime: "2024-04-08",
+  modifiedTime: "2024-10-22",
+  author: "DSIGNS Team",
+});
 
 export default function SocialMediaMarketingPage() {
+  const breadcrumbs = [
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Blog", url: "https://sydneywebdesigner.com.au/blog" },
+    { name: "Social Media Marketing for Sydney Businesses", url: "https://sydneywebdesigner.com.au/blog/social-media-marketing-sydney-businesses" }
+  ];
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateArticleSchema(
+          "Social Media Marketing for Sydney Businesses: Platform Comparison Guide",
+          "Compare Facebook, Instagram, LinkedIn, and TikTok for your business. Which platforms drive results? Expert guide to choosing and optimizing social media channels.",
+          "DSIGNS Team",
+          "2024-04-08",
+          "2024-10-22",
+          "https://sydneywebdesigner.com.au/images/og/blog.svg"
+        )) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
+      />
       <section className="bg-primary-navy text-white py-20">
         <div className="container">
           <div className="max-w-4xl mx-auto">

@@ -1,19 +1,28 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { services, portfolioProjects, googleReviews } from "@/lib/constants";
-import { generateServiceSchema } from "@/lib/schemas";
+import { generateMetadata } from "@/lib/metadata";
+import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema } from "@/lib/schemas";
 import StatsGrid from "@/components/StatsGrid";
 import TestimonialCard from "@/components/TestimonialCard";
 import PortfolioCard from "@/components/PortfolioCard";
 import CTASection from "@/components/CTASection";
 
-export const metadata: Metadata = {
+export const metadata = generateMetadata({
   title: "UI/UX Design Sydney | User Experience Design Services",
-  description: "Professional UI/UX design in Sydney. Craft beautiful, user-friendly interfaces backed by research and best practices in user experience. Design that delights users.",
-};
+  description: "Professional UI/UX design services in Sydney. Create beautiful, user-friendly interfaces backed by research. Average 175% usability improvement with user-centered design.",
+  keywords: "ui ux design sydney, user experience design, interface design sydney, ux designer sydney, user interface design, ux research sydney, usability testing sydney",
+  canonicalUrl: "https://sydneywebdesigner.com.au/services/ui-ux-design",
+  ogImage: "/images/og/services.svg",
+});
 
 export default function UIUXDesignPage() {
   const service = services.find((s) => s.slug === "ui-ux-design")!;
+
+  const breadcrumbs = [
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Services", url: "https://sydneywebdesigner.com.au/services" },
+    { name: "UI/UX Design", url: "https://sydneywebdesigner.com.au/services/ui-ux-design" }
+  ];
   const webProjects = portfolioProjects.filter((p) => p.services.includes("Web Design"));
   const webReviews = googleReviews.slice(0, 3);
 
@@ -107,9 +116,17 @@ export default function UIUXDesignPage() {
     <>
       <script
         type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
+      />
+      <script
+        type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(generateServiceSchema(service.name, service.heroDescription)),
         }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessSchema()) }}
       />
 
       {/* Hero Section */}

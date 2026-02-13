@@ -2,14 +2,24 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import CTASection from "@/components/CTASection";
+import { generateMetadata } from "@/lib/metadata";
+import { generateBreadcrumbSchema } from "@/lib/schemas";
 
-export const metadata: Metadata = {
-  title: "Blog | Web Design & Digital Marketing Tips | Sydney Web Designer",
-  description: "Expert insights on web design, SEO, digital marketing, and business growth. Learn from 13+ years of industry experience.",
-  keywords: "web design blog, digital marketing tips, seo advice, business growth, sydney web design",
-};
+export const metadata = generateMetadata({
+  title: "Blog",
+  description: "Expert insights on web design, SEO, digital marketing, and business growth. Learn from Sydney's leading web design agency with 13+ years of experience.",
+  keywords: "web design blog, digital marketing tips, seo advice, business growth, sydney web design, web design trends, seo tips sydney, digital marketing sydney",
+  canonicalUrl: "https://sydneywebdesigner.com.au/blog",
+  ogImage: "/images/og/blog.svg",
+  type: "website",
+});
 
 export default function BlogPage() {
+  const breadcrumbs = [
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Blog", url: "https://sydneywebdesigner.com.au/blog" }
+  ];
+
   const blogPosts = [
     {
       slug: "web-design-trends-2026",
@@ -42,6 +52,11 @@ export default function BlogPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
+      />
+
       {/* Hero Section */}
       <section className="bg-[#1e293b] text-white py-20">
         <div className="container">

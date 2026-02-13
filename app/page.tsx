@@ -1,10 +1,34 @@
 import Link from "next/link";
 import { portfolioProjects } from "@/lib/constants";
 import PortfolioCarousel from "@/components/PortfolioCarousel";
+import { generateMetadata } from "@/lib/metadata";
+import { generateOrganizationSchema, generateLocalBusinessSchema } from "@/lib/schemas";
+
+export const metadata = generateMetadata({
+  title: "Sydney Web Designer | Professional Web Design & Digital Marketing Services",
+  description: "Sydney's premier web design and digital marketing agency. 13+ years experience, 500+ websites delivered. Custom web design, SEO, branding & more. Get a free quote today!",
+  keywords: "web design sydney, digital marketing sydney, seo services sydney, sydney web designer, website development sydney",
+  canonicalUrl: "https://sydneywebdesigner.com.au",
+  ogImage: "/images/og/homepage.svg",
+});
 
 export default function HomePage() {
   return (
     <>
+      {/* Schema Markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateOrganizationSchema()),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateLocalBusinessSchema()),
+        }}
+      />
+
       {/* Hero Section */}
       <section id="home" className="bg-[#1e293b] text-white py-40 text-center">
         <div className="container max-w-[1000px] mx-auto px-8">

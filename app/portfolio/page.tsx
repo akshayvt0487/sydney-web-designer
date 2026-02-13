@@ -2,17 +2,32 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { portfolioProjects } from "@/lib/constants";
 import PortfolioCarousel from "@/components/PortfolioCarousel";
+import { generateMetadata } from "@/lib/metadata";
+import { generateBreadcrumbSchema } from "@/lib/schemas";
 
-export const metadata: Metadata = {
-  title: "Our Portfolio | Sydney Web Designer | 500+ Successful Projects",
-  description: "View our portfolio of 500+ successful web design, branding, and digital marketing projects across Sydney and Australia.",
-  keywords: "portfolio, web design portfolio, sydney web projects, client work, case studies",
-};
+export const metadata: Metadata = generateMetadata({
+  title: "Portfolio | Our Work",
+  description: "View our portfolio of 500+ successful websites. From small businesses to enterprise clients, see how we've helped Sydney businesses grow online.",
+  keywords: "web design portfolio sydney, website examples, sydney web designer work",
+  canonicalUrl: "https://sydneywebdesigner.com.au/portfolio",
+});
 
 export default function PortfolioPage() {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Portfolio", url: "https://sydneywebdesigner.com.au/portfolio" },
+  ]);
 
   return (
     <>
+      {/* Schema Markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
+
       {/* Hero Section */}
       <section className="bg-[#1e293b] text-white py-32 text-center">
         <div className="container max-w-4xl mx-auto">

@@ -1,14 +1,45 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { generateMetadata } from "@/lib/metadata";
+import { generateArticleSchema, generateBreadcrumbSchema } from "@/lib/schemas";
 
-export const metadata: Metadata = {
-  title: "Web Design Trends 2026: What Sydney Businesses Need to Know | Sydney Web Designer",
-  description: "Discover the latest web design trends for 2026. From AI integration to minimalist design, learn what's shaping Sydney websites this year.",
-};
+export const metadata = generateMetadata({
+  title: "Web Design Trends 2026: What Sydney Businesses Need to Know",
+  description: "Discover the latest web design trends for 2026. From AI-powered personalization to minimalist design, stay ahead with insights from Sydney's top web designers.",
+  keywords: "web design trends 2026, website design trends, modern web design, sydney web design, future of web design, ai web design, mobile-first design",
+  canonicalUrl: "https://sydneywebdesigner.com.au/blog/web-design-trends-2026",
+  ogImage: "/images/og/blog.svg",
+  type: "article",
+  publishedTime: "2024-11-15",
+  modifiedTime: "2024-12-01",
+  author: "DSIGNS Team",
+});
 
 export default function WebDesignTrends2026() {
+  const breadcrumbs = [
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Blog", url: "https://sydneywebdesigner.com.au/blog" },
+    { name: "Web Design Trends 2026", url: "https://sydneywebdesigner.com.au/blog/web-design-trends-2026" }
+  ];
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateArticleSchema(
+          "Web Design Trends 2026: What Sydney Businesses Need to Know",
+          "Discover the latest web design trends for 2026. From AI-powered personalization to minimalist design, stay ahead with insights from Sydney's top web designers.",
+          "DSIGNS Team",
+          "2024-11-15",
+          "2024-12-01",
+          "https://sydneywebdesigner.com.au/images/blog/web-design-trends-2026.jpg"
+        )) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
+      />
+
       {/* Hero Section */}
       <section className="bg-[#1e293b] text-white py-20">
         <div className="container max-w-6xl mx-auto px-4">

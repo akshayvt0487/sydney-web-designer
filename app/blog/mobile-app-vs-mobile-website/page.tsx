@@ -1,15 +1,45 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
+import { generateMetadata } from "@/lib/metadata";
+import { generateArticleSchema, generateBreadcrumbSchema } from "@/lib/schemas";
 
-export const metadata: Metadata = {
-  title: "Mobile App vs Mobile Website: Which Does Your Sydney Business Need? | Sydney Web Designer",
-  description: "Should you build a mobile app or mobile website? Expert comparison to help Sydney businesses make the right choice for their needs and budget.",
-};
+export const metadata = generateMetadata({
+  title: "Mobile App vs Mobile Website: What's Best for Your Business?",
+  description: "Should you build a mobile app or mobile website? Expert comparison of costs, features, user experience, and benefits to help you make the right choice for your business.",
+  keywords: "mobile app vs mobile website, mobile app development, mobile website, responsive website, native app, web app, mobile strategy, app vs website",
+  canonicalUrl: "https://sydneywebdesigner.com.au/blog/mobile-app-vs-mobile-website",
+  ogImage: "/images/og/blog.svg",
+  type: "article",
+  publishedTime: "2024-05-12",
+  modifiedTime: "2024-10-28",
+  author: "DSIGNS Team",
+});
 
 export default function MobileAppVsMobileWebsitePage() {
+  const breadcrumbs = [
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Blog", url: "https://sydneywebdesigner.com.au/blog" },
+    { name: "Mobile App vs Mobile Website", url: "https://sydneywebdesigner.com.au/blog/mobile-app-vs-mobile-website" }
+  ];
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateArticleSchema(
+          "Mobile App vs Mobile Website: What's Best for Your Business?",
+          "Should you build a mobile app or mobile website? Expert comparison of costs, features, user experience, and benefits to help you make the right choice for your business.",
+          "DSIGNS Team",
+          "2024-05-12",
+          "2024-10-28",
+          "https://sydneywebdesigner.com.au/images/og/blog.svg"
+        )) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
+      />
       <section className="bg-primary-navy text-white py-20">
         <div className="container">
           <div className="max-w-4xl mx-auto">

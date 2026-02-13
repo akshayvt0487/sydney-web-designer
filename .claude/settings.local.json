@@ -24,7 +24,8 @@
       "Bash(for dir in conversion-optimization landing-pages local-seo logo-design marketing-materials responsive-design seo-sydney social-media-marketing ui-ux-design website-redesign wordpress-development)",
       "Bash(do grep -n \"text-gray-300\" \"$dir/page.tsx\")",
       "Bash(for project in \"Actuate\" \"GPS\" \"Satisfinance\" \"Jabbs\" \"RMB\" \"Tree\" \"OSAN\" \"Tente\" \"Castor\" \"Brothers\" \"Tspoon\" \"Deepslice\")",
-      "Bash(do echo \"=== $project ===\")"
+      "Bash(do echo \"=== $project ===\")",
+      "Bash(dir:*)"
     ]
   }
 }

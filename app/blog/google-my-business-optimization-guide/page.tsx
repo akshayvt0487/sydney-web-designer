@@ -1,15 +1,45 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
+import { generateMetadata } from "@/lib/metadata";
+import { generateArticleSchema, generateBreadcrumbSchema } from "@/lib/schemas";
 
-export const metadata: Metadata = {
-  title: "Google My Business Optimization Guide for Sydney Businesses | Sydney Web Designer",
-  description: "Complete guide to optimizing your Google Business Profile for maximum visibility in local Sydney searches. Boost your local SEO today.",
-};
+export const metadata = generateMetadata({
+  title: "Google My Business Optimization: Complete Guide for Sydney Businesses",
+  description: "Complete guide to optimizing your Google Business Profile for maximum visibility in local searches. Boost your local SEO and attract more customers with expert tips.",
+  keywords: "google my business optimization, google business profile, local seo sydney, google maps ranking, local business listing, sydney local seo, gmb optimization",
+  canonicalUrl: "https://sydneywebdesigner.com.au/blog/google-my-business-optimization-guide",
+  ogImage: "/images/og/blog.svg",
+  type: "article",
+  publishedTime: "2024-07-20",
+  modifiedTime: "2024-11-08",
+  author: "DSIGNS Team",
+});
 
 export default function GoogleMyBusinessPage() {
+  const breadcrumbs = [
+    { name: "Home", url: "https://sydneywebdesigner.com.au" },
+    { name: "Blog", url: "https://sydneywebdesigner.com.au/blog" },
+    { name: "Google My Business Optimization Guide", url: "https://sydneywebdesigner.com.au/blog/google-my-business-optimization-guide" }
+  ];
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateArticleSchema(
+          "Google My Business Optimization: Complete Guide for Sydney Businesses",
+          "Complete guide to optimizing your Google Business Profile for maximum visibility in local searches. Boost your local SEO and attract more customers with expert tips.",
+          "DSIGNS Team",
+          "2024-07-20",
+          "2024-11-08",
+          "https://sydneywebdesigner.com.au/images/og/blog.svg"
+        )) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
+      />
       <section className="bg-primary-navy text-white py-20">
         <div className="container">
           <div className="max-w-4xl mx-auto">
