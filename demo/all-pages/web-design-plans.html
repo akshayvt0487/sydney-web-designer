@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Design Plans & Pricing | Sydney Web Designer</title>
+    <meta name="description" content="Transparent web design pricing packages for Sydney businesses. Basic, Advanced, and Premium packages from $3,000. Get a custom quote today!">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Color Variables */
+        :root {
+            --primary-navy: #1e293b;
+            --primary-blue: #334155;
+            --dark-navy: #0f172a;
+            --light-navy: #e0e7ff;
+            --primary-orange: #f59e0b;
+            --dark-orange: #d97706;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --light-bg: #f8fafc;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: var(--dark-navy);
+            color: white;
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        .top-bar-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar-left {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .top-bar-right {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .top-bar-right a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.9;
+        }
+
+        .top-bar-right a:hover {
+            opacity: 1;
+            color: var(--primary-orange);
+        }
+
+        /* Header */
+        header {
+            background: #fff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .nav-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .logo-image {
+            height: 50px;
+        }
+
+        .header-cta {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-bottom {
+            border-top: 1px solid #e2e8f0;
+            padding-top: 1rem;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+            justify-content: center;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-orange);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid;
+        }
+
+        .btn-primary {
+            background: var(--primary-orange);
+            color: white;
+            border-color: var(--primary-orange);
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-orange);
+            border-color: var(--dark-orange);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-navy);
+            border-color: var(--primary-navy);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-navy);
+            color: white;
+        }
+
+        /* Page Hero */
+        .page-hero {
+            background: linear-gradient(135deg, var(--primary-navy), var(--primary-blue));
+            color: white;
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .page-hero p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 6rem 2rem;
+            background: var(--light-bg);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        .pricing-card.featured {
+            border: 3px solid var(--primary-orange);
+            transform: scale(1.05);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-orange);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .pricing-card h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .pricing-price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-orange);
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-price span {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .pricing-duration {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #e2e8f0;
+            color: var(--text-dark);
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .pricing-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-orange);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-card .btn {
+            margin-top: 2rem;
+            width: 100%;
+        }
+
+        .pricing-note {
+            max-width: 900px;
+            margin: 4rem auto 0;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .pricing-note p {
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .pricing-note strong {
+            color: var(--primary-navy);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-navy), var(--primary-orange));
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn-light {
+            background: white;
+            color: var(--primary-navy);
+            border-color: white;
+        }
+
+        .btn-light:hover {
+            background: var(--light-bg);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-navy);
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            color: var(--primary-orange);
+        }
+
+        .footer-section p {
+            line-height: 1.8;
+            color: #94a3b8;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-orange);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #334155;
+            padding-top: 2rem;
+            text-align: center;
+            color: #94a3b8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="popup-forms.css">
+    <script src="popup-forms.js"></script>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="top-bar-left">
+                <span>📧 <a href="/cdn-cgi/l/email-protection#a2cac7cececde2c6d1cbc5ccd18cc1cdcf8cc3d7" style="color: white; text-decoration: none;"><span class="__cf_email__" data-cfemail="48202d242427082c3b212f263b662b272566293d">[email&#160;protected]</span></a></span>
+                <span>📞 02 9191 8049</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="about.html">About Us</a>
+                <a href="testimonials.html">Testimonials</a>
+                <a href="careers.html">Careers</a>
+                <a href="blog.html">Blog</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="nav-top">
+                <a href="index.html" class="logo-link">
+                    <img src="sydney_web_designer_logo.png" alt="Sydney Web Designer" class="logo-image">
+                </a>
+                <div class="header-cta">
+                    <a href="#" data-popup="contact" class="btn btn-secondary">Get Quote</a>
+                    <a href="tel:0291918049" class="btn btn-primary">Call Now</a>
+                </div>
+            </div>
+            <div class="nav-bottom">
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#portfolio">Portfolio</a></li>
+                    <li><a href="web-design-plans.html">Web Design Plans</a></li>
+                    <li><a href="growth-plans.html">Growth Plans</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Hero -->
+    <div class="page-hero">
+        <h1>Web Design Plans & Pricing</h1>
+        <p>Transparent pricing packages designed for Sydney businesses of all sizes</p>
+    </div>
+
+    <!-- Pricing Section -->
+    <section class="pricing">
+        <div class="container">
+            <h2 class="section-title">Choose Your Perfect Package</h2>
+            <p class="section-subtitle">Professional web design solutions tailored to your business needs and budget</p>
+            
+            <div class="pricing-grid">
+                <!-- Basic Package -->
+                <div class="pricing-card">
+                    <h3>Basic Package</h3>
+                    <div class="pricing-price">$3,000 <span>- $5,000</span></div>
+                    <p class="pricing-duration">Perfect for small businesses & startups</p>
+                    
+                    <ul class="pricing-features">
+                        <li>3-5 pages website</li>
+                        <li>Mobile responsive design</li>
+                        <li>Basic SEO setup</li>
+                        <li>Contact form integration</li>
+                        <li>Social media links</li>
+                        <li>1 month support</li>
+                        <li>Content management system</li>
+                        <li>Google Analytics setup</li>
+                    </ul>
+                    
+                    <a href="#" data-popup="contact" class="btn btn-secondary">Get Started</a>
+                </div>
+
+                <!-- Advanced Package -->
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Most Popular</div>
+                    <h3>Advanced Package</h3>
+                    <div class="pricing-price">$7,000 <span>- $10,000</span></div>
+                    <p class="pricing-duration">Ideal for growing businesses</p>
+                    
+                    <ul class="pricing-features">
+                        <li>10-20 pages website</li>
+                        <li>Custom design & branding</li>
+                        <li>Advanced SEO optimization</li>
+                        <li>Blog integration</li>
+                        <li>E-commerce functionality</li>
+                        <li>3 months support</li>
+                        <li>Email marketing integration</li>
+                        <li>Performance optimization</li>
+                        <li>Advanced analytics</li>
+                        <li>SSL certificate included</li>
+                    </ul>
+                    
+                    <a href="#" data-popup="contact" class="btn btn-primary">Get Started</a>
+                </div>
+
+                <!-- Premium Package -->
+                <div class="pricing-card">
+                    <h3>Premium Package</h3>
+                    <div class="pricing-price">$25,000<span>+</span></div>
+                    <p class="pricing-duration">For enterprise & large-scale projects</p>
+                    
+                    <ul class="pricing-features">
+                        <li>50+ pages website</li>
+                        <li>Fully custom development</li>
+                        <li>Advanced functionality</li>
+                        <li>Multi-language support</li>
+                        <li>Custom integrations</li>
+                        <li>6 months support</li>
+                        <li>Dedicated project manager</li>
+                        <li>Priority support</li>
+                        <li>Training sessions included</li>
+                        <li>Advanced security features</li>
+                        <li>API development</li>
+                        <li>Custom dashboard</li>
+                    </ul>
+                    
+                    <a href="#" data-popup="contact" class="btn btn-secondary">Get Started</a>
+                </div>
+            </div>
+
+            <div class="pricing-note">
+                <p><strong>Note:</strong> All packages include responsive design, SEO-friendly structure, and ongoing maintenance options.</p>
+                <p>Prices are estimates and may vary based on specific requirements. Contact us for a detailed quote tailored to your project.</p>
+                <p style="margin-top: 1.5rem;"><strong>Looking for ongoing marketing support?</strong> Check out our <a href="growth-plans.html" style="color: var(--primary-orange); font-weight: 600;">Growth Plans</a> for monthly marketing services including SEO, Google Ads, and social media management.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Let's discuss your project and create a custom solution for your business</p>
+            <a href="#" data-popup="contact" class="btn btn-light">Request a Quote</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sydney Web Designer</h3>
+                <p>Transforming businesses through innovative web design and digital marketing solutions. Based in Parramatta, serving all of Sydney.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html#services">Web Design</a></li>
+                    <li><a href="index.html#services">Branding</a></li>
+                    <li><a href="index.html#services">Digital Marketing</a></li>
+                    <li><a href="web-design-plans.html">Web Design Plans</a></li>
+                    <li><a href="growth-plans.html">Growth Plans</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul class="footer-links">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="index.html#portfolio">Portfolio</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <ul class="footer-links">
+                    <li><a href="tel:0291918049">📞 02 9191 8049</a></li>
+                    <li><a href="/cdn-cgi/l/email-protection#aac2cfc6c6c5eaced9c3cdc4d984c9c5c784cbdf">📧 <span class="__cf_email__" data-cfemail="5f373a3333301f3b2c3638312c713c3032713e2a">[email&#160;protected]</span></a></li>
+                    <li>Suite 611, Level 6, 150 George Street, Parramatta NSW 2150</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 DSIGNS AUSTRALIA PTY LIMITED. All rights reserved.</p>
+            <p style="margin-top: 0.5rem;">
+                <a href="privacy-policy.html" style="colo

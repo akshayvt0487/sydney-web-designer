@@ -3,7 +3,7 @@ import Link from "next/link";
 import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = {
-  title: "Web Design Plans & Pricing | Sydney Web Designer | DSIGNS",
+  title: "Web Design Plans & Pricing | Sydney Web Designer",
   description: "Affordable web design packages from $3,000. Choose from Basic, Advanced, or Premium plans. Professional websites for Sydney businesses.",
   keywords: "web design pricing, website packages, web design plans, affordable web design sydney",
 };
@@ -12,13 +12,13 @@ export default function WebDesignPlansPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="gradient-navy-orange text-white py-20">
+      <section className="bg-[#1e293b] text-white py-20">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
               Web Design Plans & Pricing
             </h1>
-            <p className="text-xl text-gray-100 mb-8">
+            <p className="text-xl text-white mb-8">
               Transparent pricing with no hidden fees. Choose the perfect package for your business
               needs and budget. All plans include professional design, mobile responsiveness, and SEO.
             </p>
@@ -337,7 +337,7 @@ export default function WebDesignPlansPage() {
 
           <div className="grid-2 md:grid-cols-4">
             <div className="card text-center">
-              <div className="w-16 h-16 bg-gradient-orange rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
+              <div className="w-16 h-16 bg-[#f59e0b] rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
                 1
               </div>
               <h3 className="text-lg font-bold mb-2">Discovery</h3>
@@ -345,7 +345,7 @@ export default function WebDesignPlansPage() {
             </div>
 
             <div className="card text-center">
-              <div className="w-16 h-16 bg-gradient-orange rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
+              <div className="w-16 h-16 bg-[#f59e0b] rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
                 2
               </div>
               <h3 className="text-lg font-bold mb-2">Design</h3>
@@ -353,7 +353,7 @@ export default function WebDesignPlansPage() {
             </div>
 
             <div className="card text-center">
-              <div className="w-16 h-16 bg-gradient-orange rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
+              <div className="w-16 h-16 bg-[#f59e0b] rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
                 3
               </div>
               <h3 className="text-lg font-bold mb-2">Development</h3>
@@ -361,7 +361,7 @@ export default function WebDesignPlansPage() {
             </div>
 
             <div className="card text-center">
-              <div className="w-16 h-16 bg-gradient-orange rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
+              <div className="w-16 h-16 bg-[#f59e0b] rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
                 4
               </div>
               <h3 className="text-lg font-bold mb-2">Launch</h3>

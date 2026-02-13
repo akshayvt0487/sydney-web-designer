@@ -2,106 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { services, portfolioProjects, googleReviews } from "@/lib/constants";
 import { generateServiceSchema } from "@/lib/schemas";
-import StatsGrid from "@/components/StatsGrid";
-import TestimonialCard from "@/components/TestimonialCard";
-import PortfolioCard from "@/components/PortfolioCard";
-import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = {
-  title: "E-commerce Website Design Sydney | Online Store Development",
-  description: "Professional e-commerce website design in Sydney. Launch high-converting online stores with seamless checkout, inventory management, and payment integration.",
+  title: "E-commerce Website Design Sydney | Online Stores | Sydney Web Designer",
+  description: "Powerful e-commerce websites that sell. Complete online store solutions for Sydney businesses.",
 };
 
 export default function EcommerceWebsitesPage() {
   const service = services.find((s) => s.slug === "ecommerce-websites")!;
-  const webProjects = portfolioProjects.filter((p) => p.services.includes("Web Design"));
-  const webReviews = googleReviews.slice(6, 9);
-
-  const stats = [
-    { label: "Online Stores Built", number: "50+" },
-    { label: "Avg. Conversion Rate", number: "3.2%" },
-    { label: "Total Products Managed", number: "10K+" },
-    { label: "Avg. Revenue Increase", number: "240%" },
-  ];
-
-  const features = [
-    {
-      title: "Secure Checkout",
-      description: "SSL encryption and PCI-compliant payment gateways for safe, secure transactions.",
-      icon: "🔒",
-    },
-    {
-      title: "Inventory Management",
-      description: "Automated stock tracking, low inventory alerts, and supplier management tools.",
-      icon: "📦",
-    },
-    {
-      title: "Payment Integration",
-      description: "Support for all major payment methods including credit cards, PayPal, and Apple Pay.",
-      icon: "💳",
-    },
-    {
-      title: "Mobile Optimized",
-      description: "Responsive design that converts on all devices, especially mobile shoppers.",
-      icon: "📱",
-    },
-    {
-      title: "Product Management",
-      description: "Easy-to-use dashboard for adding products, variants, categories, and pricing.",
-      icon: "🛍️",
-    },
-    {
-      title: "Shipping Integration",
-      description: "Automated shipping calculations and integration with major carriers.",
-      icon: "🚚",
-    },
-  ];
-
-  const process = [
-    {
-      step: 1,
-      title: "Strategy & Planning",
-      description: "Define product catalog, payment methods, shipping options, and customer journey.",
-    },
-    {
-      step: 2,
-      title: "Design & Development",
-      description: "Create custom store design and build with your chosen e-commerce platform.",
-    },
-    {
-      step: 3,
-      title: "Product Setup",
-      description: "Configure products, pricing, inventory, shipping rules, and payment gateways.",
-    },
-    {
-      step: 4,
-      title: "Testing & Launch",
-      description: "Thorough testing of checkout flow, payments, and launch your online store.",
-    },
-  ];
-
-  const faqs = [
-    {
-      question: "Which e-commerce platform do you recommend?",
-      answer: "We primarily work with WooCommerce (WordPress) and Shopify. WooCommerce offers more flexibility and lower ongoing costs, while Shopify is easier to manage with built-in hosting. We'll recommend the best fit based on your specific needs.",
-    },
-    {
-      question: "How much does an e-commerce website cost?",
-      answer: "E-commerce sites typically range from $7,500 for basic stores to $15,000+ for advanced stores with custom features. Costs vary based on number of products, custom functionality, integrations, and design complexity.",
-    },
-    {
-      question: "Can you migrate my existing online store?",
-      answer: "Yes! We can migrate your products, customers, and order history from platforms like Shopify, WooCommerce, Magento, BigCommerce, or custom solutions. We ensure a smooth transition with minimal downtime.",
-    },
-    {
-      question: "What payment methods can I accept?",
-      answer: "We integrate all major payment gateways including Stripe, PayPal, Square, and Australian providers like eWAY and Afterpay. You can accept credit cards, digital wallets, and buy-now-pay-later options.",
-    },
-    {
-      question: "Do you provide ongoing support for e-commerce sites?",
-      answer: "Yes! We offer maintenance packages starting at $250/month including security updates, backup management, technical support, and assistance with adding products or making changes to your store.",
-    },
-  ];
 
   return (
     <>
@@ -113,303 +21,332 @@ export default function EcommerceWebsitesPage() {
       />
 
       {/* Hero Section */}
-      <section className="bg-gradient-navy text-white py-20">
-        <div className="container">
-          <div className="max-w-3xl">
-            <div className="inline-block bg-primary-orange/20 text-primary-orange px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              {service.icon} {service.name}
+      <section className="bg-[#1e293b] text-white py-32 text-center relative">
+        <div className="container max-w-4xl mx-auto px-8">
+          <h1 className="text-6xl font-bold mb-6 text-white">E-commerce Websites Sydney</h1>
+          <p className="text-2xl opacity-95 mb-10 text-white">Build a profitable online store with expert e-commerce solutions. From products to payments</p>
+          <div className="flex gap-4 justify-center flex-wrap">
+            <button data-popup="contact" className="btn btn-primary">Start Your Store</button>
+            <Link href="#process" className="btn btn-secondary">Our Process</Link>
+          </div>
+          <div className="flex justify-center gap-12 mt-12 flex-wrap">
+            <div className="text-center">
+              <div className="text-4xl mb-2"><i className="fas fa-trophy text-[#f59e0b]"></i></div>
+              <div className="text-sm opacity-90">13+ Years Experience</div>
             </div>
-            <h1 className="text-5xl font-bold mb-6 text-white">
-              E-commerce Websites That Sell More Products
-            </h1>
-            <p className="text-xl text-gray-300 mb-8">
-              Launch a high-converting online store with seamless checkout, inventory management, and payment integration. Start selling online and grow your revenue.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <button data-popup="contact" className="btn btn-primary">
-                Start Your Online Store
-              </button>
-              <Link href="/portfolio" className="btn btn-white">
-                View E-commerce Projects
-              </Link>
+            <div className="text-center">
+              <div className="text-4xl mb-2"><i className="fas fa-star text-[#f59e0b]"></i></div>
+              <div className="text-sm opacity-90">50+ 5-Star Reviews</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl mb-2"><i className="fas fa-check text-[#f59e0b]"></i></div>
+              <div className="text-sm opacity-90">Professional Service</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl mb-2"><i className="fas fa-chart-line text-[#f59e0b]"></i></div>
+              <div className="text-sm opacity-90">Proven Results</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-24">
         <div className="container">
-          <StatsGrid stats={stats} columns={4} />
+          <h2 className="text-5xl font-bold text-center mb-16 text-[#1e293b]">Why Choose E-commerce Websites Sydney?</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+            <div className="bg-white p-10 rounded-3xl shadow-lg text-center hover:shadow-2xl transition-all border-t-4 border-[#f59e0b]">
+              <div className="text-6xl font-bold text-[#f59e0b] mb-2">100+</div>
+              <div className="text-gray-600 text-lg">Stores Launched</div>
+            </div>
+            <div className="bg-white p-10 rounded-3xl shadow-lg text-center hover:shadow-2xl transition-all border-t-4 border-[#f59e0b]">
+              <div className="text-6xl font-bold text-[#f59e0b] mb-2">$5M+</div>
+              <div className="text-gray-600 text-lg">Revenue Generated</div>
+            </div>
+            <div className="bg-white p-10 rounded-3xl shadow-lg text-center hover:shadow-2xl transition-all border-t-4 border-[#f59e0b]">
+              <div className="text-6xl font-bold text-[#f59e0b] mb-2">3.2%</div>
+              <div className="text-gray-600 text-lg">Avg Conversion</div>
+            </div>
+            <div className="bg-white p-10 rounded-3xl shadow-lg text-center hover:shadow-2xl transition-all border-t-4 border-[#f59e0b]">
+              <div className="text-6xl font-bold text-[#f59e0b] mb-2">50+</div>
+              <div className="text-gray-600 text-lg">Integrations</div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-20">
+      <section className="py-24 bg-gray-50">
         <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl font-bold mb-4">
-              Complete E-commerce Solutions
-            </h2>
-            <p className="text-xl text-gray-600">
-              Everything you need to launch and grow a successful online store.
-            </p>
-          </div>
+          <h2 className="text-5xl font-bold text-center mb-6 text-[#1e293b]">Our E-commerce Websites Sydney Services</h2>
+          <p className="text-xl text-center text-gray-600 max-w-3xl mx-auto mb-16">Comprehensive solutions designed to help your business succeed</p>
 
-          <div className="grid-3">
-            {features.map((feature, index) => (
-              <div key={index} className="card hover:shadow-card-hover transition-shadow">
-                <div className="text-4xl mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </div>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            <div className="bg-white p-12 rounded-3xl shadow-lg hover:shadow-2xl transition-all border-l-4 border-[#f59e0b]">
+              <div className="text-6xl mb-6"><i className="fas fa-shopping-cart text-[#f59e0b]"></i></div>
+              <h3 className="text-2xl font-bold mb-4 text-[#1e293b]">Store Setup</h3>
+              <p className="text-gray-600 mb-6">Complete store build</p>
+              <ul className="space-y-3">
+                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Product catalogs</span></li>
+                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Categories</span></li>
+                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Filters</span></li>
+                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Search</span></li>
+              </ul>
+            </div>
+
+            <div className="bg-white p-12 rounded-3xl shadow-lg hover:shadow-2xl transition-all border-l-4 border-[#f59e0b]">
+              <div className="text-6xl mb-6"><i className="fas fa-credit-card text-[#f59e0b]"></i></div>
+              <h3 className="text-2xl font-bold mb-4 text-[#1e293b]">Payments</h3>
+              <p className="text-gray-600 mb-6">Secure payment processing</p>
+              <ul className="space-y-3">
+                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Multiple gateways</span></li>
+                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Secure checkout</span></li>
+                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Currency support</span></li>
+                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Subscriptions</span></li>
+              </ul>
+            </div>
+
+            <div className="bg-white p-12 rounded-3xl shadow-lg hover:shadow-2xl transition-all border-l-4 border-[#f59e0b]">
+              <div className="text-6xl mb-6"><i className="fas fa-box text-[#f59e0b]"></i></div>
+              <h3 className="text-2xl font-bold mb-4 text-[#1e293b]">Shipping</h3>
+              <p className="text-gray-600 mb-6">Shipping integration</p>
+              <ul className="space-y-3">
+                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Shipping zones</span></li>
+                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Rate calculation</span></li>
+                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Tracking</span></li>
+                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Fulfillment</span></li>
+              </ul>
+            </div>
+
+            <div className="bg-white p-12 rounded-3xl shadow-lg hover:shadow-2xl transition-all border-l-4 border-[#f59e0b]">
+              <div className="text-6xl mb-6"><i className="fas fa-chart-bar text-[#f59e0b]"></i></div>
+              <h3 className="text-2xl font-bold mb-4 text-[#1e293b]">Inventory</h3>
+              <p className="text-gray-600 mb-6">Stock management</p>
+              <ul className="space-y-3">
+                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Inventory tracking</span></li>
+                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Low stock alerts</span></li>
+                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>SKU management</span></li>
+                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Variants</span></li>
+              </ul>
+            </div>
+
+            <div className="bg-white p-12 rounded-3xl shadow-lg hover:shadow-2xl transition-all border-l-4 border-[#f59e0b]">
+              <div className="text-6xl mb-6"><i className="fas fa-mobile-alt text-[#f59e0b]"></i></div>
+              <h3 className="text-2xl font-bold mb-4 text-[#1e293b]">Mobile Commerce</h3>
+              <p className="text-gray-600 mb-6">Mobile shopping</p>
+              <ul className="space-y-3">
+                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Mobile optimized</span></li>
+                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>App-like UX</span></li>
+                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Fast checkout</span></li>
+                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Touch-friendly</span></li>
+              </ul>
+            </div>
+
+            <div className="bg-white p-12 rounded-3xl shadow-lg hover:shadow-2xl transition-all border-l-4 border-[#f59e0b]">
+              <div className="text-6xl mb-6"><i className="fas fa-search text-[#f59e0b]"></i></div>
+              <h3 className="text-2xl font-bold mb-4 text-[#1e293b]">E-commerce SEO</h3>
+              <p className="text-gray-600 mb-6">Product visibility</p>
+              <ul className="space-y-3">
+                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Product optimization</span></li>
+                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Schema markup</span></li>
+                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Site speed</span></li>
+                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Content strategy</span></li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Process Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-24" id="process">
         <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl font-bold mb-4">Our E-commerce Development Process</h2>
-            <p className="text-xl text-gray-600">
-              From concept to launch, we handle every aspect of your online store.
-            </p>
-          </div>
+          <h2 className="text-5xl font-bold text-center mb-6 text-[#1e293b]">Our Proven Process</h2>
+          <p className="text-xl text-center text-gray-600 max-w-3xl mx-auto mb-16">A systematic approach to deliver outstanding results</p>
 
-          <div className="grid-2 max-w-4xl mx-auto">
-            {process.map((item) => (
-              <div key={item.step} className="card hover:shadow-card-hover transition-shadow">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-gradient-navy-orange rounded-full flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
-                    {item.step}
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                    <p className="text-gray-600">{item.description}</p>
-                  </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            {[
+              { num: 1, title: "Discovery", desc: "Deep dive into your business, goals, and requirements" },
+              { num: 2, title: "Strategy", desc: "Develop custom strategy based on research and analysis" },
+              { num: 3, title: "Planning", desc: "Create detailed roadmap and project timeline" },
+              { num: 4, title: "Execution", desc: "Implement solution with attention to detail" },
+              { num: 5, title: "Testing", desc: "Thorough quality assurance and optimization" },
+              { num: 6, title: "Launch & Support", desc: "Deploy and provide ongoing support" }
+            ].map((step) => (
+              <div key={step.num} className="bg-white p-10 rounded-3xl shadow-lg text-center hover:scale-105 transition-all">
+                <div className="w-24 h-24 bg-[#1e293b] text-white rounded-full flex items-center justify-center text-4xl font-bold mx-auto mb-8 shadow-lg">
+                  {step.num}
                 </div>
+                <h3 className="text-2xl font-bold mb-4 text-[#1e293b]">{step.title}</h3>
+                <p className="text-gray-600">{step.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Portfolio Section */}
-      {webProjects.length > 0 && (
-        <section className="py-20">
-          <div className="container">
-            <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="text-4xl font-bold mb-4">E-commerce Portfolio</h2>
-              <p className="text-xl text-gray-600">
-                Online stores we&apos;ve built that drive revenue and growth.
-              </p>
+      {/* Case Studies Section */}
+      <section className="py-24 bg-gray-50">
+        <div className="container">
+          <h2 className="text-5xl font-bold text-center mb-16 text-[#1e293b]">Real Results for Sydney Businesses</h2>
+
+          <div className="space-y-12 max-w-5xl mx-auto">
+            <div className="bg-white p-12 rounded-3xl shadow-lg">
+              <div className="border-b-4 border-[#f59e0b] pb-6 mb-8">
+                <h3 className="text-3xl font-bold mb-2 text-[#1e293b]">Castor Master</h3>
+                <div className="text-[#f59e0b] font-semibold text-lg">Industrial Equipment</div>
+              </div>
+              <p className="text-gray-600 text-lg">E-commerce store with complex product configurations and wholesale ordering</p>
             </div>
 
-            <div className="grid-3">
-              {webProjects.slice(0, 6).map((project) => (
-                <PortfolioCard key={project.id} project={project} />
-              ))}
-            </div>
-
-            <div className="text-center mt-12">
-              <Link href="/portfolio" className="btn btn-primary">
-                View All Projects
-              </Link>
+            <div className="bg-white p-12 rounded-3xl shadow-lg">
+              <div className="border-b-4 border-[#f59e0b] pb-6 mb-8">
+                <h3 className="text-3xl font-bold mb-2 text-[#1e293b]">Online Retailer</h3>
+                <div className="text-[#f59e0b] font-semibold text-lg">Fashion & Apparel</div>
+              </div>
+              <p className="text-gray-600 text-lg">Multi-category store with 500+ products and seamless checkout experience</p>
             </div>
           </div>
-        </section>
-      )}
+        </div>
+      </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-24">
         <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl font-bold mb-4">What Our Clients Say</h2>
-            <p className="text-xl text-gray-600">
-              Store owners thriving with their e-commerce websites.
-            </p>
-          </div>
+          <h2 className="text-5xl font-bold text-center mb-16 text-[#1e293b]">What Our Clients Say</h2>
 
-          <div className="grid-3">
-            {webReviews.map((review) => (
-              <TestimonialCard key={review.id} review={review} />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            {[
+              { text: "Professional, responsive, and delivered exactly what we needed. The results have been fantastic and we've seen significant improvements.", author: "Sydney Business Owner", role: "Professional Services" },
+              { text: "The team at Sydney Web Designer took the time to understand our business. Their expertise and transparent approach made the entire process smooth.", author: "Local Business", role: "Parramatta, NSW" },
+              { text: "Highly recommend Sydney Web Designer for their professionalism and quality of work. They exceeded our expectations in every way.", author: "Sydney Client", role: "Service Provider" }
+            ].map((review, i) => (
+              <div key={i} className="bg-white p-12 rounded-3xl shadow-lg border-t-4 border-[#f59e0b]">
+                <div className="text-3xl mb-6">
+                  <i className="fas fa-star text-[#f59e0b]"></i>
+                  <i className="fas fa-star text-[#f59e0b]"></i>
+                  <i className="fas fa-star text-[#f59e0b]"></i>
+                  <i className="fas fa-star text-[#f59e0b]"></i>
+                  <i className="fas fa-star text-[#f59e0b]"></i>
+                </div>
+                <p className="text-gray-700 italic mb-8 text-lg leading-relaxed">&quot;{review.text}&quot;</p>
+                <div className="font-bold text-[#1e293b]">{review.author}</div>
+                <div className="text-gray-600 text-sm">{review.role}</div>
+              </div>
             ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Link href="/testimonials" className="btn btn-primary">
-              Read More Reviews
-            </Link>
           </div>
         </div>
       </section>
 
       {/* Pricing Section */}
-      <section className="py-20">
+      <section className="py-24 bg-gray-50">
         <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl font-bold mb-4">E-commerce Website Pricing</h2>
-            <p className="text-xl text-gray-600">
-              Professional online stores at transparent prices.
-            </p>
-          </div>
+          <h2 className="text-5xl font-bold text-center mb-6 text-[#1e293b]">E-commerce Websites Sydney Pricing</h2>
+          <p className="text-center text-gray-600 mb-16">Choose the package that fits your needs and budget</p>
 
-          <div className="grid-2 max-w-5xl mx-auto gap-8">
-            <div className="card">
-              <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold mb-2">Starter Store</h3>
-                <div className="text-4xl font-bold text-primary-orange mb-4">$7,500</div>
-                <p className="text-gray-600">For businesses starting online</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div className="bg-white p-10 rounded-3xl border-2 border-gray-200 hover:border-[#f59e0b] hover:-translate-y-2 transition-all">
+              <div className="text-center mb-8">
+                <h3 className="text-2xl font-bold mb-4 text-[#1e293b]">Starter</h3>
+                <div className="text-5xl font-bold text-[#f59e0b] mb-2">$5,000-$8,000</div>
+                <div className="text-gray-600">one-time</div>
               </div>
-
-              <div className="space-y-3 mb-8">
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Up to 50 products</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Custom design</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Mobile responsive</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Payment gateway integration</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Basic shipping options</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Training & documentation</span>
-                </div>
-              </div>
-
-              <button data-popup="contact" className="btn btn-outline w-full">
-                Get Started
-              </button>
+              <ul className="space-y-4 mb-10">
+                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Up to 50 products</span></li>
+                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Payment gateway</span></li>
+                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Shipping setup</span></li>
+                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Mobile responsive</span></li>
+                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Basic SEO</span></li>
+              </ul>
+              <button data-popup="contact" className="btn btn-outline w-full">Get Started</button>
             </div>
 
-            <div className="card border-2 border-primary-orange">
-              <div className="text-center mb-6">
-                <div className="text-primary-orange font-bold mb-2">Most Popular</div>
-                <h3 className="text-2xl font-bold mb-2">Professional Store</h3>
-                <div className="text-4xl font-bold text-primary-orange mb-4">$12,500</div>
-                <p className="text-gray-600">For established businesses</p>
+            <div className="bg-white p-10 rounded-3xl border-2 border-[#f59e0b] hover:-translate-y-2 transition-all relative shadow-xl">
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#f59e0b] text-white px-6 py-2 rounded-full text-sm font-bold">
+                Most Popular
               </div>
-
-              <div className="space-y-3 mb-8">
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Unlimited products</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Advanced custom design</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Product variants & options</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Multiple payment gateways</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Advanced shipping integration</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Inventory management</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Email automation</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">60 days support</span>
-                </div>
+              <div className="text-center mb-8">
+                <h3 className="text-2xl font-bold mb-4 text-[#1e293b]">Growth</h3>
+                <div className="text-5xl font-bold text-[#f59e0b] mb-2">$10,000-$20,000</div>
+                <div className="text-gray-600">one-time</div>
               </div>
+              <ul className="space-y-4 mb-10">
+                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Up to 500 products</span></li>
+                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Advanced features</span></li>
+                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Multiple gateways</span></li>
+                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Custom integrations</span></li>
+                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Advanced SEO</span></li>
+              </ul>
+              <button data-popup="contact" className="btn btn-primary w-full">Get Started</button>
+            </div>
 
-              <button data-popup="contact" className="btn btn-primary w-full">
-                Get Started
-              </button>
+            <div className="bg-white p-10 rounded-3xl border-2 border-gray-200 hover:border-[#f59e0b] hover:-translate-y-2 transition-all">
+              <div className="text-center mb-8">
+                <h3 className="text-2xl font-bold mb-4 text-[#1e293b]">Enterprise</h3>
+                <div className="text-5xl font-bold text-[#f59e0b] mb-2">$30,000+</div>
+                <div className="text-gray-600">one-time</div>
+              </div>
+              <ul className="space-y-4 mb-10">
+                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Unlimited products</span></li>
+                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Custom features</span></li>
+                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>ERP integration</span></li>
+                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Multi-currency</span></li>
+                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Dedicated support</span></li>
+              </ul>
+              <button data-popup="contact" className="btn btn-outline w-full">Get Started</button>
             </div>
           </div>
-
-          <p className="text-center text-gray-600 mt-8">
-            Need marketplace or subscription features?{" "}
-            <button data-popup="contact" className="text-primary-orange font-semibold hover:underline">
-              Contact us for enterprise pricing
-            </button>
-          </p>
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl font-bold mb-4">Frequently Asked Questions</h2>
-            <p className="text-xl text-gray-600">
-              Common questions about e-commerce websites.
-            </p>
-          </div>
+      {/* Contact Form Section */}
+      <section className="py-24" id="lead-form">
+        <div className="container max-w-5xl">
+          <div className="bg-[#1e293b] text-white p-16 rounded-3xl">
+            <h3 className="text-4xl font-bold mb-4 text-center">Get Your Free Consultation</h3>
+            <p className="text-center opacity-90 mb-12 text-lg">Tell us about your project and we&apos;ll provide expert advice and a custom quote</p>
 
-          <div className="max-w-3xl mx-auto space-y-6">
-            {faqs.map((faq, index) => (
-              <div key={index} className="card">
-                <h3 className="text-lg font-bold mb-2">{faq.question}</h3>
-                <p className="text-gray-600">{faq.answer}</p>
+            <form className="space-y-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block mb-2 font-semibold">Full Name *</label>
+                  <input type="text" required placeholder="Your name" className="w-full p-4 rounded-xl border-0 text-gray-900" />
+                </div>
+                <div>
+                  <label className="block mb-2 font-semibold">Email *</label>
+                  <input type="email" required placeholder="your@email.com" className="w-full p-4 rounded-xl border-0 text-gray-900" />
+                </div>
+                <div>
+                  <label className="block mb-2 font-semibold">Phone *</label>
+                  <input type="tel" required placeholder="04XX XXX XXX" className="w-full p-4 rounded-xl border-0 text-gray-900" />
+                </div>
+                <div>
+                  <label className="block mb-2 font-semibold">Company</label>
+                  <input type="text" placeholder="Your company (optional)" className="w-full p-4 rounded-xl border-0 text-gray-900" />
+                </div>
               </div>
-            ))}
+              <div>
+                <label className="block mb-2 font-semibold">Tell us about your project</label>
+                <textarea placeholder="What are you looking to achieve?" rows={4} className="w-full p-4 rounded-xl border-0 text-gray-900"></textarea>
+              </div>
+              <div className="text-center">
+                <button type="submit" className="bg-white text-[#1e293b] px-6 md:px-10 lg:px-12 py-3 md:py-4 rounded-full font-bold text-base md:text-lg hover:bg-gray-100 transition-all w-full sm:w-auto text-center">
+                  Start Your Store
+                </button>
+                <p className="mt-4 text-sm opacity-80"><i className="fas fa-comment mr-2"></i>We&apos;ll respond within 24 hours</p>
+              </div>
+            </form>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <CTASection
-        title="Ready to Launch Your Online Store?"
-        description="Start selling online with a professionally designed e-commerce website built for conversions."
-        primaryButtonText="Start Your Store"
-        primaryButtonAction="contact"
-      />
+      <section className="bg-[#1e293b] text-white py-24 text-center">
+        <div className="container">
+          <h2 className="text-5xl font-bold mb-6">Ready to Get Started?</h2>
+          <p className="text-2xl mb-10 opacity-95">Let&apos;s discuss your project and create a custom solution for your business</p>
+          <Link href="#lead-form" className="btn btn-white text-lg">Start Your Store</Link>
+        </div>
+      </section>
     </>
   );
 }

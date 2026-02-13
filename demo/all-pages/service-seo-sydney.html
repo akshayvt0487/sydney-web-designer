@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Services Sydney | Search Engine Optimization | DSIGNS</title>
+    <meta name="description" content="Professional SEO services in Sydney. Increase organic traffic, improve rankings, and grow your business.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #333; }
+        :root { --primary-navy: #1e293b; --primary-orange: #f59e0b; --text-light: #64748b; --light-bg: #f8fafc; }
+        .top-bar { background: #0f172a; color: white; padding: 0.5rem 0; font-size: 0.9rem; }
+        .top-bar-content { max-width: 1400px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; }
+        .top-bar-right a { color: white; text-decoration: none; margin-left: 2rem; }
+        header { background: #fff; padding: 1rem 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        nav { max-width: 1400px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo-image { height: 50px; }
+        .service-hero { background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(51, 65, 85, 0.95)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%231e293b" width="1200" height="400"/><path fill="%23f59e0b" opacity="0.1" d="M0,200 Q300,100 600,200 T1200,200 L1200,400 L0,400 Z"/></svg>'); background-size: cover; background-position: center; color: white; padding: 8rem 2rem 5rem; text-align: center; position: relative; }
+        .service-hero h1 { font-size: 4rem; margin-bottom: 1.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .service-hero p { font-size: 1.4rem; opacity: 0.95; max-width: 800px; margin: 0 auto 2.5rem; }
+        .trust-badges { display: flex; justify-content: center; gap: 3rem; margin-top: 3rem; flex-wrap: wrap; }
+        .trust-badge { text-align: center; color: white; }
+        .trust-badge-icon { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .trust-badge-text { font-size: 0.9rem; opacity: 0.9; }
+        .btn { display: inline-block; padding: 1.2rem 3rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s; font-size: 1.1rem; }
+        .btn-primary { background: var(--primary-orange); color: white; box-shadow: 0 5px 15px rgba(245, 158, 11, 0.3); }
+        .btn-primary:hover { background: #d97706; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(245, 158, 11, 0.4); }
+        .btn-secondary { background: transparent; color: white; border: 2px solid white; }
+        .btn-secondary:hover { background: white; color: var(--primary-navy); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .content-section { padding: 6rem 2rem; }
+        .content-section:nth-child(even) { background: var(--light-bg); }
+        h2 { font-size: 3rem; color: var(--primary-navy); margin-bottom: 1.5rem; text-align: center; }
+        h3 { font-size: 1.8rem; color: var(--primary-navy); margin: 2rem 0 1rem; }
+        p { margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.9; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2.5rem; margin: 4rem 0; }
+        .stat-box { padding: 2.5rem; background: white; border-radius: 20px; box-shadow: 0 5px 25px rgba(0,0,0,0.08); text-align: center; transition: all 0.3s; border-top: 4px solid var(--primary-orange); }
+        .stat-box:hover { transform: translateY(-5px); box-shadow: 0 10px 35px rgba(0,0,0,0.12); }
+        .stat-number { font-size: 3.5rem; font-weight: 700; color: var(--primary-orange); margin-bottom: 0.5rem; }
+        .stat-label { color: var(--text-light); font-size: 1.1rem; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; margin: 4rem 0; }
+        .feature-card { background: white; padding: 3rem; border-radius: 20px; box-shadow: 0 5px 25px rgba(0,0,0,0.08); transition: all 0.3s; border-left: 5px solid var(--primary-orange); }
+        .feature-card:hover { transform: translateY(-8px); box-shadow: 0 15px 40px rgba(0,0,0,0.15); }
+        .feature-icon { font-size: 4rem; margin-bottom: 1.5rem; }
+        .feature-card h3 { color: var(--primary-navy); margin-top: 0; font-size: 1.6rem; }
+        .feature-card p { color: var(--text-light); font-size: 1.05rem; margin-bottom: 1.5rem; }
+        .feature-list { list-style: none; padding: 0; }
+        .feature-list li { padding: 0.7rem 0; padding-left: 2rem; position: relative; color: var(--text-dark); }
+        .feature-list li:before { content: "✓"; position: absolute; left: 0; color: var(--primary-orange); font-weight: bold; font-size: 1.3rem; }
+        .process-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem; margin: 4rem 0; }
+        .process-step { text-align: center; padding: 2.5rem; background: white; border-radius: 20px; box-shadow: 0 5px 25px rgba(0,0,0,0.08); position: relative; transition: all 0.3s; }
+        .process-step:hover { transform: scale(1.05); box-shadow: 0 10px 35px rgba(0,0,0,0.12); }
+        .step-number { width: 90px; height: 90px; background: linear-gradient(135deg, var(--primary-navy), var(--primary-orange)); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; font-weight: bold; margin: 0 auto 2rem; box-shadow: 0 5px 20px rgba(245, 158, 11, 0.3); }
+        .process-step h3 { margin-bottom: 1rem; }
+        .process-step p { font-size: 1.05rem; color: var(--text-light); }
+        .case-study { background: white; padding: 3rem; border-radius: 20px; box-shadow: 0 5px 25px rgba(0,0,0,0.08); margin-bottom: 3rem; }
+        .case-study-header { border-bottom: 3px solid var(--primary-orange); padding-bottom: 1.5rem; margin-bottom: 2rem; }
+        .case-study h3 { color: var(--primary-navy); font-size: 2rem; margin-bottom: 0.5rem; }
+        .case-study-industry { color: var(--primary-orange); font-weight: 600; font-size: 1.1rem; }
+        .case-study-results { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin: 2rem 0; }
+        .result-metric { text-align: center; padding: 1.5rem; background: var(--light-bg); border-radius: 15px; }
+        .result-number { font-size: 2.5rem; font-weight: 700; color: var(--primary-orange); }
+        .result-label { color: var(--text-light); margin-top: 0.5rem; }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem; margin: 4rem 0; }
+        .testimonial-card { background: white; padding: 3rem; border-radius: 20px; box-shadow: 0 5px 25px rgba(0,0,0,0.08); border-top: 4px solid var(--primary-orange); }
+        .testimonial-stars { color: #f59e0b; font-size: 1.5rem; margin-bottom: 1.5rem; }
+        .testimonial-text { font-style: italic; color: var(--text-dark); margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.8; }
+        .testimonial-author { font-weight: 600; color: var(--primary-navy); }
+        .testimonial-role { color: var(--text-light); font-size: 0.95rem; }
+        .pricing-table { background: white; padding: 3rem; border-radius: 20px; box-shadow: 0 5px 25px rgba(0,0,0,0.08); margin: 4rem 0; }
+        .pricing-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .pricing-option { border: 2px solid #e2e8f0; padding: 2.5rem; border-radius: 15px; text-align: center; transition: all 0.3s; position: relative; }
+        .pricing-option:hover { border-color: var(--primary-orange); transform: translateY(-5px); }
+        .pricing-option.featured { border-color: var(--primary-orange); background: linear-gradient(to bottom, #fff, #fef3e7); }
+        .pricing-badge { background: var(--primary-orange); color: white; padding: 0.5rem 1.5rem; border-radius: 50px; font-size: 0.9rem; font-weight: 600; position: absolute; top: -15px; left: 50%; transform: translateX(-50%); }
+        .pricing-name { font-size: 1.5rem; font-weight: 700; color: var(--primary-navy); margin-bottom: 1rem; }
+        .pricing-price { font-size: 2.5rem; font-weight: 700; color: var(--primary-orange); margin-bottom: 0.5rem; }
+        .pricing-period { color: var(--text-light); margin-bottom: 2rem; }
+        .pricing-features { list-style: none; padding: 0; margin-bottom: 2rem; }
+        .pricing-features li { padding: 0.7rem 0; text-align: left; padding-left: 2rem; position: relative; }
+        .pricing-features li:before { content: "✓"; position: absolute; left: 0; color: var(--primary-orange); font-weight: bold; }
+        .lead-form { background: linear-gradient(135deg, var(--primary-navy), #2d3e52); padding: 4rem; border-radius: 20px; margin: 4rem 0; color: white; }
+        .lead-form h3 { color: white; font-size: 2.5rem; margin-bottom: 1rem; }
+        .lead-form p { color: rgba(255,255,255,0.9); margin-bottom: 2rem; }
+        .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; }
+        .form-group input, .form-group textarea { width: 100%; padding: 1rem; border-radius: 10px; border: none; font-size: 1rem; font-family: inherit; }
+        .form-group textarea { min-height: 120px; resize: vertical; }
+        .form-submit { text-align: center; margin-top: 2rem; }
+        .cta-section { background: linear-gradient(135deg, var(--primary-navy), var(--primary-orange)); color: white; padding: 6rem 2rem; text-align: center; }
+        .cta-section h2 { color: white; font-size: 3rem; }
+        footer { background: var(--primary-navy); color: white; padding: 3rem 2rem 1rem; text-align: center; }
+        footer a { color: #94a3b8; text-decoration: none; margin: 0 1rem; }
+        footer a:hover { color: var(--primary-orange); }
+        @media (max-width: 768px) { .service-hero h1 { font-size: 2.5rem; } h2 { font-size: 2rem; } .features-grid, .process-steps, .testimonials-grid { grid-template-columns: 1fr; } }
+    </style>
+    <link rel="stylesheet" href="popup-forms.css">
+    <script src="popup-forms.js"></script>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div>📧 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8ae2efe6e6e5caeef9e3ede4f9a4e9e5e7a4ebff">[email&#160;protected]</a> | 📞 02 9191 8049</div>
+            <div><a href="about.html">About</a><a href="testimonials.html">Testimonials</a><a href="blog.html">Blog</a></div>
+        </div>
+    </div>
+    <header>
+        <nav>
+            <a href="index.html"><img src="sydney_web_designer_logo.png" alt="Sydney Web Designer" class="logo-image"></a>
+            <div><a href="#" data-popup="seoAudit" class="btn btn-primary">Get Free SEO Audit</a></div>
+        </nav>
+    </header>
+    <div class="service-hero">
+        <h1>SEO Services Sydney</h1>
+        <p>Increase organic traffic, improve search rankings, and grow your business with data-driven SEO strategies</p>
+        <div style="margin-top: 2.5rem;">
+            <a href="#" data-popup="seoAudit" class="btn btn-primary">Get Free SEO Audit</a>
+            <a href="#process" class="btn btn-secondary" style="margin-left: 1rem;">Our Process</a>
+        </div>
+        <div class="trust-badges">
+            <div class="trust-badge"><div class="trust-badge-icon">🏆</div><div class="trust-badge-text">13+ Years Experience</div></div>
+            <div class="trust-badge"><div class="trust-badge-icon">⭐</div><div class="trust-badge-text">50+ 5-Star Reviews</div></div>
+            <div class="trust-badge"><div class="trust-badge-icon">✓</div><div class="trust-badge-text">Professional Service</div></div>
+            <div class="trust-badge"><div class="trust-badge-icon">📊</div><div class="trust-badge-text">Proven Results</div></div>
+        </div>
+    </div>
+    <section class="content-section">
+        <div class="container">
+            <h2>Why Choose SEO Services Sydney?</h2>
+            <div class="stats-grid">
+                <div class="stat-box"><div class="stat-number">150%</div><div class="stat-label">Avg Traffic Increase</div></div>
+<div class="stat-box"><div class="stat-number">85%</div><div class="stat-label">First Page Rankings</div></div>
+<div class="stat-box"><div class="stat-number">200+</div><div class="stat-label">Keywords Ranked</div></div>
+<div class="stat-box"><div class="stat-number">50+</div><div class="stat-label">Clients Helped</div></div>
+
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="container">
+            <h2>Our SEO Services Sydney Services</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">Comprehensive solutions designed to help your business succeed</p>
+            <div class="features-grid">
+                <div class="feature-card">
+            <div class="feature-icon">🔍</div>
+            <h3>Keyword Research</h3>
+            <p>High-value search term analysis</p>
+            <ul class="feature-list"><li>Commercial keywords</li><li>Long-tail opportunities</li><li>Competitor analysis</li><li>Volume research</li></ul>
+        </div>
+<div class="feature-card">
+            <div class="feature-icon">⚙️</div>
+            <h3>Technical SEO</h3>
+            <p>Website optimization</p>
+            <ul class="feature-list"><li>Speed optimization</li><li>Mobile responsive</li><li>Structured data</li><li>XML sitemaps</li></ul>
+        </div>
+<div class="feature-card">
+            <div class="feature-icon">📝</div>
+            <h3>On-Page SEO</h3>
+            <p>Page optimization</p>
+            <ul class="feature-list"><li>Title tags</li><li>Meta descriptions</li><li>Header optimization</li><li>Internal linking</li></ul>
+        </div>
+<div class="feature-card">
+            <div class="feature-icon">🔗</div>
+            <h3>Link Building</h3>
+            <p>Quality backlinks</p>
+            <ul class="feature-list"><li>White-hat methods</li><li>Authority sites</li><li>Content partnerships</li><li>Digital PR</li></ul>
+        </div>
+<div class="feature-card">
+            <div class="feature-icon">📍</div>
+            <h3>Local SEO</h3>
+            <p>Local visibility</p>
+            <ul class="feature-list"><li>Google Business Profile</li><li>Local citations</li><li>Review management</li><li>Local content</li></ul>
+        </div>
+<div class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3>Analytics</h3>
+            <p>Performance tracking</p>
+            <ul class="feature-list"><li>Keyword rankings</li><li>Traffic analysis</li><li>Conversion tracking</li><li>ROI measurement</li></ul>
+        </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="content-section" id="process">
+        <div class="container">
+            <h2>Our Proven Process</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">A systematic approach to deliver outstanding results</p>
+            <div class="process-steps">
+                <div class="process-step"><div class="step-number">1</div><h3>Discovery</h3><p>Deep dive into your business, goals, and requirements</p></div>
+                <div class="process-step"><div class="step-number">2</div><h3>Strategy</h3><p>Develop custom strategy based on research and analysis</p></div>
+                <div class="process-step"><div class="step-number">3</div><h3>Planning</h3><p>Create detailed roadmap and project timeline</p></div>
+                <div class="process-step"><div class="step-number">4</div><h3>Execution</h3><p>Implement solution with attention to detail</p></div>
+                <div class="process-step"><div class="step-number">5</div><h3>Testing</h3><p>Thorough quality assurance and optimization</p></div>
+                <div class="process-step"><div class="step-number">6</div><h3>Launch & Support</h3><p>Deploy and provide ongoing support</p></div>
+            </div>
+        </div>
+    </section>
+    <section class="content-section"><div class="container"><h2>Real Results for Sydney Businesses</h2><div class="case-studies"><div class="case-study">
+                <div class="case-study-header">
+                    <h3>GPS Vehicle Inspections</h3>
+                    <div class="case-study-industry">Automotive Services</div>
+                </div>
+                <p>Increased organic traffic by 267% and achieved first page rankings for 75+ keywords</p>
+            </div><div class="case-study">
+                <div class="case-study-header">
+                    <h3>Two Brothers Removalists</h3>
+                    <div class="case-study-industry">Removalist Services</div>
+                </div>
+                <p>185% organic traffic growth with top 3 rankings in 40+ Sydney suburbs</p>
+            </div></div></div></section>
+    <!-- Results & Proof Section -->
+    <section class="content-section" style="background: var(--light-bg);">
+        <div class="container">
+            <h2>Real SEO Results - Proof of Performance</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; font-size: 1.1rem;">Don't just take our word for it - see the actual data and results we've achieved for our clients</p>
+            
+            <!-- Google Search Console Results -->
+            <div style="margin-bottom: 4rem;">
+                <h3 style="text-align: center; margin-bottom: 2rem; color: var(--primary-orange);">📊 Google Search Console Performance</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+                    
+                    <!-- Impressions Graph Placeholder -->
+                    <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); text-align: center;">
+                        <h4 style="color: var(--primary-navy); margin-bottom: 1rem;">📈 Search Impressions Growth</h4>
+                        <div style="background: #f8fafc; border: 2px dashed #cbd5e1; border-radius: 10px; padding: 3rem 2rem; margin: 1rem 0; min-height: 250px; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                            <div style="font-size: 4rem; margin-bottom: 1rem; opacity: 0.3;">📊</div>
+                            <p style="color: var(--text-light); font-style: italic;">Search Console Impressions Graph</p>
+                            <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 0.5rem;">[Upload screenshot showing upward trend]</p>
+                        </div>
+                        <p style="color: var(--text-light); font-size: 0.95rem; margin-top: 1rem;">Shows dramatic increase in search visibility over time</p>
+                    </div>
+
+                    <!-- Average Position Graph Placeholder -->
+                    <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); text-align: center;">
+                        <h4 style="color: var(--primary-navy); margin-bottom: 1rem;">🎯 Average Position Improvement</h4>
+                        <div style="background: #f8fafc; border: 2px dashed #cbd5e1; border-radius: 10px; padding: 3rem 2rem; margin: 1rem 0; min-height: 250px; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                            <div style="font-size: 4rem; margin-bottom: 1rem; opacity: 0.3;">📉</div>
+                            <p style="color: var(--text-light); font-style: italic;">Average Position Graph</p>
+                            <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 0.5rem;">[Upload screenshot showing position improvement]</p>
+                        </div>
+                        <p style="color: var(--text-light); font-size: 0.95rem; margin-top: 1rem;">Lower numbers = better rankings (moving from position 20 to position 3)</p>
+                    </div>
+
+                    <!-- Clicks Graph Placeholder -->
+                    <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); text-align: center;">
+                        <h4 style="color: var(--primary-navy); margin-bottom: 1rem;">🖱️ Organic Clicks Increase</h4>
+                        <div style="background: #f8fafc; border: 2px dashed #cbd5e1; border-radius: 10px; padding: 3rem 2rem; margin: 1rem 0; min-height: 250px; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                            <div style="font-size: 4rem; margin-bottom: 1rem; opacity: 0.3;">📈</div>
+                            <p style="color: var(--text-light); font-style: italic;">Organic Clicks Graph</p>
+                            <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 0.5rem;">[Upload screenshot showing click growth]</p>
+                        </div>
+                        <p style="color: var(--text-light); font-size: 0.95rem; margin-top: 1rem;">Real traffic growth from improved rankings</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Google Rankings Screenshots -->
+            <div style="margin-bottom: 4rem;">
+                <h3 style="text-align: center; margin-bottom: 2rem; color: var(--primary-orange);">🏆 Google Rankings - Page #1 Results</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem;">
+                    
+                    <!-- Ranking Screenshot 1 -->
+                    <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+                        <h4 style="color: var(--primary-navy); margin-bottom: 1rem; text-align: center;">Keyword: "vehicle inspections Sydney"</h4>
+                        <div style="background: #f8fafc; border: 2px dashed #cbd5e1; border-radius: 10px; padding: 3rem 2rem; min-height: 300px; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                            <div style="font-size: 4rem; margin-bottom: 1rem; opacity: 0.3;">🔍</div>
+                            <p style="color: var(--text-light); font-style: italic;">Google Search Results Screenshot</p>
+                            <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 0.5rem;">[Upload screenshot of #1-3 ranking]</p>
+                        </div>
+                        <div style="margin-top: 1.5rem; padding: 1rem; background: linear-gradient(135deg, #fef3e7, #fff); border-left: 4px solid var(--primary-orange); border-radius: 8px;">
+                            <p style="font-weight: 600; color: var(--primary-navy);">Result: Position #2</p>
+                            <p style="color: var(--text-light); font-size: 0.95rem; margin-top: 0.5rem;">Increased from position #47 to #2 in 6 months</p>
+                        </div>
+                    </div>
+
+                    <!-- Ranking Screenshot 2 -->
+                    <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+                        <h4 style="color: var(--primary-navy); margin-bottom: 1rem; text-align: center;">Keyword: "removalists Sydney"</h4>
+                        <div style="background: #f8fafc; border: 2px dashed #cbd5e1; border-radius: 10px; padding: 3rem 2rem; min-height: 300px; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                            <div style="font-size: 4rem; margin-bottom: 1rem; opacity: 0.3;">🔍</div>
+                            <p style="color: var(--text-light); font-style: italic;">Google Search Results Screenshot</p>
+                            <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 0.5rem;">[Upload screenshot of top 3 ranking]</p>
+                        </div>
+                        <div style="margin-top: 1.5rem; padding: 1rem; background: linear-gradient(135deg, #fef3e7, #fff); border-left: 4px solid var(--primary-orange); border-radius: 8px;">
+                            <p style="font-weight: 600; color: var(--primary-navy);">Result: Position #3</p>
+                            <p style="color: var(--text-light); font-size: 0.95rem; margin-top: 0.5rem;">Competitive keyword with 185% traffic increase</p>
+                        </div>
+                    </div>
+
+                    <!-- Ranking Screenshot 3 -->
+                    <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+                        <h4 style="color: var(--primary-navy); margin-bottom: 1rem; text-align: center;">Local Pack Rankings</h4>
+                        <div style="background: #f8fafc; border: 2px dashed #cbd5e1; border-radius: 10px; padding: 3rem 2rem; min-height: 300px; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                            <div style="font-size: 4rem; margin-bottom: 1rem; opacity: 0.3;">📍</div>
+                            <p style="color: var(--text-light); font-style: italic;">Google Map Pack Screenshot</p>
+                            <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 0.5rem;">[Upload screenshot of map rankings]</p>
+                        </div>
+                        <div style="margin-top: 1.5rem; padding: 1rem; background: linear-gradient(135deg, #fef3e7, #fff); border-left: 4px solid var(--primary-orange); border-radius: 8px;">
+                            <p style="font-weight: 600; color: var(--primary-navy);">Result: Top 3 Map Pack</p>
+                            <p style="color: var(--text-light); font-size: 0.95rem; margin-top: 0.5rem;">Dominating local search across Sydney suburbs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Analytics & Traffic Growth -->
+            <div>
+                <h3 style="text-align: center; margin-bottom: 2rem; color: var(--primary-orange);">📊 Google Analytics - Traffic & Conversions</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 2rem;">
+                    
+                    <!-- Analytics Overview -->
+                    <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+                        <h4 style="color: var(--primary-navy); margin-bottom: 1rem; text-align: center;">Organic Traffic Growth</h4>
+                        <div style="background: #f8fafc; border: 2px dashed #cbd5e1; border-radius: 10px; padding: 3rem 2rem; min-height: 300px; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                            <div style="font-size: 4rem; margin-bottom: 1rem; opacity: 0.3;">📈</div>
+                            <p style="color: var(--text-light); font-style: italic;">Google Analytics Traffic Graph</p>
+                            <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 0.5rem;">[Upload GA4 traffic growth screenshot]</p>
+                        </div>
+                        <div style="margin-top: 1.5rem;">
+                            <div style="display: flex; justify-content: space-around; text-align: center;">
+                                <div>
+                                    <p style="font-size: 2rem; font-weight: 700; color: var(--primary-orange);">267%</p>
+                                    <p style="color: var(--text-light); font-size: 0.9rem;">Traffic Increase</p>
+                                </div>
+                                <div>
+                                    <p style="font-size: 2rem; font-weight: 700; color: var(--primary-orange);">12,500</p>
+                                    <p style="color: var(--text-light); font-size: 0.9rem;">Monthly Visitors</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Conversion Metrics -->
+                    <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+                        <h4 style="color: var(--primary-navy); margin-bottom: 1rem; text-align: center;">Conversion & Lead Data</h4>
+                        <div style="background: #f8fafc; border: 2px dashed #cbd5e1; border-radius: 10px; padding: 3rem 2rem; min-height: 300px; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                            <div style="font-size: 4rem; margin-bottom: 1rem; opacity: 0.3;">📞</div>
+                            <p style="color: var(--text-light); font-style: italic;">Conversion Metrics Screenshot</p>
+                            <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 0.5rem;">[Upload conversions/goals screenshot]</p>
+                        </div>
+                        <div style="margin-top: 1.5rem;">
+                            <div style="display: flex; justify-content: space-around; text-align: center;">
+                                <div>
+                                    <p style="font-size: 2rem; font-weight: 700; color: var(--primary-orange);">340%</p>
+                                    <p style="color: var(--text-light); font-size: 0.9rem;">Lead Growth</p>
+                                </div>
+                                <div>
+                                    <p style="font-size: 2rem; font-weight: 700; color: var(--primary-orange);">850+</p>
+                                    <p style="color: var(--text-light); font-size: 0.9rem;">Monthly Leads</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div style="text-align: center; margin-top: 4rem; padding: 3rem; background: linear-gradient(135deg, var(--primary-navy), #2d3e52); border-radius: 20px; color: white;">
+                <h3 style="color: white; font-size: 2rem; margin-bottom: 1rem;">Want Results Like These?</h3>
+                <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9;">Get your free SEO audit and see how we can grow your organic traffic</p>
+                <a href="#" data-popup="seoAudit" class="btn btn-primary" style="background: var(--primary-orange); color: white; font-size: 1.1rem; padding: 1rem 3rem;">Get Free SEO Audit</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <div class="testimonial-text">"Professional, responsive, and delivered exactly what we needed. The results have been fantastic and we've seen significant improvements."</div>
+                    <div class="testimonial-author">Sydney Business Owner</div>
+                    <div class="testimonial-role">Professional Services</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <div class="testimonial-text">"The team at DSIGNS took the time to understand our business. Their expertise and transparent approach made the entire process smooth."</div>
+                    <div class="testimonial-author">Local Business</div>
+                    <div class="testimonial-role">Parramatta, NSW</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <div class="testimonial-text">"Highly recommend DSIGNS for their professionalism and quality of work. They exceeded our expectations in every way."</div>
+                    <div class="testimonial-author">Sydney Client</div>
+                    <div class="testimonial-role">Service Provider</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="container">
+            <div class="pricing-table">
+                <div style="text-align: center; margin-bottom: 3rem;">
+                    <h2 style="margin-bottom: 1rem;">SEO Services Sydney Pricing</h2>
+                    <p style="color: var(--text-light);">Choose the package that fits your needs and budget</p>
+                </div>
+                <div class="pricing-options">
+                    
+    <div class="pricing-option">
+        <div class="pricing-name">Basic SEO</div>
+        <div class="pricing-price">$1,000</div>
+        <div class="pricing-period">per month + GST</div>
+        <ul class="pricing-features"><li>SEO audit & strategy</li><li>Up to 20 keywords</li><li>On-page optimization</li><li>Basic technical SEO</li><li>Monthly reporting</li><li>Google Analytics setup</li><li>Keyword research</li></ul>
+        <a href="#" data-popup="contact" class="btn btn-secondary">Get Started</a>
+    </div>
+    <div class="pricing-option featured">
+        <div class="pricing-badge">Most Popular - Growth Plans</div>
+        <div class="pricing-name">SEO Package</div>
+        <div class="pricing-price">$3,000</div>
+        <div class="pricing-period">per month + GST</div>
+        <ul class="pricing-features"><li>Complete SEO audit & strategy</li><li>On-page optimization</li><li>Technical SEO improvements</li><li>Content creation (4 blog posts/month)</li><li>Link building & outreach</li><li>Local SEO optimization</li><li>Keyword research & tracking</li><li>Competitor analysis</li><li>Google My Business management</li><li>Monthly SEO reports & meetings</li></ul>
+        <a href="#" data-popup="contact" class="btn btn-primary">Get Started</a>
+    </div>
+    <div class="pricing-option">
+        <div class="pricing-name">Enterprise SEO</div>
+        <div class="pricing-price">$5,000+</div>
+        <div class="pricing-period">per month + GST</div>
+        <ul class="pricing-features"><li>Everything in SEO Package</li><li>Unlimited keywords</li><li>8+ blog posts/month</li><li>Advanced link building</li><li>Multi-location SEO</li><li>Dedicated SEO manager</li><li>Weekly optimization</li><li>Advanced analytics</li><li>Quarterly strategy reviews</li></ul>
+        <a href="#" data-popup="contact" class="btn btn-secondary">Get Started</a>
+    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="content-section" id="lead-form">
+        <div class="container">
+            <div class="lead-form">
+                <h3>Get Your Free Consultation</h3>
+                <p>Tell us about your project and we'll provide expert advice and a custom quote</p>
+                <form>
+                    <div class="form-grid">
+                        <div class="form-group"><label>Full Name *</label><input type="text" required placeholder="Your name"></div>
+                        <div class="form-group"><label>Email *</label><input type="email" required placeholder="your@email.com"></div>
+                        <div class="form-group"><label>Phone *</label><input type="tel" required placeholder="04XX XXX XXX"></div>
+                        <div class="form-group"><label>Company</label><input type="text" placeholder="Your company (optional)"></div>
+                    </div>
+                    <div class="form-group"><label>Tell us about your project</label><textarea placeholder="What are you looking to achieve?"></textarea></div>
+                    <div class="form-submit">
+                        <button type="submit" class="btn btn-primary" style="background: white; color: var(--primary-navy);">Get Free SEO Audit</button>
+                        <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">💬 We'll respond within 24 hours</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 2.5rem;">Let's discuss your project and create a custom solution for your business</p>
+            <a href="#" data-popup="seoAudit" class="btn btn-secondary" style="font-size: 1.2rem;">Get Free SEO Audit</a>
+        </div>
+    </section>
+    <footer>
+        <p><a href="index.html">Home</a><a href="services.html">Services</a><a href="web-design-plans.html">Pricing</a><a href="index.html#contact">Contact</a></p>
+        <p style="margin-top: 1rem;">&copy; 2024 DSIGNS AUSTRALIA PTY LIMITED. All rights reserved.</p>
+        <p style="margin-top: 0.5rem;"><a href="privacy-

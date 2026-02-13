@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = {
-  title: "Growth Plans & Monthly Packages | Sydney Web Designer | DSIGNS",
-  description: "Affordable monthly plans from $250/month. Website care, SEO, Google Ads, and complete marketing packages. Grow your business with DSIGNS.",
+  title: "Growth Plans & Monthly Packages | Sydney Web Designer",
+  description: "Affordable monthly plans from $250/month. Website care, SEO, Google Ads, and complete marketing packages. Grow your business with Sydney Web Designer.",
   keywords: "monthly seo packages, website maintenance, google ads management, digital marketing retainer, growth plans sydney",
 };
 
@@ -11,13 +11,13 @@ export default function GrowthPlansPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="gradient-navy-orange text-white py-20">
+      <section className="bg-[#1e293b] text-white py-20">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
               Growth Plans & Monthly Packages
             </h1>
-            <p className="text-xl text-gray-100 mb-8">
+            <p className="text-xl text-white mb-8">
               Ongoing support and marketing services to help your business grow. From website care
               to complete digital marketing, we have a plan for every stage of your journey.
             </p>
@@ -282,7 +282,7 @@ export default function GrowthPlansPage() {
             </div>
 
             {/* Complete Marketing Package - Ultimate */}
-            <div className="card hover:shadow-card-hover transition-all bg-gradient-to-br from-primary-navy to-primary-orange text-white">
+            <div className="card hover:shadow-card-hover transition-all bg-[#1e293b] text-white">
               <div className="flex flex-col lg:flex-row gap-6">
                 <div className="lg:w-1/3">
                   <div className="inline-block bg-white text-primary-navy px-4 py-1 rounded-full text-sm font-bold mb-3">
@@ -389,9 +389,9 @@ export default function GrowthPlansPage() {
               </ul>
             </div>
 
-            <div className="card bg-gradient-navy text-white">
+            <div className="card bg-[#1e293b] text-white">
               <h3 className="text-xl font-bold mb-4 text-white">Established Business ($5,000 - $10,000/month)</h3>
-              <p className="text-gray-100 mb-4">
+              <p className="text-white mb-4">
                 For businesses with $1M+ annual revenue ready to dominate their market with
                 comprehensive marketing.
               </p>

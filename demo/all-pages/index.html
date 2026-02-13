@@ -1,0 +1,1988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Design Sydney | #1 Digital Marketing Agency | Sydney Web Designer</title>
+    <meta name="description" content="Award-winning web design & digital marketing in Sydney. 500+ websites delivered, 98% client satisfaction. Get stunning websites that convert. Free quote today!">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: var(--dark-navy);
+            color: white;
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        .top-bar-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar-left {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .top-bar-left span {
+            opacity: 0.9;
+        }
+
+        .top-bar-right {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .top-bar-right a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.9;
+            transition: all 0.3s;
+        }
+
+        .top-bar-right a:hover {
+            opacity: 1;
+            color: var(--primary-orange);
+        }
+
+        /* Color Variables */
+        :root {
+            --primary-navy: #1e293b;
+            --primary-blue: #334155;
+            --dark-navy: #0f172a;
+            --light-navy: #e0e7ff;
+            --primary-orange: #f59e0b;
+            --dark-orange: #d97706;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --light-bg: #f8fafc;
+        }
+
+        /* Header */
+        header {
+            background: #fff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .nav-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .nav-bottom {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid #f1f5f9;
+        }
+
+        .nav-bottom .nav-links {
+            margin: 0;
+        }
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-image {
+            height: 50px;
+            width: auto;
+            transition: transform 0.3s;
+        }
+
+        .logo-image:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-orange);
+        }
+
+        /* Mega Menu Styles */
+        .nav-links > li {
+            position: relative;
+        }
+
+        .has-mega-menu > a {
+            cursor: pointer;
+        }
+
+        .has-mega-menu > a::after {
+            content: " ▼";
+            font-size: 0.65rem;
+            margin-left: 0.3rem;
+            opacity: 0.7;
+        }
+
+        .mega-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+            padding: 2.5rem;
+            min-width: 850px;
+            display: none;
+            z-index: 1000;
+            margin-top: 1.2rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .has-mega-menu:hover .mega-menu {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50%) translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+
+        .mega-menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .mega-menu-column h3 {
+            color: var(--primary-navy);
+            font-size: 1.15rem;
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.7rem;
+            border-bottom: 3px solid var(--primary-orange);
+            font-weight: 700;
+        }
+
+        .mega-menu-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mega-menu-links li {
+            margin-bottom: 0;
+        }
+
+        .mega-menu-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            padding: 0.7rem 0.8rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .mega-menu-links a:hover {
+            background: linear-gradient(135deg, #f8fafc, #e0e7ff);
+            color: var(--primary-orange);
+            padding-left: 1.2rem;
+            transform: translateX(5px);
+        }
+
+        .mega-menu-links a::before {
+            content: "→";
+            margin-right: 0.7rem;
+            color: var(--primary-orange);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        }
+
+        .header-cta {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .header-cta .btn {
+            padding: 0.7rem 1.8rem;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-orange);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .header-cta {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: 2px solid;
+        }
+
+        .btn-primary {
+            background: var(--primary-orange);
+            color: white;
+            border-color: var(--primary-orange);
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-orange);
+            border-color: var(--dark-orange);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(245, 158, 11, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-navy);
+            border-color: var(--primary-navy);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-navy);
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-blue) 100%);
+            color: white;
+            padding: 8rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-hero {
+            padding: 1.2rem 3rem;
+            font-size: 1.1rem;
+        }
+
+        .btn-light {
+            background: white;
+            color: var(--primary-navy);
+            border-color: white;
+        }
+
+        .btn-light:hover {
+            background: var(--primary-orange);
+            color: white;
+            border-color: var(--primary-orange);
+        }
+
+        .btn-outline-white {
+            background: transparent;
+            color: white;
+            border-color: white;
+        }
+
+        .btn-outline-white:hover {
+            background: white;
+            color: var(--primary-navy);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border-top: 4px solid var(--primary-orange);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(245, 158, 11, 0.2);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-navy), var(--primary-orange));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card .btn {
+            font-size: 0.95rem;
+            padding: 0.7rem 1.8rem;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 6rem 2rem;
+            background: var(--light-bg);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .portfolio-item {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .portfolio-item > div.portfolio-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .portfolio-content {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .portfolio-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .portfolio-type {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-bottom: 1.2rem;
+        }
+
+        .service-tag {
+            background: var(--light-bg);
+            color: var(--text-dark);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border: 1px solid #e2e8f0;
+        }
+
+        .portfolio-link {
+            color: var(--primary-orange);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .portfolio-link:hover {
+            gap: 1rem;
+        }
+
+        /* Process Section */
+        .process {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-navy), var(--primary-orange));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 0 auto 2rem;
+        }
+
+        .process-step h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .process-step p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 6rem 2rem;
+            background: var(--light-bg);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            text-align: center;
+            position: relative;
+            border: 2px solid transparent;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(245, 158, 11, 0.2);
+            border-color: var(--primary-orange);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary-orange);
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured:hover {
+            transform: scale(1.08) translateY(-10px);
+        }
+
+        .pricing-badge {
+            background: var(--primary-orange);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-card h3 {
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .pricing-price {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary-navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-price span {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            font-weight: normal;
+        }
+
+        .pricing-duration {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 1rem 0;
+            border-bottom: 1px solid #e2e8f0;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-features li::before {
+            content: "✓";
+            color: var(--primary-orange);
+            font-weight: bold;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .pricing-card .btn {
+            width: 100%;
+            margin-top: 1.5rem;
+        }
+
+        .pricing-note {
+            text-align: center;
+            max-width: 800px;
+            margin: 3rem auto 0;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            border-left: 4px solid var(--primary-orange);
+        }
+
+        .pricing-note p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-note strong {
+            color: var(--text-dark);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-blue) 100%);
+            padding: 6rem 2rem;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-section h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        /* Blog Preview Section */
+        .blog-preview {
+            padding: 6rem 2rem;
+            background: var(--light-bg);
+        }
+
+        .blog-preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .blog-preview-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border-top: 4px solid var(--primary-orange);
+        }
+
+        .blog-preview-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(245, 158, 11, 0.15);
+        }
+
+        .blog-preview-card h3 {
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .blog-preview-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-preview-link {
+            color: var(--primary-orange);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s;
+        }
+
+        .blog-preview-link:hover {
+            gap: 1rem;
+        }
+
+        .contact-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .contact-info-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: all 0.3s;
+            border-top: 4px solid var(--primary-orange);
+        }
+
+        .contact-info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(245, 158, 11, 0.15);
+        }
+
+        .contact-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-navy), var(--primary-orange));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+        }
+
+        .contact-info-card h3 {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .contact-info-card p {
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .contact-info-card a {
+            color: var(--primary-orange);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .contact-info-card a:hover {
+            color: var(--dark-orange);
+        }
+
+        .contact-label {
+            display: block;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .contact-form-wrapper {
+            background: var(--light-bg);
+            padding: 4rem;
+            border-radius: 20px;
+        }
+
+        .contact-form {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-form h3 {
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .form-intro {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
+            font-size: 1.1rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s;
+            background: white;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-orange);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group select {
+            cursor: pointer;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--primary-orange);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: var(--dark-orange);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(245, 158, 11, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: #1e293b;
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            color: var(--primary-orange);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-section p {
+            color: #94a3b8;
+            line-height: 1.8;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-orange);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #334155;
+            padding-top: 2rem;
+            text-align: center;
+            color: #94a3b8;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .nav-links {
+                display: none;
+            }
+
+            .nav-bottom {
+                padding-top: 0;
+                border-top: none;
+            }
+
+            .contact-form-wrapper {
+                padding: 2.5rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            .pricing-card.featured:hover {
+                transform: translateY(-10px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo-image {
+                height: 40px;
+            }
+
+            .nav-bottom {
+                margin-top: 0.5rem;
+            }
+
+            .header-cta {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .header-cta .btn {
+                flex: 1;
+                text-align: center;
+            }
+
+            .top-bar-content {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+
+            .top-bar-left,
+            .top-bar-right {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .top-bar-left span {
+                font-size: 0.85rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .services-grid,
+            .portfolio-grid,
+            .process-steps,
+            .contact-info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn-hero {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .pricing-price {
+                font-size: 2.5rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form-wrapper {
+                padding: 2rem 1.5rem;
+            }
+        }
+    
+/* IMPROVED MEGA MENU STYLES */
+/* Improved Mega Menu Styles */
+
+.mega-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, #ffffff 0%, #f8fafc 100%);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    padding: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    border-top: 3px solid var(--primary-orange);
+}
+
+.nav-item:hover .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.mega-menu-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+
+.mega-menu-column {
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
+}
+
+.mega-menu-column:hover {
+    border-color: var(--primary-orange);
+    box-shadow: 0 4px 16px rgba(245, 158, 11, 0.1);
+    transform: translateY(-2px);
+}
+
+.mega-menu-column h3 {
+    color: var(--primary-navy);
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--primary-orange);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.mega-menu-column h3::before {
+    content: '';
+    width: 4px;
+    height: 20px;
+    background: var(--primary-orange);
+    border-radius: 2px;
+}
+
+.mega-menu-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mega-menu-column li {
+    margin-bottom: 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.mega-menu-column li:last-child {
+    border-bottom: none;
+}
+
+.mega-menu-column a {
+    display: flex;
+    align-items: center;
+    padding: 0.9rem 0.75rem;
+    color: #334155;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+.mega-menu-column a:hover {
+    color: var(--primary-orange);
+    background: #fef3e7;
+    padding-left: 1.25rem;
+}
+
+.mega-menu-column a::before {
+    content: '→';
+    margin-right: 0.75rem;
+    color: var(--primary-orange);
+    font-weight: bold;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.mega-menu-column a:hover::before {
+    opacity: 1;
+}
+
+/* Alternating column backgrounds */
+.mega-menu-column:nth-child(1) {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.mega-menu-column:nth-child(2) {
+    background: white;
+}
+
+.mega-menu-column:nth-child(3) {
+    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+}
+
+/* Mobile Responsive */
+@media (max-width: 968px) {
+    .mega-menu-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 2rem 1rem;
+    }
+    
+    .mega-menu-column {
+        padding: 1.25rem;
+    }
+}
+
+</style>
+    <link rel="stylesheet" href="popup-forms.css">
+    <script src="popup-forms.js"></script>
+    <link rel="stylesheet" href="mega-menu-improved.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="top-bar-left">
+                <span>📧 <a href="/cdn-cgi/l/email-protection#234b464f4f4c6347504a444d500d404c4e0d4256" style="color: white; text-decoration: none;"><span class="__cf_email__" data-cfemail="1c74797070735c786f757b726f327f7371327d69">[email&#160;protected]</span></a></span>
+                <span>📞 02 9191 8049</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="about.html">About Us</a>
+                <a href="testimonials.html">Testimonials</a>
+                <a href="careers.html">Careers</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="nav-top">
+                <a href="index.html" class="logo-link">
+                    <img src="sydney_web_designer_logo.png" alt="Sydney Web Designer" class="logo-image">
+                </a>
+                <div class="header-cta">
+                    <a href="#" data-popup="contact" class="btn btn-secondary">Get Quote</a>
+                    <a href="tel:0291918049" class="btn btn-primary">Call Now</a>
+                </div>
+            </div>
+            <div class="nav-bottom">
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li class="has-mega-menu">
+                        <a href="index.html#services">Services</a>
+                        <div class="mega-menu">
+                            <div class="mega-menu-grid">
+                                <!-- Web Design Column -->
+                                <div class="mega-menu-column">
+                                    <h3>Web Design</h3>
+                                    <ul class="mega-menu-links">
+                                        <li><a href="service-custom-web-design.html">Custom Web Design</a></li>
+                                        <li><a href="service-wordpress-development.html">WordPress Development</a></li>
+                                        <li><a href="service-ecommerce-websites.html">E-commerce Websites</a></li>
+                                        <li><a href="service-responsive-design.html">Responsive Design</a></li>
+                                        <li><a href="service-website-redesign.html">Website Redesign</a></li>
+                                        <li><a href="service-landing-pages.html">Landing Pages</a></li>
+                                        <li><a href="service-ui-ux-design.html">UI/UX Design</a></li>
+                                    </ul>
+                                </div>
+
+                                <!-- Branding Column -->
+                                <div class="mega-menu-column">
+                                    <h3>Branding</h3>
+                                    <ul class="mega-menu-links">
+                                        <li><a href="service-logo-design.html">Logo Design</a></li>
+                                        <li><a href="service-brand-identity.html">Brand Identity</a></li>
+                                        <li><a href="service-brand-strategy.html">Brand Strategy</a></li>
+                                        <li><a href="service-graphic-design.html">Graphic Design</a></li>
+                                        <li><a href="service-business-cards.html">Business Cards</a></li>
+                                        <li><a href="service-marketing-materials.html">Marketing Materials</a></li>
+                                    </ul>
+                                </div>
+
+                                <!-- Digital Marketing Column -->
+                                <div class="mega-menu-column">
+                                    <h3>Digital Marketing</h3>
+                                    <ul class="mega-menu-links">
+                                        <li><a href="service-seo-sydney.html">SEO Services</a></li>
+                                        <li><a href="service-google-ads.html">Google Ads Management</a></li>
+                                        <li><a href="service-social-media-marketing.html">Social Media Marketing</a></li>
+                                        <li><a href="service-content-marketing.html">Content Marketing</a></li>
+                                        <li><a href="service-email-marketing.html">Email Marketing</a></li>
+                                        <li><a href="service-local-seo.html">Local SEO</a></li>
+                                        <li><a href="service-conversion-optimization.html">Conversion Optimization</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="index.html#portfolio">Portfolio</a></li>
+                    <li><a href="web-design-plans.html">Web Design Plans</a></li>
+                    <li><a href="growth-plans.html">Growth Plans</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Web Design & Digital Marketing Sydney</h1>
+            <p>Unlock new growth opportunities and solve your digital challenges with expert guidance and dynamic solutions.</p>
+            <div class="hero-buttons">
+                <a href="#" data-popup="contact" class="btn btn-light btn-hero">Get Started</a>
+                <a href="#portfolio" class="btn btn-outline-white btn-hero">View Portfolio</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">Comprehensive digital solutions to transform your business online</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Web Design</h3>
+                    <p>Transform your online presence with strategic web design that combines stunning aesthetics with powerful functionality. We create websites that convert visitors into customers.</p>
+                    <a href="#" data-popup="contact" class="btn btn-primary">Learn More</a>
+                </div>
+
+                <div class="service-card">
+                    <h3>Branding</h3>
+                    <p>Craft a memorable brand identity with our branding expertise. We develop cohesive visual identities that resonate with your target audience and set you apart from competitors.</p>
+                    <a href="#" data-popup="contact" class="btn btn-primary">Learn More</a>
+                </div>
+
+                <div class="service-card">
+                    <h3>Digital Marketing</h3>
+                    <p>Supercharge your growth with proven digital marketing strategies. From SEO to social media, we drive targeted traffic and measurable results for your business.</p>
+                    <a href="#" data-popup="contact" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">Our Work</h2>
+            <p class="section-subtitle">Trusted by businesses across Sydney to deliver exceptional results</p>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://www.sydneywebdesigner.com.au/wp-content/uploads/2023/08/Actuate-Property-Web-Design.png" alt="Actuate Property Website" class="portfolio-image">
+                    <div class="portfolio-content">
+                        <h3>Actuate Property</h3>
+                        <p class="portfolio-type">Property Buyers Agent</p>
+                        <div class="portfolio-services">
+                            <span class="service-tag">Web Design</span>
+                            <span class="service-tag">Branding</span>
+                        </div>
+                        <a href="portfolio-two-brothers.html" class="portfolio-link">View Case Study →</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="https://www.sydneywebdesigner.com.au/wp-content/uploads/2023/08/GPS-Car-Inspections.png" alt="GPS Vehicle Inspections Website" class="portfolio-image">
+                    <div class="portfolio-content">
+                        <h3>GPS Vehicle Inspections</h3>
+                        <p class="portfolio-type">Car Inspection Specialist</p>
+                        <div class="portfolio-services">
+                            <span class="service-tag">Branding</span>
+                            <span class="service-tag">Web Design</span>
+                            <span class="service-tag">SEO</span>
+                            <span class="service-tag">Google Ads</span>
+                            <span class="service-tag">Social Media</span>
+                        </div>
+                        <a href="portfolio-two-brothers.html" class="portfolio-link">View Case Study →</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="https://www.sydneywebdesigner.com.au/wp-content/uploads/2023/08/Finance-Broker-Website.png" alt="Satisfinance Website" class="portfolio-image">
+                    <div class="portfolio-content">
+                        <h3>Satisfinance</h3>
+                        <p class="portfolio-type">Finance Broker</p>
+                        <div class="portfolio-services">
+                            <span class="service-tag">Branding</span>
+                            <span class="service-tag">Web Design</span>
+                        </div>
+                        <a href="portfolio-two-brothers.html" class="portfolio-link">View Case Study →</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="https://www.sydneywebdesigner.com.au/wp-content/uploads/2021/09/Jabbs-Excavation-Website.jpg" alt="Jabbs Excavations Website" class="portfolio-image">
+                    <div class="portfolio-content">
+                        <h3>Jabbs Excavations</h3>
+                        <p class="portfolio-type">Excavation Company</p>
+                        <div class="portfolio-services">
+                            <span class="service-tag">Web Design</span>
+                        </div>
+                        <a href="portfolio-two-brothers.html" class="portfolio-link">View Case Study →</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="https://www.sydneywebdesigner.com.au/wp-content/uploads/2021/09/macbook-pro-mockup-floating-over-a-transparent-background-a11409-19.jpg" alt="RMB Constructions Website" class="portfolio-image">
+                    <div class="portfolio-content">
+                        <h3>RMB Constructions</h3>
+                        <p class="portfolio-type">Home Builder</p>
+                        <div class="portfolio-services">
+                            <span class="service-tag">Web Design</span>
+                        </div>
+                        <a href="portfolio-two-brothers.html" class="portfolio-link">View Case Study →</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="https://www.sydneywebdesigner.com.au/wp-content/uploads/2021/09/Advanced-Tree-Lopping-WEbsite-Design.jpg" alt="Advanced Tree Lopping Website" class="portfolio-image">
+                    <div class="portfolio-content">
+                        <h3>Advanced Tree Lopping</h3>
+                        <p class="portfolio-type">Tree Lopping Service</p>
+                        <div class="portfolio-services">
+                            <span class="service-tag">Branding</span>
+                            <span class="service-tag">Web Design</span>
+                        </div>
+                        <a href="portfolio-two-brothers.html" class="portfolio-link">View Case Study →</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image" style="background: linear-gradient(135deg, #1e293b, #f59e0b);"></div>
+                    <div class="portfolio-content">
+                        <h3>OSAN Ability</h3>
+                        <p class="portfolio-type">NDIS Provider</p>
+                        <div class="portfolio-services">
+                            <span class="service-tag">Branding</span>
+                            <span class="service-tag">Web Design</span>
+                            <span class="service-tag">Google Ads</span>
+                            <span class="service-tag">SEO</span>
+                            <span class="service-tag">Social Media</span>
+                        </div>
+                        <a href="portfolio-two-brothers.html" class="portfolio-link">View Case Study →</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image" style="background: linear-gradient(135deg, #334155, #f59e0b);"></div>
+                    <div class="portfolio-content">
+                        <h3>Tente</h3>
+                        <p class="portfolio-type">Industrial Equipment</p>
+                        <div class="portfolio-services">
+                            <span class="service-tag">Web Design</span>
+                            <span class="service-tag">SEO</span>
+                        </div>
+                        <a href="portfolio-two-brothers.html" class="portfolio-link">View Case Study →</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image" style="background: linear-gradient(135deg, #0f172a, #f59e0b);"></div>
+                    <div class="portfolio-content">
+                        <h3>Castor Master</h3>
+                        <p class="portfolio-type">Equipment Store</p>
+                        <div class="portfolio-services">
+                            <span class="service-tag">Branding</span>
+                            <span class="service-tag">Web Design</span>
+                            <span class="service-tag">SEO</span>
+                            <span class="service-tag">Google Ads</span>
+                        </div>
+                        <a href="portfolio-two-brothers.html" class="portfolio-link">View Case Study →</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image" style="background: linear-gradient(135deg, #334155, #f59e0b);"></div>
+                    <div class="portfolio-content">
+                        <h3>Two Brothers Removalist</h3>
+                        <p class="portfolio-type">Professional Moving Services</p>
+                        <div class="portfolio-services">
+                            <span class="service-tag">Web Design</span>
+                            <span class="service-tag">SEO</span>
+                        </div>
+                        <a href="portfolio-two-brothers.html" class="portfolio-link">View Case Study →</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image" style="background: linear-gradient(135deg, #0f172a, #d97706);"></div>
+                    <div class="portfolio-content">
+                        <h3>The Tspoon Cafe</h3>
+                        <p class="portfolio-type">Cafe & Restaurant</p>
+                        <div class="portfolio-services">
+                            <span class="service-tag">Branding</span>
+                            <span class="service-tag">Web Design</span>
+                        </div>
+                        <a href="portfolio-two-brothers.html" class="portfolio-link">View Case Study →</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image" style="background: linear-gradient(135deg, #1e293b, #ef4444);"></div>
+                    <div class="portfolio-content">
+                        <h3>Deepslice Pizza</h3>
+                        <p class="portfolio-type">Pizza Restaurant</p>
+                        <div class="portfolio-services">
+                            <span class="service-tag">Branding</span>
+                            <span class="service-tag">Web Design</span>
+                        </div>
+                        <a href="portfolio-two-brothers.html" class="portfolio-link">View Case Study →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="process">
+        <div class="container">
+            <h2 class="section-title">How We Work</h2>
+            <p class="section-subtitle">A simple, transparent process to bring your vision to life</p>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Quick Chat</h3>
+                    <p>Call us or leave your details so we can call you back to discuss your project and understand your goals.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Discovery</h3>
+                    <p>At your discovery meeting, we'll go over all the details of your project so that we can prepare an accurate estimate.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Get Started</h3>
+                    <p>We will send the estimate. Once agreed that we're both on the same page, let's get this show on the road!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Google Reviews Section -->
+    <section id="google-reviews" class="testimonials" style="padding: 6rem 2rem; background: var(--light-bg);">
+        <div class="container">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <p class="section-subtitle">Real reviews from real businesses we've helped grow</p>
+            
+            <div style="text-align: center; margin: 2rem 0 3rem;">
+                <div style="display: inline-block; background: white; padding: 1.5rem 3rem; border-radius: 50px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                    <div style="font-size: 2rem; color: #f59e0b; margin-bottom: 0.5rem;">⭐⭐⭐⭐⭐</div>
+                    <div style="font-size: 1.3rem; font-weight: 700; color: var(--primary-navy);">4.9 out of 5</div>
+                    <div style="color: var(--text-light); margin-top: 0.3rem; font-size: 0.95rem;">Based on 50+ Google Reviews</div>
+                </div>
+            </div>
+
+            <!-- Compact Reviews Grid -->
+            <div id="reviews-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                <!-- Review 1 -->
+                <div class="compact-review-card" style="background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 3px 15px rgba(0,0,0,0.08); border-left: 4px solid #f59e0b; transition: all 0.3s;">
+                    <div style="color: #f59e0b; font-size: 1rem; margin-bottom: 0.8rem;">⭐⭐⭐⭐⭐</div>
+                    <p style="color: var(--text-dark); line-height: 1.6; margin-bottom: 1rem; font-size: 0.95rem; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;">"Exceptional!! Very happy with the service. I have used Dsigns Australia for Logo design, Webpage to printing. They have exceeded my expectations all the time."</p>
+                    <div style="border-top: 1px solid #e2e8f0; padding-top: 0.8rem; margin-top: 0.8rem;">
+                        <div style="font-weight: 600; color: var(--primary-navy); font-size: 0.9rem;">Bineesh Chandy</div>
+                        <div style="color: var(--text-light); font-size: 0.85rem;">Konkan Restaurant</div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="compact-review-card" style="background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 3px 15px rgba(0,0,0,0.08); border-left: 4px solid #f59e0b; transition: all 0.3s;">
+                    <div style="color: #f59e0b; font-size: 1rem; margin-bottom: 0.8rem;">⭐⭐⭐⭐⭐</div>
+                    <p style="color: var(--text-dark); line-height: 1.6; margin-bottom: 1rem; font-size: 0.95rem; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;">"We hired DSIGNS to revamp our website with a specific goal - Generate Leads on a daily basis. The results have been fantastic. We are on page#1 for our targeted keywords!"</p>
+                    <div style="border-top: 1px solid #e2e8f0; padding-top: 0.8rem; margin-top: 0.8rem;">
+                        <div style="font-weight: 600; color: var(--primary-navy); font-size: 0.9rem;">NDIS Provider</div>
+                        <div style="color: var(--text-light); font-size: 0.85rem;">Healthcare Services</div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="compact-review-card" style="background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 3px 15px rgba(0,0,0,0.08); border-left: 4px solid #f59e0b; transition: all 0.3s;">
+                    <div style="color: #f59e0b; font-size: 1rem; margin-bottom: 0.8rem;">⭐⭐⭐⭐⭐</div>
+                    <p style="color: var(--text-dark); line-height: 1.6; margin-bottom: 1rem; font-size: 0.95rem; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;">"Bash was simply amazing! Insightful and helpful. He treated my business as his own and helped us work through our most pressing branding and Google ads issues!"</p>
+                    <div style="border-top: 1px solid #e2e8f0; padding-top: 0.8rem; margin-top: 0.8rem;">
+                        <div style="font-weight: 600; color: var(--primary-navy); font-size: 0.9rem;">Civil Contractor</div>
+                        <div style="color: var(--text-light); font-size: 0.85rem;">Construction Services</div>
+                    </div>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="compact-review-card" style="background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 3px 15px rgba(0,0,0,0.08); border-left: 4px solid #f59e0b; transition: all 0.3s;">
+                    <div style="color: #f59e0b; font-size: 1rem; margin-bottom: 0.8rem;">⭐⭐⭐⭐⭐</div>
+                    <p style="color: var(--text-dark); line-height: 1.6; margin-bottom: 1rem; font-size: 0.95rem; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;">"This company is hands down the best, fastest and best digital marketing agency you can find. You can ask for anything and everything and they'll get it done for you!"</p>
+                    <div style="border-top: 1px solid #e2e8f0; padding-top: 0.8rem; margin-top: 0.8rem;">
+                        <div style="font-weight: 600; color: var(--primary-navy); font-size: 0.9rem;">Sydney Business Owner</div>
+                        <div style="color: var(--text-light); font-size: 0.85rem;">Digital Services</div>
+                    </div>
+                </div>
+
+                <!-- Review 5 -->
+                <div class="compact-review-card" style="background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 3px 15px rgba(0,0,0,0.08); border-left: 4px solid #f59e0b; transition: all 0.3s;">
+                    <div style="color: #f59e0b; font-size: 1rem; margin-bottom: 0.8rem;">⭐⭐⭐⭐⭐</div>
+                    <p style="color: var(--text-dark); line-height: 1.6; margin-bottom: 1rem; font-size: 0.95rem; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;">"We hired DSIGNS to design and develop our website. The team were very courteous, flexible and professional to deliver on time and within budget."</p>
+                    <div style="border-top: 1px solid #e2e8f0; padding-top: 0.8rem; margin-top: 0.8rem;">
+                        <div style="font-weight: 600; color: var(--primary-navy); font-size: 0.9rem;">Pulse Tech Systems</div>
+                        <div style="color: var(--text-light); font-size: 0.85rem;">Technology Services</div>
+                    </div>
+                </div>
+
+                <!-- Review 6 -->
+                <div class="compact-review-card" style="background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 3px 15px rgba(0,0,0,0.08); border-left: 4px solid #f59e0b; transition: all 0.3s;">
+                    <div style="color: #f59e0b; font-size: 1rem; margin-bottom: 0.8rem;">⭐⭐⭐⭐⭐</div>
+                    <p style="color: var(--text-dark); line-height: 1.6; margin-bottom: 1rem; font-size: 0.95rem; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;">"I had a very positive experience with Dsigns Australia. They quickly understood what I required and undertook the task with professionalism."</p>
+                    <div style="border-top: 1px solid #e2e8f0; padding-top: 0.8rem; margin-top: 0.8rem;">
+                        <div style="font-weight: 600; color: var(--primary-navy); font-size: 0.9rem;">Danielle Cheuk</div>
+                        <div style="color: var(--text-light); font-size: 0.85rem;">Flavours of Home Blog</div>
+                    </div>
+                </div>
+
+                <!-- Review 7 -->
+                <div class="compact-review-card" style="background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 3px 15px rgba(0,0,0,0.08); border-left: 4px solid #f59e0b; transition: all 0.3s;">
+                    <div style="color: #f59e0b; font-size: 1rem; margin-bottom: 0.8rem;">⭐⭐⭐⭐⭐</div>
+                    <p style="color: var(--text-dark); line-height: 1.6; margin-bottom: 1rem; font-size: 0.95rem; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;">"Thank you DSIGNS for your great work on helping develop our web design. Working with Nishana was a pleasure!"</p>
+                    <div style="border-top: 1px solid #e2e8f0; padding-top: 0.8rem; margin-top: 0.8rem;">
+                        <div style="font-weight: 600; color: var(--primary-navy); font-size: 0.9rem;">Sydney Business</div>
+                        <div style="color: var(--text-light); font-size: 0.85rem;">Professional Services</div>
+                    </div>
+                </div>
+
+                <!-- Review 8 -->
+                <div class="compact-review-card" style="background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 3px 15px rgba(0,0,0,0.08); border-left: 4px solid #f59e0b; transition: all 0.3s;">
+                    <div style="color: #f59e0b; font-size: 1rem; margin-bottom: 0.8rem;">⭐⭐⭐⭐⭐</div>
+                    <p style="color: var(--text-dark); line-height: 1.6; margin-bottom: 1rem; font-size: 0.95rem; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;">"The team at Dsigns Australia have been awesome to work with. They are very responsive and supportive whilst creating my website."</p>
+                    <div style="border-top: 1px solid #e2e8f0; padding-top: 0.8rem; margin-top: 0.8rem;">
+                        <div style="font-weight: 600; color: var(--primary-navy); font-size: 0.9rem;">Service Provider</div>
+                        <div style="color: var(--text-light); font-size: 0.85rem;">Sydney Business</div>
+                    </div>
+                </div>
+
+                <!-- Review 9 -->
+                <div class="compact-review-card" style="background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 3px 15px rgba(0,0,0,0.08); border-left: 4px solid #f59e0b; transition: all 0.3s;">
+                    <div style="color: #f59e0b; font-size: 1rem; margin-bottom: 0.8rem;">⭐⭐⭐⭐⭐</div>
+                    <p style="color: var(--text-dark); line-height: 1.6; margin-bottom: 1rem; font-size: 0.95rem; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;">"We hired DSIGNS to design and build a new website. They were very clear with their communication and we are happy with our final website which is already getting us some leads!"</p>
+                    <div style="border-top: 1px solid #e2e8f0; padding-top: 0.8rem; margin-top: 0.8rem;">
+                        <div style="font-weight: 600; color: var(--primary-navy); font-size: 0.9rem;">Business Owner</div>
+                        <div style="color: var(--text-light); font-size: 0.85rem;">Sydney</div>
+                    </div>
+                </div>
+
+                <!-- Review 10 -->
+                <div class="compact-review-card" style="background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 3px 15px rgba(0,0,0,0.08); border-left: 4px solid #f59e0b; transition: all 0.3s;">
+                    <div style="color: #f59e0b; font-size: 1rem; margin-bottom: 0.8rem;">⭐⭐⭐⭐⭐</div>
+                    <p style="color: var(--text-dark); line-height: 1.6; margin-bottom: 1rem; font-size: 0.95rem; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;">"Professional, responsive, and delivered exactly what we needed. The SEO work has really helped our business get found online."</p>
+                    <div style="border-top: 1px solid #e2e8f0; padding-top: 0.8rem; margin-top: 0.8rem;">
+                        <div style="font-weight: 600; color: var(--primary-navy); font-size: 0.9rem;">Local Business</div>
+                        <div style="color: var(--text-light); font-size: 0.85rem;">Parramatta</div>
+                    </div>
+                </div>
+
+                <!-- Review 11 -->
+                <div class="compact-review-card" style="background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 3px 15px rgba(0,0,0,0.08); border-left: 4px solid #f59e0b; transition: all 0.3s;">
+                    <div style="color: #f59e0b; font-size: 1rem; margin-bottom: 0.8rem;">⭐⭐⭐⭐⭐</div>
+                    <p style="color: var(--text-dark); line-height: 1.6; margin-bottom: 1rem; font-size: 0.95rem; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;">"Great experience working with DSIGNS. They understood our requirements and delivered a beautiful, functional website."</p>
+                    <div style="border-top: 1px solid #e2e8f0; padding-top: 0.8rem; margin-top: 0.8rem;">
+                        <div style="font-weight: 600; color: var(--primary-navy); font-size: 0.9rem;">Retail Business</div>
+                        <div style="color: var(--text-light); font-size: 0.85rem;">Sydney CBD</div>
+                    </div>
+                </div>
+
+                <!-- Review 12 -->
+                <div class="compact-review-card" style="background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 3px 15px rgba(0,0,0,0.08); border-left: 4px solid #f59e0b; transition: all 0.3s;">
+                    <div style="color: #f59e0b; font-size: 1rem; margin-bottom: 0.8rem;">⭐⭐⭐⭐⭐</div>
+                    <p style="color: var(--text-dark); line-height: 1.6; margin-bottom: 1rem; font-size: 0.95rem; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;">"Excellent service from start to finish. The team was patient with all our questions and changes. Highly recommend!"</p>
+                    <div style="border-top: 1px solid #e2e8f0; padding-top: 0.8rem; margin-top: 0.8rem;">
+                        <div style="font-weight: 600; color: var(--primary-navy); font-size: 0.9rem;">Medical Practice</div>
+                        <div style="color: var(--text-light); font-size: 0.85rem;">Western Sydney</div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="testimonials.html" class="btn btn-secondary" style="margin-right: 1rem;">View All Testimonials</a>
+                <a href="https://www.google.com/search?q=DSIGNS+AUSTRALIA" target="_blank" class="btn btn-primary">Leave a Google Review</a>
+            </div>
+        </div>
+
+        <style>
+            .compact-review-card:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 8px 25px rgba(0,0,0,0.12) !important;
+            }
+
+            @media (max-width: 768px) {
+                #reviews-container {
+                    grid-template-columns: 1fr !important;
+                }
+            }
+
+            @media (min-width: 769px) and (max-width: 1024px) {
+                #reviews-container {
+                    grid-template-columns: repeat(2, 1fr) !important;
+                }
+            }
+
+            @media (min-width: 1025px) and (max-width: 1400px) {
+                #reviews-container {
+                    grid-template-columns: repeat(3, 1fr) !important;
+                }
+            }
+
+            @media (min-width: 1401px) {
+                #reviews-container {
+                    grid-template-columns: repeat(4, 1fr) !important;
+                }
+            }
+        </style>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Transform Your Digital Presence?</h2>
+            <p>Let's build the future of your business together</p>
+            <a href="#" data-popup="contact" class="btn btn-light btn-hero">Start Your Project</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Let's discuss your project and how we can help you succeed</p>
+            
+            <div class="contact-wrapper">
+                <!-- Contact Info Cards -->
+                <div class="contact-info-grid">
+                    <div class="contact-info-card">
+                        <div class="contact-icon">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </div>
+                        <h3>Phone</h3>
+                        <p><a href="tel:0291918049">📞 02 9191 8049</a></p>
+                        <span class="contact-label">Mon-Fri: 9AM-5PM</span>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <div class="contact-icon">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Email</h3>
+                        <p><a href="/cdn-cgi/l/email-protection#dcabb9be9cb8afb5bbb2aff2bfb3b1f2bda9"><span style="color: white; text-decoration: none;"><span class="__cf_email__" data-cfemail="83ebe6efefecc3e7f0eae4edf0ade0eceeade2f6">[email&#160;protected]</span></span></a></p>
+                        <span class="contact-label">24/7 Response</span>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <div class="contact-icon">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <h3>Location</h3>
+                        <p>Suite 103 Level 1<br>22 Hunter Street</p>
+                        <span class="contact-label">Parramatta NSW 2150</span>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper">
+                    <div class="contact-form">
+                        <h3>Send Us A Message</h3>
+                        <p class="form-intro">Fill out the form below and we'll get back to you within 24 hours.</p>
+                        
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name *</label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="lastName">Last Name *</label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="phone">Phone *</label>
+                                    <input type="tel" id="phone" name="phone" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="website">Website (if applicable)</label>
+                                <input type="url" id="website" name="website">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="service">Service Interested In</label>
+                                <select id="service" name="service">
+                                    <option value="">Select a service</option>
+                                    <option value="web-design">Web Design</option>
+                                    <option value="branding">Branding</option>
+                                    <option value="digital-marketing">Digital Marketing</option>
+                                    <option value="seo">SEO Services</option>
+                                    <option value="growth-plan">Growth Plan</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Tell us about your project *</label>
+                                <textarea id="message" name="message" required rows="5"></textarea>
+                            </div>
+
+                            <button type="submit" class="submit-btn">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog-preview">
+        <div class="container">
+            <h2 class="section-title">Latest from Our Blog</h2>
+            <p class="section-subtitle">Expert web design tips and insights for Sydney businesses</p>
+            
+            <div class="blog-preview-grid">
+                <article class="blog-preview-card">
+                    <h3>10 Essential Web Design Features Every Sydney Business Needs</h3>
+                    <p>Discover the must-have features that make modern Sydney websites stand out and drive conversions.</p>
+                    <a href="blog-seo-tips-sydney.html" class="blog-preview-link">Read More →</a>
+                </article>
+
+                <article class="blog-preview-card">
+                    <h3>How Much Does Professional Web Design Cost in Sydney?</h3>
+                    <p>Understand the true cost of quality web design in Sydney with our complete pricing guide.</p>
+                    <a href="blog-seo-tips-sydney.html" class="blog-preview-link">Read More →</a>
+                </article>
+
+                <article class="blog-preview-card">
+                    <h3>Mobile-First Web Design: Why Sydney Businesses Can't Ignore It</h3>
+                    <p>Learn why mobile-first design is crucial for Sydney businesses and how to implement it effectively.</p>
+                    <a href="blog-seo-tips-sydney.html" class="blog-preview-link">Read More →</a>
+                </article>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="blog.html" class="btn btn-primary btn-hero">View All Articles</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+                <footer style="background: var(--primary-navy); color: white; padding: 4rem 2rem 2rem;">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <!-- Footer Content Grid -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 3rem;">
+                
+                <!-- Company Info -->
+                <div>
+                    <h3 style="color: white; font-size: 1.3rem; margin-bottom: 1rem;">DSIGNS AUSTRALIA</h3>
+                    <p style="color: #94a3b8; line-height: 1.8; margin-bottom: 1rem;">
+                        Sydney's leading web design and digital marketing agency. We help businesses grow online with professional websites, SEO, and digital marketing services.
+                    </p>
+                    <p style="color: #94a3b8;">
+                        <strong style="color: white;">📍 Location:</strong><br>
+                        Sydney, New South Wales, Australia
+                    </p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 style="color: white; font-size: 1.3rem; margin-bottom: 1rem;">Quick Links</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 0.75rem;"><a href="index.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Home</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="about.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">About Us</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="services.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Services</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="portfolio-two-brothers.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Portfolio</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="blog.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Blog</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="careers.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h3 style="color: white; font-size: 1.3rem; margin-bottom: 1rem;">Our Services</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 0.75rem;"><a href="service-custom-web-design.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Web Design</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="service-seo-sydney.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">SEO Services</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="service-google-ads.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Google Ads</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="service-logo-design.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Branding</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="service-social-media-marketing.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Social Media</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="service-content-marketing.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Content Marketing</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact & Social -->
+                <div>
+                    <h3 style="color: white; font-size: 1.3rem; margin-bottom: 1rem;">Get In Touch</h3>
+                    <p style="color: #94a3b8; margin-bottom: 0.75rem;">
+                        <strong style="color: white;">📧 Email:</strong><br>
+                        <a href="/cdn-cgi/l/email-protection#a2cac7cececde2c6d1cbc5ccd18cc1cdcf8cc3d7" style="color: #f59e0b; text-decoration: none;"><span class="__cf_email__" data-cfemail="6b030e0707042b0f18020c051845080406450a1e">[email&#160;protected]</span></a>
+                    </p>
+                    <p style="color: #94a3b8; margin-bottom: 1.5rem;">
+                        <strong style="color: white;">📞 Phone:</strong><br>
+                        <a href="tel:0291918049" style="color: #f59e0b; text-decoration: none;">02 9191 8049</a>
+                    </p>
+                    
+                    <!-- Social Media Links -->
+                    <h4 style="color: white; font-size: 1.1rem; margin-bottom: 1rem;">Follow Us</h4>
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="https://www.facebook.com/dsignsaustralia" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; background: #1877f2; color: white; border-radius: 50%; text-decoration: none; font-size: 1.5rem; transition: all 0.3s;" onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 5px 15px rgba(24, 119, 242, 0.4)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+                            <span style="font-family: Arial, sans-serif;">f</span>
+                        </a>
+                        <a href="https://www.instagram.com/dsignsaustralia" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: white; border-radius: 50%; text-decoration: none; font-size: 1.5rem; transition: all 0.3s;" onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 5px 15px rgba(225, 48, 108, 0.4)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+                            <span style="font-family: Arial, sans-serif; font-weight: bold;">📷</span>
+                        </a>
+                        <a href="https://www.linkedin.com/company/dsigns-australia" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; background: #0077b5; color: white; border-radius: 50%; text-decoration: none; font-size: 1.5rem; transition: all 0.3s;" onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 5px 15px rgba(0, 119, 181, 0.4)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+                            <span style="font-family: Arial, sans-serif; font-weight: bold;">in</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div style="border-top: 1px solid #334155; padding-top: 2rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+                <p style="color: #94a3b8; margin: 0;">
+                    &copy; 2025 DSIGNS AUSTRALIA PTY LIMITED. All rights reserved.
+                </p>
+                <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+                    <a href="privacy-policy.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Privacy Policy</a>
+                    <a href="terms-conditions.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.s

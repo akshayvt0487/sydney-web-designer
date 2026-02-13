@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Branding Sydney | Logo Design & Brand Identity | Sydney</title>
+    <meta name="description" content="Professional branding services in Sydney. Logo design, brand identity, and complete brand development. Create a memorable brand that stands out. Get a quote today.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        :root {
+            --primary-navy: #1e293b;
+            --primary-blue: #334155;
+            --dark-navy: #0f172a;
+            --primary-orange: #f59e0b;
+            --dark-orange: #d97706;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --light-bg: #f8fafc;
+        }
+
+        .top-bar {
+            background: var(--dark-navy);
+            color: white;
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        .top-bar-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar-left {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .top-bar-right {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .top-bar-right a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.9;
+        }
+
+        .top-bar-right a:hover {
+            opacity: 1;
+            color: var(--primary-orange);
+        }
+
+        header {
+            background: #fff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .nav-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .logo-image {
+            height: 50px;
+            width: auto;
+        }
+
+        .header-cta {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.7rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: 2px solid;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background: var(--primary-orange);
+            color: white;
+            border-color: var(--primary-orange);
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-orange);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-navy);
+            border-color: var(--primary-navy);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-navy);
+            color: white;
+        }
+
+        .nav-bottom {
+            display: flex;
+            justify-content: center;
+            padding-top: 1rem;
+            border-top: 1px solid #f1f5f9;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-orange);
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            padding: 1rem 0;
+            min-width: 250px;
+            margin-top: 0.5rem;
+        }
+
+        .nav-item:hover .dropdown {
+            display: block;
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 0.8rem 1.5rem;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .dropdown a:hover {
+            background: var(--light-bg);
+            color: var(--primary-orange);
+        }
+
+        .page-hero {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-blue) 100%);
+            color: white;
+            padding: 6rem 2rem 5rem;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .page-hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        .breadcrumb {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .breadcrumb a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .content-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+        }
+
+        .intro-text {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+        }
+
+        .intro-text strong {
+            color: var(--text-dark);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin: 4rem 0;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--primary-orange);
+        }
+
+        .feature-card h3 {
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-card li {
+            padding: 0.5rem 0;
+            color: var(--text-light);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+        }
+
+        .feature-card li::before {
+            content: "✓";
+            color: var(--primary-orange);
+            font-weight: bold;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .process-section {
+            background: var(--light-bg);
+            padding: 6rem 2rem;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .process-step {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-navy), var(--primary-orange));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin: 0 auto 1.5rem;
+        }
+
+        .process-step h3 {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .process-step p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-blue) 100%);
+            padding: 5rem 2rem;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .faq-section {
+            max-width: 900px;
+            margin: 6rem auto;
+            padding: 0 2rem;
+        }
+
+        .faq-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .faq-item h3 {
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .faq-item p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        footer {
+            background: #1e293b;
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            color: var(--primary-orange);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-orange);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #334155;
+            padding-top: 2rem;
+            text-align: center;
+            color: #94a3b8;
+        }
+
+        @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .nav-links {
+                display: none;
+            }
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            .top-bar-content {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="popup-forms.css">
+    <script src="popup-forms.js"></script>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="top-bar-left">
+                <span>📧 <a href="/cdn-cgi/l/email-protection#4129242d2d2e01253228262f326f222e2c6f2034" style="color: white; text-decoration: none;"><span class="__cf_email__" data-cfemail="7e161b1212113e1a0d1719100d501d1113501f0b">[email&#160;protected]</span></a></span>
+                <span>📞 02 9191 8049</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="about.html">About Us</a>
+                <a href="testimonials.html">Testimonials</a>
+                <a href="careers.html">Careers</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <nav>
+            <div class="nav-top">
+                <a href="index.html">
+                    <img src="sydney_web_designer_logo.png" alt="Sydney Web Designer" class="logo-image">
+                </a>
+                <div class="header-cta">
+                    <a href="contact.html" class="btn btn-secondary">Get Quote</a>
+                    <a href="tel:0291918049" class="btn btn-primary">Call Now</a>
+                </div>
+            </div>
+            <div class="nav-bottom">
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li class="nav-item">
+                        <a href="index.html#services">Services</a>
+                        <div class="dropdown">
+                            <a href="web-design.html">Web Design</a>
+                            <a href="branding.html">Branding</a>
+                            <a href="digital-marketing.html">Digital Marketing</a>
+                        </div>
+                    </li>
+                    <li><a href="index.html#portfolio">Portfolio</a></li>
+                    <li><a href="web-design-plans.html">Web Design Plans</a></li>
+                    <li><a href="growth-plans.html">Growth Plans</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-hero">
+        <h1>Professional Branding Services Sydney</h1>
+        <p>Create a memorable brand identity that resonates with your audience and stands out from competitors</p>
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> / <a href="index.html#services">Services</a> / <span>Branding</span>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <h2 class="section-title">Expert Branding Services in Sydney</h2>
+        <p class="section-subtitle">Building memorable brands that connect with customers and drive business growth</p>
+
+        <div class="intro-text">
+            <p><strong>Your brand is more than just a logo—it's the complete experience customers have with your business.</strong> It's your reputation, your values, your visual identity, and the emotions you evoke. At Sydney Web Designer, we specialize in creating comprehensive brand identities that help Sydney businesses stand out in crowded markets.</p>
+
+            <p>We work with startups launching their first brand, established businesses looking to rebrand, and growing companies refining their identity. Whether you need a complete brand development from scratch or a refresh to modernize your existing brand, we deliver strategic, creative solutions tailored to your business.</p>
+
+            <p><strong>Our branding services include:</strong> Logo design, brand strategy, visual identity systems, brand guidelines, marketing collateral, and complete brand launches. Every brand we create is unique, memorable, and designed to resonate with your target audience while differentiating you from competitors.</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Logo Design</h3>
+                <p>Your logo is the cornerstone of your brand identity. We create distinctive, memorable logos that represent your business values and appeal to your target market.</p>
+                <ul>
+                    <li>Custom logo concepts</li>
+                    <li>Multiple design variations</li>
+                    <li>Unlimited revisions</li>
+                    <li>All file formats provided</li>
+                    <li>Trademark-ready files</li>
+                    <li>Full ownership rights</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <h3>Brand Strategy</h3>
+                <p>Great brands start with solid strategy. We define your brand positioning, messaging, target audience, and competitive differentiation before designing anything.</p>
+                <ul>
+                    <li>Market research & analysis</li>
+                    <li>Competitor analysis</li>
+                    <li>Brand positioning</li>
+                    <li>Target audience definition</li>
+                    <li>Brand messaging framework</li>
+                    <li>Value proposition development</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <h3>Visual Identity System</h3>
+                <p>Consistency builds recognition. We develop complete visual identity systems that ensure your brand looks cohesive across all touchpoints.</p>
+                <ul>
+                    <li>Color palette selection</li>
+                    <li>Typography system</li>
+                    <li>Brand patterns & textures</li>
+                    <li>Icon library</li>
+                    <li>Image style guidelines</li>
+                    <li>Design element library</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <h3>Brand Guidelines</h3>
+                <p>Maintain brand consistency with comprehensive brand guidelines that document how to use your brand elements correctly across all applications.</p>
+                <ul>
+                    <li>Logo usage rules</li>
+                    <li>Color specifications</li>
+                    <li>Typography guidelines</li>
+                    <li>Do's and don'ts</li>
+                    <li>Application examples</li>
+                    <li>Digital brand guide</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <h3>Marketing Collateral</h3>
+                <p>Bring your brand to life across all marketing materials with professionally designed collateral that reinforces your brand identity.</p>
+                <ul>
+                    <li>Business cards</li>
+                    <li>Letterheads & invoices</li>
+                    <li>Brochures & flyers</li>
+                    <li>Social media templates</li>
+                    <li>Email signatures</li>
+                    <li>Presentation templates</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <h3>Brand Refresh & Rebranding</h3>
+                <p>Evolve your existing brand to stay relevant and competitive. We modernize outdated brands while maintaining brand equity and recognition.</p>
+                <ul>
+                    <li>Brand audit</li>
+                    <li>Modernization strategy</li>
+                    <li>Logo evolution</li>
+                    <li>Updated visual identity</li>
+                    <li>Transition planning</li>
+                    <li>Launch strategy</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="process-section">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 class="section-title" style="text-align: center;">Our Branding Process</h2>
+            <p class="section-subtitle" style="text-align: center;">A strategic approach to building powerful brands</p>
+
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Discovery & Research</h3>
+                    <p>We deep-dive into your business, industry, competitors, and target audience to understand what makes you unique and how to position your brand effectively.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Brand Strategy</h3>
+                    <p>We define your brand positioning, messaging, personality, and values. This strategic foundation guides all creative decisions.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Creative Concepts</h3>
+                    <p>Our designers create multiple logo concepts and visual directions based on the approved strategy. You'll see diverse creative approaches to choose from.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Refinement</h3>
+                    <p>We refine your selected concept through unlimited revisions until the design perfectly represents your brand vision.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3>Brand System Development</h3>
+                    <p>We expand the approved logo into a complete visual identity system including colors, typography, patterns, and supporting elements.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">6</div>
+                    <h3>Guidelines & Launch</h3>
+                    <p>We create comprehensive brand guidelines and help you launch your new brand across all touchpoints with confidence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <h2 class="section-title">Why Choose Sydney Web Designer?</h2>
+        <p class="section-subtitle">13+ years of experience delivering results for Sydney businesses</p>
+
+        <div class="intro-text">
+            <p><strong>We're not just web designers—we're digital growth partners.</strong> Since 2011, we've helped hundreds of Sydney businesses establish powerful online presences that drive real business growth. Here's what sets us apart:</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Local Sydney Expertise</h3>
+                <p>Based in Parramatta, we understand the Sydney market, local competition, and what resonates with Australian audiences. We've worked with businesses across every Sydney suburb and know what works.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Proven Track Record</h3>
+                <p>With 500+ websites delivered and a 98% client satisfaction rate, we have the experience and results to back up our expertise. View our portfolio to see our work.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Full-Service Agency</h3>
+                <p>From initial design to ongoing SEO and digital marketing, we provide everything you need under one roof. No need to coordinate multiple agencies.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Transparent Pricing</h3>
+                <p>No hidden fees or surprise charges. We provide clear, detailed quotes upfront so you know exactly what you're getting and what it costs.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Ongoing Support</h3>
+                <p>We don't disappear after launch. Our support packages ensure your website stays secure, updated, and performing at its best.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Results-Focused</h3>
+                <p>Beautiful design is important, but results matter more. Every decision we make is guided by data and focused on achieving your business objectives.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Common questions about our branding services</p>
+
+        <div class="faq-item">
+            <h3>How much does a logo design cost in Sydney?</h3>
+            <p>Logo design packages typically range from $1,500 for a basic logo to $5,000+ for comprehensive brand identity systems. The cost depends on the scope of work, number of concepts, revisions, and deliverables. Contact us for a detailed quote based on your specific needs.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How long does the branding process take?</h3>
+            <p>A standard logo design project takes 2-3 weeks from initial consultation to final delivery. Complete brand identity projects with strategy, guidelines, and collateral typically take 4-6 weeks. Rush services are available for faster turnaround if needed.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What file formats will I receive?</h3>
+            <p>You'll receive all essential file formats including vector files (AI, EPS, SVG), high-resolution raster files (PNG, JPG), and editable source files. All files are provided in both color and black & white versions, optimized for print and digital use.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Will I own the rights to my logo?</h3>
+            <p>Yes, absolutely. Upon final payment, you receive complete ownership and copyright of your logo and all brand assets. You're free to use, modify, and trademark your logo without any restrictions or ongoing fees.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How many logo concepts will I see?</h3>
+            <p>Our standard process includes 3-5 initial logo concepts based on the approved strategy. You select your preferred direction, and we refine it through unlimited revisions until you're completely satisfied with the result.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Can you help trademark my logo?</h3>
+            <p>We provide trademark-ready logo files and can advise on the trademarking process. For actual trademark registration with IP Australia, we recommend consulting a trademark attorney. We ensure your logo design is unique and suitable for trademark protection.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What's included in brand guidelines?</h3>
+            <p>Our brand guidelines document includes logo usage rules, color specifications (RGB, CMYK, HEX, Pantone), typography guidelines, spacing requirements, dos and don'ts, and application examples. This ensures consistent brand presentation across all materials.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Do you design business cards and other materials?</h3>
+            <p>Yes, we design complete marketing collateral including business cards, letterheads, brochures, social media templates, email signatures, and more. These can be included in your initial package or added later as your brand evolves.</p>
+        </div>
+    </section>
+
+    <section class="content-section" style="background: var(--light-bg);">
+        <h2 class="section-title" style="text-align: center;">Our Branding Portfolio</h2>
+        <p class="section-subtitle" style="text-align: center;">Recent brand identities we've created for Sydney businesses</p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem; margin-top: 3rem;">
+            <div style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-top: 4px solid var(--primary-orange);">
+                <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #1e293b, #f59e0b); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; font-weight: 800;">AP</div>
+                <div style="padding: 2rem;">
+                    <h3 style="font-size: 1.5rem; color: var(--text-dark); margin-bottom: 0.5rem;">Actuate Property</h3>
+                    <p style="color: var(--text-light); margin-bottom: 1rem;">Property Buyers Agent</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+                        <span style="background: var(--light-bg); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Logo Design</span>
+                        <span style="background: var(--light-bg); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Brand Identity</span>
+                        <span style="background: var(--light-bg); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Brand Guidelines</span>
+                    </div>
+                    <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6;">Complete brand identity for property advisory firm including professional logo, color palette, and marketing materials.</p>
+                </div>
+            </div>
+
+            <div style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-top: 4px solid var(--primary-orange);">
+                <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #334155, #f59e0b); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; font-weight: 800;">2BR</div>
+                <div style="padding: 2rem;">
+                    <h3 style="font-size: 1.5rem; color: var(--text-dark); margin-bottom: 0.5rem;">Two Brothers Removalist</h3>
+                    <p style="color: var(--text-light); margin-bottom: 1rem;">Professional Moving Services</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+                        <span style="background: var(--light-bg); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Logo Design</span>
+                        <span style="background: var(--light-bg); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Brand Identity</span>
+                        <span style="background: var(--light-bg); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Vehicle Branding</span>
+                    </div>
+                    <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6;">Professional branding for removalist company including logo, business cards, and vehicle signage design.</p>
+                </div>
+            </div>
+
+            <div style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-top: 4px solid var(--primary-orange);">
+                <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #0f172a, #ef4444); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; font-weight: 800;">TS</div>
+                <div style="padding: 2rem;">
+                    <h3 style="font-size: 1.5rem; color: var(--text-dark); margin-bottom: 0.5rem;">The Tspoon Cafe</h3>
+                    <p style="color: var(--text-light); margin-bottom: 1rem;">Cafe & Restaurant</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+                        <span style="background: var(--light-bg); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Logo Design</span>
+                        <span style="background: var(--light-bg); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Menu Design</span>
+                        <span style="background: var(--light-bg); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Social Media</span>
+                    </div>
+                    <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6;">Complete cafe branding including logo, menu design, signage, and social media templates.</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="index.html#portfolio" class="btn btn-primary" style="padding: 1rem 2rem;">View Full Portfolio</a>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <h2 class="section-title" style="text-align: center;">Get Your Free Branding Quote</h2>
+        <p class="section-subtitle" style="text-align: center;">Tell us about your branding needs and we'll provide a detailed proposal</p>
+
+        <div style="max-width: 800px; margin: 0 auto; background: white; padding: 3rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+            <form action="#" method="post">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+                    <div>
+                        <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-dark);">First Name *</label>
+                        <input type="text" name="first_name" required style="width: 100%; padding: 1rem; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 1rem;">
+                    </div>
+                    <div>
+                        <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-dark);">Last Name *</label>
+                        <input type="text" name="last_name" required style="width: 100%; padding: 1rem; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 1rem;">
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+                    <div>
+                        <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-dark);">Email *</label>
+                        <input type="email" name="email" required style="width: 100%; padding: 1rem; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 1rem;">
+                    </div>
+                    <div>
+                        <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-dark);">Phone *</label>
+                        <input type="tel" name="phone" required style="width: 100%; padding: 1rem; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 1rem;">
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-dark);">Company/Business Name *</label>
+                    <input type="text" name="company" required style="width: 100%; padding: 1rem; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 1rem;">
+                </div>
+
+                <div class="form-group">
+                    <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-dark);">Branding Service Needed *</label>
+                    <select name="service_type" required style="width: 100%; padding: 1rem; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 1rem;">
+                        <option value="">Select branding service...</option>
+                        <option value="logo_design">Logo Design</option>
+                        <option value="brand_identity">Complete Brand Identity</option>
+                        <option value="rebrand">Brand Refresh/Rebrand</option>
+                        <option value="brand_guidelines">Brand Guidelines</option>
+                        <option value="marketing_collateral">Marketing Collateral Design</option>
+                        <option value="full_package">Complete Branding Package</option>
+                    </select>
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-dark);">Do you have an existing logo?</label>
+                    <select name="existing_logo" style="width: 100%; padding: 1rem; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 1rem;">
+                        <option value="">Select...</option>
+                        <option value="no">No, starting from scratch</option>
+                        <option value="yes_refresh">Yes, need a refresh</option>
+                        <option value="yes_keep">Yes, keeping current logo</option>
+                    </select>
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-dark);">Project Timeline *</label>
+                    <select name="timeline" required style="width: 100%; padding: 1rem; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 1rem;">
+                        <option value="">Select timeline...</option>
+                        <option value="urgent">Urgent (1-2 weeks)</option>
+                        <option value="normal">Normal (3-4 weeks)</option>
+                        <option value="flexible">Flexible (4+ weeks)</option>
+                    </select>
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-dark);">Budget Range</label>
+                    <select name="budget" style="width: 100%; padding: 1rem; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 1rem;">
+                        <option value="">Select budget range...</option>
+                        <option value="under2k">Under $2,000</option>
+                        <option value="2-5k">$2,000 - $5,000</option>
+                        <option value="5-10k">$5,000 - $10,000</option>
+                        <option value="10k+">$10,000+</option>
+                    </select>
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-dark);">Tell us about your branding needs *</label>
+                    <textarea name="message" required rows="5" style="width: 100%; padding: 1rem; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 1rem; font-family: inherit;" placeholder="What's your vision for your brand? Any specific styles or competitors you like? What makes your business unique?"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1.2rem; font-size: 1.1rem; cursor: pointer; border: none;">Get Your Free Branding Quote</button>
+            </form>
+
+            <p style="text-align: center; margin-top: 1.5rem; color: var(--text-light); font-size: 0.9rem;">💬 We'll respond within 24 hours with a detailed branding proposal and pricing.</p>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <h2>Ready to Transform Your Online Presence?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2.5rem;">Let's create a website that drives real business growth for your Sydney company</p>
+            <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                <a href="contact.html" class="btn" style="padding: 1rem 2.5rem; font-size: 1.1rem; background: white; color: var(--primary-navy); border-color: white;">Get Your Free Quote</a>
+                <a href="index.html#portfolio" class="btn btn-secondary" style="padding: 1rem 2.5rem; font-size: 1.1rem; background: rgba(255,255,255,0.1); color: white; border-color: white;">View Our Work</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sydney Web Designer</h3>
+                <p style="color: #94a3b8; line-height: 1.8;">Transforming businesses through innovative web design and digital marketing solutions.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li><a href="web-design.html">Web Design</a></li>
+                    <li><a href="branding.html">Branding</a></li>
+                    <li><a href="digital-marketing.html">Digital Marketing</a></li>
+                    <li><a href="index.html#google-reviews">Pricing</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul class="footer-links">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <ul class="footer-links">
+                    <li><a href="tel:0291918049">📞 02 9191 8049</a></li>
+                    <li><a href="/cdn-cgi/l/email-protection#670f020b0b082703140e0009144904080a

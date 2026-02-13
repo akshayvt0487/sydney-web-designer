@@ -18,7 +18,7 @@ export default function CTASection({
   gradient = true,
 }: CTASectionProps) {
   return (
-    <section className={gradient ? "gradient-navy-orange text-white py-20" : "bg-gray-50 py-20"}>
+    <section className={gradient ? "bg-[#1e293b] text-white py-20" : "bg-gray-50 py-20"}>
       <div className="container text-center">
         <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${gradient ? 'text-white' : 'text-primary-navy'}`}>
           {title}

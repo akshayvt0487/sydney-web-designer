@@ -43,12 +43,12 @@ export default function EmailMarketingPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateServiceSchema(service.name, service.heroDescription)) }} />
-      <section className="bg-gradient-navy text-white py-20">
+      <section className="bg-[#1e293b] text-white py-20">
         <div className="container">
           <div className="max-w-3xl">
             <div className="inline-block bg-primary-orange/20 text-primary-orange px-4 py-2 rounded-full text-sm font-semibold mb-6">{service.icon} {service.name}</div>
             <h1 className="text-5xl font-bold mb-6 text-white">Email Marketing That Drives Repeat Business</h1>
-            <p className="text-xl text-gray-300 mb-8">Build customer relationships and drive repeat business with effective email marketing campaigns. High ROI strategies that turn subscribers into buyers.</p>
+            <p className="text-xl text-white mb-8">Build customer relationships and drive repeat business with effective email marketing campaigns. High ROI strategies that turn subscribers into buyers.</p>
             <div className="flex flex-wrap gap-4">
               <button data-popup="contact" className="btn btn-primary">Start Email Marketing</button>
               <Link href="/portfolio" className="btn btn-white">View Our Work</Link>
@@ -72,7 +72,7 @@ export default function EmailMarketingPage() {
             <h2 className="text-4xl font-bold mb-4">Our Email Marketing Process</h2>
             <p className="text-xl text-gray-600">Strategic approach to email campaigns that convert.</p>
           </div>
-          <div className="grid-2 max-w-4xl mx-auto">{process.map((item) => (<div key={item.step} className="card hover:shadow-card-hover transition-shadow"><div className="flex items-start gap-4"><div className="w-12 h-12 bg-gradient-navy-orange rounded-full flex items-center justify-center text-white font-bold text-xl flex-shrink-0">{item.step}</div><div><h3 className="text-xl font-bold mb-2">{item.title}</h3><p className="text-gray-600">{item.description}</p></div></div></div>))}</div>
+          <div className="grid-2 max-w-4xl mx-auto">{process.map((item) => (<div key={item.step} className="card hover:shadow-card-hover transition-shadow"><div className="flex items-start gap-4"><div className="w-12 h-12 bg-[#f59e0b] rounded-full flex items-center justify-center text-white font-bold text-xl flex-shrink-0">{item.step}</div><div><h3 className="text-xl font-bold mb-2">{item.title}</h3><p className="text-gray-600">{item.description}</p></div></div></div>))}</div>
         </div>
       </section>
       {projects.length > 0 && (<section className="py-20"><div className="container"><div className="text-center max-w-3xl mx-auto mb-12"><h2 className="text-4xl font-bold mb-4">Email Marketing Success Stories</h2><p className="text-xl text-gray-600">Businesses growing revenue with email campaigns.</p></div><div className="grid-3">{projects.map((project) => (<PortfolioCard key={project.id} project={project} />))}</div><div className="text-center mt-12"><Link href="/portfolio" className="btn btn-primary">View All Projects</Link></div></div></section>)}

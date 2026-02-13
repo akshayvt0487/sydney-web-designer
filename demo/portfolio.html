@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Portfolio | Sydney Web Designer</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; }
+        :root {
+            --primary-navy: #1e293b;
+            --primary-orange: #f59e0b;
+        }
+        header { background: var(--primary-navy); color: white; padding: 2rem 0; text-align: center; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
+        h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        .portfolio-item { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); transition: transform 0.3s; }
+        .portfolio-item:hover { transform: translateY(-5px); box-shadow: 0 5px 20px rgba(0,0,0,0.2); }
+        .portfolio-content { padding: 1.5rem; }
+        .portfolio-content h3 { color: var(--primary-navy); margin-bottom: 0.5rem; }
+        .portfolio-content a { color: var(--primary-orange); text-decoration: none; font-weight: bold; }
+        .btn { display: inline-block; padding: 1rem 2rem; background: var(--primary-orange); color: white; text-decoration: none; border-radius: 5px; margin-top: 2rem; }
+        footer { background: var(--primary-navy); color: white; padding: 2rem 0; text-align: center; margin-top: 3rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Our Portfolio</h1>
+        <p>Showcasing our best work - 500+ successful projects delivered!</p>
+    </header>
+
+    <div class="container">
+        <h2>Recent Projects</h2>
+
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <div class="portfolio-content">
+                    <h3>2 Brothers Removals</h3>
+                    <p>Complete website redesign and SEO optimization for Sydney's leading removalist company.</p>
+                    <a href="portfolio-two-brothers.html">View Case Study →</a>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <div class="portfolio-content">
+                    <h3>GPS Vehicle Inspections</h3>
+                    <p>Custom website and local SEO campaign delivering 250% traffic increase.</p>
+                    <a href="portfolio-two-brothers.html">View Case Study →</a>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <div class="portfolio-content">
+                    <h3>OSAN Ability Assist</h3>
+                    <p>NDIS provider website with accessibility features and online booking system.</p>
+                    <a href="portfolio-two-brothers.html">View Case Study →</a>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <div class="portfolio-content">
+                    <h3>Actuate Property</h3>
+                    <p>Real estate website with property management system and lead generation.</p>
+                    <a href="portfolio-two-brothers.html">View Case Study →</a>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <div class="portfolio-content">
+                    <h3>Jabbs Excavations</h3>
+                    <p>Construction company website with project gallery and quote system.</p>
+                    <a href="portfolio-two-brothers.html">View Case Study →</a>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <div class="portfolio-content">
+                    <h3>T Spoon Cafe</h3>
+                    <p>Restaurant website with online ordering and reservation system.</p>
+                    <a href="portfolio-two-brothers.html">View Case Study →</a>
+                </div>
+            </div>
+        </div>
+
+        <p style="text-align: center;">
+            <a href="index.html" class="btn">← Back to Homepage</a>
+            <a href="contact.html" class="btn">Get Your Free Quote</a>
+        </p>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 DSIGNS AUSTRALIA PTY LIMITED. All rights reserved.</p>
+    </footer>
+</body>
+</html>

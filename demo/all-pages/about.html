@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Sydney Web Designer | 13+ Years of Digital Excellence</title>
+    <meta name="description" content="Learn about Sydney Web Designer - 13+ years helping Sydney businesses grow online. Meet our team and discover our commitment to excellence.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        :root {
+            --primary-navy: #1e293b;
+            --primary-blue: #334155;
+            --dark-navy: #0f172a;
+            --light-navy: #e0e7ff;
+            --primary-orange: #f59e0b;
+            --dark-orange: #d97706;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --light-bg: #f8fafc;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: var(--dark-navy);
+            color: white;
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        .top-bar-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar-left {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .top-bar-left a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+
+        .top-bar-left a:hover {
+            opacity: 1;
+            color: var(--primary-orange);
+        }
+
+        .top-bar-right {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .top-bar-right a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+
+        .top-bar-right a:hover {
+            opacity: 1;
+        }
+
+        /* Header */
+        header {
+            background: #fff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .nav-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .logo-image {
+            height: 50px;
+            width: auto;
+            transition: transform 0.3s;
+        }
+
+        .logo-image:hover {
+            transform: scale(1.05);
+        }
+
+        .header-cta {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.7rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: 2px solid;
+            display: inline-block;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background: var(--primary-orange);
+            color: white;
+            border-color: var(--primary-orange);
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-orange);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-navy);
+            border-color: var(--primary-navy);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-navy);
+            color: white;
+        }
+
+        .nav-bottom {
+            display: flex;
+            justify-content: center;
+            padding-top: 1rem;
+            border-top: 1px solid #f1f5f9;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            margin: 0;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-orange);
+        }
+
+        /* Page Hero */
+        .page-hero {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-blue) 100%);
+            color: white;
+            padding: 6rem 2rem 5rem;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .page-hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        /* Content Section */
+        .content-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+            font-size: 1.2rem;
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        .story-content {
+            max-width: 900px;
+            margin: 0 auto 5rem;
+        }
+
+        .story-content p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin: 4rem 0;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--primary-orange);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin: 4rem 0;
+        }
+
+        .value-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--primary-orange);
+        }
+
+        .value-card h3 {
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .value-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-blue) 100%);
+            padding: 5rem 2rem;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .btn-light {
+            background: white;
+            color: var(--primary-navy);
+            border-color: white;
+        }
+
+        .btn-light:hover {
+            background: var(--primary-orange);
+            color: white;
+            border-color: var(--primary-orange);
+        }
+
+        footer {
+            background: #1e293b;
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            color: var(--primary-orange);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-section p,
+        .footer-section a,
+        .footer-section li {
+            color: #94a3b8;
+            line-height: 1.8;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-orange);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #334155;
+            padding-top: 2rem;
+            text-align: center;
+            color: #94a3b8;
+        }
+
+        @media (max-width: 1024px) {
+            .nav-links {
+                display: none;
+            }
+            .nav-bottom {
+                padding-top: 0;
+                border-top: none;
+            }
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            .top-bar-content {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="popup-forms.css">
+    <script src="popup-forms.js"></script>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="top-bar-left">
+                <span>📧 <a href="/cdn-cgi/l/email-protection#7e161b1212113e1a0d1719100d501d1113501f0b" style="color: white; text-decoration: none;"><span class="__cf_email__" data-cfemail="650d0009090a2501160c020b164b060a084b0410">[email&#160;protected]</span></a></span>
+                <span>📞 02 9191 8049</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="about.html">About Us</a>
+                <a href="testimonials.html">Testimonials</a>
+                <a href="careers.html">Careers</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="nav-top">
+                <a href="index.html">
+                    <img src="sydney_web_designer_logo.png" alt="Sydney Web Designer" class="logo-image">
+                </a>
+                <div class="header-cta">
+                    <a href="contact.html" class="btn btn-secondary">Get Quote</a>
+                    <a href="tel:0291918049" class="btn btn-primary">Call Now</a>
+                </div>
+            </div>
+            <div class="nav-bottom">
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#portfolio">Portfolio</a></li>
+                    <li><a href="web-design-plans.html">Web Design Plans</a></li>
+                    <li><a href="growth-plans.html">Growth Plans</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <h1>About Sydney Web Designer</h1>
+        <p>Transforming Sydney businesses through innovative web design and digital marketing since 2011</p>
+    </section>
+
+    <!-- Our Story -->
+    <section class="content-section">
+        <h2 class="section-title">Our Story</h2>
+        <p class="section-subtitle">13+ years of digital excellence in Sydney</p>
+
+        <div class="story-content">
+            <p>Sydney Web Designer was founded in 2011 with a simple mission: help Sydney businesses succeed online through exceptional web design and digital marketing. What started as a small operation in Parramatta has grown into a trusted partner for businesses across Sydney and beyond.</p>
+
+            <p>Over the past 13 years, we've helped hundreds of businesses—from local cafes and tradies to professional services and e-commerce stores—establish powerful online presences that drive real results. Our team combines creative design with technical expertise and data-driven marketing strategies to deliver measurable growth for our clients.</p>
+
+            <p>We're proud to be a Sydney-based agency that understands the unique challenges and opportunities of the Australian market. Every website we build, every campaign we run, and every strategy we develop is tailored to the specific needs of Sydney businesses.</p>
+
+            <p>Today, we continue to evolve with the digital landscape, staying at the forefront of web design trends, SEO best practices, and digital marketing innovations. Our commitment remains the same: delivering exceptional results that help our clients thrive in an increasingly digital world.</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">13+</div>
+                <div class="stat-label">Years in Business</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Websites Delivered</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Client Satisfaction</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Industries Served</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values -->
+    <section class="content-section" style="background: var(--light-bg);">
+        <h2 class="section-title">Our Values</h2>
+        <p class="section-subtitle">The principles that guide everything we do</p>
+
+        <div class="values-grid">
+            <div class="value-card">
+                <h3>Results-Driven</h3>
+                <p>We measure success by the results we deliver for our clients. Every website, every campaign, every strategy is designed to drive measurable business growth and ROI.</p>
+            </div>
+
+            <div class="value-card">
+                <h3>Transparency</h3>
+                <p>No hidden fees, no vague promises. We believe in clear communication, honest timelines, and transparent pricing. You'll always know exactly what you're getting and what to expect.</p>
+            </div>
+
+            <div class="value-card">
+                <h3>Innovation</h3>
+                <p>The digital landscape never stops evolving, and neither do we. We stay ahead of trends, continuously learn new technologies, and apply cutting-edge strategies to keep our clients competitive.</p>
+            </div>
+
+            <div class="value-card">
+                <h3>Partnership</h3>
+                <p>We're not just a service provider—we're your digital growth partner. Your success is our success, and we're committed to building long-term relationships based on trust and mutual growth.</p>
+            </div>
+
+            <div class="value-card">
+                <h3>Quality</h3>
+                <p>We never compromise on quality. From design aesthetics to code quality to content creation, we maintain the highest standards in everything we deliver.</p>
+            </div>
+
+            <div class="value-card">
+                <h3>Local Expertise</h3>
+                <p>As a Sydney-based agency, we understand the local market, competition, and opportunities. This local knowledge helps us create strategies that resonate with Australian audiences.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Do -->
+    <section class="content-section">
+        <h2 class="section-title">What We Do</h2>
+        <p class="section-subtitle">Comprehensive digital solutions for Sydney businesses</p>
+
+        <div class="story-content">
+            <p><strong>Web Design & Development:</strong> We create stunning, high-performing websites that convert visitors into customers. Every site is mobile-responsive, SEO-optimized, and built with the latest technologies.</p>
+
+            <p><strong>SEO & Digital Marketing:</strong> Get found on Google and grow your online presence. Our SEO strategies combine technical optimization, content marketing, and link building to drive organic traffic and leads.</p>
+
+            <p><strong>Branding & Identity:</strong> Stand out from the competition with professional branding that reflects your business values and resonates with your target audience.</p>
+
+            <p><strong>E-commerce Solutions:</strong> Launch and grow your online store with custom e-commerce websites that make it easy for customers to find, buy, and love your products.</p>
+
+            <p><strong>Content Marketing:</strong> Engage your audience and establish authority with strategic content that educates, informs, and converts.</p>
+
+            <p><strong>Ongoing Support:</strong> We don't just build your website and disappear. Our ongoing support and maintenance packages ensure your site stays secure, fast, and up-to-date.</p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <h2>Ready to Work Together?</h2>
+            <p>Let's discuss how we can help your Sydney business grow online</p>
+            <a href="contact.html" class="btn btn-light" style="padding: 1rem 2.5rem; font-size: 1.1rem;">Get Your Free Consultation</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sydney Web Designer</h3>
+                <p>Transforming businesses through innovative web design and digital marketing solutions. Based in Parramatta, serving all of Sydney.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html#services">Web Design</a></li>
+                    <li><a href="index.html#services">Branding</a></li>
+                    <li><a href="index.html#services">Digital Marketing</a></li>
+                    <li><a href="web-design-plans.html">Web Design Plans</a></li>
+                    <li><a href="growth-plans.html">Growth Plans</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul class="footer-links">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="index.html#portfolio">Portfolio</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <ul class="footer-links">
+                    <li><a href="tel:0291918049">📞 02 9191 8049</a></li>
+                    <li><a href="/cdn-cgi/l/email-protection#99eefcfbd9fdeaf0fef7eab7faf6f4b7f8ec"

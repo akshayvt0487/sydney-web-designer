@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Design Blog Sydney | Tips & Insights - Sydney Web Designer</title>
+    <meta name="description" content="Expert web design insights, tips and trends for Sydney businesses. Learn how to improve your website and digital presence.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: var(--dark-navy);
+            color: white;
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        .top-bar-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar-left {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .top-bar-left span {
+            opacity: 0.9;
+        }
+
+        .top-bar-right {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .top-bar-right a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.9;
+            transition: all 0.3s;
+        }
+
+        .top-bar-right a:hover {
+            opacity: 1;
+            color: var(--primary-orange);
+        }
+
+        /* Color Variables */
+        :root {
+            --primary-navy: #1e293b;
+            --primary-blue: #334155;
+            --dark-navy: #0f172a;
+            --light-navy: #e0e7ff;
+            --primary-orange: #f59e0b;
+            --dark-orange: #d97706;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --light-bg: #f8fafc;
+        }
+
+        /* Header */
+        header {
+            background: #fff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .nav-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .nav-bottom {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid #f1f5f9;
+        }
+
+        .nav-bottom .nav-links {
+            margin: 0;
+        }
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-image {
+            height: 50px;
+            width: auto;
+            transition: transform 0.3s;
+        }
+
+        .logo-image:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-orange);
+        }
+
+        .header-cta {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .header-cta .btn {
+            padding: 0.7rem 1.8rem;
+            font-size: 0.95rem;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: 2px solid;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--primary-orange);
+            color: white;
+            border-color: var(--primary-orange);
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-orange);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(245, 158, 11, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-navy);
+            border-color: var(--primary-navy);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-navy);
+            color: white;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Page Hero */
+        .page-hero {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-blue) 100%);
+            color: white;
+            padding: 6rem 2rem 5rem;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .page-hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        /* Blog Grid */
+        .blog-section {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+            font-size: 1.2rem;
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border-top: 4px solid var(--primary-orange);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(245, 158, 11, 0.15);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, var(--primary-navy), var(--primary-orange));
+        }
+
+        .blog-content {
+            padding: 2rem;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .blog-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .blog-card h3 {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .blog-excerpt {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .read-more {
+            color: var(--primary-orange);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s;
+        }
+
+        .read-more:hover {
+            gap: 1rem;
+        }
+
+        /* Article Page */
+        .article-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .article-header {
+            margin-bottom: 3rem;
+        }
+
+        .article-header h1 {
+            font-size: 2.8rem;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .article-body h2 {
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin: 2.5rem 0 1rem;
+        }
+
+        .article-body h3 {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin: 2rem 0 1rem;
+        }
+
+        .article-body p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .article-body ul, .article-body ol {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+            color: var(--text-light);
+        }
+
+        .article-body li {
+            margin-bottom: 0.8rem;
+            line-height: 1.8;
+        }
+
+        .article-body strong {
+            color: var(--text-dark);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-orange);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .back-link:hover {
+            gap: 1rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-blue) 100%);
+            padding: 5rem 2rem;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+        }
+
+        .btn-light {
+            background: white;
+            color: var(--primary-navy);
+            border-color: white;
+        }
+
+        .btn-light:hover {
+            background: var(--primary-orange);
+            color: white;
+            border-color: var(--primary-orange);
+        }
+
+        /* Footer */
+        footer {
+            background: #1e293b;
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            color: var(--primary-orange);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-section p {
+            color: #94a3b8;
+            line-height: 1.8;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-orange);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #334155;
+            padding-top: 2rem;
+            text-align: center;
+            color: #94a3b8;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .nav-links {
+                display: none;
+            }
+
+            .nav-bottom {
+                padding-top: 0;
+                border-top: none;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo-image {
+                height: 40px;
+            }
+
+            .nav-bottom {
+                margin-top: 0.5rem;
+            }
+
+            .header-cta {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .header-cta .btn {
+                flex: 1;
+                text-align: center;
+            }
+
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="popup-forms.css">
+    <script src="popup-forms.js"></script>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="top-bar-left">
+                <span>📧 <a href="/cdn-cgi/l/email-protection#365e535a5a597652455f5158451855595b185743" style="color: white; text-decoration: none;"><span class="__cf_email__" data-cfemail="f59d9099999ab591869c929b86db969a98db9480">[email&#160;protected]</span></a></span>
+                <span>📞 02 9191 8049</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="about.html">About Us</a>
+                <a href="testimonials.html">Testimonials</a>
+                <a href="careers.html">Careers</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="nav-top">
+                <a href="index.html" class="logo-link">
+                    <img src="sydney_web_designer_logo.png" alt="Sydney Web Designer" class="logo-image">
+                </a>
+                <div class="header-cta">
+                    <a href="#" data-popup="contact" class="btn btn-secondary">Get Quote</a>
+                    <a href="tel:0291918049" class="btn btn-primary">Call Now</a>
+                </div>
+            </div>
+            <div class="nav-bottom">
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#portfolio">Portfolio</a></li>
+                    <li><a href="web-design-plans.html">Web Design Plans</a></li>
+                    <li><a href="growth-plans.html">Growth Plans</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Web Design Insights</h1>
+            <p>Expert tips, trends, and strategies to help Sydney businesses succeed online</p>
+        </div>
+    </section>
+
+    <!-- Blog Grid -->
+    <section class="blog-section">
+        <div class="container">
+            <h2 class="section-title">Latest Articles</h2>
+            <p class="section-subtitle">Stay informed with our latest web design tips and digital marketing insights</p>
+            
+            <!-- Featured/Complete Blog Posts -->
+            <h3 style="color: var(--primary-navy); margin: 3rem 0 2rem; font-size: 1.8rem;">Featured Articles</h3>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #1e293b, #f59e0b);"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>📅 November 2024</span>
+                            <span>⏱️ 8 min read</span>
+                        </div>
+                        <h3>Web Design Trends 2024: What Sydney Businesses Need to Know</h3>
+                        <p class="blog-excerpt">Discover the latest web design trends shaping Sydney websites in 2024. From AI integration to minimalist design, learn what's essential for staying competitive.</p>
+                        <a href="blog-web-design-trends-2024.html" class="read-more">Read More →</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #0f172a, #10b981);"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>📅 November 2024</span>
+                            <span>⏱️ 10 min read</span>
+                        </div>
+                        <h3>SEO Tips for Sydney Businesses: Rank Higher on Google in 2024</h3>
+                        <p class="blog-excerpt">Expert SEO strategies to improve your Google rankings. Learn local SEO, technical optimization, and content strategies that drive organic traffic.</p>
+                        <a href="blog-seo-tips-sydney.html" class="read-more">Read More →</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #334155, #f59e0b);"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>📅 November 2024</span>
+                            <span>⏱️ 5 min read</span>
+                        </div>
+                        <h3>10 Essential Web Design Features Every Sydney Business Needs</h3>
+                        <p class="blog-excerpt">Discover the must-have features that make modern Sydney websites stand out. From mobile responsiveness to fast loading speeds.</p>
+                        <a href="blog-seo-tips-sydney.html" class="read-more">Read More →</a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Web Design & Development -->
+            <h3 style="color: var(--primary-navy); margin: 4rem 0 2rem; font-size: 1.8rem;">Web Design & Development</h3>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #1e293b, #3b82f6);"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>📅 November 2024</span>
+                            <span>⏱️ 7 min read</span>
+                        </div>
+                        <h3>How to Choose the Right Web Designer in Sydney</h3>
+                        <p class="blog-excerpt">Expert guide to choosing the perfect web designer in Sydney. Learn what to look for, questions to ask, and red flags to avoid.</p>
+                        <a href="blog-choose-web-designer.html" class="read-more">Read More →</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #334155, #8b5cf6);"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>📅 November 2024</span>
+                            <span>⏱️ 8 min read</span>
+                        </div>
+                        <h3>WordPress vs Custom Website Development</h3>
+                        <p class="blog-excerpt">Compare WordPress vs custom development. Understand the pros, cons, costs, and which option is best for your business needs.</p>
+                        <a href="blog-wordpress-vs-custom-website-development.html" class="read-more">Read More →</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #0f172a, #f59e0b);"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>📅 November 2024</span>
+                            <span>⏱️ 9 min read</span>
+                        </div>
+                        <h3>Website Redesign Checklist: 15 Essential Steps for Success</h3>
+                        <p class="blog-excerpt">Complete website redesign checklist with 15 essential steps. Avoid costly mistakes and ensure your new site drives results.</p>
+                        <a href="blog-website-redesign-checklist-2024.html" class="read-more">Read More →</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #1e293b, #10b981);"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>📅 November 2024</span>
+                            <span>⏱️ 8 min read</span>
+                        </div>
+                        <h3>E-commerce Website Best Practices</h3>
+                        <p class="blog-excerpt">Learn e-commerce best practices to increase sales. Product page optimization, checkout process, and conversion strategies.</p>
+                        <a href="blog-ecommerce-website-best-practices.html" class="read-more">Read More →</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #334155, #ef4444);"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>📅 November 2024</span>
+                            <span>⏱️ 6 min read</span>
+                        </div>
+                        <h3>Website Security Essentials</h3>
+                        <p class="blog-excerpt">Essential website security tips to protect your business. SSL certificates, backups, malware protection, and cybersecurity best practices.</p>
+                        <a href="blog-website-security-essential-tips.html" class="read-more">Read More →</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #0f172a, #f59e0b);"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>📅 November 2024</span>
+                            <span>⏱️ 7 min read</span>
+                        </div>
+                        <h3>Website Speed Optimization</h3>
+                        <p class="blog-excerpt">Improve website performance and rankings with speed optimization. Core Web Vitals, image optimization, and loading time tips.</p>
+                        <a href="blog-website-speed-optimization-tips.html" class="read-more">Read More →</a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- SEO & Local Marketing -->
+            <h3 style="color: var(--primary-navy); margin: 4rem 0 2rem; font-size: 1.8rem;">SEO & Local Marketing</h3>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #1e293b, #10b981);"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>📅 November 2024</span>
+                            <span>⏱️ 9 min read</span>
+                        </div>
+                        <h3>Google My Business Optimization Guide</h3>
+                        <p class="blog-excerpt">Optimize your Google Business Profile for maximum local visibility. Step-by-step guide for Sydney businesses to rank higher.</p>
+                        <a href="blog-google-my-business-optimization-guide.html" class="read-more">Read More →</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #334155, #10b981);"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>📅 November 2024</span>
+                            <span>⏱️ 10 min read</span>
+                        </div>
+                        <h3>Local SEO for Sydney: Complete Guide</h3>
+                        <p class="blog-excerpt">Complete local SEO guide for Sydney businesses. Google Business Profile, local citations, reviews, and strategies to dominate local search.</p>
+                        <a href="blog-local-seo-sydney-complete-guide.html" class="read-more">Read More →</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #0f172a, #3b82f6);"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>📅 November 2024</span>
+                            <span>⏱️ 8 min read</span>
+                        </div>
+                        <h3>Content Marketing Strategy Guide</h3>
+                        <p class="blog-excerpt">Build authority and drive organic traffic with content marketing. Planning, creation, distribution, and measuring ROI.</p>
+                        <a href="blog-content-marketing-strategy-guide.html" class="read-more">Read More →</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #1e293b, #f59e0b);"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>📅 November 2024</span>
+                            <span>⏱️ 6 min read</span>
+                        </div>
+                        <h3>Customer Reviews & Online Reputation</h3>
+                        <p class="blog-excerpt">Build trust and credibility with customer reviews. Learn how to get reviews, respond effectively, and manage your online reputation.</p>
+                        <a href="blog-customer-reviews-online-reputation.html" class="read-more">Read More →</a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Digital Marketing & Advertising -->
+            <h3 style="color: var(--primary-navy); margin: 4rem 0 2rem; font-size: 1.8rem;">Digital Marketing & Advertising</h3>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #334155, #8b5cf6);"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>📅 November 2024</span>
+                            <span>⏱️ 7 min read</span>
+                        </div>
+                        <h3>Social Media Marketing for Sydney Businesses</h3>
+                        <p class="blog-excerpt">Compare Facebook, Instagram, LinkedIn, and TikTok for Sydney businesses. Which platforms drive results? Expert strategy guide.</p>
+                        <a href="blog-social-media-marketing-sydney-businesses.html" class="read-more">Read More →</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #0f172a, #3b82f6);"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>📅 November 2024</span>
+                            <span>⏱️ 8 min read</span>
+                        </div>
+                        <h3>Google Ads vs Facebook Ads</h3>
+                        <p class="blog-excerpt">Which advertising platform is right for your business? Compare Google Ads vs Facebook Ads - costs, targeting, and use cases.</p>
+                        <a href="blog-google-ads-vs-facebook-ads.html" class="read-more">Read More →</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #1e293b, #10b981);"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>📅 November 2024</span>
+                            <span>⏱️ 7 min read</span>
+                        </div>
+                        <h3>Email Marketing Automation Guide</h3>
+                        <p class="blog-excerpt">Save time and boost engagement with email marketing automation. Learn to build sequences, segment lists, and create effective campaigns.</p>
+                        <a href="blog-email-marketing-automation-guide.html" class="read-more">Read More →</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #334155, #f59e0b);"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>📅 November 2024</span>
+                            <span>⏱️ 9 min read</span>
+                        </div>
+                        <h3>Digital Marketing Budget Planning</h3>
+                        <p class="blog-excerpt">Maximize ROI for Sydney businesses with smart budget planning. Learn how to allocate, track, and optimize your marketing spend.</p>
+                        <a href="blog-digital-marketing-budget-planning.html" class="read-more">Read More →</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #0f172a, #ef4444);"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>📅 November 2024</span>
+                            <span>⏱️ 6 min read</span>
+                        </div>
+                        <h3>Video Marketing for Small Business</h3>
+                        <p class="blog-excerpt">Create engaging video content on a budget. Learn video marketing strategies, platforms, and production tips for small businesses.</p>
+                        <a href="blog-video-marketing-small-business.html" class="read-more">Read More →</a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Conversion & Analytics -->
+            <h3 style="color: var(--primary-navy); margin: 4rem 0 2rem; font-size: 1.8rem;">Conversion & Analytics</h3>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #1e293b, #f59e0b);"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>📅 November 2024</span>
+                            <span>⏱️ 8 min read</span>
+                        </div>
+                        <h3>Conversion Rate Optimization Strategies</h3>
+                        <p class="blog-excerpt">Turn more visitors into customers with proven CRO strategies. A/B testing, landing pages, CTAs, and optimization techniques.</p>
+                        <a href="blog-conversion-rate-optimization-strategies.html" class="read-more">Read More →</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #334155, #3b82f6);"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>📅 November 2024</span>
+                            <span>⏱️ 7 min read</span>
+                        </div>
+                        <h3>Website Analytics for Beginners</h3>
+                        <p class="blog-excerpt">Understand your traffic and conversions with website analytics. Google Analytics guide, key metrics, and reporting insights.</p>
+                        <a href="blog-website-analytics-guide-beginners.html" class="read-more">Read More →</a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Branding & Strategy -->
+            <h3 style="color: var(--primary-navy); margin: 4rem 0 2rem; font-size: 1.8rem;">Branding & Strategy</h3>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #0f172a, #8b5cf6);"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>📅 November 2024</span>
+                            <span>⏱️ 6 min read</span>
+                        </div>
+                        <h3>10 Branding Mistakes Small Businesses Make</h3>
+                        <p class="blog-excerpt">Avoid common branding mistakes that cost businesses customers. Learn about brand identity, consistency, and positioning errors.</p>
+                        <a href="blog-branding-mistakes-small-businesses.html" class="read-more">Read More →</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #1e293b, #10b981);"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>📅 November 2024</span>
+                            <span>⏱️ 7 min read</span>
+                        </div>
+                        <h3>Website Hosting Guide for Australian Businesses</h3>
+                        <p class="blog-excerpt">Choose the right hosting provider for your Australian business. Compare hosting types, local providers, and selection criteria.</p>
+                        <a href="blog-website-hosting-guide-australia.html" class="read-more">Read More →</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #334155, #f59e0b);"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>📅 November 2024</span>
+                            <span>⏱️ 6 min read</span>
+                        </div>
+                        <h3>Mobile App vs Mobile Website</h3>
+                        <p class="blog-excerpt">What's best for your business - a mobile app or mobile website? Compare pros, cons, costs, and make the right decision.</p>
+                        <a href="blog-mobile-app-vs-mobile-website.html" class="read-more">Read More →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Transform Your Website?</h2>
+            <p>Let's create a stunning, high-performing website for your Sydney business</p>
+            <a href="#" data-popup="contact" class="btn btn-light">Get Started Today</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sydney Web Designer</h3>
+                <p>Transforming businesses through innovative web design and digital marketing solutions. Based in Parramatta, serving all of Sydney.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html#services">Web Design</a></li>
+                    <li><a href="index.html#services">Branding</a></li>
+                    <li><a href="index.html#services">Digital Marketing</a></li>
+                    <li><a href="web-design-plans.html">Web Design Plans</a></li>
+                    <li><a href="growth-plans.html">Growth Plans</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html#portfolio">Portfolio</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="index.html#process">Our Process</a></li>
+                    <li><a href="index.html#contact">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <ul class="footer-links">
+                    <li><a href="tel:0291918049">📞 02 9191 8049</a></li>
+                    <li><a href="/cdn-cgi/l/email-protection#641301062400170d030a174a070b094a051

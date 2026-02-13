@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application - Sydney Web Designer</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; background: #f8fafc; }
+        
+        :root {
+            --primary-navy: #1e293b;
+            --primary-orange: #f59e0b;
+            --text-light: #64748b;
+            --light-bg: #f8fafc;
+        }
+        
+        .top-bar { background: var(--primary-navy); color: white; padding: 0.5rem 0; font-size: 0.9rem; }
+        .top-bar-content { max-width: 1400px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; }
+        header { background: #fff; padding: 1rem 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        nav { max-width: 1400px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo-image { height: 50px; }
+        
+        .application-hero {
+            background: linear-gradient(135deg, var(--primary-navy), #2d3e52);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        .application-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .application-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .application-container {
+            max-width: 900px;
+            margin: -3rem auto 4rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            padding: 3rem;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .position-info {
+            background: linear-gradient(135deg, #fef3e7, #fff);
+            border-left: 4px solid var(--primary-orange);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+        }
+        
+        .position-info h2 {
+            color: var(--primary-navy);
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .position-info p {
+            color: var(--text-light);
+            font-size: 1.05rem;
+        }
+        
+        .form-section {
+            margin-bottom: 3rem;
+        }
+        
+        .form-section h3 {
+            color: var(--primary-navy);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid #f1f5f9;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--primary-navy);
+        }
+        
+        .form-group label .required {
+            color: #ef4444;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-orange);
+            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .file-upload {
+            border: 2px dashed #e2e8f0;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            background: #f8fafc;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .file-upload:hover {
+            border-color: var(--primary-orange);
+            background: #fef3e7;
+        }
+        
+        .file-upload input[type="file"] {
+            display: none;
+        }
+        
+        .file-upload-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-orange);
+        }
+        
+        .file-upload-text {
+            color: var(--text-light);
+        }
+        
+        .file-name {
+            margin-top: 1rem;
+            color: var(--primary-navy);
+            font-weight: 600;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            margin-top: 0.25rem;
+        }
+        
+        .checkbox-group label {
+            font-weight: normal;
+            margin: 0;
+        }
+        
+        .submit-section {
+            margin-top: 3rem;
+            text-align: center;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: var(--primary-orange);
+            color: white;
+            box-shadow: 0 5px 15px rgba(245, 158, 11, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background: #d97706;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(245, 158, 11, 0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-navy);
+            border: 2px solid var(--primary-navy);
+            margin-left: 1rem;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary-navy);
+            color: white;
+        }
+        
+        footer {
+            background: var(--primary-navy);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        footer a {
+            color: #94a3b8;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        
+        footer a:hover {
+            color: var(--primary-orange);
+        }
+        
+        @media (max-width: 768px) {
+            .application-hero h1 { font-size: 2rem; }
+            .application-container { padding: 2rem 1.5rem; margin: -2rem 1rem 2rem; }
+            .form-row { grid-template-columns: 1fr; }
+            .btn-secondary { margin-left: 0; margin-top: 1rem; }
+        }
+    </style>
+    <link rel="stylesheet" href="popup-forms.css">
+    <script src="popup-forms.js"></script>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div>📧 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2f474a4343406f4b5c4648415c014c4042014e5a">[email&#160;protected]</a> | 📞 02 9191 8049</div>
+        </div>
+    </div>
+
+    <header>
+        <nav>
+            <a href="index.html"><img src="sydney_web_designer_logo.png" alt="Sydney Web Designer" class="logo-image"></a>
+            <a href="careers.html" class="btn btn-secondary" style="padding: 0.8rem 2rem;">← Back to Careers</a>
+        </nav>
+    </header>
+
+    <div class="application-hero">
+        <h1>Job Application</h1>
+        <p>Join our team of digital marketing experts in Sydney</p>
+    </div>
+
+    <div class="application-container">
+        <div class="position-info" id="position-info">
+            <h2 id="position-title">Position</h2>
+            <p id="position-details">Complete the form below to apply for this position</p>
+        </div>
+
+        <form id="application-form" onsubmit="handleApplicationSubmit(event)">
+            <!-- Personal Information -->
+            <div class="form-section">
+                <h3>Personal Information</h3>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>First Name <span class="required">*</span></label>
+                        <input type="text" name="first-name" required placeholder="John">
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name <span class="required">*</span></label>
+                        <input type="text" name="last-name" required placeholder="Smith">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Email <span class="required">*</span></label>
+                        <input type="email" name="email" required placeholder="john.smith@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone <span class="required">*</span></label>
+                        <input type="tel" name="phone" required placeholder="04XX XXX XXX">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>LinkedIn Profile</label>
+                        <input type="url" name="linkedin" placeholder="https://linkedin.com/in/yourprofile">
+                    </div>
+                    <div class="form-group">
+                        <label>Portfolio/Website</label>
+                        <input type="url" name="portfolio" placeholder="https://yourportfolio.com">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Professional Background -->
+            <div class="form-section">
+                <h3>Professional Background</h3>
+                <div class="form-group">
+                    <label>Years of Experience <span class="required">*</span></label>
+                    <select name="experience" required>
+                        <option value="">Select...</option>
+                        <option value="0-1">0-1 years</option>
+                        <option value="1-3">1-3 years</option>
+                        <option value="3-5">3-5 years</option>
+                        <option value="5-10">5-10 years</option>
+                        <option value="10+">10+ years</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Current/Most Recent Position</label>
+                    <input type="text" name="current-position" placeholder="e.g., Senior Web Developer">
+                </div>
+                <div class="form-group">
+                    <label>Current/Most Recent Company</label>
+                    <input type="text" name="current-company" placeholder="Company name">
+                </div>
+                <div class="form-group">
+                    <label>Why do you want to work with us? <span class="required">*</span></label>
+                    <textarea name="why-join" required placeholder="Tell us what excites you about this opportunity..." rows="5"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>What are your key strengths and skills? <span class="required">*</span></label>
+                    <textarea name="key-strengths" required placeholder="Describe your main skills, expertise areas, and what makes you stand out..." rows="5"></textarea>
+                </div>
+            </div>
+
+            <!-- Availability & Preferences -->
+            <div class="form-section">
+                <h3>Availability & Work Preferences</h3>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Preferred Work Location <span class="required">*</span></label>
+                        <select name="work-location" required>
+                            <option value="">Select...</option>
+                            <option value="onsite">Onsite (Sydney Office)</option>
+                            <option value="remote">Remote</option>
+                            <option value="hybrid">Hybrid (Mix of office and remote)</option>
+                            <option value="flexible">Flexible/Open to discussion</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Employment Type Preference <span class="required">*</span></label>
+                        <select name="employment-type" required>
+                            <option value="">Select...</option>
+                            <option value="fulltime">Full-Time</option>
+                            <option value="parttime">Part-Time</option>
+                            <option value="casual">Casual</option>
+                            <option value="contract">Contract</option>
+                            <option value="internship">Internship</option>
+                            <option value="flexible">Flexible/Open to discussion</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Days Available Per Week <span class="required">*</span></label>
+                        <select name="days-available" required>
+                            <option value="">Select...</option>
+                            <option value="1">1 day per week</option>
+                            <option value="2">2 days per week</option>
+                            <option value="3">3 days per week</option>
+                            <option value="4">4 days per week</option>
+                            <option value="5">5 days per week (Full-time)</option>
+                            <option value="flexible">Flexible availability</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Hours Available Per Week <span class="required">*</span></label>
+                        <select name="hours-available" required>
+                            <option value="">Select...</option>
+                            <option value="10-15">10-15 hours per week</option>
+                            <option value="16-24">16-24 hours per week</option>
+                            <option value="25-32">25-32 hours per week</option>
+                            <option value="33-38">33-38 hours per week (Full-time)</option>
+                            <option value="38+">38+ hours per week</option>
+                            <option value="flexible">Flexible hours</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Start Date Availability <span class="required">*</span></label>
+                        <select name="start-availability" required>
+                            <option value="">Select...</option>
+                            <option value="immediate">Immediate</option>
+                            <option value="1-week">1 week notice</option>
+                            <option value="2-weeks">2 weeks notice</option>
+                            <option value="1-month">1 month notice</option>
+                            <option value="flexible">Flexible/Negotiable</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Preferred Working Hours</label>
+                        <select name="preferred-hours">
+                            <option value="">Select...</option>
+                            <option value="standard">Standard hours (9am - 5pm)</option>
+                            <option value="early">Early hours (7am - 3pm)</option>
+                            <option value="late">Late hours (11am - 7pm)</option>
+                            <option value="flexible">Flexible hours</option>
+                            <option value="shifts">Open to shift work</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Documents -->
+            <div class="form-section">
+                <h3>Required Documents</h3>
+                <div class="form-group">
+                    <label>Resume/CV <span class="required">*</span></label>
+                    <div class="file-upload" onclick="document.getElementById('resume-upload').click()">
+                        <input type="file" id="resume-upload" name="resume" accept=".pdf,.doc,.docx" required onchange="displayFileName(this, 'resume-name')">
+                        <div class="file-upload-icon">📄</div>
+                        <div class="file-upload-text">
+                            <strong>Click to upload your resume</strong><br>
+                            PDF, DOC, or DOCX (max 5MB)
+                        </div>
+                        <div class="file-name" id="resume-name"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Cover Letter (Optional)</label>
+                    <div class="file-upload" onclick="document.getElementById('cover-letter-upload').click()">
+                        <input type="file" id="cover-letter-upload" name="cover-letter" accept=".pdf,.doc,.docx" onchange="displayFileName(this, 'cover-name')">
+                        <div class="file-upload-icon">📝</div>
+                        <div class="file-upload-text">
+                            <strong>Click to upload cover letter</strong><br>
+                            PDF, DOC, or DOCX (max 5MB)
+                        </div>
+                        <div class="file-name" id="cover-name"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Questions -->
+            <div class="form-section">
+                <h3>Additional Questions</h3>
+                <div class="form-group">
+                    <label>How did you hear about this position?</label>
+                    <select name="how-heard">
+                        <option value="">Select...</option>
+                        <option value="website">Company Website</option>
+                        <option value="linkedin">LinkedIn</option>
+                        <option value="seek">SEEK</option>
+                        <option value="indeed">Indeed</option>
+                        <option value="referral">Referral</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Any additional comments or questions?</label>
+                    <textarea name="additional-comments" placeholder="Anything else you'd like us to know..." rows="4"></textarea>
+                </div>
+            </div>
+
+            <!-- Consent -->
+            <div class="checkbox-group">
+                <input type="checkbox" id="consent" name="consent" required>
+                <label for="consent">
+                    I consent to DSIGNS AUSTRALIA PTY LIMITED storing and processing my personal information for recruitment purposes. I understand my data will be kept confidential and used only for this application. <span class="required">*</span>
+                </label>
+            </div>
+
+            <!-- Submit Buttons -->
+            <div class="submit-section">
+                <button type="submit" class="btn btn-primary">Submit Application</button>
+                <a href="careers.html" class="btn btn-secondary">Cancel</a>
+                <p style="margin-top: 1.5rem; color: var(--text-light); font-size: 0.95rem;">
+                    💬 We review all applications carefully and will respond within 5-7 business days
+                </p>
+            </div>
+        </form>
+    </div>
+
+                <footer style="background: var(--primary-navy); color: white; padding: 4rem 2rem 2rem;">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <!-- Footer Content Grid -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 3rem;">
+                
+                <!-- Company Info -->
+                <div>
+                    <h3 style="color: white; font-size: 1.3rem; margin-bottom: 1rem;">DSIGNS AUSTRALIA</h3>
+                    <p style="color: #94a3b8; line-height: 1.8; margin-bottom: 1rem;">
+                        Sydney's leading web design and digital marketing agency. We help businesses grow online with professional websites, SEO, and digital marketing services.
+                    </p>
+                    <p style="color: #94a3b8;">
+                        <strong style="color: white;">📍 Location:</strong><br>
+                        Sydney, New South Wales, Australia
+                    </p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 style="color: white; font-size: 1.3rem; margin-bottom: 1rem;">Quick Links</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 0.75rem;"><a href="index.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Home</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="about.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">About Us</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="services.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Services</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="portfolio-two-brothers.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Portfolio</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="blog.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Blog</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="careers.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h3 style="color: white; font-size: 1.3rem; margin-bottom: 1rem;">Our Services</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 0.75rem;"><a href="service-custom-web-design.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Web Design</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="service-seo-sydney.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">SEO Services</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="service-google-ads.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Google Ads</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="service-logo-design.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Branding</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="service-social-media-marketing.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Social Media</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="service-content-marketing.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Content Marketing</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact & Social -->
+                <div>
+                    <h3 style="color: white; font-size: 1.3rem; margin-bottom: 1rem;">Get In Touch</h3>
+                    <p style="color: #94a3b8; margin-bottom: 0.75rem;">
+                        <strong style="color: white;">📧 Email:</strong><br>
+                        <a href="/cdn-cgi/l/email-protection#1078757c7c7f50746379777e633e737f7d3e7165" style="color: #f59e0b; text-decoration: none;"><span class="__cf_email__" data-cfemail="caa2afa6a6a58aaeb9a3ada4b9e4a9a5a7e4abbf">[email&#160;protected]</span></a>
+                    </p>
+                    <p style="color: #94a3b8; margin-bottom: 1.5rem;">
+                        <strong style="color: white;">📞 Phone:</strong><br>
+                        <a href="tel:0291918049" style="color: #f59e0b; text-decoration: none;">02 9191 8049</a>
+                    </p>
+                    
+                    <!-- Social Media Links -->
+                    <h4 style="color: white; font-size: 1.1rem; margin-bottom: 1rem;">Follow Us</h4>
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="https://www.facebook.com/dsignsaustralia" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; background: #1877f2; color: white; border-radius: 50%; text-decoration: none; font-size: 1.5rem; transition: all 0.3s;" onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 5px 15px rgba(24, 119, 242, 0.4)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+                            <span style="font-family: Arial, sans-serif;">f</span>
+                        </a>
+                        <a href="https://www.instagram.com/dsignsaustralia" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: white; border-radius: 50%; text-decoration: none; font-size: 1.5rem; transition: all 0.3s;" onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 5px 15px rgba(225, 48, 108, 0.4)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+                            <span style="font-family: Arial, sans-serif; font-weight: bold;">📷</span>
+                        </a>
+                        <a href="https://www.linkedin.com/company/dsigns-australia" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; background: #0077b5; color: white; border-radius: 50%; text-decoration: none; font-size: 1.5rem; transition: all 0.3s;" onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 5px 15px rgba(0, 119, 181, 0.4)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+                            <span style="font-family: Arial, sans-serif; font-weight: bold;">in</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div style="border-top: 1px solid #334155; padding-top: 2rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+                <p style="color: #94a3b8; margin: 0;">
+                    &copy; 2025 DSIGNS AUSTRALIA PTY LIMITED. All rights reserved.
+                </p>
+                <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+                    <a href="privacy-policy.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Privacy Policy</a>
+                    <a href="terms-conditions.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Get position from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const position = urlParams.get('position');
+        
+        if (position) {
+            const positions = {
+                'web-designer': 'Web Designer',
+                'seo-specialist': 'SEO Specialist',
+                'google-ads-specialist': 'Google Ads Specialist',
+                'meta-ads-specialist': 'Meta Ads Specialist (Facebook/Instagram)',
+                'performance-marketer': 'Performance Marketer',
+                'project-manager': 'Project Manager',
+                'content-writer': 'Content Writer'
+            };
+            
+            const positionTitle = positions[position] || 'Open Position';
+            document.getElementById('position-title').textContent = positionTitle;
+            document.getElementById('position-details').textContent = `Complete the form below to apply for the ${positionTitle} position`;
+        }
+        
+        // Display uploaded file name
+        function displayFileName(input, displayId) {
+            const display = document.getElementById(displayId);
+            if (input.files && input.files[0]) {
+                display.textContent = '✓ ' + input.files[0].name;
+                display.style.color = '#10b981';
+            }
+        }
+        
+        // Handle form submission
+        function handleApplicationSubmit(event) {
+            event.preventDefault();
+            
+            // Here you would normally send to your backend
+            const formData = new FormData(event.target);
+    

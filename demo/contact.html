@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Sydney Web Designer</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; }
+        :root {
+            --primary-navy: #1e293b;
+            --primary-orange: #f59e0b;
+            --light-bg: #f8fafc;
+        }
+        header { background: var(--primary-navy); color: white; padding: 2rem 0; text-align: center; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
+        h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        .contact-card { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .contact-card h3 { color: var(--primary-navy); margin-bottom: 1rem; }
+        .contact-card a { color: var(--primary-orange); text-decoration: none; }
+        .btn { display: inline-block; padding: 1rem 2rem; background: var(--primary-orange); color: white; text-decoration: none; border-radius: 5px; margin-top: 2rem; transition: all 0.3s; }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(245, 158, 11, 0.3); }
+        footer { background: var(--primary-navy); color: white; padding: 2rem 0; text-align: center; margin-top: 3rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Contact DSIGNS AUSTRALIA</h1>
+        <p>Get in touch for your free consultation and quote!</p>
+    </header>
+
+    <div class="container">
+        <h2>Get In Touch</h2>
+        <p>Ready to grow your business online? Contact us today!</p>
+
+        <div class="contact-grid">
+            <div class="contact-card">
+                <h3>📧 Email</h3>
+                <p><a href="mailto:hello@dsigns.com.au">hello@dsigns.com.au</a></p>
+            </div>
+
+            <div class="contact-card">
+                <h3>📞 Phone</h3>
+                <p><a href="tel:0291918049">02 9191 8049</a></p>
+            </div>
+
+            <div class="contact-card">
+                <h3>📍 Location</h3>
+                <p>Sydney, New South Wales<br>Australia</p>
+            </div>
+
+            <div class="contact-card">
+                <h3>⏰ Business Hours</h3>
+                <p>Monday - Friday: 9AM - 5PM<br>Saturday - Sunday: Closed</p>
+            </div>
+        </div>
+
+        <h2 style="margin-top: 3rem;">Follow Us</h2>
+        <p>
+            <a href="https://www.facebook.com/dsignsaustralia" target="_blank" class="btn">Facebook</a>
+            <a href="https://www.instagram.com/dsignsaustralia" target="_blank" class="btn">Instagram</a>
+            <a href="https://www.linkedin.com/company/dsigns-australia" target="_blank" class="btn">LinkedIn</a>
+        </p>
+
+        <p style="margin-top: 2rem;">
+            <a href="index.html" class="btn">← Back to Homepage</a>
+        </p>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 DSIGNS AUSTRALIA PTY LIMITED. All rights reserved.</p>
+    </footer>
+</body>
+</html>

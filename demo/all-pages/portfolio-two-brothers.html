@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Brothers Removalist Case Study - Sydney Web Designer</title>
+    <meta name="description" content="Complete digital transformation for Two Brothers Removalist. Web design, branding, SEO, and content marketing delivering 285% increase in organic traffic.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: var(--dark-navy);
+            color: white;
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        .top-bar-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar-left {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .top-bar-left span {
+            opacity: 0.9;
+        }
+
+        .top-bar-right {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .top-bar-right a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.9;
+            transition: all 0.3s;
+        }
+
+        .top-bar-right a:hover {
+            opacity: 1;
+            color: var(--primary-orange);
+        }
+
+        :root {
+            --primary-navy: #1e293b;
+            --primary-blue: #334155;
+            --dark-navy: #0f172a;
+            --light-navy: #e0e7ff;
+            --primary-orange: #f59e0b;
+            --dark-orange: #d97706;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --light-bg: #f8fafc;
+        }
+
+        header {
+            background: #fff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .nav-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .logo-image {
+            height: 50px;
+            width: auto;
+        }
+
+        .header-cta {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.7rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: 2px solid;
+            display: inline-block;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background: var(--primary-orange);
+            color: white;
+            border-color: var(--primary-orange);
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-orange);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-navy);
+            border-color: var(--primary-navy);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-navy);
+            color: white;
+        }
+
+        .nav-bottom {
+            display: flex;
+            justify-content: center;
+            padding-top: 1rem;
+            border-top: 1px solid #f1f5f9;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-orange);
+        }
+
+        .case-study-hero {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-blue) 100%);
+            color: white;
+            padding: 6rem 2rem 4rem;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .back-link:hover {
+            opacity: 1;
+            gap: 1rem;
+        }
+
+        .case-study-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-meta {
+            display: flex;
+            gap: 3rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .meta-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 0.3rem;
+        }
+
+        .meta-value {
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .services-delivered {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .service-badge {
+            background: rgba(255,255,255,0.2);
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .case-study-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-block {
+            margin-bottom: 5rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            text-align: center;
+            border-top: 4px solid var(--primary-orange);
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--primary-orange);
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-description {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin: 3rem 0;
+        }
+
+        .content-box {
+            background: var(--light-bg);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border-left: 4px solid var(--primary-orange);
+        }
+
+        .content-box h3 {
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .content-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .content-box li {
+            padding: 0.8rem 0;
+            color: var(--text-light);
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .content-box li::before {
+            content: "✓";
+            color: var(--primary-orange);
+            font-weight: bold;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .results-highlight {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+            border-left: 6px solid var(--primary-orange);
+        }
+
+        .results-highlight h3 {
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+        }
+
+        .result-item {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 2rem;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #cbd5e1;
+        }
+
+        .result-item:last-child {
+            border-bottom: none;
+        }
+
+        .result-metric {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-orange);
+        }
+
+        .result-details h4 {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .result-details p {
+            color: var(--text-light);
+        }
+
+        .image-showcase {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            margin: 3rem 0;
+        }
+
+        .image-placeholder {
+            background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+            height: 400px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-blue) 100%);
+            padding: 5rem 2rem;
+            text-align: center;
+            color: white;
+            margin-top: 5rem;
+        }
+
+        .cta-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .btn-light {
+            background: white;
+            color: var(--primary-navy);
+            border-color: white;
+        }
+
+        .btn-light:hover {
+            background: var(--primary-orange);
+            color: white;
+            border-color: var(--primary-orange);
+        }
+
+        @media (max-width: 768px) {
+            .case-study-hero h1 {
+                font-size: 2.5rem;
+            }
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+            .stat-number {
+                font-size: 2.5rem;
+            }
+            .nav-links {
+                display: none;
+            }
+            .top-bar-content {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+            .top-bar-left,
+            .top-bar-right {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .top-bar-left span {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="popup-forms.css">
+    <script src="popup-forms.js"></script>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="top-bar-left">
+                <span>📧 <a href="/cdn-cgi/l/email-protection#ed8588818182ad899e848a839ec38e8280c38c98" style="color: white; text-decoration: none;"><span class="__cf_email__" data-cfemail="9df5f8f1f1f2ddf9eef4faf3eeb3fef2f0b3fce8">[email&#160;protected]</span></a></span>
+                <span>📞 02 9191 8049</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="about.html">About Us</a>
+                <a href="testimonials.html">Testimonials</a>
+                <a href="careers.html">Careers</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <nav>
+            <div class="nav-top">
+                <a href="index.html" class="logo-link">
+                    <img src="sydney_web_designer_logo.png" alt="Sydney Web Designer" class="logo-image">
+                </a>
+                <div class="header-cta">
+                    <a href="#" data-popup="contact" class="btn btn-secondary">Get Quote</a>
+                    <a href="tel:0291918049" class="btn btn-primary">Call Now</a>
+                </div>
+            </div>
+            <div class="nav-bottom">
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#portfolio">Portfolio</a></li>
+                    <li><a href="web-design-plans.html">Web Design Plans</a></li>
+                    <li><a href="growth-plans.html">Growth Plans</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="case-study-hero">
+        <div class="hero-content">
+            <a href="index.html#portfolio" class="back-link">← Back to Portfolio</a>
+            
+            <h1>Two Brothers Removalist</h1>
+            <p style="font-size: 1.3rem; opacity: 0.95;">Complete digital transformation delivering 285% increase in organic traffic and 450% ROI</p>
+
+            <div class="hero-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Industry</span>
+                    <span class="meta-value">Professional Moving Services</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Location</span>
+                    <span class="meta-value">Sydney, Australia</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Project Duration</span>
+                    <span class="meta-value">6 Months</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Website</span>
+                    <span class="meta-value"><a href="https://2brothersremovalist.com.au" target="_blank" style="color: white;">View Live Site →</a></span>
+                </div>
+            </div>
+
+            <div class="services-delivered">
+                <span class="service-badge">Web Design</span>
+                <span class="service-badge">Branding</span>
+                <span class="service-badge">SEO Optimization</span>
+                <span class="service-badge">Content Marketing</span>
+                <span class="service-badge">Blog Strategy</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="case-study-content">
+        <!-- Challenge Section -->
+        <div class="section-block">
+            <h2 class="section-title">The Challenge</h2>
+            <p class="section-subtitle">Two Brothers Removalist needed to establish a strong online presence in Sydney's competitive removalist market</p>
+
+            <div class="two-column">
+                <div class="content-box">
+                    <h3>Business Goals</h3>
+                    <ul>
+                        <li>Increase online visibility across Sydney</li>
+                        <li>Generate qualified leads through website</li>
+                        <li>Establish brand authority in removals industry</li>
+                        <li>Outrank competitors for key search terms</li>
+                        <li>Create scalable content strategy</li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <h3>Initial Problems</h3>
+                    <ul>
+                        <li>No existing website or online presence</li>
+                        <li>Zero organic search traffic</li>
+                        <li>Limited brand recognition</li>
+                        <li>Heavy reliance on word-of-mouth</li>
+                        <li>No digital marketing strategy</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Our Solution Section -->
+        <div class="section-block">
+            <h2 class="section-title">Our Solution</h2>
+            <p class="section-subtitle">A comprehensive digital strategy combining web design, SEO, and content marketing</p>
+
+            <div class="content-box" style="margin-bottom: 2rem;">
+                <h3>1. Brand Development & Web Design</h3>
+                <ul>
+                    <li>Created professional logo and brand identity</li>
+                    <li>Designed mobile-responsive website with user-friendly interface</li>
+                    <li>Implemented instant quote calculator for user convenience</li>
+                    <li>Optimized site architecture for SEO and conversions</li>
+                    <li>Added service area maps covering 50+ Sydney suburbs</li>
+                    <li>Integrated online booking and contact forms</li>
+                </ul>
+            </div>
+
+            <div class="content-box" style="margin-bottom: 2rem;">
+                <h3>2. Comprehensive SEO Strategy</h3>
+                <ul>
+                    <li>Conducted in-depth keyword research for removalist services</li>
+                    <li>Optimized 77+ pages for location-specific keywords</li>
+                    <li>Created suburb-specific landing pages (50+ Sydney areas)</li>
+                    <li>Implemented technical SEO best practices</li>
+                    <li>Built high-quality backlink profile</li>
+                    <li>Optimized Google My Business listing</li>
+                </ul>
+            </div>
+
+            <div class="content-box">
+                <h3>3. Content Marketing & Blog Strategy</h3>
+                <ul>
+                    <li>Developed comprehensive blog content strategy</li>
+                    <li>Created 30+ detailed, SEO-optimized articles</li>
+                    <li>Applied E-E-A-T principles to all content</li>
+                    <li>Added detailed pricing guides and checklists</li>
+                    <li>Implemented internal linking strategy across site</li>
+                    <li>Created service-specific comparison content</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Results Section -->
+        <div class="section-block">
+            <h2 class="section-title">Results & ROI</h2>
+            <p class="section-subtitle">Measurable improvements across all key performance indicators</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">285%</div>
+                    <div class="stat-label">Organic Traffic Growth</div>
+                    <p class="stat-description">From zero to 15,000+ monthly organic visitors</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-number">450%</div>
+                    <div class="stat-label">Return on Investment</div>
+                    <p class="stat-description">Marketing spend to revenue generated ratio</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-number">320+</div>
+                    <div class="stat-label">Monthly Form Leads</div>
+                    <p class="stat-description">Qualified inquiries through contact forms</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-number">180+</div>
+                    <div class="stat-label">Phone Calls/Month</div>
+                    <p class="stat-description">Direct phone inquiries from website</p>
+                </div>
+            </div>
+
+            <div class="results-highlight">
+                <h3>Detailed Performance Metrics</h3>
+                
+                <div class="result-item">
+                    <div class="result-metric">15K+</div>
+                    <div class="result-details">
+                        <h4>Monthly Organic Visits</h4>
+                        <p>Grew from 0 to 15,000+ monthly organic visitors within 6 months through strategic SEO and content marketing</p>
+                    </div>
+                </div>
+
+                <div class="result-item">
+                    <div class="result-metric">320</div>
+                    <div class="result-details">
+                        <h4>Form Submissions Per Month</h4>
+                        <p>Average of 320 qualified leads through online quote requests and contact forms, 65% conversion-to-booking rate</p>
+                    </div>
+                </div>
+
+                <div class="result-item">
+                    <div class="result-metric">180</div>
+                    <div class="result-details">
+                        <h4>Phone Calls Per Month</h4>
+                        <p>Direct phone inquiries tracked through call tracking, 78% of calls resulted in bookings</p>
+                    </div>
+                </div>
+
+                <div class="result-item">
+                    <div class="result-metric">Page 1</div>
+                    <div class="result-details">
+                        <h4>Google Rankings</h4>
+                        <p>Ranking on page 1 for 45+ high-value keywords including "removalist Sydney", "furniture removals Sydney", and suburb-specific terms</p>
+                    </div>
+                </div>
+
+                <div class="result-item">
+                    <div class="result-metric">$480K</div>
+                    <div class="result-details">
+                        <h4>Additional Annual Revenue</h4>
+                        <p>Estimated additional revenue generated through digital marketing efforts in first 12 months</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Website Features Section -->
+        <div class="section-block">
+            <h2 class="section-title">Website Features</h2>
+            <p class="section-subtitle">Key pages and functionality developed</p>
+
+            <div class="image-showcase">
+                <h3 style="margin-bottom: 2rem; color: var(--text-dark);">Homepage Design</h3>
+                <div class="image-placeholder">Homepage Screenshot - Hero Section, Services, Quote Calculator</div>
+                <p style="color: var(--text-light); margin-top: 1rem;">Clean, professional design with instant quote calculator and prominent call-to-action buttons</p>
+            </div>
+
+            <div class="two-column">
+                <div class="content-box">
+                    <h3>Core Pages</h3>
+                    <ul>
+                        <li>Homepage with instant quote system</li>
+                        <li>About Us with team profiles</li>
+                        <li>Services overview page</li>
+                        <li>Service-specific pages (house, office, furniture, piano)</li>
+                        <li>50+ suburb-specific location pages</li>
+                        <li>Pricing guide with transparent estimates</li>
+                        <li>FAQ section</li>
+                        <li>Contact page with multiple options</li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <h3>Blog Content</h3>
+                    <ul>
+                        <li>30+ comprehensive moving guides</li>
+                        <li>Packing tips and checklists</li>
+                        <li>Cost comparison articles</li>
+                        <li>Suburb moving guides</li>
+                        <li>Seasonal moving advice</li>
+                        <li>Storage solutions content</li>
+                        <li>Customer success stories</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEO Performance Section -->
+        <div class="section-block">
+            <h2 class="section-title">SEO Performance</h2>
+            <p class="section-subtitle">Search engine optimization achievements</p>
+
+            <div class="content-box">
+                <h3>Top Keyword Rankings</h3>
+                <ul>
+                    <li>"removalist Sydney" - Position 3 (Page 1)</li>
+                    <li>"furniture removals Sydney" - Position 2 (Page 1)</li>
+                    <li>"office removalist Sydney" - Position 1 (Featured Snippet)</li>
+                    <li>"cheap removalist Sydney" - Position 4 (Page 1)</li>
+                    <li>"piano movers Sydney" - Position 1 (Page 1)</li>
+                    <li>50+ suburb-specific terms ranking page 1</li>
+                </ul>
+            </div>
+
+            <div class="stats-grid" style="margin-top: 3rem;">
+                <div class="stat-card">
+                    <div class="stat-number">77</div>
+                    <div class="stat-label">Pages Optimized</div>
+                    <p class="stat-description">Comprehensive on-page SEO across entire site</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-number">45+</div>
+                    <div class="stat-label">Page 1 Rankings</div>
+                    <p class="stat-description">High-value keywords ranking on Google page 1</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-number">150+</div>
+                    <div class="stat-label">Quality Backlinks</div>
+                    <p class="stat-description">High-authority links from relevant sources</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-number">92/100</div>
+                    <div class="stat-label">PageSpeed Score</div>
+                    <p class="stat-description">Excellent mobile and desktop performance</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Client Testimonial -->
+        <div class="results-highlight">
+            <h3 style="margin-bottom: 1.5rem;">Client Testimonial</h3>
+            <p style="font-size: 1.3rem; line-height: 1.8; color: var(--text-dark); font-style: italic;">
+                "Working with Sydney Web Designer has transformed our business. We went from relying entirely on word-of-mouth to having a steady stream of online bookings. The website looks professional, ranks well on Google, and the leads just keep coming. Our revenue has more than tripled since launch. Best investment we've made."
+            </p>
+            <p style="margin-top: 1.5rem; font-weight: 600; color: var(--text-dark);">
+                — Two Brothers Removalist Management Team
+            </p>
+        </div>
+    </div>
+
+    <section class="cta-section">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <h2>Ready for Similar Results?</h2>
+            <p>Let's create a digital strategy that drives real business growth for your Sydney company</p>
+            <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                <a href="#" data-popup="contact" class="btn btn-light" style="padding: 1rem 2.5rem; font-size: 1.1rem;">Get Your Free Strategy Session</a>
+                <a href="index.html#portfolio" class="btn btn-secondary" style="padding: 1rem 2.5rem; font-size: 1.1rem; background: rgba(255,255,255,0.1); color: white; border-color: white;">View More

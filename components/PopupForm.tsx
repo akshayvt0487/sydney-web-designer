@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 interface PopupFormProps {
   isOpen: boolean;
@@ -9,6 +10,7 @@ interface PopupFormProps {
 }
 
 export default function PopupForm({ isOpen, onClose, formType }: PopupFormProps) {
+  const router = useRouter();
   const [formData, setFormData] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -35,16 +37,41 @@ export default function PopupForm({ isOpen, onClose, formType }: PopupFormProps)
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // Save submission to database
+      const response = await fetch("/api/submissions/save", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type: formType,
+          ...formData,
+          id: Date.now().toString(),
+          submittedAt: new Date().toISOString(),
+          status: "new",
+        }),
+      });
+
+      if (response.ok) {
+        setIsSubmitting(false);
+        setIsSuccess(true);
+        setTimeout(() => {
+          setIsSuccess(false);
+          onClose();
+          setFormData({});
+          // Map formType to thank you page type
+          const typeMap: Record<string, string> = {
+            "contact": "contact",
+            "seoAudit": "seoAudit",
+            "adsAudit": "adsAudit",
+            "consultation": "consultation",
+          };
+          router.push(`/thank-you?type=${typeMap[formType]}`);
+        }, 2000);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
       setIsSubmitting(false);
-      setIsSuccess(true);
-      setTimeout(() => {
-        setIsSuccess(false);
-        onClose();
-        setFormData({});
-      }, 3000);
-    }, 1500);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -96,7 +123,7 @@ export default function PopupForm({ isOpen, onClose, formType }: PopupFormProps)
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="gradient-navy-orange p-6 relative">
+        <div className="bg-[#1e293b] p-6 relative">
           <button
             onClick={onClose}
             className="absolute top-4 right-4 text-white hover:text-gray-200 transition-colors"
@@ -114,7 +141,7 @@ export default function PopupForm({ isOpen, onClose, formType }: PopupFormProps)
         <form onSubmit={handleSubmit} className="p-6">
           {isSuccess ? (
             <div className="text-center py-8">
-              <div className="text-6xl mb-4">💬</div>
+              <div className="text-6xl mb-4"><i className="fas fa-comments"></i></div>
               <h3 className="text-2xl font-bold text-primary-navy mb-2">Thank You!</h3>
               <p className="text-gray-600">We&apos;ll get back to you within 24 hours.</p>
             </div>

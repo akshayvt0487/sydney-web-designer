@@ -4,7 +4,7 @@ import Image from "next/image";
 import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = {
-  title: "Blog | Web Design & Digital Marketing Tips | DSIGNS AUSTRALIA",
+  title: "Blog | Web Design & Digital Marketing Tips | Sydney Web Designer",
   description: "Expert insights on web design, SEO, digital marketing, and business growth. Learn from 13+ years of industry experience.",
   keywords: "web design blog, digital marketing tips, seo advice, business growth, sydney web design",
 };
@@ -43,11 +43,11 @@ export default function BlogPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="gradient-navy-orange text-white py-20">
+      <section className="bg-[#1e293b] text-white py-20">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-              DSIGNS Blog
+              Sydney Web Designer Blog
             </h1>
             <p className="text-xl text-gray-100 mb-8">
               Expert insights, tips, and strategies for web design, digital marketing, and business
@@ -68,7 +68,7 @@ export default function BlogPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.map((post) => (
               <div key={post.slug} className="card group hover:shadow-card-hover h-full flex flex-col">
-                <div className="relative h-48 bg-gradient-navy-orange rounded-lg mb-4 overflow-hidden">
+                <div className="relative h-48 bg-[#1e293b] rounded-lg mb-4 overflow-hidden">
                   <Image
                     src={post.image}
                     alt={post.title}
@@ -77,8 +77,8 @@ export default function BlogPage() {
                   />
                 </div>
                 <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
-                  <span>📅 {post.date}</span>
-                  <span>⏱️ {post.readTime}</span>
+                  <span><i className="fas fa-calendar"></i> {post.date}</span>
+                  <span><i className="fas fa-clock"></i> {post.readTime}</span>
                 </div>
                 <span className="inline-block px-3 py-1 bg-primary-orange text-white text-xs rounded-full mb-3 self-start">
                   {post.category}
@@ -134,7 +134,7 @@ export default function BlogPage() {
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <div className="card">
-              <div className="text-5xl mb-4">📧</div>
+              <div className="text-5xl mb-4"><i className="fas fa-envelope"></i></div>
               <h2 className="text-2xl font-bold mb-4 text-primary-navy">Stay Updated</h2>
               <p className="text-gray-700 mb-6">
                 Subscribe to our newsletter to receive the latest tips, insights, and updates on web

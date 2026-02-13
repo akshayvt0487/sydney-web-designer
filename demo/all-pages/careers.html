@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers Sydney | Join Our Digital Marketing Team | DSIGNS</title>
+    <meta name="description" content="Join DSIGNS Australia - Sydney's leading digital agency. We're hiring Web Designers, SEO Specialists, Google Ads Experts, and more. Apply today!">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        :root {
+            --primary-navy: #1e293b;
+            --primary-blue: #334155;
+            --dark-navy: #0f172a;
+            --primary-orange: #f59e0b;
+            --dark-orange: #d97706;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --light-bg: #f8fafc;
+        }
+
+        .top-bar {
+            background: var(--dark-navy);
+            color: white;
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        .top-bar-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar-left {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .top-bar-right {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .top-bar-right a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.9;
+        }
+
+        .top-bar-right a:hover {
+            opacity: 1;
+            color: var(--primary-orange);
+        }
+
+        header {
+            background: #fff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .nav-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-image {
+            height: 50px;
+            width: auto;
+        }
+
+        .header-cta {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.7rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: 2px solid;
+            font-size: 0.95rem;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--primary-orange);
+            color: white;
+            border-color: var(--primary-orange);
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-orange);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-navy);
+            border-color: var(--primary-navy);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-navy);
+            color: white;
+        }
+
+        .page-hero {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-blue) 100%);
+            color: white;
+            padding: 6rem 2rem 5rem;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .page-hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-bottom: 5rem;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--primary-orange);
+        }
+
+        .benefit-card h3 {
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .benefit-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .job-listing {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border-left: 6px solid var(--primary-orange);
+        }
+
+        .job-listing h3 {
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .job-meta {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .job-description {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .job-requirements {
+            margin: 1.5rem 0;
+        }
+
+        .job-requirements h4 {
+            color: var(--text-dark);
+            margin-bottom: 0.8rem;
+        }
+
+        .job-requirements ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .job-requirements li {
+            padding: 0.5rem 0;
+            color: var(--text-light);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+        }
+
+        .job-requirements li::before {
+            content: "✓";
+            color: var(--primary-orange);
+            font-weight: bold;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .apply-btn {
+            background: var(--primary-orange);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 1rem;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .apply-btn:hover {
+            background: var(--dark-orange);
+        }
+
+        .application-form {
+            display: none;
+            background: var(--light-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+        }
+
+        .application-form.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .file-upload {
+            border: 2px dashed #e2e8f0;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .file-upload:hover {
+            border-color: var(--primary-orange);
+            background: var(--light-bg);
+        }
+
+        footer {
+            background: #1e293b;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            color: #94a3b8;
+        }
+
+        @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            .top-bar-content {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="popup-forms.css">
+    <script src="popup-forms.js"></script>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="top-bar-left">
+                <span>📧 <a href="/cdn-cgi/l/email-protection#8ee6ebe2e2e1ceeafde7e9e0fda0ede1e3a0effb" style="color: white; text-decoration: none;"><span class="__cf_email__" data-cfemail="771f121b1b183713041e1019045914181a591602">[email&#160;protected]</span></a></span>
+                <span>📞 02 9191 8049</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="about.html">About Us</a>
+                <a href="testimonials.html">Testimonials</a>
+                <a href="careers.html">Careers</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <nav>
+            <div class="nav-top">
+                <a href="index.html">
+                    <img src="sydney_web_designer_logo.png" alt="Sydney Web Designer" class="logo-image">
+                </a>
+                <div class="header-cta">
+                    <a href="contact.html" class="btn btn-secondary">Get Quote</a>
+                    <a href="tel:0291918049" class="btn btn-primary">Call Now</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-hero">
+        <h1>Join Our Team</h1>
+        <p>Build your career with Sydney's leading web design and digital marketing agency</p>
+    </section>
+
+    <section class="content-section">
+        <h2 class="section-title">Why Work With Us?</h2>
+        <p class="section-subtitle">We're a growing team passionate about helping Sydney businesses succeed online</p>
+
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <h3>Growth Opportunities</h3>
+                <p>We invest in our team's professional development with training, mentorship, and career advancement opportunities.</p>
+            </div>
+
+            <div class="benefit-card">
+                <h3>Flexible Work</h3>
+                <p>Enjoy work-life balance with flexible hours and remote work options for the right candidates.</p>
+            </div>
+
+            <div class="benefit-card">
+                <h3>Great Culture</h3>
+                <p>Work with a collaborative, supportive team that values creativity, innovation, and results.</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">Current Opportunities</h2>
+        <p class="section-subtitle">Join our team and make an impact</p>
+
+        <!-- Web Designer Job -->
+        <div class="job-listing">
+            <h3>Web Designer</h3>
+            <p class="job-meta">Full-time • Parramatta, Sydney • Web Design Team</p>
+            <p class="job-description">Create beautiful, conversion-focused websites for Sydney businesses. Work with our design and development team to deliver exceptional digital experiences.</p>
+            
+            <div class="job-requirements">
+                <h4>Requirements:</h4>
+                <ul>
+                    <li>2+ years professional web design experience</li>
+                    <li>Expert in Figma or Adobe XD</li>
+                    <li>Strong understanding of UX/UI principles</li>
+                    <li>WordPress and Elementor experience</li>
+                    <li>Portfolio showcasing web design work</li>
+                    <li>Knowledge of responsive design and mobile-first approach</li>
+                </ul>
+            </div>
+
+            <a href="career-application.html?position=web-designer" class="apply-btn" style="display: inline-block; text-decoration: none; text-align: center;">Apply for this position</a>
+
+            <div id="webdesigner-form" class="application-form">
+                <h4 style="margin-bottom: 1.5rem; color: var(--text-dark);">Apply for Web Designer</h4>
+                <form>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>First Name *</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name *</label>
+                            <input type="text" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone *</label>
+                            <input type="tel" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Portfolio URL *</label>
+                        <input type="url" placeholder="https://" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Years of Experience *</label>
+                        <select required>
+                            <option value="">Select...</option>
+                            <option value="1-2">1-2 years</option>
+                            <option value="3-5">3-5 years</option>
+                            <option value="5+">5+ years</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Design Tools You're Proficient In *</label>
+                        <textarea placeholder="e.g., Figma, Adobe XD, Photoshop, Illustrator..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Why do you want to work at DSIGNS? *</label>
+                        <textarea required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Upload Resume (PDF) *</label>
+                        <div class="file-upload">
+                            <input type="file" accept=".pdf" required style="display: none;" id="resume-webdesigner">
+                            <label for="resume-webdesigner" style="cursor: pointer;">
+                                📄 Click to upload your resume (PDF only)
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1.2rem;">Submit Application</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- SEO Specialist Job -->
+        <div class="job-listing">
+            <h3>SEO Specialist</h3>
+            <p class="job-meta">Full-time • Parramatta, Sydney • Digital Marketing Team</p>
+            <p class="job-description">Drive organic growth for our clients through strategic SEO. Conduct audits, optimize content, build links, and deliver measurable ranking improvements.</p>
+            
+            <div class="job-requirements">
+                <h4>Requirements:</h4>
+                <ul>
+                    <li>3+ years hands-on SEO experience</li>
+                    <li>Proven track record of ranking improvements</li>
+                    <li>Expert in Google Analytics and Search Console</li>
+                    <li>Technical SEO knowledge (crawling, indexing, site architecture)</li>
+                    <li>Experience with SEO tools (Ahrefs, SEMrush, Screaming Frog)</li>
+                    <li>Strong analytical and reporting skills</li>
+                </ul>
+            </div>
+
+            <a href="career-application.html?position=seo-specialist" class="apply-btn" style="display: inline-block; text-decoration: none; text-align: center;">Apply for this position</a>
+
+            <div id="seo-form" class="application-form">
+                <h4 style="margin-bottom: 1.5rem; color: var(--text-dark);">Apply for SEO Specialist</h4>
+                <form>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>First Name *</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name *</label>
+                            <input type="text" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone *</label>
+                            <input type="tel" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Years of SEO Experience *</label>
+                        <select required>
+                            <option value="">Select...</option>
+                            <option value="1-2">1-2 years</option>
+                            <option value="3-5">3-5 years</option>
+                            <option value="5+">5+ years</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>SEO Tools You Use *</label>
+                        <textarea placeholder="e.g., Ahrefs, SEMrush, Google Analytics, Search Console..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Describe Your Best SEO Success Story *</label>
+                        <textarea placeholder="Include specific metrics: traffic growth %, ranking improvements, timeline..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Upload Resume (PDF) *</label>
+                        <div class="file-upload">
+                            <input type="file" accept=".pdf" required style="display: none;" id="resume-seo">
+                            <label for="resume-seo" style="cursor: pointer;">
+                                📄 Click to upload your resume (PDF only)
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1.2rem;">Submit Application</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Google Ads Specialist Job -->
+        <div class="job-listing">
+            <h3>Google Ads Specialist</h3>
+            <p class="job-meta">Full-time • Parramatta, Sydney • Digital Marketing Team</p>
+            <p class="job-description">Manage and optimize Google Ads campaigns for Sydney businesses. Create strategies, write ad copy, optimize bidding, and maximize ROAS for clients.</p>
+            
+            <div class="job-requirements">
+                <h4>Requirements:</h4>
+                <ul>
+                    <li>3+ years Google Ads campaign management experience</li>
+                    <li>Google Ads certification required</li>
+                    <li>Experience managing budgets of $10K+ per month</li>
+                    <li>Strong understanding of PPC metrics and optimization</li>
+                    <li>Proven track record of improving ROAS and conversion rates</li>
+                    <li>Experience with Google Analytics and conversion tracking</li>
+                </ul>
+            </div>
+
+            <a href="career-application.html?position=google-ads-specialist" class="apply-btn" style="display: inline-block; text-decoration: none; text-align: center;">Apply for this position</a>
+
+            <div id="googleads-form" class="application-form">
+                <h4 style="margin-bottom: 1.5rem; color: var(--text-dark);">Apply for Google Ads Specialist</h4>
+                <form>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>First Name *</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name *</label>
+                            <input type="text" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone *</label>
+                            <input type="tel" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Years of Google Ads Experience *</label>
+                        <select required>
+                            <option value="">Select...</option>
+                            <option value="1-2">1-2 years</option>
+                            <option value="3-5">3-5 years</option>
+                            <option value="5+">5+ years</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Google Ads Certifications *</label>
+                        <textarea placeholder="List your Google Ads certifications and certificate IDs..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Largest Monthly Budget You've Managed *</label>
+                        <select required>
+                            <option value="">Select...</option>
+                            <option value="5-10k">$5K - $10K</option>
+                            <option value="10-25k">$10K - $25K</option>
+                            <option value="25-50k">$25K - $50K</option>
+                            <option value="50k+">$50K+</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Best Campaign Result You've Achieved *</label>
+                        <textarea placeholder="Include metrics: ROAS, CPA, conversion rate improvements, etc..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Upload Resume (PDF) *</label>
+                        <div class="file-upload">
+                            <input type="file" accept=".pdf" required style="display: none;" id="resume-googleads">
+                            <label for="resume-googleads" style="cursor: pointer;">
+                                📄 Click to upload your resume (PDF only)
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1.2rem;">Submit Application</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Meta Ads Specialist Job -->
+        <div class="job-listing">
+            <h3>Meta Ads Specialist</h3>
+            <p class="job-meta">Full-time • Parramatta, Sydney • Digital Marketing Team</p>
+            <p class="job-description">Create and manage Facebook and Instagram advertising campaigns. Develop targeting strategies, create compelling ad creatives, and optimize for conversions.</p>
+            
+            <div class="job-requirements">
+                <h4>Requirements:</h4>
+                <ul>
+                    <li>2+ years managing Meta (Facebook/Instagram) advertising</li>
+                    <li>Meta Blueprint certification preferred</li>
+                    <li>Experience with Facebook Ads Manager and Business Manager</li>
+                    <li>Strong understanding of audience targeting and pixel tracking</li>
+                    <li>Creative eye for ad design and copywriting</li>
+                    <li>Experience with A/B testing and campaign optimization</li>
+                </ul>
+            </div>
+
+            <a href="career-application.html?position=meta-ads-specialist" class="apply-btn" style="display: inline-block; text-decoration: none; text-align: center;">Apply for this position</a>
+
+            <div id="metaads-form" class="application-form">
+                <h4 style="margin-bottom: 1.5rem; color: var(--text-dark);">Apply for Meta Ads Specialist</h4>
+                <form>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>First Name *</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name *</label>
+                            <input type="text" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone *</label>
+                            <input type="tel" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Years of Meta Ads Experience *</label>
+                        <select required>
+                            <option value="">Select...</option>
+                            <option value="1-2">1-2 years</option>
+                            <option value="3-5">3-5 years</option>
+                            <option value="5+">5+ years</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Meta/Facebook Certifications</label>
+                        <textarea placeholder="List any Meta Blueprint certifications you hold..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Campaign Types You've Managed *</label>
+                        <textarea placeholder="e.g., Lead Generation, Conversions, Traffic, Engagement, Video Views..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Best Meta Ads Campaign Result *</label>
+                        <textarea placeholder="Include metrics: ROAS, CPC, conversion rate, leads generated, etc..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Upload Resume (PDF) *</label>
+                        <div class="file-upload">
+                            <input type="file" accept=".pdf" required style="display: none;" id="resume-metaads">
+                            <label for="resume-metaads" style="cursor: pointer;">
+                                📄 Click to upload your resume (PDF only)
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1.2rem;">Submit Application</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Performance Marketer Job -->
+        <div class="job-listing">
+            <h3>Performance Marketer</h3>
+            <p class="job-meta">Full-time • Parramatta, Sydney • Digital Marketing Team</p>
+            <p class="job-description">Own end-to-end digital marketing performance across all channels. Analyze data, identify opportunities, and optimize campaigns to maximize ROI for clients.</p>
+            
+            <div class="job-requirements">
+                <h4>Requirements:</h4>
+                <ul>
+                    <li>3+ years performance marketing experience</li>
+                    <li>Expert in Google Analytics and data analysis</li>
+                    <li>Experience with multiple channels (Google Ads, Meta, LinkedIn, etc.)</li>
+                    <li>Strong understanding of conversion rate optimization</li>
+                    <li>Proven ability to scale campaigns profitably</li>
+                    <li>Experience with marketing automation and attribution modeling</li>
+                </ul>
+            </div>
+
+            <a href="career-application.html?position=performance-marketer" class="apply-btn" style="display: inline-block; text-decoration: none; text-align: center;">Apply for this position</a>
+
+            <div id="performance-form" class="application-form">
+                <h4 style="margin-bottom: 1.5rem; color: var(--text-dark);">Apply for Performance Marketer</h4>
+                <form>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>First Name *</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name *</label>
+                            <input type="text" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone *</label>
+                            <input type="tel" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Years of Performance Marketing Experience *</label>
+                        <select required>
+                            <option value="">Select...</option>
+                            <option value="1-2">1-2 years</option>
+                            <option value="3-5">3-5 years</option>
+                            <option value="5+">5+ years</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Marketing Channels You've Managed *</label>
+                        <textarea placeholder="e.g., Google Ads, Meta Ads, LinkedIn Ads, Email Marketing, SEO..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Analytics & Tracking Tools You Use *</label>
+                        <textarea placeholder="e.g., Google Analytics, GTM, Mixpanel, Hotjar..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Describe Your Most Successful Campaign *</label>
+                        <textarea placeholder="Include: channel mix, budget, results, ROI, key optimizations..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Upload Resume (PDF) *</label>
+                        <div class="file-upload">
+                            <input type="file" accept=".pdf" required style="display: none;" id="resume-performance">
+                            <label for="resume-performance" style="cursor: pointer;">
+                                📄 Click to upload your resume (PDF only)
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1.2rem;">Submit Application</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Project Manager Job -->
+        <div class="job-listing">
+            <h3>Project Manager</h3>
+            <p class="job-meta">Full-time • Parramatta, Sydney • Operations Team</p>
+            <p class="job-description">Lead digital projects from initiation to delivery. Coordinate between clients, designers, developers, and marketers to ensure projects are delivered on time and exceed expectations.</p>
+            
+            <div class="job-requirements">
+                <h4>Requirements:</h4>
+                <ul>
+                    <li>3+ years project management experience in digital agency</li>
+                    <li>Experience managing web design and digital marketing projects</li>
+                    <li>Strong client communication and relationship management skills</li>
+                    <li>Proficient with project management tools (Asana, Monday, Trello)</li>
+                    <li>Ability to manage multiple projects simultaneously</li>
+                    <li>Understanding of web development and digital marketing processes</li>
+                </ul>
+            </div>
+
+            <a href="career-application.html?position=project-manager" class="apply-btn" style="display: inline-block; text-decoration: none; text-align: center;">Apply for this position</a>
+
+            <div id="projectmanager-form" class="application-form">
+                <h4 style="margin-bottom: 1.5rem; color: var(--text-dark);">Apply for Project Manager</h4>
+                <form>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>First Name *</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name *</label>
+                            <input type="text" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone *</label>
+                            <input type="tel" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Years of Project Management Experience *</label>
+                        <select required>
+                            <option value="">Select...</option>
+                            <option value="1-2">1-2 years</option>
+                            <option value="3-5">3-5 years</option>
+                            <option value="5+">5+ years</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Project Management Tools You Use *</label>
+                        <textarea placeholder="e.g., Asana, Monday.com, Trello, Jira..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Types of Projects You've Managed *</label>
+                        <textarea placeholder="e.g., Website launches, SEO campaigns, rebranding projects..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Describe Your Project Management Approach *</label>
+                        <textarea placeholder="How do you keep projects on track and clients happy?" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Upload Resume (PDF) *</label>
+                        <div class="file-upload">
+                            <input type="file" accept=".pdf" required style="display: none;" id="resume-projectmanager">
+                            <label for="resume-projectmanager" style="cursor: pointer;">
+                                📄 Click to upload your resume (PDF only)
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1.2rem;">Submit Application</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Content Writer Job -->
+        <div class="job-listing">
+            <h3>Content Writer</h3>
+            <p class="job-meta">Full-time • Parramatta, Sydney • Content Team</p>
+            <p class="job-description">Craft compelling content that engages audiences and drives results. Write blog posts, website copy, and marketing materials with SEO best practices.</p>
+            
+            <div class="job-requirements">
+                <h4>Requirements:</h4>
+                <ul>
+                    <li>Excellent writing skills in Australian English</li>
+                    <li>2+ years content writing experience</li>
+                    <li>Understanding of SEO and keyword optimization</li>
+                    <li>Portfolio of published work required</li>
+                    <li>Ability to write for different industries and audiences</li>
+                    <li>Strong research and fact-checking skills</li>
+                </ul>
+            </div>
+
+            <a href="career-application.html?position=content-writer" class="apply-btn" style="display: inline-block; text-decoration: none; text-align: center;">Apply for this position</a>
+
+            <div id="contentwriter-form" class="application-form">
+                <h4 style="margin-bottom: 1.5rem; color: var(--text-dark);">Apply for Content Writer</h4>
+                <form>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>First Name *</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name *</label>
+                            <input type="text" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone *</label>
+                            <input type="tel" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Portfolio URL *</label>
+                        <input type="url" placeholder="Link to your writing samples" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Years of Writing Experience *</label>
+                        <select required>
+                            <option value="">Select...</option>
+                            <option value="1-2">1-2 years</option>
+                            <option value="3-5">3-5 years</option>
+                            <option value="5+">5+ years</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Writing Specialties *</label>
+                        <textarea placeholder="e.g., Blog posts, website copy, technical writing, email campaigns..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>SEO Writing Experience *</label>
+                        <textarea placeholder="Describe your experience with SEO content writing and keyword optimization..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Upload Resume (PDF) *</label>
+                        <div class="file-upload">
+                            <input type="file" accept=".pdf" required style="display: none;" id="resume-contentwriter">
+                            <label for="resume-contentwriter" style="cursor: pointer;">
+                                📄 Click to upload your resume (PDF only)
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1.2rem;">Submit Application</button>
+                </form>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 4rem; background: var(--light-bg); padding: 3rem; border-radius: 20px;">
+            <h3 style="font-size: 2rem; color: var(--text-dark); margin-bottom: 1rem;">Don't See the Right Role?</h3>
+            <p style="font-size: 1.1rem; color: var(--text-light); margin-bottom: 2rem;">We're always looking for talented people. Send us your resume!</p>
+            <a href="/cdn-cgi/l/email-protection#c2a1a3b0a7a7b0b182a6b1aba5acb1eca1adafeca3b7" class="btn btn-primary" style="padding: 1rem 2rem; font-size: 1.1rem;">Email Your Resume</a>
+        </div>
+    </section>
+
+                <footer style="background: var(--primary-navy); color: white; padding: 4rem 2rem 2rem;">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <!-- Footer Content Grid -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 3rem;">
+                
+                <!-- Company Info -->
+                <div>
+                    <h3 style="color: white; font-size: 1.3rem; margin-bottom: 1rem;">DSIGNS AUSTRALIA</h3>
+                    <p style="color: #94a3b8; line-height: 1.8; margin-bottom: 1rem;">
+                        Sydney's leading web design and digital marketing agency. We help businesses grow online with professional websites, SEO, and digital marketing services.
+                    </p>
+                    <p style="color: #94a3b8;">
+                        <strong style="color: white;">📍 Location:</strong><br>
+                        Sydney, New South Wales, Australia
+                    </p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 style="color: white; font-size: 1.3rem; margin-bottom: 1rem;">Quick Links</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 0.75rem;"><a href="index.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Home</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="about.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">About Us</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="services.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Services</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="portfolio-two-brothers.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Portfolio</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="blog.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Blog</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="careers.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h3 style="color: white; font-size: 1.3rem; margin-bottom: 1rem;">Our Services</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 0.75rem;"><a href="service-custom-web-design.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Web Design</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="service-seo-sydney.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">SEO Services</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="service-google-ads.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Google Ads</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="service-logo-design.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Branding</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="service-social-media-marketing.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Social Media</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="service-content-marketing.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Content Marketing</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact & Social -->
+                <div>
+                    <h3 style="color: white; font-size: 1.3rem; margin-bottom: 1rem;">Get In Touch</h3>
+                    <p style="color: #94a3b8; margin-bottom: 0.75rem;">
+                        <strong style="color: white;">📧 Email:</strong><br>
+                        <a href="/cdn-cgi/l/email-protection#d8b0bdb4b4b798bcabb1bfb6abf6bbb7b5f6b9ad" style="color: #f59e0b; text-decoration: none;"><span class="__cf_email__" data-cfemail="69010c050506290d1a000e071a470a060447081c">[email&#160;protected]</span></a>
+                    </p>
+                    <p style="color: #94a3b8; margin-bottom: 1.5rem;">
+                        <strong style="color: white;">📞 Phone:</strong><br>
+                        <a href="tel:0291918049" style="color: #f59e0b; text-decoration: none;">02 9191 8049</a>
+                    </p>
+                    
+                    <!-- Social Media Links -->
+                    <h4 style="color: white; font-size: 1.1rem; margin-bottom: 1rem;">Follow Us</h4>
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="https://www.facebook.com/dsignsaustralia" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; background: #1877f2; color: white; border-radius: 50%; text-decoration: none; font-size: 1.5rem; transition: all 0.3s;" onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 5px 15px rgba(24, 119, 242, 0.4)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+                            <span style="font-family: Arial, sans-serif;">f</span>
+                        </a>
+                        <a href="https://www.instagram.com/dsignsaustralia" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: white; border-radius: 50%; text-decoration: none; font-size: 1.5rem; transition: all 0.3s;" onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 5px 15px rgba(225, 48, 108, 0.4)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+                            <span style="font-family: Arial, sans-serif; font-weight: bold;">📷</span>
+                        </a>
+                        <a href="https://www.linkedin.com/company/dsigns-australia" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; background: #0077b5; color: white; border-radius: 50%; text-decoration: none; font-size: 1.5rem; transition: all 0.3s;" onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 5px 15px rgba(0, 119, 181, 0.4)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+                            <span style="font-family: Arial, sans-serif; font-weight: bold;">in</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div style="border-top: 1px solid #334155; padding-top: 2rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+                <p style="color: #94a3b8; margin: 0;">
+                    &copy; 2025 DSIGNS AUSTRALIA PTY LIMITED. All rights reserved.
+                </p>
+                <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+                    <a href="privacy-policy.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Privacy Policy</a>
+                    <a href="terms-conditions.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-stat

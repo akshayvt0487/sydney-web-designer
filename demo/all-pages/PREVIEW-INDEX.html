@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sydney Web Designer - Complete Website Preview</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', sans-serif; 
+            line-height: 1.6; 
+            color: #333; 
+            background: #f8fafc;
+        }
+        
+        :root {
+            --primary-navy: #1e293b;
+            --primary-orange: #f59e0b;
+            --text-light: #64748b;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-navy), #2d3e52);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-orange);
+        }
+        
+        .stat-label {
+            color: var(--text-light);
+            font-size: 1rem;
+            margin-top: 0.5rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        .section {
+            background: white;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        
+        .section h2 {
+            color: var(--primary-navy);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--primary-orange);
+        }
+        
+        .file-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .file-link {
+            display: block;
+            padding: 1rem 1.5rem;
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--primary-navy);
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        .file-link:hover {
+            background: #fef3e7;
+            border-color: var(--primary-orange);
+            transform: translateX(5px);
+        }
+        
+        .file-link::before {
+            content: "📄 ";
+            margin-right: 0.5rem;
+        }
+        
+        .highlight {
+            background: linear-gradient(135deg, #fef3e7, #fff);
+            border: 2px solid var(--primary-orange);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+        }
+        
+        .highlight h3 {
+            color: var(--primary-navy);
+            margin-bottom: 1rem;
+        }
+        
+        .highlight ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .highlight li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .highlight li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-orange);
+            font-weight: bold;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--primary-orange);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin: 0.5rem;
+        }
+        
+        .btn:hover {
+            background: #d97706;
+            transform: translateY(-2px);
+        }
+        
+        footer {
+            background: var(--primary-navy);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+            .file-grid { grid-template-columns: 1fr; }
+            .stats { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🎨 Sydney Web Designer</h1>
+        <p>Complete Website Preview - DSIGNS AUSTRALIA PTY LIMITED</p>
+    </header>
+
+    <div class="stats">
+        <div class="stat-card">
+            <div class="stat-number">59</div>
+            <div class="stat-label">HTML Pages</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">20</div>
+            <div class="stat-label">Service Pages</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">24</div>
+            <div class="stat-label">Blog Posts</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">100K+</div>
+            <div class="stat-label">Words of Content</div>
+        </div>
+    </div>
+
+    <div class="container">
+        
+        <!-- New Features Highlight -->
+        <div class="highlight">
+            <h3>🆕 Latest Updates & Features</h3>
+            <ul>
+                <li>Popup form system with 4 specialized forms</li>
+                <li>Career application page with comprehensive fields</li>
+                <li>Updated work preferences (remote/onsite/hybrid)</li>
+                <li>Employment types (full-time/part-time/casual/contract/internship)</li>
+                <li>Results & proof sections on SEO and Google Ads pages</li>
+                <li>Google Ads pricing aligned with Growth Plans</li>
+                <li>All 59 pages integrated with popup forms</li>
+            </ul>
+        </div>
+
+        <!-- Main Pages -->
+        <div class="section">
+            <h2>🏠 Main Pages</h2>
+            <div class="file-grid">
+                <a href="index.html" class="file-link">Homepage</a>
+                <a href="about.html" class="file-link">About Us</a>
+                <a href="services.html" class="file-link">Services Overview</a>
+                <a href="portfolio-two-brothers.html" class="file-link">Portfolio</a>
+                <a href="testimonials.html" class="file-link">Testimonials</a>
+                <a href="blog.html" class="file-link">Blog</a>
+                <a href="careers.html" class="file-link">Careers ⭐ Updated</a>
+                <a href="career-application.html" class="file-link">Career Application ⭐ NEW</a>
+                <a href="web-design-plans.html" class="file-link">Web Design Plans</a>
+                <a href="growth-plans.html" class="file-link">Growth Plans</a>
+                <a href="privacy-policy.html" class="file-link">Privacy Policy</a>
+                <a href="terms-conditions.html" class="file-link">Terms & Conditions</a>
+            </div>
+        </div>
+
+        <!-- Service Categories -->
+        <div class="section">
+            <h2>💼 Service Category Pages</h2>
+            <div class="file-grid">
+                <a href="web-design.html" class="file-link">Web Design Services</a>
+                <a href="branding.html" class="file-link">Branding Services</a>
+                <a href="digital-marketing.html" class="file-link">Digital Marketing Services</a>
+            </div>
+        </div>
+
+        <!-- Web Design Services -->
+        <div class="section">
+            <h2>🎨 Web Design Services (8)</h2>
+            <div class="file-grid">
+                <a href="service-custom-web-design.html" class="file-link">Custom Web Design</a>
+                <a href="service-wordpress-development.html" class="file-link">WordPress Development</a>
+                <a href="service-ecommerce-websites.html" class="file-link">E-commerce Websites</a>
+                <a href="service-responsive-design.html" class="file-link">Responsive Design</a>
+                <a href="service-website-redesign.html" class="file-link">Website Redesign</a>
+                <a href="service-landing-pages.html" class="file-link">Landing Pages</a>
+                <a href="service-ui-ux-design.html" class="file-link">UI/UX Design</a>
+                <a href="service-seo-sydney.html" class="file-link">SEO Services ⭐ Updated</a>
+            </div>
+        </div>
+
+        <!-- Branding Services -->
+        <div class="section">
+            <h2>🎯 Branding Services (6)</h2>
+            <div class="file-grid">
+                <a href="service-logo-design.html" class="file-link">Logo Design</a>
+                <a href="service-brand-identity.html" class="file-link">Brand Identity</a>
+                <a href="service-brand-strategy.html" class="file-link">Brand Strategy</a>
+                <a href="service-graphic-design.html" class="file-link">Graphic Design</a>
+                <a href="service-business-cards.html" class="file-link">Business Cards</a>
+                <a href="service-marketing-materials.html" class="file-link">Marketing Materials</a>
+            </div>
+        </div>
+
+        <!-- Digital Marketing Services -->
+        <div class="section">
+            <h2>📊 Digital Marketing Services (6)</h2>
+            <div class="file-grid">
+                <a href="service-google-ads.html" class="file-link">Google Ads ⭐ Updated</a>
+                <a href="service-social-media-marketing.html" class="file-link">Social Media Marketing</a>
+                <a href="service-content-marketing.html" class="file-link">Content Marketing</a>
+                <a href="service-email-marketing.html" class="file-link">Email Marketing</a>
+                <a href="service-local-seo.html" class="file-link">Local SEO</a>
+                <a href="service-conversion-optimization.html" class="file-link">Conversion Optimization</a>
+            </div>
+        </div>
+
+        <!-- Blog Posts -->
+        <div class="section">
+            <h2>📝 Blog Posts (24)</h2>
+            <div class="file-grid">
+                <a href="blog-seo-tips-sydney.html" class="file-link">SEO Tips for Sydney Businesses</a>
+                <a href="blog-web-design-trends-2024.html" class="file-link">Web Design Trends 2024</a>
+                <a href="blog-choose-web-designer.html" class="file-link">How to Choose a Web Designer</a>
+                <a href="blog-local-seo-sydney-complete-guide.html" class="file-link">Complete Local SEO Guide</a>
+                <a href="blog-google-ads-vs-facebook-ads.html" class="file-link">Google Ads vs Facebook Ads</a>
+                <a href="blog-content-marketing-strategy-guide.html" class="file-link">Content Marketing Strategy</a>
+                <a href="blog-social-media-marketing-sydney-businesses.html" class="file-link">Social Media Marketing Guide</a>
+                <a href="blog-ecommerce-website-best-practices.html" class="file-link">E-commerce Best Practices</a>
+                <a href="blog-email-marketing-automation-guide.html" class="file-link">Email Marketing Automation</a>
+                <a href="blog-conversion-rate-optimization-strategies.html" class="file-link">CRO Strategies</a>
+                <a href="blog-branding-mistakes-small-businesses.html" class="file-link">Branding Mistakes to Avoid</a>
+                <a href="blog-digital-marketing-budget-planning.html" class="file-link">Marketing Budget Planning</a>
+            </div>
+            <p style="margin-top: 1rem; color: var(--text-light); text-align: center;">
+                + 12 more blog posts available
+            </p>
+        </div>
+
+        <!-- System Files -->
+        <div class="section">
+            <h2>⚙️ System Files (NEW)</h2>
+            <div class="file-grid">
+                <a href="popup-forms.js" class="file-link" download>popup-forms.js ⭐ Download</a>
+                <a href="popup-forms.css" class="file-link" download>popup-forms.css ⭐ Download</a>
+            </div>
+            <p style="margin-top: 1rem; color: var(--text-light);">
+                These files power the popup form system across all 59 pages
+            </p>
+        </div>
+
+        <!-- Documentation -->
+        <div class="section">
+            <h2>📚 Documentation</h2>
+            <div class="file-grid">
+                <a href="README.md" class="file-link">README - Getting Started</a>
+                <a href="POPUP-FORMS-IMPLEMENTATION.md" class="file-link">Popup Forms Guide ⭐ NEW</a>
+                <a href="CAREER-FORM-UPDATE.md" class="file-link">Career Form Update ⭐ NEW</a>
+                <a href="RESULTS-PROOF-SECTIONS-ADDED.md" class="file-link">Results Sections Guide</a>
+                <a href="GOOGLE-ADS-PRICING-UPDATE.md" class="file-link">Google Ads Pricing</a>
+                <a href="FINAL-ENHANCEMENTS-COMPLETE.md" class="file-link">Enhancements Summary</a>
+                <a href="DELIVERY-SUMMARY.md" class="file-link">Delivery Summary</a>
+                <a href="SEO_OPTIMIZATION_SUMMARY.md" class="file-link">SEO Optimization</a>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="section" style="text-align: center; background: linear-gradient(135deg, #fef3e7, #fff); border: 2px solid var(--primary-orange);">
+            <h2>🚀 Quick Test Actions</h2>
+            <p style="margin-bottom: 2rem; color: var(--text-light);">Test the new features</p>
+            <a href="index.html#contact" class="btn">Test Contact Popup</a>
+            <a href="service-seo-sydney.html" class="btn">Test SEO Audit Popup</a>
+            <a href="service-google-ads.html" class="btn">Test Ads Audit Popup</a>
+            <a href="career-application.html?position=web-designer" class="btn">Test Career Application</a>
+        </div>
+
+        <!-- Implementation Notes -->
+        <div class="section">
+            <h2>✅ Implementation Checklist</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                <div>
+                    <h3 style="color: var(--primary-navy); margin-bottom: 1rem;">✅ Completed</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 0.5rem 0;">✓ 59 HTML pages created</li>
+                        <li style="padding: 0.5rem 0;">✓ 20 service pages enhanced</li>
+                        <li style="padding: 0.5rem 0;">✓ 24 blog posts written</li>
+                        <li style="padding: 0.5rem 0;">✓ Popup form system</li>
+                        <li style="padding: 0.5rem 0;">✓ Career application page</li>
+                        <li style="padding: 0.5rem 0;">✓ Mobile responsive</li>
+                        <li style="padding: 0.5rem 0;">✓ SEO optimized</li>
+                        <li style="padding: 0.5rem 0;">✓ Professional design</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: var(--primary-orange); margin-bottom: 1rem;">🔄 Next Steps</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 0.5rem 0;">→ Upload to web server</li>
+                        <li style="padding: 0.5rem 0;">→ Add backend form handling</li>
+                        <li style="padding: 0.5rem 0;">→ Connect email notifications</li>
+                        <li style="padding: 0.5rem 0;">→ Upload actual screenshots</li>
+                        <li style="padding: 0.5rem 0;">→ Add logo image files</li>
+                        <li style="padding: 0.5rem 0;">→ Configure analytics</li>
+                        <li style="padding: 0.5rem 0;">→ Test all forms</li>
+                        <li style="padding: 0.5rem 0;">→ Launch! 🚀</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="section" style="background: var(--primary-navy); color: white;">
+            <h2 style="color: white; border-bottom-color: var(--primary-orange);">📞 Contact Information</h2>
+            <div style="font-size: 1.1rem; line-height: 2;">
+                <p><strong>Company:</strong> DSIGNS AUSTRALIA PTY LIMITED</p>
+                <p><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ed8588818182ad899e848a839ec38e8280c38c98">[email&#160;protected]</a></p>
+                <p><strong>Phone:</strong> 02 9191 8049</p>
+                <p><strong>Location:</strong> Sydney, NSW, Australia</p>
+                <p><strong>Website:</strong> Sydney Web Designer</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p style="font-size: 1.2rem; margin-bottom: 1rem;">🎉 Complete Website Ready for

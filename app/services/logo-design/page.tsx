@@ -113,7 +113,7 @@ export default function LogoDesignPage() {
       />
 
       {/* Hero Section */}
-      <section className="bg-gradient-navy text-white py-20">
+      <section className="bg-[#1e293b] text-white py-20">
         <div className="container">
           <div className="max-w-3xl">
             <div className="inline-block bg-primary-orange/20 text-primary-orange px-4 py-2 rounded-full text-sm font-semibold mb-6">
@@ -122,7 +122,7 @@ export default function LogoDesignPage() {
             <h1 className="text-5xl font-bold mb-6 text-white">
               Professional Logo Design That Makes Your Brand Memorable
             </h1>
-            <p className="text-xl text-gray-300 mb-8">
+            <p className="text-xl text-white mb-8">
               Create a memorable visual identity with a custom logo that captures your brand&apos;s personality and makes you instantly recognizable to customers.
             </p>
             <div className="flex flex-wrap gap-4">
@@ -182,7 +182,7 @@ export default function LogoDesignPage() {
             {process.map((item) => (
               <div key={item.step} className="card hover:shadow-card-hover transition-shadow">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-gradient-navy-orange rounded-full flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
+                  <div className="w-12 h-12 bg-[#f59e0b] rounded-full flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
                     {item.step}
                   </div>
                   <div>

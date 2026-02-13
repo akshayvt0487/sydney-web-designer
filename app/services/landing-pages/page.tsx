@@ -113,7 +113,7 @@ export default function LandingPagesPage() {
       />
 
       {/* Hero Section */}
-      <section className="bg-gradient-navy text-white py-20">
+      <section className="bg-[#1e293b] text-white py-20">
         <div className="container">
           <div className="max-w-3xl">
             <div className="inline-block bg-primary-orange/20 text-primary-orange px-4 py-2 rounded-full text-sm font-semibold mb-6">
@@ -122,7 +122,7 @@ export default function LandingPagesPage() {
             <h1 className="text-5xl font-bold mb-6 text-white">
               High-Converting Landing Pages That Turn Traffic Into Leads
             </h1>
-            <p className="text-xl text-gray-300 mb-8">
+            <p className="text-xl text-white mb-8">
               Design focused landing pages that maximize conversions with compelling copy, strategic CTAs, and conversion-optimized layouts.
             </p>
             <div className="flex flex-wrap gap-4">
@@ -182,7 +182,7 @@ export default function LandingPagesPage() {
             {process.map((item) => (
               <div key={item.step} className="card hover:shadow-card-hover transition-shadow">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-gradient-navy-orange rounded-full flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
+                  <div className="w-12 h-12 bg-[#f59e0b] rounded-full flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
                     {item.step}
                   </div>
                   <div>

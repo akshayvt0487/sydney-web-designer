@@ -16,10 +16,10 @@ export default function Header() {
           <div className="flex flex-wrap items-center justify-between">
             <div className="flex items-center gap-6">
               <a href={`mailto:${contactInfo.email}`} className="hover:text-primary-orange transition-colors">
-                📧 {contactInfo.email}
+                <i className="fas fa-envelope"></i> {contactInfo.email}
               </a>
               <a href={`tel:${contactInfo.phoneLink}`} className="hover:text-primary-orange transition-colors">
-                📞 {contactInfo.phone}
+                <i className="fas fa-phone"></i> {contactInfo.phone}
               </a>
             </div>
             <nav className="hidden md:flex items-center gap-4">
@@ -50,8 +50,7 @@ export default function Header() {
             {/* Logo */}
             <Link href="/" className="flex items-center">
               <div className="text-2xl font-bold">
-                <span className="text-primary-navy">DSIGNS</span>
-                <span className="text-primary-orange"> AUSTRALIA</span>
+                <span className="text-primary-navy">Sydney Web Designer</span>
               </div>
             </Link>
 

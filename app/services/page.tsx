@@ -5,7 +5,7 @@ import ServiceCard from "@/components/ServiceCard";
 import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = {
-  title: "Services | Web Design & Digital Marketing Sydney | DSIGNS AUSTRALIA",
+  title: "Services | Web Design & Digital Marketing Sydney | Sydney Web Designer",
   description: "Professional web design, branding, and digital marketing services in Sydney. SEO, Google Ads, social media, and more.",
   keywords: "web design services, digital marketing services, seo sydney, google ads, branding services",
 };
@@ -18,7 +18,7 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="gradient-navy-orange text-white py-20">
+      <section className="bg-[#1e293b] text-white py-20">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
@@ -102,7 +102,7 @@ export default function ServicesPage() {
       <section className="py-20 bg-gray-50">
         <div className="container">
           <div className="section-title">
-            <h2>Why Choose DSIGNS for Your Digital Services?</h2>
+            <h2>Why Choose Sydney Web Designer for Your Digital Services?</h2>
             <p>Experience and expertise you can trust</p>
           </div>
 

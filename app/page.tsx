@@ -1,544 +1,492 @@
 import Link from "next/link";
-import Image from "next/image";
-import { services, portfolioProjects, googleReviews, trustBadges, contactInfo } from "@/lib/constants";
-import { generateLocalBusinessSchema, generateOrganizationSchema } from "@/lib/schemas";
-import StatsGrid from "@/components/StatsGrid";
-import ServiceCard from "@/components/ServiceCard";
-import PortfolioCard from "@/components/PortfolioCard";
-import TestimonialCard from "@/components/TestimonialCard";
-import CTASection from "@/components/CTASection";
+import { portfolioProjects } from "@/lib/constants";
+import PortfolioCarousel from "@/components/PortfolioCarousel";
 
 export default function HomePage() {
-  const webDesignServices = services.filter(s => s.category === "web-design").slice(0, 1);
-  const brandingServices = services.filter(s => s.category === "branding").slice(0, 1);
-  const marketingServices = services.filter(s => s.category === "digital-marketing").slice(0, 1);
-  const featuredServices = [...webDesignServices, ...brandingServices, ...marketingServices];
-
   return (
     <>
-      {/* Schema Markup */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(generateLocalBusinessSchema()),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(generateOrganizationSchema()),
-        }}
-      />
-
       {/* Hero Section */}
-      <section id="home" className="gradient-navy-orange text-white py-20 md:py-32">
-        <div className="container">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
-              Web Design & Digital Marketing Sydney
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-gray-100">
-              Transform your online presence with professional web design, SEO, and digital marketing services.
-              13+ years experience delivering results for Sydney businesses.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <button data-popup="contact" className="btn btn-white">
-                Get Started
-              </button>
-              <Link href="/portfolio" className="btn btn-secondary border-white text-white hover:bg-white hover:text-primary-navy">
-                View Portfolio
-              </Link>
-            </div>
+      <section id="home" className="bg-[#1e293b] text-white py-40 text-center">
+        <div className="container max-w-[1000px] mx-auto px-8">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-white">
+            Sydney Web Designer
+          </h1>
+          <p className="text-2xl md:text-3xl mb-4 font-semibold text-[#f59e0b]">
+            Professional Web Design & Digital Marketing
+          </p>
+          <p className="text-xl md:text-2xl mb-12 opacity-90 max-w-[800px] mx-auto text-white">
+            Unlock new growth opportunities and solve your digital challenges with expert guidance and dynamic solutions. Serving Sydney businesses for over 13 years.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center flex-wrap mb-16">
+            <a href="#contact" className="bg-[#f59e0b] text-white hover:bg-[#d97706] border-2 border-[#f59e0b] px-6 md:px-12 lg:px-14 py-3 md:py-4 lg:py-5 rounded-full font-bold text-base md:text-lg lg:text-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl inline-flex items-center justify-center gap-3 w-full sm:w-auto">
+              <i className="fas fa-rocket"></i>
+              Get Started Today
+            </a>
+            <a href="#portfolio" className="bg-transparent text-white border-2 border-white hover:bg-white hover:text-[#1e293b] px-6 md:px-12 lg:px-14 py-3 md:py-4 lg:py-5 rounded-full font-bold text-base md:text-lg lg:text-lg transition-all duration-300 hover:-translate-y-1 inline-flex items-center justify-center gap-3 w-full sm:w-auto">
+              <i className="fas fa-briefcase"></i>
+              View Our Work
+            </a>
+          </div>
 
-            {/* Trust Badges */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
-              {trustBadges.map((badge) => (
-                <div
-                  key={badge.id}
-                  className="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-4 text-center"
-                >
-                  <div className="text-3xl mb-2">{badge.icon}</div>
-                  <div className="font-bold">{badge.title}</div>
-                  <div className="text-sm text-gray-200">{badge.subtitle}</div>
+          {/* Trust Indicators */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-[900px] mx-auto">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20">
+              <i className="fas fa-award text-4xl text-[#f59e0b] mb-3"></i>
+              <div className="text-3xl font-bold">13+</div>
+              <div className="text-sm opacity-90">Years Experience</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20">
+              <i className="fas fa-laptop-code text-4xl text-[#f59e0b] mb-3"></i>
+              <div className="text-3xl font-bold">500+</div>
+              <div className="text-sm opacity-90">Websites Delivered</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20">
+              <i className="fas fa-smile text-4xl text-[#f59e0b] mb-3"></i>
+              <div className="text-3xl font-bold">98%</div>
+              <div className="text-sm opacity-90">Satisfaction Rate</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20">
+              <i className="fas fa-star text-4xl text-[#f59e0b] mb-3"></i>
+              <div className="text-3xl font-bold">4.9/5</div>
+              <div className="text-sm opacity-90">Google Rating</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section id="services" className="py-28 bg-white">
+        <div className="container max-w-[1200px] mx-auto px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl md:text-6xl font-bold text-[#1e293b] mb-6">Our Services</h2>
+            <p className="text-xl md:text-2xl text-[#64748b] max-w-[800px] mx-auto leading-relaxed">
+              Comprehensive digital solutions designed to transform your business and drive measurable results
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-10">
+            {/* Web Design Service */}
+            <div className="bg-white p-12 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_50px_rgba(245,158,11,0.2)] transition-all duration-300 hover:-translate-y-2 border-t-4 border-[#f59e0b] group">
+              <div className="text-center mb-6">
+                <div className="w-20 h-20 bg-[#f59e0b] rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <i className="fas fa-palette text-4xl text-white"></i>
                 </div>
-              ))}
+                <h3 className="text-3xl font-bold text-[#1e293b] mb-4">Web Design</h3>
+              </div>
+              <p className="text-[#64748b] leading-relaxed mb-6 text-lg">
+                Transform your online presence with strategic web design that combines stunning aesthetics with powerful functionality. We create websites that convert visitors into customers and drive real business growth.
+              </p>
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-start gap-3 text-[#1e293b]">
+                  <i className="fas fa-check-circle text-[#f59e0b] mt-1"></i>
+                  <span>Custom responsive designs</span>
+                </li>
+                <li className="flex items-start gap-3 text-[#1e293b]">
+                  <i className="fas fa-check-circle text-[#f59e0b] mt-1"></i>
+                  <span>User-friendly CMS integration</span>
+                </li>
+                <li className="flex items-start gap-3 text-[#1e293b]">
+                  <i className="fas fa-check-circle text-[#f59e0b] mt-1"></i>
+                  <span>SEO-optimized structure</span>
+                </li>
+                <li className="flex items-start gap-3 text-[#1e293b]">
+                  <i className="fas fa-check-circle text-[#f59e0b] mt-1"></i>
+                  <span>Lightning-fast performance</span>
+                </li>
+              </ul>
+              <a href="#contact" className="block text-center bg-[#f59e0b] text-white hover:bg-[#d97706] px-8 py-4 rounded-full font-bold transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                Learn More
+              </a>
+            </div>
+
+            {/* Branding Service */}
+            <div className="bg-white p-12 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_50px_rgba(245,158,11,0.2)] transition-all duration-300 hover:-translate-y-2 border-t-4 border-[#f59e0b] group">
+              <div className="text-center mb-6">
+                <div className="w-20 h-20 bg-[#f59e0b] rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <i className="fas fa-bullseye text-4xl text-white"></i>
+                </div>
+                <h3 className="text-3xl font-bold text-[#1e293b] mb-4">Branding</h3>
+              </div>
+              <p className="text-[#64748b] leading-relaxed mb-6 text-lg">
+                Craft a memorable brand identity with our branding expertise. We develop cohesive visual identities that resonate with your target audience, set you apart from competitors, and build lasting customer loyalty.
+              </p>
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-start gap-3 text-[#1e293b]">
+                  <i className="fas fa-check-circle text-[#f59e0b] mt-1"></i>
+                  <span>Professional logo design</span>
+                </li>
+                <li className="flex items-start gap-3 text-[#1e293b]">
+                  <i className="fas fa-check-circle text-[#f59e0b] mt-1"></i>
+                  <span>Complete brand guidelines</span>
+                </li>
+                <li className="flex items-start gap-3 text-[#1e293b]">
+                  <i className="fas fa-check-circle text-[#f59e0b] mt-1"></i>
+                  <span>Marketing collateral design</span>
+                </li>
+                <li className="flex items-start gap-3 text-[#1e293b]">
+                  <i className="fas fa-check-circle text-[#f59e0b] mt-1"></i>
+                  <span>Brand strategy consulting</span>
+                </li>
+              </ul>
+              <a href="#contact" className="block text-center bg-[#f59e0b] text-white hover:bg-[#d97706] px-8 py-4 rounded-full font-bold transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                Learn More
+              </a>
+            </div>
+
+            {/* Digital Marketing Service */}
+            <div className="bg-white p-12 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_50px_rgba(245,158,11,0.2)] transition-all duration-300 hover:-translate-y-2 border-t-4 border-[#f59e0b] group">
+              <div className="text-center mb-6">
+                <div className="w-20 h-20 bg-[#f59e0b] rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <i className="fas fa-chart-line text-4xl text-white"></i>
+                </div>
+                <h3 className="text-3xl font-bold text-[#1e293b] mb-4">Digital Marketing</h3>
+              </div>
+              <p className="text-[#64748b] leading-relaxed mb-6 text-lg">
+                Supercharge your growth with proven digital marketing strategies. From SEO to social media, we drive targeted traffic and measurable results that directly impact your bottom line and accelerate business growth.
+              </p>
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-start gap-3 text-[#1e293b]">
+                  <i className="fas fa-check-circle text-[#f59e0b] mt-1"></i>
+                  <span>Search engine optimization (SEO)</span>
+                </li>
+                <li className="flex items-start gap-3 text-[#1e293b]">
+                  <i className="fas fa-check-circle text-[#f59e0b] mt-1"></i>
+                  <span>Google Ads management</span>
+                </li>
+                <li className="flex items-start gap-3 text-[#1e293b]">
+                  <i className="fas fa-check-circle text-[#f59e0b] mt-1"></i>
+                  <span>Social media marketing</span>
+                </li>
+                <li className="flex items-start gap-3 text-[#1e293b]">
+                  <i className="fas fa-check-circle text-[#f59e0b] mt-1"></i>
+                  <span>Content marketing strategy</span>
+                </li>
+              </ul>
+              <a href="#contact" className="block text-center bg-[#f59e0b] text-white hover:bg-[#d97706] px-8 py-4 rounded-full font-bold transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                Learn More
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services Overview Section */}
-      <section id="services" className="py-20 bg-gray-50">
-        <div className="container">
-          <div className="section-title">
-            <h2>Our Services</h2>
-            <p>
-              Comprehensive digital solutions to help your business grow online
+      {/* Portfolio Section */}
+      <section id="portfolio" className="py-28 bg-[#f8fafc]">
+        <div className="container max-w-[1200px] mx-auto px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl md:text-6xl font-bold text-[#1e293b] mb-6">Our Work</h2>
+            <p className="text-xl md:text-2xl text-[#64748b] max-w-[800px] mx-auto leading-relaxed">
+              Trusted by Sydney businesses to deliver exceptional digital experiences that drive real results
             </p>
           </div>
 
-          <div className="grid-3">
-            <ServiceCard
-              icon="🎨"
-              title="Web Design & Development"
-              description="Custom, responsive websites that look stunning and convert visitors into customers. Built with the latest technologies for optimal performance."
-              link="/services/custom-web-design"
-              features={[
-                "Mobile-responsive design",
-                "SEO-friendly structure",
-                "Fast loading speeds",
-                "Easy content management"
-              ]}
-            />
-            <ServiceCard
-              icon="🎯"
-              title="Branding & Identity"
-              description="Create a memorable brand identity that sets you apart. Professional logo design, brand guidelines, and marketing materials."
-              link="/services/logo-design"
-              features={[
-                "Custom logo design",
-                "Brand style guides",
-                "Business card design",
-                "Marketing collateral"
-              ]}
-            />
-            <ServiceCard
-              icon="📈"
-              title="Digital Marketing"
-              description="Drive targeted traffic and generate leads with SEO, Google Ads, and social media marketing strategies that deliver results."
-              link="/services/seo-sydney"
-              features={[
-                "Search engine optimization",
-                "Google Ads management",
-                "Social media marketing",
-                "Content marketing"
-              ]}
-            />
-          </div>
-
-          <div className="text-center mt-8">
-            <Link href="/services" className="btn btn-primary">
-              View All Services
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us Section */}
-      <section id="why-choose-us" className="py-20">
-        <div className="container">
-          <div className="section-title">
-            <h2>Why Choose DSIGNS Australia?</h2>
-            <p>
-              Over a decade of proven expertise delivering digital success
-            </p>
-          </div>
-
-          <div className="grid-3">
-            <div className="card text-center">
-              <div className="text-5xl mb-4">💼</div>
-              <h3 className="text-xl font-bold mb-3">13+ Years Experience</h3>
-              <p className="text-gray-600">
-                Over a decade of expertise in web design, branding, and digital marketing across 50+ industries.
-              </p>
-            </div>
-            <div className="card text-center">
-              <div className="text-5xl mb-4">🌟</div>
-              <h3 className="text-xl font-bold mb-3">500+ Websites Delivered</h3>
-              <p className="text-gray-600">
-                Successfully delivered hundreds of websites and digital marketing campaigns for businesses across Australia.
-              </p>
-            </div>
-            <div className="card text-center">
-              <div className="text-5xl mb-4">😊</div>
-              <h3 className="text-xl font-bold mb-3">98% Client Satisfaction</h3>
-              <p className="text-gray-600">
-                Consistently high satisfaction ratings from clients who appreciate our professionalism and results.
-              </p>
-            </div>
-            <div className="card text-center">
-              <div className="text-5xl mb-4">🎯</div>
-              <h3 className="text-xl font-bold mb-3">Results-Driven Approach</h3>
-              <p className="text-gray-600">
-                We focus on measurable outcomes that impact your bottom line, not just vanity metrics.
-              </p>
-            </div>
-            <div className="card text-center">
-              <div className="text-5xl mb-4">💬</div>
-              <h3 className="text-xl font-bold mb-3">24-Hour Response Time</h3>
-              <p className="text-gray-600">
-                Quick communication and support when you need it. We&apos;re here to help your business succeed.
-              </p>
-            </div>
-            <div className="card text-center">
-              <div className="text-5xl mb-4">🔒</div>
-              <h3 className="text-xl font-bold mb-3">Australian Based</h3>
-              <p className="text-gray-600">
-                Locally based in Sydney with deep understanding of the Australian market and business landscape.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Portfolio Showcase Section */}
-      <section id="portfolio" className="py-20 bg-gray-50">
-        <div className="container">
-          <div className="section-title">
-            <h2>Our Work</h2>
-            <p>
-              Successful projects across diverse industries
-            </p>
-          </div>
-
-          <div className="grid-3">
-            {portfolioProjects.map((project) => (
-              <PortfolioCard key={project.id} project={project} />
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {portfolioProjects.slice(0, 6).map((project) => (
+              <div key={project.id} className="bg-white rounded-3xl overflow-hidden shadow-[0_5px_25px_rgba(0,0,0,0.1)] hover:shadow-[0_15px_40px_rgba(0,0,0,0.2)] transition-all duration-300 hover:-translate-y-2 border-t-4 border-[#f59e0b]">
+                <PortfolioCarousel
+                  images={project.images || [project.image]}
+                  title={project.name}
+                />
+                <div className="p-8">
+                  <div className="mb-3">
+                    <span className="inline-block bg-[#f59e0b]/10 text-[#f59e0b] px-3 py-1 rounded-full text-sm font-semibold">
+                      {project.industry}
+                    </span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-[#1e293b] mb-3">{project.name}</h3>
+                  <p className="text-[#64748b] text-sm mb-5 leading-relaxed">{project.description}</p>
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.services.map((service, i) => (
+                      <span key={i} className="bg-[#f8fafc] text-[#1e293b] px-3 py-1.5 rounded-full text-xs font-semibold border border-[#e2e8f0]">
+                        {service}
+                      </span>
+                    ))}
+                  </div>
+                  {project.websiteUrl && (
+                    <a
+                      href={project.websiteUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-[#f59e0b] font-bold hover:gap-4 transition-all duration-300 text-lg"
+                    >
+                      Visit Website <i className="fas fa-arrow-right"></i>
+                    </a>
+                  )}
+                </div>
+              </div>
             ))}
           </div>
 
-          <div className="text-center mt-8">
-            <Link href="/portfolio" className="btn btn-primary">
-              View Full Portfolio
+          <div className="text-center mt-16">
+            <Link
+              href="/portfolio"
+              className="inline-block bg-[#f59e0b] text-white hover:bg-[#d97706] px-6 md:px-10 lg:px-12 py-3 md:py-4 rounded-full font-bold text-base md:text-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl w-full sm:w-auto text-center"
+            >
+              View All Projects <i className="fas fa-arrow-right ml-2"></i>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Process Section */}
+      <section id="process" className="py-28 bg-white">
+        <div className="container max-w-[1200px] mx-auto px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl md:text-6xl font-bold text-[#1e293b] mb-6">How We Work</h2>
+            <p className="text-xl md:text-2xl text-[#64748b] max-w-[800px] mx-auto leading-relaxed">
+              A simple, transparent process designed to bring your vision to life with clarity and efficiency
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-12">
+            {[
+              {
+                number: "1",
+                icon: "fa-comments",
+                title: "Quick Chat",
+                desc: "Call us or leave your details so we can call you back to discuss your project and understand your goals. We'll take the time to learn about your business, target audience, and objectives."
+              },
+              {
+                number: "2",
+                icon: "fa-search",
+                title: "Discovery",
+                desc: "At your discovery meeting, we'll go over all the details of your project so that we can prepare an accurate estimate. We'll explore design preferences, functionality requirements, and timeline expectations."
+              },
+              {
+                number: "3",
+                icon: "fa-rocket",
+                title: "Get Started",
+                desc: "We will send the estimate. Once agreed that we're both on the same page, let's get this show on the road! Our team will begin crafting your digital solution with regular updates along the way."
+              }
+            ].map((step, index) => (
+              <div key={index} className="text-center">
+                <div className="w-24 h-24 bg-[#1e293b] text-white rounded-2xl flex items-center justify-center text-5xl font-bold mx-auto mb-8 relative">
+                  <div className="absolute -top-3 -right-3 w-12 h-12 bg-[#f59e0b] rounded-full flex items-center justify-center text-xl">
+                    {step.number}
+                  </div>
+                  <i className={`fas ${step.icon}`}></i>
+                </div>
+                <h3 className="text-3xl font-bold text-[#1e293b] mb-5">{step.title}</h3>
+                <p className="text-[#64748b] leading-relaxed text-lg">{step.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Google Reviews Section */}
-      <section id="google-reviews" className="py-20">
-        <div className="container">
-          <div className="section-title">
-            <h2>What Our Clients Say</h2>
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <div className="flex gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <svg
-                    key={i}
-                    className="w-6 h-6 text-yellow-400 fill-current"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                ))}
-              </div>
-              <span className="text-2xl font-bold text-primary-navy">4.9/5</span>
-            </div>
-            <p className="text-text-light">Based on 50+ Google Reviews</p>
+      <section id="google-reviews" className="py-28 bg-[#f8fafc]">
+        <div className="container max-w-[1200px] mx-auto px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-5xl md:text-6xl font-bold text-[#1e293b] mb-6">What Our Clients Say</h2>
+            <p className="text-xl md:text-2xl text-[#64748b] max-w-[800px] mx-auto mb-10 leading-relaxed">
+              Real reviews from real businesses we've helped grow across Sydney
+            </p>
           </div>
 
-          <div className="grid-4">
-            {googleReviews.slice(0, 8).map((review) => (
-              <TestimonialCard key={review.id} review={review} compact />
+          <div className="text-center mb-16">
+            <div className="inline-block bg-white px-16 py-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.1)]">
+              <div className="flex items-center justify-center gap-2 mb-3">
+                {[...Array(5)].map((_, i) => (
+                  <i key={i} className="fas fa-star text-3xl text-[#f59e0b]"></i>
+                ))}
+              </div>
+              <div className="text-4xl font-bold text-[#1e293b]">4.9 out of 5</div>
+              <div className="text-[#64748b] text-lg mt-2">Based on 50+ Google Reviews</div>
+            </div>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              { review: "Exceptional service! Very happy with everything. I have used Sydney Web Designer for Logo design, Website development, and printing. They have exceeded my expectations every single time. Highly professional team that truly understands business needs.", name: "Bineesh Chandy", company: "Konkan Restaurant" },
+              { review: "We hired Sydney Web Designer to revamp our website with a specific goal - Generate Leads on a daily basis. The results have been absolutely fantastic. We are now on page #1 for all our targeted keywords and seeing consistent lead flow!", name: "NDIS Provider", company: "Healthcare Services" },
+              { review: "The team was simply amazing! Insightful, helpful, and dedicated. They treated my business as their own and helped us work through our most pressing branding and Google Ads issues with expertise and patience!", name: "Civil Contractor", company: "Construction Services" },
+              { review: "This company is hands down the best, fastest and most professional digital marketing agency you can find in Sydney. You can ask for anything and everything and they'll get it done for you efficiently!", name: "Sydney Business Owner", company: "Digital Services" },
+              { review: "We hired Sydney Web Designer to design and develop our website from scratch. The team were very courteous, flexible and professional throughout the entire process. They delivered on time and within budget - rare in this industry!", name: "Pulse Tech Systems", company: "Technology Services" },
+              { review: "I had a very positive experience with Sydney Web Designer. They quickly understood what I required and undertook the task with complete professionalism. The final result was beyond my expectations. Will definitely work with them again!", name: "Danielle Cheuk", company: "Flavours of Home Blog" }
+            ].map((review, index) => (
+              <div key={index} className="bg-white p-8 rounded-2xl shadow-[0_5px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.15)] transition-all duration-300 hover:-translate-y-1 border-l-4 border-[#f59e0b]">
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <i key={i} className="fas fa-star text-xl text-[#f59e0b]"></i>
+                  ))}
+                </div>
+                <p className="text-[#1e293b] leading-relaxed mb-5 text-base">{review.review}</p>
+                <div className="border-t border-[#e2e8f0] pt-4">
+                  <div className="font-bold text-[#1e293b] text-lg">{review.name}</div>
+                  <div className="text-[#64748b] text-sm">{review.company}</div>
+                </div>
+              </div>
             ))}
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-            <Link href="/testimonials" className="btn btn-primary">
+          <div className="text-center mt-16 flex flex-col sm:flex-row gap-6 justify-center">
+            <Link href="/testimonials" className="inline-block bg-transparent text-[#1e293b] border-2 border-[#1e293b] hover:bg-[#1e293b] hover:text-white px-10 py-4 rounded-full font-bold transition-all duration-300 hover:-translate-y-1">
+              <i className="fas fa-comments mr-2"></i>
               View All Testimonials
             </Link>
-            <a
-              href="https://g.page/r/your-google-business-profile/review"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-secondary"
-            >
-              Leave a Review on Google
+            <a href="https://www.google.com/search?q=Sydney+Web+Designer" target="_blank" rel="noopener noreferrer" className="inline-block bg-[#f59e0b] text-white hover:bg-[#d97706] px-10 py-4 rounded-full font-bold transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+              <i className="fab fa-google mr-2"></i>
+              Leave a Google Review
             </a>
           </div>
         </div>
       </section>
 
-      {/* How We Work Section */}
-      <section id="process" className="py-20 bg-gray-50">
-        <div className="container">
-          <div className="section-title">
-            <h2>How We Work</h2>
-            <p>
-              Our proven 4-step process for delivering exceptional results
-            </p>
-          </div>
-
-          <div className="grid-2 lg:grid-cols-4">
-            <div className="card text-center">
-              <div className="w-16 h-16 bg-gradient-orange rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
-                1
-              </div>
-              <h3 className="text-xl font-bold mb-3">Discovery & Strategy</h3>
-              <p className="text-gray-600">
-                We learn about your business, goals, and target audience to create a tailored strategy.
-              </p>
-            </div>
-            <div className="card text-center">
-              <div className="w-16 h-16 bg-gradient-orange rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
-                2
-              </div>
-              <h3 className="text-xl font-bold mb-3">Design & Development</h3>
-              <p className="text-gray-600">
-                Our team creates stunning designs and develops robust solutions using best practices.
-              </p>
-            </div>
-            <div className="card text-center">
-              <div className="w-16 h-16 bg-gradient-orange rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
-                3
-              </div>
-              <h3 className="text-xl font-bold mb-3">Review & Refine</h3>
-              <p className="text-gray-600">
-                You review the work and we refine based on your feedback until it&apos;s perfect.
-              </p>
-            </div>
-            <div className="card text-center">
-              <div className="w-16 h-16 bg-gradient-orange rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
-                4
-              </div>
-              <h3 className="text-xl font-bold mb-3">Launch & Support</h3>
-              <p className="text-gray-600">
-                We launch your project and provide ongoing support to ensure continued success.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Blog Preview Section */}
-      <section className="py-20">
-        <div className="container">
-          <div className="section-title">
-            <h2>Latest Insights</h2>
-            <p>
-              Expert tips and strategies for digital success
-            </p>
-          </div>
-
-          <div className="grid-3">
-            <div className="card group hover:shadow-xl h-full flex flex-col transition-all duration-300">
-              <div className="relative h-56 bg-gradient-to-br from-primary-navy via-amber-700 to-primary-orange rounded-xl mb-6 overflow-hidden">
-                <Image
-                  src="/images/blog/web-design-trends-2026.jpg"
-                  alt="Web Design Trends 2026"
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-              </div>
-              <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
-                <span className="flex items-center gap-1">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  January 15, 2026
-                </span>
-                <span className="flex items-center gap-1">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  8 min read
-                </span>
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-primary-orange">
-                Web Design Trends to Watch in 2026
-              </h3>
-              <p className="text-gray-600 mb-6 flex-grow leading-relaxed">
-                Discover the latest web design trends that will shape the digital landscape in 2026 and beyond.
-              </p>
-              <Link
-                href="/blog/web-design-trends-2026"
-                className="text-primary-orange font-semibold flex items-center gap-2 group-hover:gap-3 transition-all"
-              >
-                Read More
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </Link>
-            </div>
-
-            <div className="card group hover:shadow-xl h-full flex flex-col transition-all duration-300">
-              <div className="relative h-56 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl mb-6 overflow-hidden">
-                <Image
-                  src="/images/blog/seo-tips-sydney.jpg"
-                  alt="SEO Tips for Sydney Businesses"
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-              </div>
-              <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
-                <span className="flex items-center gap-1">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  January 12, 2026
-                </span>
-                <span className="flex items-center gap-1">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  10 min read
-                </span>
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-primary-navy group-hover:text-primary-orange transition-colors">
-                SEO Tips for Sydney Businesses
-              </h3>
-              <p className="text-gray-600 mb-6 flex-grow leading-relaxed">
-                Local SEO strategies to help your Sydney business rank higher and attract more customers.
-              </p>
-              <Link
-                href="/blog/seo-tips-sydney-businesses"
-                className="text-primary-orange font-semibold flex items-center gap-2 group-hover:gap-3 transition-all"
-              >
-                Read More
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </Link>
-            </div>
-
-            <div className="card group hover:shadow-xl h-full flex flex-col transition-all duration-300">
-              <div className="relative h-56 bg-gradient-to-br from-primary-navy to-blue-900 rounded-xl mb-6 overflow-hidden">
-                <Image
-                  src="/images/blog/choose-web-designer.jpg"
-                  alt="How to Choose the Right Web Designer"
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-              </div>
-              <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
-                <span className="flex items-center gap-1">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  January 8, 2026
-                </span>
-                <span className="flex items-center gap-1">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  6 min read
-                </span>
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-primary-navy group-hover:text-primary-orange transition-colors">
-                How to Choose the Right Web Designer
-              </h3>
-              <p className="text-gray-600 mb-6 flex-grow leading-relaxed">
-                Essential factors to consider when selecting a web design agency for your business.
-              </p>
-              <Link
-                href="/blog/how-to-choose-web-designer-sydney"
-                className="text-primary-orange font-semibold flex items-center gap-2 group-hover:gap-3 transition-all"
-              >
-                Read More
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </Link>
-            </div>
-          </div>
-
-          <div className="text-center mt-8">
-            <Link href="/blog" className="btn btn-primary">
-              View All Articles
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
-      <CTASection
-        title="Ready to Transform Your Digital Presence?"
-        description="Get a free consultation and quote for your project. We'll respond within 24 hours."
-        primaryButtonText="Get Free Quote"
-        primaryButtonAction="contact"
-        secondaryButtonText="Call Us Now"
-        secondaryButtonAction="consultation"
-      />
+      <section className="bg-[#1e293b] text-white py-28 text-center">
+        <div className="container max-w-[1200px] mx-auto px-8">
+          <h2 className="text-5xl md:text-6xl font-bold mb-8 text-white">Ready to Transform Your Digital Presence?</h2>
+          <p className="text-xl md:text-2xl mb-12 opacity-90 max-w-[700px] mx-auto text-white">
+            Let's build the future of your business together. Join 500+ satisfied clients across Sydney.
+          </p>
+          <a href="#contact" className="inline-block bg-[#f59e0b] text-white hover:bg-[#d97706] px-6 md:px-10 lg:px-14 py-3 md:py-4 lg:py-5 rounded-full font-bold text-base md:text-lg lg:text-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl w-full sm:w-auto text-center">
+            <i className="fas fa-paper-plane mr-3"></i>
+            Start Your Project Today
+          </a>
+        </div>
+      </section>
 
-      {/* Contact Form Section */}
-      <section id="contact" className="py-20">
-        <div className="container">
-          <div className="section-title">
-            <h2>Get In Touch</h2>
-            <p>
-              Let&apos;s discuss your project and how we can help you succeed
+      {/* Contact Section */}
+      <section id="contact" className="py-28 bg-white">
+        <div className="container max-w-[1200px] mx-auto px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl md:text-6xl font-bold text-[#1e293b] mb-6">Get In Touch</h2>
+            <p className="text-xl md:text-2xl text-[#64748b] max-w-[800px] mx-auto leading-relaxed">
+              Let's discuss your project and how we can help you achieve your business goals
             </p>
           </div>
 
           {/* Contact Info Cards */}
-          <div className="grid-3 mb-12">
-            <div className="card text-center">
-              <div className="text-5xl mb-4">📞</div>
-              <h3 className="text-xl font-bold mb-2">Phone</h3>
-              <a
-                href={`tel:${contactInfo.phoneLink}`}
-                className="text-primary-orange font-semibold hover:underline"
-              >
-                {contactInfo.phone}
-              </a>
-              <p className="text-sm text-gray-500 mt-2">Mon-Fri 9:00am - 5:00pm</p>
-            </div>
-            <div className="card text-center">
-              <div className="text-5xl mb-4">📧</div>
-              <h3 className="text-xl font-bold mb-2">Email</h3>
-              <a
-                href={`mailto:${contactInfo.email}`}
-                className="text-primary-orange font-semibold hover:underline"
-              >
-                {contactInfo.email}
-              </a>
-              <p className="text-sm text-gray-500 mt-2">24-hour response time</p>
-            </div>
-            <div className="card text-center">
-              <div className="text-5xl mb-4">📍</div>
-              <h3 className="text-xl font-bold mb-2">Location</h3>
-              <p className="text-gray-700">
-                {contactInfo.address.suite}<br />
-                {contactInfo.address.street}<br />
-                {contactInfo.address.suburb} {contactInfo.address.state} {contactInfo.address.postcode}
+          <div className="grid md:grid-cols-3 gap-10 mb-20">
+            <div className="bg-white p-12 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_50px_rgba(245,158,11,0.15)] transition-all duration-300 hover:-translate-y-2 text-center border-t-4 border-[#f59e0b]">
+              <div className="w-20 h-20 bg-[#1e293b] rounded-2xl flex items-center justify-center mx-auto mb-6 text-white text-3xl">
+                <i className="fas fa-phone"></i>
+              </div>
+              <h3 className="text-2xl font-bold text-[#1e293b] mb-4">Phone</h3>
+              <p className="text-[#1e293b] text-xl mb-3 font-semibold">
+                <a href="tel:0291918049" className="text-[#f59e0b] hover:text-[#d97706] transition-colors">02 9191 8049</a>
               </p>
+              <span className="text-[#64748b] text-base">Mon-Fri: 9AM-5PM</span>
+            </div>
+
+            <div className="bg-white p-12 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_50px_rgba(245,158,11,0.15)] transition-all duration-300 hover:-translate-y-2 text-center border-t-4 border-[#f59e0b]">
+              <div className="w-20 h-20 bg-[#1e293b] rounded-2xl flex items-center justify-center mx-auto mb-6 text-white text-3xl">
+                <i className="fas fa-envelope"></i>
+              </div>
+              <h3 className="text-2xl font-bold text-[#1e293b] mb-4">Email</h3>
+              <p className="text-[#1e293b] text-lg mb-3 font-semibold">
+                <a href="mailto:hello@dsigns.com.au" className="text-[#f59e0b] hover:text-[#d97706] transition-colors break-all">hello@dsigns.com.au</a>
+              </p>
+              <span className="text-[#64748b] text-base">24/7 Response</span>
+            </div>
+
+            <div className="bg-white p-12 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_50px_rgba(245,158,11,0.15)] transition-all duration-300 hover:-translate-y-2 text-center border-t-4 border-[#f59e0b]">
+              <div className="w-20 h-20 bg-[#1e293b] rounded-2xl flex items-center justify-center mx-auto mb-6 text-white text-3xl">
+                <i className="fas fa-map-marker-alt"></i>
+              </div>
+              <h3 className="text-2xl font-bold text-[#1e293b] mb-4">Location</h3>
+              <p className="text-[#1e293b] text-lg leading-relaxed mb-3 font-semibold">
+                Suite 103 Level 1<br />22 Hunter Street
+              </p>
+              <span className="text-[#64748b] text-base">Parramatta NSW 2150</span>
             </div>
           </div>
 
           {/* Contact Form */}
-          <div className="max-w-3xl mx-auto">
-            <div className="card">
-              <form className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="form-group">
-                    <label className="form-label">Name *</label>
-                    <input type="text" name="name" required className="form-input" placeholder="Your full name" />
-                  </div>
-                  <div className="form-group">
-                    <label className="form-label">Email *</label>
-                    <input type="email" name="email" required className="form-input" placeholder="your@email.com" />
-                  </div>
-                </div>
+          <div className="bg-[#f8fafc] p-16 rounded-3xl max-w-[900px] mx-auto shadow-[0_10px_40px_rgba(0,0,0,0.08)]">
+            <h3 className="text-4xl font-bold text-[#1e293b] mb-3 text-center">Send Us A Message</h3>
+            <p className="text-center text-[#64748b] mb-12 text-xl">Fill out the form below and we'll get back to you within 24 hours.</p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="form-group">
-                    <label className="form-label">Phone *</label>
-                    <input type="tel" name="phone" required className="form-input" placeholder="04XX XXX XXX" />
-                  </div>
-                  <div className="form-group">
-                    <label className="form-label">Service Interested In</label>
-                    <select name="service" className="form-select">
-                      <option value="">Select a service</option>
-                      <option value="web-design">Web Design</option>
-                      <option value="seo">SEO Services</option>
-                      <option value="google-ads">Google Ads</option>
-                      <option value="branding">Branding</option>
-                      <option value="social-media">Social Media Marketing</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
+            <form className="space-y-8">
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <label htmlFor="firstName" className="block mb-3 text-[#1e293b] font-bold text-lg">First Name *</label>
+                  <input type="text" id="firstName" name="firstName" required className="w-full px-5 py-4 border-2 border-[#e2e8f0] rounded-xl focus:border-[#f59e0b] focus:outline-none transition-colors bg-white text-lg" />
                 </div>
-
-                <div className="form-group">
-                  <label className="form-label">Message *</label>
-                  <textarea name="message" required className="form-textarea" rows={6} placeholder="Tell us about your project..."></textarea>
+                <div>
+                  <label htmlFor="lastName" className="block mb-3 text-[#1e293b] font-bold text-lg">Last Name *</label>
+                  <input type="text" id="lastName" name="lastName" required className="w-full px-5 py-4 border-2 border-[#e2e8f0] rounded-xl focus:border-[#f59e0b] focus:outline-none transition-colors bg-white text-lg" />
                 </div>
+              </div>
 
-                <button type="submit" className="btn btn-primary w-full">
-                  💬 Send Message
-                </button>
-              </form>
-            </div>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <label htmlFor="email" className="block mb-3 text-[#1e293b] font-bold text-lg">Email *</label>
+                  <input type="email" id="email" name="email" required className="w-full px-5 py-4 border-2 border-[#e2e8f0] rounded-xl focus:border-[#f59e0b] focus:outline-none transition-colors bg-white text-lg" />
+                </div>
+                <div>
+                  <label htmlFor="phone" className="block mb-3 text-[#1e293b] font-bold text-lg">Phone *</label>
+                  <input type="tel" id="phone" name="phone" required className="w-full px-5 py-4 border-2 border-[#e2e8f0] rounded-xl focus:border-[#f59e0b] focus:outline-none transition-colors bg-white text-lg" />
+                </div>
+              </div>
+
+              <div>
+                <label htmlFor="website" className="block mb-3 text-[#1e293b] font-bold text-lg">Website (if applicable)</label>
+                <input type="url" id="website" name="website" className="w-full px-5 py-4 border-2 border-[#e2e8f0] rounded-xl focus:border-[#f59e0b] focus:outline-none transition-colors bg-white text-lg" />
+              </div>
+
+              <div>
+                <label htmlFor="service" className="block mb-3 text-[#1e293b] font-bold text-lg">Service Interested In</label>
+                <select id="service" name="service" className="w-full px-5 py-4 border-2 border-[#e2e8f0] rounded-xl focus:border-[#f59e0b] focus:outline-none transition-colors bg-white text-lg">
+                  <option value="">Select a service</option>
+                  <option value="web-design">Web Design</option>
+                  <option value="branding">Branding</option>
+                  <option value="digital-marketing">Digital Marketing</option>
+                  <option value="seo">SEO Services</option>
+                  <option value="growth-plan">Growth Plan</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div>
+                <label htmlFor="message" className="block mb-3 text-[#1e293b] font-bold text-lg">Tell us about your project *</label>
+                <textarea id="message" name="message" required rows={6} className="w-full px-5 py-4 border-2 border-[#e2e8f0] rounded-xl focus:border-[#f59e0b] focus:outline-none transition-colors resize-y bg-white text-lg"></textarea>
+              </div>
+
+              <button type="submit" className="w-full bg-[#f59e0b] text-white hover:bg-[#d97706] px-10 py-5 rounded-xl font-bold text-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <i className="fas fa-paper-plane mr-3"></i>
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      {/* Blog Section */}
+      <section className="py-28 bg-[#f8fafc]">
+        <div className="container max-w-[1200px] mx-auto px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl md:text-6xl font-bold text-[#1e293b] mb-6">Latest from Our Blog</h2>
+            <p className="text-xl md:text-2xl text-[#64748b] max-w-[800px] mx-auto leading-relaxed">
+              Expert web design tips, insights and industry trends for Sydney businesses
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-10 mb-16">
+            {[
+              { title: "10 Essential Web Design Features Every Sydney Business Needs", desc: "Discover the must-have features that make modern Sydney websites stand out from the competition and drive real conversions.", icon: "fa-laptop-code" },
+              { title: "How Much Does Professional Web Design Cost in Sydney?", desc: "Understand the true cost of quality web design in Sydney with our complete pricing guide and what you should expect to pay.", icon: "fa-dollar-sign" },
+              { title: "Mobile-First Web Design: Why Sydney Businesses Can't Ignore It", desc: "Learn why mobile-first design is absolutely crucial for Sydney businesses and how to implement it effectively for maximum impact.", icon: "fa-mobile-alt" }
+            ].map((post, index) => (
+              <article key={index} className="bg-white p-10 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_50px_rgba(245,158,11,0.15)] transition-all duration-300 hover:-translate-y-2 border-t-4 border-[#f59e0b] group">
+                <div className="w-16 h-16 bg-[#f59e0b] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <i className={`fas ${post.icon} text-3xl text-white`}></i>
+                </div>
+                <h3 className="text-2xl font-bold text-[#1e293b] mb-5 leading-snug">{post.title}</h3>
+                <p className="text-[#64748b] leading-relaxed mb-6 text-lg">{post.desc}</p>
+                <a href="/blog" className="inline-flex items-center gap-2 text-[#f59e0b] font-bold hover:gap-4 transition-all duration-300 text-lg">
+                  Read More <i className="fas fa-arrow-right"></i>
+                </a>
+              </article>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Link href="/blog" className="inline-block bg-[#f59e0b] text-white hover:bg-[#d97706] px-6 md:px-10 lg:px-14 py-3 md:py-4 lg:py-5 rounded-full font-bold text-base md:text-lg lg:text-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl w-full sm:w-auto text-center">
+              <i className="fas fa-book-open mr-3"></i>
+              View All Articles
+            </Link>
           </div>
         </div>
       </section>

@@ -1,415 +1,585 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { services, portfolioProjects, googleReviews } from "@/lib/constants";
-import { generateServiceSchema } from "@/lib/schemas";
-import StatsGrid from "@/components/StatsGrid";
-import TestimonialCard from "@/components/TestimonialCard";
-import PortfolioCard from "@/components/PortfolioCard";
-import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = {
-  title: "Custom Web Design Sydney | Bespoke Website Design Services",
-  description: "Expert custom web design in Sydney. Create stunning, unique websites tailored to your brand and business goals. Stand out from competitors with bespoke design.",
+  title: "Custom Web Design Sydney | Bespoke Websites | Sydney Web Designer",
+  description: "Custom web design services in Sydney. Unique, professional websites tailored to your brand.",
 };
 
 export default function CustomWebDesignPage() {
-  const service = services.find((s) => s.slug === "custom-web-design")!;
-  const webProjects = portfolioProjects.filter((p) => p.services.includes("Web Design"));
-  const webReviews = googleReviews.slice(0, 3);
-
-  const stats = [
-    { label: "Websites Designed", number: "200+" },
-    { label: "Client Satisfaction", number: "98%" },
-    { label: "Avg. Conversion Lift", number: "165%" },
-    { label: "Design Awards", number: "15+" },
-  ];
-
-  const features = [
-    {
-      title: "Unique Design",
-      description: "Completely custom designs tailored to your brand, never using templates or pre-made themes.",
-      icon: "🎨",
-    },
-    {
-      title: "Mobile-First",
-      description: "Responsive designs that work flawlessly on smartphones, tablets, and desktops.",
-      icon: "📱",
-    },
-    {
-      title: "Conversion Focused",
-      description: "Strategic design elements that guide visitors toward taking action and becoming customers.",
-      icon: "🎯",
-    },
-    {
-      title: "SEO Optimized",
-      description: "Built with clean code and best practices to help you rank higher in search results.",
-      icon: "🔍",
-    },
-    {
-      title: "Fast Loading",
-      description: "Optimized for speed with compressed images and efficient code for better user experience.",
-      icon: "⚡",
-    },
-    {
-      title: "Easy Management",
-      description: "User-friendly CMS that makes updating content simple, even without technical skills.",
-      icon: "✨",
-    },
-  ];
-
-  const process = [
-    {
-      step: 1,
-      title: "Discovery & Planning",
-      description: "Understand your business, goals, target audience, and competitive landscape.",
-    },
-    {
-      step: 2,
-      title: "Design & Feedback",
-      description: "Create custom mockups and refine designs based on your feedback and preferences.",
-    },
-    {
-      step: 3,
-      title: "Development & Testing",
-      description: "Build your website with clean code and test across all devices and browsers.",
-    },
-    {
-      step: 4,
-      title: "Launch & Support",
-      description: "Deploy your website and provide training and ongoing support for your success.",
-    },
-  ];
-
-  const faqs = [
-    {
-      question: "What&apos;s included in a custom web design project?",
-      answer: "Our custom web design includes strategy consultation, custom design mockups, responsive development, content management system, SEO optimization, contact forms, Google Analytics setup, and 30 days of post-launch support.",
-    },
-    {
-      question: "How long does it take to design a custom website?",
-      answer: "Most custom websites take 6-8 weeks from start to launch. Complex projects with extensive functionality may take 10-12 weeks. We'll provide a detailed timeline during our initial consultation.",
-    },
-    {
-      question: "Do I need to provide content and images?",
-      answer: "While we recommend you provide your own content and professional photos, we can assist with copywriting and source stock images if needed. We can also arrange professional photography for an additional fee.",
-    },
-    {
-      question: "Will I be able to update the website myself?",
-      answer: "Absolutely! We build websites with user-friendly content management systems (usually WordPress) and provide training so you can easily update content, add pages, and upload images yourself.",
-    },
-    {
-      question: "What if I don&apos;t like the initial design?",
-      answer: "We include multiple revision rounds in our process. We'll work closely with you to refine the design until you&apos;re completely satisfied. Your feedback is essential to creating the perfect website for your business.",
-    },
-  ];
-
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(generateServiceSchema(service.name, service.heroDescription)),
-        }}
-      />
-
       {/* Hero Section */}
-      <section className="bg-gradient-navy text-white py-20">
-        <div className="container">
-          <div className="max-w-3xl">
-            <div className="inline-block bg-primary-orange/20 text-primary-orange px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              {service.icon} {service.name}
+      <section className="bg-[#1e293b] text-white py-32 px-8 text-center">
+        <div className="max-w-5xl mx-auto">
+          <h1 className="text-6xl font-bold mb-6 text-white">Custom Web Design Sydney</h1>
+          <p className="text-2xl mb-10 opacity-95 max-w-3xl mx-auto text-white">
+            Bespoke website design tailored to your brand. Stand out with a unique, professional website
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
+            <button data-popup="contact" className="bg-[#f59e0b] text-white px-6 md:px-10 lg:px-12 py-3 md:py-4 rounded-full font-semibold hover:bg-[#d97706] transition-all w-full sm:w-auto text-center">
+              Get Free Quote
+            </button>
+            <a href="#process" className="bg-transparent border-2 border-white text-white px-6 md:px-10 lg:px-12 py-3 md:py-4 rounded-full font-semibold hover:bg-white hover:text-[#1e293b] transition-all w-full sm:w-auto text-center">
+              Our Process
+            </a>
+          </div>
+
+          {/* Trust Badges */}
+          <div className="flex flex-wrap justify-center gap-12 mt-12">
+            <div className="text-center">
+              <div className="text-5xl mb-2">🏆</div>
+              <div className="text-sm opacity-90">13+ Years Experience</div>
             </div>
-            <h1 className="text-5xl font-bold mb-6 text-white">
-              Custom Web Design That Captures Your Brand Essence
-            </h1>
-            <p className="text-xl text-gray-300 mb-8">
-              Create a stunning, unique website that stands out from competitors and converts visitors into customers. No templates, just bespoke design tailored to your business.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <button data-popup="contact" className="btn btn-primary">
-                Start Your Project
-              </button>
-              <Link href="/portfolio" className="btn btn-white">
-                View Our Portfolio
-              </Link>
+            <div className="text-center">
+              <div className="text-5xl mb-2">⭐</div>
+              <div className="text-sm opacity-90">50+ 5-Star Reviews</div>
+            </div>
+            <div className="text-center">
+              <div className="text-5xl mb-2">✓</div>
+              <div className="text-sm opacity-90">Professional Service</div>
+            </div>
+            <div className="text-center">
+              <div className="text-5xl mb-2">📊</div>
+              <div className="text-sm opacity-90">Proven Results</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container">
-          <StatsGrid stats={stats} columns={4} />
+      <section className="py-24 px-8">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-5xl font-bold text-center text-[#1e293b] mb-6">
+            Why Choose Custom Web Design Sydney?
+          </h2>
+          <div className="grid md:grid-cols-4 gap-8 mt-16">
+            <div className="bg-white p-10 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] text-center border-t-4 border-[#f59e0b]">
+              <div className="text-6xl font-bold text-[#f59e0b] mb-2">100%</div>
+              <div className="text-[#64748b] text-lg">Unique Design</div>
+            </div>
+            <div className="bg-white p-10 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] text-center border-t-4 border-[#f59e0b]">
+              <div className="text-6xl font-bold text-[#f59e0b] mb-2">94%</div>
+              <div className="text-[#64748b] text-lg">Judge by Design</div>
+            </div>
+            <div className="bg-white p-10 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] text-center border-t-4 border-[#f59e0b]">
+              <div className="text-6xl font-bold text-[#f59e0b] mb-2">3x</div>
+              <div className="text-[#64748b] text-lg">Better Conversions</div>
+            </div>
+            <div className="bg-white p-10 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] text-center border-t-4 border-[#f59e0b]">
+              <div className="text-6xl font-bold text-[#f59e0b] mb-2">500+</div>
+              <div className="text-[#64748b] text-lg">Sites Delivered</div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-20">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl font-bold mb-4">
-              Why Choose Custom Web Design?
-            </h2>
-            <p className="text-xl text-gray-600">
-              Stand out with a unique website designed specifically for your business goals.
-            </p>
-          </div>
+      <section className="py-24 px-8 bg-[#f8fafc]">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-5xl font-bold text-center text-[#1e293b] mb-6">
+            Our Custom Web Design Sydney Services
+          </h2>
+          <p className="text-center text-xl text-[#64748b] max-w-3xl mx-auto mb-12">
+            Comprehensive solutions designed to help your business succeed
+          </p>
 
-          <div className="grid-3">
-            {features.map((feature, index) => (
-              <div key={index} className="card hover:shadow-card-hover transition-shadow">
-                <div className="text-4xl mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </div>
-            ))}
+          <div className="grid md:grid-cols-3 gap-12 mt-16">
+            <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border-l-4 border-[#f59e0b]">
+              <div className="text-6xl mb-6">🎨</div>
+              <h3 className="text-2xl font-bold text-[#1e293b] mb-3">Unique Design</h3>
+              <p className="text-[#64748b] mb-6">Custom visual identity</p>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <span>Brand-specific</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <span>Custom graphics</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <span>Unique layouts</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <span>Professional imagery</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border-l-4 border-[#f59e0b]">
+              <div className="text-6xl mb-6">📱</div>
+              <h3 className="text-2xl font-bold text-[#1e293b] mb-3">Mobile-First</h3>
+              <p className="text-[#64748b] mb-6">Perfect on all devices</p>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <span>Responsive layouts</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <span>Touch-friendly</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <span>Fast mobile</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <span>Cross-browser</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border-l-4 border-[#f59e0b]">
+              <div className="text-6xl mb-6">⚡</div>
+              <h3 className="text-2xl font-bold text-[#1e293b] mb-3">Custom Features</h3>
+              <p className="text-[#64748b] mb-6">Exact functionality needed</p>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <span>Booking systems</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <span>Calculators</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <span>User portals</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <span>Integrations</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border-l-4 border-[#f59e0b]">
+              <div className="text-6xl mb-6">🎯</div>
+              <h3 className="text-2xl font-bold text-[#1e293b] mb-3">Conversion Focus</h3>
+              <p className="text-[#64748b] mb-6">Maximize conversions</p>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <span>Strategic CTAs</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <span>User journey</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <span>A/B testing</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <span>Lead capture</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border-l-4 border-[#f59e0b]">
+              <div className="text-6xl mb-6">🚀</div>
+              <h3 className="text-2xl font-bold text-[#1e293b] mb-3">Performance</h3>
+              <p className="text-[#64748b] mb-6">Fast loading speeds</p>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <span>Optimized code</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <span>Image compression</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <span>Lazy loading</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <span>CDN integration</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border-l-4 border-[#f59e0b]">
+              <div className="text-6xl mb-6">🔍</div>
+              <h3 className="text-2xl font-bold text-[#1e293b] mb-3">SEO-Ready</h3>
+              <p className="text-[#64748b] mb-6">Built for search</p>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <span>Clean code</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <span>Semantic HTML</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <span>Schema markup</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <span>Fast speeds</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Process Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl font-bold mb-4">Our Design Process</h2>
-            <p className="text-xl text-gray-600">
-              A collaborative approach that ensures your vision becomes reality.
-            </p>
-          </div>
+      <section className="py-24 px-8" id="process">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-5xl font-bold text-center text-[#1e293b] mb-6">
+            Our Proven Process
+          </h2>
+          <p className="text-center text-xl text-[#64748b] max-w-3xl mx-auto mb-12">
+            A systematic approach to deliver outstanding results
+          </p>
 
-          <div className="grid-2 max-w-4xl mx-auto">
-            {process.map((item) => (
-              <div key={item.step} className="card hover:shadow-card-hover transition-shadow">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-gradient-navy-orange rounded-full flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
-                    {item.step}
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                    <p className="text-gray-600">{item.description}</p>
-                  </div>
-                </div>
+          <div className="grid md:grid-cols-3 gap-12 mt-16">
+            <div className="text-center bg-white p-10 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
+              <div className="w-24 h-24 bg-[#1e293b] text-white rounded-full flex items-center justify-center text-4xl font-bold mx-auto mb-8 shadow-lg">
+                1
               </div>
-            ))}
+              <h3 className="text-2xl font-bold text-[#1e293b] mb-4">Discovery</h3>
+              <p className="text-[#64748b]">
+                Deep dive into your business, goals, and requirements
+              </p>
+            </div>
+
+            <div className="text-center bg-white p-10 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
+              <div className="w-24 h-24 bg-[#1e293b] text-white rounded-full flex items-center justify-center text-4xl font-bold mx-auto mb-8 shadow-lg">
+                2
+              </div>
+              <h3 className="text-2xl font-bold text-[#1e293b] mb-4">Strategy</h3>
+              <p className="text-[#64748b]">
+                Develop custom strategy based on research and analysis
+              </p>
+            </div>
+
+            <div className="text-center bg-white p-10 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
+              <div className="w-24 h-24 bg-[#1e293b] text-white rounded-full flex items-center justify-center text-4xl font-bold mx-auto mb-8 shadow-lg">
+                3
+              </div>
+              <h3 className="text-2xl font-bold text-[#1e293b] mb-4">Planning</h3>
+              <p className="text-[#64748b]">
+                Create detailed roadmap and project timeline
+              </p>
+            </div>
+
+            <div className="text-center bg-white p-10 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
+              <div className="w-24 h-24 bg-[#1e293b] text-white rounded-full flex items-center justify-center text-4xl font-bold mx-auto mb-8 shadow-lg">
+                4
+              </div>
+              <h3 className="text-2xl font-bold text-[#1e293b] mb-4">Execution</h3>
+              <p className="text-[#64748b]">
+                Implement solution with attention to detail
+              </p>
+            </div>
+
+            <div className="text-center bg-white p-10 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
+              <div className="w-24 h-24 bg-[#1e293b] text-white rounded-full flex items-center justify-center text-4xl font-bold mx-auto mb-8 shadow-lg">
+                5
+              </div>
+              <h3 className="text-2xl font-bold text-[#1e293b] mb-4">Testing</h3>
+              <p className="text-[#64748b]">
+                Thorough quality assurance and optimization
+              </p>
+            </div>
+
+            <div className="text-center bg-white p-10 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
+              <div className="w-24 h-24 bg-[#1e293b] text-white rounded-full flex items-center justify-center text-4xl font-bold mx-auto mb-8 shadow-lg">
+                6
+              </div>
+              <h3 className="text-2xl font-bold text-[#1e293b] mb-4">Launch & Support</h3>
+              <p className="text-[#64748b]">
+                Deploy and provide ongoing support
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Portfolio Section */}
-      {webProjects.length > 0 && (
-        <section className="py-20">
-          <div className="container">
-            <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="text-4xl font-bold mb-4">Custom Web Design Portfolio</h2>
-              <p className="text-xl text-gray-600">
-                Explore our recent custom website designs for diverse industries.
+      {/* Case Studies Section */}
+      <section className="py-24 px-8 bg-[#f8fafc]">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-5xl font-bold text-center text-[#1e293b] mb-16">
+            Real Results for Sydney Businesses
+          </h2>
+
+          <div className="space-y-12">
+            <div className="bg-white p-12 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
+              <div className="border-b-4 border-[#f59e0b] pb-6 mb-8">
+                <h3 className="text-3xl font-bold text-[#1e293b] mb-2">OSAN Ability</h3>
+                <div className="text-[#f59e0b] font-semibold text-lg">NDIS Provider</div>
+              </div>
+              <p className="text-[#64748b] text-lg">
+                Custom design with strong branding generating daily leads for NDIS services
               </p>
             </div>
 
-            <div className="grid-3">
-              {webProjects.slice(0, 6).map((project) => (
-                <PortfolioCard key={project.id} project={project} />
-              ))}
-            </div>
-
-            <div className="text-center mt-12">
-              <Link href="/portfolio" className="btn btn-primary">
-                View All Projects
-              </Link>
+            <div className="bg-white p-12 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
+              <div className="border-b-4 border-[#f59e0b] pb-6 mb-8">
+                <h3 className="text-3xl font-bold text-[#1e293b] mb-2">Actuate Property</h3>
+                <div className="text-[#f59e0b] font-semibold text-lg">Buyers Agent</div>
+              </div>
+              <p className="text-[#64748b] text-lg">
+                Sophisticated website attracting high-value clients with 3x inquiry increase
+              </p>
             </div>
           </div>
-        </section>
-      )}
+        </div>
+      </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl font-bold mb-4">What Our Clients Say</h2>
-            <p className="text-xl text-gray-600">
-              Real feedback from businesses we&apos;ve helped with custom web design.
-            </p>
-          </div>
+      <section className="py-24 px-8">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-5xl font-bold text-center text-[#1e293b] mb-16">
+            What Our Clients Say
+          </h2>
 
-          <div className="grid-3">
-            {webReviews.map((review) => (
-              <TestimonialCard key={review.id} review={review} />
-            ))}
-          </div>
+          <div className="grid md:grid-cols-3 gap-12">
+            <div className="bg-white p-12 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border-t-4 border-[#f59e0b]">
+              <div className="text-[#f59e0b] text-2xl mb-6">⭐⭐⭐⭐⭐</div>
+              <p className="text-[#64748b] italic text-lg leading-relaxed mb-8">
+                "Professional, responsive, and delivered exactly what we needed. The results have been fantastic and we've seen significant improvements."
+              </p>
+              <div className="font-semibold text-[#1e293b]">Sydney Business Owner</div>
+              <div className="text-[#64748b] text-sm">Professional Services</div>
+            </div>
 
-          <div className="text-center mt-12">
-            <Link href="/testimonials" className="btn btn-primary">
-              Read More Reviews
-            </Link>
+            <div className="bg-white p-12 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border-t-4 border-[#f59e0b]">
+              <div className="text-[#f59e0b] text-2xl mb-6">⭐⭐⭐⭐⭐</div>
+              <p className="text-[#64748b] italic text-lg leading-relaxed mb-8">
+                "The team at Sydney Web Designer took the time to understand our business. Their expertise and transparent approach made the entire process smooth."
+              </p>
+              <div className="font-semibold text-[#1e293b]">Local Business</div>
+              <div className="text-[#64748b] text-sm">Parramatta, NSW</div>
+            </div>
+
+            <div className="bg-white p-12 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border-t-4 border-[#f59e0b]">
+              <div className="text-[#f59e0b] text-2xl mb-6">⭐⭐⭐⭐⭐</div>
+              <p className="text-[#64748b] italic text-lg leading-relaxed mb-8">
+                "Highly recommend Sydney Web Designer for their professionalism and quality of work. They exceeded our expectations in every way."
+              </p>
+              <div className="font-semibold text-[#1e293b]">Sydney Client</div>
+              <div className="text-[#64748b] text-sm">Service Provider</div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Pricing Section */}
-      <section className="py-20">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl font-bold mb-4">Custom Web Design Pricing</h2>
-            <p className="text-xl text-gray-600">
-              Transparent pricing for professional custom websites.
+      <section className="py-24 px-8 bg-[#f8fafc]">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-5xl font-bold text-[#1e293b] mb-4">
+              Custom Web Design Sydney Pricing
+            </h2>
+            <p className="text-[#64748b] text-xl">
+              Choose the package that fits your needs and budget
             </p>
           </div>
 
-          <div className="grid-2 max-w-5xl mx-auto gap-8">
-            <div className="card">
-              <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold mb-2">Standard Website</h3>
-                <div className="text-4xl font-bold text-primary-orange mb-4">$5,000</div>
-                <p className="text-gray-600">Perfect for small businesses</p>
-              </div>
-
-              <div className="space-y-3 mb-8">
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Up to 7 custom pages</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Responsive design</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Content management system</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Contact form integration</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Basic SEO optimization</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">30 days post-launch support</span>
-                </div>
-              </div>
-
-              <button data-popup="contact" className="btn btn-outline w-full">
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div className="bg-white p-10 rounded-2xl border-2 border-gray-200 text-center hover:border-[#f59e0b] transition-all">
+              <h3 className="text-2xl font-bold text-[#1e293b] mb-4">Starter</h3>
+              <div className="text-4xl font-bold text-[#f59e0b] mb-2">$3,000-$5,000</div>
+              <div className="text-[#64748b] mb-8">one-time</div>
+              <ul className="text-left space-y-3 mb-8">
+                <li className="flex items-start gap-3">
+                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <span>3-5 pages</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <span>Mobile responsive</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <span>Basic SEO</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <span>Contact forms</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <span>CMS included</span>
+                </li>
+              </ul>
+              <button data-popup="contact" className="w-full bg-transparent border-2 border-[#1e293b] text-[#1e293b] px-8 py-3 rounded-full font-semibold hover:bg-[#1e293b] hover:text-white transition-all">
                 Get Started
               </button>
             </div>
 
-            <div className="card border-2 border-primary-orange">
-              <div className="text-center mb-6">
-                <div className="text-primary-orange font-bold mb-2">Most Popular</div>
-                <h3 className="text-2xl font-bold mb-2">Premium Website</h3>
-                <div className="text-4xl font-bold text-primary-orange mb-4">$8,500</div>
-                <p className="text-gray-600">For growing businesses</p>
+            <div className="bg-white p-10 rounded-2xl border-2 border-[#f59e0b] text-center relative shadow-xl">
+              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#f59e0b] text-white px-6 py-2 rounded-full text-sm font-semibold">
+                Most Popular
               </div>
+              <h3 className="text-2xl font-bold text-[#1e293b] mb-4 mt-4">Growth</h3>
+              <div className="text-4xl font-bold text-[#f59e0b] mb-2">$7,000-$10,000</div>
+              <div className="text-[#64748b] mb-8">one-time</div>
+              <ul className="text-left space-y-3 mb-8">
+                <li className="flex items-start gap-3">
+                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <span>10-20 pages</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <span>Custom design</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <span>Advanced SEO</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <span>Blog integration</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <span>E-commerce</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <span>3 months support</span>
+                </li>
+              </ul>
+              <button data-popup="contact" className="w-full bg-[#f59e0b] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#d97706] transition-all">
+                Get Started
+              </button>
+            </div>
 
-              <div className="space-y-3 mb-8">
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Up to 15 custom pages</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Advanced responsive design</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Custom functionality</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Advanced animations & interactions</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Advanced SEO optimization</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Blog functionality</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Training & documentation</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">60 days post-launch support</span>
-                </div>
-              </div>
-
-              <button data-popup="contact" className="btn btn-primary w-full">
+            <div className="bg-white p-10 rounded-2xl border-2 border-gray-200 text-center hover:border-[#f59e0b] transition-all">
+              <h3 className="text-2xl font-bold text-[#1e293b] mb-4">Enterprise</h3>
+              <div className="text-4xl font-bold text-[#f59e0b] mb-2">$25,000+</div>
+              <div className="text-[#64748b] mb-8">one-time</div>
+              <ul className="text-left space-y-3 mb-8">
+                <li className="flex items-start gap-3">
+                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <span>50+ pages</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <span>Fully custom</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <span>Advanced features</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <span>Integrations</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <span>6 months support</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <span>Dedicated manager</span>
+                </li>
+              </ul>
+              <button data-popup="contact" className="w-full bg-transparent border-2 border-[#1e293b] text-[#1e293b] px-8 py-3 rounded-full font-semibold hover:bg-[#1e293b] hover:text-white transition-all">
                 Get Started
               </button>
             </div>
           </div>
-
-          <p className="text-center text-gray-600 mt-8">
-            Need enterprise features or e-commerce?{" "}
-            <button data-popup="contact" className="text-primary-orange font-semibold hover:underline">
-              Contact us for custom quote
-            </button>
-          </p>
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl font-bold mb-4">Frequently Asked Questions</h2>
-            <p className="text-xl text-gray-600">
-              Common questions about our custom web design services.
+      {/* Lead Form Section */}
+      <section className="py-24 px-8">
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-[#1e293b] p-16 rounded-3xl text-white">
+            <h3 className="text-4xl font-bold mb-4 text-center">
+              Get Your Free Consultation
+            </h3>
+            <p className="text-center text-lg mb-12 opacity-90">
+              Tell us about your project and we'll provide expert advice and a custom quote
             </p>
-          </div>
 
-          <div className="max-w-3xl mx-auto space-y-6">
-            {faqs.map((faq, index) => (
-              <div key={index} className="card">
-                <h3 className="text-lg font-bold mb-2">{faq.question}</h3>
-                <p className="text-gray-600">{faq.answer}</p>
+            <form className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block mb-2 font-semibold">Full Name *</label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="Your name"
+                    className="w-full px-4 py-3 rounded-xl border-none text-[#1e293b]"
+                  />
+                </div>
+                <div>
+                  <label className="block mb-2 font-semibold">Email *</label>
+                  <input
+                    type="email"
+                    required
+                    placeholder="your@email.com"
+                    className="w-full px-4 py-3 rounded-xl border-none text-[#1e293b]"
+                  />
+                </div>
+                <div>
+                  <label className="block mb-2 font-semibold">Phone *</label>
+                  <input
+                    type="tel"
+                    required
+                    placeholder="04XX XXX XXX"
+                    className="w-full px-4 py-3 rounded-xl border-none text-[#1e293b]"
+                  />
+                </div>
+                <div>
+                  <label className="block mb-2 font-semibold">Company</label>
+                  <input
+                    type="text"
+                    placeholder="Your company (optional)"
+                    className="w-full px-4 py-3 rounded-xl border-none text-[#1e293b]"
+                  />
+                </div>
               </div>
-            ))}
+
+              <div>
+                <label className="block mb-2 font-semibold">Tell us about your project</label>
+                <textarea
+                  placeholder="What are you looking to achieve?"
+                  rows={4}
+                  className="w-full px-4 py-3 rounded-xl border-none text-[#1e293b] resize-none"
+                />
+              </div>
+
+              <div className="text-center">
+                <button
+                  type="submit"
+                  className="bg-white text-[#1e293b] px-12 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all"
+                >
+                  Get Free Quote
+                </button>
+                <p className="mt-4 text-sm opacity-80">💬 We'll respond within 24 hours</p>
+              </div>
+            </form>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <CTASection
-        title="Ready to Create Your Custom Website?"
-        description="Let&apos;s discuss your project and create a website that truly represents your brand and drives results."
-        primaryButtonText="Start Your Project"
-        primaryButtonAction="contact"
-      />
+      <section className="bg-[#1e293b] text-white py-24 px-8 text-center">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-5xl font-bold mb-6">Ready to Get Started?</h2>
+          <p className="text-2xl mb-10 opacity-90">
+            Let's discuss your project and create a custom solution for your business
+          </p>
+          <button data-popup="contact" className="bg-transparent border-2 border-white text-white px-6 md:px-10 lg:px-12 py-3 md:py-4 lg:py-5 rounded-full font-semibold text-base md:text-lg lg:text-xl hover:bg-white hover:text-[#1e293b] transition-all w-full sm:w-auto text-center">
+            Get Free Quote
+          </button>
+        </div>
+      </section>
     </>
   );
 }

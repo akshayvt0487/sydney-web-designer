@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Growth Plans - Sydney Web Designer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: var(--dark-navy);
+            color: white;
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        .top-bar-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar-left {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .top-bar-left span {
+            opacity: 0.9;
+        }
+
+        .top-bar-right {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .top-bar-right a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.9;
+            transition: all 0.3s;
+        }
+
+        .top-bar-right a:hover {
+            opacity: 1;
+            color: var(--primary-orange);
+        }
+
+        /* Color Variables */
+        :root {
+            --primary-navy: #1e293b;
+            --primary-blue: #334155;
+            --dark-navy: #0f172a;
+            --light-navy: #e0e7ff;
+            --primary-orange: #f59e0b;
+            --dark-orange: #d97706;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --light-bg: #f8fafc;
+        }
+
+        /* Header */
+        header {
+            background: #fff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .nav-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .nav-bottom {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid #f1f5f9;
+        }
+
+        .nav-bottom .nav-links {
+            margin: 0;
+        }
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-image {
+            height: 50px;
+            width: auto;
+            transition: transform 0.3s;
+        }
+
+        .logo-image:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-orange);
+        }
+
+        .header-cta {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .header-cta .btn {
+            padding: 0.7rem 1.8rem;
+            font-size: 0.95rem;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: 2px solid;
+        }
+
+        .btn-primary {
+            background: var(--primary-orange);
+            color: white;
+            border-color: var(--primary-orange);
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-orange);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(245, 158, 11, 0.4);
+        }
+
+        /* Page Hero */
+        .page-hero {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-blue) 100%);
+            color: white;
+            padding: 6rem 2rem 5rem;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .page-hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .intro-section {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: white;
+        }
+
+        .intro-section h2 {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .intro-section p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 900px;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
+        }
+
+        /* Business Size Tabs */
+        .business-tabs {
+            padding: 3rem 2rem;
+            background: var(--light-bg);
+        }
+
+        .tabs-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 1rem 3rem;
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: var(--text-dark);
+        }
+
+        .tab-btn.active {
+            background: var(--primary-orange);
+            color: white;
+            border-color: var(--primary-orange);
+        }
+
+        .tab-btn:hover {
+            border-color: var(--primary-orange);
+        }
+
+        /* Pricing Grid */
+        .pricing-section {
+            padding: 4rem 2rem;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border: 2px solid transparent;
+            position: relative;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(245, 158, 11, 0.15);
+            border-color: var(--primary-orange);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary-orange);
+            background: linear-gradient(to bottom, #fff9f0 0%, white 100%);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: var(--primary-orange);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            box-shadow: 0 4px 10px rgba(245, 158, 11, 0.3);
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid #f1f5f9;
+        }
+
+
+        .pricing-card h3 {
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-price {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary-navy);
+            margin-bottom: 0.3rem;
+        }
+
+        .pricing-price .currency {
+            font-size: 1.5rem;
+        }
+
+        .pricing-period {
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        .pricing-gst {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        .pricing-description {
+            color: var(--text-light);
+            margin: 1.5rem 0;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0;
+        }
+
+        .pricing-features li {
+            padding: 0.8rem 0;
+            color: var(--text-dark);
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            line-height: 1.6;
+        }
+
+        .pricing-features li::before {
+            content: "✓";
+            color: var(--primary-orange);
+            font-weight: bold;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .pricing-card .btn {
+            width: 100%;
+            margin-top: 1.5rem;
+            font-size: 1.1rem;
+            padding: 1rem 2rem;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-navy);
+            border-color: var(--primary-navy);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-navy);
+            color: white;
+        }
+
+        /* Target Audience Section */
+        .target-audience {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            margin: 3rem auto;
+            max-width: 1000px;
+        }
+
+        .target-audience h3 {
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .audience-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .audience-card {
+            padding: 2rem;
+            background: var(--light-bg);
+            border-radius: 15px;
+            border-left: 4px solid var(--primary-orange);
+        }
+
+        .audience-card h4 {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .audience-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .audience-card li {
+            padding: 0.5rem 0;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .audience-card li::before {
+            content: "→";
+            color: var(--primary-orange);
+            font-weight: bold;
+        }
+
+        /* Compare Section */
+        .compare-section {
+            padding: 4rem 2rem;
+            background: var(--light-bg);
+        }
+
+        .compare-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 3rem;
+        }
+
+        .comparison-table {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-blue) 100%);
+            padding: 5rem 2rem;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+        }
+
+        .btn-light {
+            background: white;
+            color: var(--primary-navy);
+            border-color: white;
+        }
+
+        .btn-light:hover {
+            background: var(--primary-orange);
+            color: white;
+            border-color: var(--primary-orange);
+        }
+
+        /* Footer */
+        footer {
+            background: #1e293b;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-orange);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .nav-links {
+                display: none;
+            }
+
+            .nav-bottom {
+                padding-top: 0;
+                border-top: none;
+            }
+
+            .audience-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo-image {
+                height: 40px;
+            }
+
+            .nav-bottom {
+                margin-top: 0.5rem;
+            }
+
+            .header-cta {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .header-cta .btn {
+                flex: 1;
+                text-align: center;
+            }
+
+            .top-bar-content {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+
+            .top-bar-left,
+            .top-bar-right {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .top-bar-left span {
+                font-size: 0.85rem;
+            }
+
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .pricing-price {
+                font-size: 2.5rem;
+            }
+
+            .tabs-container {
+                flex-direction: column;
+            }
+
+            .tab-btn {
+                width: 100%;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="popup-forms.css">
+    <script src="popup-forms.js"></script>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="top-bar-left">
+                <span>📧 <a href="/cdn-cgi/l/email-protection#056d6069696a4561766c626b762b666a682b6470" style="color: white; text-decoration: none;"><span class="__cf_email__" data-cfemail="325a575e5e5d7256415b555c411c515d5f1c5347">[email&#160;protected]</span></a></span>
+                <span>📞 02 9191 8049</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="about.html">About Us</a>
+                <a href="testimonials.html">Testimonials</a>
+                <a href="careers.html">Careers</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="nav-top">
+                <a href="index.html" class="logo-link">
+                    <img src="sydney_web_designer_logo.png" alt="Sydney Web Designer" class="logo-image">
+                </a>
+                <div class="header-cta">
+                    <a href="#" data-popup="contact" class="btn btn-secondary">Get Quote</a>
+                    <a href="tel:0291918049" class="btn btn-primary">Call Now</a>
+                </div>
+            </div>
+            <div class="nav-bottom">
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#portfolio">Portfolio</a></li>
+                    <li><a href="web-design-plans.html">Web Design Plans</a></li>
+                    <li><a href="growth-plans.html">Growth Plans</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Growth Plans</h1>
+            <p>Ongoing digital marketing services to help your business thrive. Choose the perfect plan to scale your online presence and drive continuous growth.</p>
+        </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="intro-section">
+        <div class="container">
+            <h2>Monthly Marketing & Support Services</h2>
+            <p>From website maintenance to comprehensive digital marketing strategies, we offer flexible monthly plans designed to keep your business growing. All prices include expert management, monthly reporting, and dedicated support.</p>
+        </div>
+    </section>
+
+    <!-- Business Tabs -->
+    <section class="business-tabs">
+        <div class="container">
+            <div class="tabs-container">
+                <button class="tab-btn active" onclick="showPlans('all')">All Plans</button>
+                <button class="tab-btn" onclick="showPlans('starter')">Starter & Growing</button>
+                <button class="tab-btn" onclick="showPlans('established')">Established Business</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section - Starter Plans -->
+    <section class="pricing-section" id="starter-plans">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; color: var(--text-dark); margin-bottom: 1rem;">
+                Plans for Growing Businesses
+            </h2>
+            <p style="text-align: center; color: var(--text-light); margin-bottom: 3rem; font-size: 1.1rem;">
+                Perfect for small businesses and startups in their growth phase
+            </p>
+            
+            <div class="pricing-grid">
+                <!-- Website Care Plan -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Website Care</h3>
+                        <div class="pricing-price">
+                            <span class="currency">$</span>250
+                        </div>
+                        <p class="pricing-period">per month</p>
+                        <p class="pricing-gst">+ GST</p>
+                    </div>
+
+                    <p class="pricing-description">Keep your website secure, updated, and running smoothly with our essential care package.</p>
+
+                    <ul class="pricing-features">
+                        <li>Website security monitoring</li>
+                        <li>Regular software updates</li>
+                        <li>Daily backups</li>
+                        <li>Performance optimization</li>
+                        <li>Uptime monitoring</li>
+                        <li>Monthly maintenance report</li>
+                        <li>Minor content updates (up to 2 hours/month)</li>
+                        <li>Email support</li>
+                    </ul>
+
+                    <a href="#" data-popup="contact" class="btn btn-secondary">Get Started</a>
+                </div>
+
+                <!-- Website Care & CRM -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Website Care & CRM</h3>
+                        <div class="pricing-price">
+                            <span class="currency">$</span>500
+                        </div>
+                        <p class="pricing-period">per month</p>
+                        <p class="pricing-gst">+ GST</p>
+                    </div>
+
+                    <p class="pricing-description">Website maintenance plus customer relationship management to streamline your business operations.</p>
+
+                    <ul class="pricing-features">
+                        <li>Everything in Website Care</li>
+                        <li>CRM setup & management</li>
+                        <li>Lead tracking & automation</li>
+                        <li>Email marketing integration</li>
+                        <li>Request/Manage Reviews via SMS/Email</li>
+                        <li>Customer database management</li>
+                        <li>Monthly CRM optimization</li>
+                        <li>Content updates (up to 4 hours/month)</li>
+                        <li>Priority email support</li>
+                    </ul>
+
+                    <a href="#" data-popup="contact" class="btn btn-secondary">Get Started</a>
+                </div>
+
+                <!-- Paid Ads -->
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Popular</div>
+                    <div class="pricing-header">
+                        <h3>Paid Ads Management</h3>
+                        <div class="pricing-price">
+                            <span class="currency">$</span>1,000
+                        </div>
+                        <p class="pricing-period">per month</p>
+                        <p class="pricing-gst">+ GST</p>
+                    </div>
+
+                    <p class="pricing-description">Google or Facebook Ads campaign management to drive targeted traffic and conversions.</p>
+
+                    <ul class="pricing-features">
+                        <li>Google Ads OR Facebook Ads management</li>
+                        <li>Campaign strategy & setup</li>
+                        <li>Ad copywriting & creative</li>
+                        <li>Audience targeting & research</li>
+                        <li>A/B testing & optimization</li>
+                        <li>Conversion tracking setup</li>
+                        <li>Monthly performance reports</li>
+                        <li>Dedicated account manager</li>
+                        <li>Ad spend recommendations</li>
+                    </ul>
+
+                    <a href="#" data-popup="contact" class="btn btn-primary">Get Started</a>
+                </div>
+
+                <!-- SEO Plan -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>SEO Package</h3>
+                        <div class="pricing-price">
+                            <span class="currency">$</span>3,000
+                        </div>
+                        <p class="pricing-period">per month</p>
+                        <p class="pricing-gst">+ GST</p>
+                    </div>
+
+                    <p class="pricing-description">Comprehensive SEO strategy to improve your organic search rankings and drive qualified traffic.</p>
+
+                    <ul class="pricing-features">
+                        <li>Complete SEO audit & strategy</li>
+                        <li>On-page optimization</li>
+                        <li>Technical SEO improvements</li>
+                        <li>Content creation (4 blog posts/month)</li>
+                        <li>Link building & outreach</li>
+                        <li>Local SEO optimization</li>
+                        <li>Keyword research & tracking</li>
+                        <li>Competitor analysis</li>
+                        <li>Google My Business management</li>
+                        <li>Monthly SEO reports & meetings</li>
+                    </ul>
+
+                    <a href="#" data-popup="contact" class="btn btn-secondary">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section - Ultimate Plan -->
+    <section class="pricing-section" id="established-plans" style="background: var(--light-bg);">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; color: var(--text-dark); margin-bottom: 1rem;">
+                For Established Businesses
+            </h2>
+            <p style="text-align: center; color: var(--text-light); margin-bottom: 3rem; font-size: 1.1rem;">
+                Comprehensive marketing solution for businesses with $1M+ annual revenue
+            </p>
+            
+            <div style="max-width: 900px; margin: 0 auto;">
+                <div class="pricing-card featured" style="border: 3px solid var(--primary-orange);">
+                    <div class="pricing-badge" style="font-size: 1rem;">Ultimate Package</div>
+                    <div class="pricing-header">
+                        <h3>Complete Marketing Package</h3>
+                        <div class="pricing-price">
+                            <span class="currency">$</span>5,000 <span style="font-size: 2rem;">- $10,000</span>
+                        </div>
+                        <p class="pricing-period">per month</p>
+                        <p class="pricing-gst">+ GST</p>
+                    </div>
+
+                    <p class="pricing-description" style="font-size: 1.1rem;">
+                        Full-service digital marketing solution combining all services for maximum impact and ROI.
+                    </p>
+
+                    <ul class="pricing-features">
+                        <li><strong>Everything included from all other plans</strong></li>
+                        <li>Dedicated marketing team</li>
+                        <li>Custom marketing strategy development</li>
+                        <li>Multi-channel campaign management</li>
+                        <li>Google Ads + Facebook Ads + LinkedIn Ads</li>
+                        <li>Advanced SEO with content marketing</li>
+                        <li>Social media management (all platforms)</li>
+                        <li>Email marketing automation</li>
+                        <li>CRM with advanced automation</li>
+                        <li>Conversion rate optimization</li>
+                        <li>Video marketing & production</li>
+                        <li>Influencer outreach & partnerships</li>
+                        <li>Advanced analytics & reporting</li>
+                        <li>Quarterly strategy review meetings</li>
+                        <li>Priority 24/7 support</li>
+                        <li>Dedicated account manager</li>
+                    </ul>
+
+                    <a href="#" data-popup="consultation" data-popup="contact" class="btn btn-primary" style="font-size: 1.2rem; padding: 1.2rem 3rem;">Schedule Consultation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Audience -->
+    <section class="pricing-section">
+        <div class="container">
+            <div class="target-audience">
+                <h3>Who Are These Plans For?</h3>
+                
+                <div class="audience-grid">
+                    <div class="audience-card">
+                        <h4>🌱 Growing Businesses ($250-$3,000/month)</h4>
+                        <ul>
+                            <li>Startups and small businesses</li>
+                            <li>Annual revenue under $1 million</li>
+                            <li>Building online presence</li>
+                            <li>Need specific marketing services</li>
+                            <li>Testing different marketing channels</li>
+                            <li>Budget-conscious growth</li>
+                        </ul>
+                    </div>
+
+                    <div class="audience-card">
+                        <h4>🏆 Established Businesses ($5,000-$10,000/month)</h4>
+                        <ul>
+                            <li>Established companies</li>
+                            <li>Annual revenue over $1 million</li>
+                            <li>Need comprehensive marketing</li>
+                            <li>Ready to scale aggressively</li>
+                            <li>Multi-channel marketing approach</li>
+                            <li>Dedicated marketing team needed</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Accelerate Your Growth?</h2>
+            <p>Let's discuss which plan is perfect for your business goals</p>
+            <a href="#" data-popup="contact" class="btn btn-light" style="font-size: 1.2rem; padding: 1.2rem 3rem;">Schedule Free Consultation</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+                <footer style="background: var(--primary-navy); color: white; padding: 4rem 2rem 2rem;">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <!-- Footer Content Grid -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 3rem;">
+                
+                <!-- Company Info -->
+                <div>
+                    <h3 style="color: white; font-size: 1.3rem; margin-bottom: 1rem;">DSIGNS AUSTRALIA</h3>
+                    <p style="color: #94a3b8; line-height: 1.8; margin-bottom: 1rem;">
+                        Sydney's leading web design and digital marketing agency. We help businesses grow online with professional websites, SEO, and digital marketing services.
+                    </p>
+                    <p style="color: #94a3b8;">
+                        <strong style="color: white;">📍 Location:</strong><br>
+                        Sydney, New South Wales, Australia
+                    </p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 style="color: white; font-size: 1.3rem; margin-bottom: 1rem;">Quick Links</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 0.75rem;"><a href="index.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Home</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="about.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">About Us</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="services.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Services</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="portfolio-two-brothers.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Portfolio</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="blog.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Blog</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="careers.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h3 style="color: white; font-size: 1.3rem; margin-bottom: 1rem;">Our Services</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 0.75rem;"><a href="service-custom-web-design.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Web Design</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="service-seo-sydney.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">SEO Services</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="service-google-ads.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Google Ads</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="service-logo-design.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Branding</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="service-social-media-marketing.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Social Media</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="service-content-marketing.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Content Marketing</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact & Social -->
+                <div>
+                    <h3 style="color: white; font-size: 1.3rem; margin-bottom: 1rem;">Get In Touch</h3>
+                    <p style="color: #94a3b8; margin-bottom: 0.75rem;">
+                        <strong style="color: white;">📧 Email:</strong><br>
+                        <a href="/cdn-cgi/l/email-protection#f49c9198989bb490879d939a87da979b99da9581" style="color: #f59e0b; text-decoration: none;"><span class="__cf_email__" data-cfemail="721a171e1e1d3216011b151c015c111d1f5c1307">[email&#160;protected]</span></a>
+                    </p>
+                    <p style="color: #94a3b8; margin-bottom: 1.5rem;">
+                        <strong style="color: white;">📞 Phone:</strong><br>
+                        <a href="tel:0291918049" style="color: #f59e0b; text-decoration: none;">02 9191 8049</a>
+                    </p>
+                    
+                    <!-- Social Media Links -->
+                    <h4 style="color: white; font-size: 1.1rem; margin-bottom: 1rem;">Follow Us</h4>
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="https://www.facebook.com/dsignsaustralia" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; background: #1877f2; color: white; border-radius: 50%; text-decoration: none; font-size: 1.5rem; transition: all 0.3s;" onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 5px 15px rgba(24, 119, 242, 0.4)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+                            <span style="font-family: Arial, sans-serif;">f</span>
+                        </a>
+                        <a href="https://www.instagram.com/dsignsaustralia" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: white; border-radius: 50%; text-decoration: none; font-size: 1.5rem; transition: all 0.3s;" onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 5px 15px rgba(225, 48, 108, 0.4)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+                            <span style="font-family: Arial, sans-serif; font-weight: bold;">📷</span>
+                        </a>
+                        <a href="https://www.linkedin.com/company/dsigns-australia" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; background: #0077b5; color: white; border-radius: 50%; text-decoration: none; font-size: 1.5rem; transition: all 0.3s;" onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 5px 15px rgba(0, 119, 181, 0.4)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+                            <span style="font-family: Arial, sans-serif; font-weight: bold;">in</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div style="border-top: 1px solid #334155; padding-top: 2rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+                <p style="color: #94a3b8; margin: 0;">
+                    &copy; 2025 DSIGNS AUSTRALIA PTY LIMITED. All rights reserved.
+                </p>
+                <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+                    <a href="privacy-policy.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Privacy Policy</a>
+                    <a href="terms-conditions.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#94a3b8'">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        function showPlans(type) {
+            // Update active tab
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Show/hide plans based on selection
+            const starterPlans = document.getElementById('starter-plans');
+            const establishedPlans = document.getElementById('established-plans');
+
+            if (type === 'all') {
+                starterPlans.style.display = 'block';
+                establishedPlans.style.display = 'block';
+            } else if (type === 'starter') {
+                starterPlans.style.display = 'block';
+                establishedPlans.style.display = 'none';
+            } else if (type === 'established') {
+             

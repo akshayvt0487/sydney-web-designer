@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Marketing Sydney | SEO & Google Ads Experts | Sydney</title>
+    <meta name="description" content="Expert digital marketing services in Sydney. SEO, Google Ads, social media & content marketing. Drive traffic, generate leads, grow revenue. Free strategy call!">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        :root {
+            --primary-navy: #1e293b;
+            --primary-blue: #334155;
+            --dark-navy: #0f172a;
+            --primary-orange: #f59e0b;
+            --dark-orange: #d97706;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --light-bg: #f8fafc;
+        }
+
+        .top-bar {
+            background: var(--dark-navy);
+            color: white;
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        .top-bar-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar-left {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .top-bar-right {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .top-bar-right a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.9;
+        }
+
+        .top-bar-right a:hover {
+            opacity: 1;
+            color: var(--primary-orange);
+        }
+
+        header {
+            background: #fff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .nav-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .logo-image {
+            height: 50px;
+            width: auto;
+        }
+
+        .header-cta {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.7rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: 2px solid;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background: var(--primary-orange);
+            color: white;
+            border-color: var(--primary-orange);
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-orange);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-navy);
+            border-color: var(--primary-navy);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-navy);
+            color: white;
+        }
+
+        .nav-bottom {
+            display: flex;
+            justify-content: center;
+            padding-top: 1rem;
+            border-top: 1px solid #f1f5f9;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-orange);
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            padding: 1rem 0;
+            min-width: 250px;
+            margin-top: 0.5rem;
+        }
+
+        .nav-item:hover .dropdown {
+            display: block;
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 0.8rem 1.5rem;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .dropdown a:hover {
+            background: var(--light-bg);
+            color: var(--primary-orange);
+        }
+
+        .page-hero {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-blue) 100%);
+            color: white;
+            padding: 6rem 2rem 5rem;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .page-hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        .breadcrumb {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .breadcrumb a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .content-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+        }
+
+        .intro-text {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+        }
+
+        .intro-text strong {
+            color: var(--text-dark);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin: 4rem 0;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--primary-orange);
+        }
+
+        .feature-card h3 {
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-card li {
+            padding: 0.5rem 0;
+            color: var(--text-light);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+        }
+
+        .feature-card li::before {
+            content: "✓";
+            color: var(--primary-orange);
+            font-weight: bold;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .process-section {
+            background: var(--light-bg);
+            padding: 6rem 2rem;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .process-step {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-navy), var(--primary-orange));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin: 0 auto 1.5rem;
+        }
+
+        .process-step h3 {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .process-step p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-blue) 100%);
+            padding: 5rem 2rem;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .faq-section {
+            max-width: 900px;
+            margin: 6rem auto;
+            padding: 0 2rem;
+        }
+
+        .faq-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .faq-item h3 {
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .faq-item p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        footer {
+            background: #1e293b;
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            color: var(--primary-orange);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-orange);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #334155;
+            padding-top: 2rem;
+            text-align: center;
+            color: #94a3b8;
+        }
+
+        @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .nav-links {
+                display: none;
+            }
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            .top-bar-content {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="popup-forms.css">
+    <script src="popup-forms.js"></script>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="top-bar-left">
+                <span>📧 <a href="/cdn-cgi/l/email-protection#ee868b828281ae8a9d8789809dc08d8183c08f9b" style="color: white; text-decoration: none;"><span class="__cf_email__" data-cfemail="7a121f1616153a1e09131d140954191517541b0f">[email&#160;protected]</span></a></span>
+                <span>📞 02 9191 8049</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="about.html">About Us</a>
+                <a href="testimonials.html">Testimonials</a>
+                <a href="careers.html">Careers</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <nav>
+            <div class="nav-top">
+                <a href="index.html">
+                    <img src="sydney_web_designer_logo.png" alt="Sydney Web Designer" class="logo-image">
+                </a>
+                <div class="header-cta">
+                    <a href="contact.html" class="btn btn-secondary">Get Quote</a>
+                    <a href="tel:0291918049" class="btn btn-primary">Call Now</a>
+                </div>
+            </div>
+            <div class="nav-bottom">
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li class="nav-item">
+                        <a href="index.html#services">Services</a>
+                        <div class="dropdown">
+                            <a href="web-design.html">Web Design</a>
+                            <a href="branding.html">Branding</a>
+                            <a href="digital-marketing.html">Digital Marketing</a>
+                        </div>
+                    </li>
+                    <li><a href="index.html#portfolio">Portfolio</a></li>
+                    <li><a href="web-design-plans.html">Web Design Plans</a></li>
+                    <li><a href="growth-plans.html">Growth Plans</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-hero">
+        <h1>Digital Marketing Services Sydney</h1>
+        <p>Drive traffic, generate leads, and grow revenue with data-driven digital marketing strategies</p>
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> / <a href="index.html#services">Services</a> / <span>Digital Marketing</span>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <h2 class="section-title">Expert Digital Marketing Services in Sydney</h2>
+        <p class="section-subtitle">Strategic digital marketing that delivers measurable ROI for Sydney businesses</p>
+
+        <div class="intro-text">
+            <p><strong>Digital marketing is essential for business growth in today's online-first world.</strong> Whether you need more website traffic, qualified leads, or increased sales, the right digital marketing strategy can transform your business results. At Sydney Web Designer, we've spent 13+ years helping Sydney businesses achieve their growth goals through proven digital marketing strategies.</p>
+
+            <p>We don't believe in one-size-fits-all solutions. Every business has unique goals, audiences, and challenges. That's why we create custom digital marketing strategies tailored to your specific needs, budget, and industry. From SEO and Google Ads to social media and content marketing, we deliver integrated campaigns that drive real results.</p>
+
+            <p><strong>Our digital marketing services include:</strong> Search Engine Optimization (SEO), Google Ads (PPC), Social Media Marketing, Content Marketing, Email Marketing, and Conversion Rate Optimization. We combine these services strategically to maximize your ROI and grow your business sustainably. Explore our <a href="web-design.html" style="color: var(--primary-orange); text-decoration: none; font-weight: 600;">web design</a> and <a href="branding.html" style="color: var(--primary-orange); text-decoration: none; font-weight: 600;">branding</a> services for complete digital solutions.</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Search Engine Optimization (SEO)</h3>
+                <p>Rank higher on Google and drive organic traffic that converts. Our SEO strategies combine technical optimization, content marketing, and link building for long-term sustainable growth.</p>
+                <ul>
+                    <li>Keyword research & strategy</li>
+                    <li>On-page SEO optimization</li>
+                    <li>Technical SEO audits</li>
+                    <li>Content creation & optimization</li>
+                    <li>Link building campaigns</li>
+                    <li>Local SEO for Sydney businesses</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <h3>Google Ads (PPC)</h3>
+                <p>Get immediate results with targeted Google Ads campaigns. We manage your budget efficiently to maximize clicks, conversions, and ROI while minimizing wasted ad spend.</p>
+                <ul>
+                    <li>Search ads campaign management</li>
+                    <li>Display advertising</li>
+                    <li>Remarketing campaigns</li>
+                    <li>Shopping ads for e-commerce</li>
+                    <li>Landing page optimization</li>
+                    <li>Conversion tracking & reporting</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <h3>Social Media Marketing</h3>
+                <p>Build your brand and engage your audience on social media. We create and manage campaigns across Facebook, Instagram, LinkedIn, and more to grow your following and drive engagement.</p>
+                <ul>
+                    <li>Social media strategy</li>
+                    <li>Content creation & scheduling</li>
+                    <li>Community management</li>
+                    <li>Paid social advertising</li>
+                    <li>Influencer partnerships</li>
+                    <li>Analytics & reporting</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <h3>Content Marketing</h3>
+                <p>Attract, engage, and convert your audience with strategic content marketing. We create valuable content that positions you as an industry authority and drives organic traffic.</p>
+                <ul>
+                    <li>Content strategy development</li>
+                    <li>Blog writing & optimization</li>
+                    <li>Video content creation</li>
+                    <li>Infographics & visual content</li>
+                    <li>E-books & lead magnets</li>
+                    <li>Content distribution</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <h3>Email Marketing</h3>
+                <p>Nurture leads and retain customers with targeted email campaigns. We design, write, and automate email sequences that drive engagement and conversions.</p>
+                <ul>
+                    <li>Email campaign strategy</li>
+                    <li>Newsletter design & copywriting</li>
+                    <li>Marketing automation</li>
+                    <li>List segmentation</li>
+                    <li>A/B testing</li>
+                    <li>Performance analytics</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <h3>Conversion Rate Optimization</h3>
+                <p>Turn more visitors into customers by optimizing your conversion funnel. We analyze user behavior, test improvements, and increase your conversion rates systematically.</p>
+                <ul>
+                    <li>Conversion funnel analysis</li>
+                    <li>A/B testing & experimentation</li>
+                    <li>Landing page optimization</li>
+                    <li>User experience improvements</li>
+                    <li>Heat mapping & analytics</li>
+                    <li>Call-to-action optimization</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="process-section">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 class="section-title" style="text-align: center;">Our Digital Marketing Process</h2>
+            <p class="section-subtitle" style="text-align: center;">Data-driven methodology that delivers consistent results</p>
+
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Discovery & Audit</h3>
+                    <p>We analyze your current digital presence, competitors, target audience, and business goals to identify opportunities and gaps.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Strategy Development</h3>
+                    <p>We create a custom digital marketing strategy with clear objectives, KPIs, budget allocation, and timeline for achieving your goals.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Campaign Setup</h3>
+                    <p>We build and configure campaigns across chosen channels, set up tracking and analytics, and prepare all creative assets.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Launch & Execution</h3>
+                    <p>We launch campaigns and closely monitor initial performance, making quick adjustments to optimize for best results.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3>Optimization & Testing</h3>
+                    <p>Continuous A/B testing, performance analysis, and optimization ensure we maximize ROI and improve results over time.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">6</div>
+                    <h3>Reporting & Refinement</h3>
+                    <p>We provide detailed monthly reports with insights and recommendations, refining strategy based on data and results.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <h2 class="section-title">Why Choose Our Digital Marketing Services?</h2>
+        <p class="section-subtitle">13+ years driving growth for Sydney businesses through digital marketing</p>
+
+        <div class="intro-text">
+            <p><strong>We're results-obsessed digital marketers.</strong> Every campaign we run is focused on delivering measurable ROI. We don't just generate traffic or impressions—we drive qualified leads, sales, and revenue growth for your business.</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Data-Driven Approach</h3>
+                <p>Every decision we make is backed by data and analytics. We track everything, test constantly, and optimize relentlessly to maximize your marketing ROI.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Transparent Reporting</h3>
+                <p>You'll always know exactly how your campaigns are performing. We provide detailed monthly reports with clear metrics, insights, and recommendations.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Integrated Campaigns</h3>
+                <p>We don't just run isolated campaigns. We create integrated strategies that combine multiple channels to amplify results and create synergy.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Local Market Expertise</h3>
+                <p>Based in Sydney, we understand the local market, competition, and consumer behavior. This local expertise gives you a competitive advantage.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Certified Specialists</h3>
+                <p>Our team holds certifications from Google, Facebook, and HubSpot. We stay current with platform changes and industry best practices.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Proven Track Record</h3>
+                <p>We've delivered results for hundreds of Sydney businesses across diverse industries. Check our case studies to see real results we've achieved.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Common questions about our digital marketing services</p>
+
+        <div class="faq-item">
+            <h3>How much does digital marketing cost in Sydney?</h3>
+            <p>Digital marketing costs vary based on your goals, industry competition, and chosen channels. SEO campaigns typically start at $2,000-$3,000 per month, while Google Ads management starts at $1,500/month plus ad spend. We create custom packages based on your budget and objectives. Contact us for a tailored quote.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How long does it take to see results?</h3>
+            <p>Timeline varies by channel. Google Ads can deliver immediate traffic and leads. SEO typically takes 3-6 months to show significant results, with continued improvement over 6-12 months. Social media and content marketing build momentum over 2-4 months. We provide realistic timelines during our strategy phase.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Do you require long-term contracts?</h3>
+            <p>We offer both month-to-month and contract options. For SEO, we recommend minimum 6-month commitments for best results. Google Ads can be month-to-month. We're flexible and work with you to find arrangements that suit your business needs.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What results can I expect?</h3>
+            <p>Results depend on your industry, competition, budget, and goals. We provide realistic projections during planning. Typical results include increased website traffic, more qualified leads, higher conversion rates, and improved ROI. We track and report on all key metrics monthly.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Do you work with small businesses?</h3>
+            <p>Absolutely! We work with businesses of all sizes across Sydney. We offer scalable solutions that fit different budgets. Our Growth Plans are specifically designed for small to medium businesses looking for affordable, effective digital marketing.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What's included in your monthly reporting?</h3>
+            <p>Monthly reports include traffic analytics, lead generation metrics, conversion tracking, ROI analysis, campaign performance data, competitor insights, and strategic recommendations. We also provide quarterly strategy reviews and ongoing optimization suggestions.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Can you guarantee first page Google rankings?</h3>
+            <p>No reputable SEO agency can guarantee specific rankings, as Google's algorithm is constantly evolving. However, we use proven strategies that consistently deliver strong results. We focus on qualified traffic and conversions, not just rankings.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Do you manage our social media accounts?</h3>
+            <p>Yes, we offer full social media management including strategy, content creation, posting, community management, and paid advertising across Facebook, Instagram, LinkedIn, and other platforms. We can handle everything or work alongside your in-house team.</p>
+        </div>
+    </section>
+
+    <section class="content-section" style="background: var(--light-bg);">
+        <h2 class="section-title" style="text-align: center;">Our Digital Marketing Results</h2>
+        <p class="section-subtitle" style="text-align: center;">Real results we've delivered for Sydney businesses</p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem; margin-top: 3rem;">
+            <div style="background: white; border-radius: 20px; padding: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-top: 4px solid var(--primary-orange);">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <div style="font-size: 3.5rem; font-weight: 800; color: var(--primary-orange); margin-bottom: 0.5rem;">285%</div>
+                    <div style="font-size: 1.2rem; color: var(--text-dark); font-weight: 600;">Organic Traffic Growth</div>
+                </div>
+                <h3 style="font-size: 1.5rem; color: var(--text-dark); margin-bottom: 0.5rem;">Two Brothers Removalist</h3>
+                <p style="color: var(--text-light); margin-bottom: 1rem;">Professional Moving Services</p>
+                <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6;">Comprehensive SEO strategy delivered 285% organic traffic increase and 320+ monthly leads within 6 months.</p>
+                <a href="portfolio-two-brothers.html" style="color: var(--primary-orange); text-decoration: none; font-weight: 600; margin-top: 1rem; display: inline-block;">View Case Study →</a>
+            </div>
+
+            <div style="background: white; border-radius: 20px; padding: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-top: 4px solid var(--primary-orange);">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <div style="font-size: 3.5rem; font-weight: 800; color: var(--primary-orange); margin-bottom: 0.5rem;">450%</div>
+                    <div style="font-size: 1.2rem; color: var(--text-dark); font-weight: 600;">Return on Ad Spend</div>
+                </div>
+                <h3 style="font-size: 1.5rem; color: var(--text-dark); margin-bottom: 0.5rem;">GPS Vehicle Inspections</h3>
+                <p style="color: var(--text-light); margin-bottom: 1rem;">Car Inspection Specialist</p>
+                <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6;">Google Ads campaign optimization achieved 450% ROAS with consistent lead flow and booking growth.</p>
+                <a href="portfolio-two-brothers.html" style="color: var(--primary-orange); text-decoration: none; font-weight: 600; margin-top: 1rem; display: inline-block;">View Case Study →</a>
+            </div>
+
+            <div style="background: white; border-radius: 20px; padding: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-top: 4px solid var(--primary-orange);">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <div style="font-size: 3.5rem; font-weight: 800; color: var(--primary-orange); margin-bottom: 0.5rem;">50+</div>
+                    <div style="font-size: 1.2rem; color: var(--text-dark); font-weight: 600;">Page 1 Rankings</div>
+                </div>
+                <h3 style="font-size: 1.5rem; color: var(--text-dark); margin-bottom: 0.5rem;">NDIS Provider</h3>
+                <p style="color: var(--text-light); margin-bottom: 1rem;">Healthcare Services</p>
+                <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6;">SEO strategy achieved 50+ page 1 Google rankings for targeted keywords, generating daily qualified leads.</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="index.html#portfolio" class="btn btn-primary" style="padding: 1rem 2rem;">View All Case Studies</a>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <h2 class="section-title" style="text-align: center;">Get Your Free Digital Marketing Strategy</h2>
+        <p class="section-subtitle" style="text-align: center;">Tell us about your business and goals—we'll create a custom strategy proposal</p>
+
+        <div style="max-width: 800px; margin: 0 auto; background: white; padding: 3rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+            <form action="#" method="post">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+                    <div>
+                        <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-dark);">First Name *</label>
+                        <input type="text" name="first_name" required style="width: 100%; padding: 1rem; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 1rem;">
+                    </div>
+                    <div>
+                        <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-dark);">Last Name *</label>
+                        <input type="text" name="last_name" required style="width: 100%; padding: 1rem; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 1rem;">
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+                    <div>
+                        <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-dark);">Email *</label>
+                        <input type="email" name="email" required style="width: 100%; padding: 1rem; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 1rem;">
+                    </div>
+                    <div>
+                        <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-dark);">Phone *</label>
+                        <input type="tel" name="phone" required style="width: 100%; padding: 1rem; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 1rem;">
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-dark);">Current Website URL</label>
+                    <input type="url" name="website" style="width: 100%; padding: 1rem; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 1rem;" placeholder="https://yourwebsite.com.au">
+                </div>
+
+                <div class="form-group">
+                    <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-dark);">Digital Marketing Services Needed *</label>
+                    <select name="service_type" required style="width: 100%; padding: 1rem; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 1rem;">
+                        <option value="">Select services you need...</option>
+                        <option value="seo">SEO (Search Engine Optimization)</option>
+                        <option value="google_ads">Google Ads (PPC)</option>
+                        <option value="social_media">Social Media Marketing</option>
+                        <option value="content_marketing">Content Marketing</option>
+                        <option value="email_marketing">Email Marketing</option>
+                        <option value="full_service">Full-Service Digital Marketing</option>
+                        <option value="not_sure">Not Sure - Need Recommendation</option>
+                    </select>
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-dark);">Primary Goal *</label>
+                    <select name="goal" required style="width: 100%; padding: 1rem; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 1rem;">
+                        <option value="">What's your main goal?</option>
+                        <option value="increase_traffic">Increase Website Traffic</option>
+                        <option value="generate_leads">Generate More Leads</option>
+                        <option value="boost_sales">Boost Online Sales</option>
+                        <option value="brand_awareness">Build Brand Awareness</option>
+                        <option value="improve_rankings">Improve Google Rankings</option>
+                        <option value="multiple">Multiple Goals</option>
+                    </select>
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-dark);">Monthly Marketing Budget</label>
+                    <select name="budget" style="width: 100%; padding: 1rem; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 1rem;">
+                        <option value="">Select budget range...</option>
+                        <option value="under2k">Under $2,000/month</option>
+                        <option value="2-5k">$2,000 - $5,000/month</option>
+                        <option value="5-10k">$5,000 - $10,000/month</option>
+                        <option value="10k+">$10,000+/month</option>
+                        <option value="not_sure">Not Sure Yet</option>
+                    </select>
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-dark);">Current Marketing Challenges</label>
+                    <textarea name="challenges" rows="3" style="width: 100%; padding: 1rem; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 1rem; font-family: inherit;" placeholder="e.g., Low website traffic, not ranking on Google, poor conversion rates..."></textarea>
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-dark);">Additional Information</label>
+                    <textarea name="message" rows="4" style="width: 100%; padding: 1rem; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 1rem; font-family: inherit;" placeholder="Tell us more about your business, target audience, competitors, or any specific marketing needs..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1.2rem; font-size: 1.1rem; cursor: pointer; border: none;">Get Your Free Strategy Session</button>
+            </form>
+
+            <p style="text-align: center; margin-top: 1.5rem; color: var(--text-light); font-size: 0.9rem;">We'll analyze your situation and provide a custom digital marketing strategy with projected results.</p>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <h2>Ready to Grow Your Business Online?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2.5rem;">Let's create a digital marketing strategy that delivers real ROI for your Sydney business</p>
+            <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                <a href="contact.html" class="btn" style="padding: 1rem 2.5rem; font-size: 1.1rem; background: white; color: var(--primary-navy); border-color: white;">Get Free Strategy Call</a>
+                <a href="growth-plans.html" class="btn btn-secondary" style="padding: 1rem 2.5rem; font-size: 1.1rem; background: rgba(255,255,255,0.1); color: white; border-color: white;">View Growth Plans</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sydney Web Designer</h3>
+                <p style="color: #94a3b8; line-height: 1.8;">Transforming businesses through innovative web design and digital marketing solutions.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li><a href="web-design.html">Web Design</a></li>
+                    <li><a href="branding.html">Branding</a></li>
+                    <li><a href="digital-marketing.html">Digital Marketing</a></li>
+                    <li><a href="index.html#google-reviews">Pricing</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul class="footer-links">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <ul class="footer-links">
+                    <li><a href="tel:0291918049">📞 02 9191 8049</a></li>
+                    <li><a href="/cdn-cgi/l/email-protection#4b232e2727240b2f38222c253865282426

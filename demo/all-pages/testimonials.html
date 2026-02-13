@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Testimonials - Sydney Web Designer | Real Reviews</title>
+    <meta name="description" content="Read what our clients say about working with Sydney Web Designer. Real testimonials from Sydney businesses we've helped grow online.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        :root {
+            --primary-navy: #1e293b;
+            --primary-blue: #334155;
+            --dark-navy: #0f172a;
+            --primary-orange: #f59e0b;
+            --dark-orange: #d97706;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --light-bg: #f8fafc;
+        }
+
+        .top-bar {
+            background: var(--dark-navy);
+            color: white;
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        .top-bar-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar-left {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .top-bar-left a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.9;
+        }
+
+        .top-bar-left a:hover {
+            opacity: 1;
+            color: var(--primary-orange);
+        }
+
+        .top-bar-right {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .top-bar-right a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.9;
+        }
+
+        .top-bar-right a:hover {
+            opacity: 1;
+        }
+
+        header {
+            background: #fff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .nav-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .logo-image {
+            height: 50px;
+            width: auto;
+        }
+
+        .header-cta {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.7rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: 2px solid;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background: var(--primary-orange);
+            color: white;
+            border-color: var(--primary-orange);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-navy);
+            border-color: var(--primary-navy);
+        }
+
+        .nav-bottom {
+            display: flex;
+            justify-content: center;
+            padding-top: 1rem;
+            border-top: 1px solid #f1f5f9;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .page-hero {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-blue) 100%);
+            color: white;
+            padding: 6rem 2rem 5rem;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .page-hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .testimonials-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        .section-intro {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-intro h2 {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .google-rating {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .stars {
+            color: #f59e0b;
+            font-size: 2rem;
+        }
+
+        .rating-text {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--primary-orange);
+        }
+
+        .testimonial-stars {
+            color: #f59e0b;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .author-name {
+            font-weight: 700;
+            color: var(--text-dark);
+            font-size: 1.1rem;
+        }
+
+        .author-company {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-blue) 100%);
+            padding: 5rem 2rem;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background: #1e293b;
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            color: var(--primary-orange);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #334155;
+            padding-top: 2rem;
+            text-align: center;
+            color: #94a3b8;
+        }
+
+        @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="popup-forms.css">
+    <script src="popup-forms.js"></script>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="top-bar-left">
+                <span>📧 <a href="/cdn-cgi/l/email-protection#7c14191010133c180f151b120f521f1311521d09" style="color: white; text-decoration: none;"><span class="__cf_email__" data-cfemail="127a777e7e7d5276617b757c613c717d7f3c7367">[email&#160;protected]</span></a></span>
+                <span>📞 02 9191 8049</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="about.html">About Us</a>
+                <a href="testimonials.html">Testimonials</a>
+                <a href="careers.html">Careers</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <nav>
+            <div class="nav-top">
+                <a href="index.html">
+                    <img src="sydney_web_designer_logo.png" alt="Sydney Web Designer" class="logo-image">
+                </a>
+                <div class="header-cta">
+                    <a href="contact.html" class="btn btn-secondary">Get Quote</a>
+                    <a href="tel:0291918049" class="btn btn-primary">Call Now</a>
+                </div>
+            </div>
+            <div class="nav-bottom">
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#portfolio">Portfolio</a></li>
+                    <li><a href="web-design-plans.html">Web Design Plans</a></li>
+                    <li><a href="growth-plans.html">Growth Plans</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-hero">
+        <h1>What Our Clients Say</h1>
+        <p>Real reviews from real Sydney businesses we've helped grow online</p>
+    </section>
+
+    <section class="testimonials-section">
+        <div class="section-intro">
+            <h2>Trusted by Sydney Businesses</h2>
+            <div class="google-rating">
+                <span class="stars">⭐⭐⭐⭐⭐</span>
+                <span class="rating-text">5.0 Rating on Google</span>
+            </div>
+        </div>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Exceptional!! Very happy with the service. I have used Dsigns Australia for Logo design, Webpage to printing. They have exceeded my expectations all the time. They converted my ideas easily into designs without any problem. Very responsive. The best thing was they gave new ideas of promoting our business which really worked for us. Highly recommended for every stage and every sort of business. They take your business to the next level."</p>
+                <div class="testimonial-author">
+                    <span class="author-name">Bineesh Chandy</span>
+                    <span class="author-company">Konkan Restaurant, Sydney</span>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Thank you DSIGNS for your great work on helping develop our web design. Working with Nishana was a pleasure, she asked all the right questions to ensure her team could bring our vision to life. Great work!"</p>
+                <div class="testimonial-author">
+                    <span class="author-name">Verified Client</span>
+                    <span class="author-company">Sydney Business Owner</span>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"The team at Dsigns Australia have been awesome to work with. They are very responsive and supportive whilst creating my website. They have guided me every step of the way, and appreciate all their efforts in the creation of my website."</p>
+                <div class="testimonial-author">
+                    <span class="author-name">Verified Client</span>
+                    <span class="author-company">Sydney Service Provider</span>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"We hired DSIGNS to revamp our website with a specific goal, that is Generate Leads on a daily basis. They run Ads on Google, optimise for SEO and post on Social Media. The results been fantastic. We are on page#1 for our targeted keywords and now planning to push more for even greater results. Basheer & Thomas and entire team at DSIGNS are very knowledgeable and helpful. They are honest and work like their own business."</p>
+                <div class="testimonial-author">
+                    <span class="author-name">NDIS Provider</span>
+                    <span class="author-company">Healthcare Services</span>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Bash was simply amazing! Insightful and helpful. He treated my business as his own and put his deep thinking cap and helped us work through some of our most pressing branding and google ads issues for our civil business! We went with their small business growth plan and started seeing results immediately."</p>
+                <div class="testimonial-author">
+                    <span class="author-name">Civil Contractor</span>
+                    <span class="author-company">Construction Services</span>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"This company is hands down the best, fastest and best digital marketing agency you can find. You can ask for anything and everything and they'll get it done for you with their amazing team."</p>
+                <div class="testimonial-author">
+                    <span class="author-name">Verified Client</span>
+                    <span class="author-company">Sydney Business</span>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"We hired DSIGNS AUSTRALIA to design and develop our website. The team from DSIGNS were very courteous, flexible and professional to deliver a completed website in time and within budget. We are happy with their service and hired them for our SEO services."</p>
+                <div class="testimonial-author">
+                    <span class="author-name">Pulse Tech Systems</span>
+                    <span class="author-company">Technology Services</span>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"I had a very positive experience with Dsigns Australia. They quickly understood what I required and undertook the task with professionalism. I was also impressed with how quickly the issues with my blog were resolved. What was also important was that they took the time to explain to me what I needed to know and do to improve my blog. It all went really smoothly and I am very happy with the result."</p>
+                <div class="testimonial-author">
+                    <span class="author-name">Danielle Cheuk</span>
+                    <span class="author-company">Flavours of Home Blog</span>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"We hired DSIGNS to design and build a new website for our business. They were very clear with their communication throughout the process and we are happy with our final website which is very clean and already making some splash and getting us some leads. Thanks DSIGNS!"</p>
+                <div class="testimonial-author">
+                    <span class="author-name">Verified Client</span>
+                    <span class="author-company">Sydney Business</span>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Hired DSIGNS Australia for all our branding and website works. Basheer and team has excelled our expectations and continue to help us with our SEO and Social Media Campaigns. Excellent team and reasonable price. Thanks again!"</p>
+                <div class="testimonial-author">
+                    <span class="author-name">Verified Client</span>
+                    <span class="author-company">Sydney Business Owner</span>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; background: var(--light-bg); padding: 3rem; border-radius: 20px;">
+            <h3 style="font-size: 2rem; color: var(--text-dark); margin-bottom: 1rem;">Join Our Happy Clients</h3>
+            <p style="font-size: 1.1rem; color: var(--text-light); margin-bottom: 2rem;">Over 500 Sydney businesses trust us with their digital presence</p>
+            <a href="index.html#portfolio" class="btn btn-primary" style="padding: 1rem 2rem; display: inline-block;">View Our Work</a>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <h2>Ready to Grow Your Business?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2.5rem;">Let's create digital success together</p>
+            <a href="contact.html" class="btn" style="padding: 1rem 2.5rem; font-size: 1.1rem; background: white; color: var(--primary-navy); border-color: white;">Get Your Free Consultation</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sydney Web Designer</h3>
+                <p style="color: #94a3b8; line-height: 1.8;">Transforming businesses through innovative web design and digital marketing solutions.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li style="margin-bottom: 0.8rem;"><a href="index.html#services">Web Design</a></li>
+                    <li style="margin-bottom: 0.8rem;"><a href="index.html#services">Branding</a></li>
+                    <li style="margin-bottom: 0.8rem;"><a href="index.html#services">Digital Marketing</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul class="footer-links">
+                    <li style="margin-bottom: 0.8rem;"><a href="about.html">About Us</a></li>
+                    <li style="margin-bottom: 0.8rem;"><a href="testimonials.html">Testimonials</a></li>
+                    <li style="margin-bottom: 0.8rem;"><a href="careers.html">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <ul class="footer-links">
+                    <li style="margin-bottom: 0.8rem;"><a href="tel:0291918049">📞 02 9191 8049</a></li>
+                    <li style="margin-bottom: 0.8rem;"><a href="/cdn-cgi/

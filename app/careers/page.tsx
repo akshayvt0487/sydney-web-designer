@@ -2,219 +2,205 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Careers | Join Our Team | DSIGNS AUSTRALIA",
-  description: "Join DSIGNS AUSTRALIA and help shape the future of digital marketing. Explore career opportunities in web design, SEO, and digital marketing.",
-  keywords: "careers, jobs, web designer jobs sydney, seo specialist jobs, digital marketing jobs",
+  title: "Careers Sydney | Join Our Digital Marketing Team | Sydney Web Designer",
+  description: "Join Sydney Web Designer - Sydney's leading digital agency. We're hiring Web Designers, SEO Specialists, Google Ads Experts, and more. Apply today!",
 };
 
 export default function CareersPage() {
-  const jobPositions = [
+  const jobs = [
     {
       title: "Web Designer",
-      type: "Full-Time / Part-Time",
-      description: "Create stunning, user-friendly websites that convert. Work with modern design tools and latest technologies.",
+      location: "Full-time • Parramatta, Sydney • Web Design Team",
+      description: "Create beautiful, conversion-focused websites for Sydney businesses. Work with our design and development team to deliver exceptional digital experiences.",
+      requirements: [
+        "2+ years professional web design experience",
+        "Expert in Figma or Adobe XD",
+        "Strong understanding of UX/UI principles",
+        "WordPress and Elementor experience",
+        "Portfolio showcasing web design work",
+        "Knowledge of responsive design and mobile-first approach"
+      ],
+      slug: "web-designer"
     },
     {
       title: "SEO Specialist",
-      type: "Full-Time",
-      description: "Drive organic growth for clients through strategic SEO. Experience in technical SEO, content optimization, and analytics required.",
+      location: "Full-time • Parramatta, Sydney • Digital Marketing Team",
+      description: "Drive organic growth for our clients through strategic SEO. Conduct audits, optimize content, build links, and deliver measurable ranking improvements.",
+      requirements: [
+        "3+ years hands-on SEO experience",
+        "Proven track record of ranking improvements",
+        "Expert in Google Analytics and Search Console",
+        "Technical SEO knowledge (crawling, indexing, site architecture)",
+        "Experience with SEO tools (Ahrefs, SEMrush, Screaming Frog)",
+        "Strong analytical and reporting skills"
+      ],
+      slug: "seo-specialist"
     },
     {
       title: "Google Ads Specialist",
-      type: "Full-Time",
-      description: "Manage and optimize PPC campaigns for clients. Proven track record of delivering ROI through Google Ads required.",
+      location: "Full-time • Parramatta, Sydney • Digital Marketing Team",
+      description: "Manage and optimize Google Ads campaigns for Sydney businesses. Create strategies, write ad copy, optimize bidding, and maximize ROAS for clients.",
+      requirements: [
+        "3+ years Google Ads campaign management experience",
+        "Google Ads certification required",
+        "Experience managing budgets of $10K+ per month",
+        "Strong understanding of PPC metrics and optimization",
+        "Proven track record of improving ROAS and conversion rates",
+        "Experience with Google Analytics and conversion tracking"
+      ],
+      slug: "google-ads-specialist"
     },
     {
       title: "Meta Ads Specialist",
-      type: "Full-Time",
-      description: "Create and manage Facebook and Instagram ad campaigns. Experience with Meta Business Suite and social advertising required.",
+      location: "Full-time • Parramatta, Sydney • Digital Marketing Team",
+      description: "Create and manage Facebook and Instagram advertising campaigns. Develop targeting strategies, create compelling ad creatives, and optimize for conversions.",
+      requirements: [
+        "2+ years managing Meta (Facebook/Instagram) advertising",
+        "Meta Blueprint certification preferred",
+        "Experience with Facebook Ads Manager and Business Manager",
+        "Strong understanding of audience targeting and pixel tracking",
+        "Creative eye for ad design and copywriting",
+        "Experience with A/B testing and campaign optimization"
+      ],
+      slug: "meta-ads-specialist"
     },
     {
       title: "Performance Marketer",
-      type: "Full-Time / Contract",
-      description: "Drive results across multiple channels. Strong analytical skills and experience with data-driven marketing essential.",
+      location: "Full-time • Parramatta, Sydney • Digital Marketing Team",
+      description: "Own end-to-end digital marketing performance across all channels. Analyze data, identify opportunities, and optimize campaigns to maximize ROI for clients.",
+      requirements: [
+        "3+ years performance marketing experience",
+        "Expert in Google Analytics and data analysis",
+        "Experience with multiple channels (Google Ads, Meta, LinkedIn, etc.)",
+        "Strong understanding of conversion rate optimization",
+        "Proven ability to scale campaigns profitably",
+        "Experience with marketing automation and attribution modeling"
+      ],
+      slug: "performance-marketer"
     },
     {
       title: "Project Manager",
-      type: "Full-Time",
-      description: "Coordinate client projects from start to finish. Excellent communication and organizational skills required.",
+      location: "Full-time • Parramatta, Sydney • Operations Team",
+      description: "Lead digital projects from initiation to delivery. Coordinate between clients, designers, developers, and marketers to ensure projects are delivered on time and exceed expectations.",
+      requirements: [
+        "3+ years project management experience in digital agency",
+        "Experience managing web design and digital marketing projects",
+        "Strong client communication and relationship management skills",
+        "Proficient with project management tools (Asana, Monday, Trello)",
+        "Ability to manage multiple projects simultaneously",
+        "Understanding of web development and digital marketing processes"
+      ],
+      slug: "project-manager"
     },
     {
       title: "Content Writer",
-      type: "Part-Time / Casual",
-      description: "Create engaging content for websites, blogs, and marketing materials. SEO knowledge and marketing experience preferred.",
-    },
+      location: "Full-time • Parramatta, Sydney • Content Team",
+      description: "Craft compelling content that engages audiences and drives results. Write blog posts, website copy, and marketing materials with SEO best practices.",
+      requirements: [
+        "Excellent writing skills in Australian English",
+        "2+ years content writing experience",
+        "Understanding of SEO and keyword optimization",
+        "Portfolio of published work required",
+        "Ability to write for different industries and audiences",
+        "Strong research and fact-checking skills"
+      ],
+      slug: "content-writer"
+    }
   ];
 
   return (
     <>
       {/* Hero Section */}
-      <section className="gradient-navy-orange text-white py-20">
-        <div className="container">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-              Join Our Team
-            </h1>
-            <p className="text-xl text-gray-100 mb-8">
-              Be part of a growing digital agency that&apos;s making a real impact for businesses across
-              Sydney and Australia. We&apos;re looking for talented, passionate professionals to join us.
-            </p>
-          </div>
+      <section className="bg-[#1e293b] text-white py-32 text-center">
+        <div className="container max-w-4xl mx-auto px-4">
+          <h1 className="text-5xl font-bold mb-6 text-white">
+            Join Our Team
+          </h1>
+          <p className="text-xl text-white">
+            Build your career with Sydney's leading web design and digital marketing agency
+          </p>
         </div>
       </section>
 
-      {/* Why Work With Us */}
+      {/* Benefits Section */}
       <section className="py-20">
-        <div className="container">
-          <div className="section-title">
-            <h2>Why Work at DSIGNS?</h2>
-            <p>A great workplace for talented professionals</p>
-          </div>
+        <div className="container max-w-6xl mx-auto px-4">
+          <h2 className="text-4xl font-bold text-[#1e293b] mb-4 text-center">Why Work With Us?</h2>
+          <p className="text-xl text-[#64748b] text-center mb-12">We're a growing team passionate about helping Sydney businesses succeed online</p>
 
-          <div className="grid-3">
-            <div className="card text-center">
-              <div className="text-5xl mb-4">🚀</div>
-              <h3 className="text-xl font-bold mb-3">Growth Opportunities</h3>
-              <p className="text-gray-600">
-                Develop your skills and advance your career. We invest in our team&apos;s professional
-                development and growth.
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white p-10 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border-t-4 border-[#f59e0b]">
+              <h3 className="text-2xl font-bold text-[#1e293b] mb-4">Growth Opportunities</h3>
+              <p className="text-[#64748b] leading-relaxed">
+                We invest in our team's professional development with training, mentorship, and career advancement opportunities.
               </p>
             </div>
 
-            <div className="card text-center">
-              <div className="text-5xl mb-4">💼</div>
-              <h3 className="text-xl font-bold mb-3">Flexible Work</h3>
-              <p className="text-gray-600">
-                Enjoy flexible working arrangements including remote options. We value work-life balance
-                and productivity.
+            <div className="bg-white p-10 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border-t-4 border-[#f59e0b]">
+              <h3 className="text-2xl font-bold text-[#1e293b] mb-4">Flexible Work</h3>
+              <p className="text-[#64748b] leading-relaxed">
+                Enjoy work-life balance with flexible hours and remote work options for the right candidates.
               </p>
             </div>
 
-            <div className="card text-center">
-              <div className="text-5xl mb-4">🎯</div>
-              <h3 className="text-xl font-bold mb-3">Meaningful Work</h3>
-              <p className="text-gray-600">
-                Work on diverse projects across 50+ industries. See the real impact of your work on
-                client businesses.
-              </p>
-            </div>
-
-            <div className="card text-center">
-              <div className="text-5xl mb-4">🤝</div>
-              <h3 className="text-xl font-bold mb-3">Collaborative Culture</h3>
-              <p className="text-gray-600">
-                Be part of a supportive team that values collaboration, creativity, and innovation.
-              </p>
-            </div>
-
-            <div className="card text-center">
-              <div className="text-5xl mb-4">📚</div>
-              <h3 className="text-xl font-bold mb-3">Continuous Learning</h3>
-              <p className="text-gray-600">
-                Access to training, courses, and industry events. Stay current with the latest tools and
-                trends.
-              </p>
-            </div>
-
-            <div className="card text-center">
-              <div className="text-5xl mb-4">💰</div>
-              <h3 className="text-xl font-bold mb-3">Competitive Pay</h3>
-              <p className="text-gray-600">
-                Fair compensation packages based on experience and skills. Performance bonuses and
-                incentives available.
+            <div className="bg-white p-10 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border-t-4 border-[#f59e0b]">
+              <h3 className="text-2xl font-bold text-[#1e293b] mb-4">Great Culture</h3>
+              <p className="text-[#64748b] leading-relaxed">
+                Work with a collaborative, supportive team that values creativity, innovation, and results.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Open Positions */}
-      <section className="py-20 bg-gray-50">
-        <div className="container">
-          <div className="section-title">
-            <h2>Open Positions</h2>
-            <p>Explore career opportunities at DSIGNS</p>
-          </div>
+      {/* Job Listings Section */}
+      <section className="py-20 bg-[#f8fafc]">
+        <div className="container max-w-6xl mx-auto px-4">
+          <h2 className="text-4xl font-bold text-[#1e293b] mb-4 text-center">Current Opportunities</h2>
+          <p className="text-xl text-[#64748b] text-center mb-12">Join our team and make an impact</p>
 
-          <div className="space-y-6 max-w-4xl mx-auto">
-            {jobPositions.map((job, index) => (
-              <div key={index} className="card hover:shadow-card-hover transition-all">
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                  <div className="flex-grow">
-                    <h3 className="text-2xl font-bold mb-2 text-primary-navy">{job.title}</h3>
-                    <p className="text-primary-orange font-semibold mb-3">{job.type}</p>
-                    <p className="text-gray-700">{job.description}</p>
-                  </div>
-                  <Link
-                    href="/career-application"
-                    className="btn btn-primary whitespace-nowrap self-start md:self-center"
-                  >
-                    Apply Now
-                  </Link>
+          <div className="space-y-6">
+            {jobs.map((job, index) => (
+              <div key={index} className="bg-white rounded-2xl shadow-lg p-8 border-l-6 border-[#f59e0b] hover:shadow-xl transition-all">
+                <h3 className="text-2xl font-bold text-[#1e293b] mb-2">{job.title}</h3>
+                <p className="text-[#64748b] mb-4 text-sm">{job.location}</p>
+                <p className="text-[#64748b] mb-6 leading-relaxed">{job.description}</p>
+
+                <div className="mb-6">
+                  <h4 className="font-bold text-[#1e293b] mb-3">Requirements:</h4>
+                  <ul className="space-y-2">
+                    {job.requirements.map((req, idx) => (
+                      <li key={idx} className="flex items-start gap-3 text-[#64748b]">
+                        <span className="text-[#f59e0b] font-bold text-xl flex-shrink-0"><i className="fas fa-check"></i></span>
+                        <span>{req}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
+
+                <Link
+                  href={`/career-application?position=${job.slug}`}
+                  className="inline-block bg-[#f59e0b] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#d97706] transition-all"
+                >
+                  Apply for this position
+                </Link>
               </div>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* Application Process */}
-      <section className="py-20">
-        <div className="container">
-          <div className="section-title">
-            <h2>Application Process</h2>
-            <p>Simple and straightforward</p>
+          {/* No Right Role Section */}
+          <div className="text-center bg-white rounded-3xl shadow-lg p-12 mt-16">
+            <h3 className="text-3xl font-bold text-[#1e293b] mb-4">Don't See the Right Role?</h3>
+            <p className="text-xl text-[#64748b] mb-8">
+              We're always looking for talented people. Send us your resume!
+            </p>
+            <a
+              href="mailto:hello@dsigns.com.au"
+              className="bg-[#f59e0b] text-white px-10 py-4 rounded-full font-semibold hover:bg-[#d97706] transition-all hover:shadow-lg inline-block"
+            >
+              Email Your Resume
+            </a>
           </div>
-
-          <div className="grid-2 md:grid-cols-4 max-w-5xl mx-auto">
-            <div className="card text-center">
-              <div className="w-16 h-16 bg-gradient-orange rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
-                1
-              </div>
-              <h3 className="text-lg font-bold mb-2">Apply Online</h3>
-              <p className="text-sm text-gray-600">Submit your application through our online form</p>
-            </div>
-
-            <div className="card text-center">
-              <div className="w-16 h-16 bg-gradient-orange rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
-                2
-              </div>
-              <h3 className="text-lg font-bold mb-2">Initial Review</h3>
-              <p className="text-sm text-gray-600">We review applications within 5 business days</p>
-            </div>
-
-            <div className="card text-center">
-              <div className="w-16 h-16 bg-gradient-orange rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
-                3
-              </div>
-              <h3 className="text-lg font-bold mb-2">Interview</h3>
-              <p className="text-sm text-gray-600">Meet with our team to discuss the opportunity</p>
-            </div>
-
-            <div className="card text-center">
-              <div className="w-16 h-16 bg-gradient-orange rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
-                4
-              </div>
-              <h3 className="text-lg font-bold mb-2">Join Us</h3>
-              <p className="text-sm text-gray-600">Start your journey with DSIGNS</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="gradient-navy-orange text-white py-20">
-        <div className="container text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-            Don&apos;t See the Right Position?
-          </h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto text-gray-100">
-            We&apos;re always looking for talented people. Send us your resume and let us know how you can
-            contribute to our team.
-          </p>
-          <Link href="/career-application" className="btn btn-white">
-            Submit Your Resume
-          </Link>
         </div>
       </section>
     </>
