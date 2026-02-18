@@ -1,15 +1,17 @@
 import { Metadata } from "next";
-import Link from "next/link";
-import { portfolioProjects } from "@/lib/constants";
-import PortfolioCarousel from "@/components/PortfolioCarousel";
 import { generateMetadata } from "@/lib/metadata";
 import { generateBreadcrumbSchema } from "@/lib/schemas";
+import PortfolioHero from "@/components/PortfolioHero";
+import PortfolioGrid from "@/components/PortfolioGrid";
 
 export const metadata: Metadata = generateMetadata({
-  title: "Portfolio | Our Work",
-  description: "View our portfolio of 500+ successful websites. From small businesses to enterprise clients, see how we've helped Sydney businesses grow online.",
-  keywords: "web design portfolio sydney, website examples, sydney web designer work",
+  title: "Portfolio | Our Work | 500+ Websites Delivered",
+  description:
+    "View our portfolio of 500+ successful websites. From small businesses to enterprise clients, see how we've helped Sydney businesses grow online.",
+  keywords:
+    "web design portfolio sydney, website examples, sydney web designer work, web design showcase",
   canonicalUrl: "https://sydneywebdesigner.com.au/portfolio",
+  ogImage: "/images/og/services.svg",
 });
 
 export default function PortfolioPage() {
@@ -20,91 +22,69 @@ export default function PortfolioPage() {
 
   return (
     <>
-      {/* Schema Markup */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
-      {/* Hero Section */}
-      <section className="bg-[#1e293b] text-white py-32 text-center">
-        <div className="container max-w-4xl mx-auto">
-          <h1 className="text-5xl font-bold mb-6 text-white">
-            Our Portfolio
-          </h1>
-          <p className="text-xl text-white">
-            Showcasing our best work - 500+ successful projects delivered!
-          </p>
-        </div>
-      </section>
+      {/* ── HERO ────────────────────────────────── */}
+      <section className="relative bg-[#060d1a] overflow-hidden" style={{ height: 500 }}>
+        {/* Three.js canvas */}
+        <PortfolioHero />
 
-      {/* Portfolio Grid Section */}
-      <section className="py-20">
-        <div className="container max-w-6xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-[#1e293b] mb-12 text-center">Recent Projects</h2>
+        {/* Gradient overlay so text stays readable */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#060d1a]/40 via-transparent to-[#060d1a]" />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {portfolioProjects.map((project) => (
-              <div
-                key={project.id}
-                className="bg-white rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] overflow-hidden border-t-4 border-[#f59e0b] hover:shadow-[0_15px_40px_rgba(0,0,0,0.15)] hover:-translate-y-2 transition-all duration-300"
+        {/* Content */}
+        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
+          {/* Eyebrow */}
+          <div className="flex items-center gap-3 mb-6">
+            <span className="h-px w-10 bg-[#f59e0b]" />
+            <span className="text-[#f59e0b] text-sm font-semibold tracking-[0.2em] uppercase">
+              Our Work
+            </span>
+            <span className="h-px w-10 bg-[#f59e0b]" />
+          </div>
+
+          <h1 className="text-5xl md:text-7xl font-black text-white leading-tight mb-6">
+            Websites That{" "}
+            <span className="relative inline-block">
+              <span className="text-[#f59e0b]">Convert</span>
+              {/* Underline squiggle */}
+              <svg
+                className="absolute -bottom-2 left-0 w-full"
+                viewBox="0 0 200 8"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <PortfolioCarousel
-                  images={project.images || [project.image]}
-                  title={project.name}
+                <path
+                  d="M2 6 C50 2, 100 8, 150 4, 198 2"
+                  stroke="#f59e0b"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  fill="none"
+                  opacity="0.6"
                 />
-                <div className="p-8">
-                  <div className="mb-2">
-                    <span className="inline-block bg-[#f59e0b]/10 text-[#f59e0b] px-3 py-1 rounded-full text-sm font-semibold">
-                      {project.industry}
-                    </span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-[#1e293b] mb-3">{project.name}</h3>
-                  <p className="text-[#64748b] mb-4 leading-relaxed">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.services.map((service, idx) => (
-                      <span
-                        key={idx}
-                        className="text-xs bg-gray-100 text-[#1e293b] px-3 py-1 rounded-full"
-                      >
-                        {service}
-                      </span>
-                    ))}
-                  </div>
-                  {project.websiteUrl && (
-                    <a
-                      href={project.websiteUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-[#f59e0b] font-semibold hover:gap-3 transition-all"
-                    >
-                      Visit Website <span>→</span>
-                    </a>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
+              </svg>
+            </span>
+          </h1>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-wrap justify-center gap-4 mt-16">
-            <Link
-              href="/"
-              className="bg-[#f59e0b] text-white px-10 py-4 rounded-full font-semibold hover:bg-[#d97706] transition-all hover:shadow-lg inline-block"
-            >
-              ← Back to Homepage
-            </Link>
-            <Link
-              href="/contact"
-              className="bg-[#f59e0b] text-white px-10 py-4 rounded-full font-semibold hover:bg-[#d97706] transition-all hover:shadow-lg inline-block"
-            >
-              Get Your Free Quote
-            </Link>
+          <p className="text-slate-300 text-lg md:text-xl max-w-2xl mx-auto mb-8">
+            500+ websites delivered across 12+ industries. Real businesses, real results.
+          </p>
+
+          {/* Scroll indicator */}
+          <div className="flex flex-col items-center gap-2 text-slate-500 text-xs animate-bounce mt-2">
+            <span>Scroll to explore</span>
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
           </div>
         </div>
       </section>
+
+      {/* ── PORTFOLIO GRID ──────────────────────── */}
+      <PortfolioGrid />
     </>
   );
 }
