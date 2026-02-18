@@ -490,7 +490,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-10 mb-16">
             {[
               { title: "10 Essential Web Design Features Every Sydney Business Needs", desc: "Discover the must-have features that make modern Sydney websites stand out from the competition and drive real conversions.", icon: "fa-laptop-code" },
-              { title: "How Much Does Professional Web Design Cost in Sydney?", desc: "Understand the true cost of quality web design in Sydney with our complete pricing guide and what you should expect to pay.", icon: "fa-dollar-sign" },
+              { title: "How SEO Can Transform Your Sydney Business in 2026", desc: "Discover proven SEO strategies that Sydney businesses are using to dominate Google search results and attract more customers.", icon: "fa-search" },
               { title: "Mobile-First Web Design: Why Sydney Businesses Can't Ignore It", desc: "Learn why mobile-first design is absolutely crucial for Sydney businesses and how to implement it effectively for maximum impact.", icon: "fa-mobile-alt" }
             ].map((post, index) => (
               <article key={index} className="bg-white p-10 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_50px_rgba(245,158,11,0.15)] transition-all duration-300 hover:-translate-y-2 border-t-4 border-[#f59e0b] group">
