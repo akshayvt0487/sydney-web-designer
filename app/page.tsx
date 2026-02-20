@@ -1,239 +1,245 @@
+"use client";
+
 import Link from "next/link";
+import { useState, useEffect } from "react";
 import { portfolioProjects } from "@/lib/constants";
 import PortfolioCarousel from "@/components/PortfolioCarousel";
-import { generateMetadata } from "@/lib/metadata";
-import { generateOrganizationSchema, generateLocalBusinessSchema } from "@/lib/schemas";
-
-export const metadata = generateMetadata({
-  title: "Sydney Web Designer | Professional Web Design & Digital Marketing Services",
-  description: "Sydney's premier web design and digital marketing agency. 13+ years experience, 500+ websites delivered. Custom web design, SEO, branding & more. Get a free quote today!",
-  keywords: "web design sydney, digital marketing sydney, seo services sydney, sydney web designer, website development sydney",
-  canonicalUrl: "https://sydneywebdesigner.com.au",
-  ogImage: "/images/og/homepage.svg",
-});
 
 export default function HomePage() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
   return (
     <>
-      {/* Schema Markup */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(generateOrganizationSchema()),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(generateLocalBusinessSchema()),
-        }}
-      />
+      {/* ═══════════════════════════════════════════
+          HERO SECTION - Modern Gradient Design
+      ════════════════════════════════════════════ */}
+      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a]">
+        {/* Animated Background Orbs */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/4 -left-20 w-96 h-96 bg-[#f59e0b] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob" />
+          <div className="absolute top-1/3 -right-20 w-96 h-96 bg-[#f59e0b] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000" />
+          <div className="absolute -bottom-32 left-1/2 w-96 h-96 bg-[#f59e0b] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000" />
+        </div>
 
-      {/* Hero Section */}
-      <section id="home" className="bg-[#1e293b] text-white py-40 text-center">
-        <div className="container max-w-[1000px] mx-auto px-8">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-white">
-            Sydney Web Designer
+        {/* Grid Pattern Overlay */}
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-40" />
+
+        <div className={`relative z-10 container max-w-6xl mx-auto px-6 text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 bg-[#f59e0b]/10 border border-[#f59e0b]/30 rounded-full px-5 py-2 mb-8 backdrop-blur-sm">
+            <span className="w-2 h-2 bg-[#f59e0b] rounded-full animate-pulse" />
+            <span className="text-[#f59e0b] text-sm font-semibold">13+ Years of Excellence</span>
+          </div>
+
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight">
+            Sydney&apos;s Premier
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#f59e0b] to-[#fb923c] mt-2">
+              Web Design Agency
+            </span>
           </h1>
-          <p className="text-2xl md:text-3xl mb-4 font-semibold text-[#f59e0b]">
-            Professional Web Design & Digital Marketing
+
+          <p className="text-xl md:text-2xl text-slate-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+            Transform your digital presence with stunning websites that convert visitors into customers. Award-winning design meets cutting-edge technology.
           </p>
-          <p className="text-xl md:text-2xl mb-12 opacity-90 max-w-[800px] mx-auto text-white">
-            Unlock new growth opportunities and solve your digital challenges with expert guidance and dynamic solutions. Serving Sydney businesses for over 13 years.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center flex-wrap mb-16">
-            <a href="#contact" className="bg-[#f59e0b] text-white hover:bg-[#d97706] border-2 border-[#f59e0b] px-6 md:px-12 lg:px-14 py-3 md:py-4 lg:py-5 rounded-full font-bold text-base md:text-lg lg:text-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl inline-flex items-center justify-center gap-3 w-full sm:w-auto">
-              <i className="fas fa-rocket"></i>
-              Get Started Today
-            </a>
-            <a href="#portfolio" className="bg-transparent text-white border-2 border-white hover:bg-white hover:text-[#1e293b] px-6 md:px-12 lg:px-14 py-3 md:py-4 lg:py-5 rounded-full font-bold text-base md:text-lg lg:text-lg transition-all duration-300 hover:-translate-y-1 inline-flex items-center justify-center gap-3 w-full sm:w-auto">
-              <i className="fas fa-briefcase"></i>
-              View Our Work
-            </a>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+            <button
+              data-popup="contact"
+              className="group relative bg-[#f59e0b] hover:bg-[#d97706] text-white px-10 py-5 rounded-full font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(245,158,11,0.4)]"
+            >
+              <span className="flex items-center justify-center gap-2">
+                Get Your Free Quote
+                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </span>
+            </button>
+            <Link
+              href="/portfolio"
+              className="group bg-white/10 hover:bg-white/20 text-white border-2 border-white/30 hover:border-white px-10 py-5 rounded-full font-bold text-lg transition-all duration-300 backdrop-blur-sm"
+            >
+              <span className="flex items-center justify-center gap-2">
+                View Portfolio
+                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </span>
+            </Link>
           </div>
 
-          {/* Trust Indicators */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-[900px] mx-auto">
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20">
-              <i className="fas fa-award text-4xl text-[#f59e0b] mb-3"></i>
-              <div className="text-3xl font-bold">13+</div>
-              <div className="text-sm opacity-90">Years Experience</div>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20">
-              <i className="fas fa-laptop-code text-4xl text-[#f59e0b] mb-3"></i>
-              <div className="text-3xl font-bold">500+</div>
-              <div className="text-sm opacity-90">Websites Delivered</div>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20">
-              <i className="fas fa-smile text-4xl text-[#f59e0b] mb-3"></i>
-              <div className="text-3xl font-bold">98%</div>
-              <div className="text-sm opacity-90">Satisfaction Rate</div>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20">
-              <i className="fas fa-star text-4xl text-[#f59e0b] mb-3"></i>
-              <div className="text-3xl font-bold">4.9/5</div>
-              <div className="text-sm opacity-90">Google Rating</div>
-            </div>
+          {/* Stats Row */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            {[
+              { icon: "fa-trophy", value: "500+", label: "Projects Delivered" },
+              { icon: "fa-users", value: "98%", label: "Client Satisfaction" },
+              { icon: "fa-star", value: "4.9", label: "Google Rating" },
+              { icon: "fa-rocket", value: "12+", label: "Industries Served" },
+            ].map((stat, i) => (
+              <div key={i} className="bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300 hover:scale-105">
+                <i className={`fas ${stat.icon} text-3xl text-[#f59e0b] mb-3`} />
+                <div className="text-3xl font-black text-white mb-1">{stat.value}</div>
+                <div className="text-sm text-slate-400">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex items-start justify-center p-2">
+            <div className="w-1 h-3 bg-[#f59e0b] rounded-full animate-pulse" />
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section id="services" className="py-28 bg-white">
-        <div className="container max-w-[1200px] mx-auto px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold text-[#1e293b] mb-6">Our Services</h2>
-            <p className="text-xl md:text-2xl text-[#64748b] max-w-[800px] mx-auto leading-relaxed">
-              Comprehensive digital solutions designed to transform your business and drive measurable results
+      {/* ═══════════════════════════════════════════
+          SERVICES SECTION - Card Grid
+      ════════════════════════════════════════════ */}
+      <section className="py-24 bg-gradient-to-b from-white to-slate-50">
+        <div className="container max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="text-[#f59e0b] font-semibold text-sm tracking-widest uppercase mb-3 block">What We Do</span>
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">
+              Our <span className="text-[#f59e0b]">Services</span>
+            </h2>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+              End-to-end digital solutions to elevate your brand and accelerate growth
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-10">
-            {/* Web Design Service */}
-            <div className="bg-white p-12 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_50px_rgba(245,158,11,0.2)] transition-all duration-300 hover:-translate-y-2 border-t-4 border-[#f59e0b] group">
-              <div className="text-center mb-6">
-                <div className="w-20 h-20 bg-[#f59e0b] rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <i className="fas fa-palette text-4xl text-white"></i>
-                </div>
-                <h3 className="text-3xl font-bold text-[#1e293b] mb-4">Web Design</h3>
-              </div>
-              <p className="text-[#64748b] leading-relaxed mb-6 text-lg">
-                Transform your online presence with strategic web design that combines stunning aesthetics with powerful functionality. We create websites that convert visitors into customers and drive real business growth.
-              </p>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-start gap-3 text-[#1e293b]">
-                  <i className="fas fa-check-circle text-[#f59e0b] mt-1"></i>
-                  <span>Custom responsive designs</span>
-                </li>
-                <li className="flex items-start gap-3 text-[#1e293b]">
-                  <i className="fas fa-check-circle text-[#f59e0b] mt-1"></i>
-                  <span>User-friendly CMS integration</span>
-                </li>
-                <li className="flex items-start gap-3 text-[#1e293b]">
-                  <i className="fas fa-check-circle text-[#f59e0b] mt-1"></i>
-                  <span>SEO-optimized structure</span>
-                </li>
-                <li className="flex items-start gap-3 text-[#1e293b]">
-                  <i className="fas fa-check-circle text-[#f59e0b] mt-1"></i>
-                  <span>Lightning-fast performance</span>
-                </li>
-              </ul>
-              <a href="#contact" className="block text-center bg-[#f59e0b] text-white hover:bg-[#d97706] px-8 py-4 rounded-full font-bold transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-                Learn More
-              </a>
-            </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: "fa-palette",
+                title: "Web Design & Development",
+                desc: "Custom, responsive websites built with the latest technologies. Beautiful designs that convert.",
+                link: "/services/custom-web-design",
+                color: "from-blue-500 to-cyan-500"
+              },
+              {
+                icon: "fa-bullhorn",
+                title: "Digital Marketing",
+                desc: "SEO, Google Ads, social media & content marketing strategies that drive real results.",
+                link: "/services/seo-sydney",
+                color: "from-purple-500 to-pink-500"
+              },
+              {
+                icon: "fa-pen-nib",
+                title: "Branding & Design",
+                desc: "Stand out with memorable brand identities, logos, and marketing materials.",
+                link: "/services/brand-identity",
+                color: "from-orange-500 to-red-500"
+              },
+            ].map((service, i) => (
+              <Link
+                key={i}
+                href={service.link}
+                className="group relative bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-100 hover:border-[#f59e0b]/30 hover:-translate-y-2 overflow-hidden"
+              >
+                {/* Gradient Background on Hover */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
 
-            {/* Branding Service */}
-            <div className="bg-white p-12 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_50px_rgba(245,158,11,0.2)] transition-all duration-300 hover:-translate-y-2 border-t-4 border-[#f59e0b] group">
-              <div className="text-center mb-6">
-                <div className="w-20 h-20 bg-[#f59e0b] rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <i className="fas fa-bullseye text-4xl text-white"></i>
-                </div>
-                <h3 className="text-3xl font-bold text-[#1e293b] mb-4">Branding</h3>
-              </div>
-              <p className="text-[#64748b] leading-relaxed mb-6 text-lg">
-                Craft a memorable brand identity with our branding expertise. We develop cohesive visual identities that resonate with your target audience, set you apart from competitors, and build lasting customer loyalty.
-              </p>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-start gap-3 text-[#1e293b]">
-                  <i className="fas fa-check-circle text-[#f59e0b] mt-1"></i>
-                  <span>Professional logo design</span>
-                </li>
-                <li className="flex items-start gap-3 text-[#1e293b]">
-                  <i className="fas fa-check-circle text-[#f59e0b] mt-1"></i>
-                  <span>Complete brand guidelines</span>
-                </li>
-                <li className="flex items-start gap-3 text-[#1e293b]">
-                  <i className="fas fa-check-circle text-[#f59e0b] mt-1"></i>
-                  <span>Marketing collateral design</span>
-                </li>
-                <li className="flex items-start gap-3 text-[#1e293b]">
-                  <i className="fas fa-check-circle text-[#f59e0b] mt-1"></i>
-                  <span>Brand strategy consulting</span>
-                </li>
-              </ul>
-              <a href="#contact" className="block text-center bg-[#f59e0b] text-white hover:bg-[#d97706] px-8 py-4 rounded-full font-bold transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-                Learn More
-              </a>
-            </div>
+                <div className="relative z-10">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#f59e0b] to-[#fb923c] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                    <i className={`fas ${service.icon} text-2xl text-white`} />
+                  </div>
 
-            {/* Digital Marketing Service */}
-            <div className="bg-white p-12 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_50px_rgba(245,158,11,0.2)] transition-all duration-300 hover:-translate-y-2 border-t-4 border-[#f59e0b] group">
-              <div className="text-center mb-6">
-                <div className="w-20 h-20 bg-[#f59e0b] rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <i className="fas fa-chart-line text-4xl text-white"></i>
+                  <h3 className="text-2xl font-bold text-[#1e293b] mb-4 group-hover:text-[#f59e0b] transition-colors">
+                    {service.title}
+                  </h3>
+
+                  <p className="text-slate-600 leading-relaxed mb-6">
+                    {service.desc}
+                  </p>
+
+                  <div className="flex items-center gap-2 text-[#f59e0b] font-semibold group-hover:gap-4 transition-all">
+                    Learn More
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </div>
                 </div>
-                <h3 className="text-3xl font-bold text-[#1e293b] mb-4">Digital Marketing</h3>
-              </div>
-              <p className="text-[#64748b] leading-relaxed mb-6 text-lg">
-                Supercharge your growth with proven digital marketing strategies. From SEO to social media, we drive targeted traffic and measurable results that directly impact your bottom line and accelerate business growth.
-              </p>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-start gap-3 text-[#1e293b]">
-                  <i className="fas fa-check-circle text-[#f59e0b] mt-1"></i>
-                  <span>Search engine optimization (SEO)</span>
-                </li>
-                <li className="flex items-start gap-3 text-[#1e293b]">
-                  <i className="fas fa-check-circle text-[#f59e0b] mt-1"></i>
-                  <span>Google Ads management</span>
-                </li>
-                <li className="flex items-start gap-3 text-[#1e293b]">
-                  <i className="fas fa-check-circle text-[#f59e0b] mt-1"></i>
-                  <span>Social media marketing</span>
-                </li>
-                <li className="flex items-start gap-3 text-[#1e293b]">
-                  <i className="fas fa-check-circle text-[#f59e0b] mt-1"></i>
-                  <span>Content marketing strategy</span>
-                </li>
-              </ul>
-              <a href="#contact" className="block text-center bg-[#f59e0b] text-white hover:bg-[#d97706] px-8 py-4 rounded-full font-bold transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-                Learn More
-              </a>
-            </div>
+
+                {/* Decorative Corner */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[#f59e0b]/5 rounded-bl-full transform translate-x-16 -translate-y-16 group-hover:scale-150 transition-transform duration-700" />
+              </Link>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link
+              href="/services"
+              className="inline-flex items-center gap-2 text-[#f59e0b] hover:text-[#d97706] font-bold text-lg group"
+            >
+              View All Services
+              <svg className="w-5 h-5 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Portfolio Section */}
-      <section id="portfolio" className="py-28 bg-[#f8fafc]">
-        <div className="container max-w-[1200px] mx-auto px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold text-[#1e293b] mb-6">Our Work</h2>
-            <p className="text-xl md:text-2xl text-[#64748b] max-w-[800px] mx-auto leading-relaxed">
-              Trusted by Sydney businesses to deliver exceptional digital experiences that drive real results
+      {/* ═══════════════════════════════════════════
+          PORTFOLIO SECTION - Featured Work
+      ════════════════════════════════════════════ */}
+      <section className="py-24 bg-slate-50">
+        <div className="container max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="text-[#f59e0b] font-semibold text-sm tracking-widest uppercase mb-3 block">Our Work</span>
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">
+              Featured <span className="text-[#f59e0b]">Projects</span>
+            </h2>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+              See how we&apos;ve helped businesses transform their digital presence
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {portfolioProjects.slice(0, 6).map((project) => (
-              <div key={project.id} className="bg-white rounded-3xl overflow-hidden shadow-[0_5px_25px_rgba(0,0,0,0.1)] hover:shadow-[0_15px_40px_rgba(0,0,0,0.2)] transition-all duration-300 hover:-translate-y-2 border-t-4 border-[#f59e0b]">
-                <PortfolioCarousel
-                  images={project.images || [project.image]}
-                  title={project.name}
-                />
-                <div className="p-8">
-                  <div className="mb-3">
-                    <span className="inline-block bg-[#f59e0b]/10 text-[#f59e0b] px-3 py-1 rounded-full text-sm font-semibold">
+              <div
+                key={project.id}
+                className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+              >
+                <div className="relative overflow-hidden">
+                  <PortfolioCarousel
+                    images={project.images || [project.image]}
+                    title={project.name}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+
+                <div className="p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-xs font-semibold text-[#f59e0b] bg-[#f59e0b]/10 px-3 py-1 rounded-full">
                       {project.industry}
                     </span>
                   </div>
-                  <h3 className="text-2xl font-bold text-[#1e293b] mb-3">{project.name}</h3>
-                  <p className="text-[#64748b] text-sm mb-5 leading-relaxed">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.services.map((service, i) => (
-                      <span key={i} className="bg-[#f8fafc] text-[#1e293b] px-3 py-1.5 rounded-full text-xs font-semibold border border-[#e2e8f0]">
-                        {service}
-                      </span>
-                    ))}
-                  </div>
+
+                  <h3 className="text-xl font-bold text-[#1e293b] mb-2 group-hover:text-[#f59e0b] transition-colors">
+                    {project.name}
+                  </h3>
+
+                  <p className="text-slate-600 text-sm mb-4 line-clamp-2">
+                    {project.description}
+                  </p>
+
                   {project.websiteUrl && (
                     <a
                       href={project.websiteUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-[#f59e0b] font-bold hover:gap-4 transition-all duration-300 text-lg"
+                      className="inline-flex items-center gap-2 text-[#f59e0b] font-semibold hover:gap-3 transition-all text-sm"
                     >
-                      Visit Website <i className="fas fa-arrow-right"></i>
+                      View Website
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
                     </a>
                   )}
                 </div>
@@ -241,276 +247,120 @@ export default function HomePage() {
             ))}
           </div>
 
-          <div className="text-center mt-16">
+          <div className="text-center">
             <Link
               href="/portfolio"
-              className="inline-block bg-[#f59e0b] text-white hover:bg-[#d97706] px-6 md:px-10 lg:px-12 py-3 md:py-4 rounded-full font-bold text-base md:text-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl w-full sm:w-auto text-center"
+              className="inline-flex items-center gap-2 bg-[#f59e0b] hover:bg-[#d97706] text-white px-8 py-4 rounded-full font-bold transition-all duration-300 hover:scale-105 hover:shadow-xl"
             >
-              View All Projects <i className="fas fa-arrow-right ml-2"></i>
+              View Full Portfolio
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Process Section */}
-      <section id="process" className="py-28 bg-white">
-        <div className="container max-w-[1200px] mx-auto px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold text-[#1e293b] mb-6">How We Work</h2>
-            <p className="text-xl md:text-2xl text-[#64748b] max-w-[800px] mx-auto leading-relaxed">
-              A simple, transparent process designed to bring your vision to life with clarity and efficiency
-            </p>
-          </div>
+      {/* ═══════════════════════════════════════════
+          WHY CHOOSE US - Benefits Section
+      ════════════════════════════════════════════ */}
+      <section className="py-24 bg-white">
+        <div className="container max-w-7xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+              <span className="text-[#f59e0b] font-semibold text-sm tracking-widest uppercase mb-3 block">Why Choose Us</span>
+              <h2 className="text-4xl md:text-5xl font-bold text-[#1e293b] mb-6">
+                Sydney&apos;s Most Trusted Web Design Partner
+              </h2>
+              <p className="text-xl text-slate-600 mb-8">
+                We don&apos;t just build websites — we create digital experiences that drive real business growth.
+              </p>
 
-          <div className="grid md:grid-cols-3 gap-12">
-            {[
-              {
-                number: "1",
-                icon: "fa-comments",
-                title: "Quick Chat",
-                desc: "Call us or leave your details so we can call you back to discuss your project and understand your goals. We'll take the time to learn about your business, target audience, and objectives."
-              },
-              {
-                number: "2",
-                icon: "fa-search",
-                title: "Discovery",
-                desc: "At your discovery meeting, we'll go over all the details of your project so that we can prepare an accurate estimate. We'll explore design preferences, functionality requirements, and timeline expectations."
-              },
-              {
-                number: "3",
-                icon: "fa-rocket",
-                title: "Get Started",
-                desc: "We will send the estimate. Once agreed that we're both on the same page, let's get this show on the road! Our team will begin crafting your digital solution with regular updates along the way."
-              }
-            ].map((step, index) => (
-              <div key={index} className="text-center">
-                <div className="w-24 h-24 bg-[#1e293b] text-white rounded-2xl flex items-center justify-center text-5xl font-bold mx-auto mb-8 relative">
-                  <div className="absolute -top-3 -right-3 w-12 h-12 bg-[#f59e0b] rounded-full flex items-center justify-center text-xl">
-                    {step.number}
+              <div className="space-y-6">
+                {[
+                  { icon: "fa-award", title: "Award-Winning Design", desc: "Recognized for excellence in web design and digital innovation" },
+                  { icon: "fa-clock", title: "13+ Years Experience", desc: "Over a decade serving Sydney businesses with proven results" },
+                  { icon: "fa-headset", title: "Dedicated Support", desc: "Local team providing ongoing support and maintenance" },
+                  { icon: "fa-chart-line", title: "Results-Driven", desc: "Focused on ROI, conversions, and measurable outcomes" },
+                ].map((benefit, i) => (
+                  <div key={i} className="flex gap-4 items-start group">
+                    <div className="w-14 h-14 bg-[#f59e0b]/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-[#f59e0b] transition-colors duration-300">
+                      <i className={`fas ${benefit.icon} text-xl text-[#f59e0b] group-hover:text-white transition-colors duration-300`} />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-[#1e293b] mb-1">{benefit.title}</h3>
+                      <p className="text-slate-600">{benefit.desc}</p>
+                    </div>
                   </div>
-                  <i className={`fas ${step.icon}`}></i>
-                </div>
-                <h3 className="text-3xl font-bold text-[#1e293b] mb-5">{step.title}</h3>
-                <p className="text-[#64748b] leading-relaxed text-lg">{step.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Google Reviews Section */}
-      <section id="google-reviews" className="py-28 bg-[#f8fafc]">
-        <div className="container max-w-[1200px] mx-auto px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-5xl md:text-6xl font-bold text-[#1e293b] mb-6">What Our Clients Say</h2>
-            <p className="text-xl md:text-2xl text-[#64748b] max-w-[800px] mx-auto mb-10 leading-relaxed">
-              Real reviews from real businesses we've helped grow across Sydney
-            </p>
-          </div>
-
-          <div className="text-center mb-16">
-            <div className="inline-block bg-white px-16 py-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.1)]">
-              <div className="flex items-center justify-center gap-2 mb-3">
-                {[...Array(5)].map((_, i) => (
-                  <i key={i} className="fas fa-star text-3xl text-[#f59e0b]"></i>
                 ))}
               </div>
-              <div className="text-4xl font-bold text-[#1e293b]">4.9 out of 5</div>
-              <div className="text-[#64748b] text-lg mt-2">Based on 50+ Google Reviews</div>
             </div>
-          </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { review: "Exceptional service! Very happy with everything. I have used Sydney Web Designer for Logo design, Website development, and printing. They have exceeded my expectations every single time. Highly professional team that truly understands business needs.", name: "Bineesh Chandy", company: "Konkan Restaurant" },
-              { review: "We hired Sydney Web Designer to revamp our website with a specific goal - Generate Leads on a daily basis. The results have been absolutely fantastic. We are now on page #1 for all our targeted keywords and seeing consistent lead flow!", name: "NDIS Provider", company: "Healthcare Services" },
-              { review: "The team was simply amazing! Insightful, helpful, and dedicated. They treated my business as their own and helped us work through our most pressing branding and Google Ads issues with expertise and patience!", name: "Civil Contractor", company: "Construction Services" },
-              { review: "This company is hands down the best, fastest and most professional digital marketing agency you can find in Sydney. You can ask for anything and everything and they'll get it done for you efficiently!", name: "Sydney Business Owner", company: "Digital Services" },
-              { review: "We hired Sydney Web Designer to design and develop our website from scratch. The team were very courteous, flexible and professional throughout the entire process. They delivered on time and within budget - rare in this industry!", name: "Pulse Tech Systems", company: "Technology Services" },
-              { review: "I had a very positive experience with Sydney Web Designer. They quickly understood what I required and undertook the task with complete professionalism. The final result was beyond my expectations. Will definitely work with them again!", name: "Danielle Cheuk", company: "Flavours of Home Blog" }
-            ].map((review, index) => (
-              <div key={index} className="bg-white p-8 rounded-2xl shadow-[0_5px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.15)] transition-all duration-300 hover:-translate-y-1 border-l-4 border-[#f59e0b]">
-                <div className="flex items-center gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <i key={i} className="fas fa-star text-xl text-[#f59e0b]"></i>
-                  ))}
+            <div className="relative">
+              {/* Image Placeholder with decorative elements */}
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                <div className="aspect-square bg-gradient-to-br from-[#1e293b] to-[#0f172a] flex items-center justify-center">
+                  <div className="text-center text-white p-12">
+                    <i className="fas fa-laptop-code text-8xl text-[#f59e0b] mb-6" />
+                    <p className="text-2xl font-bold">500+ Websites Delivered</p>
+                    <p className="text-slate-400 mt-2">Trusted by Sydney businesses</p>
+                  </div>
                 </div>
-                <p className="text-[#1e293b] leading-relaxed mb-5 text-base">{review.review}</p>
-                <div className="border-t border-[#e2e8f0] pt-4">
-                  <div className="font-bold text-[#1e293b] text-lg">{review.name}</div>
-                  <div className="text-[#64748b] text-sm">{review.company}</div>
+
+                {/* Floating Badge */}
+                <div className="absolute -bottom-6 -right-6 bg-[#f59e0b] text-white rounded-2xl p-6 shadow-xl transform rotate-3 hover:rotate-0 transition-transform">
+                  <div className="text-4xl font-black">98%</div>
+                  <div className="text-sm font-semibold">Satisfaction</div>
                 </div>
               </div>
-            ))}
-          </div>
 
-          <div className="text-center mt-16 flex flex-col sm:flex-row gap-6 justify-center">
-            <Link href="/testimonials" className="inline-block bg-transparent text-[#1e293b] border-2 border-[#1e293b] hover:bg-[#1e293b] hover:text-white px-10 py-4 rounded-full font-bold transition-all duration-300 hover:-translate-y-1">
-              <i className="fas fa-comments mr-2"></i>
-              View All Testimonials
-            </Link>
-            <a href="https://www.google.com/search?q=Sydney+Web+Designer" target="_blank" rel="noopener noreferrer" className="inline-block bg-[#f59e0b] text-white hover:bg-[#d97706] px-10 py-4 rounded-full font-bold transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-              <i className="fab fa-google mr-2"></i>
-              Leave a Google Review
-            </a>
+              {/* Decorative Circle */}
+              <div className="absolute -top-10 -left-10 w-32 h-32 bg-[#f59e0b]/20 rounded-full blur-2xl" />
+              <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-[#f59e0b]/20 rounded-full blur-2xl" />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-[#1e293b] text-white py-28 text-center">
-        <div className="container max-w-[1200px] mx-auto px-8">
-          <h2 className="text-5xl md:text-6xl font-bold mb-8 text-white">Ready to Transform Your Digital Presence?</h2>
-          <p className="text-xl md:text-2xl mb-12 opacity-90 max-w-[700px] mx-auto text-white">
-            Let's build the future of your business together. Join 500+ satisfied clients across Sydney.
+      {/* ═══════════════════════════════════════════
+          CTA SECTION - Get Started
+      ════════════════════════════════════════════ */}
+      <section className="py-24 bg-[#1e293b] relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')]" />
+        </div>
+
+        <div className="container max-w-4xl mx-auto px-6 text-center relative z-10">
+          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            Ready to Transform Your Digital Presence?
+          </h2>
+          <p className="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
+            Let&apos;s create something amazing together. Get your free consultation and custom quote today.
           </p>
-          <a href="#contact" className="inline-block bg-[#f59e0b] text-white hover:bg-[#d97706] px-6 md:px-10 lg:px-14 py-3 md:py-4 lg:py-5 rounded-full font-bold text-base md:text-lg lg:text-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl w-full sm:w-auto text-center">
-            <i className="fas fa-paper-plane mr-3"></i>
-            Start Your Project Today
-          </a>
-        </div>
-      </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-28 bg-white">
-        <div className="container max-w-[1200px] mx-auto px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold text-[#1e293b] mb-6">Get In Touch</h2>
-            <p className="text-xl md:text-2xl text-[#64748b] max-w-[800px] mx-auto leading-relaxed">
-              Let's discuss your project and how we can help you achieve your business goals
-            </p>
-          </div>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button
+              data-popup="contact"
+              className="group bg-[#f59e0b] hover:bg-[#d97706] text-white px-10 py-5 rounded-full font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(245,158,11,0.4)]"
+            >
+              <span className="flex items-center justify-center gap-2">
+                Get Free Quote
+                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </span>
+            </button>
 
-          {/* Contact Info Cards */}
-          <div className="grid md:grid-cols-3 gap-10 mb-20">
-            <div className="bg-white p-12 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_50px_rgba(245,158,11,0.15)] transition-all duration-300 hover:-translate-y-2 text-center border-t-4 border-[#f59e0b]">
-              <div className="w-20 h-20 bg-[#1e293b] rounded-2xl flex items-center justify-center mx-auto mb-6 text-white text-3xl">
-                <i className="fas fa-phone"></i>
-              </div>
-              <h3 className="text-2xl font-bold text-[#1e293b] mb-4">Phone</h3>
-              <p className="text-[#1e293b] text-xl mb-3 font-semibold">
-                <a href="tel:0291918049" className="text-[#f59e0b] hover:text-[#d97706] transition-colors">02 9191 8049</a>
-              </p>
-              <span className="text-[#64748b] text-base">Mon-Fri: 9AM-5PM</span>
-            </div>
-
-            <div className="bg-white p-12 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_50px_rgba(245,158,11,0.15)] transition-all duration-300 hover:-translate-y-2 text-center border-t-4 border-[#f59e0b]">
-              <div className="w-20 h-20 bg-[#1e293b] rounded-2xl flex items-center justify-center mx-auto mb-6 text-white text-3xl">
-                <i className="fas fa-envelope"></i>
-              </div>
-              <h3 className="text-2xl font-bold text-[#1e293b] mb-4">Email</h3>
-              <p className="text-[#1e293b] text-lg mb-3 font-semibold">
-                <a href="mailto:hello@dsigns.com.au" className="text-[#f59e0b] hover:text-[#d97706] transition-colors break-all">hello@dsigns.com.au</a>
-              </p>
-              <span className="text-[#64748b] text-base">24/7 Response</span>
-            </div>
-
-            <div className="bg-white p-12 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_50px_rgba(245,158,11,0.15)] transition-all duration-300 hover:-translate-y-2 text-center border-t-4 border-[#f59e0b]">
-              <div className="w-20 h-20 bg-[#1e293b] rounded-2xl flex items-center justify-center mx-auto mb-6 text-white text-3xl">
-                <i className="fas fa-map-marker-alt"></i>
-              </div>
-              <h3 className="text-2xl font-bold text-[#1e293b] mb-4">Location</h3>
-              <p className="text-[#1e293b] text-lg leading-relaxed mb-3 font-semibold">
-                Suite 103 Level 1<br />22 Hunter Street
-              </p>
-              <span className="text-[#64748b] text-base">Parramatta NSW 2150</span>
-            </div>
-          </div>
-
-          {/* Contact Form */}
-          <div className="bg-[#f8fafc] p-16 rounded-3xl max-w-[900px] mx-auto shadow-[0_10px_40px_rgba(0,0,0,0.08)]">
-            <h3 className="text-4xl font-bold text-[#1e293b] mb-3 text-center">Send Us A Message</h3>
-            <p className="text-center text-[#64748b] mb-12 text-xl">Fill out the form below and we'll get back to you within 24 hours.</p>
-
-            <form className="space-y-8">
-              <div className="grid md:grid-cols-2 gap-8">
-                <div>
-                  <label htmlFor="firstName" className="block mb-3 text-[#1e293b] font-bold text-lg">First Name *</label>
-                  <input type="text" id="firstName" name="firstName" required className="w-full px-5 py-4 border-2 border-[#e2e8f0] rounded-xl focus:border-[#f59e0b] focus:outline-none transition-colors bg-white text-lg" />
-                </div>
-                <div>
-                  <label htmlFor="lastName" className="block mb-3 text-[#1e293b] font-bold text-lg">Last Name *</label>
-                  <input type="text" id="lastName" name="lastName" required className="w-full px-5 py-4 border-2 border-[#e2e8f0] rounded-xl focus:border-[#f59e0b] focus:outline-none transition-colors bg-white text-lg" />
-                </div>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-8">
-                <div>
-                  <label htmlFor="email" className="block mb-3 text-[#1e293b] font-bold text-lg">Email *</label>
-                  <input type="email" id="email" name="email" required className="w-full px-5 py-4 border-2 border-[#e2e8f0] rounded-xl focus:border-[#f59e0b] focus:outline-none transition-colors bg-white text-lg" />
-                </div>
-                <div>
-                  <label htmlFor="phone" className="block mb-3 text-[#1e293b] font-bold text-lg">Phone *</label>
-                  <input type="tel" id="phone" name="phone" required className="w-full px-5 py-4 border-2 border-[#e2e8f0] rounded-xl focus:border-[#f59e0b] focus:outline-none transition-colors bg-white text-lg" />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="website" className="block mb-3 text-[#1e293b] font-bold text-lg">Website (if applicable)</label>
-                <input type="url" id="website" name="website" className="w-full px-5 py-4 border-2 border-[#e2e8f0] rounded-xl focus:border-[#f59e0b] focus:outline-none transition-colors bg-white text-lg" />
-              </div>
-
-              <div>
-                <label htmlFor="service" className="block mb-3 text-[#1e293b] font-bold text-lg">Service Interested In</label>
-                <select id="service" name="service" className="w-full px-5 py-4 border-2 border-[#e2e8f0] rounded-xl focus:border-[#f59e0b] focus:outline-none transition-colors bg-white text-lg">
-                  <option value="">Select a service</option>
-                  <option value="web-design">Web Design</option>
-                  <option value="branding">Branding</option>
-                  <option value="digital-marketing">Digital Marketing</option>
-                  <option value="seo">SEO Services</option>
-                  <option value="growth-plan">Growth Plan</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block mb-3 text-[#1e293b] font-bold text-lg">Tell us about your project *</label>
-                <textarea id="message" name="message" required rows={6} className="w-full px-5 py-4 border-2 border-[#e2e8f0] rounded-xl focus:border-[#f59e0b] focus:outline-none transition-colors resize-y bg-white text-lg"></textarea>
-              </div>
-
-              <button type="submit" className="w-full bg-[#f59e0b] text-white hover:bg-[#d97706] px-10 py-5 rounded-xl font-bold text-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                <i className="fas fa-paper-plane mr-3"></i>
-                Send Message
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
-
-      {/* Blog Section */}
-      <section className="py-28 bg-[#f8fafc]">
-        <div className="container max-w-[1200px] mx-auto px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold text-[#1e293b] mb-6">Latest from Our Blog</h2>
-            <p className="text-xl md:text-2xl text-[#64748b] max-w-[800px] mx-auto leading-relaxed">
-              Expert web design tips, insights and industry trends for Sydney businesses
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-10 mb-16">
-            {[
-              { title: "10 Essential Web Design Features Every Sydney Business Needs", desc: "Discover the must-have features that make modern Sydney websites stand out from the competition and drive real conversions.", icon: "fa-laptop-code" },
-              { title: "How SEO Can Transform Your Sydney Business in 2026", desc: "Discover proven SEO strategies that Sydney businesses are using to dominate Google search results and attract more customers.", icon: "fa-search" },
-              { title: "Mobile-First Web Design: Why Sydney Businesses Can't Ignore It", desc: "Learn why mobile-first design is absolutely crucial for Sydney businesses and how to implement it effectively for maximum impact.", icon: "fa-mobile-alt" }
-            ].map((post, index) => (
-              <article key={index} className="bg-white p-10 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_50px_rgba(245,158,11,0.15)] transition-all duration-300 hover:-translate-y-2 border-t-4 border-[#f59e0b] group">
-                <div className="w-16 h-16 bg-[#f59e0b] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <i className={`fas ${post.icon} text-3xl text-white`}></i>
-                </div>
-                <h3 className="text-2xl font-bold text-[#1e293b] mb-5 leading-snug">{post.title}</h3>
-                <p className="text-[#64748b] leading-relaxed mb-6 text-lg">{post.desc}</p>
-                <a href="/blog" className="inline-flex items-center gap-2 text-[#f59e0b] font-bold hover:gap-4 transition-all duration-300 text-lg">
-                  Read More <i className="fas fa-arrow-right"></i>
-                </a>
-              </article>
-            ))}
-          </div>
-
-          <div className="text-center">
-            <Link href="/blog" className="inline-block bg-[#f59e0b] text-white hover:bg-[#d97706] px-6 md:px-10 lg:px-14 py-3 md:py-4 lg:py-5 rounded-full font-bold text-base md:text-lg lg:text-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl w-full sm:w-auto text-center">
-              <i className="fas fa-book-open mr-3"></i>
-              View All Articles
-            </Link>
+            <a
+              href="tel:+61280680688"
+              className="bg-white/10 hover:bg-white/20 text-white border-2 border-white/30 hover:border-white px-10 py-5 rounded-full font-bold text-lg transition-all duration-300 backdrop-blur-sm"
+            >
+              <span className="flex items-center justify-center gap-2">
+                <i className="fas fa-phone" />
+                (02) 8068 0688
+              </span>
+            </a>
           </div>
         </div>
       </section>
