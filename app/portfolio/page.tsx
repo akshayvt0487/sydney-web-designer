@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import { generateMetadata } from "@/lib/metadata";
 import { generateBreadcrumbSchema } from "@/lib/schemas";
-import PortfolioHero from "@/components/PortfolioHero";
 import PortfolioGrid from "@/components/PortfolioGrid";
 
 export const metadata: Metadata = generateMetadata({
@@ -28,12 +27,12 @@ export default function PortfolioPage() {
       />
 
       {/* ── HERO ────────────────────────────────── */}
-      <section className="relative bg-[#060d1a] overflow-hidden" style={{ height: 500 }}>
-        {/* Three.js canvas */}
-        <PortfolioHero />
-
-        {/* Gradient overlay so text stays readable */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#060d1a]/40 via-transparent to-[#060d1a]" />
+      <section className="relative bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] overflow-hidden" style={{ height: 500 }}>
+        {/* Animated background pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 left-20 w-96 h-96 bg-[#f59e0b] rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-20 right-20 w-80 h-80 bg-[#f59e0b] rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+        </div>
 
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">

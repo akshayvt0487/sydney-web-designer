@@ -3,7 +3,6 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PopupFormProvider from "@/components/PopupFormProvider";
-import ThreeBackground from "@/components/ThreeBackground";
 import { generateOrganizationSchema } from "@/lib/schemas";
 
 export const metadata: Metadata = {
@@ -56,7 +55,6 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <ThreeBackground />
         <PopupFormProvider>
           <Header />
           <main>{children}</main>

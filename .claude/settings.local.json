@@ -26,7 +26,8 @@
       "Bash(for project in \"Actuate\" \"GPS\" \"Satisfinance\" \"Jabbs\" \"RMB\" \"Tree\" \"OSAN\" \"Tente\" \"Castor\" \"Brothers\" \"Tspoon\" \"Deepslice\")",
       "Bash(do echo \"=== $project ===\")",
       "Bash(dir:*)",
-      "Bash(git push)"
+      "Bash(git push)",
+      "Bash(npm uninstall:*)"
     ]
   }
 }
