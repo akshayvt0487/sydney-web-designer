@@ -37,32 +37,32 @@ export default function ResponsiveDesignPage() {
     {
       title: "Mobile-First Design",
       description: "Prioritize mobile experience with designs that work beautifully on smartphones first.",
-      icon: "📱",
+      icon: "fas fa-mobile-alt",
     },
     {
       title: "Flexible Layouts",
       description: "Fluid grids that automatically adapt to any screen size for perfect display.",
-      icon: "🎨",
+      icon: "fas fa-palette",
     },
     {
       title: "Touch Optimized",
       description: "Buttons and navigation optimized for touch interaction on mobile devices.",
-      icon: "👆",
+      icon: "fas fa-hand-pointer",
     },
     {
       title: "Fast Loading",
       description: "Optimized images and code for quick loading on mobile networks.",
-      icon: "⚡",
+      icon: "fas fa-bolt",
     },
     {
       title: "Cross-Browser",
       description: "Consistent experience across all major browsers and operating systems.",
-      icon: "🌐",
+      icon: "fas fa-globe",
     },
     {
       title: "Future-Proof",
       description: "Designs that adapt to new devices and screen sizes as they emerge.",
-      icon: "🚀",
+      icon: "fas fa-rocket",
     },
   ];
 
@@ -176,7 +176,7 @@ export default function ResponsiveDesignPage() {
           <div className="grid-3">
             {features.map((feature, index) => (
               <div key={index} className="card hover:shadow-card-hover transition-shadow">
-                <div className="text-4xl mb-4">{feature.icon}</div>
+                <div className="mb-4"><i className={`${feature.icon} text-4xl text-[#f59e0b]`}></i></div>
                 <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
               </div>
@@ -264,7 +264,7 @@ export default function ResponsiveDesignPage() {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-4xl font-bold mb-4">Responsive Design Pricing</h2>
@@ -348,7 +348,7 @@ export default function ResponsiveDesignPage() {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* FAQ Section */}
       <section className="py-20 bg-gray-50">

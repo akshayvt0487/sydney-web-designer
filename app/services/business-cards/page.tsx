@@ -37,32 +37,32 @@ export default function BusinessCardsPage() {
     {
       title: "Custom Design",
       description: "Unique designs that stand out and reflect your professional brand.",
-      icon: "🎨",
+      icon: "fas fa-palette",
     },
     {
       title: "Brand Aligned",
       description: "Designs that perfectly match your existing brand identity and colors.",
-      icon: "🎯",
+      icon: "fas fa-bullseye",
     },
     {
       title: "Print Ready",
       description: "High-resolution files with bleed and crop marks ready for professional printing.",
-      icon: "📄",
+      icon: "fas fa-file-alt",
     },
     {
       title: "Multiple Options",
       description: "Receive 2-3 design concepts to choose from before refinement.",
-      icon: "💡",
+      icon: "fas fa-lightbulb",
     },
     {
       title: "Premium Finishes",
       description: "Recommendations for paper stock, finishes, and special effects.",
-      icon: "✨",
+      icon: "fas fa-sparkles",
     },
     {
       title: "Quick Turnaround",
       description: "Most projects completed within 5-7 business days.",
-      icon: "⚡",
+      icon: "fas fa-bolt",
     },
   ];
 
@@ -146,7 +146,7 @@ export default function BusinessCardsPage() {
           <div className="grid-3">
             {features.map((feature, index) => (
               <div key={index} className="card hover:shadow-card-hover transition-shadow">
-                <div className="text-4xl mb-4">{feature.icon}</div>
+                <div className="mb-4"><i className={`${feature.icon} text-4xl text-[#f59e0b]`}></i></div>
                 <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
               </div>
@@ -197,7 +197,7 @@ export default function BusinessCardsPage() {
           <div className="text-center mt-12"><Link href="/testimonials" className="btn btn-primary">Read More Reviews</Link></div>
         </div>
       </section>
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-4xl font-bold mb-4">Business Card Pricing</h2>
@@ -227,7 +227,7 @@ export default function BusinessCardsPage() {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
       <section className="py-20 bg-gray-50">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">

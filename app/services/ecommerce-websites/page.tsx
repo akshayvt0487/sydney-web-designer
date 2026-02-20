@@ -255,7 +255,7 @@ export default function EcommerceWebsitesPage() {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-24 bg-gray-50">
+      {/* <section className="py-24 bg-gray-50">
         <div className="container">
           <h2 className="text-5xl font-bold text-center mb-6 text-[#1e293b]">E-commerce Websites Sydney Pricing</h2>
           <p className="text-center text-gray-600 mb-16">Choose the package that fits your needs and budget</p>
@@ -313,7 +313,7 @@ export default function EcommerceWebsitesPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Contact Form Section */}
       <section className="py-24" id="lead-form">

@@ -25,8 +25,8 @@ export default function MegaMenu() {
       </button>
 
       {isOpen && (
-        <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-[960px] max-w-[95vw] z-50 pointer-events-none">
-          <div className="bg-white rounded-lg shadow-2xl border-t-4 border-primary-orange overflow-hidden animate-fadeIn pointer-events-auto">
+        <div className="absolute top-full left-1/2 -translate-x-1/2 w-[960px] max-w-[95vw] z-50">
+          <div className="bg-white rounded-lg shadow-2xl border-t-4 border-primary-orange overflow-hidden animate-fadeIn mt-1">
             <div className="grid grid-cols-3 divide-x divide-gray-200">
             {/* Web Design Column */}
             <div className="p-6 bg-gray-50 transition-all">
@@ -41,7 +41,7 @@ export default function MegaMenu() {
                       href={`/services/${service.slug}`}
                       className="group flex items-center gap-3 p-2.5 rounded hover:bg-primary-orange hover:text-white transition-all"
                     >
-                      <span className="text-lg flex-shrink-0" dangerouslySetInnerHTML={{ __html: service.icon }} />
+                      <i className={`fas ${service.icon} text-lg flex-shrink-0`} />
                       <span className="text-sm font-medium flex-1">{service.name}</span>
                       <svg className="w-4 h-4 flex-shrink-0 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -65,7 +65,7 @@ export default function MegaMenu() {
                       href={`/services/${service.slug}`}
                       className="group flex items-center gap-3 p-2.5 rounded hover:bg-primary-orange hover:text-white transition-all"
                     >
-                      <span className="text-lg flex-shrink-0" dangerouslySetInnerHTML={{ __html: service.icon }} />
+                      <i className={`fas ${service.icon} text-lg flex-shrink-0`} />
                       <span className="text-sm font-medium flex-1">{service.name}</span>
                       <svg className="w-4 h-4 flex-shrink-0 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -89,7 +89,7 @@ export default function MegaMenu() {
                       href={`/services/${service.slug}`}
                       className="group flex items-center gap-3 p-2.5 rounded hover:bg-primary-orange hover:text-white transition-all"
                     >
-                      <span className="text-lg flex-shrink-0" dangerouslySetInnerHTML={{ __html: service.icon }} />
+                      <i className={`fas ${service.icon} text-lg flex-shrink-0`} />
                       <span className="text-sm font-medium flex-1">{service.name}</span>
                       <svg className="w-4 h-4 flex-shrink-0 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

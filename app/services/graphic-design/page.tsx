@@ -37,32 +37,32 @@ export default function GraphicDesignPage() {
     {
       title: "Print Design",
       description: "Brochures, flyers, posters, and print materials that make an impact.",
-      icon: "📄",
+      icon: "fas fa-file-alt",
     },
     {
       title: "Digital Graphics",
       description: "Social media graphics, web banners, and digital marketing materials.",
-      icon: "💻",
+      icon: "fas fa-laptop",
     },
     {
       title: "Infographics",
       description: "Visual representations of data and information that are easy to understand.",
-      icon: "📊",
+      icon: "fas fa-chart-bar",
     },
     {
       title: "Presentations",
       description: "Professional presentation design that impresses clients and wins business.",
-      icon: "📽️",
+      icon: "fas fa-presentation",
     },
     {
       title: "Packaging Design",
       description: "Product packaging that stands out on shelves and communicates quality.",
-      icon: "📦",
+      icon: "fas fa-box",
     },
     {
       title: "Signage Design",
       description: "Eye-catching signage for your business location, events, and vehicles.",
-      icon: "🪧",
+      icon: "fas fa-sign",
     },
   ];
 
@@ -152,7 +152,7 @@ export default function GraphicDesignPage() {
           <div className="grid-3">
             {features.map((feature, index) => (
               <div key={index} className="card hover:shadow-card-hover transition-shadow">
-                <div className="text-4xl mb-4">{feature.icon}</div>
+                <div className="mb-4"><i className={`${feature.icon} text-4xl text-[#f59e0b]`}></i></div>
                 <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
               </div>
@@ -211,7 +211,7 @@ export default function GraphicDesignPage() {
           </div>
         </div>
       </section>
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-4xl font-bold mb-4">Graphic Design Pricing</h2>
@@ -240,7 +240,7 @@ export default function GraphicDesignPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       <section className="py-20 bg-gray-50">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">

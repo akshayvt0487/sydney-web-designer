@@ -62,7 +62,7 @@ export default function ServicesPage() {
       <section className="py-20">
         <div className="container">
           <div className="section-title">
-            <h2>🎨 Web Design & Development</h2>
+            <h2><i className="fas fa-laptop-code text-[#f59e0b]"></i> Web Design & Development</h2>
             <p>Professional websites that convert visitors into customers</p>
           </div>
 
@@ -84,7 +84,7 @@ export default function ServicesPage() {
       <section className="py-20 bg-gray-50">
         <div className="container">
           <div className="section-title">
-            <h2>🎯 Branding & Identity</h2>
+            <h2><i className="fas fa-fingerprint text-[#f59e0b]"></i> Branding & Identity</h2>
             <p>Create a memorable brand that stands out from the competition</p>
           </div>
 
@@ -106,7 +106,7 @@ export default function ServicesPage() {
       <section className="py-20">
         <div className="container">
           <div className="section-title">
-            <h2>📈 Digital Marketing</h2>
+            <h2><i className="fas fa-chart-line text-[#f59e0b]"></i> Digital Marketing</h2>
             <p>Drive traffic, generate leads, and grow your revenue</p>
           </div>
 
@@ -134,7 +134,9 @@ export default function ServicesPage() {
 
           <div className="grid-3">
             <div className="card text-center">
-              <div className="text-5xl mb-4">⭐</div>
+              <div className="w-16 h-16 bg-gradient-to-br from-[#f59e0b] to-[#fb923c] rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <i className="fas fa-star text-3xl text-white"></i>
+              </div>
               <h3 className="text-xl font-bold mb-3">13+ Years Experience</h3>
               <p className="text-gray-600">
                 Over a decade of proven success in web design, branding, and digital marketing across
@@ -143,7 +145,9 @@ export default function ServicesPage() {
             </div>
 
             <div className="card text-center">
-              <div className="text-5xl mb-4">🎯</div>
+              <div className="w-16 h-16 bg-gradient-to-br from-[#f59e0b] to-[#fb923c] rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <i className="fas fa-bullseye text-3xl text-white"></i>
+              </div>
               <h3 className="text-xl font-bold mb-3">Results-Driven</h3>
               <p className="text-gray-600">
                 We focus on measurable outcomes that impact your bottom line, not just vanity metrics.
@@ -151,7 +155,9 @@ export default function ServicesPage() {
             </div>
 
             <div className="card text-center">
-              <div className="text-5xl mb-4">💰</div>
+              <div className="w-16 h-16 bg-gradient-to-br from-[#f59e0b] to-[#fb923c] rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <i className="fas fa-dollar-sign text-3xl text-white"></i>
+              </div>
               <h3 className="text-xl font-bold mb-3">Transparent Pricing</h3>
               <p className="text-gray-600">
                 Clear, upfront pricing with no hidden fees. Know exactly what you&apos;re paying for.
@@ -159,7 +165,9 @@ export default function ServicesPage() {
             </div>
 
             <div className="card text-center">
-              <div className="text-5xl mb-4">🤝</div>
+              <div className="w-16 h-16 bg-gradient-to-br from-[#f59e0b] to-[#fb923c] rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <i className="fas fa-handshake text-3xl text-white"></i>
+              </div>
               <h3 className="text-xl font-bold mb-3">Personalized Service</h3>
               <p className="text-gray-600">
                 Work directly with our founder. No call centers, no junior staff. Just experienced
@@ -168,7 +176,9 @@ export default function ServicesPage() {
             </div>
 
             <div className="card text-center">
-              <div className="text-5xl mb-4">⚡</div>
+              <div className="w-16 h-16 bg-gradient-to-br from-[#f59e0b] to-[#fb923c] rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <i className="fas fa-bolt text-3xl text-white"></i>
+              </div>
               <h3 className="text-xl font-bold mb-3">Fast Turnaround</h3>
               <p className="text-gray-600">
                 Projects delivered on time, every time. We respect your deadlines and business needs.
@@ -176,7 +186,9 @@ export default function ServicesPage() {
             </div>
 
             <div className="card text-center">
-              <div className="text-5xl mb-4">📞</div>
+              <div className="w-16 h-16 bg-gradient-to-br from-[#f59e0b] to-[#fb923c] rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <i className="fas fa-headset text-3xl text-white"></i>
+              </div>
               <h3 className="text-xl font-bold mb-3">Ongoing Support</h3>
               <p className="text-gray-600">
                 24-hour response time and dedicated support long after your project launches.
@@ -186,8 +198,8 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Pricing Options */}
-      <section className="py-20">
+      {/* Pricing Options - HIDDEN */}
+      {/* <section className="py-20">
         <div className="container">
           <div className="section-title">
             <h2>Flexible Pricing Options</h2>
@@ -218,7 +230,7 @@ export default function ServicesPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <CTASection

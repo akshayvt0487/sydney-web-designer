@@ -35,9 +35,9 @@ export default function HomePage() {
             <span className="text-[#f59e0b] text-sm font-semibold">13+ Years of Excellence</span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-5xl md:text-7xl lg:text-7xl font-bold text-white mb-6 leading-tight">
             Sydney&apos;s Premier
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#f59e0b] to-[#fb923c] mt-2">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#f59e0b] to-[#fb923c] mt-2 pb-4">
               Web Design Agency
             </span>
           </h1>
@@ -81,7 +81,7 @@ export default function HomePage() {
               { icon: "fa-rocket", value: "12+", label: "Industries Served" },
             ].map((stat, i) => (
               <div key={i} className="bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300 hover:scale-105">
-                <i className={`fas ${stat.icon} text-3xl text-[#f59e0b] mb-3`} />
+                <i className={`fas ${stat.icon} text-3xl text-[#f59e0b] mb-1`} />
                 <div className="text-3xl font-black text-white mb-1">{stat.value}</div>
                 <div className="text-sm text-slate-400">{stat.label}</div>
               </div>
@@ -90,7 +90,7 @@ export default function HomePage() {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 animate-bounce ">
           <div className="w-6 h-10 border-2 border-white/30 rounded-full flex items-start justify-center p-2">
             <div className="w-1 h-3 bg-[#f59e0b] rounded-full animate-pulse" />
           </div>
@@ -262,6 +262,193 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════════════════════════════════════
+          PROCESS SECTION - How We Work
+      ════════════════════════════════════════════ */}
+      <section className="py-24 bg-white">
+        <div className="container max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="text-[#f59e0b] font-semibold text-sm tracking-widest uppercase mb-3 block">Our Process</span>
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">
+              How We <span className="text-[#f59e0b]">Work</span>
+            </h2>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+              A proven process that delivers exceptional results, every time
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                step: "01",
+                icon: "fa-comments",
+                title: "Discovery & Strategy",
+                desc: "We learn about your business, goals, and target audience to create a tailored strategy."
+              },
+              {
+                step: "02",
+                icon: "fa-pencil-ruler",
+                title: "Design & Development",
+                desc: "Our team brings your vision to life with stunning design and robust development."
+              },
+              {
+                step: "03",
+                icon: "fa-rocket",
+                title: "Launch & Optimize",
+                desc: "We launch your project and continuously optimize for peak performance."
+              },
+              {
+                step: "04",
+                icon: "fa-chart-line",
+                title: "Growth & Support",
+                desc: "Ongoing maintenance, updates, and marketing to ensure continued success."
+              },
+            ].map((process, i) => (
+              <div key={i} className="relative group">
+                <div className="bg-gradient-to-br from-slate-50 to-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-100 hover:border-[#f59e0b]/30 h-full">
+                  {/* Step Number */}
+                  <div className="absolute -top-4 -right-4 w-16 h-16 bg-[#f59e0b] rounded-2xl flex items-center justify-center text-white font-black text-xl shadow-lg group-hover:scale-110 transition-transform">
+                    {process.step}
+                  </div>
+
+                  {/* Icon */}
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#f59e0b] to-[#fb923c] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                    <i className={`fas ${process.icon} text-2xl text-white`} />
+                  </div>
+
+                  {/* Content */}
+                  <h3 className="text-xl font-bold text-[#1e293b] mb-3">{process.title}</h3>
+                  <p className="text-slate-600 leading-relaxed">{process.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
+          TESTIMONIALS SECTION - Client Reviews
+      ════════════════════════════════════════════ */}
+      <section className="py-24 bg-slate-50">
+        <div className="container max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="text-[#f59e0b] font-semibold text-sm tracking-widest uppercase mb-3 block">Testimonials</span>
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">
+              What Our <span className="text-[#f59e0b]">Clients Say</span>
+            </h2>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+              Don&apos;t just take our word for it - hear from businesses we&apos;ve helped succeed
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                name: "Michael Chen",
+                company: "GPS Vehicle Inspections",
+                text: "Sydney Web Designer completely transformed our online presence. The new website looks amazing and we've seen a 300% increase in inquiries.",
+                rating: 5
+              },
+              {
+                name: "Sarah Thompson",
+                company: "Actuate Property",
+                text: "Outstanding service from start to finish. They created a beautiful brand identity and website that perfectly represents our business.",
+                rating: 5
+              },
+              {
+                name: "David Martinez",
+                company: "Two Brothers Removalist",
+                text: "The SEO results have been incredible. We're now ranking #1 for multiple keywords and getting more calls than ever before.",
+                rating: 5
+              },
+            ].map((testimonial, i) => (
+              <div key={i} className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-100 hover:border-[#f59e0b]/30 hover:-translate-y-2">
+                {/* Stars */}
+                <div className="flex gap-1 mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <i key={i} className="fas fa-star text-[#f59e0b]" />
+                  ))}
+                </div>
+
+                {/* Quote */}
+                <p className="text-slate-700 mb-6 leading-relaxed italic">
+                  &quot;{testimonial.text}&quot;
+                </p>
+
+                {/* Author */}
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#f59e0b] to-[#fb923c] rounded-full flex items-center justify-center text-white font-bold text-lg">
+                    {testimonial.name[0]}
+                  </div>
+                  <div>
+                    <div className="font-bold text-[#1e293b]">{testimonial.name}</div>
+                    <div className="text-sm text-slate-500">{testimonial.company}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link
+              href="/testimonials"
+              className="inline-flex items-center gap-2 text-[#f59e0b] hover:text-[#d97706] font-bold text-lg group"
+            >
+              View All Testimonials
+              <svg className="w-5 h-5 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
+          INDUSTRIES SECTION - Who We Serve
+      ════════════════════════════════════════════ */}
+      <section className="py-24 bg-white">
+        <div className="container max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="text-[#f59e0b] font-semibold text-sm tracking-widest uppercase mb-3 block">Industries We Serve</span>
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">
+              Expertise Across <span className="text-[#f59e0b]">All Industries</span>
+            </h2>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+              From startups to established enterprises, we deliver tailored solutions for every sector
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {[
+              { icon: "fa-building", name: "Real Estate" },
+              { icon: "fa-truck", name: "Logistics" },
+              { icon: "fa-heartbeat", name: "Healthcare" },
+              { icon: "fa-utensils", name: "Hospitality" },
+              { icon: "fa-hard-hat", name: "Construction" },
+              { icon: "fa-shopping-bag", name: "Retail" },
+              { icon: "fa-graduation-cap", name: "Education" },
+              { icon: "fa-briefcase", name: "Professional Services" },
+              { icon: "fa-wrench", name: "Home Services" },
+              { icon: "fa-car", name: "Automotive" },
+              { icon: "fa-dumbbell", name: "Fitness & Wellness" },
+              { icon: "fa-landmark", name: "Finance" },
+            ].map((industry, i) => (
+              <div
+                key={i}
+                className="group bg-gradient-to-br from-slate-50 to-white rounded-2xl p-6 text-center hover:shadow-xl transition-all duration-300 border border-slate-100 hover:border-[#f59e0b]/30 hover:-translate-y-1"
+              >
+                <div className="w-14 h-14 bg-gradient-to-br from-[#f59e0b] to-[#fb923c] rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                  <i className={`fas ${industry.icon} text-xl text-white`} />
+                </div>
+                <h3 className="font-semibold text-[#1e293b] group-hover:text-[#f59e0b] transition-colors">
+                  {industry.name}
+                </h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
           WHY CHOOSE US - Benefits Section
       ════════════════════════════════════════════ */}
       <section className="py-24 bg-white">
@@ -317,6 +504,68 @@ export default function HomePage() {
               {/* Decorative Circle */}
               <div className="absolute -top-10 -left-10 w-32 h-32 bg-[#f59e0b]/20 rounded-full blur-2xl" />
               <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-[#f59e0b]/20 rounded-full blur-2xl" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
+          TECHNOLOGIES SECTION - Tools We Use
+      ════════════════════════════════════════════ */}
+      <section className="py-24 bg-slate-50">
+        <div className="container max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="text-[#f59e0b] font-semibold text-sm tracking-widest uppercase mb-3 block">Technologies</span>
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">
+              Built with <span className="text-[#f59e0b]">Modern Tech</span>
+            </h2>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+              We use cutting-edge technologies to build fast, secure, and scalable websites
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            {[
+              { icon: "fa-react", name: "React", color: "#61DAFB" },
+              { icon: "fa-react", name: "Next.js", color: "#000000", isSolid: true },
+              { icon: "fa-node-js", name: "Node.js", color: "#339933" },
+              { icon: "fa-wordpress", name: "WordPress", color: "#21759B" },
+              { icon: "fa-shopify", name: "Shopify", color: "#7AB55C" },
+              { icon: "fa-laravel", name: "Laravel", color: "#FF2D20" },
+              { icon: "fa-figma", name: "Figma", color: "#F24E1E" },
+              { icon: "fa-adobe", name: "Adobe XD", color: "#FF61F6" },
+              { icon: "fa-chrome", name: "Webflow", color: "#4353FF" },
+              { icon: "fa-php", name: "PHP", color: "#777BB4" },
+              { icon: "fa-python", name: "Python", color: "#3776AB" },
+              { icon: "fa-js", name: "JavaScript", color: "#F7DF1E" },
+              { icon: "fa-html5", name: "HTML5", color: "#E34F26" },
+              { icon: "fa-css3-alt", name: "CSS3", color: "#1572B6" },
+              { icon: "fa-sass", name: "Sass", color: "#CC6699" },
+              { icon: "fa-google", name: "Google Ads", color: "#4285F4" },
+              { icon: "fa-facebook", name: "Meta Ads", color: "#1877F2" },
+              { icon: "fa-bootstrap", name: "Bootstrap", color: "#7952B3" },
+            ].map((tech, i) => (
+              <div
+                key={i}
+                className="group bg-white rounded-2xl p-6 text-center hover:shadow-xl transition-all duration-300 border border-slate-100 hover:border-[#f59e0b]/30 hover:-translate-y-2"
+              >
+                <div className="mb-4">
+                  <i className={`${tech.isSolid ? 'fas' : 'fab'} ${tech.icon} text-5xl transition-all duration-300 group-hover:scale-110`} style={{ color: tech.color }} />
+                </div>
+                <h3 className="font-semibold text-sm text-[#1e293b]">
+                  {tech.name}
+                </h3>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-16 text-center">
+            <div className="inline-flex items-center gap-3 bg-white rounded-full px-8 py-4 shadow-lg border border-slate-200">
+              <i className="fas fa-shield-alt text-[#f59e0b] text-2xl" />
+              <div className="text-left">
+                <div className="font-bold text-[#1e293b]">Enterprise-Grade Security</div>
+                <div className="text-sm text-slate-600">SSL, GDPR compliance, and regular updates</div>
+              </div>
             </div>
           </div>
         </div>

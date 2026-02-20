@@ -55,19 +55,19 @@ export default function CustomWebDesignPage() {
           {/* Trust Badges */}
           <div className="flex flex-wrap justify-center gap-12 mt-12">
             <div className="text-center">
-              <div className="text-5xl mb-2">🏆</div>
+              <div className="mb-2"><i className="fas fa-trophy text-4xl text-[#f59e0b]"></i></div>
               <div className="text-sm opacity-90">13+ Years Experience</div>
             </div>
             <div className="text-center">
-              <div className="text-5xl mb-2">⭐</div>
+              <div className="mb-2"><i className="fas fa-star text-4xl text-[#f59e0b]"></i></div>
               <div className="text-sm opacity-90">50+ 5-Star Reviews</div>
             </div>
             <div className="text-center">
-              <div className="text-5xl mb-2">✓</div>
+              <div className="mb-2"><i className="fas fa-check-circle text-4xl text-[#f59e0b]"></i></div>
               <div className="text-sm opacity-90">Professional Service</div>
             </div>
             <div className="text-center">
-              <div className="text-5xl mb-2">📊</div>
+              <div className="mb-2"><i className="fas fa-chart-bar text-4xl text-[#f59e0b]"></i></div>
               <div className="text-sm opacity-90">Proven Results</div>
             </div>
           </div>
@@ -113,144 +113,144 @@ export default function CustomWebDesignPage() {
 
           <div className="grid md:grid-cols-3 gap-12 mt-16">
             <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border-l-4 border-[#f59e0b]">
-              <div className="text-6xl mb-6">🎨</div>
+              <div className="mb-6"><i className="fas fa-palette text-5xl text-[#f59e0b]"></i></div>
               <h3 className="text-2xl font-bold text-[#1e293b] mb-3">Unique Design</h3>
               <p className="text-[#64748b] mb-6">Custom visual identity</p>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>Brand-specific</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>Custom graphics</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>Unique layouts</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>Professional imagery</span>
                 </li>
               </ul>
             </div>
 
             <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border-l-4 border-[#f59e0b]">
-              <div className="text-6xl mb-6">📱</div>
+              <div className="mb-6"><i className="fas fa-mobile-alt text-5xl text-[#f59e0b]"></i></div>
               <h3 className="text-2xl font-bold text-[#1e293b] mb-3">Mobile-First</h3>
               <p className="text-[#64748b] mb-6">Perfect on all devices</p>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>Responsive layouts</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>Touch-friendly</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>Fast mobile</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>Cross-browser</span>
                 </li>
               </ul>
             </div>
 
             <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border-l-4 border-[#f59e0b]">
-              <div className="text-6xl mb-6">⚡</div>
+              <div className="mb-6"><i className="fas fa-bolt text-5xl text-[#f59e0b]"></i></div>
               <h3 className="text-2xl font-bold text-[#1e293b] mb-3">Custom Features</h3>
               <p className="text-[#64748b] mb-6">Exact functionality needed</p>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>Booking systems</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>Calculators</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>User portals</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>Integrations</span>
                 </li>
               </ul>
             </div>
 
             <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border-l-4 border-[#f59e0b]">
-              <div className="text-6xl mb-6">🎯</div>
+              <div className="mb-6"><i className="fas fa-bullseye text-5xl text-[#f59e0b]"></i></div>
               <h3 className="text-2xl font-bold text-[#1e293b] mb-3">Conversion Focus</h3>
               <p className="text-[#64748b] mb-6">Maximize conversions</p>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>Strategic CTAs</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>User journey</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>A/B testing</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>Lead capture</span>
                 </li>
               </ul>
             </div>
 
             <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border-l-4 border-[#f59e0b]">
-              <div className="text-6xl mb-6">🚀</div>
+              <div className="mb-6"><i className="fas fa-rocket text-5xl text-[#f59e0b]"></i></div>
               <h3 className="text-2xl font-bold text-[#1e293b] mb-3">Performance</h3>
               <p className="text-[#64748b] mb-6">Fast loading speeds</p>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>Optimized code</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>Image compression</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>Lazy loading</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>CDN integration</span>
                 </li>
               </ul>
             </div>
 
             <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border-l-4 border-[#f59e0b]">
-              <div className="text-6xl mb-6">🔍</div>
+              <div className="mb-6"><i className="fas fa-search text-5xl text-[#f59e0b]"></i></div>
               <h3 className="text-2xl font-bold text-[#1e293b] mb-3">SEO-Ready</h3>
               <p className="text-[#64748b] mb-6">Built for search</p>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>Clean code</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>Semantic HTML</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>Schema markup</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>Fast speeds</span>
                 </li>
               </ul>
@@ -373,7 +373,13 @@ export default function CustomWebDesignPage() {
 
           <div className="grid md:grid-cols-3 gap-12">
             <div className="bg-white p-12 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border-t-4 border-[#f59e0b]">
-              <div className="text-[#f59e0b] text-2xl mb-6">⭐⭐⭐⭐⭐</div>
+              <div className="text-[#f59e0b] text-2xl mb-6">
+                <i className="fas fa-star"></i>
+                <i className="fas fa-star"></i>
+                <i className="fas fa-star"></i>
+                <i className="fas fa-star"></i>
+                <i className="fas fa-star"></i>
+              </div>
               <p className="text-[#64748b] italic text-lg leading-relaxed mb-8">
                 "Professional, responsive, and delivered exactly what we needed. The results have been fantastic and we've seen significant improvements."
               </p>
@@ -382,7 +388,13 @@ export default function CustomWebDesignPage() {
             </div>
 
             <div className="bg-white p-12 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border-t-4 border-[#f59e0b]">
-              <div className="text-[#f59e0b] text-2xl mb-6">⭐⭐⭐⭐⭐</div>
+              <div className="text-[#f59e0b] text-2xl mb-6">
+                <i className="fas fa-star"></i>
+                <i className="fas fa-star"></i>
+                <i className="fas fa-star"></i>
+                <i className="fas fa-star"></i>
+                <i className="fas fa-star"></i>
+              </div>
               <p className="text-[#64748b] italic text-lg leading-relaxed mb-8">
                 "The team at Sydney Web Designer took the time to understand our business. Their expertise and transparent approach made the entire process smooth."
               </p>
@@ -391,7 +403,13 @@ export default function CustomWebDesignPage() {
             </div>
 
             <div className="bg-white p-12 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border-t-4 border-[#f59e0b]">
-              <div className="text-[#f59e0b] text-2xl mb-6">⭐⭐⭐⭐⭐</div>
+              <div className="text-[#f59e0b] text-2xl mb-6">
+                <i className="fas fa-star"></i>
+                <i className="fas fa-star"></i>
+                <i className="fas fa-star"></i>
+                <i className="fas fa-star"></i>
+                <i className="fas fa-star"></i>
+              </div>
               <p className="text-[#64748b] italic text-lg leading-relaxed mb-8">
                 "Highly recommend Sydney Web Designer for their professionalism and quality of work. They exceeded our expectations in every way."
               </p>
@@ -403,7 +421,7 @@ export default function CustomWebDesignPage() {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-24 px-8 bg-[#f8fafc]">
+      {/* <section className="py-24 px-8 bg-[#f8fafc]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-5xl font-bold text-[#1e293b] mb-4">
@@ -421,23 +439,23 @@ export default function CustomWebDesignPage() {
               <div className="text-[#64748b] mb-8">one-time</div>
               <ul className="text-left space-y-3 mb-8">
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <i className="fas fa-check text-[#f59e0b]"></i>
                   <span>3-5 pages</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <i className="fas fa-check text-[#f59e0b]"></i>
                   <span>Mobile responsive</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <i className="fas fa-check text-[#f59e0b]"></i>
                   <span>Basic SEO</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <i className="fas fa-check text-[#f59e0b]"></i>
                   <span>Contact forms</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <i className="fas fa-check text-[#f59e0b]"></i>
                   <span>CMS included</span>
                 </li>
               </ul>
@@ -455,27 +473,27 @@ export default function CustomWebDesignPage() {
               <div className="text-[#64748b] mb-8">one-time</div>
               <ul className="text-left space-y-3 mb-8">
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <i className="fas fa-check text-[#f59e0b]"></i>
                   <span>10-20 pages</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <i className="fas fa-check text-[#f59e0b]"></i>
                   <span>Custom design</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <i className="fas fa-check text-[#f59e0b]"></i>
                   <span>Advanced SEO</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <i className="fas fa-check text-[#f59e0b]"></i>
                   <span>Blog integration</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <i className="fas fa-check text-[#f59e0b]"></i>
                   <span>E-commerce</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <i className="fas fa-check text-[#f59e0b]"></i>
                   <span>3 months support</span>
                 </li>
               </ul>
@@ -490,27 +508,27 @@ export default function CustomWebDesignPage() {
               <div className="text-[#64748b] mb-8">one-time</div>
               <ul className="text-left space-y-3 mb-8">
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <i className="fas fa-check text-[#f59e0b]"></i>
                   <span>50+ pages</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <i className="fas fa-check text-[#f59e0b]"></i>
                   <span>Fully custom</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <i className="fas fa-check text-[#f59e0b]"></i>
                   <span>Advanced features</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <i className="fas fa-check text-[#f59e0b]"></i>
                   <span>Integrations</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <i className="fas fa-check text-[#f59e0b]"></i>
                   <span>6 months support</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <i className="fas fa-check text-[#f59e0b]"></i>
                   <span>Dedicated manager</span>
                 </li>
               </ul>
@@ -520,7 +538,7 @@ export default function CustomWebDesignPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Lead Form Section */}
       <section className="py-24 px-8">
@@ -588,7 +606,7 @@ export default function CustomWebDesignPage() {
                 >
                   Get Free Quote
                 </button>
-                <p className="mt-4 text-sm opacity-80">💬 We'll respond within 24 hours</p>
+                <p className="mt-4 text-sm opacity-80"><i className="fas fa-comment-dots"></i> We'll respond within 24 hours</p>
               </div>
             </form>
           </div>

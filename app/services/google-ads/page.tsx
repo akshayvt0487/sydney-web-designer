@@ -471,10 +471,10 @@ export default function GoogleAdsPage() {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="container">
           {/* Setup Fees Information */}
-          <div className="bg-orange-50 border-4 border-[#f59e0b] rounded-2xl p-12 mb-12 shadow-xl">
+          {/* <div className="bg-orange-50 border-4 border-[#f59e0b] rounded-2xl p-12 mb-12 shadow-xl">
             <h3 className="text-4xl font-bold text-center text-[#1e293b] mb-4">
               <i className="fas fa-cog mr-3"></i>
               One-Time Setup Fee: $5,000 + GST
@@ -556,7 +556,7 @@ export default function GoogleAdsPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Lead Form Section */}
       <section className="py-20 bg-gray-50" id="lead-form">

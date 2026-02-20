@@ -37,32 +37,32 @@ export default function UIUXDesignPage() {
     {
       title: "User Research",
       description: "In-depth research to understand your users' needs, behaviors, and pain points.",
-      icon: "🔍",
+      icon: "fas fa-search",
     },
     {
       title: "Wireframing",
       description: "Low-fidelity wireframes to establish structure and flow before visual design.",
-      icon: "📐",
+      icon: "fas fa-drafting-compass",
     },
     {
       title: "Interface Design",
       description: "Beautiful, intuitive interfaces that are both aesthetically pleasing and functional.",
-      icon: "🎨",
+      icon: "fas fa-palette",
     },
     {
       title: "Prototyping",
       description: "Interactive prototypes to test and validate design decisions before development.",
-      icon: "🔧",
+      icon: "fas fa-wrench",
     },
     {
       title: "Usability Testing",
       description: "Real user testing to identify issues and optimize the user experience.",
-      icon: "👥",
+      icon: "fas fa-users",
     },
     {
       title: "Design Systems",
       description: "Comprehensive design systems for consistency across all touchpoints.",
-      icon: "📚",
+      icon: "fas fa-book",
     },
   ];
 
@@ -176,7 +176,7 @@ export default function UIUXDesignPage() {
           <div className="grid-3">
             {features.map((feature, index) => (
               <div key={index} className="card hover:shadow-card-hover transition-shadow">
-                <div className="text-4xl mb-4">{feature.icon}</div>
+                <div className="mb-4"><i className={`${feature.icon} text-4xl text-[#f59e0b]`}></i></div>
                 <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
               </div>
@@ -263,8 +263,7 @@ export default function UIUXDesignPage() {
         </div>
       </section>
 
-      {/* Pricing Section */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-4xl font-bold mb-4">UI/UX Design Pricing</h2>
@@ -348,7 +347,7 @@ export default function UIUXDesignPage() {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* FAQ Section */}
       <section className="py-20 bg-gray-50">

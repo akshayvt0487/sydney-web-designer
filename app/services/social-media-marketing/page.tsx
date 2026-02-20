@@ -309,7 +309,7 @@ export default function SocialMediaMarketingPage() {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-20 bg-gray-50">
+      {/* <section className="py-20 bg-gray-50">
         <div className="container">
           <div className="bg-white rounded-2xl shadow-lg p-10">
             <div className="text-center mb-12">
@@ -344,7 +344,7 @@ export default function SocialMediaMarketingPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Lead Form Section */}
       <section className="py-20" id="lead-form">

@@ -37,32 +37,32 @@ export default function WebsiteRedesignPage() {
     {
       title: "Modern Design",
       description: "Fresh, contemporary design that reflects current trends and best practices.",
-      icon: "✨",
+      icon: "fas fa-sparkles",
     },
     {
       title: "Improved UX",
       description: "Enhanced user experience with intuitive navigation and clear calls-to-action.",
-      icon: "🎯",
+      icon: "fas fa-bullseye",
     },
     {
       title: "Mobile Responsive",
       description: "Full responsive design optimized for all devices and screen sizes.",
-      icon: "📱",
+      icon: "fas fa-mobile-alt",
     },
     {
       title: "Faster Loading",
       description: "Performance optimization for faster page loads and better user engagement.",
-      icon: "⚡",
+      icon: "fas fa-bolt",
     },
     {
       title: "SEO Enhanced",
       description: "Updated technical SEO and on-page optimization for better rankings.",
-      icon: "🔍",
+      icon: "fas fa-search",
     },
     {
       title: "Content Migration",
       description: "Seamless migration of existing content with improvements and optimization.",
-      icon: "📋",
+      icon: "fas fa-clipboard-list",
     },
   ];
 
@@ -176,7 +176,7 @@ export default function WebsiteRedesignPage() {
           <div className="grid-3">
             {features.map((feature, index) => (
               <div key={index} className="card hover:shadow-card-hover transition-shadow">
-                <div className="text-4xl mb-4">{feature.icon}</div>
+                <div className="mb-4"><i className={`${feature.icon} text-4xl text-[#f59e0b]`}></i></div>
                 <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
               </div>
@@ -263,8 +263,7 @@ export default function WebsiteRedesignPage() {
         </div>
       </section>
 
-      {/* Pricing Section */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-4xl font-bold mb-4">Website Redesign Pricing</h2>
@@ -348,7 +347,7 @@ export default function WebsiteRedesignPage() {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* FAQ Section */}
       <section className="py-20 bg-gray-50">

@@ -55,19 +55,19 @@ export default function WordPressDevelopmentPage() {
           {/* Trust Badges */}
           <div className="flex flex-wrap justify-center gap-12 mt-12">
             <div className="text-center">
-              <div className="text-5xl mb-2">🏆</div>
+              <div className="mb-2"><i className="fas fa-trophy text-4xl text-[#f59e0b]"></i></div>
               <div className="text-sm opacity-90">13+ Years Experience</div>
             </div>
             <div className="text-center">
-              <div className="text-5xl mb-2">⭐</div>
+              <div className="mb-2"><i className="fas fa-star text-4xl text-[#f59e0b]"></i></div>
               <div className="text-sm opacity-90">50+ 5-Star Reviews</div>
             </div>
             <div className="text-center">
-              <div className="text-5xl mb-2">✓</div>
+              <div className="mb-2"><i className="fas fa-check-circle text-4xl text-[#f59e0b]"></i></div>
               <div className="text-sm opacity-90">Professional Service</div>
             </div>
             <div className="text-center">
-              <div className="text-5xl mb-2">📊</div>
+              <div className="mb-2"><i className="fas fa-chart-bar text-4xl text-[#f59e0b]"></i></div>
               <div className="text-sm opacity-90">Proven Results</div>
             </div>
           </div>
@@ -113,144 +113,144 @@ export default function WordPressDevelopmentPage() {
 
           <div className="grid md:grid-cols-3 gap-12 mt-16">
             <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border-l-4 border-[#f59e0b]">
-              <div className="text-6xl mb-6">🎨</div>
+              <div className="mb-6"><i className="fas fa-palette text-5xl text-[#f59e0b]"></i></div>
               <h3 className="text-2xl font-bold text-[#1e293b] mb-3">Custom Themes</h3>
               <p className="text-[#64748b] mb-6">Unique WordPress themes</p>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>Custom design</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>Responsive</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>Customization</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>Optimized</span>
                 </li>
               </ul>
             </div>
 
             <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border-l-4 border-[#f59e0b]">
-              <div className="text-6xl mb-6">🔌</div>
+              <div className="mb-6"><i className="fas fa-plug text-5xl text-[#f59e0b]"></i></div>
               <h3 className="text-2xl font-bold text-[#1e293b] mb-3">Plugin Development</h3>
               <p className="text-[#64748b] mb-6">Custom functionality</p>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>Custom plugins</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>Integrations</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>API connections</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>Third-party</span>
                 </li>
               </ul>
             </div>
 
             <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border-l-4 border-[#f59e0b]">
-              <div className="text-6xl mb-6">🛒</div>
+              <div className="mb-6"><i className="fas fa-shopping-cart text-5xl text-[#f59e0b]"></i></div>
               <h3 className="text-2xl font-bold text-[#1e293b] mb-3">WooCommerce</h3>
               <p className="text-[#64748b] mb-6">E-commerce solutions</p>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>Product catalogs</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>Payment gateways</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>Shipping</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>Inventory</span>
                 </li>
               </ul>
             </div>
 
             <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border-l-4 border-[#f59e0b]">
-              <div className="text-6xl mb-6">⚡</div>
+              <div className="mb-6"><i className="fas fa-bolt text-5xl text-[#f59e0b]"></i></div>
               <h3 className="text-2xl font-bold text-[#1e293b] mb-3">Performance</h3>
               <p className="text-[#64748b] mb-6">Fast WordPress sites</p>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>Caching</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>Image optimization</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>Database</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>CDN</span>
                 </li>
               </ul>
             </div>
 
             <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border-l-4 border-[#f59e0b]">
-              <div className="text-6xl mb-6">🔒</div>
+              <div className="mb-6"><i className="fas fa-lock text-5xl text-[#f59e0b]"></i></div>
               <h3 className="text-2xl font-bold text-[#1e293b] mb-3">Security</h3>
               <p className="text-[#64748b] mb-6">Enterprise security</p>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>Security audits</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>Malware protection</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>SSL</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>Backups</span>
                 </li>
               </ul>
             </div>
 
             <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border-l-4 border-[#f59e0b]">
-              <div className="text-6xl mb-6">🔧</div>
+              <div className="mb-6"><i className="fas fa-wrench text-5xl text-[#f59e0b]"></i></div>
               <h3 className="text-2xl font-bold text-[#1e293b] mb-3">Maintenance</h3>
               <p className="text-[#64748b] mb-6">Ongoing support</p>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>Core updates</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>Plugin updates</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>Security monitoring</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold text-xl">✓</span>
+                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
                   <span>Performance</span>
                 </li>
               </ul>
@@ -373,7 +373,13 @@ export default function WordPressDevelopmentPage() {
 
           <div className="grid md:grid-cols-3 gap-12">
             <div className="bg-white p-12 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border-t-4 border-[#f59e0b]">
-              <div className="text-[#f59e0b] text-2xl mb-6">⭐⭐⭐⭐⭐</div>
+              <div className="text-[#f59e0b] text-2xl mb-6">
+                <i className="fas fa-star"></i>
+                <i className="fas fa-star"></i>
+                <i className="fas fa-star"></i>
+                <i className="fas fa-star"></i>
+                <i className="fas fa-star"></i>
+              </div>
               <p className="text-[#64748b] italic text-lg leading-relaxed mb-8">
                 "Professional, responsive, and delivered exactly what we needed. The results have been fantastic and we've seen significant improvements."
               </p>
@@ -382,7 +388,13 @@ export default function WordPressDevelopmentPage() {
             </div>
 
             <div className="bg-white p-12 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border-t-4 border-[#f59e0b]">
-              <div className="text-[#f59e0b] text-2xl mb-6">⭐⭐⭐⭐⭐</div>
+              <div className="text-[#f59e0b] text-2xl mb-6">
+                <i className="fas fa-star"></i>
+                <i className="fas fa-star"></i>
+                <i className="fas fa-star"></i>
+                <i className="fas fa-star"></i>
+                <i className="fas fa-star"></i>
+              </div>
               <p className="text-[#64748b] italic text-lg leading-relaxed mb-8">
                 "The team at Sydney Web Designer took the time to understand our business. Their expertise and transparent approach made the entire process smooth."
               </p>
@@ -391,7 +403,13 @@ export default function WordPressDevelopmentPage() {
             </div>
 
             <div className="bg-white p-12 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border-t-4 border-[#f59e0b]">
-              <div className="text-[#f59e0b] text-2xl mb-6">⭐⭐⭐⭐⭐</div>
+              <div className="text-[#f59e0b] text-2xl mb-6">
+                <i className="fas fa-star"></i>
+                <i className="fas fa-star"></i>
+                <i className="fas fa-star"></i>
+                <i className="fas fa-star"></i>
+                <i className="fas fa-star"></i>
+              </div>
               <p className="text-[#64748b] italic text-lg leading-relaxed mb-8">
                 "Highly recommend Sydney Web Designer for their professionalism and quality of work. They exceeded our expectations in every way."
               </p>
@@ -403,7 +421,7 @@ export default function WordPressDevelopmentPage() {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-24 px-8 bg-[#f8fafc]">
+      {/* <section className="py-24 px-8 bg-[#f8fafc]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-5xl font-bold text-[#1e293b] mb-4">
@@ -421,23 +439,23 @@ export default function WordPressDevelopmentPage() {
               <div className="text-[#64748b] mb-8">one-time</div>
               <ul className="text-left space-y-3 mb-8">
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <i className="fas fa-check text-[#f59e0b]"></i>
                   <span>Custom theme</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <i className="fas fa-check text-[#f59e0b]"></i>
                   <span>Plugin setup</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <i className="fas fa-check text-[#f59e0b]"></i>
                   <span>Basic customization</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <i className="fas fa-check text-[#f59e0b]"></i>
                   <span>Security setup</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <i className="fas fa-check text-[#f59e0b]"></i>
                   <span>Training</span>
                 </li>
               </ul>
@@ -455,23 +473,23 @@ export default function WordPressDevelopmentPage() {
               <div className="text-[#64748b] mb-8">one-time</div>
               <ul className="text-left space-y-3 mb-8">
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <i className="fas fa-check text-[#f59e0b]"></i>
                   <span>Advanced theme</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <i className="fas fa-check text-[#f59e0b]"></i>
                   <span>Custom plugins</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <i className="fas fa-check text-[#f59e0b]"></i>
                   <span>WooCommerce</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <i className="fas fa-check text-[#f59e0b]"></i>
                   <span>Performance optimization</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <i className="fas fa-check text-[#f59e0b]"></i>
                   <span>3 months support</span>
                 </li>
               </ul>
@@ -486,23 +504,23 @@ export default function WordPressDevelopmentPage() {
               <div className="text-[#64748b] mb-8">one-time</div>
               <ul className="text-left space-y-3 mb-8">
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <i className="fas fa-check text-[#f59e0b]"></i>
                   <span>Fully custom build</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <i className="fas fa-check text-[#f59e0b]"></i>
                   <span>Complex features</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <i className="fas fa-check text-[#f59e0b]"></i>
                   <span>Integrations</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <i className="fas fa-check text-[#f59e0b]"></i>
                   <span>Enterprise security</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#f59e0b] font-bold">✓</span>
+                  <i className="fas fa-check text-[#f59e0b]"></i>
                   <span>6 months support</span>
                 </li>
               </ul>
@@ -512,7 +530,7 @@ export default function WordPressDevelopmentPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Lead Form Section */}
       <section className="py-24 px-8">
@@ -580,7 +598,7 @@ export default function WordPressDevelopmentPage() {
                 >
                   Start WordPress Project
                 </button>
-                <p className="mt-4 text-sm opacity-80">💬 We'll respond within 24 hours</p>
+                <p className="mt-4 text-sm opacity-80"><i className="fas fa-comment-dots"></i> We'll respond within 24 hours</p>
               </div>
             </form>
           </div>

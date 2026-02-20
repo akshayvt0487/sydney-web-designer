@@ -18,8 +18,8 @@ export default function ServiceCard({
   return (
     <div className="card group hover:border-primary-orange hover:border-2 transition-all h-full flex flex-col">
       {/* Icon */}
-      <div className="text-6xl mb-4 bg-gradient-orange rounded-full w-20 h-20 flex items-center justify-center">
-        {icon}
+      <div className="mb-4 bg-gradient-orange rounded-full w-20 h-20 flex items-center justify-center">
+        <i className={`fas ${icon} text-4xl text-white`}></i>
       </div>
 
       {/* Title */}

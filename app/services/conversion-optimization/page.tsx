@@ -28,12 +28,12 @@ export default function ConversionOptimizationPage() {
 
   const stats = [{ label: "Websites Optimized", number: "60+" }, { label: "Tests Conducted", number: "400+" }, { label: "Avg. Conversion Lift", number: "127%" }, { label: "Revenue Generated", number: "$5M+" }];
   const features = [
-    { title: "Conversion Audit", description: "Comprehensive analysis identifying friction points and opportunities.", icon: "🔍" },
-    { title: "A/B Testing", description: "Scientific testing of design, copy, and layout variations.", icon: "🧪" },
-    { title: "User Behavior Analysis", description: "Heatmaps, session recordings, and analytics to understand user behavior.", icon: "📊" },
-    { title: "Funnel Optimization", description: "Optimize each step of your conversion funnel to reduce drop-off.", icon: "🎯" },
-    { title: "Landing Page Optimization", description: "Optimize landing pages for maximum conversion from paid traffic.", icon: "📄" },
-    { title: "Form Optimization", description: "Improve form completion rates and reduce abandonment.", icon: "📝" },
+    { title: "Conversion Audit", description: "Comprehensive analysis identifying friction points and opportunities.", icon: "fas fa-search" },
+    { title: "A/B Testing", description: "Scientific testing of design, copy, and layout variations.", icon: "fas fa-flask" },
+    { title: "User Behavior Analysis", description: "Heatmaps, session recordings, and analytics to understand user behavior.", icon: "fas fa-chart-bar" },
+    { title: "Funnel Optimization", description: "Optimize each step of your conversion funnel to reduce drop-off.", icon: "fas fa-bullseye" },
+    { title: "Landing Page Optimization", description: "Optimize landing pages for maximum conversion from paid traffic.", icon: "fas fa-file-alt" },
+    { title: "Form Optimization", description: "Improve form completion rates and reduce abandonment.", icon: "fas fa-edit" },
   ];
   const process = [
     { step: 1, title: "Data Collection", description: "Install tracking, gather data, and analyze current conversion performance." },
@@ -80,7 +80,7 @@ export default function ConversionOptimizationPage() {
             <h2 className="text-4xl font-bold mb-4">Complete Conversion Optimization Services</h2>
             <p className="text-xl text-gray-600">Everything you need to turn more visitors into customers.</p>
           </div>
-          <div className="grid-3">{features.map((feature, index) => (<div key={index} className="card hover:shadow-card-hover transition-shadow"><div className="text-4xl mb-4">{feature.icon}</div><h3 className="text-xl font-bold mb-3">{feature.title}</h3><p className="text-gray-600">{feature.description}</p></div>))}</div>
+          <div className="grid-3">{features.map((feature, index) => (<div key={index} className="card hover:shadow-card-hover transition-shadow"><div className="mb-4"><i className={`${feature.icon} text-4xl text-[#f59e0b]`}></i></div><h3 className="text-xl font-bold mb-3">{feature.title}</h3><p className="text-gray-600">{feature.description}</p></div>))}</div>
         </div>
       </section>
       <section className="py-20 bg-gray-50">
@@ -103,7 +103,7 @@ export default function ConversionOptimizationPage() {
           <div className="text-center mt-12"><Link href="/testimonials" className="btn btn-primary">Read More Reviews</Link></div>
         </div>
       </section>
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-4xl font-bold mb-4">Conversion Optimization Pricing</h2>
@@ -130,7 +130,7 @@ export default function ConversionOptimizationPage() {
             <p className="text-center text-gray-600 mt-6">Need one-time audit only? <button data-popup="contact" className="text-primary-orange font-semibold hover:underline">Contact us for one-time CRO audit pricing</button></p>
           </div>
         </div>
-      </section>
+      </section> */}
       <section className="py-20 bg-gray-50">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">

@@ -37,32 +37,32 @@ export default function SEOServicesPage() {
     {
       title: "Technical SEO",
       description: "Optimize your website's technical foundation for better crawling and indexing.",
-      icon: "⚙️",
+      icon: "fas fa-cog",
     },
     {
       title: "Keyword Research",
       description: "Target the right keywords that your customers are actually searching for.",
-      icon: "🔍",
+      icon: "fas fa-search",
     },
     {
       title: "On-Page SEO",
       description: "Optimize every page with strategic content, meta tags, and internal linking.",
-      icon: "📄",
+      icon: "fas fa-file-alt",
     },
     {
       title: "Link Building",
       description: "Build high-quality backlinks that boost your domain authority and rankings.",
-      icon: "🔗",
+      icon: "fas fa-link",
     },
     {
       title: "Local SEO",
       description: "Dominate local search results and Google Maps for your service area.",
-      icon: "📍",
+      icon: "fas fa-map-marker-alt",
     },
     {
       title: "SEO Reporting",
       description: "Track your rankings, traffic, and ROI with detailed monthly reports.",
-      icon: "📊",
+      icon: "fas fa-chart-bar",
     },
   ];
 
@@ -177,7 +177,7 @@ export default function SEOServicesPage() {
           <div className="grid-3">
             {features.map((feature, index) => (
               <div key={index} className="card hover:shadow-card-hover transition-shadow">
-                <div className="text-4xl mb-4">{feature.icon}</div>
+                <div className="mb-4"><i className={`${feature.icon} text-4xl text-[#f59e0b]`}></i></div>
                 <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
               </div>
@@ -265,7 +265,7 @@ export default function SEOServicesPage() {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-4xl font-bold mb-4">SEO Pricing</h2>
@@ -349,7 +349,7 @@ export default function SEOServicesPage() {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* FAQ Section */}
       <section className="py-20 bg-gray-50">

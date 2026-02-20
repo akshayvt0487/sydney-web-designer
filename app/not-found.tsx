@@ -2,11 +2,11 @@ import Link from "next/link";
 
 export default function NotFound() {
   const creativeMessages = [
-    "Even the best websites sometimes get lost in cyberspace! 🚀",
-    "This page took an unplanned vacation... but we haven&apos;t! 🏖️",
-    "404: Page not found, but your success story is just around the corner! 💡",
-    "Lost in the digital wilderness? Let&apos;s find your way back! 🧭",
-    "This page went missing, but your digital dreams didn&apos;t! 🎯",
+    "Even the best websites sometimes get lost in cyberspace!",
+    "This page took an unplanned vacation... but we haven't!",
+    "404: Page not found, but your success story is just around the corner!",
+    "Lost in the digital wilderness? Let's find your way back!",
+    "This page went missing, but your digital dreams didn't!",
   ];
 
   const randomMessage = creativeMessages[Math.floor(Math.random() * creativeMessages.length)];

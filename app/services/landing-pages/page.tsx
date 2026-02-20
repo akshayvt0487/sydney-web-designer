@@ -37,32 +37,32 @@ export default function LandingPagesPage() {
     {
       title: "Conversion Focused",
       description: "Strategic design elements that guide visitors toward taking action and converting.",
-      icon: "🎯",
+      icon: "fas fa-bullseye",
     },
     {
       title: "Clear Messaging",
       description: "Compelling headlines and copy that communicate value propositions instantly.",
-      icon: "💬",
+      icon: "fas fa-comment-dots",
     },
     {
       title: "Strong CTAs",
       description: "Prominent, action-oriented calls-to-action that drive clicks and submissions.",
-      icon: "👆",
+      icon: "fas fa-hand-pointer",
     },
     {
       title: "Fast Loading",
       description: "Optimized for speed to reduce bounce rates and maximize conversions.",
-      icon: "⚡",
+      icon: "fas fa-bolt",
     },
     {
       title: "Mobile Optimized",
       description: "Perfect display and functionality on all mobile devices for maximum reach.",
-      icon: "📱",
+      icon: "fas fa-mobile-alt",
     },
     {
       title: "A/B Testing Ready",
       description: "Built for easy testing and optimization to continually improve conversion rates.",
-      icon: "📊",
+      icon: "fas fa-chart-bar",
     },
   ];
 
@@ -176,7 +176,7 @@ export default function LandingPagesPage() {
           <div className="grid-3">
             {features.map((feature, index) => (
               <div key={index} className="card hover:shadow-card-hover transition-shadow">
-                <div className="text-4xl mb-4">{feature.icon}</div>
+                <div className="mb-4"><i className={`${feature.icon} text-4xl text-[#f59e0b]`}></i></div>
                 <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
               </div>
@@ -263,8 +263,7 @@ export default function LandingPagesPage() {
         </div>
       </section>
 
-      {/* Pricing Section */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-4xl font-bold mb-4">Landing Page Pricing</h2>
@@ -348,7 +347,7 @@ export default function LandingPagesPage() {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* FAQ Section */}
       <section className="py-20 bg-gray-50">

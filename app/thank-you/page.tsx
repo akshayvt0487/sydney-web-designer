@@ -57,11 +57,11 @@ export default function ThankYouPage({ searchParams }: ThankYouPageProps) {
 
   const content = getThankYouContent(formType);
   const creativeLines = [
-    "While you wait, explore our portfolio to get inspired! 🚀",
-    "Your success is our mission. We can&apos;t wait to help you! 🎯",
-    "Great things are coming your way! ✨",
-    "Let&apos;s build something amazing together! 💡",
-    "Your digital transformation starts now! 🌟",
+    "While you wait, explore our portfolio to get inspired!",
+    "Your success is our mission. We can't wait to help you!",
+    "Great things are coming your way!",
+    "Let's build something amazing together!",
+    "Your digital transformation starts now!",
   ];
 
   const randomLine = creativeLines[Math.floor(Math.random() * creativeLines.length)];

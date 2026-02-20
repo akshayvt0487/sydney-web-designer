@@ -27,7 +27,8 @@
       "Bash(do echo \"=== $project ===\")",
       "Bash(dir:*)",
       "Bash(git push)",
-      "Bash(npm uninstall:*)"
+      "Bash(npm uninstall:*)",
+      "Bash(npx next lint)"
     ]
   }
 }

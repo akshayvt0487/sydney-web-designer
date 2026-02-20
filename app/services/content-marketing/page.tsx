@@ -28,12 +28,12 @@ export default function ContentMarketingPage() {
 
   const stats = [{ label: "Content Pieces", number: "1200+" }, { label: "Years Experience", number: "13+" }, { label: "Avg. Traffic Increase", number: "320%" }, { label: "Client Retention", number: "92%" }];
   const features = [
-    { title: "Blog Writing", description: "SEO-optimized blog posts that educate audience and drive organic traffic.", icon: "✍️" },
-    { title: "Content Strategy", description: "Comprehensive strategy aligned with business goals and customer journey.", icon: "📋" },
-    { title: "Video Content", description: "Engaging video content for social media, YouTube, and website.", icon: "🎥" },
-    { title: "Ebooks & Guides", description: "In-depth resources that establish authority and generate leads.", icon: "📚" },
-    { title: "Case Studies", description: "Compelling success stories that demonstrate your value to prospects.", icon: "📊" },
-    { title: "Email Newsletters", description: "Regular newsletters that keep your audience engaged and informed.", icon: "📧" },
+    { title: "Blog Writing", description: "SEO-optimized blog posts that educate audience and drive organic traffic.", icon: "fas fa-pen" },
+    { title: "Content Strategy", description: "Comprehensive strategy aligned with business goals and customer journey.", icon: "fas fa-clipboard-list" },
+    { title: "Video Content", description: "Engaging video content for social media, YouTube, and website.", icon: "fas fa-video" },
+    { title: "Ebooks & Guides", description: "In-depth resources that establish authority and generate leads.", icon: "fas fa-book" },
+    { title: "Case Studies", description: "Compelling success stories that demonstrate your value to prospects.", icon: "fas fa-chart-bar" },
+    { title: "Email Newsletters", description: "Regular newsletters that keep your audience engaged and informed.", icon: "fas fa-envelope" },
   ];
   const process = [
     { step: 1, title: "Content Audit", description: "Analyze existing content and identify gaps and opportunities." },
@@ -80,7 +80,7 @@ export default function ContentMarketingPage() {
             <h2 className="text-4xl font-bold mb-4">Complete Content Marketing Services</h2>
             <p className="text-xl text-gray-600">Every content type you need to attract and engage customers.</p>
           </div>
-          <div className="grid-3">{features.map((feature, index) => (<div key={index} className="card hover:shadow-card-hover transition-shadow"><div className="text-4xl mb-4">{feature.icon}</div><h3 className="text-xl font-bold mb-3">{feature.title}</h3><p className="text-gray-600">{feature.description}</p></div>))}</div>
+          <div className="grid-3">{features.map((feature, index) => (<div key={index} className="card hover:shadow-card-hover transition-shadow"><div className="mb-4"><i className={`${feature.icon} text-4xl text-[#f59e0b]`}></i></div><h3 className="text-xl font-bold mb-3">{feature.title}</h3><p className="text-gray-600">{feature.description}</p></div>))}</div>
         </div>
       </section>
       <section className="py-20 bg-gray-50">
@@ -103,7 +103,7 @@ export default function ContentMarketingPage() {
           <div className="text-center mt-12"><Link href="/testimonials" className="btn btn-primary">Read More Reviews</Link></div>
         </div>
       </section>
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-4xl font-bold mb-4">Content Marketing Pricing</h2>
@@ -130,7 +130,7 @@ export default function ContentMarketingPage() {
             <p className="text-center text-gray-600 mt-6">Need video or premium content? <button data-popup="contact" className="text-primary-orange font-semibold hover:underline">Contact us for custom packages</button></p>
           </div>
         </div>
-      </section>
+      </section> */}
       <section className="py-20 bg-gray-50">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">

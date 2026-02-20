@@ -37,32 +37,32 @@ export default function LogoDesignPage() {
     {
       title: "Custom Design",
       description: "Unique logos created specifically for your brand, never from templates.",
-      icon: "🎨",
+      icon: "fas fa-palette",
     },
     {
       title: "Multiple Concepts",
       description: "Receive 3-5 initial concepts to choose from and refine your favorite.",
-      icon: "💡",
+      icon: "fas fa-lightbulb",
     },
     {
       title: "Unlimited Revisions",
       description: "Refine your chosen concept with unlimited revisions until perfect.",
-      icon: "🔄",
+      icon: "fas fa-sync-alt",
     },
     {
       title: "File Formats",
       description: "Receive all file formats you need (AI, EPS, PNG, JPG, SVG) for any use.",
-      icon: "📁",
+      icon: "fas fa-folder-open",
     },
     {
       title: "Style Guide",
       description: "Complete brand guidelines showing correct logo usage and color codes.",
-      icon: "📋",
+      icon: "fas fa-clipboard-list",
     },
     {
       title: "Trademark Support",
       description: "Guidance on trademark registration to protect your logo investment.",
-      icon: "🔒",
+      icon: "fas fa-lock",
     },
   ];
 
@@ -176,7 +176,7 @@ export default function LogoDesignPage() {
           <div className="grid-3">
             {features.map((feature, index) => (
               <div key={index} className="card hover:shadow-card-hover transition-shadow">
-                <div className="text-4xl mb-4">{feature.icon}</div>
+                <div className="mb-4"><i className={`${feature.icon} text-4xl text-[#f59e0b]`}></i></div>
                 <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
               </div>
@@ -263,8 +263,7 @@ export default function LogoDesignPage() {
         </div>
       </section>
 
-      {/* Pricing Section */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-4xl font-bold mb-4">Logo Design Pricing</h2>
@@ -348,7 +347,7 @@ export default function LogoDesignPage() {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* FAQ Section */}
       <section className="py-20 bg-gray-50">

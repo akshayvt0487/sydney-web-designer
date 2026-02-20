@@ -37,32 +37,32 @@ export default function BrandStrategyPage() {
     {
       title: "Market Research",
       description: "In-depth analysis of your market, competitors, and target audience.",
-      icon: "🔍",
+      icon: "fas fa-search",
     },
     {
       title: "Brand Positioning",
       description: "Define your unique position in the market and differentiation strategy.",
-      icon: "🎯",
+      icon: "fas fa-bullseye",
     },
     {
       title: "Value Proposition",
       description: "Articulate clear, compelling reasons why customers should choose you.",
-      icon: "💡",
+      icon: "fas fa-lightbulb",
     },
     {
       title: "Brand Messaging",
       description: "Develop messaging framework including taglines, key messages, and tone of voice.",
-      icon: "💬",
+      icon: "fas fa-comment-dots",
     },
     {
       title: "Brand Architecture",
       description: "Structure your brand portfolio and sub-brands for maximum clarity and impact.",
-      icon: "🏗️",
+      icon: "fas fa-building",
     },
     {
       title: "Implementation Roadmap",
       description: "Action plan for rolling out your brand strategy across all touchpoints.",
-      icon: "🗺️",
+      icon: "fas fa-map-marked-alt",
     },
   ];
 
@@ -173,7 +173,7 @@ export default function BrandStrategyPage() {
           <div className="grid-3">
             {features.map((feature, index) => (
               <div key={index} className="card hover:shadow-card-hover transition-shadow">
-                <div className="text-4xl mb-4">{feature.icon}</div>
+                <div className="mb-4"><i className={`${feature.icon} text-4xl text-[#f59e0b]`}></i></div>
                 <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
               </div>
@@ -257,7 +257,7 @@ export default function BrandStrategyPage() {
         </div>
       </section>
 
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-4xl font-bold mb-4">Brand Strategy Pricing</h2>
@@ -341,7 +341,7 @@ export default function BrandStrategyPage() {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="py-20 bg-gray-50">
         <div className="container">

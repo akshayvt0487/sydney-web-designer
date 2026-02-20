@@ -28,12 +28,12 @@ export default function MarketingMaterialsPage() {
 
   const stats = [{ label: "Materials Designed", number: "800+" }, { label: "Years Experience", number: "13+" }, { label: "Happy Clients", number: "250+" }, { label: "Print Projects", number: "600+" }];
   const features = [
-    { title: "Brochures", description: "Multi-page brochures that showcase your products and services professionally.", icon: "📘" },
-    { title: "Flyers", description: "Eye-catching single-page flyers for promotions, events, and announcements.", icon: "📄" },
-    { title: "Catalogs", description: "Product catalogs that make browsing and ordering easy for customers.", icon: "📚" },
-    { title: "Posters", description: "Large format posters that grab attention and communicate your message.", icon: "🖼️" },
-    { title: "Banners", description: "Pull-up banners and signage for events, trade shows, and retail spaces.", icon: "🪧" },
-    { title: "Direct Mail", description: "Postcards and mailers designed to generate response and drive action.", icon: "📬" },
+    { title: "Brochures", description: "Multi-page brochures that showcase your products and services professionally.", icon: "fas fa-book" },
+    { title: "Flyers", description: "Eye-catching single-page flyers for promotions, events, and announcements.", icon: "fas fa-file-alt" },
+    { title: "Catalogs", description: "Product catalogs that make browsing and ordering easy for customers.", icon: "fas fa-book-open" },
+    { title: "Posters", description: "Large format posters that grab attention and communicate your message.", icon: "fas fa-image" },
+    { title: "Banners", description: "Pull-up banners and signage for events, trade shows, and retail spaces.", icon: "fas fa-sign" },
+    { title: "Direct Mail", description: "Postcards and mailers designed to generate response and drive action.", icon: "fas fa-mailbox" },
   ];
   const process = [
     { step: 1, title: "Content & Goals", description: "Understand your message, audience, and how materials will be distributed." },
@@ -80,7 +80,7 @@ export default function MarketingMaterialsPage() {
             <h2 className="text-4xl font-bold mb-4">Marketing Materials We Design</h2>
             <p className="text-xl text-gray-600">From brochures to banners, we design it all.</p>
           </div>
-          <div className="grid-3">{features.map((feature, index) => (<div key={index} className="card hover:shadow-card-hover transition-shadow"><div className="text-4xl mb-4">{feature.icon}</div><h3 className="text-xl font-bold mb-3">{feature.title}</h3><p className="text-gray-600">{feature.description}</p></div>))}</div>
+          <div className="grid-3">{features.map((feature, index) => (<div key={index} className="card hover:shadow-card-hover transition-shadow"><div className="mb-4"><i className={`${feature.icon} text-4xl text-[#f59e0b]`}></i></div><h3 className="text-xl font-bold mb-3">{feature.title}</h3><p className="text-gray-600">{feature.description}</p></div>))}</div>
         </div>
       </section>
       <section className="py-20 bg-gray-50">
@@ -103,7 +103,7 @@ export default function MarketingMaterialsPage() {
           <div className="text-center mt-12"><Link href="/testimonials" className="btn btn-primary">Read More Reviews</Link></div>
         </div>
       </section>
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-4xl font-bold mb-4">Marketing Materials Pricing</h2>
@@ -128,7 +128,7 @@ export default function MarketingMaterialsPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       <section className="py-20 bg-gray-50">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">

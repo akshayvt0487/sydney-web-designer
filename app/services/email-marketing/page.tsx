@@ -28,12 +28,12 @@ export default function EmailMarketingPage() {
 
   const stats = [{ label: "Campaigns Managed", number: "200+" }, { label: "Avg. Open Rate", number: "32%" }, { label: "Avg. Click Rate", number: "4.5%" }, { label: "Revenue Generated", number: "$2M+" }];
   const features = [
-    { title: "Campaign Strategy", description: "Strategic planning for welcome series, nurture campaigns, and promotions.", icon: "📋" },
-    { title: "Email Design", description: "Mobile-responsive templates that align with your brand and drive clicks.", icon: "🎨" },
-    { title: "Copywriting", description: "Compelling email copy that engages readers and drives conversions.", icon: "✍️" },
-    { title: "List Management", description: "Segmentation, list growth strategies, and data hygiene best practices.", icon: "📊" },
-    { title: "Automation", description: "Automated email sequences triggered by user behavior and lifecycle stages.", icon: "⚙️" },
-    { title: "A/B Testing", description: "Test subject lines, content, and CTAs to optimize campaign performance.", icon: "🧪" },
+    { title: "Campaign Strategy", description: "Strategic planning for welcome series, nurture campaigns, and promotions.", icon: "fas fa-clipboard-list" },
+    { title: "Email Design", description: "Mobile-responsive templates that align with your brand and drive clicks.", icon: "fas fa-palette" },
+    { title: "Copywriting", description: "Compelling email copy that engages readers and drives conversions.", icon: "fas fa-pen" },
+    { title: "List Management", description: "Segmentation, list growth strategies, and data hygiene best practices.", icon: "fas fa-chart-bar" },
+    { title: "Automation", description: "Automated email sequences triggered by user behavior and lifecycle stages.", icon: "fas fa-cog" },
+    { title: "A/B Testing", description: "Test subject lines, content, and CTAs to optimize campaign performance.", icon: "fas fa-flask" },
   ];
   const process = [
     { step: 1, title: "Strategy & Setup", description: "Define goals, audiences, and set up email platform with proper tracking." },
@@ -80,7 +80,7 @@ export default function EmailMarketingPage() {
             <h2 className="text-4xl font-bold mb-4">Complete Email Marketing Services</h2>
             <p className="text-xl text-gray-600">Everything you need for successful email campaigns.</p>
           </div>
-          <div className="grid-3">{features.map((feature, index) => (<div key={index} className="card hover:shadow-card-hover transition-shadow"><div className="text-4xl mb-4">{feature.icon}</div><h3 className="text-xl font-bold mb-3">{feature.title}</h3><p className="text-gray-600">{feature.description}</p></div>))}</div>
+          <div className="grid-3">{features.map((feature, index) => (<div key={index} className="card hover:shadow-card-hover transition-shadow"><div className="mb-4"><i className={`${feature.icon} text-4xl text-[#f59e0b]`}></i></div><h3 className="text-xl font-bold mb-3">{feature.title}</h3><p className="text-gray-600">{feature.description}</p></div>))}</div>
         </div>
       </section>
       <section className="py-20 bg-gray-50">
@@ -103,7 +103,7 @@ export default function EmailMarketingPage() {
           <div className="text-center mt-12"><Link href="/testimonials" className="btn btn-primary">Read More Reviews</Link></div>
         </div>
       </section>
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-4xl font-bold mb-4">Email Marketing Pricing</h2>
@@ -130,7 +130,7 @@ export default function EmailMarketingPage() {
             <p className="text-center text-gray-600 mt-6">Need automation setup? <button data-popup="contact" className="text-primary-orange font-semibold hover:underline">Contact us for custom packages</button></p>
           </div>
         </div>
-      </section>
+      </section> */}
       <section className="py-20 bg-gray-50">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">

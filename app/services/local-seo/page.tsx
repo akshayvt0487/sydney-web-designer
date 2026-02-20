@@ -28,12 +28,12 @@ export default function LocalSEOPage() {
 
   const stats = [{ label: "Local Rankings", number: "1,000+" }, { label: "Google Business Profiles", number: "80+" }, { label: "Avg. Call Increase", number: "285%" }, { label: "Client Satisfaction", number: "96%" }];
   const features = [
-    { title: "Google Business Profile", description: "Optimize and manage your Google Business Profile for maximum visibility.", icon: "📍" },
-    { title: "Local Citations", description: "Build consistent business listings across directories and review sites.", icon: "📝" },
-    { title: "Review Management", description: "Generate and manage customer reviews to boost local rankings.", icon: "⭐" },
-    { title: "Local Keywords", description: "Target location-specific keywords that local customers are searching.", icon: "🔍" },
-    { title: "Local Link Building", description: "Earn links from local businesses, organizations, and directories.", icon: "🔗" },
-    { title: "Map Pack Rankings", description: "Optimize to appear in Google's local 3-pack for relevant searches.", icon: "🗺️" },
+    { title: "Google Business Profile", description: "Optimize and manage your Google Business Profile for maximum visibility.", icon: "fas fa-map-marker-alt" },
+    { title: "Local Citations", description: "Build consistent business listings across directories and review sites.", icon: "fas fa-edit" },
+    { title: "Review Management", description: "Generate and manage customer reviews to boost local rankings.", icon: "fas fa-star" },
+    { title: "Local Keywords", description: "Target location-specific keywords that local customers are searching.", icon: "fas fa-search" },
+    { title: "Local Link Building", description: "Earn links from local businesses, organizations, and directories.", icon: "fas fa-link" },
+    { title: "Map Pack Rankings", description: "Optimize to appear in Google's local 3-pack for relevant searches.", icon: "fas fa-map-marked-alt" },
   ];
   const process = [
     { step: 1, title: "Local Audit", description: "Analyze current local presence, citations, reviews, and Google Business Profile." },
@@ -80,7 +80,7 @@ export default function LocalSEOPage() {
             <h2 className="text-4xl font-bold mb-4">Complete Local SEO Services</h2>
             <p className="text-xl text-gray-600">Everything you need to dominate local search results.</p>
           </div>
-          <div className="grid-3">{features.map((feature, index) => (<div key={index} className="card hover:shadow-card-hover transition-shadow"><div className="text-4xl mb-4">{feature.icon}</div><h3 className="text-xl font-bold mb-3">{feature.title}</h3><p className="text-gray-600">{feature.description}</p></div>))}</div>
+          <div className="grid-3">{features.map((feature, index) => (<div key={index} className="card hover:shadow-card-hover transition-shadow"><div className="mb-4"><i className={`${feature.icon} text-4xl text-[#f59e0b]`}></i></div><h3 className="text-xl font-bold mb-3">{feature.title}</h3><p className="text-gray-600">{feature.description}</p></div>))}</div>
         </div>
       </section>
       <section className="py-20 bg-gray-50">
@@ -103,7 +103,7 @@ export default function LocalSEOPage() {
           <div className="text-center mt-12"><Link href="/testimonials" className="btn btn-primary">Read More Reviews</Link></div>
         </div>
       </section>
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-4xl font-bold mb-4">Local SEO Pricing</h2>
@@ -130,7 +130,7 @@ export default function LocalSEOPage() {
             <p className="text-center text-gray-600 mt-6">Multiple locations? <button data-popup="contact" className="text-primary-orange font-semibold hover:underline">Contact us for multi-location pricing</button></p>
           </div>
         </div>
-      </section>
+      </section> */}
       <section className="py-20 bg-gray-50">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">
