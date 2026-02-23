@@ -30,8 +30,7 @@ export default function MegaMenu() {
             <div className="grid grid-cols-3 divide-x divide-gray-200">
             {/* Web Design Column */}
             <div className="p-6 bg-gray-50 transition-all">
-              <h3 className="text-lg font-bold text-primary-navy mb-4 flex items-center gap-2">
-                <span className="text-2xl"><i className="fas fa-palette"></i></span>
+              <h3 className="text-lg font-bold text-primary-navy mb-4">
                 Web Design
               </h3>
               <ul className="space-y-1">
@@ -41,7 +40,6 @@ export default function MegaMenu() {
                       href={`/services/${service.slug}`}
                       className="group flex items-center gap-3 p-2.5 rounded hover:bg-primary-orange hover:text-white transition-all"
                     >
-                      <i className={`fas ${service.icon} text-lg flex-shrink-0`} />
                       <span className="text-sm font-medium flex-1">{service.name}</span>
                       <svg className="w-4 h-4 flex-shrink-0 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -54,8 +52,7 @@ export default function MegaMenu() {
 
             {/* Branding Column */}
             <div className="p-6 bg-white transition-all">
-              <h3 className="text-lg font-bold text-primary-navy mb-4 flex items-center gap-2">
-                <span className="text-2xl"><i className="fas fa-bullseye"></i></span>
+              <h3 className="text-lg font-bold text-primary-navy mb-4">
                 Branding
               </h3>
               <ul className="space-y-1">
@@ -65,7 +62,6 @@ export default function MegaMenu() {
                       href={`/services/${service.slug}`}
                       className="group flex items-center gap-3 p-2.5 rounded hover:bg-primary-orange hover:text-white transition-all"
                     >
-                      <i className={`fas ${service.icon} text-lg flex-shrink-0`} />
                       <span className="text-sm font-medium flex-1">{service.name}</span>
                       <svg className="w-4 h-4 flex-shrink-0 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -78,8 +74,7 @@ export default function MegaMenu() {
 
             {/* Digital Marketing Column */}
             <div className="p-6 bg-gray-50 transition-all">
-              <h3 className="text-lg font-bold text-primary-navy mb-4 flex items-center gap-2">
-                <span className="text-2xl"><i className="fas fa-chart-line"></i></span>
+              <h3 className="text-lg font-bold text-primary-navy mb-4">
                 Digital Marketing
               </h3>
               <ul className="space-y-1">
@@ -89,7 +84,6 @@ export default function MegaMenu() {
                       href={`/services/${service.slug}`}
                       className="group flex items-center gap-3 p-2.5 rounded hover:bg-primary-orange hover:text-white transition-all"
                     >
-                      <i className={`fas ${service.icon} text-lg flex-shrink-0`} />
                       <span className="text-sm font-medium flex-1">{service.name}</span>
                       <svg className="w-4 h-4 flex-shrink-0 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

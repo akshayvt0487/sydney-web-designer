@@ -28,7 +28,8 @@
       "Bash(dir:*)",
       "Bash(git push)",
       "Bash(npm uninstall:*)",
-      "Bash(npx next lint)"
+      "Bash(npx next lint)",
+      "Bash(git push:*)"
     ]
   }
 }

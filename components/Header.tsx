@@ -63,6 +63,12 @@ export default function Header() {
               <Link href="/portfolio" className="text-primary-navy hover:text-primary-orange transition-colors font-medium">
                 Portfolio
               </Link>
+              <Link href="/web-design-plans" className="text-primary-navy hover:text-primary-orange transition-colors font-medium">
+                Web Design Plans
+              </Link>
+              <Link href="/growth-plans" className="text-primary-navy hover:text-primary-orange transition-colors font-medium">
+                Growth Plans
+              </Link>
             </nav>
 
             {/* CTA Buttons */}
@@ -109,6 +115,12 @@ export default function Header() {
                 </Link>
                 <Link href="/portfolio" className="text-primary-navy hover:text-primary-orange transition-colors py-2">
                   Portfolio
+                </Link>
+                <Link href="/web-design-plans" className="text-primary-navy hover:text-primary-orange transition-colors py-2">
+                  Web Design Plans
+                </Link>
+                <Link href="/growth-plans" className="text-primary-navy hover:text-primary-orange transition-colors py-2">
+                  Growth Plans
                 </Link>
                 <Link href="/about" className="text-primary-navy hover:text-primary-orange transition-colors py-2">
                   About Us
