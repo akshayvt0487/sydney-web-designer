@@ -57,7 +57,7 @@ export default function GrowthPlansPage() {
                   <h3 className="text-2xl font-bold mb-4 text-primary-navy">Website Care</h3>
                   {/* <div className="text-3xl font-bold text-primary-orange mb-2">$250/month</div> */}
                   {/* <p className="text-gray-600 mb-2">+ GST</p> */}
-                  <p className="text-sm text-gray-500 mb-2">Keep your website secure and updated</p>
+                  <p className="text-base text-gray-700 mb-2 font-medium">Keep your website secure and updated</p>
                 </div>
                 <div className="lg:w-2/3">
                   <div className="grid md:grid-cols-2 gap-3">
@@ -112,7 +112,7 @@ export default function GrowthPlansPage() {
                   <h3 className="text-2xl font-bold mb-4 text-primary-navy">Website Care & CRM</h3>
                   {/* <div className="text-3xl font-bold text-primary-orange mb-2">$500/month</div> */}
                   {/* <p className="text-gray-600 mb-2">+ GST</p> */}
-                  <p className="text-sm text-gray-500 mb-2">Website care + customer management</p>
+                  <p className="text-base text-gray-700 mb-2 font-medium">Website care + customer management</p>
                 </div>
                 <div className="lg:w-2/3">
                   <div className="grid md:grid-cols-2 gap-3">
@@ -170,7 +170,7 @@ export default function GrowthPlansPage() {
                   <h3 className="text-2xl font-bold mb-4 text-primary-navy">Paid Ads Management</h3>
                   {/* <div className="text-3xl font-bold text-primary-orange mb-2">$1,000/month</div> */}
                   {/* <p className="text-gray-600 mb-2">+ GST + Ad Spend</p> */}
-                  <p className="text-sm text-gray-500 mb-2">Google OR Facebook Ads management</p>
+                  <p className="text-base text-gray-700 mb-2 font-medium">Google OR Facebook Ads management</p>
                 </div>
                 <div className="lg:w-2/3">
                   <div className="grid md:grid-cols-2 gap-3">
@@ -237,7 +237,7 @@ export default function GrowthPlansPage() {
                   <h3 className="text-2xl font-bold mb-4 text-primary-navy">SEO Package</h3>
                   {/* <div className="text-3xl font-bold text-primary-orange mb-2">$3,000/month</div> */}
                   {/* <p className="text-gray-600 mb-2">+ GST</p> */}
-                  <p className="text-sm text-gray-500 mb-2">Complete SEO & content marketing</p>
+                  <p className="text-base text-gray-700 mb-2 font-medium">Complete SEO & content marketing</p>
                 </div>
                 <div className="lg:w-2/3">
                   <div className="grid md:grid-cols-2 gap-3">
@@ -307,7 +307,7 @@ export default function GrowthPlansPage() {
                   <h3 className="text-2xl font-bold mb-4 text-white">Complete Marketing</h3>
                   {/* <div className="text-3xl font-bold text-white mb-2">$5,000 - $10,000/month</div> */}
                   {/* <p className="text-gray-100 mb-2">+ GST + Ad Spend</p> */}
-                  <p className="text-sm text-gray-200 mb-2">Everything you need to dominate</p>
+                  <p className="text-base text-white mb-2 font-medium">Everything you need to dominate</p>
                 </div>
                 <div className="lg:w-2/3">
                   <div className="grid md:grid-cols-2 gap-3">

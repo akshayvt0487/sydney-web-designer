@@ -12,6 +12,52 @@ export interface PortfolioProject {
 }
 
 export const portfolioProjects: PortfolioProject[] = [
+  // Top Priority Companies - Australia's Leading Businesses
+  {
+    id: "six-brothers-removalist",
+    name: "Six Brothers Removalist",
+    industry: "Moving & Relocation",
+    description: "One of Australia's top removalist companies providing professional residential and commercial moving services across Sydney and NSW",
+    services: ["Web Design", "SEO", "Google Ads", "Branding"],
+    image: "/images/Sydney Web Designer Portfolio images/Six-Brothers-Removalist.png",
+    websiteUrl: "https://www.sixbrothersremovalist.com.au/",
+  },
+  {
+    id: "osan-ability",
+    name: "OSAN Ability",
+    industry: "NDIS Provider",
+    description: "Leading NDIS provider offering comprehensive disability support services including full-service digital marketing: branding, website, SEO, and advertising",
+    services: ["Branding", "Web Design", "Google Ads", "SEO", "Social Media"],
+    image: "/images/portfolio-carousel/osan-1.jpg",
+    images: [
+      "/images/portfolio-carousel/osan-1.jpg",
+      "/images/portfolio-carousel/osan-2.jpg",
+    ],
+    websiteUrl: "https://www.osanability.com.au/",
+  },
+  {
+    id: "jabbs-excavations",
+    name: "Jabbs Excavations",
+    industry: "Excavation & Earthworks",
+    description: "Premium excavation and earthworks company serving Sydney with professional demolition, site preparation, and civil construction services",
+    services: ["Web Design", "Branding", "SEO"],
+    image: "/images/Sydney Web Designer Portfolio images/Jabbs-Excavations.png",
+    websiteUrl: "http://jabbs.com.au/",
+  },
+  {
+    id: "advanced-tree-lopping",
+    name: "Advanced Tree Lopping",
+    industry: "Tree Services",
+    description: "Top tree care specialists in Sydney providing complete branding, web design, and arborist services for residential and commercial properties",
+    services: ["Branding", "Web Design", "SEO"],
+    image: "/images/portfolio-carousel/tree-1.png",
+    images: [
+      "/images/portfolio-carousel/tree-1.png",
+      "/images/portfolio-carousel/tree-2.png",
+    ],
+    websiteUrl: "https://advancedtreelopping.com.au",
+  },
+
   // New Portfolio Items - 2026 (Ordered as requested)
   {
     id: "adl99",
@@ -200,32 +246,6 @@ export const portfolioProjects: PortfolioProject[] = [
     image: "/images/portfolio-carousel/rmb-1.png",
     images: ["/images/portfolio-carousel/rmb-1.png"],
     websiteUrl: "https://builderssydney.com.au",
-  },
-  {
-    id: "advanced-tree-lopping",
-    name: "Advanced Tree Lopping",
-    industry: "Tree Services",
-    description: "Complete branding and web design for tree care specialists",
-    services: ["Branding", "Web Design"],
-    image: "/images/portfolio-carousel/tree-1.png",
-    images: [
-      "/images/portfolio-carousel/tree-1.png",
-      "/images/portfolio-carousel/tree-2.png",
-    ],
-    websiteUrl: "https://advancedtreelopping.com.au",
-  },
-  {
-    id: "osan-ability",
-    name: "OSAN Ability",
-    industry: "NDIS Provider",
-    description: "Full-service digital marketing including branding, website, SEO, and advertising",
-    services: ["Branding", "Web Design", "Google Ads", "SEO", "Social Media"],
-    image: "/images/portfolio-carousel/osan-1.jpg",
-    images: [
-      "/images/portfolio-carousel/osan-1.jpg",
-      "/images/portfolio-carousel/osan-2.jpg",
-    ],
-    websiteUrl: "https://osanability.com.au",
   },
   {
     id: "tente",
