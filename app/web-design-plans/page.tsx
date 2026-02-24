@@ -293,7 +293,11 @@ export default function WebDesignPlansPage() {
 
           <div className="grid-3">
             <div className="card text-center">
-              <div className="text-5xl mb-4">🎨</div>
+              <div className="mb-4">
+                <div className="w-20 h-20 bg-gradient-to-br from-[#f59e0b] to-[#fb923c] rounded-2xl flex items-center justify-center mx-auto">
+                  <i className="fas fa-palette text-4xl text-white"></i>
+                </div>
+              </div>
               <h3 className="text-xl font-bold mb-3">Professional Design</h3>
               <p className="text-gray-600">
                 Modern, clean designs that reflect your brand and engage your visitors.
@@ -301,7 +305,11 @@ export default function WebDesignPlansPage() {
             </div>
 
             <div className="card text-center">
-              <div className="text-5xl mb-4">📱</div>
+              <div className="mb-4">
+                <div className="w-20 h-20 bg-gradient-to-br from-[#f59e0b] to-[#fb923c] rounded-2xl flex items-center justify-center mx-auto">
+                  <i className="fas fa-mobile-alt text-4xl text-white"></i>
+                </div>
+              </div>
               <h3 className="text-xl font-bold mb-3">Mobile Responsive</h3>
               <p className="text-gray-600">
                 Perfectly optimized for all devices - smartphones, tablets, and desktops.
@@ -309,7 +317,11 @@ export default function WebDesignPlansPage() {
             </div>
 
             <div className="card text-center">
-              <div className="text-5xl mb-4">🔍</div>
+              <div className="mb-4">
+                <div className="w-20 h-20 bg-gradient-to-br from-[#f59e0b] to-[#fb923c] rounded-2xl flex items-center justify-center mx-auto">
+                  <i className="fas fa-search text-4xl text-white"></i>
+                </div>
+              </div>
               <h3 className="text-xl font-bold mb-3">SEO Optimized</h3>
               <p className="text-gray-600">
                 Built with search engine best practices to help you rank higher on Google.
@@ -317,7 +329,11 @@ export default function WebDesignPlansPage() {
             </div>
 
             <div className="card text-center">
-              <div className="text-5xl mb-4">⚡</div>
+              <div className="mb-4">
+                <div className="w-20 h-20 bg-gradient-to-br from-[#f59e0b] to-[#fb923c] rounded-2xl flex items-center justify-center mx-auto">
+                  <i className="fas fa-bolt text-4xl text-white"></i>
+                </div>
+              </div>
               <h3 className="text-xl font-bold mb-3">Fast Loading</h3>
               <p className="text-gray-600">
                 Optimized for speed to provide the best user experience and better SEO.
@@ -325,7 +341,11 @@ export default function WebDesignPlansPage() {
             </div>
 
             <div className="card text-center">
-              <div className="text-5xl mb-4">🔒</div>
+              <div className="mb-4">
+                <div className="w-20 h-20 bg-gradient-to-br from-[#f59e0b] to-[#fb923c] rounded-2xl flex items-center justify-center mx-auto">
+                  <i className="fas fa-lock text-4xl text-white"></i>
+                </div>
+              </div>
               <h3 className="text-xl font-bold mb-3">Secure & Safe</h3>
               <p className="text-gray-600">
                 SSL certificates, security updates, and best practices to keep your site secure.
@@ -333,7 +353,11 @@ export default function WebDesignPlansPage() {
             </div>
 
             <div className="card text-center">
-              <div className="text-5xl mb-4">💬</div>
+              <div className="mb-4">
+                <div className="w-20 h-20 bg-gradient-to-br from-[#f59e0b] to-[#fb923c] rounded-2xl flex items-center justify-center mx-auto">
+                  <i className="fas fa-headset text-4xl text-white"></i>
+                </div>
+              </div>
               <h3 className="text-xl font-bold mb-3">Ongoing Support</h3>
               <p className="text-gray-600">
                 Post-launch support included with every package. We&apos;re here to help.

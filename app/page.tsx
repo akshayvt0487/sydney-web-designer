@@ -108,7 +108,7 @@ export default function HomePage() {
               Our <span className="text-[#f59e0b]">Services</span>
             </h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              End-to-end digital solutions to elevate your brand and accelerate growth
+              We don&apos;t just build websites — we engineer digital ecosystems where psychology meets infrastructure, and design meets systems thinking
             </p>
           </div>
 
@@ -117,21 +117,21 @@ export default function HomePage() {
               {
                 icon: "fa-palette",
                 title: "Web Design & Development",
-                desc: "Custom, responsive websites built with the latest technologies. Beautiful designs that convert.",
+                desc: "Strategic UX/UI design, semantic HTML architecture, accessibility compliance, Core Web Vitals optimization, and conversion-focused interfaces.",
                 link: "/services/custom-web-design",
                 color: "from-blue-500 to-cyan-500"
               },
               {
                 icon: "fa-bullhorn",
                 title: "Digital Marketing",
-                desc: "SEO, Google Ads, social media & content marketing strategies that drive real results.",
+                desc: "Technical SEO, structured data, on-page optimization, conversion rate optimization, and data-driven growth strategies.",
                 link: "/services/seo-sydney",
                 color: "from-purple-500 to-pink-500"
               },
               {
                 icon: "fa-pen-nib",
                 title: "Branding & Design",
-                desc: "Stand out with memorable brand identities, logos, and marketing materials.",
+                desc: "Brand positioning, design systems, visual hierarchy, typography discipline, and consistent component libraries.",
                 link: "/services/brand-identity",
                 color: "from-orange-500 to-red-500"
               },
@@ -306,7 +306,7 @@ export default function HomePage() {
               <div key={i} className="relative group">
                 <div className="bg-gradient-to-br from-slate-50 to-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-100 hover:border-[#f59e0b]/30 h-full">
                   {/* Step Number */}
-                  <div className="absolute -top-4 -right-4 w-16 h-16 bg-[#f59e0b] rounded-2xl flex items-center justify-center text-white font-black text-xl shadow-lg group-hover:scale-110 transition-transform">
+                  <div className="absolute -top-4 -right-4 w-12 h-12 bg-gray-400 rounded-2xl flex items-center justify-center text-white font-black text-xl shadow-lg group-hover:scale-110 transition-transform">
                     {process.step}
                   </div>
 
@@ -449,6 +449,190 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════════════════════════════════════
+          COMPREHENSIVE APPROACH - What Makes a Great Website
+      ════════════════════════════════════════════ */}
+      <section className="py-24 bg-gradient-to-b from-slate-50 to-white">
+        <div className="container max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="text-[#f59e0b] font-semibold text-sm tracking-widest uppercase mb-3 block">Our Methodology</span>
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">
+              More Than Code — <span className="text-[#f59e0b]">Complete Ecosystems</span>
+            </h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              A website isn&apos;t just HTML + CSS + JS. It&apos;s psychology, infrastructure, marketing, security engineering, and systems design wearing a friendly UI mask. We optimize the right pillars for your context.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                category: "Strategy & Foundation",
+                icon: "fa-lightbulb",
+                items: [
+                  "Purpose & business alignment",
+                  "Brand identity & positioning",
+                  "Content strategy",
+                  "Information architecture",
+                  "Clear onboarding (for SaaS)"
+                ]
+              },
+              {
+                category: "User Experience",
+                icon: "fa-user-check",
+                items: [
+                  "User experience (UX) design",
+                  "User interface design (UI)",
+                  "Visual hierarchy",
+                  "Navigation clarity",
+                  "Micro-interactions & motion design"
+                ]
+              },
+              {
+                category: "Design Excellence",
+                icon: "fa-paint-brush",
+                items: [
+                  "Typography & readability",
+                  "Color theory & contrast",
+                  "Design consistency system",
+                  "Component library",
+                  "Progressive enhancement"
+                ]
+              },
+              {
+                category: "Accessibility & Standards",
+                icon: "fa-universal-access",
+                items: [
+                  "WCAG compliance",
+                  "Keyboard navigation",
+                  "Assistive technology support",
+                  "Semantic HTML structure",
+                  "Plain language content"
+                ]
+              },
+              {
+                category: "Performance & Speed",
+                icon: "fa-tachometer-alt",
+                items: [
+                  "Core Web Vitals optimization",
+                  "Performance & speed tuning",
+                  "Image & asset optimization",
+                  "Caching strategy",
+                  "Database efficiency"
+                ]
+              },
+              {
+                category: "SEO & Visibility",
+                icon: "fa-search",
+                items: [
+                  "Technical SEO",
+                  "On-page & off-page SEO",
+                  "Structured data (schema markup)",
+                  "Meta data optimization",
+                  "Domain authority building"
+                ]
+              },
+              {
+                category: "Security & Compliance",
+                icon: "fa-shield-alt",
+                items: [
+                  "HTTPS & SSL certificates",
+                  "XSS/CSRF protection",
+                  "Authentication & authorization",
+                  "Privacy compliance (GDPR)",
+                  "Input validation"
+                ]
+              },
+              {
+                category: "Responsive & Compatible",
+                icon: "fa-mobile-alt",
+                items: [
+                  "Mobile-first responsive design",
+                  "Tablet & desktop optimization",
+                  "Cross-browser compatibility",
+                  "Graceful degradation",
+                  "PWA capability (when relevant)"
+                ]
+              },
+              {
+                category: "Conversion & Marketing",
+                icon: "fa-chart-line",
+                items: [
+                  "Conversion rate optimization (CRO)",
+                  "Clear CTAs",
+                  "Trust signals & social proof",
+                  "A/B testing capability",
+                  "Analytics & tracking"
+                ]
+              },
+              {
+                category: "Infrastructure & Scalability",
+                icon: "fa-server",
+                items: [
+                  "Scalable architecture",
+                  "Hosting reliability",
+                  "Server performance",
+                  "API reliability",
+                  "Load handling & stress resilience"
+                ]
+              },
+              {
+                category: "Code Quality & Testing",
+                icon: "fa-code",
+                items: [
+                  "Clean code & modularity",
+                  "Code quality standards",
+                  "Testing (unit, integration, E2E)",
+                  "Version control",
+                  "Technical debt management"
+                ]
+              },
+              {
+                category: "Deployment & Support",
+                icon: "fa-rocket",
+                items: [
+                  "CI/CD deployment strategy",
+                  "Monitoring & logging",
+                  "Backup & disaster recovery",
+                  "Ongoing maintenance",
+                  "User feedback loops"
+                ]
+              },
+            ].map((pillar, i) => (
+              <div key={i} className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-100 hover:border-[#f59e0b]/30 hover:-translate-y-2">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#f59e0b] to-[#fb923c] rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                    <i className={`fas ${pillar.icon} text-xl text-white`} />
+                  </div>
+                  <h3 className="text-lg font-bold text-[#1e293b] group-hover:text-[#f59e0b] transition-colors">
+                    {pillar.category}
+                  </h3>
+                </div>
+                <ul className="space-y-2">
+                  {pillar.items.map((item, j) => (
+                    <li key={j} className="flex items-start gap-3 text-sm text-slate-600">
+                      <i className="fas fa-check text-[#f59e0b] mt-0.5 flex-shrink-0 text-xs" />
+                      <span className="flex-1">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-16 text-center">
+            <div className="max-w-4xl mx-auto bg-gradient-to-br from-[#f59e0b]/10 to-[#fb923c]/5 rounded-3xl p-10 border-2 border-[#f59e0b]/20">
+              <h3 className="text-2xl md:text-3xl font-bold text-[#1e293b] mb-4">
+                From Mid-Level to Senior: <span className="text-[#f59e0b]">Systems Thinking</span>
+              </h3>
+              <p className="text-lg text-slate-700 leading-relaxed">
+                Perfection isn&apos;t about maxing every pillar — it&apos;s about optimizing the right pillars for your context. A portfolio site doesn&apos;t need horizontal scaling architecture. A fintech platform absolutely does. This is where websites stop being projects and start being ecosystems.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
           WHY CHOOSE US - Benefits Section
       ════════════════════════════════════════════ */}
       <section className="py-24 bg-white">
@@ -496,7 +680,7 @@ export default function HomePage() {
 
                 {/* Floating Badge */}
                 <div className="absolute -bottom-6 -right-6 bg-[#f59e0b] text-white rounded-2xl p-6 shadow-xl transform rotate-3 hover:rotate-0 transition-transform">
-                  <div className="text-4xl font-black">98%</div>
+                  <div className="text-4xl font-black">100%</div>
                   <div className="text-sm font-semibold">Satisfaction</div>
                 </div>
               </div>
@@ -526,31 +710,31 @@ export default function HomePage() {
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {[
-              { icon: "fa-react", name: "React", color: "#61DAFB" },
-              { icon: "fa-react", name: "Next.js", color: "#000000", isSolid: true },
-              { icon: "fa-node-js", name: "Node.js", color: "#339933" },
-              { icon: "fa-wordpress", name: "WordPress", color: "#21759B" },
-              { icon: "fa-shopify", name: "Shopify", color: "#7AB55C" },
-              { icon: "fa-laravel", name: "Laravel", color: "#FF2D20" },
-              { icon: "fa-figma", name: "Figma", color: "#F24E1E" },
-              { icon: "fa-adobe", name: "Adobe XD", color: "#FF61F6" },
-              { icon: "fa-chrome", name: "Webflow", color: "#4353FF" },
-              { icon: "fa-php", name: "PHP", color: "#777BB4" },
-              { icon: "fa-python", name: "Python", color: "#3776AB" },
-              { icon: "fa-js", name: "JavaScript", color: "#F7DF1E" },
-              { icon: "fa-html5", name: "HTML5", color: "#E34F26" },
-              { icon: "fa-css3-alt", name: "CSS3", color: "#1572B6" },
-              { icon: "fa-sass", name: "Sass", color: "#CC6699" },
-              { icon: "fa-google", name: "Google Ads", color: "#4285F4" },
-              { icon: "fa-facebook", name: "Meta Ads", color: "#1877F2" },
-              { icon: "fa-bootstrap", name: "Bootstrap", color: "#7952B3" },
+              { icon: "fa-react", name: "React", color: "#61DAFB", brand: true },
+              { icon: "fa-code", name: "Next.js", color: "#000000", isSolid: true },
+              { icon: "fa-node-js", name: "Node.js", color: "#339933", brand: true },
+              { icon: "fa-wordpress", name: "WordPress", color: "#21759B", brand: true },
+              { icon: "fa-shopify", name: "Shopify", color: "#7AB55C", brand: true },
+              { icon: "fa-laravel", name: "Laravel", color: "#FF2D20", brand: true },
+              { icon: "fa-figma", name: "Figma", color: "#F24E1E", brand: true },
+              { icon: "fa-layer-group", name: "Adobe XD", color: "#FF61F6", isSolid: true },
+              { icon: "fa-window-maximize", name: "Webflow", color: "#4353FF", isSolid: true },
+              { icon: "fa-php", name: "PHP", color: "#777BB4", brand: true },
+              { icon: "fa-python", name: "Python", color: "#3776AB", brand: true },
+              { icon: "fa-js-square", name: "JavaScript", color: "#F7DF1E", brand: true },
+              { icon: "fa-html5", name: "HTML5", color: "#E34F26", brand: true },
+              { icon: "fa-css3-alt", name: "CSS3", color: "#1572B6", brand: true },
+              { icon: "fa-sass", name: "Sass", color: "#CC6699", brand: true },
+              { icon: "fa-google", name: "Google Ads", color: "#4285F4", brand: true },
+              { icon: "fa-facebook", name: "Meta Ads", color: "#1877F2", brand: true },
+              { icon: "fa-bootstrap", name: "Bootstrap", color: "#7952B3", brand: true },
             ].map((tech, i) => (
               <div
                 key={i}
                 className="group bg-white rounded-2xl p-6 text-center hover:shadow-xl transition-all duration-300 border border-slate-100 hover:border-[#f59e0b]/30 hover:-translate-y-2"
               >
                 <div className="mb-4">
-                  <i className={`${tech.isSolid ? 'fas' : 'fab'} ${tech.icon} text-5xl transition-all duration-300 group-hover:scale-110`} style={{ color: tech.color }} />
+                  <i className={`${tech.isSolid ? 'fas' : tech.brand ? 'fab' : 'fas'} ${tech.icon} text-5xl transition-all duration-300 group-hover:scale-110`} style={{ color: tech.color }} />
                 </div>
                 <h3 className="font-semibold text-sm text-[#1e293b]">
                   {tech.name}
@@ -574,7 +758,7 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════
           CTA SECTION - Get Started
       ════════════════════════════════════════════ */}
-      <section className="py-24 bg-[#1e293b] relative overflow-hidden">
+      <section className="py-24 bg-gradient-to-br from-slate-800 via-slate-700 to-slate-800 relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')]" />

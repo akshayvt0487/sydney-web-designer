@@ -298,69 +298,69 @@ export default function GrowthPlansPage() {
             </div>
 
             {/* Complete Marketing Package - Ultimate */}
-            <div className="card hover:shadow-card-hover transition-all bg-[#1e293b] text-white">
+            <div className="card hover:shadow-card-hover transition-all bg-gradient-to-br from-[#1e293b] to-[#0f172a] text-white border-2 border-[#f59e0b]">
               <div className="flex flex-col lg:flex-row gap-6">
                 <div className="lg:w-1/3">
-                  <div className="inline-block bg-white text-[#1e293b] px-4 py-1 rounded-full text-sm font-bold mb-3">
+                  <div className="inline-block bg-gradient-to-r from-[#f59e0b] to-[#fb923c] text-white px-4 py-1 rounded-full text-sm font-bold mb-3">
                     Ultimate Package
                   </div>
                   <h3 className="text-2xl font-bold mb-4 text-white">Complete Marketing</h3>
                   {/* <div className="text-3xl font-bold text-white mb-2">$5,000 - $10,000/month</div> */}
                   {/* <p className="text-gray-100 mb-2">+ GST + Ad Spend</p> */}
-                  <p className="text-base text-white mb-2 font-medium">Everything you need to dominate</p>
+                  <p className="text-base text-gray-200 mb-2 font-medium">Everything you need to dominate</p>
                 </div>
                 <div className="lg:w-2/3">
                   <div className="grid md:grid-cols-2 gap-3">
                     <div className="flex items-start gap-2">
-                      <svg className="w-5 h-5 text-yellow-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 text-[#f59e0b] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
-                      <span className="text-white text-sm">Everything from all plans above</span>
+                      <span className="text-gray-100 text-sm">Everything from all plans above</span>
                     </div>
                     <div className="flex items-start gap-2">
-                      <svg className="w-5 h-5 text-yellow-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 text-[#f59e0b] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
-                      <span className="text-white text-sm">Dedicated marketing team</span>
+                      <span className="text-gray-100 text-sm">Dedicated marketing team</span>
                     </div>
                     <div className="flex items-start gap-2">
-                      <svg className="w-5 h-5 text-yellow-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 text-[#f59e0b] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
-                      <span className="text-white text-sm">Multi-channel campaigns</span>
+                      <span className="text-gray-100 text-sm">Multi-channel campaigns</span>
                     </div>
                     <div className="flex items-start gap-2">
-                      <svg className="w-5 h-5 text-yellow-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 text-[#f59e0b] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
-                      <span className="text-white text-sm">Social media management</span>
+                      <span className="text-gray-100 text-sm">Social media management</span>
                     </div>
                     <div className="flex items-start gap-2">
-                      <svg className="w-5 h-5 text-yellow-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 text-[#f59e0b] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
-                      <span className="text-white text-sm">Email marketing automation</span>
+                      <span className="text-gray-100 text-sm">Email marketing automation</span>
                     </div>
                     <div className="flex items-start gap-2">
-                      <svg className="w-5 h-5 text-yellow-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 text-[#f59e0b] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
-                      <span className="text-white text-sm">Video marketing & production</span>
+                      <span className="text-gray-100 text-sm">Video marketing & production</span>
                     </div>
                     <div className="flex items-start gap-2">
-                      <svg className="w-5 h-5 text-yellow-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 text-[#f59e0b] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
-                      <span className="text-white text-sm">Advanced analytics & reporting</span>
+                      <span className="text-gray-100 text-sm">Advanced analytics & reporting</span>
                     </div>
                     <div className="flex items-start gap-2">
-                      <svg className="w-5 h-5 text-yellow-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 text-[#f59e0b] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
-                      <span className="text-white text-sm">Priority 24/7 support</span>
+                      <span className="text-gray-100 text-sm">Priority 24/7 support</span>
                     </div>
                   </div>
-                  <button data-popup="consultation" className="btn btn-white mt-4">
+                  <button data-popup="consultation" className="btn btn-primary mt-4">
                     Get Started
                   </button>
                 </div>

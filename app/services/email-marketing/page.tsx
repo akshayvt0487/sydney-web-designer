@@ -63,7 +63,7 @@ export default function EmailMarketingPage() {
       <section className="bg-[#1e293b] text-white py-20">
         <div className="container">
           <div className="max-w-3xl">
-            <div className="inline-block bg-primary-orange/20 text-primary-orange px-4 py-2 rounded-full text-sm font-semibold mb-6">{service.icon} {service.name}</div>
+            <div className="inline-block bg-primary-orange/20 text-primary-orange px-4 py-2 rounded-full text-sm font-semibold mb-6"><i className={`fas ${service.icon} mr-2`}></i> {service.name}</div>
             <h1 className="text-5xl font-bold mb-6 text-white">Email Marketing That Drives Repeat Business</h1>
             <p className="text-xl text-white mb-8">Build customer relationships and drive repeat business with effective email marketing campaigns. High ROI strategies that turn subscribers into buyers.</p>
             <div className="flex flex-wrap gap-4">

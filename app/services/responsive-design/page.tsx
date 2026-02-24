@@ -134,7 +134,7 @@ export default function ResponsiveDesignPage() {
         <div className="container">
           <div className="max-w-3xl">
             <div className="inline-block bg-primary-orange/20 text-primary-orange px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              {service.icon} {service.name}
+              <i className={`fas ${service.icon} mr-2`}></i> {service.name}
             </div>
             <h1 className="text-5xl font-bold mb-6 text-white">
               Responsive Design That Works Perfectly On Every Device

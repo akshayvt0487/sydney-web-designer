@@ -536,7 +536,7 @@ export default function WordPressDevelopmentPage() {
       <section className="py-24 px-8">
         <div className="max-w-4xl mx-auto">
           <div className="bg-[#1e293b] p-16 rounded-3xl text-white">
-            <h3 className="text-4xl font-bold mb-4 text-center">
+            <h3 className="text-4xl font-bold mb-4 text-center text-white">
               Get Your Free Consultation
             </h3>
             <p className="text-center text-lg mb-12 opacity-90">

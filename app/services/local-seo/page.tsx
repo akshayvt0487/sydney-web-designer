@@ -63,7 +63,7 @@ export default function LocalSEOPage() {
       <section className="bg-[#1e293b] text-white py-20">
         <div className="container">
           <div className="max-w-3xl">
-            <div className="inline-block bg-primary-orange/20 text-primary-orange px-4 py-2 rounded-full text-sm font-semibold mb-6">{service.icon} {service.name}</div>
+            <div className="inline-block bg-primary-orange/20 text-primary-orange px-4 py-2 rounded-full text-sm font-semibold mb-6"><i className={`fas ${service.icon} mr-2`}></i> {service.name}</div>
             <h1 className="text-5xl font-bold mb-6 text-white">Local SEO That Gets You Found by Local Customers</h1>
             <p className="text-xl text-white mb-8">Dominate Google Maps and local search results. Get found by customers in your area with targeted local SEO strategies that drive calls and visits.</p>
             <div className="flex flex-wrap gap-4">

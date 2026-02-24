@@ -107,43 +107,73 @@ export default function AboutPage() {
           </div>
 
           <div className="grid-3">
-            <div className="card">
-              <h3 className="text-xl font-bold mb-3 text-primary-navy">Results-Driven</h3>
+            <div className="card border-l-4 border-[#f59e0b]">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-[#f59e0b]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <i className="fas fa-chart-line text-xl text-[#f59e0b]" />
+                </div>
+                <h3 className="text-xl font-bold text-primary-navy">Results-Driven</h3>
+              </div>
               <p className="text-gray-600">
                 We measure success by the results we deliver for our clients. Every website, every campaign, every strategy is designed to drive measurable business growth and ROI.
               </p>
             </div>
 
-            <div className="card">
-              <h3 className="text-xl font-bold mb-3 text-primary-navy">Transparency</h3>
+            <div className="card border-l-4 border-[#f59e0b]">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-[#f59e0b]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <i className="fas fa-eye text-xl text-[#f59e0b]" />
+                </div>
+                <h3 className="text-xl font-bold text-primary-navy">Transparency</h3>
+              </div>
               <p className="text-gray-600">
                 No hidden fees, no vague promises. We believe in clear communication, honest timelines, and transparent pricing. You&apos;ll always know exactly what you&apos;re getting and what to expect.
               </p>
             </div>
 
-            <div className="card">
-              <h3 className="text-xl font-bold mb-3 text-primary-navy">Innovation</h3>
+            <div className="card border-l-4 border-[#f59e0b]">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-[#f59e0b]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <i className="fas fa-lightbulb text-xl text-[#f59e0b]" />
+                </div>
+                <h3 className="text-xl font-bold text-primary-navy">Innovation</h3>
+              </div>
               <p className="text-gray-600">
                 The digital landscape never stops evolving, and neither do we. We stay ahead of trends, continuously learn new technologies, and apply cutting-edge strategies to keep our clients competitive.
               </p>
             </div>
 
-            <div className="card">
-              <h3 className="text-xl font-bold mb-3 text-primary-navy">Partnership</h3>
+            <div className="card border-l-4 border-[#f59e0b]">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-[#f59e0b]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <i className="fas fa-handshake text-xl text-[#f59e0b]" />
+                </div>
+                <h3 className="text-xl font-bold text-primary-navy">Partnership</h3>
+              </div>
               <p className="text-gray-600">
                 We&apos;re not just a service provider—we&apos;re your digital growth partner. Your success is our success, and we&apos;re committed to building long-term relationships based on trust and mutual growth.
               </p>
             </div>
 
-            <div className="card">
-              <h3 className="text-xl font-bold mb-3 text-primary-navy">Quality</h3>
+            <div className="card border-l-4 border-[#f59e0b]">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-[#f59e0b]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <i className="fas fa-star text-xl text-[#f59e0b]" />
+                </div>
+                <h3 className="text-xl font-bold text-primary-navy">Quality</h3>
+              </div>
               <p className="text-gray-600">
                 We never compromise on quality. From design aesthetics to code quality to content creation, we maintain the highest standards in everything we deliver.
               </p>
             </div>
 
-            <div className="card">
-              <h3 className="text-xl font-bold mb-3 text-primary-navy">Local Expertise</h3>
+            <div className="card border-l-4 border-[#f59e0b]">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-[#f59e0b]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <i className="fas fa-map-marker-alt text-xl text-[#f59e0b]" />
+                </div>
+                <h3 className="text-xl font-bold text-primary-navy">Local Expertise</h3>
+              </div>
               <p className="text-gray-600">
                 As a Sydney-based agency, we understand the local market, competition, and opportunities. This local knowledge helps us create strategies that resonate with Australian audiences.
               </p>
