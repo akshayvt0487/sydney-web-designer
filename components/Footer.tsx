@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -9,9 +10,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Company Info Column */}
           <div>
-            <h3 className="text-2xl font-bold mb-6 text-white">
-              Sydney Web Designer
-            </h3>
+            <div className="mb-6">
+              <Image
+                src="/Sydney Web Designer logo.webp"
+                alt="Sydney Web Designer"
+                width={200}
+                height={60}
+                className="h-24 w-auto rounded-2xl w-full h-auto"
+              />
+            </div>
             <p className="text-gray-300 mb-6 leading-relaxed text-base">
               Sydney's premier web design and digital marketing agency. 13+ years of experience delivering exceptional results for businesses across Australia.
             </p>
@@ -155,6 +162,15 @@ export default function Footer() {
                 aria-label="LinkedIn"
               >
                 <i className="fab fa-linkedin-in text-xl"></i>
+              </a>
+              <a
+                href="https://dsigns.com.au"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 bg-white/10 hover:bg-[#f59e0b] rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
+                aria-label="DSIGNS Website"
+              >
+                <i className="fas fa-globe text-xl"></i>
               </a>
             </div>
           </div>

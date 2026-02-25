@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { portfolioProjects, PortfolioProject } from "@/lib/constants";
+import PortfolioLightbox from "./PortfolioLightbox";
 
 /* ─────────────────────────────────────────
    CATEGORY FILTER TABS
@@ -11,7 +12,7 @@ import { portfolioProjects, PortfolioProject } from "@/lib/constants";
 const CATEGORIES = [
   { label: "All Work", value: "all" },
   { label: "Web Design", value: "Web Design" },
-  { label: "Branding", value: "Branding" },
+  { label: "Landing Pages", value: "Landing Pages" },
   { label: "SEO", value: "SEO" },
   { label: "E-commerce", value: "E-commerce" },
 ];
@@ -57,7 +58,7 @@ function ProjectCarousel({ images, title }: { images: string[]; title: string })
   const prev = () => setCurrent((c) => (c - 1 + images.length) % images.length);
 
   return (
-    <div className="relative overflow-hidden aspect-[16/10] bg-[#0f172a] group">
+    <div className="relative overflow-hidden aspect-[16/10] bg-white group">
       <AnimatePresence mode="wait">
         <motion.div
           key={current}
@@ -65,27 +66,27 @@ function ProjectCarousel({ images, title }: { images: string[]; title: string })
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.97 }}
           transition={{ duration: 0.4, ease: "easeInOut" }}
-          className="absolute inset-0"
+          className="absolute inset-0 flex items-center justify-center p-4"
         >
           <Image
             src={images[current]}
             alt={`${title} screenshot ${current + 1}`}
             fill
-            className="object-cover object-top"
+            className="object-contain"
             sizes="(max-width:768px) 100vw, 50vw"
           />
         </motion.div>
       </AnimatePresence>
 
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
       {/* Arrows */}
       {images.length > 1 && (
         <>
           <button
             onClick={prev}
-            className="absolute left-3 top-1/2 -translate-y-1/2 z-10 bg-white/10 backdrop-blur-sm hover:bg-[#f59e0b] text-white w-9 h-9 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 border border-white/20"
+            className="absolute left-3 top-1/2 -translate-y-1/2 z-10 bg-[#0f172a]/80 backdrop-blur-sm hover:bg-[#f59e0b] text-white w-9 h-9 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 border border-white/20"
             aria-label="Previous"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -94,7 +95,7 @@ function ProjectCarousel({ images, title }: { images: string[]; title: string })
           </button>
           <button
             onClick={next}
-            className="absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-white/10 backdrop-blur-sm hover:bg-[#f59e0b] text-white w-9 h-9 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 border border-white/20"
+            className="absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-[#0f172a]/80 backdrop-blur-sm hover:bg-[#f59e0b] text-white w-9 h-9 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 border border-white/20"
             aria-label="Next"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -108,13 +109,13 @@ function ProjectCarousel({ images, title }: { images: string[]; title: string })
               <button
                 key={i}
                 onClick={() => setCurrent(i)}
-                className={`rounded-full transition-all duration-300 ${i === current ? "bg-[#f59e0b] w-6 h-1.5" : "bg-white/50 w-1.5 h-1.5 hover:bg-white"}`}
+                className={`rounded-full transition-all duration-300 ${i === current ? "bg-[#f59e0b] w-6 h-1.5" : "bg-[#0f172a]/50 w-1.5 h-1.5 hover:bg-[#0f172a]"}`}
               />
             ))}
           </div>
 
           {/* Counter badge */}
-          <div className="absolute top-3 right-3 bg-black/50 backdrop-blur-sm text-white text-xs px-2.5 py-1 rounded-full border border-white/10 z-10">
+          <div className="absolute top-3 right-3 bg-[#0f172a]/80 backdrop-blur-sm text-white text-xs px-2.5 py-1 rounded-full border border-white/10 z-10">
             {current + 1} / {images.length}
           </div>
         </>
@@ -126,7 +127,15 @@ function ProjectCarousel({ images, title }: { images: string[]; title: string })
 /* ─────────────────────────────────────────
    PROJECT CARD
 ───────────────────────────────────────── */
-function ProjectCard({ project, index }: { project: PortfolioProject; index: number }) {
+function ProjectCard({
+  project,
+  index,
+  onImageClick
+}: {
+  project: PortfolioProject;
+  index: number;
+  onImageClick: () => void;
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
@@ -136,6 +145,7 @@ function ProjectCard({ project, index }: { project: PortfolioProject; index: num
   const tagColors: Record<string, string> = {
     "Web Design": "bg-blue-500/10 text-blue-400 border-blue-500/20",
     "Branding": "bg-purple-500/10 text-purple-400 border-purple-500/20",
+    "Landing Pages": "bg-indigo-500/10 text-indigo-400 border-indigo-500/20",
     "SEO": "bg-green-500/10 text-green-400 border-green-500/20",
     "Google Ads": "bg-red-500/10 text-red-400 border-red-500/20",
     "Social Media": "bg-pink-500/10 text-pink-400 border-pink-500/20",
@@ -162,13 +172,22 @@ function ProjectCard({ project, index }: { project: PortfolioProject; index: num
       <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#f59e0b] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20" />
 
       {/* Carousel */}
-      <div className="relative">
+      <div className="relative cursor-pointer" onClick={onImageClick}>
         <ProjectCarousel images={images} title={project.name} />
         {/* Industry pill */}
         <div className="absolute top-3 left-3 z-10">
           <span className="bg-[#1e293b]/90 backdrop-blur-sm text-[#f59e0b] text-xs font-semibold px-3 py-1 rounded-full border border-[#f59e0b]/30">
             {project.industry}
           </span>
+        </div>
+        {/* View fullscreen hint */}
+        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30">
+          <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-white text-sm font-semibold flex items-center gap-2">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+            </svg>
+            View Gallery
+          </div>
         </div>
       </div>
 
@@ -230,7 +249,7 @@ function StatsStrip() {
   const stats = [
     { value: 500, suffix: "+", label: "Websites Delivered" },
     { value: 13, suffix: "+", label: "Years Experience" },
-    { value: 98, suffix: "%", label: "Client Satisfaction" },
+    { value: 100, suffix: "%", label: "Client Satisfaction" },
     { value: 12, suffix: "", label: "Industries Served" },
   ];
 
@@ -263,10 +282,17 @@ function StatsStrip() {
 export default function PortfolioGrid() {
   const [activeCategory, setActiveCategory] = useState("all");
   const [filtered, setFiltered] = useState(portfolioProjects);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<PortfolioProject | null>(null);
 
   useEffect(() => {
     setFiltered(portfolioProjects.filter((p) => categoryMatch(p, activeCategory)));
   }, [activeCategory]);
+
+  const handleImageClick = (project: PortfolioProject) => {
+    setSelectedProject(project);
+    setLightboxOpen(true);
+  };
 
   return (
     <section className="bg-[#060d1a] min-h-screen py-20 px-4">
@@ -329,7 +355,12 @@ export default function PortfolioGrid() {
           >
             {filtered.length > 0 ? (
               filtered.map((project, i) => (
-                <ProjectCard key={project.id} project={project} index={i} />
+                <ProjectCard
+                  key={project.id}
+                  project={project}
+                  index={i}
+                  onImageClick={() => handleImageClick(project)}
+                />
               ))
             ) : (
               <motion.div
@@ -378,6 +409,16 @@ export default function PortfolioGrid() {
             </div>
           </div>
         </motion.div>
+
+        {/* Lightbox */}
+        {selectedProject && (
+          <PortfolioLightbox
+            images={selectedProject.images && selectedProject.images.length > 0 ? selectedProject.images : [selectedProject.image]}
+            isOpen={lightboxOpen}
+            onClose={() => setLightboxOpen(false)}
+            projectName={selectedProject.name}
+          />
+        )}
       </div>
     </section>
   );

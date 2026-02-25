@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import Image from "next/image";
 import { contactInfo } from "@/lib/constants";
 import MegaMenu from "./MegaMenu";
 
@@ -49,9 +50,14 @@ export default function Header() {
           <div className="flex items-center justify-between py-4">
             {/* Logo */}
             <Link href="/" className="flex items-center">
-              <div className="text-2xl font-bold">
-                <span className="text-primary-navy">Sydney Web Designer</span>
-              </div>
+              <Image
+                src="/Sydney Web Designer logo.webp"
+                alt="Sydney Web Designer"
+                width={200}
+                height={60}
+                className="h-24 w-auto"
+                priority
+              />
             </Link>
 
             {/* Desktop Navigation */}
