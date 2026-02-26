@@ -69,8 +69,8 @@ export default function Header() {
               <Link href="/portfolio" className="text-primary-navy hover:text-primary-orange transition-colors font-medium">
                 Portfolio
               </Link>
-              <Link href="/web-design-plans" className="text-primary-navy hover:text-primary-orange transition-colors font-medium">
-                Web Design Plans
+              <Link href="/web-design" className="text-primary-navy hover:text-primary-orange transition-colors font-medium">
+                Web Design
               </Link>
               <Link href="/growth-plans" className="text-primary-navy hover:text-primary-orange transition-colors font-medium">
                 Growth Plans
@@ -122,8 +122,8 @@ export default function Header() {
                 <Link href="/portfolio" className="text-primary-navy hover:text-primary-orange transition-colors py-2">
                   Portfolio
                 </Link>
-                <Link href="/web-design-plans" className="text-primary-navy hover:text-primary-orange transition-colors py-2">
-                  Web Design Plans
+                <Link href="/web-design" className="text-primary-navy hover:text-primary-orange transition-colors py-2">
+                  Web Design
                 </Link>
                 <Link href="/growth-plans" className="text-primary-navy hover:text-primary-orange transition-colors py-2">
                   Growth Plans
