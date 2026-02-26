@@ -112,7 +112,7 @@ export default function CustomWebDesignPage() {
           </p>
 
           <div className="grid md:grid-cols-3 gap-12 mt-16">
-            <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border-l-4 border-[#f59e0b]">
+            <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border border-[#f59e0b]/30">
               <div className="mb-6"><i className="fas fa-palette text-5xl text-[#f59e0b]"></i></div>
               <h3 className="text-2xl font-bold text-[#1e293b] mb-3">Unique Design</h3>
               <p className="text-[#64748b] mb-6">Custom visual identity</p>
@@ -136,7 +136,7 @@ export default function CustomWebDesignPage() {
               </ul>
             </div>
 
-            <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border-l-4 border-[#f59e0b]">
+            <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border border-[#f59e0b]/30">
               <div className="mb-6"><i className="fas fa-mobile-alt text-5xl text-[#f59e0b]"></i></div>
               <h3 className="text-2xl font-bold text-[#1e293b] mb-3">Mobile-First</h3>
               <p className="text-[#64748b] mb-6">Perfect on all devices</p>
@@ -160,7 +160,7 @@ export default function CustomWebDesignPage() {
               </ul>
             </div>
 
-            <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border-l-4 border-[#f59e0b]">
+            <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border border-[#f59e0b]/30">
               <div className="mb-6"><i className="fas fa-bolt text-5xl text-[#f59e0b]"></i></div>
               <h3 className="text-2xl font-bold text-[#1e293b] mb-3">Custom Features</h3>
               <p className="text-[#64748b] mb-6">Exact functionality needed</p>
@@ -184,7 +184,7 @@ export default function CustomWebDesignPage() {
               </ul>
             </div>
 
-            <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border-l-4 border-[#f59e0b]">
+            <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border border-[#f59e0b]/30">
               <div className="mb-6"><i className="fas fa-bullseye text-5xl text-[#f59e0b]"></i></div>
               <h3 className="text-2xl font-bold text-[#1e293b] mb-3">Conversion Focus</h3>
               <p className="text-[#64748b] mb-6">Maximize conversions</p>
@@ -208,7 +208,7 @@ export default function CustomWebDesignPage() {
               </ul>
             </div>
 
-            <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border-l-4 border-[#f59e0b]">
+            <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border border-[#f59e0b]/30">
               <div className="mb-6"><i className="fas fa-rocket text-5xl text-[#f59e0b]"></i></div>
               <h3 className="text-2xl font-bold text-[#1e293b] mb-3">Performance</h3>
               <p className="text-[#64748b] mb-6">Fast loading speeds</p>
@@ -232,7 +232,7 @@ export default function CustomWebDesignPage() {
               </ul>
             </div>
 
-            <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border-l-4 border-[#f59e0b]">
+            <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border border-[#f59e0b]/30">
               <div className="mb-6"><i className="fas fa-search text-5xl text-[#f59e0b]"></i></div>
               <h3 className="text-2xl font-bold text-[#1e293b] mb-3">SEO-Ready</h3>
               <p className="text-[#64748b] mb-6">Built for search</p>

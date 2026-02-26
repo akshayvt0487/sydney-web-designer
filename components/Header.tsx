@@ -4,7 +4,8 @@ import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
 import { contactInfo } from "@/lib/constants";
-import MegaMenu from "./MegaMenu";
+import WebDesignMegaMenu from "./WebDesignMegaMenu";
+import SEOMegaMenu from "./SEOMegaMenu";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -65,15 +66,16 @@ export default function Header() {
               <Link href="/" className="text-primary-navy hover:text-primary-orange transition-colors font-medium">
                 Home
               </Link>
-              <MegaMenu />
+              <WebDesignMegaMenu />
+              <SEOMegaMenu />
               <Link href="/portfolio" className="text-primary-navy hover:text-primary-orange transition-colors font-medium">
                 Portfolio
               </Link>
-              <Link href="/web-design" className="text-primary-navy hover:text-primary-orange transition-colors font-medium">
-                Web Design
+              <Link href="/services/google-ads" className="text-primary-navy hover:text-primary-orange transition-colors font-medium">
+                Google Ads
               </Link>
-              <Link href="/growth-marketing" className="text-primary-navy hover:text-primary-orange transition-colors font-medium">
-                Growth Marketing
+              <Link href="/services/meta-ads" className="text-primary-navy hover:text-primary-orange transition-colors font-medium">
+                Meta Ads
               </Link>
             </nav>
 
@@ -116,17 +118,20 @@ export default function Header() {
                 <Link href="/" className="text-primary-navy hover:text-primary-orange transition-colors py-2">
                   Home
                 </Link>
-                <Link href="/services" className="text-primary-navy hover:text-primary-orange transition-colors py-2">
-                  Services
+                <Link href="/web-design" className="text-primary-navy hover:text-primary-orange transition-colors py-2">
+                  Web Design
+                </Link>
+                <Link href="/services/seo-sydney" className="text-primary-navy hover:text-primary-orange transition-colors py-2">
+                  SEO Services
                 </Link>
                 <Link href="/portfolio" className="text-primary-navy hover:text-primary-orange transition-colors py-2">
                   Portfolio
                 </Link>
-                <Link href="/web-design" className="text-primary-navy hover:text-primary-orange transition-colors py-2">
-                  Web Design
+                <Link href="/services/google-ads" className="text-primary-navy hover:text-primary-orange transition-colors py-2">
+                  Google Ads
                 </Link>
-                <Link href="/growth-marketing" className="text-primary-navy hover:text-primary-orange transition-colors py-2">
-                  Growth Marketing
+                <Link href="/services/meta-ads" className="text-primary-navy hover:text-primary-orange transition-colors py-2">
+                  Meta Ads
                 </Link>
                 <Link href="/about" className="text-primary-navy hover:text-primary-orange transition-colors py-2">
                   About Us

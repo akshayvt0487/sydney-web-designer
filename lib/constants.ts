@@ -20,7 +20,7 @@ export const portfolioProjects: PortfolioProject[] = portfolioData;
 export interface Service {
   id: string;
   name: string;
-  category: "web-design" | "branding" | "digital-marketing";
+  category: "web-design" | "digital-marketing";
   slug: string;
   icon: string;
   shortDescription: string;
@@ -92,61 +92,14 @@ export const services: Service[] = [
     shortDescription: "User-centered design that creates intuitive and engaging digital experiences.",
     heroDescription: "Craft beautiful, user-friendly interfaces backed by research and best practices in user experience.",
   },
-
-  // Branding Services
   {
-    id: "logo-design",
-    name: "Logo Design",
-    category: "branding",
-    slug: "logo-design",
-    icon: 'fa-pen-nib',
-    shortDescription: "Professional logo design that makes your brand instantly recognizable.",
-    heroDescription: "Create a memorable visual identity with a custom logo that captures your brand's personality.",
-  },
-  {
-    id: "brand-identity",
-    name: "Brand Identity",
-    category: "branding",
-    slug: "brand-identity",
-    icon: 'fa-fingerprint',
-    shortDescription: "Complete brand identity systems including colors, typography, and visual elements.",
-    heroDescription: "Develop a cohesive brand identity that sets you apart and resonates with your target audience.",
-  },
-  {
-    id: "brand-strategy",
-    name: "Brand Strategy",
-    category: "branding",
-    slug: "brand-strategy",
-    icon: 'fa-lightbulb',
-    shortDescription: "Strategic brand positioning and messaging that connects with your customers.",
-    heroDescription: "Define your brand's unique value proposition and create a roadmap for consistent growth.",
-  },
-  {
-    id: "graphic-design",
-    name: "Graphic Design",
-    category: "branding",
-    slug: "graphic-design",
-    icon: 'fa-image',
-    shortDescription: "Eye-catching graphics for digital and print marketing materials.",
-    heroDescription: "Design compelling visual content that communicates your message and engages your audience.",
-  },
-  {
-    id: "business-cards",
-    name: "Business Cards",
-    category: "branding",
-    slug: "business-cards",
-    icon: 'fa-address-card',
-    shortDescription: "Professional business cards that make a lasting first impression.",
-    heroDescription: "Create memorable business cards that reflect your brand and help you network effectively.",
-  },
-  {
-    id: "marketing-materials",
-    name: "Marketing Materials",
-    category: "branding",
-    slug: "marketing-materials",
-    icon: 'fa-newspaper',
-    shortDescription: "Brochures, flyers, and promotional materials that drive results.",
-    heroDescription: "Design persuasive marketing collateral that showcases your offerings and generates interest.",
+    id: "high-performance-landing-pages",
+    name: "High Performance Landing Pages",
+    category: "web-design",
+    slug: "high-performance-landing-pages",
+    icon: 'fa-rocket',
+    shortDescription: "Lightning-fast landing pages optimized for conversions and search engine rankings.",
+    heroDescription: "Build high-converting landing pages with blazing speed, perfect SEO, and proven conversion optimization techniques.",
   },
 
   // Digital Marketing Services
@@ -167,6 +120,15 @@ export const services: Service[] = [
     icon: 'fa-bullhorn',
     shortDescription: "PPC campaigns that deliver quality leads and maximize your ROI.",
     heroDescription: "Generate instant traffic and leads with expertly managed Google Ads campaigns.",
+  },
+  {
+    id: "meta-ads",
+    name: "Meta Ads (Facebook & Instagram)",
+    category: "digital-marketing",
+    slug: "meta-ads",
+    icon: 'fa-facebook',
+    shortDescription: "Targeted Facebook and Instagram advertising that drives sales and brand awareness.",
+    heroDescription: "Reach your ideal customers on Facebook and Instagram with precision-targeted ad campaigns.",
   },
   {
     id: "social-media-marketing",
@@ -212,6 +174,60 @@ export const services: Service[] = [
     icon: 'fa-chart-line',
     shortDescription: "Improve your website's ability to convert visitors into customers.",
     heroDescription: "Maximize your marketing ROI by optimizing every step of your customer journey.",
+  },
+  {
+    id: "ecommerce-seo",
+    name: "Ecommerce SEO",
+    category: "digital-marketing",
+    slug: "ecommerce-seo",
+    icon: 'fa-shopping-cart',
+    shortDescription: "Rank your products higher and drive more online sales with specialized ecommerce SEO.",
+    heroDescription: "Increase product visibility, drive qualified traffic, and boost online sales with data-driven ecommerce SEO strategies.",
+  },
+  {
+    id: "mobile-seo",
+    name: "Mobile SEO",
+    category: "digital-marketing",
+    slug: "mobile-seo",
+    icon: 'fa-mobile-alt',
+    shortDescription: "Optimize your website for mobile search and capture on-the-go customers.",
+    heroDescription: "Dominate mobile search results with mobile-first SEO strategies that drive traffic and conversions.",
+  },
+  {
+    id: "seo-copywriting",
+    name: "SEO Copywriting",
+    category: "digital-marketing",
+    slug: "seo-copywriting",
+    icon: 'fa-pen-fancy',
+    shortDescription: "Search-optimized content that ranks high and converts readers into customers.",
+    heroDescription: "Compelling, keyword-rich content that engages your audience and ranks on page one of Google.",
+  },
+  {
+    id: "link-building",
+    name: "Link Building",
+    category: "digital-marketing",
+    slug: "link-building",
+    icon: 'fa-link',
+    shortDescription: "Build high-quality backlinks that boost your domain authority and search rankings.",
+    heroDescription: "Ethical, white-hat link building strategies that increase your website authority and organic traffic.",
+  },
+  {
+    id: "digital-pr",
+    name: "Digital PR",
+    category: "digital-marketing",
+    slug: "digital-pr",
+    icon: 'fa-newspaper',
+    shortDescription: "Build brand authority and earn high-value backlinks through strategic digital PR.",
+    heroDescription: "Leverage media coverage and digital outreach to build trust, authority, and powerful backlinks.",
+  },
+  {
+    id: "pay-on-performance-seo",
+    name: "Pay on Performance SEO",
+    category: "digital-marketing",
+    slug: "pay-on-performance-seo",
+    icon: 'fa-trophy',
+    shortDescription: "Only pay for results. Performance-based SEO with guaranteed rankings or your money back.",
+    heroDescription: "Risk-free SEO services where you only pay when we deliver measurable results and rankings.",
   },
 ];
 

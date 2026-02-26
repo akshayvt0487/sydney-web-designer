@@ -7,8 +7,8 @@ import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessS
 
 export const metadata = generateMetadata({
   title: "Services | Web Design & Digital Marketing Sydney",
-  description: "Comprehensive web design, branding, and digital marketing services in Sydney. 13+ years experience delivering SEO, Google Ads, social media marketing, and more. Get a free quote today!",
-  keywords: "web design services sydney, digital marketing services sydney, seo sydney, google ads sydney, branding services, wordpress development, ecommerce websites, social media marketing sydney",
+  description: "Comprehensive web design and digital marketing services in Sydney. 13+ years experience delivering SEO, Google Ads, social media marketing, and more. Get a free quote today!",
+  keywords: "web design services sydney, digital marketing services sydney, seo sydney, google ads sydney, wordpress development, ecommerce websites, social media marketing sydney",
   canonicalUrl: "https://sydneywebdesigner.com.au/services",
   ogImage: "/images/og/services.svg",
 });
@@ -21,11 +21,10 @@ export default function ServicesPage() {
 
   const serviceData = {
     name: "Web Design & Digital Marketing Services",
-    description: "Comprehensive digital solutions including web design, branding, and digital marketing services for Sydney businesses. 13+ years of proven expertise.",
+    description: "Comprehensive digital solutions including web design and digital marketing services for Sydney businesses. 13+ years of proven expertise.",
     provider: "Sydney Web Designer"
   };
   const webDesignServices = services.filter(s => s.category === "web-design");
-  const brandingServices = services.filter(s => s.category === "branding");
   const marketingServices = services.filter(s => s.category === "digital-marketing");
 
   return (
@@ -80,30 +79,8 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Branding Services */}
-      <section className="py-20 bg-gray-50">
-        <div className="container">
-          <div className="section-title">
-            <h2><i className="fas fa-fingerprint text-[#f59e0b]"></i> Branding & Identity</h2>
-            <p>Create a memorable brand that stands out from the competition</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-            {brandingServices.map((service) => (
-              <ServiceCard
-                key={service.id}
-                icon={service.icon}
-                title={service.name}
-                description={service.shortDescription}
-                link={`/services/${service.slug}`}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Digital Marketing Services */}
-      <section className="py-20">
+      <section className="py-20 bg-gray-50">
         <div className="container">
           <div className="section-title">
             <h2><i className="fas fa-chart-line text-[#f59e0b]"></i> Digital Marketing</h2>

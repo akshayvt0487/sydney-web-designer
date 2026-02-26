@@ -112,7 +112,7 @@ export default function WordPressDevelopmentPage() {
           </p>
 
           <div className="grid md:grid-cols-3 gap-12 mt-16">
-            <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border-l-4 border-[#f59e0b]">
+            <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border border-[#f59e0b]/30">
               <div className="mb-6"><i className="fas fa-palette text-5xl text-[#f59e0b]"></i></div>
               <h3 className="text-2xl font-bold text-[#1e293b] mb-3">Custom Themes</h3>
               <p className="text-[#64748b] mb-6">Unique WordPress themes</p>
@@ -136,7 +136,7 @@ export default function WordPressDevelopmentPage() {
               </ul>
             </div>
 
-            <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border-l-4 border-[#f59e0b]">
+            <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border border-[#f59e0b]/30">
               <div className="mb-6"><i className="fas fa-plug text-5xl text-[#f59e0b]"></i></div>
               <h3 className="text-2xl font-bold text-[#1e293b] mb-3">Plugin Development</h3>
               <p className="text-[#64748b] mb-6">Custom functionality</p>
@@ -160,7 +160,7 @@ export default function WordPressDevelopmentPage() {
               </ul>
             </div>
 
-            <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border-l-4 border-[#f59e0b]">
+            <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border border-[#f59e0b]/30">
               <div className="mb-6"><i className="fas fa-shopping-cart text-5xl text-[#f59e0b]"></i></div>
               <h3 className="text-2xl font-bold text-[#1e293b] mb-3">WooCommerce</h3>
               <p className="text-[#64748b] mb-6">E-commerce solutions</p>
@@ -184,7 +184,7 @@ export default function WordPressDevelopmentPage() {
               </ul>
             </div>
 
-            <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border-l-4 border-[#f59e0b]">
+            <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border border-[#f59e0b]/30">
               <div className="mb-6"><i className="fas fa-bolt text-5xl text-[#f59e0b]"></i></div>
               <h3 className="text-2xl font-bold text-[#1e293b] mb-3">Performance</h3>
               <p className="text-[#64748b] mb-6">Fast WordPress sites</p>
@@ -208,7 +208,7 @@ export default function WordPressDevelopmentPage() {
               </ul>
             </div>
 
-            <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border-l-4 border-[#f59e0b]">
+            <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border border-[#f59e0b]/30">
               <div className="mb-6"><i className="fas fa-lock text-5xl text-[#f59e0b]"></i></div>
               <h3 className="text-2xl font-bold text-[#1e293b] mb-3">Security</h3>
               <p className="text-[#64748b] mb-6">Enterprise security</p>
@@ -232,7 +232,7 @@ export default function WordPressDevelopmentPage() {
               </ul>
             </div>
 
-            <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border-l-4 border-[#f59e0b]">
+            <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border border-[#f59e0b]/30">
               <div className="mb-6"><i className="fas fa-wrench text-5xl text-[#f59e0b]"></i></div>
               <h3 className="text-2xl font-bold text-[#1e293b] mb-3">Maintenance</h3>
               <p className="text-[#64748b] mb-6">Ongoing support</p>

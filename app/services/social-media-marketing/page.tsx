@@ -217,7 +217,7 @@ export default function SocialMediaMarketingPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <div key={index} className="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-[#f59e0b] hover:-translate-y-2 transition-transform">
+              <div key={index} className="bg-white p-8 rounded-2xl shadow-lg border border-[#f59e0b]/30 hover:-translate-y-2 transition-transform">
                 <div className="text-5xl mb-6 text-[#f59e0b]">
                   <i className={feature.icon}></i>
                 </div>

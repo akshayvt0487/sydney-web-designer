@@ -99,7 +99,7 @@ export default function EcommerceWebsitesPage() {
           <p className="text-xl text-center text-gray-600 max-w-3xl mx-auto mb-16">Comprehensive solutions designed to help your business succeed</p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-            <div className="bg-white p-12 rounded-3xl shadow-lg hover:shadow-2xl transition-all border-l-4 border-[#f59e0b]">
+            <div className="bg-white p-12 rounded-3xl shadow-lg hover:shadow-2xl transition-all border border-[#f59e0b]/30">
               <div className="text-6xl mb-6"><i className="fas fa-shopping-cart text-[#f59e0b]"></i></div>
               <h3 className="text-2xl font-bold mb-4 text-[#1e293b]">Store Setup</h3>
               <p className="text-gray-600 mb-6">Complete store build</p>
@@ -111,7 +111,7 @@ export default function EcommerceWebsitesPage() {
               </ul>
             </div>
 
-            <div className="bg-white p-12 rounded-3xl shadow-lg hover:shadow-2xl transition-all border-l-4 border-[#f59e0b]">
+            <div className="bg-white p-12 rounded-3xl shadow-lg hover:shadow-2xl transition-all border border-[#f59e0b]/30">
               <div className="text-6xl mb-6"><i className="fas fa-credit-card text-[#f59e0b]"></i></div>
               <h3 className="text-2xl font-bold mb-4 text-[#1e293b]">Payments</h3>
               <p className="text-gray-600 mb-6">Secure payment processing</p>
@@ -123,7 +123,7 @@ export default function EcommerceWebsitesPage() {
               </ul>
             </div>
 
-            <div className="bg-white p-12 rounded-3xl shadow-lg hover:shadow-2xl transition-all border-l-4 border-[#f59e0b]">
+            <div className="bg-white p-12 rounded-3xl shadow-lg hover:shadow-2xl transition-all border border-[#f59e0b]/30">
               <div className="text-6xl mb-6"><i className="fas fa-box text-[#f59e0b]"></i></div>
               <h3 className="text-2xl font-bold mb-4 text-[#1e293b]">Shipping</h3>
               <p className="text-gray-600 mb-6">Shipping integration</p>
@@ -135,7 +135,7 @@ export default function EcommerceWebsitesPage() {
               </ul>
             </div>
 
-            <div className="bg-white p-12 rounded-3xl shadow-lg hover:shadow-2xl transition-all border-l-4 border-[#f59e0b]">
+            <div className="bg-white p-12 rounded-3xl shadow-lg hover:shadow-2xl transition-all border border-[#f59e0b]/30">
               <div className="text-6xl mb-6"><i className="fas fa-chart-bar text-[#f59e0b]"></i></div>
               <h3 className="text-2xl font-bold mb-4 text-[#1e293b]">Inventory</h3>
               <p className="text-gray-600 mb-6">Stock management</p>
@@ -147,7 +147,7 @@ export default function EcommerceWebsitesPage() {
               </ul>
             </div>
 
-            <div className="bg-white p-12 rounded-3xl shadow-lg hover:shadow-2xl transition-all border-l-4 border-[#f59e0b]">
+            <div className="bg-white p-12 rounded-3xl shadow-lg hover:shadow-2xl transition-all border border-[#f59e0b]/30">
               <div className="text-6xl mb-6"><i className="fas fa-mobile-alt text-[#f59e0b]"></i></div>
               <h3 className="text-2xl font-bold mb-4 text-[#1e293b]">Mobile Commerce</h3>
               <p className="text-gray-600 mb-6">Mobile shopping</p>
@@ -159,7 +159,7 @@ export default function EcommerceWebsitesPage() {
               </ul>
             </div>
 
-            <div className="bg-white p-12 rounded-3xl shadow-lg hover:shadow-2xl transition-all border-l-4 border-[#f59e0b]">
+            <div className="bg-white p-12 rounded-3xl shadow-lg hover:shadow-2xl transition-all border border-[#f59e0b]/30">
               <div className="text-6xl mb-6"><i className="fas fa-search text-[#f59e0b]"></i></div>
               <h3 className="text-2xl font-bold mb-4 text-[#1e293b]">E-commerce SEO</h3>
               <p className="text-gray-600 mb-6">Product visibility</p>

@@ -13,14 +13,14 @@ export default function Footer() {
             <div className="mb-6">
               <Image
                 src="/Sydney Web Designer logo.webp"
-                alt="Sydney Web Designer"
+                alt="DSIGNS Australia - Sydney Web Designer"
                 width={200}
                 height={60}
                 className="h-24 w-auto rounded-2xl w-full h-auto"
               />
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed text-base">
-              Sydney's premier web design and digital marketing agency. A division of DSIGNS Australia Pty Ltd. Since 2013, delivering exceptional results for businesses across Australia.
+              DSIGNS Australia - Sydney&apos;s premier web design and digital marketing agency. Since 2013, delivering exceptional results for businesses across Australia.
             </p>
             <div className="space-y-3">
               <p className="text-gray-300">
