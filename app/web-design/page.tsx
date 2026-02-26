@@ -329,7 +329,7 @@ export default function WebDesignPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             <div className="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all">
-              <div className="text-5xl font-bold mb-2">< 2s</div>
+              <div className="text-5xl font-bold mb-2">&lt; 2s</div>
               <div className="text-lg font-semibold mb-2">Loading Speed</div>
               <p className="text-white/80 text-sm">Lightning-fast page loads keep visitors engaged</p>
             </div>
