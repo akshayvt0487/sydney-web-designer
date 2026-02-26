@@ -72,8 +72,8 @@ export default function Header() {
               <Link href="/web-design" className="text-primary-navy hover:text-primary-orange transition-colors font-medium">
                 Web Design
               </Link>
-              <Link href="/growth-plans" className="text-primary-navy hover:text-primary-orange transition-colors font-medium">
-                Growth Plans
+              <Link href="/growth-marketing" className="text-primary-navy hover:text-primary-orange transition-colors font-medium">
+                Growth Marketing
               </Link>
             </nav>
 
@@ -125,8 +125,8 @@ export default function Header() {
                 <Link href="/web-design" className="text-primary-navy hover:text-primary-orange transition-colors py-2">
                   Web Design
                 </Link>
-                <Link href="/growth-plans" className="text-primary-navy hover:text-primary-orange transition-colors py-2">
-                  Growth Plans
+                <Link href="/growth-marketing" className="text-primary-navy hover:text-primary-orange transition-colors py-2">
+                  Growth Marketing
                 </Link>
                 <Link href="/about" className="text-primary-navy hover:text-primary-orange transition-colors py-2">
                   About Us

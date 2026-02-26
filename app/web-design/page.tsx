@@ -642,8 +642,8 @@ export default function WebDesignPage() {
 
         <div className="container relative z-10">
           <div className="section-title">
-            <h2 className="text-white">Growth Plans & Monthly Packages</h2>
-            <p className="text-slate-100">Ongoing support and marketing to help your website succeed</p>
+            <h2 className="text-white">Growth Marketing Services</h2>
+            <p className="text-slate-100">Strategic marketing solutions to drive traffic and conversions</p>
           </div>
 
           <div className="space-y-6 max-w-6xl mx-auto">
