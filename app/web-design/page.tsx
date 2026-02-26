@@ -634,6 +634,208 @@ export default function WebDesignPage() {
         </div>
       </section>
 
+      {/* Growth Plans Section */}
+      <section className="py-20 bg-gradient-to-br from-[#0f172a] to-[#1e293b] text-white relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute top-1/4 left-0 w-96 h-96 bg-[#f59e0b] rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob" />
+        <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-[#f59e0b] rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-2000" />
+
+        <div className="container relative z-10">
+          <div className="section-title">
+            <h2 className="text-white">Growth Plans & Monthly Packages</h2>
+            <p className="text-slate-300">Ongoing support and marketing to help your website succeed</p>
+          </div>
+
+          <div className="space-y-6 max-w-6xl mx-auto">
+            {/* Website Care */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-[#f59e0b]/40 transition-all">
+              <div className="flex flex-col lg:flex-row gap-6">
+                <div className="lg:w-1/3">
+                  <h3 className="text-2xl font-bold mb-4">Website Care</h3>
+                  <p className="text-slate-300 mb-2">Keep your website secure and updated</p>
+                </div>
+                <div className="lg:w-2/3">
+                  <div className="grid md:grid-cols-2 gap-3 mb-4">
+                    {["Security updates & monitoring", "Weekly backups", "Performance optimization", "2 hours content updates/month", "Uptime monitoring", "Email support"].map((feature, i) => (
+                      <div key={i} className="flex items-start gap-2">
+                        <svg className="w-5 h-5 text-[#f59e0b] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-slate-300 text-sm">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <button data-popup="contact" className="bg-[#f59e0b] hover:bg-[#d97706] text-white px-6 py-3 rounded-full font-bold transition-all">
+                    Get Started
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Website Care & CRM - Featured */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border-2 border-[#f59e0b] relative">
+              <div className="flex flex-col lg:flex-row gap-6">
+                <div className="lg:w-1/3">
+                  <h3 className="text-2xl font-bold mb-4">Website Care & CRM</h3>
+                  <p className="text-slate-300 mb-2">Website care + customer management</p>
+                </div>
+                <div className="lg:w-2/3">
+                  <div className="grid md:grid-cols-2 gap-3 mb-4">
+                    {["Everything in Website Care", "CRM setup & management", "Lead tracking & automation", "Request/Manage Reviews via SMS/Email", "4 hours content updates/month", "Priority support"].map((feature, i) => (
+                      <div key={i} className="flex items-start gap-2">
+                        <svg className="w-5 h-5 text-[#f59e0b] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-slate-300 text-sm">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <button data-popup="contact" className="bg-[#f59e0b] hover:bg-[#d97706] text-white px-6 py-3 rounded-full font-bold transition-all">
+                    Get Started
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Paid Ads Management - Popular */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-[#f59e0b]/40 transition-all relative">
+              <div className="absolute -top-4 left-8 bg-gradient-to-r from-[#f59e0b] to-[#fb923c] text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">
+                Most Popular
+              </div>
+              <div className="flex flex-col lg:flex-row gap-6">
+                <div className="lg:w-1/3">
+                  <h3 className="text-2xl font-bold mb-4">Paid Ads Management</h3>
+                  <p className="text-slate-300 mb-2">Google OR Facebook Ads management</p>
+                </div>
+                <div className="lg:w-2/3">
+                  <div className="grid md:grid-cols-2 gap-3 mb-4">
+                    {["Google OR Facebook Ads (one platform)", "Campaign strategy & setup", "Ad copywriting & design", "A/B testing & optimization", "Conversion tracking", "Monthly performance reports", "Dedicated account manager", "Weekly optimization"].map((feature, i) => (
+                      <div key={i} className="flex items-start gap-2">
+                        <svg className="w-5 h-5 text-[#f59e0b] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-slate-300 text-sm">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <button data-popup="adsAudit" className="bg-[#f59e0b] hover:bg-[#d97706] text-white px-6 py-3 rounded-full font-bold transition-all">
+                    Get Started
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* SEO Package */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-[#f59e0b]/40 transition-all">
+              <div className="flex flex-col lg:flex-row gap-6">
+                <div className="lg:w-1/3">
+                  <h3 className="text-2xl font-bold mb-4">SEO Package</h3>
+                  <p className="text-slate-300 mb-2">Complete SEO & content marketing</p>
+                </div>
+                <div className="lg:w-2/3">
+                  <div className="grid md:grid-cols-2 gap-3 mb-4">
+                    {["Complete SEO audit & strategy", "On-page SEO optimization", "Technical SEO improvements", "4 SEO blog posts/month", "Link building & outreach", "Local SEO optimization", "Competitor analysis", "Monthly ranking reports"].map((feature, i) => (
+                      <div key={i} className="flex items-start gap-2">
+                        <svg className="w-5 h-5 text-[#f59e0b] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-slate-300 text-sm">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <button data-popup="seoAudit" className="bg-[#f59e0b] hover:bg-[#d97706] text-white px-6 py-3 rounded-full font-bold transition-all">
+                    Get Started
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Complete Marketing - Ultimate */}
+            <div className="bg-gradient-to-br from-[#f59e0b]/20 to-[#fb923c]/20 backdrop-blur-sm rounded-2xl p-8 border-2 border-[#f59e0b] relative">
+              <div className="absolute -top-4 left-8 bg-gradient-to-r from-[#f59e0b] to-[#fb923c] text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">
+                Ultimate Package
+              </div>
+              <div className="flex flex-col lg:flex-row gap-6">
+                <div className="lg:w-1/3">
+                  <h3 className="text-2xl font-bold mb-4">Complete Marketing</h3>
+                  <p className="text-slate-300 mb-2">Everything you need to dominate</p>
+                </div>
+                <div className="lg:w-2/3">
+                  <div className="grid md:grid-cols-2 gap-3 mb-4">
+                    {["Everything from all plans above", "Dedicated marketing team", "Multi-channel campaigns", "Social media management", "Email marketing automation", "Video marketing & production", "Advanced analytics & reporting", "Priority 24/7 support"].map((feature, i) => (
+                      <div key={i} className="flex items-start gap-2">
+                        <svg className="w-5 h-5 text-[#f59e0b] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-white text-sm font-medium">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <button data-popup="consultation" className="bg-white hover:bg-gray-100 text-[#0f172a] px-6 py-3 rounded-full font-bold transition-all">
+                    Get Started
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Plan Recommendation */}
+          <div className="mt-16 grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+              <h3 className="text-xl font-bold mb-4">Starting Out</h3>
+              <p className="text-slate-300 mb-4">
+                Perfect for small businesses and startups that need essential services to establish
+                and grow their online presence.
+              </p>
+              <ul className="space-y-2 text-sm text-slate-300">
+                <li className="flex items-start gap-2">
+                  <span className="text-[#f59e0b]">•</span>
+                  <span>Website Care for basic maintenance</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#f59e0b]">•</span>
+                  <span>Website Care & CRM to manage customers</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#f59e0b]">•</span>
+                  <span>Paid Ads for quick lead generation</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#f59e0b]">•</span>
+                  <span>SEO Package for long-term growth</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-gradient-to-br from-[#f59e0b]/10 to-[#fb923c]/10 backdrop-blur-sm rounded-2xl p-8 border border-[#f59e0b]/30">
+              <h3 className="text-xl font-bold mb-4">Established Business</h3>
+              <p className="text-slate-300 mb-4">
+                For businesses with $1M+ annual revenue ready to dominate their market with
+                comprehensive marketing.
+              </p>
+              <ul className="space-y-2 text-sm text-slate-300">
+                <li className="flex items-start gap-2">
+                  <span className="text-[#f59e0b]">•</span>
+                  <span>Complete Marketing Package</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#f59e0b]">•</span>
+                  <span>Dedicated team of specialists</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#f59e0b]">•</span>
+                  <span>Multi-channel strategy</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#f59e0b]">•</span>
+                  <span>Maximum market penetration</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section className="py-20 bg-white">
         <div className="container">
