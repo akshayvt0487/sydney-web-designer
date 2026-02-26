@@ -20,7 +20,7 @@ export default function Footer() {
               />
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed text-base">
-              Sydney's premier web design and digital marketing agency. 13+ years of experience delivering exceptional results for businesses across Australia.
+              Sydney's premier web design and digital marketing agency. A division of DSIGNS Australia Pty Ltd. Since 2013, delivering exceptional results for businesses across Australia.
             </p>
             <div className="space-y-3">
               <p className="text-gray-300">

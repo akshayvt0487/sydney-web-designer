@@ -40,7 +40,7 @@ export default function WebDesignPage() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 bg-[#f59e0b]/10 border border-[#f59e0b]/30 rounded-full px-5 py-2 mb-8 backdrop-blur-sm">
               <span className="w-2 h-2 bg-[#f59e0b] rounded-full animate-pulse" />
-              <span className="text-[#f59e0b] text-sm font-semibold">13+ Years of Excellence</span>
+              <span className="text-[#f59e0b] text-sm font-semibold">Since 2013 • DSIGNS Australia</span>
             </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white leading-tight">
               Professional Web Design <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f59e0b] to-[#fb923c]">Sydney</span>

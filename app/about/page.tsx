@@ -5,9 +5,9 @@ import StatsGrid from "@/components/StatsGrid";
 import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = generateMetadata({
-  title: "About Us | 13+ Years of Excellence",
-  description: "Meet the team behind Sydney's premier web design agency. 13+ years experience, 500+ websites, award-winning service. Learn about our story and values.",
-  keywords: "about sydney web designer, web design agency sydney, about dsigns",
+  title: "About Us | Sydney Web Design Since 2013",
+  description: "Meet the team behind Sydney's premier web design agency. A division of DSIGNS Australia Pty Ltd. Since 2013, 500+ websites delivered, award-winning service.",
+  keywords: "about sydney web designer, web design agency sydney, about dsigns, dsigns australia",
   canonicalUrl: "https://sydneywebdesigner.com.au/about",
 });
 
@@ -47,7 +47,7 @@ export default function AboutPage() {
               About Sydney Web Designer
             </h1>
             <p className="text-xl text-white mb-8">
-              Transforming Sydney businesses through innovative web design and digital marketing since 2011
+              Transforming Sydney businesses through innovative web design and digital marketing since 2013
             </p>
           </div>
         </div>
@@ -74,16 +74,16 @@ export default function AboutPage() {
           <div className="max-w-4xl mx-auto">
             <div className="section-title">
               <h2>Our Story</h2>
-              <p>13+ years of digital excellence in Sydney</p>
+              <p>Over a decade of digital excellence in Sydney</p>
             </div>
 
             <div className="space-y-6 text-lg text-gray-700">
               <p>
-                Sydney Web Designer was founded in 2011 with a simple mission: help Sydney businesses succeed online through exceptional web design and digital marketing. What started as a small operation in Parramatta has grown into a trusted partner for businesses across Sydney and beyond.
+                Sydney Web Designer was founded in 2013 as a specialized division of DSIGNS Australia Pty Ltd, with a clear mission: help Sydney businesses succeed online through exceptional web design and digital marketing. What started as a focused operation has grown into a trusted partner for businesses across Sydney and throughout Australia.
               </p>
 
               <p>
-                Over the past 13 years, we&apos;ve helped hundreds of businesses—from local cafes and tradies to professional services and e-commerce stores—establish powerful online presences that drive real results. Our team combines creative design with technical expertise and data-driven marketing strategies to deliver measurable growth for our clients.
+                Since 2013, we&apos;ve helped hundreds of businesses—from local cafes and tradies to professional services and e-commerce stores—establish powerful online presences that drive real results. Our team combines creative design with technical expertise and data-driven marketing strategies to deliver measurable growth for our clients.
               </p>
 
               <p>
