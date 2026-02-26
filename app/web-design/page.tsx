@@ -45,7 +45,7 @@ export default function WebDesignPage() {
             <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white leading-tight">
               Professional Web Design <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f59e0b] to-[#fb923c]">Sydney</span>
             </h1>
-            <p className="text-xl md:text-2xl text-slate-300 mb-8 leading-relaxed">
+            <p className="text-xl md:text-2xl text-slate-100 mb-8 leading-relaxed">
               Transform your online presence with stunning, high-performance websites that drive real business results. Award-winning design meets cutting-edge technology.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -413,7 +413,7 @@ export default function WebDesignPage() {
         <div className="container relative z-10">
           <div className="section-title">
             <h2 className="text-white">Perfect on Every Device</h2>
-            <p className="text-slate-300">Responsive design that looks stunning across all screen sizes</p>
+            <p className="text-slate-100">Responsive design that looks stunning across all screen sizes</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
@@ -423,7 +423,7 @@ export default function WebDesignPage() {
                   <i className="fas fa-desktop text-4xl text-white"></i>
                 </div>
                 <h3 className="text-2xl font-bold mb-3">Desktop</h3>
-                <p className="text-slate-300">Immersive full-screen experiences with advanced features and layouts</p>
+                <p className="text-slate-100">Immersive full-screen experiences with advanced features and layouts</p>
               </div>
             </div>
 
@@ -433,7 +433,7 @@ export default function WebDesignPage() {
                   <i className="fas fa-tablet-alt text-4xl text-white"></i>
                 </div>
                 <h3 className="text-2xl font-bold mb-3">Tablet</h3>
-                <p className="text-slate-300">Optimized touch interfaces that adapt perfectly to all tablet sizes</p>
+                <p className="text-slate-100">Optimized touch interfaces that adapt perfectly to all tablet sizes</p>
               </div>
             </div>
 
@@ -443,14 +443,14 @@ export default function WebDesignPage() {
                   <i className="fas fa-mobile-alt text-4xl text-white"></i>
                 </div>
                 <h3 className="text-2xl font-bold mb-3">Mobile</h3>
-                <p className="text-slate-300">Fast-loading, thumb-friendly designs for on-the-go users</p>
+                <p className="text-slate-100">Fast-loading, thumb-friendly designs for on-the-go users</p>
               </div>
             </div>
           </div>
 
           <div className="max-w-3xl mx-auto text-center">
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-              <p className="text-lg text-slate-300 mb-6 leading-relaxed">
+              <p className="text-lg text-slate-100 mb-6 leading-relaxed">
                 Over <span className="text-[#f59e0b] font-bold text-2xl">70%</span> of web traffic comes from mobile devices.
                 We build mobile-first websites that provide exceptional experiences on smartphones while scaling beautifully to tablets and desktops.
               </p>
@@ -643,7 +643,7 @@ export default function WebDesignPage() {
         <div className="container relative z-10">
           <div className="section-title">
             <h2 className="text-white">Growth Plans & Monthly Packages</h2>
-            <p className="text-slate-300">Ongoing support and marketing to help your website succeed</p>
+            <p className="text-slate-100">Ongoing support and marketing to help your website succeed</p>
           </div>
 
           <div className="space-y-6 max-w-6xl mx-auto">
@@ -652,7 +652,7 @@ export default function WebDesignPage() {
               <div className="flex flex-col lg:flex-row gap-6">
                 <div className="lg:w-1/3">
                   <h3 className="text-2xl font-bold mb-4">Website Care</h3>
-                  <p className="text-slate-300 mb-2">Keep your website secure and updated</p>
+                  <p className="text-slate-100 mb-2">Keep your website secure and updated</p>
                 </div>
                 <div className="lg:w-2/3">
                   <div className="grid md:grid-cols-2 gap-3 mb-4">
@@ -661,7 +661,7 @@ export default function WebDesignPage() {
                         <svg className="w-5 h-5 text-[#f59e0b] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
-                        <span className="text-slate-300 text-sm">{feature}</span>
+                        <span className="text-slate-100 text-sm">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -677,7 +677,7 @@ export default function WebDesignPage() {
               <div className="flex flex-col lg:flex-row gap-6">
                 <div className="lg:w-1/3">
                   <h3 className="text-2xl font-bold mb-4">Website Care & CRM</h3>
-                  <p className="text-slate-300 mb-2">Website care + customer management</p>
+                  <p className="text-slate-100 mb-2">Website care + customer management</p>
                 </div>
                 <div className="lg:w-2/3">
                   <div className="grid md:grid-cols-2 gap-3 mb-4">
@@ -686,7 +686,7 @@ export default function WebDesignPage() {
                         <svg className="w-5 h-5 text-[#f59e0b] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
-                        <span className="text-slate-300 text-sm">{feature}</span>
+                        <span className="text-slate-100 text-sm">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -705,7 +705,7 @@ export default function WebDesignPage() {
               <div className="flex flex-col lg:flex-row gap-6">
                 <div className="lg:w-1/3">
                   <h3 className="text-2xl font-bold mb-4">Paid Ads Management</h3>
-                  <p className="text-slate-300 mb-2">Google OR Facebook Ads management</p>
+                  <p className="text-slate-100 mb-2">Google OR Facebook Ads management</p>
                 </div>
                 <div className="lg:w-2/3">
                   <div className="grid md:grid-cols-2 gap-3 mb-4">
@@ -714,7 +714,7 @@ export default function WebDesignPage() {
                         <svg className="w-5 h-5 text-[#f59e0b] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
-                        <span className="text-slate-300 text-sm">{feature}</span>
+                        <span className="text-slate-100 text-sm">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -730,7 +730,7 @@ export default function WebDesignPage() {
               <div className="flex flex-col lg:flex-row gap-6">
                 <div className="lg:w-1/3">
                   <h3 className="text-2xl font-bold mb-4">SEO Package</h3>
-                  <p className="text-slate-300 mb-2">Complete SEO & content marketing</p>
+                  <p className="text-slate-100 mb-2">Complete SEO & content marketing</p>
                 </div>
                 <div className="lg:w-2/3">
                   <div className="grid md:grid-cols-2 gap-3 mb-4">
@@ -739,7 +739,7 @@ export default function WebDesignPage() {
                         <svg className="w-5 h-5 text-[#f59e0b] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
-                        <span className="text-slate-300 text-sm">{feature}</span>
+                        <span className="text-slate-100 text-sm">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -758,7 +758,7 @@ export default function WebDesignPage() {
               <div className="flex flex-col lg:flex-row gap-6">
                 <div className="lg:w-1/3">
                   <h3 className="text-2xl font-bold mb-4">Complete Marketing</h3>
-                  <p className="text-slate-300 mb-2">Everything you need to dominate</p>
+                  <p className="text-slate-100 mb-2">Everything you need to dominate</p>
                 </div>
                 <div className="lg:w-2/3">
                   <div className="grid md:grid-cols-2 gap-3 mb-4">
@@ -783,11 +783,11 @@ export default function WebDesignPage() {
           <div className="mt-16 grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
               <h3 className="text-xl font-bold mb-4">Starting Out</h3>
-              <p className="text-slate-300 mb-4">
+              <p className="text-slate-100 mb-4">
                 Perfect for small businesses and startups that need essential services to establish
                 and grow their online presence.
               </p>
-              <ul className="space-y-2 text-sm text-slate-300">
+              <ul className="space-y-2 text-sm text-slate-100">
                 <li className="flex items-start gap-2">
                   <span className="text-[#f59e0b]">•</span>
                   <span>Website Care for basic maintenance</span>
@@ -809,11 +809,11 @@ export default function WebDesignPage() {
 
             <div className="bg-gradient-to-br from-[#f59e0b]/10 to-[#fb923c]/10 backdrop-blur-sm rounded-2xl p-8 border border-[#f59e0b]/30">
               <h3 className="text-xl font-bold mb-4">Established Business</h3>
-              <p className="text-slate-300 mb-4">
+              <p className="text-slate-100 mb-4">
                 For businesses with $1M+ annual revenue ready to dominate their market with
                 comprehensive marketing.
               </p>
-              <ul className="space-y-2 text-sm text-slate-300">
+              <ul className="space-y-2 text-sm text-slate-100">
                 <li className="flex items-start gap-2">
                   <span className="text-[#f59e0b]">•</span>
                   <span>Complete Marketing Package</span>
