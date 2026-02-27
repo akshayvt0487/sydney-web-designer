@@ -168,8 +168,8 @@ export default function HowToChooseWebDesigner() {
           </ul>
 
           {/* Info Banner */}
-          <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-xl my-8">
-            <h3 className="text-xl font-bold text-blue-900 mt-0 mb-3"><i className="fas fa-lightbulb mr-2"></i>Technical Skills Test</h3>
+          <div className="bg-primary-orange/5 border-l-4 border-primary-orange p-6 rounded-r-xl my-8">
+            <h3 className="text-xl font-bold text-primary-navy mt-0 mb-3"><i className="fas fa-lightbulb text-primary-orange mr-2"></i>Technical Skills Test</h3>
             <p className="mb-0 text-gray-800">
               Ask potential designers about Core Web Vitals, their approach to mobile-first design, and how they ensure website security. Their answers will quickly reveal their technical depth. If they can't explain these concepts clearly, look elsewhere.
             </p>

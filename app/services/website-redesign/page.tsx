@@ -6,6 +6,7 @@ import StatsGrid from "@/components/StatsGrid";
 import TestimonialCard from "@/components/TestimonialCard";
 import PortfolioCard from "@/components/PortfolioCard";
 import CTASection from "@/components/CTASection";
+import ServiceHeroSection from "@/components/ServiceHeroSection";
 
 export const metadata = generateMetadata({
   title: "Website Redesign Sydney | Modernize Your Outdated Website",
@@ -130,29 +131,24 @@ export default function WebsiteRedesignPage() {
       />
 
       {/* Hero Section */}
-      <section className="bg-[#1e293b] text-white py-20">
-        <div className="container">
-          <div className="max-w-3xl">
-            <div className="inline-block bg-primary-orange/20 text-primary-orange px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              <i className={`fas ${service.icon} mr-2`}></i> {service.name}
-            </div>
-            <h1 className="text-5xl font-bold mb-6 text-white">
-              Transform Your Outdated Website Into a Modern Digital Asset
-            </h1>
-            <p className="text-xl text-white mb-8">
-              Modernize your website with fresh design, improved functionality, and better performance. Turn your aging site into a high-converting marketing tool.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <button data-popup="contact" className="btn btn-primary">
-                Start Your Redesign
-              </button>
-              <Link href="/portfolio" className="btn btn-white">
-                View Redesign Projects
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServiceHeroSection
+        badge={{
+          icon: `fas ${service.icon}`,
+          text: service.name
+        }}
+        heading="Transform Your Outdated Website Into a Modern Digital Asset"
+        description="Modernize your website with fresh design, improved functionality, and better performance. Turn your aging site into a high-converting marketing tool."
+        buttons={{
+          primary: {
+            text: "Start Your Redesign",
+            dataPopup: "contact"
+          },
+          secondary: {
+            text: "View Redesign Projects",
+            href: "/portfolio"
+          }
+        }}
+      />
 
       {/* Stats Section */}
       <section className="py-16 bg-gray-50">

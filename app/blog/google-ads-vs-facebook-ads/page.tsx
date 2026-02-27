@@ -106,7 +106,7 @@ export default function GoogleAdsVsFacebookAdsPage() {
             <p className="text-gray-700 mb-6">
               Facebook Ads (including Instagram) interrupt users with targeted messages based on interests, demographics, and behaviors. This is &quot;push marketing&quot;—you&apos;re pushing your message to people who fit your target audience profile, even if they&apos;re not actively searching for you.
             </p>
-            <div className="bg-blue-50 border-l-4 border-primary-navy p-6 my-8">
+            <div className="bg-primary-orange/5 border-l-4 border-primary-navy p-6 my-8">
               <p className="text-gray-700 font-semibold mb-2"><i className="fas fa-check-circle text-primary-orange mr-2"></i>Facebook Ads is Best For:</p>
               <ul className="text-gray-700 mb-0 space-y-2">
                 <li><i className="fas fa-shopping-bag text-primary-orange mr-2"></i>E-commerce and visual products</li>

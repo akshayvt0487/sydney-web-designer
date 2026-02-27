@@ -75,7 +75,7 @@ export default function AdminDashboard() {
           icon="fas fa-inbox"
           title="Total Submissions"
           value={stats.totalSubmissions}
-          color="border-blue-500"
+          color="border-primary-orange"
           link="/admin/dashboard/submissions"
         />
         <StatCard
@@ -109,7 +109,7 @@ export default function AdminDashboard() {
             href="/admin/dashboard/submissions"
             className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
           >
-            <i className="fas fa-inbox text-2xl text-blue-500"></i>
+            <i className="fas fa-inbox text-2xl text-primary-orange"></i>
             <div>
               <p className="font-semibold text-[#1e293b]">View All Submissions</p>
               <p className="text-sm text-gray-600">Manage quote requests and audits</p>

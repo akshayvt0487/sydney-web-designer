@@ -104,7 +104,7 @@ export default function MobileAppVsMobileWebsitePage() {
             <p className="text-gray-700 mb-6">
               A mobile app is downloaded from app stores (Apple App Store, Google Play) and installed on users&apos; devices. It can access device features and work offline, providing a more integrated experience.
             </p>
-            <div className="bg-blue-50 border-l-4 border-primary-navy p-6 my-8">
+            <div className="bg-primary-orange/5 border-l-4 border-primary-navy p-6 my-8">
               <p className="text-gray-700 font-semibold mb-2"><i className="fas fa-check-circle text-primary-navy mr-2"></i>Mobile App Advantages:</p>
               <ul className="text-gray-700 mb-0 space-y-2">
                 <li><i className="fas fa-camera text-primary-navy mr-2"></i>Access device features (camera, GPS, contacts, microphone)</li>
@@ -222,7 +222,7 @@ export default function MobileAppVsMobileWebsitePage() {
             <p className="text-gray-700 mb-6">
               PWAs are the perfect compromise—websites that work like apps. They offer app-like features at website costs, giving you the best of both worlds.
             </p>
-            <div className="bg-blue-50 border-l-4 border-primary-navy p-6 my-8">
+            <div className="bg-primary-orange/5 border-l-4 border-primary-navy p-6 my-8">
               <p className="text-gray-700 font-semibold mb-2"><i className="fas fa-star text-primary-orange mr-2"></i>PWA Features:</p>
               <ul className="text-gray-700 mb-0 space-y-2">
                 <li><i className="fas fa-wifi-slash text-primary-navy mr-2"></i>Works offline after first visit</li>

@@ -1,5 +1,6 @@
 import { generateMetadata } from "@/lib/metadata";
 import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema } from "@/lib/schemas";
+import ServiceHeroSection from "@/components/ServiceHeroSection";
 
 export const metadata = generateMetadata({
   title: "WordPress Development Sydney | Custom WordPress Websites",
@@ -37,38 +38,44 @@ export default function WordPressDevelopmentPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessSchema()) }}
       />
       {/* Hero Section */}
-      <section className="bg-[#1e293b] text-white py-32 px-8 text-center">
-        <div className="max-w-5xl mx-auto">
-          <h1 className="text-6xl font-bold mb-6 text-white">WordPress Development Sydney</h1>
-          <p className="text-2xl mb-10 opacity-95 max-w-3xl mx-auto text-white">
-            Expert WordPress development for Sydney businesses. Custom themes, plugins, and complete solutions
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
-            <button data-popup="contact" className="bg-[#f59e0b] text-white px-6 md:px-10 lg:px-12 py-3 md:py-4 rounded-full font-semibold hover:bg-[#d97706] transition-all w-full sm:w-auto text-center">
-              Start WordPress Project
-            </button>
-            <a href="#process" className="bg-transparent border-2 border-white text-white px-6 md:px-10 lg:px-12 py-3 md:py-4 rounded-full font-semibold hover:bg-white hover:text-[#1e293b] transition-all w-full sm:w-auto text-center">
-              Our Process
-            </a>
-          </div>
+      <ServiceHeroSection
+        badge={{
+          icon: "fab fa-wordpress",
+          text: "WordPress Specialists"
+        }}
+        heading="WordPress Development Sydney"
+        description="Expert WordPress development for Sydney businesses. Custom themes, plugins, and complete solutions tailored to your needs."
+        buttons={{
+          primary: {
+            text: "Start WordPress Project",
+            dataPopup: "contact"
+          },
+          secondary: {
+            text: "Our Process",
+            href: "#process"
+          }
+        }}
+      />
 
-          {/* Trust Badges */}
-          <div className="flex flex-wrap justify-center gap-12 mt-12">
+      {/* Trust Badges Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container">
+          <div className="flex flex-wrap justify-center gap-12 max-w-4xl mx-auto">
             <div className="text-center">
               <div className="mb-2"><i className="fas fa-trophy text-4xl text-[#f59e0b]"></i></div>
-              <div className="text-sm opacity-90">13+ Years Experience</div>
+              <div className="text-sm text-gray-600">13+ Years Experience</div>
             </div>
             <div className="text-center">
               <div className="mb-2"><i className="fas fa-star text-4xl text-[#f59e0b]"></i></div>
-              <div className="text-sm opacity-90">50+ 5-Star Reviews</div>
+              <div className="text-sm text-gray-600">50+ 5-Star Reviews</div>
             </div>
             <div className="text-center">
               <div className="mb-2"><i className="fas fa-check-circle text-4xl text-[#f59e0b]"></i></div>
-              <div className="text-sm opacity-90">Professional Service</div>
+              <div className="text-sm text-gray-600">Professional Service</div>
             </div>
             <div className="text-center">
               <div className="mb-2"><i className="fas fa-chart-bar text-4xl text-[#f59e0b]"></i></div>
-              <div className="text-sm opacity-90">Proven Results</div>
+              <div className="text-sm text-gray-600">Proven Results</div>
             </div>
           </div>
         </div>

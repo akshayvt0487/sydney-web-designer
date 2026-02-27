@@ -66,8 +66,8 @@ export default function WebDesignTrends2026() {
           </p>
 
           {/* Info Banner */}
-          <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-xl my-8">
-            <h3 className="text-xl font-bold text-blue-900 mt-0 mb-3"><i className="fas fa-chart-bar mr-2"></i>Web Design Industry Statistics 2025</h3>
+          <div className="bg-primary-orange/5 border-l-4 border-primary-orange p-6 rounded-r-xl my-8">
+            <h3 className="text-xl font-bold text-primary-navy mt-0 mb-3"><i className="fas fa-chart-bar text-primary-orange mr-2"></i>Web Design Industry Statistics 2025</h3>
             <p className="mb-0 text-gray-800">
               <strong>Did you know?</strong> 94% of first impressions are design-related, and 75% of consumers judge a company's credibility based on their website design. With Sydney businesses competing in an increasingly digital marketplace, staying current with professional web design trends isn't optional—it's essential for success.
             </p>

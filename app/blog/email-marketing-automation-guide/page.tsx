@@ -99,7 +99,7 @@ export default function EmailMarketingAutomationPage() {
             <p className="text-gray-700 mb-6">
               You can&apos;t automate without subscribers. Capture emails through website popups, lead magnets (free guides, checklists), content upgrades, checkout processes, and social media campaigns. Always provide value in exchange for contact information.
             </p>
-            <div className="bg-blue-50 border-l-4 border-primary-navy p-6 my-8">
+            <div className="bg-primary-orange/5 border-l-4 border-primary-navy p-6 my-8">
               <p className="text-gray-700 font-semibold mb-2"><i className="fas fa-lightbulb text-primary-orange mr-2"></i>List Building Tips:</p>
               <ul className="text-gray-700 mb-0">
                 <li>Offer high-value lead magnets relevant to your audience</li>

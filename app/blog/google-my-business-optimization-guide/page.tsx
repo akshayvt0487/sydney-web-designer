@@ -77,7 +77,7 @@ export default function GoogleMyBusinessPage() {
             <p className="text-gray-700 mb-6">
               76% of people who search for something nearby visit a business within a day. 28% of those searches result in a purchase. An optimized Google Business Profile helps you capture this local traffic and convert searches into customers.
             </p>
-            <div className="bg-blue-50 border-l-4 border-primary-navy p-6 my-8">
+            <div className="bg-primary-orange/5 border-l-4 border-primary-navy p-6 my-8">
               <p className="text-gray-700 font-semibold mb-2"><i className="fas fa-chart-line text-primary-orange mr-2"></i>Key Benefits:</p>
               <ul className="text-gray-700 mb-0 space-y-1">
                 <li>Appear in Google Maps and local 3-pack results</li>
@@ -140,7 +140,7 @@ export default function GoogleMyBusinessPage() {
               <li><strong>Products/Services:</strong> Show what you offer in action</li>
               <li><strong>Before/After:</strong> Demonstrate transformation (great for trades)</li>
             </ul>
-            <div className="bg-blue-50 border-l-4 border-primary-navy p-6 my-8">
+            <div className="bg-primary-orange/5 border-l-4 border-primary-navy p-6 my-8">
               <p className="text-gray-700 font-semibold mb-2"><i className="fas fa-lightbulb text-primary-orange mr-2"></i>Photo Tips:</p>
               <p className="text-gray-700">Upload at least 10-15 high-quality photos. Use professional photography if possible. Update regularly with new photos to show your business is active. Natural lighting works best.</p>
             </div>

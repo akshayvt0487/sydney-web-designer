@@ -51,6 +51,7 @@ export default function SEOMegaMenu() {
                     <li key={index}>
                       <Link
                         href={`/services/${service.slug}`}
+                        onClick={() => setIsOpen(false)}
                         className="group block p-2.5 rounded hover:bg-primary-orange hover:text-white transition-all"
                       >
                         <div className="font-medium text-sm mb-1">{service.name}</div>
@@ -72,6 +73,7 @@ export default function SEOMegaMenu() {
                     <li key={index}>
                       <Link
                         href={`/services/${service.slug}`}
+                        onClick={() => setIsOpen(false)}
                         className="group block p-2.5 rounded hover:bg-primary-orange hover:text-white transition-all"
                       >
                         <div className="font-medium text-sm mb-1">{service.name}</div>
@@ -84,7 +86,7 @@ export default function SEOMegaMenu() {
 
               {/* Pricing Model Column */}
               <div className="p-6 bg-gradient-to-br from-[#1e293b] to-[#2d3b4f] text-white">
-                <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
+                <h3 className="text-lg font-bold mb-4 flex items-center gap-2 text-white">
                   <i className="fas fa-trophy text-[#f59e0b]"></i>
                   Pricing Model
                 </h3>
@@ -93,6 +95,7 @@ export default function SEOMegaMenu() {
                     <li key={index}>
                       <Link
                         href={`/services/${service.slug}`}
+                        onClick={() => setIsOpen(false)}
                         className="group block p-2.5 rounded hover:bg-white/10 transition-all"
                       >
                         <div className="font-medium text-sm mb-1">{service.name}</div>
@@ -109,6 +112,7 @@ export default function SEOMegaMenu() {
                   </p>
                   <Link
                     href="#contact"
+                    onClick={() => setIsOpen(false)}
                     className="block text-center bg-[#f59e0b] text-white px-4 py-2 rounded-lg font-semibold hover:bg-[#d97706] transition-all text-sm"
                   >
                     Start Now

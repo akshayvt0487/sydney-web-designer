@@ -2,6 +2,7 @@ import Link from "next/link";
 import { generateMetadata } from "@/lib/metadata";
 import { generateBreadcrumbSchema, generateServiceSchema } from "@/lib/schemas";
 import CTASection from "@/components/CTASection";
+import ServiceHeroSection from "@/components/ServiceHeroSection";
 
 export const metadata = generateMetadata({
   title: "Mobile SEO Sydney | Optimize for Mobile Search & Rankings",
@@ -216,43 +217,36 @@ export default function MobileSEOPage() {
       />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] text-white py-32 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#f59e0b] rounded-full mix-blend-multiply filter blur-3xl animate-blob" />
-          <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-[#3b82f6] rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000" />
-        </div>
+      <ServiceHeroSection
+        badge={{
+          icon: "fas fa-mobile-alt",
+          text: "Mobile-First SEO Experts"
+        }}
+        heading="Mobile SEO Sydney"
+        description="Dominate mobile search. Optimize for mobile-first indexing. Capture 63% of search traffic with expert mobile SEO."
+        buttons={{
+          primary: {
+            text: "Get Mobile SEO Audit",
+            dataPopup: "seoAudit"
+          },
+          secondary: {
+            text: "Our Services",
+            href: "#services"
+          }
+        }}
+      />
 
-        <div className="container relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 bg-[#f59e0b]/10 border border-[#f59e0b]/30 rounded-full px-5 py-2 mb-8 backdrop-blur-sm">
-              <i className="fas fa-mobile-alt text-[#f59e0b]"></i>
-              <span className="text-[#f59e0b] text-sm font-semibold">Mobile-First SEO Experts</span>
-            </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-              Mobile SEO Sydney
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-slate-100">
-              Dominate mobile search. Optimize for mobile-first indexing. Capture 63% of search traffic with expert mobile SEO.
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Link href="#contact" className="btn btn-primary">
-                Get Mobile SEO Audit
-              </Link>
-              <Link href="#services" className="btn btn-secondary">
-                Our Services
-              </Link>
-            </div>
-
-            {/* Mobile Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 max-w-3xl mx-auto">
-              {mobileStats.map((item, index) => (
-                <div key={index} className="text-center">
-                  <i className={`fas ${item.icon} text-3xl text-[#f59e0b] mb-3`}></i>
-                  <div className="text-4xl font-bold text-[#f59e0b] mb-2">{item.stat}</div>
-                  <div className="text-sm text-slate-300">{item.label}</div>
-                </div>
-              ))}
-            </div>
+      {/* Mobile Stats Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            {mobileStats.map((item, index) => (
+              <div key={index} className="text-center">
+                <i className={`fas ${item.icon} text-3xl text-[#f59e0b] mb-3`}></i>
+                <div className="text-4xl font-bold text-[#f59e0b] mb-2">{item.stat}</div>
+                <div className="text-sm text-gray-600">{item.label}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

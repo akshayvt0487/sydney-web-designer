@@ -2,11 +2,12 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { getFormConfig, getFormRedirectUrl, type FormType, type FormField } from "@/lib/forms";
 
 interface PopupFormProps {
   isOpen: boolean;
   onClose: () => void;
-  formType: "contact" | "seoAudit" | "adsAudit" | "consultation";
+  formType: FormType;
 }
 
 export default function PopupForm({ isOpen, onClose, formType }: PopupFormProps) {
@@ -14,6 +15,9 @@ export default function PopupForm({ isOpen, onClose, formType }: PopupFormProps)
   const [formData, setFormData] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+
+  // Get form configuration
+  const config = getFormConfig(formType);
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -58,14 +62,7 @@ export default function PopupForm({ isOpen, onClose, formType }: PopupFormProps)
           setIsSuccess(false);
           onClose();
           setFormData({});
-          // Map formType to thank you page type
-          const typeMap: Record<string, string> = {
-            "contact": "contact",
-            "seoAudit": "seoAudit",
-            "adsAudit": "adsAudit",
-            "consultation": "consultation",
-          };
-          router.push(`/thank-you?type=${typeMap[formType]}`);
+          router.push(getFormRedirectUrl(formType));
         }, 2000);
       }
     } catch (error) {
@@ -81,37 +78,82 @@ export default function PopupForm({ isOpen, onClose, formType }: PopupFormProps)
     });
   };
 
+  // Helper function to render individual fields based on configuration
+  const renderField = (field: FormField) => {
+    const commonProps = {
+      name: field.name,
+      required: field.required,
+      value: formData[field.name] || "",
+      onChange: handleChange,
+      placeholder: field.placeholder,
+    };
+
+    if (field.type === "textarea") {
+      return (
+        <textarea
+          {...commonProps}
+          className="form-textarea"
+          rows={field.rows || 4}
+        />
+      );
+    }
+
+    if (field.type === "select" && field.options) {
+      return (
+        <select
+          {...commonProps}
+          className="form-select"
+        >
+          {field.options.map((option) => (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          ))}
+        </select>
+      );
+    }
+
+    // Default to input field for text, email, tel, url
+    return (
+      <input
+        {...commonProps}
+        type={field.type}
+        className="form-input"
+      />
+    );
+  };
+
+  // Helper to get grid column class
+  const getGridColumnClass = (gridColumn?: string) => {
+    if (gridColumn === 'full') return 'md:col-span-2';
+    return '';
+  };
+
   if (!isOpen) return null;
 
-  const getFormTitle = () => {
-    switch (formType) {
-      case "contact":
-        return "Get Your Free Quote";
-      case "seoAudit":
-        return "Get Your Free SEO Audit";
-      case "adsAudit":
-        return "Get Your Free Google Ads Audit";
-      case "consultation":
-        return "Book Your Free Consultation";
-      default:
-        return "Contact Us";
-    }
-  };
+  // Group fields by their grid rows for proper layout
+  const fieldsInRows: FormField[][] = [];
+  let currentRow: FormField[] = [];
 
-  const getFormDescription = () => {
-    switch (formType) {
-      case "contact":
-        return "Fill out the form below and we'll get back to you within 24 hours with a custom quote for your project.";
-      case "seoAudit":
-        return "Get a comprehensive SEO audit of your website and discover opportunities to improve your rankings.";
-      case "adsAudit":
-        return "Let us review your Google Ads campaigns and show you how to improve your ROI.";
-      case "consultation":
-        return "Schedule a free 30-minute consultation with our experts to discuss your digital marketing goals.";
-      default:
-        return "";
+  config.fields.forEach((field) => {
+    if (field.gridColumn === 'full') {
+      if (currentRow.length > 0) {
+        fieldsInRows.push(currentRow);
+        currentRow = [];
+      }
+      fieldsInRows.push([field]);
+    } else {
+      currentRow.push(field);
+      if (currentRow.length === 2) {
+        fieldsInRows.push(currentRow);
+        currentRow = [];
+      }
     }
-  };
+  });
+
+  if (currentRow.length > 0) {
+    fieldsInRows.push(currentRow);
+  }
 
   return (
     <div
@@ -134,9 +176,9 @@ export default function PopupForm({ isOpen, onClose, formType }: PopupFormProps)
             </svg>
           </button>
           <h2 className="text-2xl font-bold text-white mb-2">
-            {getFormTitle()}
+            {config.title}
           </h2>
-          <p className="text-gray-200">{getFormDescription()}</p>
+          <p className="text-gray-200">{config.description}</p>
         </div>
 
         {/* Form */}
@@ -144,180 +186,34 @@ export default function PopupForm({ isOpen, onClose, formType }: PopupFormProps)
           {isSuccess ? (
             <div className="text-center py-8">
               <div className="text-6xl mb-4"><i className="fas fa-comments"></i></div>
-              <h3 className="text-2xl font-bold text-primary-navy mb-2">Thank You!</h3>
-              <p className="text-gray-600">We&apos;ll get back to you within 24 hours.</p>
+              <h3 className="text-2xl font-bold text-primary-navy mb-2">{config.successMessage.title}</h3>
+              <p className="text-gray-600">{config.successMessage.description}</p>
             </div>
           ) : (
             <>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                <div className="form-group">
-                  <label className="form-label">Name *</label>
-                  <input
-                    type="text"
-                    name="name"
-                    required
-                    className="form-input"
-                    value={formData.name || ""}
-                    onChange={handleChange}
-                    placeholder="Your full name"
-                  />
+              {fieldsInRows.map((row, rowIndex) => (
+                <div
+                  key={rowIndex}
+                  className={`grid grid-cols-1 md:grid-cols-2 gap-4 ${rowIndex < fieldsInRows.length - 1 ? 'mb-4' : 'mb-6'}`}
+                >
+                  {row.map((field) => (
+                    <div
+                      key={field.name}
+                      className={`form-group ${getGridColumnClass(field.gridColumn)}`}
+                    >
+                      <label className="form-label">{field.label}</label>
+                      {renderField(field)}
+                    </div>
+                  ))}
                 </div>
-                <div className="form-group">
-                  <label className="form-label">Email *</label>
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    className="form-input"
-                    value={formData.email || ""}
-                    onChange={handleChange}
-                    placeholder="your@email.com"
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                <div className="form-group">
-                  <label className="form-label">Phone *</label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    required
-                    className="form-input"
-                    value={formData.phone || ""}
-                    onChange={handleChange}
-                    placeholder="04XX XXX XXX"
-                  />
-                </div>
-                {formType === "contact" && (
-                  <div className="form-group">
-                    <label className="form-label">Website</label>
-                    <input
-                      type="url"
-                      name="website"
-                      className="form-input"
-                      value={formData.website || ""}
-                      onChange={handleChange}
-                      placeholder="https://yourwebsite.com.au"
-                    />
-                  </div>
-                )}
-                {(formType === "seoAudit" || formType === "adsAudit") && (
-                  <div className="form-group">
-                    <label className="form-label">Website URL *</label>
-                    <input
-                      type="url"
-                      name="website"
-                      required
-                      className="form-input"
-                      value={formData.website || ""}
-                      onChange={handleChange}
-                      placeholder="https://yourwebsite.com.au"
-                    />
-                  </div>
-                )}
-              </div>
-
-              {formType === "contact" && (
-                <div className="form-group mb-4">
-                  <label className="form-label">Project Type</label>
-                  <select
-                    name="projectType"
-                    className="form-select"
-                    value={formData.projectType || ""}
-                    onChange={handleChange}
-                  >
-                    <option value="">Select a service</option>
-                    <option value="web-design">Web Design</option>
-                    <option value="seo">SEO Services</option>
-                    <option value="google-ads">Google Ads</option>
-                    <option value="branding">Branding</option>
-                    <option value="social-media">Social Media Marketing</option>
-                    <option value="ecommerce">E-commerce Website</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-              )}
-
-              {formType === "seoAudit" && (
-                <div className="form-group mb-4">
-                  <label className="form-label">Main SEO Goal</label>
-                  <select
-                    name="seoGoal"
-                    className="form-select"
-                    value={formData.seoGoal || ""}
-                    onChange={handleChange}
-                  >
-                    <option value="">Select your goal</option>
-                    <option value="more-traffic">Increase Website Traffic</option>
-                    <option value="rankings">Improve Search Rankings</option>
-                    <option value="local-seo">Local SEO / Google Maps</option>
-                    <option value="conversions">Increase Leads/Sales</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-              )}
-
-              {formType === "adsAudit" && (
-                <div className="form-group mb-4">
-                  <label className="form-label">Current Monthly Ad Spend</label>
-                  <select
-                    name="adSpend"
-                    className="form-select"
-                    value={formData.adSpend || ""}
-                    onChange={handleChange}
-                  >
-                    <option value="">Select range</option>
-                    <option value="none">Not running ads yet</option>
-                    <option value="0-1000">$0 - $1,000</option>
-                    <option value="1000-3000">$1,000 - $3,000</option>
-                    <option value="3000-5000">$3,000 - $5,000</option>
-                    <option value="5000+">$5,000+</option>
-                  </select>
-                </div>
-              )}
-
-              {formType === "consultation" && (
-                <div className="form-group mb-4">
-                  <label className="form-label">Service Interested In</label>
-                  <select
-                    name="service"
-                    className="form-select"
-                    value={formData.service || ""}
-                    onChange={handleChange}
-                  >
-                    <option value="">Select a service</option>
-                    <option value="web-design">Web Design</option>
-                    <option value="seo">SEO Services</option>
-                    <option value="google-ads">Google Ads</option>
-                    <option value="branding">Branding</option>
-                    <option value="social-media">Social Media Marketing</option>
-                    <option value="growth-plan">Monthly Growth Plan</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-              )}
-
-              <div className="form-group mb-6">
-                <label className="form-label">
-                  {formType === "seoAudit" ? "Current SEO Challenges" : formType === "adsAudit" ? "Main Ad Goals" : "Message"}
-                </label>
-                <textarea
-                  name="message"
-                  className="form-textarea"
-                  value={formData.message || ""}
-                  onChange={handleChange}
-                  placeholder={formType === "seoAudit" ? "Describe your current SEO challenges..." : "Tell us about your project..."}
-                  rows={4}
-                ></textarea>
-              </div>
+              ))}
 
               <button
                 type="submit"
                 disabled={isSubmitting}
                 className="btn btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {isSubmitting ? "Sending..." : "Send Request"}
+                {isSubmitting ? config.submittingText : config.submitText}
               </button>
             </>
           )}

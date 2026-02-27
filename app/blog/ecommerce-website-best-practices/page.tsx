@@ -77,7 +77,7 @@ export default function EcommerceBestPracticesPage() {
             <p className="text-gray-700 mb-6">
               Customers can&apos;t touch products online, so images must sell. Use multiple high-resolution photos from different angles, include lifestyle shots showing products in use, and enable zoom functionality. Professional photography is an investment that pays dividends in conversion rates.
             </p>
-            <div className="bg-blue-50 border-l-4 border-primary-navy p-6 my-8">
+            <div className="bg-primary-orange/5 border-l-4 border-primary-navy p-6 my-8">
               <p className="text-gray-700 font-semibold mb-2"><i className="fas fa-lightbulb text-primary-orange mr-2"></i>Pro Tip:</p>
               <p className="text-gray-700">
                 Include 360-degree product views and user-generated content to build trust and show real-world applications.

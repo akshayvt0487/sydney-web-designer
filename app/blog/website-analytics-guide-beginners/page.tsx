@@ -78,13 +78,13 @@ export default function WebsiteAnalyticsPage() {
                 <i className="fas fa-chart-bar text-primary-orange mr-2"></i>Key Metrics:
               </p>
               <ul className="text-gray-700 mb-0">
-                <li><i className="fas fa-users text-blue-600 mr-2"></i><strong>Users:</strong> Number of people visiting your site</li>
-                <li><i className="fas fa-mouse-pointer text-blue-600 mr-2"></i><strong>Sessions:</strong> Total visits (users can have multiple sessions)</li>
-                <li><i className="fas fa-file-alt text-blue-600 mr-2"></i><strong>Pageviews:</strong> Total pages viewed</li>
-                <li><i className="fas fa-sign-out-alt text-blue-600 mr-2"></i><strong>Bounce Rate:</strong> % who leave after one page</li>
-                <li><i className="fas fa-clock text-blue-600 mr-2"></i><strong>Session Duration:</strong> Average time on site</li>
-                <li><i className="fas fa-bullseye text-blue-600 mr-2"></i><strong>Conversion Rate:</strong> % who complete desired actions</li>
-                <li><i className="fas fa-map-marker-alt text-blue-600 mr-2"></i><strong>Traffic Sources:</strong> Where visitors come from</li>
+                <li><i className="fas fa-users text-primary-orange mr-2"></i><strong>Users:</strong> Number of people visiting your site</li>
+                <li><i className="fas fa-mouse-pointer text-primary-orange mr-2"></i><strong>Sessions:</strong> Total visits (users can have multiple sessions)</li>
+                <li><i className="fas fa-file-alt text-primary-orange mr-2"></i><strong>Pageviews:</strong> Total pages viewed</li>
+                <li><i className="fas fa-sign-out-alt text-primary-orange mr-2"></i><strong>Bounce Rate:</strong> % who leave after one page</li>
+                <li><i className="fas fa-clock text-primary-orange mr-2"></i><strong>Session Duration:</strong> Average time on site</li>
+                <li><i className="fas fa-bullseye text-primary-orange mr-2"></i><strong>Conversion Rate:</strong> % who complete desired actions</li>
+                <li><i className="fas fa-map-marker-alt text-primary-orange mr-2"></i><strong>Traffic Sources:</strong> Where visitors come from</li>
               </ul>
             </div>
 

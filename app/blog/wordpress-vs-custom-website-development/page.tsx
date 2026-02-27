@@ -74,7 +74,7 @@ export default function WordPressVsCustomPage() {
 
             <div className="bg-green-50 border-l-4 border-green-500 p-6 my-8">
               <p className="text-gray-700 font-semibold mb-2">
-                <i className="fab fa-wordpress text-blue-600 mr-2"></i>WordPress Advantages:
+                <i className="fab fa-wordpress text-primary-orange mr-2"></i>WordPress Advantages:
               </p>
               <ul className="text-gray-700 mb-0">
                 <li><i className="fas fa-check text-green-600 mr-2"></i><strong>Cost-effective:</strong> Lower development costs</li>
@@ -168,16 +168,16 @@ export default function WordPressVsCustomPage() {
             <h2 className="text-3xl font-bold text-primary-navy mt-12 mb-6">Hybrid Approach: Headless WordPress</h2>
             <p className="text-gray-700 mb-6">Many Sydney businesses use WordPress as a content backend with custom frontend (React, Next.js). This combines WordPress&apos; content management ease with custom development&apos;s flexibility and performance.</p>
 
-            <div className="bg-blue-50 border-l-4 border-blue-500 p-6 my-8">
+            <div className="bg-primary-orange/5 border-l-4 border-primary-orange p-6 my-8 rounded-r-lg">
               <p className="text-gray-700 font-semibold mb-2">
-                <i className="fas fa-rocket text-blue-600 mr-2"></i>Headless WordPress Benefits:
+                <i className="fas fa-rocket text-primary-orange mr-2"></i>Headless WordPress Benefits:
               </p>
               <ul className="text-gray-700 mb-0">
-                <li><i className="fas fa-check text-blue-600 mr-2"></i>Easy content management</li>
-                <li><i className="fas fa-check text-blue-600 mr-2"></i>Lightning-fast performance</li>
-                <li><i className="fas fa-check text-blue-600 mr-2"></i>Custom frontend design</li>
-                <li><i className="fas fa-check text-blue-600 mr-2"></i>Scalable architecture</li>
-                <li><i className="fas fa-check text-blue-600 mr-2"></i>Best of both worlds</li>
+                <li><i className="fas fa-check text-primary-orange mr-2"></i>Easy content management</li>
+                <li><i className="fas fa-check text-primary-orange mr-2"></i>Lightning-fast performance</li>
+                <li><i className="fas fa-check text-primary-orange mr-2"></i>Custom frontend design</li>
+                <li><i className="fas fa-check text-primary-orange mr-2"></i>Scalable architecture</li>
+                <li><i className="fas fa-check text-primary-orange mr-2"></i>Best of both worlds</li>
               </ul>
             </div>
 

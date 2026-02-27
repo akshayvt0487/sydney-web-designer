@@ -30,7 +30,9 @@
       "Bash(npm uninstall:*)",
       "Bash(npx next lint)",
       "Bash(git push:*)",
-      "Bash(npx playwright install:*)"
+      "Bash(npx playwright install:*)",
+      "Bash(npx tsx:*)",
+      "Bash(wc:*)"
     ]
   }
 }

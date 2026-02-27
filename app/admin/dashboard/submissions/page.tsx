@@ -139,7 +139,7 @@ export default function SubmissionsPage() {
                     <span className={`px-3 py-1 rounded-full text-xs font-semibold ${getStatusColor(submission.status)}`}>
                       {submission.status.toUpperCase()}
                     </span>
-                    <span className="px-3 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-800">
+                    <span className="px-3 py-1 rounded-full text-xs font-semibold bg-primary-orange/10 text-primary-orange border border-primary-orange/20">
                       {getTypeLabel(submission.type)}
                     </span>
                   </div>
@@ -166,7 +166,7 @@ export default function SubmissionsPage() {
                 {submission.website && (
                   <div>
                     <p className="text-sm text-gray-600 mb-1">Website</p>
-                    <a href={submission.website} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                    <a href={submission.website} target="_blank" rel="noopener noreferrer" className="text-primary-orange hover:underline">
                       {submission.website}
                     </a>
                   </div>

@@ -8,16 +8,24 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontWeight: {
+        bold: '700',
+      },
       colors: {
         'primary-navy': '#1e293b',
+        'primary-blue': '#2563eb',
         'primary-orange': '#f59e0b',
         'dark-navy': '#0f172a',
         'mid-navy': '#334155',
         'text-light': '#64748b',
         'text-dark': '#1e293b',
+        'text-muted': '#64748b',
+        'bg-light': '#f8fafc',
+        'border': '#e5e7eb',
       },
       fontFamily: {
-        sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        sans: ['Work Sans', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        heading: ['Manrope', 'sans-serif'],
       },
       borderRadius: {
         'card': '15px',

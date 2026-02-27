@@ -91,8 +91,8 @@ export default function SEOTipsSydneyBusinesses() {
             When potential customers in Sydney search for your services, you want to be visible. <em>SEO isn&apos;t just about rankings—it&apos;s about connecting with customers actively searching for what you offer.</em>
           </p>
 
-          <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-xl my-8">
-            <h3 className="text-xl font-bold text-blue-900 mt-0 mb-3"><i className="fas fa-lightbulb"></i> The ROI of SEO for Sydney Businesses</h3>
+          <div className="bg-primary-orange/5 border-l-4 border-primary-orange p-6 rounded-r-xl my-8">
+            <h3 className="text-xl font-bold text-primary-navy mt-0 mb-3"><i className="fas fa-lightbulb text-primary-orange mr-2"></i>The ROI of SEO for Sydney Businesses</h3>
             <p className="mb-0 text-gray-800">
               SEO leads have a <strong>14.6% close rate</strong> compared to just 1.7% for outbound leads. For Sydney businesses, effective SEO and digital marketing isn&apos;t an expense—it&apos;s an investment that compounds over time, delivering qualified leads while you sleep.
             </p>

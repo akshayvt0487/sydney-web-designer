@@ -6,6 +6,7 @@ import StatsGrid from "@/components/StatsGrid";
 import TestimonialCard from "@/components/TestimonialCard";
 import PortfolioCard from "@/components/PortfolioCard";
 import CTASection from "@/components/CTASection";
+import ServiceHeroSection from "@/components/ServiceHeroSection";
 
 export const metadata = generateMetadata({
   title: "Responsive Web Design Sydney | Mobile-Friendly Websites",
@@ -130,29 +131,24 @@ export default function ResponsiveDesignPage() {
       />
 
       {/* Hero Section */}
-      <section className="bg-[#1e293b] text-white py-20">
-        <div className="container">
-          <div className="max-w-3xl">
-            <div className="inline-block bg-primary-orange/20 text-primary-orange px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              <i className={`fas ${service.icon} mr-2`}></i> {service.name}
-            </div>
-            <h1 className="text-5xl font-bold mb-6 text-white">
-              Responsive Design That Works Perfectly On Every Device
-            </h1>
-            <p className="text-xl text-white mb-8">
-              Ensure your website delivers a flawless experience across smartphones, tablets, and desktops. Mobile-first approach that captures all your visitors.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <button data-popup="contact" className="btn btn-primary">
-                Get Mobile-Friendly Website
-              </button>
-              <Link href="/portfolio" className="btn btn-white">
-                View Responsive Designs
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServiceHeroSection
+        badge={{
+          icon: `fas ${service.icon}`,
+          text: service.name
+        }}
+        heading="Responsive Design That Works Perfectly On Every Device"
+        description="Ensure your website delivers a flawless experience across smartphones, tablets, and desktops. Mobile-first approach that captures all your visitors."
+        buttons={{
+          primary: {
+            text: "Get Mobile-Friendly Website",
+            dataPopup: "contact"
+          },
+          secondary: {
+            text: "View Responsive Designs",
+            href: "/portfolio"
+          }
+        }}
+      />
 
       {/* Stats Section */}
       <section className="py-16 bg-gray-50">

@@ -6,6 +6,7 @@ import StatsGrid from "@/components/StatsGrid";
 import TestimonialCard from "@/components/TestimonialCard";
 import PortfolioCard from "@/components/PortfolioCard";
 import CTASection from "@/components/CTASection";
+import ServiceHeroSection from "@/components/ServiceHeroSection";
 
 export const metadata = generateMetadata({
   title: "SEO Services Sydney | Professional Search Engine Optimization",
@@ -130,30 +131,24 @@ export default function SEOServicesPage() {
       />
 
       {/* Hero Section */}
-      <section className="bg-[#1e293b] text-white py-20">
-        <div className="container">
-          <div className="max-w-3xl">
-            <div className="inline-block bg-primary-orange/20 text-primary-orange px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              <i className={`fas ${service.icon} mr-2`}></i> {service.name}
-            </div>
-            <h1 className="text-5xl font-bold mb-6 text-white">
-              SEO Services That Drive Real Results in Sydney
-            </h1>
-            <p className="text-xl text-white mb-8">
-              Dominate search results and drive qualified traffic with comprehensive SEO strategies.
-              Get found by customers actively searching for your products and services.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <button data-popup="seoAudit" className="btn btn-primary">
-                Get Free SEO Audit
-              </button>
-              <Link href="/portfolio" className="btn btn-white">
-                View SEO Case Studies
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServiceHeroSection
+        badge={{
+          icon: `fas ${service.icon}`,
+          text: service.name
+        }}
+        heading="SEO Services That Drive Real Results in Sydney"
+        description="Dominate search results and drive qualified traffic with comprehensive SEO strategies. Get found by customers actively searching for your products and services."
+        buttons={{
+          primary: {
+            text: "Get Free SEO Audit",
+            dataPopup: "seoAudit"
+          },
+          secondary: {
+            text: "View SEO Case Studies",
+            href: "/portfolio"
+          }
+        }}
+      />
 
       {/* Stats Section */}
       <section className="py-16 bg-gray-50">

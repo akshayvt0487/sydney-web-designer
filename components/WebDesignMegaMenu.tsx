@@ -2,13 +2,22 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { services } from "@/lib/constants";
 
 export default function WebDesignMegaMenu() {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Get all web design services
-  const webDesignServices = services.filter(s => s.category === "web-design");
+  const webDesignServices = [
+    { name: "Custom Web Design", slug: "custom-web-design", description: "Bespoke designs for your brand", icon: "fa-palette" },
+    { name: "Ecommerce Websites", slug: "ecommerce-websites", description: "Online stores that convert", icon: "fa-shopping-cart" },
+    { name: "Responsive Design", slug: "responsive-design", description: "Mobile-first design approach", icon: "fa-mobile-alt" },
+    { name: "UI/UX Design", slug: "ui-ux-design", description: "User-centered experiences", icon: "fa-pencil-ruler" },
+    { name: "Website Redesign", slug: "website-redesign", description: "Modernize your website", icon: "fa-sync-alt" },
+    { name: "WordPress Development", slug: "wordpress-development", description: "Powerful CMS solutions", icon: "fa-wordpress" },
+  ];
+
+  const specialtyServices = [
+    { name: "Landing Pages", slug: "high-performance-landing-pages", description: "High-converting pages", icon: "fa-rocket", iconType: "fas" },
+  ];
 
   return (
     <div
@@ -24,43 +33,74 @@ export default function WebDesignMegaMenu() {
       </button>
 
       {isOpen && (
-        <div className="absolute top-full left-1/2 -translate-x-1/2 w-[800px] max-w-[95vw] z-50">
+        <div className="absolute top-full left-1/2 -translate-x-1/2 w-[960px] max-w-[95vw] z-50">
           <div className="bg-white rounded-lg shadow-2xl border-t-4 border-primary-orange overflow-hidden animate-fadeIn mt-1">
-            <div className="p-6">
-              <div className="mb-6">
-                <h3 className="text-lg font-bold text-primary-navy mb-2 flex items-center gap-2">
-                  <i className="fas fa-palette text-primary-orange"></i>
-                  Web Design Services
+            {/* Main Heading */}
+            <div className="bg-gradient-to-r from-primary-navy to-[#2d3b4f] text-white px-6 py-3">
+              <h2 className="text-xl font-bold flex items-center gap-2 text-white">
+                <i className="fas fa-palette text-primary-orange "></i>
+                Web Design
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-3 divide-x divide-gray-200">
+              {/* Web Design Services Column */}
+              <div className="p-6 bg-gray-50 col-span-2">
+               
+                <div className="grid grid-cols-2 gap-2">
+                  {webDesignServices.map((service, index) => (
+                    <Link
+                      key={index}
+                      href={`/services/${service.slug}`}
+                      onClick={() => setIsOpen(false)}
+                      className="group block p-2.5 rounded hover:bg-primary-orange hover:text-white transition-all"
+                    >
+                      <div className="font-medium text-sm mb-1 flex items-center gap-2">
+                        <i className={`fas ${service.icon} text-xs`}></i>
+                        {service.name}
+                      </div>
+                      <div className="text-xs opacity-75">{service.description}</div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              {/* Specialty Services Column */}
+              <div className="p-6 bg-gradient-to-br from-[#1e293b] to-[#2d3b4f] text-white">
+                <h3 className="text-lg font-bold mb-4 flex items-center gap-2 text-white">
+                  <i className="fas fa-star text-[#f59e0b]"></i>
+                  Specialty Services
                 </h3>
-                <p className="text-sm text-gray-600">Professional web design solutions for Sydney businesses</p>
-              </div>
+                <div className="space-y-3 mb-6">
+                  {specialtyServices.map((service, index) => (
+                    <Link
+                      key={index}
+                      href={`/services/${service.slug}`}
+                      onClick={() => setIsOpen(false)}
+                      className="group block p-3 rounded hover:bg-white/10 transition-all border border-white/20"
+                    >
+                      <div className="font-medium mb-1 flex items-center gap-2">
+                        <i className={`${service.iconType} ${service.icon} text-lg text-[#f59e0b]`}></i>
+                        {service.name}
+                      </div>
+                      <div className="text-sm opacity-75">{service.description}</div>
+                    </Link>
+                  ))}
+                </div>
 
-              <div className="grid grid-cols-2 gap-3">
-                {webDesignServices.map((service, index) => (
+                <div className="bg-[#f59e0b]/10 border border-[#f59e0b]/30 rounded-lg p-4 mt-6">
+                  <p className="text-sm mb-3 text-slate-200">
+                    <i className="fas fa-rocket mr-2 text-[#f59e0b]"></i>
+                    Explore All Services
+                  </p>
                   <Link
-                    key={index}
-                    href={`/services/${service.slug}`}
-                    className="group flex items-start gap-3 p-3 rounded hover:bg-primary-orange hover:text-white transition-all"
+                    href="/web-design"
+                    onClick={() => setIsOpen(false)}
+                    className="block text-center bg-[#f59e0b] text-white px-4 py-2 rounded-lg font-semibold hover:bg-[#d97706] transition-all text-sm"
                   >
-                    <div className="flex-shrink-0 w-10 h-10 bg-gray-100 group-hover:bg-white/20 rounded-lg flex items-center justify-center transition-all">
-                      <i className={`fas ${service.icon} text-primary-orange group-hover:text-white`}></i>
-                    </div>
-                    <div className="flex-1">
-                      <div className="font-medium text-sm mb-1">{service.name}</div>
-                      <div className="text-xs opacity-75 line-clamp-2">{service.shortDescription}</div>
-                    </div>
+                    View Web Design
                   </Link>
-                ))}
-              </div>
-
-              <div className="mt-6 pt-6 border-t border-gray-200">
-                <Link
-                  href="/web-design"
-                  className="group flex items-center justify-between p-3 rounded bg-gradient-to-r from-[#f59e0b] to-[#fb923c] text-white hover:shadow-lg transition-all"
-                >
-                  <span className="font-semibold">View All Web Design Services</span>
-                  <i className="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
-                </Link>
+                </div>
               </div>
             </div>
           </div>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { generateMetadata } from "@/lib/metadata";
 import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema } from "@/lib/schemas";
+import ServiceHeroSection from "@/components/ServiceHeroSection";
 
 export const metadata = generateMetadata({
   title: "Google Ads Management Sydney | PPC Advertising Services",
@@ -135,42 +136,44 @@ export default function GoogleAdsPage() {
       />
 
       {/* Hero Section */}
-      <section className="bg-[#1e293b] text-white py-32">
-        <div className="container">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
-              Google Ads Management Sydney
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-white">
-              Maximize ROI with expert Google Ads management. Campaign setup, optimization, and ongoing management
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Link href="#lead-form" className="btn btn-primary">
-                Start Google Ads
-              </Link>
-              <Link href="#process" className="btn btn-secondary">
-                Our Process
-              </Link>
-            </div>
+      <ServiceHeroSection
+        badge={{
+          icon: "fab fa-google",
+          text: "Google Ads Specialists"
+        }}
+        heading="Google Ads Management Sydney"
+        description="Maximize ROI with expert Google Ads management. Campaign setup, optimization, and ongoing management for your business."
+        buttons={{
+          primary: {
+            text: "Start Google Ads",
+            dataPopup: "contact"
+          },
+          secondary: {
+            text: "Our Process",
+            href: "#process"
+          }
+        }}
+      />
 
-            {/* Trust Badges */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
-              <div className="text-center">
-                <div className="text-4xl mb-2"><i className="fas fa-trophy"></i></div>
-                <div className="text-sm opacity-90">13+ Years Experience</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl mb-2"><i className="fas fa-star"></i></div>
-                <div className="text-sm opacity-90">50+ 5-Star Reviews</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl mb-2"><i className="fas fa-check-circle"></i></div>
-                <div className="text-sm opacity-90">Professional Service</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl mb-2"><i className="fas fa-chart-line"></i></div>
-                <div className="text-sm opacity-90">Proven Results</div>
-              </div>
+      {/* Trust Badges Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+            <div className="text-center">
+              <div className="text-4xl mb-2 text-[#f59e0b]"><i className="fas fa-trophy"></i></div>
+              <div className="text-sm text-gray-600">13+ Years Experience</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl mb-2 text-[#f59e0b]"><i className="fas fa-star"></i></div>
+              <div className="text-sm text-gray-600">50+ 5-Star Reviews</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl mb-2 text-[#f59e0b]"><i className="fas fa-check-circle"></i></div>
+              <div className="text-sm text-gray-600">Professional Service</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl mb-2 text-[#f59e0b]"><i className="fas fa-chart-line"></i></div>
+              <div className="text-sm text-gray-600">Proven Results</div>
             </div>
           </div>
         </div>

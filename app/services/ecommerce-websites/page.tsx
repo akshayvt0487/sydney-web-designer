@@ -2,6 +2,7 @@ import Link from "next/link";
 import { services, portfolioProjects, googleReviews } from "@/lib/constants";
 import { generateMetadata } from "@/lib/metadata";
 import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema } from "@/lib/schemas";
+import ServiceHeroSection from "@/components/ServiceHeroSection";
 
 export const metadata = generateMetadata({
   title: "E-commerce Website Design Sydney | Online Store Development",
@@ -38,30 +39,44 @@ export default function EcommerceWebsitesPage() {
       />
 
       {/* Hero Section */}
-      <section className="bg-[#1e293b] text-white py-32 text-center relative">
-        <div className="container max-w-4xl mx-auto px-8">
-          <h1 className="text-6xl font-bold mb-6 text-white">E-commerce Websites Sydney</h1>
-          <p className="text-2xl opacity-95 mb-10 text-white">Build a profitable online store with expert e-commerce solutions. From products to payments</p>
-          <div className="flex gap-4 justify-center flex-wrap">
-            <button data-popup="contact" className="btn btn-primary">Start Your Store</button>
-            <Link href="#process" className="btn btn-secondary">Our Process</Link>
-          </div>
-          <div className="flex justify-center gap-12 mt-12 flex-wrap">
+      <ServiceHeroSection
+        badge={{
+          icon: `fas ${service.icon}`,
+          text: service.name
+        }}
+        heading="E-commerce Websites Sydney"
+        description="Build a profitable online store with expert e-commerce solutions. From products to payments, we handle everything."
+        buttons={{
+          primary: {
+            text: "Start Your Store",
+            dataPopup: "contact"
+          },
+          secondary: {
+            text: "Our Process",
+            href: "#process"
+          }
+        }}
+      />
+
+      {/* Trust Badges Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container">
+          <div className="flex justify-center gap-12 flex-wrap max-w-4xl mx-auto">
             <div className="text-center">
               <div className="text-4xl mb-2"><i className="fas fa-trophy text-[#f59e0b]"></i></div>
-              <div className="text-sm opacity-90">13+ Years Experience</div>
+              <div className="text-sm text-gray-600">13+ Years Experience</div>
             </div>
             <div className="text-center">
               <div className="text-4xl mb-2"><i className="fas fa-star text-[#f59e0b]"></i></div>
-              <div className="text-sm opacity-90">50+ 5-Star Reviews</div>
+              <div className="text-sm text-gray-600">50+ 5-Star Reviews</div>
             </div>
             <div className="text-center">
               <div className="text-4xl mb-2"><i className="fas fa-check text-[#f59e0b]"></i></div>
-              <div className="text-sm opacity-90">Professional Service</div>
+              <div className="text-sm text-gray-600">Professional Service</div>
             </div>
             <div className="text-center">
               <div className="text-4xl mb-2"><i className="fas fa-chart-line text-[#f59e0b]"></i></div>
-              <div className="text-sm opacity-90">Proven Results</div>
+              <div className="text-sm text-gray-600">Proven Results</div>
             </div>
           </div>
         </div>

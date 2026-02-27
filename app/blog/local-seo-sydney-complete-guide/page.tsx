@@ -77,7 +77,7 @@ export default function LocalSEOSydneyPage() {
             <p className="text-gray-700 mb-6">
               46% of all Google searches have local intent. When someone in Bondi searches for &quot;cafe near me&quot; or someone in Parramatta looks for &quot;web designer,&quot; local SEO ensures you appear. It&apos;s essential for attracting nearby customers who are ready to buy.
             </p>
-            <div className="bg-blue-50 border-l-4 border-primary-navy p-6 my-8">
+            <div className="bg-primary-orange/5 border-l-4 border-primary-navy p-6 my-8">
               <p className="text-gray-700 font-semibold mb-2"><i className="fas fa-chart-line text-primary-orange mr-2"></i>Local Search Statistics:</p>
               <ul className="text-gray-700 mb-0 space-y-1">
                 <li>76% of people visit a business within 24 hours of a local search</li>
@@ -158,7 +158,7 @@ export default function LocalSEOSydneyPage() {
             <p className="text-gray-700 mb-6">
               Earn links from Sydney-based websites to signal local relevance. Local backlinks are more valuable for local SEO than generic national links.
             </p>
-            <div className="bg-blue-50 border-l-4 border-primary-navy p-6 my-8">
+            <div className="bg-primary-orange/5 border-l-4 border-primary-navy p-6 my-8">
               <p className="text-gray-700 font-semibold mb-2"><i className="fas fa-external-link-alt text-primary-orange mr-2"></i>Local Link Building Opportunities:</p>
               <ul className="text-gray-700 mb-0 space-y-2">
                 <li>Local news outlets and Sydney media</li>

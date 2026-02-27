@@ -224,7 +224,7 @@ export default function HighPerformanceLandingPagesPage() {
       <section className="bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] text-white py-32 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#f59e0b] rounded-full mix-blend-multiply filter blur-3xl animate-blob" />
-          <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-[#3b82f6] rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000" />
+          <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-primary-orange rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000" />
         </div>
 
         <div className="container relative z-10">

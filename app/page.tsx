@@ -119,7 +119,7 @@ export default function HomePage() {
                 title: "Web Design & Development",
                 desc: "Strategic UX/UI design, semantic HTML architecture, accessibility compliance, Core Web Vitals optimization, and conversion-focused interfaces.",
                 link: "/services/custom-web-design",
-                color: "from-blue-500 to-cyan-500"
+                color: "from-primary-orange to-amber-500"
               },
               {
                 icon: "fa-bullhorn",

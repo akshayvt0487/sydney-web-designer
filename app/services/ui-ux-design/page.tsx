@@ -6,6 +6,7 @@ import StatsGrid from "@/components/StatsGrid";
 import TestimonialCard from "@/components/TestimonialCard";
 import PortfolioCard from "@/components/PortfolioCard";
 import CTASection from "@/components/CTASection";
+import ServiceHeroSection from "@/components/ServiceHeroSection";
 
 export const metadata = generateMetadata({
   title: "UI/UX Design Sydney | User Experience Design Services",
@@ -130,29 +131,24 @@ export default function UIUXDesignPage() {
       />
 
       {/* Hero Section */}
-      <section className="bg-[#1e293b] text-white py-20">
-        <div className="container">
-          <div className="max-w-3xl">
-            <div className="inline-block bg-primary-orange/20 text-primary-orange px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              <i className={`fas ${service.icon} mr-2`}></i> {service.name}
-            </div>
-            <h1 className="text-5xl font-bold mb-6 text-white">
-              UI/UX Design That Creates Intuitive Digital Experiences
-            </h1>
-            <p className="text-xl text-white mb-8">
-              Craft beautiful, user-friendly interfaces backed by research and best practices in user experience. Design that users love and that drives business results.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <button data-popup="contact" className="btn btn-primary">
-                Start Your UX Project
-              </button>
-              <Link href="/portfolio" className="btn btn-white">
-                View UX Portfolio
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServiceHeroSection
+        badge={{
+          icon: `fas ${service.icon}`,
+          text: service.name
+        }}
+        heading="UI/UX Design That Creates Intuitive Digital Experiences"
+        description="Craft beautiful, user-friendly interfaces backed by research and best practices in user experience. Design that users love and that drives business results."
+        buttons={{
+          primary: {
+            text: "Start Your UX Project",
+            dataPopup: "contact"
+          },
+          secondary: {
+            text: "View UX Portfolio",
+            href: "/portfolio"
+          }
+        }}
+      />
 
       {/* Stats Section */}
       <section className="py-16 bg-gray-50">

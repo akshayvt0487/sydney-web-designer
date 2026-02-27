@@ -131,7 +131,7 @@ export default function WebsiteSpeedOptimizationPage() {
                 <i className="fas fa-tools text-green-600 mr-2"></i>Speed Testing Tools:
               </p>
               <ul className="text-gray-700 mb-0">
-                <li><i className="fab fa-google text-blue-600 mr-2"></i><strong>Google PageSpeed Insights:</strong> Performance scores and recommendations</li>
+                <li><i className="fab fa-google text-primary-orange mr-2"></i><strong>Google PageSpeed Insights:</strong> Performance scores and recommendations</li>
                 <li><i className="fas fa-chart-line text-orange-600 mr-2"></i><strong>GTmetrix:</strong> Detailed performance reports</li>
                 <li><i className="fas fa-stopwatch text-green-600 mr-2"></i><strong>Pingdom:</strong> Speed tests from multiple locations</li>
                 <li><i className="fas fa-globe text-purple-600 mr-2"></i><strong>WebPageTest:</strong> Advanced testing options</li>

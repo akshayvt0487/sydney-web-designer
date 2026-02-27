@@ -78,7 +78,7 @@ export default function SocialMediaMarketingPage() {
               Don&apos;t try to be everywhere. Focus on 1-3 platforms where your customers are actually active. Quality beats quantity every time.
             </p>
 
-            <div className="bg-blue-50 border-l-4 border-primary-navy p-6 my-8">
+            <div className="bg-primary-orange/5 border-l-4 border-primary-navy p-6 my-8">
               <h3 className="text-xl font-bold text-primary-navy mb-4">
                 <i className="fab fa-facebook text-primary-orange mr-2"></i>Facebook: The All-Rounder
               </h3>
@@ -229,7 +229,7 @@ export default function SocialMediaMarketingPage() {
             <p className="text-gray-700 mb-6">
               Organic reach is limited—most platforms show your posts to only 5-10% of followers. Supplement organic efforts with targeted ads to reach new Sydney audiences.
             </p>
-            <div className="bg-blue-50 border-l-4 border-primary-navy p-6 my-8">
+            <div className="bg-primary-orange/5 border-l-4 border-primary-navy p-6 my-8">
               <p className="text-gray-700 font-semibold mb-2"><i className="fas fa-rocket text-primary-orange mr-2"></i>Ad Strategy for Sydney Businesses:</p>
               <ul className="text-gray-700 mb-0 space-y-2">
                 <li><strong>Start small:</strong> $10-$20/day budget to test</li>
@@ -283,7 +283,7 @@ export default function SocialMediaMarketingPage() {
             <p className="text-gray-700 mb-6">
               Success requires consistency. Posting sporadically won&apos;t build an audience. Create a content calendar, batch-create content, and maintain regular posting schedules.
             </p>
-            <div className="bg-blue-50 border-l-4 border-primary-navy p-6 my-8">
+            <div className="bg-primary-orange/5 border-l-4 border-primary-navy p-6 my-8">
               <p className="text-gray-700 font-semibold mb-2"><i className="fas fa-calendar text-primary-orange mr-2"></i>Recommended Posting Frequency:</p>
               <ul className="text-gray-700 mb-0 space-y-1">
                 <li><strong>Facebook:</strong> 3-5 times per week</li>

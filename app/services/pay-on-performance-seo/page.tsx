@@ -2,6 +2,7 @@ import Link from "next/link";
 import { generateMetadata } from "@/lib/metadata";
 import { generateBreadcrumbSchema, generateServiceSchema } from "@/lib/schemas";
 import CTASection from "@/components/CTASection";
+import ServiceHeroSection from "@/components/ServiceHeroSection";
 
 export const metadata = generateMetadata({
   title: "Pay on Performance SEO Sydney | Results-Based SEO Services",
@@ -273,51 +274,44 @@ export default function PayOnPerformanceSEOPage() {
       />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] text-white py-32 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#f59e0b] rounded-full mix-blend-multiply filter blur-3xl animate-blob" />
-          <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-[#10b981] rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000" />
-        </div>
+      <ServiceHeroSection
+        badge={{
+          icon: "fas fa-handshake",
+          text: "Results-Based SEO"
+        }}
+        heading="Pay on Performance SEO Sydney"
+        description="Pay for results, not promises. Performance-based SEO where you only pay when we deliver rankings, traffic, and measurable outcomes."
+        buttons={{
+          primary: {
+            text: "Discuss Your Goals",
+            dataPopup: "seoAudit"
+          },
+          secondary: {
+            text: "How It Works",
+            href: "#how-it-works"
+          }
+        }}
+      />
 
-        <div className="container relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 bg-[#f59e0b]/10 border border-[#f59e0b]/30 rounded-full px-5 py-2 mb-8 backdrop-blur-sm">
-              <i className="fas fa-handshake text-[#f59e0b]"></i>
-              <span className="text-[#f59e0b] text-sm font-semibold">Results-Based SEO</span>
+      {/* Stats Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            <div className="text-center">
+              <div className="text-4xl font-bold text-[#f59e0b] mb-2">15x</div>
+              <div className="text-sm text-gray-600">Client ROI</div>
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-              Pay on Performance SEO Sydney
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-slate-100">
-              Pay for results, not promises. Performance-based SEO where you only pay when we deliver rankings, traffic, and measurable outcomes.
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Link href="#contact" className="btn btn-primary">
-                Discuss Your Goals
-              </Link>
-              <Link href="#how-it-works" className="btn btn-secondary">
-                How It Works
-              </Link>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-[#f59e0b] mb-2">620%</div>
+              <div className="text-sm text-gray-600">Traffic Growth</div>
             </div>
-
-            {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 max-w-3xl mx-auto">
-              <div className="text-center">
-                <div className="text-4xl font-bold text-[#f59e0b] mb-2">15x</div>
-                <div className="text-sm text-slate-300">Client ROI</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold text-[#f59e0b] mb-2">620%</div>
-                <div className="text-sm text-slate-300">Traffic Growth</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold text-[#f59e0b] mb-2">80%</div>
-                <div className="text-sm text-slate-300">Hit Page 1</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold text-[#f59e0b] mb-2">100%</div>
-                <div className="text-sm text-slate-300">Risk Reduction</div>
-              </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-[#f59e0b] mb-2">80%</div>
+              <div className="text-sm text-gray-600">Hit Page 1</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-[#f59e0b] mb-2">100%</div>
+              <div className="text-sm text-gray-600">Risk Reduction</div>
             </div>
           </div>
         </div>
