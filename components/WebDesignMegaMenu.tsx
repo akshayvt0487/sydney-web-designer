@@ -9,10 +9,10 @@ export default function WebDesignMegaMenu() {
   const webDesignServices = [
     { name: "Custom Web Design", slug: "custom-web-design", description: "Bespoke designs for your brand", icon: "fa-palette" },
     { name: "Ecommerce Websites", slug: "ecommerce-websites", description: "Online stores that convert", icon: "fa-shopping-cart" },
-    { name: "Responsive Design", slug: "responsive-design", description: "Mobile-first design approach", icon: "fa-mobile-alt" },
     { name: "UI/UX Design", slug: "ui-ux-design", description: "User-centered experiences", icon: "fa-pencil-ruler" },
     { name: "Website Redesign", slug: "website-redesign", description: "Modernize your website", icon: "fa-sync-alt" },
     { name: "WordPress Development", slug: "wordpress-development", description: "Powerful CMS solutions", icon: "fa-wordpress" },
+    { name: "Vibe Code Website", slug: "vibe-code-website", description: "Modern AI-powered designs", icon: "fa-code" },
   ];
 
   const specialtyServices = [

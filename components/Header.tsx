@@ -66,7 +66,7 @@ export default function Header() {
                 alt="Sydney Web Designer"
                 width={200}
                 height={60}
-                className={`w-auto transition-all duration-300 ${isScrolled ? 'h-16' : 'h-24'}`}
+                className={`w-auto transition-all duration-300 ${isScrolled ? 'lg:h-16 h-12' : 'h-14 md:h-16 lg:h-24'}`}
                 priority
               />
             </Link>

@@ -37,7 +37,7 @@ export default function HomePage() {
 
           <h1 className="text-5xl md:text-7xl lg:text-7xl font-bold text-white mb-6 leading-tight">
             Sydney&apos;s Premier
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#f59e0b] to-[#fb923c] mt-2 pb-4">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#f59e0b] to-[#fb923c] mt-0 pb-0">
               Web Design Agency
             </span>
           </h1>

@@ -116,7 +116,7 @@ export default function ContactPage() {
               </div>
               <h3 className="text-2xl font-bold text-[#1e293b] mb-4">Location</h3>
               <p className="text-[#1e293b] text-lg leading-relaxed mb-2">
-                Suite 611<br />150 George Street
+                Suite 103 Level 1<br />22 Hunter Street
               </p>
               <span className="text-[#64748b] text-sm">Parramatta NSW 2150</span>
             </div>
