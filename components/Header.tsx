@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { contactInfo } from "@/lib/constants";
 import WebDesignMegaMenu from "./WebDesignMegaMenu";
@@ -9,6 +9,16 @@ import GrowthMarketingMegaMenu from "./GrowthMarketingMegaMenu";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
@@ -37,7 +47,7 @@ export default function Header() {
               <Link href="/blog" className="hover:text-primary-orange transition-colors">
                 Blog
               </Link>
-              <Link href="/#contact" className="hover:text-primary-orange transition-colors">
+              <Link href="/contact" className="hover:text-primary-orange transition-colors">
                 Contact
               </Link>
             </nav>
@@ -46,9 +56,9 @@ export default function Header() {
       </div>
 
       {/* Main Header */}
-      <header className="bg-white shadow-md sticky top-0 z-40">
+      <header className="bg-white shadow-md sticky top-0 z-40 transition-all duration-300">
         <div className="container">
-          <div className="flex items-center justify-between py-4">
+          <div className={`flex items-center justify-between transition-all duration-300 ${isScrolled ? 'py-2' : 'py-4'}`}>
             {/* Logo */}
             <Link href="/" className="flex items-center">
               <Image
@@ -56,7 +66,7 @@ export default function Header() {
                 alt="Sydney Web Designer"
                 width={200}
                 height={60}
-                className="h-24 w-auto"
+                className={`w-auto transition-all duration-300 ${isScrolled ? 'h-16' : 'h-24'}`}
                 priority
               />
             </Link>

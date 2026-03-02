@@ -67,7 +67,7 @@ export default function ContactPage() {
       {/* Page Hero */}
       <section className="bg-[#1e293b] text-white py-24 text-center">
         <div className="container max-w-[900px] mx-auto px-8">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white">
             Contact Sydney Web Designer
           </h1>
           <p className="text-xl md:text-2xl opacity-95">
@@ -116,7 +116,7 @@ export default function ContactPage() {
               </div>
               <h3 className="text-2xl font-bold text-[#1e293b] mb-4">Location</h3>
               <p className="text-[#1e293b] text-lg leading-relaxed mb-2">
-                Suite 103 Level 1<br />22 Hunter Street
+                Suite 611<br />150 George Street
               </p>
               <span className="text-[#64748b] text-sm">Parramatta NSW 2150</span>
             </div>

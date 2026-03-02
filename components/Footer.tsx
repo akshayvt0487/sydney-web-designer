@@ -25,7 +25,8 @@ export default function Footer() {
             <div className="space-y-3">
               <p className="text-gray-300">
                 <i className="fas fa-map-marker-alt text-[#f59e0b] mr-3 w-4"></i>
-                Sydney, New South Wales, Australia
+                Suite 611, 150 George Street<br />
+                <span className="ml-7">Parramatta NSW 2150</span>
               </p>
             </div>
           </div>

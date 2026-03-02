@@ -292,7 +292,7 @@ export const portfolioData: PortfolioItem[] = [
   {
     id: "deepslice-pizza",
     name: "Deepslice Pizza",
-    industry: "Hospitality",
+    industry: "Food & Beverage",
     description: "Bold branding and web design for authentic pizza restaurant",
     services: ["Branding", "Web Design"],
     image: "/images/Portfolio/Deepslice Pizza/Deepslice Pizza.webp",
@@ -307,7 +307,7 @@ export const portfolioData: PortfolioItem[] = [
   {
     id: "the-tspoon-cafe",
     name: "The TSpoon Cafe",
-    industry: "Hospitality",
+    industry: "Food & Beverage",
     description: "Modern cafe website with online ordering and beautiful design showcasing menu items",
     services: ["Web Design", "Branding"],
     image: "/images/Portfolio/The TSpoon Cafe/The Tspoon Cafe.webp",
@@ -454,7 +454,7 @@ export const portfolioData: PortfolioItem[] = [
   {
     id: "jose-journeys",
     name: "Jose Journeys",
-    industry: "Travel & Tourism",
+    industry: "NDIS Provider",
     description: "Personalized travel experiences and tour packages for adventure seekers",
     services: ["Web Design", "Branding"],
     image: "/images/Portfolio/Jose Journeys/Jose Journeys.webp",
