@@ -24,8 +24,13 @@ const config: Config = {
         'border': '#e5e7eb',
       },
       fontFamily: {
-        sans: ['Work Sans', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-        heading: ['Manrope', 'sans-serif'],
+        sans: ['Poppins', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        heading: ['Poppins', 'sans-serif'],
+      },
+      fontSize: {
+        'heading': ['70px', { lineHeight: '68px', fontWeight: '700' }],
+        'subheading': ['18px', { lineHeight: '28px', fontWeight: '400' }],
+        'body': ['17px', { lineHeight: '28.05px', fontWeight: '400' }],
       },
       borderRadius: {
         'card': '15px',

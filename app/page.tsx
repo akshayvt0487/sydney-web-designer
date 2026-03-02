@@ -82,7 +82,7 @@ export default function HomePage() {
             ].map((stat, i) => (
               <div key={i} className="bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300 hover:scale-105">
                 <i className={`fas ${stat.icon} text-3xl text-[#f59e0b] mb-1`} />
-                <div className="text-3xl font-black text-white mb-1">{stat.value}</div>
+                <div className="text-3xl font-bold text-white mb-1">{stat.value}</div>
                 <div className="text-sm text-slate-400">{stat.label}</div>
               </div>
             ))}
