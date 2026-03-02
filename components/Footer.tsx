@@ -22,13 +22,7 @@ export default function Footer() {
             <p className="text-gray-300 mb-6 leading-relaxed text-base">
               DSIGNS Australia - Sydney&apos;s premier web design and digital marketing agency. Since 2013, delivering exceptional results for businesses across Australia.
             </p>
-            <div className="space-y-3">
-              <p className="text-gray-300">
-                <i className="fas fa-map-marker-alt text-[#f59e0b] mr-3 w-4"></i>
-                Suite 611, 150 George Street<br />
-                <span className="ml-7">Parramatta NSW 2150</span>
-              </p>
-            </div>
+            
           </div>
 
           {/* Quick Links Column */}
@@ -132,6 +126,11 @@ export default function Footer() {
                 <a href="tel:0291918049" className="hover:text-[#f59e0b] transition-colors">
                   02 9191 8049
                 </a>
+              </p>
+               <p className="text-gray-300">
+                <i className="fas fa-map-marker-alt text-[#f59e0b] mr-3 w-4"></i>
+                Suite 611, 150 George Street<br />
+                <span className="ml-7">Parramatta NSW 2150</span>
               </p>
             </div>
 
