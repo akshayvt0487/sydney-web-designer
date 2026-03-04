@@ -54,7 +54,7 @@ export default function GrowthMarketingPage() {
       <section className="py-20">
         <div className="container">
           <div className="section-title">
-            <h2>Growth Marketing Services</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Growth Marketing <span className="text-[#f59e0b]">Services</span></h2>
             <p>Scalable marketing solutions designed to accelerate your business growth</p>
           </div>
 
@@ -383,7 +383,7 @@ export default function GrowthMarketingPage() {
       <section className="py-20 bg-white">
         <div className="container">
           <div className="section-title">
-            <h2>Why Choose DSIGNS for Growth Marketing?</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Why Choose DSIGNS for Growth <span className="text-[#f59e0b]">Marketing</span>?</h2>
             <p>Data-driven strategies that deliver measurable results for Sydney businesses</p>
           </div>
 
@@ -455,7 +455,7 @@ export default function GrowthMarketingPage() {
       <section className="py-20 bg-[#f8fafc]">
         <div className="container">
           <div className="section-title">
-            <h2>Our Growth Marketing Process</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Our Growth Marketing <span className="text-[#f59e0b]">Process</span></h2>
             <p>A proven methodology that turns clicks into customers</p>
           </div>
 
@@ -527,7 +527,7 @@ export default function GrowthMarketingPage() {
       <section className="py-20 bg-white">
         <div className="container">
           <div className="section-title">
-            <h2>Real Results from Sydney Businesses</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Real Results from Sydney <span className="text-[#f59e0b]">Businesses</span></h2>
             <p>Measurable outcomes our clients achieve with DSIGNS growth marketing</p>
           </div>
 
@@ -598,7 +598,7 @@ export default function GrowthMarketingPage() {
       <section className="py-20 bg-[#f8fafc]">
         <div className="container">
           <div className="section-title">
-            <h2>Enterprise Tools & Technology</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Enterprise Tools & <span className="text-[#f59e0b]">Technology</span></h2>
             <p>We leverage industry-leading platforms to maximize your marketing performance</p>
           </div>
 
@@ -664,7 +664,7 @@ export default function GrowthMarketingPage() {
       <section className="py-20 bg-white">
         <div className="container">
           <div className="section-title">
-            <h2>Which Growth Strategy is Right for You?</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Which Growth Strategy is Right for <span className="text-[#f59e0b]">You</span>?</h2>
             <p>Choose based on your business stage and growth objectives</p>
           </div>
 
@@ -726,7 +726,7 @@ export default function GrowthMarketingPage() {
       <section className="py-20">
         <div className="container">
           <div className="section-title">
-            <h2>Frequently Asked Questions</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Frequently Asked <span className="text-[#f59e0b]">Questions</span></h2>
             <p>Common questions about our growth marketing services</p>
           </div>
 

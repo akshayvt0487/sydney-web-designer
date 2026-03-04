@@ -254,8 +254,8 @@ export default function MobileSEOPage() {
       {/* Benefits Section */}
       <section className="py-20 bg-white">
         <div className="container">
-          <div className="section-title">
-            <h2>Why Mobile SEO Is Critical for Your Business</h2>
+          <div className="section-title text-center">
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Why Mobile SEO Is Critical for Your <span className="text-[#f59e0b]">Business</span></h2>
             <p>Capture the majority of search traffic with mobile-first optimization</p>
           </div>
 
@@ -284,8 +284,8 @@ export default function MobileSEOPage() {
       {/* Services Section */}
       <section className="py-20 bg-[#f8fafc]" id="services">
         <div className="container">
-          <div className="section-title">
-            <h2>Our Mobile SEO Services</h2>
+          <div className="section-title text-center">
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Our Mobile SEO <span className="text-[#f59e0b]">Services</span></h2>
             <p>Comprehensive optimization for the mobile-first era</p>
           </div>
 
@@ -315,8 +315,8 @@ export default function MobileSEOPage() {
       {/* Why Mobile Matters */}
       <section className="py-20 bg-white">
         <div className="container">
-          <div className="section-title">
-            <h2>The Mobile Search Landscape in 2026</h2>
+          <div className="section-title text-center">
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">The Mobile Search Landscape in <span className="text-[#f59e0b]">2026</span></h2>
             <p>Understanding why mobile optimization is non-negotiable</p>
           </div>
 
@@ -371,37 +371,37 @@ export default function MobileSEOPage() {
       {/* Case Study Section */}
       <section className="py-20 bg-gradient-to-br from-[#1e293b] to-[#0f172a] text-white">
         <div className="container">
-          <div className="section-title">
-            <h2 className="text-white">Real Mobile SEO Results</h2>
+          <div className="section-title text-center">
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-4">Real Mobile SEO <span className="text-[#f59e0b]">Results</span></h2>
             <p className="text-slate-200">How we transformed mobile performance and rankings</p>
           </div>
 
           <div className="max-w-5xl mx-auto">
-            <div className="card bg-white/10 backdrop-blur-sm border-2 border-[#f59e0b]">
+            <div className="card bg-white backdrop-blur-sm border-2 border-[#f59e0b]">
               <div className="grid md:grid-cols-5 gap-8">
                 <div className="md:col-span-3">
-                  <h3 className="text-3xl font-bold mb-2">{caseStudy.name}</h3>
+                  <h3 className="text-3xl font-bold mb-2 text-[#1e293b]">{caseStudy.name}</h3>
                   <div className="text-[#f59e0b] font-semibold mb-6">Timeline: {caseStudy.timeline}</div>
 
                   <div className="space-y-4">
                     <div>
-                      <h4 className="font-bold mb-2 text-lg">Challenge:</h4>
-                      <p className="text-slate-200">{caseStudy.challenge}</p>
+                      <h4 className="font-bold mb-2 text-lg text-[#1e293b]">Challenge:</h4>
+                      <p className="text-[#334155]">{caseStudy.challenge}</p>
                     </div>
                     <div>
-                      <h4 className="font-bold mb-2 text-lg">Solution:</h4>
-                      <p className="text-slate-200">{caseStudy.solution}</p>
+                      <h4 className="font-bold mb-2 text-lg text-[#1e293b]">Solution:</h4>
+                      <p className="text-[#334155]">{caseStudy.solution}</p>
                     </div>
                   </div>
                 </div>
 
-                <div className="md:col-span-2 bg-gradient-to-br from-[#f59e0b]/20 to-[#fb923c]/20 rounded-2xl p-8">
-                  <h4 className="font-bold mb-6 text-xl">Results Achieved:</h4>
+                <div className="md:col-span-2 bg-[#f59e0b] rounded-2xl p-8">
+                  <h4 className="font-bold mb-6 text-xl text-white">Results Achieved:</h4>
                   <ul className="space-y-4">
                     {caseStudy.results.map((result, idx) => (
                       <li key={idx} className="flex items-start gap-3">
-                        <i className="fas fa-trophy text-[#f59e0b] text-xl flex-shrink-0 mt-1"></i>
-                        <span className="text-slate-100">{result}</span>
+                        <i className="fas fa-trophy text-white text-xl flex-shrink-0 mt-1"></i>
+                        <span className="text-white font-medium">{result}</span>
                       </li>
                     ))}
                   </ul>
@@ -415,8 +415,8 @@ export default function MobileSEOPage() {
       {/* FAQ Section */}
       <section className="py-20 bg-white">
         <div className="container">
-          <div className="section-title">
-            <h2>Mobile SEO Frequently Asked Questions</h2>
+          <div className="section-title text-center">
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Mobile SEO Frequently Asked <span className="text-[#f59e0b]">Questions</span></h2>
             <p>Common questions about mobile search optimization</p>
           </div>
 

@@ -95,7 +95,7 @@ export default function Header() {
                 href={`tel:${contactInfo.phoneLink}`}
                 className="btn btn-secondary"
               >
-                Call Now
+               02 9191 8049
               </a>
             </div>
 

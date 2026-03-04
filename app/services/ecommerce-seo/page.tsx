@@ -150,7 +150,7 @@ export default function EcommerceSEOPage() {
 
   const platforms = [
     { name: "Shopify SEO", icon: "fa-store", description: "Complete SEO for Shopify stores" },
-    { name: "WooCommerce SEO", icon: "fa-wordpress", description: "WordPress ecommerce optimization" },
+    { name: "WooCommerce SEO", icon: "fa-plug", description: "WordPress ecommerce optimization" },
     { name: "Magento SEO", icon: "fa-shopping-bag", description: "Enterprise ecommerce SEO" },
     { name: "BigCommerce SEO", icon: "fa-cart-plus", description: "BigCommerce optimization" },
     { name: "Custom Platforms", icon: "fa-code", description: "Bespoke ecommerce solutions" },
@@ -264,8 +264,8 @@ export default function EcommerceSEOPage() {
       {/* Benefits Section */}
       <section className="py-20 bg-white">
         <div className="container">
-          <div className="section-title">
-            <h2>Why Ecommerce SEO Matters for Your Online Store</h2>
+          <div className="section-title text-center">
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Why Ecommerce SEO Matters for Your Online <span className="text-[#f59e0b]">Store</span></h2>
             <p>Drive sustainable growth and reduce customer acquisition costs</p>
           </div>
 
@@ -294,8 +294,8 @@ export default function EcommerceSEOPage() {
       {/* Services Section */}
       <section className="py-20 bg-[#f8fafc]" id="services">
         <div className="container">
-          <div className="section-title">
-            <h2>Our Ecommerce SEO Services</h2>
+          <div className="section-title text-center">
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Our Ecommerce SEO <span className="text-[#f59e0b]">Services</span></h2>
             <p>Comprehensive optimization for every aspect of your online store</p>
           </div>
 
@@ -325,8 +325,8 @@ export default function EcommerceSEOPage() {
       {/* Platforms Section */}
       <section className="py-20 bg-white">
         <div className="container">
-          <div className="section-title">
-            <h2>Ecommerce Platforms We Optimize</h2>
+          <div className="section-title text-center">
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Ecommerce Platforms We <span className="text-[#f59e0b]">Optimize</span></h2>
             <p>Expert SEO for all major ecommerce platforms</p>
           </div>
 
@@ -343,39 +343,39 @@ export default function EcommerceSEOPage() {
       </section>
 
       {/* Case Study Section */}
-      <section className="py-20 bg-gradient-to-br from-[#1e293b] to-[#0f172a] text-white">
-        <div className="container">
-          <div className="section-title">
-            <h2 className="text-white">Real Ecommerce SEO Results</h2>
+      <section className="py-20 bg-gradient-to-br from-[#1e293b] to-[#0f172a] text-white ">
+        <div className="container ">
+          <div className="section-title text-center">
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-4">Real Ecommerce SEO <span className="text-[#f59e0b]">Results</span></h2>
             <p className="text-slate-200">See how we transformed a struggling online store</p>
           </div>
 
           <div className="max-w-5xl mx-auto">
-            <div className="card bg-white/10 backdrop-blur-sm border-2 border-[#f59e0b]">
+            <div className="card !bg-white backdrop-blur-sm border-2 border-[#f59e0b]">
               <div className="grid md:grid-cols-5 gap-8">
                 <div className="md:col-span-3">
-                  <h3 className="text-3xl font-bold mb-2">{caseStudy.name}</h3>
+                  <h3 className="text-3xl font-bold mb-2 text-[#1e293b]">{caseStudy.name}</h3>
                   <div className="text-[#f59e0b] font-semibold mb-6">Timeline: {caseStudy.timeline}</div>
 
                   <div className="space-y-4">
                     <div>
-                      <h4 className="font-bold mb-2 text-lg">Challenge:</h4>
-                      <p className="text-slate-200">{caseStudy.challenge}</p>
+                      <h4 className="font-bold mb-2 text-lg text-[#1e293b]">Challenge:</h4>
+                      <p className="text-[#334155]">{caseStudy.challenge}</p>
                     </div>
                     <div>
-                      <h4 className="font-bold mb-2 text-lg">Solution:</h4>
-                      <p className="text-slate-200">{caseStudy.solution}</p>
+                      <h4 className="font-bold mb-2 text-lg text-[#1e293b]">Solution:</h4>
+                      <p className="text-[#334155]">{caseStudy.solution}</p>
                     </div>
                   </div>
                 </div>
 
-                <div className="md:col-span-2 bg-gradient-to-br from-[#f59e0b]/20 to-[#fb923c]/20 rounded-2xl p-8">
-                  <h4 className="font-bold mb-6 text-xl">Results Achieved:</h4>
+                <div className="md:col-span-2 bg-[#f59e0b] rounded-2xl p-8">
+                  <h4 className="font-bold mb-6 text-xl text-white">Results Achieved:</h4>
                   <ul className="space-y-4">
                     {caseStudy.results.map((result, idx) => (
                       <li key={idx} className="flex items-start gap-3">
-                        <i className="fas fa-trophy text-[#f59e0b] text-xl flex-shrink-0 mt-1"></i>
-                        <span className="text-slate-100">{result}</span>
+                        <i className="fas fa-trophy text-white text-xl flex-shrink-0 mt-1"></i>
+                        <span className="text-white font-medium">{result}</span>
                       </li>
                     ))}
                   </ul>
@@ -389,8 +389,8 @@ export default function EcommerceSEOPage() {
       {/* FAQ Section */}
       <section className="py-20 bg-white">
         <div className="container">
-          <div className="section-title">
-            <h2>Ecommerce SEO Frequently Asked Questions</h2>
+          <div className="section-title text-center">
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Ecommerce SEO Frequently Asked <span className="text-[#f59e0b]">Questions</span></h2>
             <p>Common questions about optimizing online stores for search engines</p>
           </div>
 

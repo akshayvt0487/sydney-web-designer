@@ -174,7 +174,7 @@ export default function ThankYouPage({ searchParams }: ThankYouPageProps) {
       {/* Trust Section */}
       <section className="bg-white py-20 md:py-24">
         <div className="container max-w-[1200px] mx-auto px-6 md:px-8">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1e293b] mb-4 text-center">Why Companies Choose Us</h2>
+          <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4 text-center">Why Companies Choose <span className="text-[#f59e0b]">Us</span></h2>
           <p className="text-lg md:text-xl text-[#64748b] max-w-[700px] mx-auto mb-16 text-center">
             Join the 500+ satisfied clients who have transformed their digital presence
           </p>

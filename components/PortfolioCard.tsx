@@ -15,7 +15,7 @@ export default function PortfolioCard({ project }: PortfolioCardProps) {
   const cardContent = (
     <div className="p-2 group overflow-hidden p-0 h-full flex flex-col hover:shadow-xl transition-all duration-300 cursor-pointer border-2 border-orange-200">
       {/* Image on Top */}
-      <div className="relative w-full h-64 bg-gradient-to-br from-primary-navy to-primary-orange overflow-hidden">
+      <div className="relative w-full h-64  overflow-hidden">
         {project.image && !imageError && (
           <Image
             src={project.image}
@@ -44,7 +44,7 @@ export default function PortfolioCard({ project }: PortfolioCardProps) {
           {project.services.map((service, index) => (
             <span
               key={index}
-              className="text-xs px-3 py-1.5 bg-gray-200 text-gray-700 rounded-full group-hover:bg-gray group-hover:text-white transition-colors"
+              className="text-xs px-3 py-1.5 bg-gray-200 text-gray-700 rounded-full group-hover:bg-gray-300 group-hover:text-gray-900 transition-colors"
             >
               {service}
             </span>

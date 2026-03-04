@@ -105,7 +105,7 @@ export default function ServicesPage() {
       <section className="py-20 bg-gray-50">
         <div className="container">
           <div className="section-title">
-            <h2>Why Choose Sydney Web Designer for Your Digital Services?</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Why Choose Sydney Web Designer for Your Digital <span className="text-[#f59e0b]">Services</span>?</h2>
             <p>Experience and expertise you can trust</p>
           </div>
 
@@ -179,7 +179,7 @@ export default function ServicesPage() {
       {/* <section className="py-20">
         <div className="container">
           <div className="section-title">
-            <h2>Flexible Pricing Options</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Flexible Pricing <span className="text-[#f59e0b]">Options</span></h2>
             <p>Choose the solution that fits your needs and budget</p>
           </div>
 

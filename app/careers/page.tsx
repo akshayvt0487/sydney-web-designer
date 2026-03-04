@@ -142,7 +142,7 @@ export default function CareersPage() {
       {/* Benefits Section */}
       <section className="py-20">
         <div className="container max-w-6xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-[#1e293b] mb-4 text-center">Why Work With Us?</h2>
+          <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4 text-center">Why Work With <span className="text-[#f59e0b]">Us</span>?</h2>
           <p className="text-xl text-[#64748b] text-center mb-12">We're a growing team passionate about helping Sydney businesses succeed online</p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -173,7 +173,7 @@ export default function CareersPage() {
       {/* Job Listings Section */}
       <section className="py-20 bg-[#f8fafc]">
         <div className="container max-w-6xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-[#1e293b] mb-4 text-center">Current Opportunities</h2>
+          <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4 text-center">Current <span className="text-[#f59e0b]">Opportunities</span></h2>
           <p className="text-xl text-[#64748b] text-center mb-12">Join our team and make an impact</p>
 
           <div className="space-y-6">

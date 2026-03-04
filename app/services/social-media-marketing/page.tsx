@@ -397,8 +397,8 @@ export default function SocialMediaMarketingPage() {
       {/* Final CTA Section */}
       <section className="py-20 bg-[#1e293b] text-white text-center">
         <div className="container">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Get Started?</h2>
-          <p className="text-xl mb-10 max-w-2xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-center">Ready to Get Started?</h2>
+          <p className="text-xl mb-10 max-w-2xl mx-auto text-center">
             Let&apos;s discuss your project and create a custom solution for your business
           </p>
           <Link href="#lead-form" className="btn btn-secondary text-lg">

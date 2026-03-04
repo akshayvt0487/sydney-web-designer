@@ -182,8 +182,8 @@ export default function GoogleAdsPage() {
       {/* Stats Section */}
       <section className="py-20">
         <div className="container">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 text-[#1e293b]">
-            Why Choose Google Ads Management Sydney?
+          <h2 className="text-4xl md:text-6xl font-bold text-center mb-6 text-[#1e293b]">
+            Why Choose Google Ads Management <span className="text-[#f59e0b]">Sydney</span>?
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
@@ -200,8 +200,8 @@ export default function GoogleAdsPage() {
       {/* Features Section */}
       <section className="py-20 bg-gray-50">
         <div className="container">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-[#1e293b]">
-            Our Google Ads Management Sydney Services
+          <h2 className="text-4xl md:text-6xl font-bold text-center mb-4 text-[#1e293b]">
+            Our Google Ads Management Sydney <span className="text-[#f59e0b]">Services</span>
           </h2>
           <p className="text-xl text-center text-gray-600 max-w-3xl mx-auto mb-16">
             Comprehensive solutions designed to help your business succeed
@@ -232,8 +232,8 @@ export default function GoogleAdsPage() {
       {/* Process Section */}
       <section className="py-20" id="process">
         <div className="container">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-[#1e293b]">
-            Our Proven Process
+          <h2 className="text-4xl md:text-6xl font-bold text-center mb-4 text-[#1e293b]">
+            Our Proven <span className="text-[#f59e0b]">Process</span>
           </h2>
           <p className="text-xl text-center text-gray-600 max-w-3xl mx-auto mb-16">
             A systematic approach to deliver outstanding results
@@ -256,8 +256,8 @@ export default function GoogleAdsPage() {
       {/* Case Studies Section */}
       <section className="py-20 bg-gray-50">
         <div className="container">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-[#1e293b]">
-            Real Results for Sydney Businesses
+          <h2 className="text-4xl md:text-6xl font-bold text-center mb-16 text-[#1e293b]">
+            Real Results for Sydney <span className="text-[#f59e0b]">Businesses</span>
           </h2>
 
           <div className="max-w-5xl mx-auto space-y-8">
@@ -277,8 +277,8 @@ export default function GoogleAdsPage() {
       {/* Results & Proof Section */}
       <section className="py-20">
         <div className="container">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-[#1e293b]">
-            Real Google Ads Results - Proof of Performance
+          <h2 className="text-4xl md:text-6xl font-bold text-center mb-4 text-[#1e293b]">
+            Real Google Ads Results - Proof of <span className="text-[#f59e0b]">Performance</span>
           </h2>
           <p className="text-xl text-center text-gray-600 max-w-3xl mx-auto mb-16">
             See the actual campaign data and results we've achieved for our Google Ads clients
@@ -450,8 +450,8 @@ export default function GoogleAdsPage() {
       {/* Testimonials Section */}
       <section className="py-20 bg-gray-50">
         <div className="container">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-[#1e293b]">
-            What Our Clients Say
+          <h2 className="text-4xl md:text-6xl font-bold text-center mb-16 text-[#1e293b]">
+            What Our Clients <span className="text-[#f59e0b]">Say</span>
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -515,7 +515,7 @@ export default function GoogleAdsPage() {
 
           <div className="bg-white rounded-2xl shadow-lg p-10">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold mb-4 text-[#1e293b]">Google Ads Management Sydney Pricing</h2>
+              <h2 className="text-4xl md:text-6xl font-bold mb-4 text-[#1e293b]">Google Ads Management Sydney <span className="text-[#f59e0b]">Pricing</span></h2>
               <p className="text-xl text-gray-600">Choose the package that fits your needs and budget</p>
             </div>
 
@@ -612,8 +612,8 @@ export default function GoogleAdsPage() {
       {/* Final CTA Section */}
       <section className="py-20 bg-[#1e293b] text-white text-center">
         <div className="container">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Get Started?</h2>
-          <p className="text-xl mb-10 max-w-2xl mx-auto">
+          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 text-center">Ready to Get <span className="text-[#f59e0b]">Started</span>?</h2>
+          <p className="text-xl mb-10 max-w-2xl mx-auto text-center">
             Let&apos;s discuss your project and create a custom solution for your business
           </p>
           <Link href="#lead-form" className="btn btn-secondary text-lg">

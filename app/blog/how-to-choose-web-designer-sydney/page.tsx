@@ -597,7 +597,7 @@ export default function HowToChooseWebDesigner() {
 
           {/* Big CTA Section */}
           <div className="bg-[#1e293b] p-12 rounded-2xl text-center text-white my-12 shadow-2xl">
-            <h2 className="text-4xl font-bold mb-4">Ready to Find Your Perfect Web Designer?</h2>
+            <h2 className="text-4xl font-bold mb-4 text-white">Ready to Find Your Perfect Web Designer?</h2>
             <p className="text-xl mb-8 text-gray-200">
               Let's discuss your project and show you how Sydney Web Designer approaches web design
             </p>

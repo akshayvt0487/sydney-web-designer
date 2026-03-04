@@ -353,39 +353,39 @@ export default function HighPerformanceLandingPagesPage() {
       </section>
 
       {/* Case Studies Section */}
-      <section className="py-20 bg-gradient-to-br from-[#1e293b] to-[#0f172a] text-white">
+      <section className="py-20 bg-gradient-to-br from-[#1e293b] to-[#0f172a] text-gray/800">
         <div className="container">
           <div className="section-title">
-            <h2 className="text-white">Real Performance Results</h2>
-            <p className="text-slate-200">See how we transformed landing page performance</p>
+            <h2 className="text-white" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: '1.2', textTransform: 'none' }}>Real Performance Results</h2>
+            <p className="text-white">See how we transformed landing page performance</p>
           </div>
 
           <div className="max-w-6xl mx-auto space-y-8">
             {caseStudies.map((study, index) => (
-              <div key={index} className="card bg-white/10 backdrop-blur-sm border-2 border-[#f59e0b]">
+              <div key={index} className="card bg-white/10 backdrop-blur-sm border-2 border-[#f59e0b]/50">
                 <div className="grid md:grid-cols-5 gap-8">
                   <div className="md:col-span-3">
-                    <h3 className="text-3xl font-bold mb-2">{study.company}</h3>
+                    <h3 className="text-3xl font-bold mb-2 text-gray/800" style={{ fontSize: '1.875rem', lineHeight: '1.3', textTransform: 'none' }}>{study.company}</h3>
 
                     <div className="space-y-4">
                       <div>
-                        <h4 className="font-bold mb-2 text-lg">Challenge:</h4>
-                        <p className="text-slate-200">{study.challenge}</p>
+                        <h4 className="font-bold mb-2 text-lg text-[#f59e0b]" style={{ fontSize: '1.125rem', lineHeight: '1.4', textTransform: 'none' }}>Challenge:</h4>
+                        <p className="text-gray/800">{study.challenge}</p>
                       </div>
                       <div>
-                        <h4 className="font-bold mb-2 text-lg">Solution:</h4>
-                        <p className="text-slate-200">{study.solution}</p>
+                        <h4 className="font-bold mb-2 text-lg text-[#f59e0b]" style={{ fontSize: '1.125rem', lineHeight: '1.4', textTransform: 'none' }}>Solution:</h4>
+                        <p className="text-gray/800">{study.solution}</p>
                       </div>
                     </div>
                   </div>
 
-                  <div className="md:col-span-2 bg-gradient-to-br from-[#f59e0b]/20 to-[#fb923c]/20 rounded-2xl p-8">
-                    <h4 className="font-bold mb-6 text-xl">Results:</h4>
+                  <div className="md:col-span-2 bg-[#f59e0b] rounded-2xl p-8">
+                    <h4 className="font-bold mb-6 text-xl text-white" style={{ fontSize: '1.25rem', lineHeight: '1.4', textTransform: 'none' }}>Results:</h4>
                     <ul className="space-y-4">
                       {study.results.map((result, idx) => (
                         <li key={idx} className="flex items-start gap-3">
-                          <i className="fas fa-trophy text-[#f59e0b] text-xl flex-shrink-0 mt-1"></i>
-                          <span className="text-slate-100">{result}</span>
+                          <i className="fas fa-trophy text-white text-xl flex-shrink-0 mt-1"></i>
+                          <span className="text-white font-medium">{result}</span>
                         </li>
                       ))}
                     </ul>

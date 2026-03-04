@@ -76,7 +76,7 @@ export default function BlogPage() {
       <section className="py-20">
         <div className="container">
           <div className="section-title">
-            <h2>Latest Articles</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Latest <span className="text-[#f59e0b]">Articles</span></h2>
             <p>Stay informed with our latest insights and tips</p>
           </div>
 
@@ -121,7 +121,7 @@ export default function BlogPage() {
       <section className="py-20 bg-gray-50">
         <div className="container">
           <div className="section-title">
-            <h2>Browse by Category</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Browse by <span className="text-[#f59e0b]">Category</span></h2>
             <p>Find articles on topics that matter to your business</p>
           </div>
 

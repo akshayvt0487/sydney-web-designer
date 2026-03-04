@@ -80,7 +80,7 @@ export default function ContactPage() {
       <section className="py-24 bg-white">
         <div className="container max-w-[1200px] mx-auto px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#1e293b] mb-4">Get In Touch</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Get In <span className="text-[#f59e0b]">Touch</span></h2>
             <p className="text-xl text-[#64748b] max-w-[700px] mx-auto">
               Ready to grow your business online? Contact us today!
             </p>
@@ -116,7 +116,7 @@ export default function ContactPage() {
               </div>
               <h3 className="text-2xl font-bold text-[#1e293b] mb-4">Location</h3>
               <p className="text-[#1e293b] text-lg leading-relaxed mb-2">
-                Suite 103 Level 1<br />22 Hunter Street
+                Suite 611<br />150 George Street
               </p>
               <span className="text-[#64748b] text-sm">Parramatta NSW 2150</span>
             </div>
@@ -208,7 +208,7 @@ export default function ContactPage() {
       {/* Follow Us Section */}
       <section className="py-16 md:py-24 bg-[#f8fafc]">
         <div className="container max-w-[1200px] mx-auto px-6 md:px-8">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1e293b] mb-4 text-center">Follow Us</h2>
+          <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4 text-center">Follow <span className="text-[#f59e0b]">Us</span></h2>
           <p className="text-lg md:text-xl text-[#64748b] max-w-[700px] mx-auto mb-12 text-center">
             Stay connected on social media
           </p>

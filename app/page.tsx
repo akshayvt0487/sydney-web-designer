@@ -640,8 +640,8 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
               <span className="text-[#f59e0b] font-semibold text-sm tracking-widest uppercase mb-3 block">Why Choose Us</span>
-              <h2 className="text-4xl md:text-5xl font-bold text-[#1e293b] mb-6">
-                Sydney&apos;s Most Trusted Web Design Partner
+              <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">
+                Sydney&apos;s Most Trusted Web Design <span className="text-[#f59e0b]">Partner</span>
               </h2>
               <p className="text-xl text-slate-600 mb-8">
                 We don&apos;t just build websites — we create digital experiences that drive real business growth.

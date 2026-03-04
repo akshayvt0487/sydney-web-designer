@@ -46,7 +46,7 @@ export default function WebDesignPlansPage() {
       <section className="py-20">
         <div className="container">
           <div className="section-title">
-            <h2>Choose Your Plan</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Choose Your <span className="text-[#f59e0b]">Plan</span></h2>
             <p>Professional websites at every budget level</p>
           </div>
 
@@ -287,7 +287,7 @@ export default function WebDesignPlansPage() {
       <section className="py-20 bg-gray-50">
         <div className="container">
           <div className="section-title">
-            <h2>What&apos;s Included in Every Plan</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">What&apos;s Included in Every <span className="text-[#f59e0b]">Plan</span></h2>
             <p>Professional quality guaranteed</p>
           </div>
 
@@ -371,7 +371,7 @@ export default function WebDesignPlansPage() {
       <section className="py-20">
         <div className="container">
           <div className="section-title">
-            <h2>Our Process</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Our <span className="text-[#f59e0b]">Process</span></h2>
             <p>From concept to launch in 4-8 weeks</p>
           </div>
 
@@ -415,7 +415,7 @@ export default function WebDesignPlansPage() {
       <section className="py-20 bg-gray-50">
         <div className="container">
           <div className="section-title">
-            <h2>Frequently Asked Questions</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Frequently Asked <span className="text-[#f59e0b]">Questions</span></h2>
             <p>Common questions about our pricing</p>
           </div>
 

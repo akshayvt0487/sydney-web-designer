@@ -265,8 +265,8 @@ export default function LinkBuildingPage() {
       {/* Benefits Section */}
       <section className="py-20 bg-white">
         <div className="container">
-          <div className="section-title">
-            <h2>Why Link Building Matters for SEO</h2>
+          <div className="section-title text-center">
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Why Link Building Matters for <span className="text-[#f59e0b]">SEO</span></h2>
             <p>Quality backlinks remain one of Google's most important ranking factors</p>
           </div>
 
@@ -295,8 +295,8 @@ export default function LinkBuildingPage() {
       {/* Services Section */}
       <section className="py-20 bg-[#f8fafc]" id="services">
         <div className="container">
-          <div className="section-title">
-            <h2>Our Link Building Services</h2>
+          <div className="section-title text-center">
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Our Link Building <span className="text-[#f59e0b]">Services</span></h2>
             <p>Comprehensive white-hat strategies to earn authoritative backlinks</p>
           </div>
 
@@ -326,8 +326,8 @@ export default function LinkBuildingPage() {
       {/* Link Types */}
       <section className="py-20 bg-white">
         <div className="container">
-          <div className="section-title">
-            <h2>Types of Links We Build</h2>
+          <div className="section-title text-center">
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Types of Links We <span className="text-[#f59e0b]">Build</span></h2>
             <p>Diverse, natural backlink profile from authoritative sources</p>
           </div>
 
@@ -346,8 +346,8 @@ export default function LinkBuildingPage() {
       {/* White-Hat vs Black-Hat */}
       <section className="py-20 bg-[#f8fafc]">
         <div className="container">
-          <div className="section-title">
-            <h2>Our White-Hat Approach</h2>
+          <div className="section-title text-center">
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Our White-Hat <span className="text-[#f59e0b]">Approach</span></h2>
             <p>Safe, sustainable link building that won't risk Google penalties</p>
           </div>
 
@@ -424,37 +424,37 @@ export default function LinkBuildingPage() {
       {/* Case Study Section */}
       <section className="py-20 bg-gradient-to-br from-[#1e293b] to-[#0f172a] text-white">
         <div className="container">
-          <div className="section-title">
-            <h2 className="text-white">Real Link Building Results</h2>
-            <p className="text-slate-200">How we built authority and transformed rankings</p>
+          <div className="section-title text-center">
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-4">Real Link Building <span className="text-[#f59e0b]">Results</span></h2>
+            <p className="text-white">How we built authority and transformed rankings</p>
           </div>
 
           <div className="max-w-5xl mx-auto">
-            <div className="card bg-white/10 backdrop-blur-sm border-2 border-[#f59e0b]">
+            <div className="card bg-white backdrop-blur-sm border-2 border-[#f59e0b]">
               <div className="grid md:grid-cols-5 gap-8">
                 <div className="md:col-span-3">
-                  <h3 className="text-3xl font-bold mb-2">{caseStudy.name}</h3>
-                  <div className="text-[#f59e0b] font-semibold mb-6">Timeline: {caseStudy.timeline}</div>
+                  <h3 className="text-3xl font-bold mb-2 text-[#1e293b]">{caseStudy.name}</h3>
+                  <div className="text-black font-semibold mb-6">Timeline: {caseStudy.timeline}</div>
 
                   <div className="space-y-4">
                     <div>
-                      <h4 className="font-bold mb-2 text-lg">Challenge:</h4>
-                      <p className="text-slate-200">{caseStudy.challenge}</p>
+                      <h4 className="font-bold mb-2 text-lg text-[#1e293b]">Challenge:</h4>
+                      <p className="text-[#334155]">{caseStudy.challenge}</p>
                     </div>
                     <div>
-                      <h4 className="font-bold mb-2 text-lg">Solution:</h4>
-                      <p className="text-slate-200">{caseStudy.solution}</p>
+                      <h4 className="font-bold mb-2 text-lg text-[#1e293b]">Solution:</h4>
+                      <p className="text-[#334155]">{caseStudy.solution}</p>
                     </div>
                   </div>
                 </div>
 
-                <div className="md:col-span-2 bg-gradient-to-br from-[#f59e0b]/20 to-[#fb923c]/20 rounded-2xl p-8">
-                  <h4 className="font-bold mb-6 text-xl">Results Achieved:</h4>
+                <div className="md:col-span-2 bg-[#f59e0b] rounded-2xl p-8">
+                  <h4 className="font-bold mb-6 text-xl text-white">Results Achieved:</h4>
                   <ul className="space-y-4">
                     {caseStudy.results.map((result, idx) => (
                       <li key={idx} className="flex items-start gap-3">
-                        <i className="fas fa-trophy text-[#f59e0b] text-xl flex-shrink-0 mt-1"></i>
-                        <span className="text-slate-100">{result}</span>
+                        <i className="fas fa-trophy text-white text-xl flex-shrink-0 mt-1"></i>
+                        <span className="text-white font-medium">{result}</span>
                       </li>
                     ))}
                   </ul>
@@ -468,8 +468,8 @@ export default function LinkBuildingPage() {
       {/* FAQ Section */}
       <section className="py-20 bg-white">
         <div className="container">
-          <div className="section-title">
-            <h2>Link Building Frequently Asked Questions</h2>
+          <div className="section-title text-center">
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Link Building Frequently Asked <span className="text-[#f59e0b]">Questions</span></h2>
             <p>Common questions about earning quality backlinks</p>
           </div>
 

@@ -54,7 +54,7 @@ export default function AboutPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20">
+      <section className="pt-20">
         <div className="container">
           <StatsGrid
             stats={[
@@ -69,11 +69,11 @@ export default function AboutPage() {
       </section>
 
       {/* Our Story Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="pb-20 bg-gray-50">
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <div className="section-title">
-              <h2>Our Story</h2>
+              <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Our <span className="text-[#f59e0b]">Story</span></h2>
               <p>Over a decade of digital excellence in Sydney</p>
             </div>
 
@@ -101,13 +101,13 @@ export default function AboutPage() {
       {/* Core Values Section */}
       <section className="py-20">
         <div className="container">
-          <div className="section-title">
-            <h2>Our Values</h2>
+          <div className="section-title text-center">
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Our <span className="text-[#f59e0b]">Values</span></h2>
             <p>The principles that guide everything we do</p>
           </div>
 
           <div className="grid-3">
-            <div className="card border-l-4 border-[#f59e0b]">
+            <div className="card  border-t-2 border-[#f59e0b]">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 bg-[#f59e0b]/10 rounded-lg flex items-center justify-center flex-shrink-0">
                   <i className="fas fa-chart-line text-xl text-[#f59e0b]" />
@@ -119,7 +119,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="card border-l-4 border-[#f59e0b]">
+            <div className="card  border-t-2 border-[#f59e0b]">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 bg-[#f59e0b]/10 rounded-lg flex items-center justify-center flex-shrink-0">
                   <i className="fas fa-eye text-xl text-[#f59e0b]" />
@@ -131,7 +131,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="card border-l-4 border-[#f59e0b]">
+            <div className="card  border-t-2 border-[#f59e0b]">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 bg-[#f59e0b]/10 rounded-lg flex items-center justify-center flex-shrink-0">
                   <i className="fas fa-lightbulb text-xl text-[#f59e0b]" />
@@ -143,7 +143,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="card border-l-4 border-[#f59e0b]">
+            <div className="card  border-t-2 border-[#f59e0b]">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 bg-[#f59e0b]/10 rounded-lg flex items-center justify-center flex-shrink-0">
                   <i className="fas fa-handshake text-xl text-[#f59e0b]" />
@@ -155,7 +155,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="card border-l-4 border-[#f59e0b]">
+            <div className="card  border-t-2 border-[#f59e0b]">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 bg-[#f59e0b]/10 rounded-lg flex items-center justify-center flex-shrink-0">
                   <i className="fas fa-star text-xl text-[#f59e0b]" />
@@ -167,7 +167,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="card border-l-4 border-[#f59e0b]">
+            <div className="card  border-t-2 border-[#f59e0b]">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 bg-[#f59e0b]/10 rounded-lg flex items-center justify-center flex-shrink-0">
                   <i className="fas fa-map-marker-alt text-xl text-[#f59e0b]" />
@@ -185,35 +185,77 @@ export default function AboutPage() {
       {/* What We Do Section */}
       <section className="py-20 bg-white">
         <div className="container">
-          <div className="section-title">
-            <h2>What We Do</h2>
+          <div className="section-title text-center">
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">What We <span className="text-[#f59e0b]">Do</span></h2>
             <p>Comprehensive digital solutions for Sydney businesses</p>
           </div>
 
-          <div className="max-w-4xl mx-auto space-y-6 text-lg text-gray-700">
-            <p>
-              <strong>Web Design & Development:</strong> We create stunning, high-performing websites that convert visitors into customers. Every site is mobile-responsive, SEO-optimized, and built with the latest technologies.
-            </p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Web Design & Development */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all  border-t-2 border-[#f59e0b]">
+              <div className="w-16 h-16 bg-[#f59e0b]/10 rounded-xl flex items-center justify-center mb-6">
+                <i className="fas fa-laptop-code text-3xl text-[#f59e0b]"></i>
+              </div>
+              <h3 className="text-2xl font-bold text-[#1e293b] mb-4">Web Design & Development</h3>
+              <p className="text-[#64748b] leading-relaxed">
+                We create stunning, high-performing websites that convert visitors into customers. Every site is mobile-responsive, SEO-optimized, and built with the latest technologies.
+              </p>
+            </div>
 
-            <p>
-              <strong>SEO & Digital Marketing:</strong> Get found on Google and grow your online presence. Our SEO strategies combine technical optimization, content marketing, and link building to drive organic traffic and leads.
-            </p>
+            {/* SEO & Digital Marketing */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all  border-t-2 border-[#f59e0b]">
+              <div className="w-16 h-16 bg-[#f59e0b]/10 rounded-xl flex items-center justify-center mb-6">
+                <i className="fas fa-search text-3xl text-[#f59e0b]"></i>
+              </div>
+              <h3 className="text-2xl font-bold text-[#1e293b] mb-4">SEO & Digital Marketing</h3>
+              <p className="text-[#64748b] leading-relaxed">
+                Get found on Google and grow your online presence. Our SEO strategies combine technical optimization, content marketing, and link building to drive organic traffic and leads.
+              </p>
+            </div>
 
-            <p>
-              <strong>Branding & Identity:</strong> Stand out from the competition with professional branding that reflects your business values and resonates with your target audience.
-            </p>
+            {/* Branding & Identity */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all  border-t-2 border-[#f59e0b]">
+              <div className="w-16 h-16 bg-[#f59e0b]/10 rounded-xl flex items-center justify-center mb-6">
+                <i className="fas fa-palette text-3xl text-[#f59e0b]"></i>
+              </div>
+              <h3 className="text-2xl font-bold text-[#1e293b] mb-4">Branding & Identity</h3>
+              <p className="text-[#64748b] leading-relaxed">
+                Stand out from the competition with professional branding that reflects your business values and resonates with your target audience.
+              </p>
+            </div>
 
-            <p>
-              <strong>E-commerce Solutions:</strong> Launch and grow your online store with custom e-commerce websites that make it easy for customers to find, buy, and love your products.
-            </p>
+            {/* E-commerce Solutions */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all  border-t-2 border-[#f59e0b]">
+              <div className="w-16 h-16 bg-[#f59e0b]/10 rounded-xl flex items-center justify-center mb-6">
+                <i className="fas fa-shopping-cart text-3xl text-[#f59e0b]"></i>
+              </div>
+              <h3 className="text-2xl font-bold text-[#1e293b] mb-4">E-commerce Solutions</h3>
+              <p className="text-[#64748b] leading-relaxed">
+                Launch and grow your online store with custom e-commerce websites that make it easy for customers to find, buy, and love your products.
+              </p>
+            </div>
 
-            <p>
-              <strong>Content Marketing:</strong> Engage your audience and establish authority with strategic content that educates, informs, and converts.
-            </p>
+            {/* Content Marketing */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all  border-t-2 border-[#f59e0b]">
+              <div className="w-16 h-16 bg-[#f59e0b]/10 rounded-xl flex items-center justify-center mb-6">
+                <i className="fas fa-pen-nib text-3xl text-[#f59e0b]"></i>
+              </div>
+              <h3 className="text-2xl font-bold text-[#1e293b] mb-4">Content Marketing</h3>
+              <p className="text-[#64748b] leading-relaxed">
+                Engage your audience and establish authority with strategic content that educates, informs, and converts.
+              </p>
+            </div>
 
-            <p>
-              <strong>Ongoing Support:</strong> We don&apos;t just build your website and disappear. Our ongoing support and maintenance packages ensure your site stays secure, fast, and up-to-date.
-            </p>
+            {/* Ongoing Support */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all  border-t-2 border-[#f59e0b]">
+              <div className="w-16 h-16 bg-[#f59e0b]/10 rounded-xl flex items-center justify-center mb-6">
+                <i className="fas fa-headset text-3xl text-[#f59e0b]"></i>
+              </div>
+              <h3 className="text-2xl font-bold text-[#1e293b] mb-4">Ongoing Support</h3>
+              <p className="text-[#64748b] leading-relaxed">
+                We don&apos;t just build your website and disappear. Our ongoing support and maintenance packages ensure your site stays secure, fast, and up-to-date.
+              </p>
+            </div>
           </div>
         </div>
       </section>

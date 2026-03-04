@@ -615,8 +615,8 @@ export default function WordPressDevelopmentPage() {
       {/* CTA Section */}
       <section className="bg-[#1e293b] text-white py-24 px-8 text-center">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-5xl font-bold mb-6">Ready to Get Started?</h2>
-          <p className="text-2xl mb-10 opacity-90">
+          <h2 className="text-5xl font-bold text-center mb-6 text-white">Ready to Get Started?</h2>
+          <p className="text-center text-2xl mb-10 opacity-90">
             Let's discuss your project and create a custom solution for your business
           </p>
           <button data-popup="contact" className="bg-transparent border-2 border-white text-white px-6 md:px-10 lg:px-12 py-3 md:py-4 lg:py-5 rounded-full font-semibold text-base md:text-lg lg:text-xl hover:bg-white hover:text-[#1e293b] transition-all w-full sm:w-auto text-center">

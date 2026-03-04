@@ -320,8 +320,8 @@ export default function PayOnPerformanceSEOPage() {
       {/* Benefits Section */}
       <section className="py-20 bg-white">
         <div className="container">
-          <div className="section-title">
-            <h2>Why Pay on Performance SEO Makes Sense</h2>
+          <div className="section-title text-center">
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Why Pay on Performance SEO Makes <span className="text-[#f59e0b]">Sense</span></h2>
             <p>Aligned incentives, reduced risk, and transparent results</p>
           </div>
 
@@ -350,8 +350,8 @@ export default function PayOnPerformanceSEOPage() {
       {/* How It Works */}
       <section className="py-20 bg-[#f8fafc]" id="how-it-works">
         <div className="container">
-          <div className="section-title">
-            <h2>How Pay on Performance SEO Works</h2>
+          <div className="section-title text-center">
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">How Pay on Performance SEO <span className="text-[#f59e0b]">Works</span></h2>
             <p>Simple, transparent process with clear success metrics</p>
           </div>
 
@@ -386,8 +386,8 @@ export default function PayOnPerformanceSEOPage() {
       {/* Pricing Models */}
       <section className="py-20 bg-white">
         <div className="container">
-          <div className="section-title">
-            <h2>Performance Pricing Models</h2>
+          <div className="section-title text-center">
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Performance Pricing <span className="text-[#f59e0b]">Models</span></h2>
             <p>Flexible options based on what matters most to your business</p>
           </div>
 
@@ -422,8 +422,8 @@ export default function PayOnPerformanceSEOPage() {
       {/* Ideal For */}
       <section className="py-20 bg-[#f8fafc]">
         <div className="container">
-          <div className="section-title">
-            <h2>Is Pay on Performance SEO Right for You?</h2>
+          <div className="section-title text-center">
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Is Pay on Performance SEO Right for <span className="text-[#f59e0b]">You</span>?</h2>
             <p>Ideal for businesses that need results-driven, low-risk SEO</p>
           </div>
 
@@ -445,37 +445,37 @@ export default function PayOnPerformanceSEOPage() {
       {/* Case Study Section */}
       <section className="py-20 bg-gradient-to-br from-[#1e293b] to-[#0f172a] text-white">
         <div className="container">
-          <div className="section-title">
-            <h2 className="text-white">Real Pay on Performance Results</h2>
-            <p className="text-slate-200">How performance-based SEO delivered exceptional ROI</p>
+          <div className="section-title text-center">
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-4">Real Pay on Performance <span className="text-[#f59e0b]">Results</span></h2>
+            <p className="text-white">How performance-based SEO delivered exceptional ROI</p>
           </div>
 
           <div className="max-w-5xl mx-auto">
-            <div className="card bg-white/10 backdrop-blur-sm border-2 border-[#f59e0b]">
+            <div className="card !bg-white/10 backdrop-blur-sm border-2 border-[#f59e0b]">
               <div className="grid md:grid-cols-5 gap-8">
                 <div className="md:col-span-3">
-                  <h3 className="text-3xl font-bold mb-2">{caseStudy.name}</h3>
-                  <div className="text-[#f59e0b] font-semibold mb-6">Timeline: {caseStudy.timeline}</div>
+                  <h3 className="text-3xl font-bold mb-2 text-[#1e293b]">{caseStudy.name}</h3>
+                  <div className="text-white font-semibold mb-6">Timeline: {caseStudy.timeline}</div>
 
                   <div className="space-y-4">
                     <div>
-                      <h4 className="font-bold mb-2 text-lg">Challenge:</h4>
-                      <p className="text-slate-200">{caseStudy.challenge}</p>
+                      <h4 className="font-bold mb-2 text-lg text-[#1e293b]">Challenge:</h4>
+                      <p className="text-[#334155]">{caseStudy.challenge}</p>
                     </div>
                     <div>
-                      <h4 className="font-bold mb-2 text-lg">Solution:</h4>
-                      <p className="text-slate-200">{caseStudy.solution}</p>
+                      <h4 className="font-bold mb-2 text-lg text-[#1e293b]">Solution:</h4>
+                      <p className="text-[#334155]">{caseStudy.solution}</p>
                     </div>
                   </div>
                 </div>
 
-                <div className="md:col-span-2 bg-gradient-to-br from-[#f59e0b]/20 to-[#fb923c]/20 rounded-2xl p-8">
-                  <h4 className="font-bold mb-6 text-xl">Results Achieved:</h4>
+                <div className="md:col-span-2 bg-[#f59e0b] rounded-2xl p-8">
+                  <h4 className="font-bold mb-6 text-xl text-white">Results Achieved:</h4>
                   <ul className="space-y-4">
                     {caseStudy.results.map((result, idx) => (
                       <li key={idx} className="flex items-start gap-3">
-                        <i className="fas fa-trophy text-[#f59e0b] text-xl flex-shrink-0 mt-1"></i>
-                        <span className="text-slate-100">{result}</span>
+                        <i className="fas fa-trophy text-white text-xl flex-shrink-0 mt-1"></i>
+                        <span className="text-white font-medium">{result}</span>
                       </li>
                     ))}
                   </ul>
@@ -489,8 +489,8 @@ export default function PayOnPerformanceSEOPage() {
       {/* FAQ Section */}
       <section className="py-20 bg-white">
         <div className="container">
-          <div className="section-title">
-            <h2>Pay on Performance SEO Frequently Asked Questions</h2>
+          <div className="section-title text-center">
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Pay on Performance SEO Frequently Asked <span className="text-[#f59e0b]">Questions</span></h2>
             <p>Common questions about results-based SEO pricing</p>
           </div>
 

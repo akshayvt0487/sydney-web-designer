@@ -202,6 +202,7 @@ section.hero {
 
 .section-title h2 {
   margin-bottom: 0.75rem;
+  
 }
 
 .section-title p {
@@ -210,6 +211,11 @@ section.hero {
   line-height: 28px;
   color: #64748b;
   max-width: 680px;
+}
+
+.section-title.text-center p {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Backgrounds */

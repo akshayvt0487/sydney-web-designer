@@ -70,7 +70,7 @@ export default function WebDesignPage() {
       <section className="py-20 bg-white">
         <div className="container">
           <div className="section-title">
-            <h2>Our Latest Web Design Projects</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Our Latest Web Design <span className="text-[#f59e0b]">Projects</span></h2>
             <p>See what we've created for businesses like yours</p>
           </div>
 
@@ -129,7 +129,7 @@ export default function WebDesignPage() {
       <section className="py-20 bg-gray-50">
         <div className="container">
           <div className="section-title">
-            <h2>Why Choose Sydney Web Designer?</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Why Choose Sydney Web <span className="text-[#f59e0b]">Designer</span>?</h2>
             <p>The leading web design agency trusted by Sydney businesses</p>
           </div>
 
@@ -173,7 +173,7 @@ export default function WebDesignPage() {
       <section className="py-20 bg-white">
         <div className="container">
           <div className="section-title">
-            <h2>Comprehensive Web Design Services</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Comprehensive Web Design <span className="text-[#f59e0b]">Services</span></h2>
             <p>Everything you need for a successful online presence</p>
           </div>
 
@@ -250,7 +250,7 @@ export default function WebDesignPage() {
 
         <div className="container relative z-10">
           <div className="section-title">
-            <h2>Our Web Design Process</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Our Web Design <span className="text-[#f59e0b]">Process</span></h2>
             <p>A proven methodology that delivers outstanding results</p>
           </div>
 
@@ -366,7 +366,7 @@ export default function WebDesignPage() {
       <section className="py-20 bg-gray-50">
         <div className="container">
           <div className="section-title">
-            <h2>Features Included in Every Website</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Features Included in Every <span className="text-[#f59e0b]">Website</span></h2>
             <p>Professional quality as standard, not as an extra</p>
           </div>
 
@@ -412,7 +412,7 @@ export default function WebDesignPage() {
 
         <div className="container relative z-10">
           <div className="section-title">
-            <h2 className="text-white">Perfect on Every Device</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-4">Perfect on Every <span className="text-[#f59e0b]">Device</span></h2>
             <p className="text-slate-100">Responsive design that looks stunning across all screen sizes</p>
           </div>
 
@@ -483,7 +483,7 @@ export default function WebDesignPage() {
       <section className="py-20 bg-white">
         <div className="container">
           <div className="section-title">
-            <h2>Modern Technologies We Master</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Modern Technologies We <span className="text-[#f59e0b]">Master</span></h2>
             <p>Cutting-edge tools for superior websites</p>
           </div>
 
@@ -526,7 +526,7 @@ export default function WebDesignPage() {
       <section className="py-20 bg-white">
         <div className="container">
           <div className="section-title">
-            <h2>Real Results for Real Businesses</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Real Results for Real <span className="text-[#f59e0b]">Businesses</span></h2>
             <p>See how we've helped businesses like yours succeed online</p>
           </div>
 
@@ -596,7 +596,7 @@ export default function WebDesignPage() {
       <section className="py-20 bg-gray-50">
         <div className="container">
           <div className="section-title">
-            <h2>Industries We Serve</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Industries We <span className="text-[#f59e0b]">Serve</span></h2>
             <p>Specialized web design expertise across multiple sectors</p>
           </div>
 
@@ -642,7 +642,7 @@ export default function WebDesignPage() {
 
         <div className="container relative z-10">
           <div className="section-title">
-            <h2 className="text-white">Growth Marketing Services</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-4">Growth Marketing <span className="text-[#f59e0b]">Services</span></h2>
             <p className="text-slate-100">Strategic marketing solutions to drive traffic and conversions</p>
           </div>
 
@@ -840,7 +840,7 @@ export default function WebDesignPage() {
       <section className="py-20 bg-white">
         <div className="container">
           <div className="section-title">
-            <h2>Frequently Asked Questions</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Frequently Asked <span className="text-[#f59e0b]">Questions</span></h2>
             <p>Everything you need to know about our web design services</p>
           </div>
 

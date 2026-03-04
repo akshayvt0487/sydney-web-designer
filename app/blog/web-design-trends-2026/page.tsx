@@ -386,7 +386,7 @@ export default function WebDesignTrends2026() {
 
           {/* Big CTA Section */}
           <div className="bg-[#1e293b] p-12 rounded-2xl text-center text-white my-12 shadow-2xl">
-            <h2 className="text-4xl font-bold mb-4">Ready to Transform Your Website?</h2>
+            <h2 className="text-4xl font-bold mb-4 text-white">Ready to Transform Your Website?</h2>
             <p className="text-xl mb-8 text-gray-200">
               Let's discuss how we can implement these trends for your Sydney business
             </p>

@@ -32,7 +32,10 @@
       "Bash(git push:*)",
       "Bash(npx playwright install:*)",
       "Bash(npx tsx:*)",
-      "Bash(wc:*)"
+      "Bash(wc:*)",
+      "Bash(python:*)",
+      "Bash(awk:*)",
+      "Bash(git checkout:*)"
     ]
   }
 }

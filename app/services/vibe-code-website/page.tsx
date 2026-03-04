@@ -163,10 +163,10 @@ export default function VibeCodeWebsitePage() {
         <div className="container max-w-[1200px] mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl font-bold text-[#1e293b] mb-6">
-                What is Vibe Code?
+              <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">
+                What is Vibe <span className="text-[#f59e0b]">Code</span>?
               </h2>
-              <p className="text-lg text-[#64748b] mb-4">
+              <p className="text-center text-lg text-[#64748b] mb-4">
                 Vibe is an AI-powered design tool that allows you to create stunning website designs through simple prompts and iterations. While Vibe creates beautiful designs, converting them into real, functional websites requires professional development expertise.
               </p>
               <p className="text-lg text-[#64748b] mb-6">
@@ -221,8 +221,8 @@ export default function VibeCodeWebsitePage() {
       <section className="py-20 bg-[#f8fafc]">
         <div className="container max-w-[1200px] mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#1e293b] mb-4">
-              Any Technology Stack
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">
+              Any Technology <span className="text-[#f59e0b]">Stack</span>
             </h2>
             <p className="text-xl text-[#64748b] max-w-[700px] mx-auto">
               We convert your Vibe design into any platform or framework that suits your needs
@@ -255,8 +255,8 @@ export default function VibeCodeWebsitePage() {
       <section className="py-20 bg-white">
         <div className="container max-w-[1200px] mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#1e293b] mb-4">
-              Our Conversion Process
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">
+              Our Conversion <span className="text-[#f59e0b]">Process</span>
             </h2>
             <p className="text-xl text-[#64748b] max-w-[700px] mx-auto">
               From Vibe design to live website in 5 simple steps
@@ -267,7 +267,7 @@ export default function VibeCodeWebsitePage() {
             {conversionProcess.map((process, index) => (
               <div key={index} className="relative">
                 <div className="bg-gradient-to-br from-[#f59e0b]/10 to-[#f59e0b]/5 p-6 rounded-2xl hover:shadow-lg transition-all">
-                  <div className="text-5xl font-bold text-[#f59e0b]/20 mb-4">{process.step}</div>
+                  <div className="text-5xl font-bold text-[#f59e0b]/40 mb-4">{process.step}</div>
                   <div className="w-14 h-14 bg-[#f59e0b] rounded-full flex items-center justify-center mb-4">
                     <i className={`fas ${process.icon} text-white text-xl`}></i>
                   </div>
@@ -287,8 +287,8 @@ export default function VibeCodeWebsitePage() {
       <section className="py-20 bg-[#f8fafc]">
         <div className="container max-w-[1200px] mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#1e293b] mb-4">
-              Why Choose Us for Vibe Conversion?
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">
+              Why Choose Us for Vibe <span className="text-[#f59e0b]">Conversion</span>?
             </h2>
             <p className="text-xl text-[#64748b] max-w-[700px] mx-auto">
               We deliver production-ready websites with all the features you need
@@ -312,10 +312,10 @@ export default function VibeCodeWebsitePage() {
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-br from-[#1e293b] via-[#2d3b4f] to-[#1e293b] text-white">
         <div className="container max-w-[900px] mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-            Ready to Bring Your Vibe Design to Life?
+          <h2 className="text-4xl md:text-6xl font-bold text-center mb-4 text-white">
+            Ready to Bring Your Vibe Design to <span className="text-[#f59e0b]">Life</span>?
           </h2>
-          <p className="text-xl text-gray-300 mb-8">
+          <p className="text-center text-xl text-gray-300 mb-8">
             Let&apos;s transform your AI-generated design into a fully functional, production-ready website
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

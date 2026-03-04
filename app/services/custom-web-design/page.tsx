@@ -84,8 +84,8 @@ export default function CustomWebDesignPage() {
       {/* Stats Section */}
       <section className="py-24 px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl font-bold text-center text-[#1e293b] mb-6">
-            Why Choose Custom Web Design Sydney?
+          <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">
+            Why Choose Custom Web Design <span className="text-[#f59e0b]">Sydney</span>?
           </h2>
           <div className="grid md:grid-cols-4 gap-8 mt-16">
             <div className="bg-white p-10 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] text-center border-t-4 border-[#f59e0b]">
@@ -111,8 +111,8 @@ export default function CustomWebDesignPage() {
       {/* Features Section */}
       <section className="py-24 px-8 bg-[#f8fafc]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl font-bold text-center text-[#1e293b] mb-6">
-            Our Custom Web Design Sydney Services
+          <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">
+            Our Custom Web Design Sydney <span className="text-[#f59e0b]">Services</span>
           </h2>
           <p className="text-center text-xl text-[#64748b] max-w-3xl mx-auto mb-12">
             Comprehensive solutions designed to help your business succeed
@@ -269,8 +269,8 @@ export default function CustomWebDesignPage() {
       {/* Process Section */}
       <section className="py-24 px-8" id="process">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl font-bold text-center text-[#1e293b] mb-6">
-            Our Proven Process
+          <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">
+            Our Proven <span className="text-[#f59e0b]">Process</span>
           </h2>
           <p className="text-center text-xl text-[#64748b] max-w-3xl mx-auto mb-12">
             A systematic approach to deliver outstanding results
@@ -343,8 +343,8 @@ export default function CustomWebDesignPage() {
       {/* Case Studies Section */}
       <section className="py-24 px-8 bg-[#f8fafc]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl font-bold text-center text-[#1e293b] mb-16">
-            Real Results for Sydney Businesses
+          <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">
+            Real Results for Sydney <span className="text-[#f59e0b]">Businesses</span>
           </h2>
 
           <div className="space-y-12">
@@ -374,8 +374,8 @@ export default function CustomWebDesignPage() {
       {/* Testimonials Section */}
       <section className="py-24 px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl font-bold text-center text-[#1e293b] mb-16">
-            What Our Clients Say
+          <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">
+            What Our Clients <span className="text-[#f59e0b]">Say</span>
           </h2>
 
           <div className="grid md:grid-cols-3 gap-12">
@@ -431,8 +431,8 @@ export default function CustomWebDesignPage() {
       {/* <section className="py-24 px-8 bg-[#f8fafc]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-5xl font-bold text-[#1e293b] mb-4">
-              Custom Web Design Sydney Pricing
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">
+              Custom Web Design Sydney <span className="text-[#f59e0b]">Pricing</span>
             </h2>
             <p className="text-[#64748b] text-xl">
               Choose the package that fits your needs and budget
@@ -623,8 +623,8 @@ export default function CustomWebDesignPage() {
       {/* CTA Section */}
       <section className="bg-[#1e293b] text-white py-24 px-8 text-center">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-5xl font-bold mb-6">Ready to Get Started?</h2>
-          <p className="text-2xl mb-10 opacity-90">
+          <h2 className="text-4xl md:text-6xl font-bold text-center mb-4 text-white">Ready to Get <span className="text-[#f59e0b]">Started</span>?</h2>
+          <p className="text-center text-2xl mb-10 opacity-90">
             Let's discuss your project and create a custom solution for your business
           </p>
           <button data-popup="contact" className="bg-transparent border-2 border-white text-white px-6 md:px-10 lg:px-12 py-3 md:py-4 lg:py-5 rounded-full font-semibold text-base md:text-lg lg:text-xl hover:bg-white hover:text-[#1e293b] transition-all w-full sm:w-auto text-center">

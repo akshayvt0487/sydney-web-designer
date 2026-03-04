@@ -334,7 +334,7 @@ export default function EcommerceWebsitesPage() {
       <section className="py-24" id="lead-form">
         <div className="container max-w-5xl">
           <div className="bg-[#1e293b] text-white p-16 rounded-3xl">
-            <h3 className="text-4xl font-bold mb-4 text-center">Get Your Free Consultation</h3>
+            <h3 className="text-4xl font-bold mb-4 text-center text-white">Get Your Free Consultation</h3>
             <p className="text-center opacity-90 mb-12 text-lg">Tell us about your project and we&apos;ll provide expert advice and a custom quote</p>
 
             <form className="space-y-8">
@@ -374,8 +374,8 @@ export default function EcommerceWebsitesPage() {
       {/* CTA Section */}
       <section className="bg-[#1e293b] text-white py-24 text-center">
         <div className="container">
-          <h2 className="text-5xl font-bold mb-6">Ready to Get Started?</h2>
-          <p className="text-2xl mb-10 opacity-95">Let&apos;s discuss your project and create a custom solution for your business</p>
+          <h2 className="text-5xl font-bold text-center mb-6 text-white">Ready to Get Started?</h2>
+          <p className="text-center text-2xl mb-10 opacity-95">Let&apos;s discuss your project and create a custom solution for your business</p>
           <Link href="#lead-form" className="btn btn-white text-lg">Start Your Store</Link>
         </div>
       </section>

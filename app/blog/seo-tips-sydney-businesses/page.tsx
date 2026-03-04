@@ -470,7 +470,7 @@ export default function SEOTipsSydneyBusinesses() {
       {/* CTA Section */}
       <section className="bg-[#1e293b] text-white py-20">
         <div className="container max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-4">Get Your Free SEO Audit</h2>
+          <h2 className="text-4xl font-bold mb-4 text-white">Get Your Free SEO Audit</h2>
           <p className="text-xl mb-8 text-gray-300">
             Discover how your website ranks and get expert recommendations to improve your Google visibility
           </p>

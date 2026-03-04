@@ -77,8 +77,8 @@ export default function ContentMarketingPage() {
       <section className="py-20">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl font-bold mb-4">Complete Content Marketing Services</h2>
-            <p className="text-xl text-gray-600">Every content type you need to attract and engage customers.</p>
+            <h2 className="text-4xl md:text-6xl font-bold mb-4 text-center">Complete Content Marketing <span className="text-[#f59e0b]">Services</span></h2>
+            <p className="text-xl text-gray-600 text-center">Every content type you need to attract and engage customers.</p>
           </div>
           <div className="grid-3">{features.map((feature, index) => (<div key={index} className="card hover:shadow-card-hover transition-shadow"><div className="mb-4"><i className={`${feature.icon} text-4xl text-[#f59e0b]`}></i></div><h3 className="text-xl font-bold mb-3">{feature.title}</h3><p className="text-gray-600">{feature.description}</p></div>))}</div>
         </div>
@@ -86,18 +86,18 @@ export default function ContentMarketingPage() {
       <section className="py-20 bg-gray-50">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl font-bold mb-4">Our Content Marketing Process</h2>
-            <p className="text-xl text-gray-600">Strategic approach to content that drives results.</p>
+            <h2 className="text-4xl md:text-6xl font-bold mb-4 text-center">Our Content Marketing <span className="text-[#f59e0b]">Process</span></h2>
+            <p className="text-xl text-gray-600 text-center">Strategic approach to content that drives results.</p>
           </div>
           <div className="grid-2 max-w-4xl mx-auto">{process.map((item) => (<div key={item.step} className="card hover:shadow-card-hover transition-shadow"><div className="flex items-start gap-4"><div className="w-12 h-12 bg-[#f59e0b] rounded-full flex items-center justify-center text-white font-bold text-xl flex-shrink-0">{item.step}</div><div><h3 className="text-xl font-bold mb-2">{item.title}</h3><p className="text-gray-600">{item.description}</p></div></div></div>))}</div>
         </div>
       </section>
-      {projects.length > 0 && (<section className="py-20"><div className="container"><div className="text-center max-w-3xl mx-auto mb-12"><h2 className="text-4xl font-bold mb-4">Content Marketing Success Stories</h2><p className="text-xl text-gray-600">Businesses growing with strategic content.</p></div><div className="grid-3">{projects.map((project) => (<PortfolioCard key={project.id} project={project} />))}</div><div className="text-center mt-12"><Link href="/portfolio" className="btn btn-primary">View All Projects</Link></div></div></section>)}
+      {projects.length > 0 && (<section className="py-20"><div className="container"><div className="text-center max-w-3xl mx-auto mb-12"><h2 className="text-4xl md:text-6xl font-bold mb-4 text-center">Content Marketing Success <span className="text-[#f59e0b]">Stories</span></h2><p className="text-xl text-gray-600 text-center">Businesses growing with strategic content.</p></div><div className="grid-3">{projects.map((project) => (<PortfolioCard key={project.id} project={project} />))}</div><div className="text-center mt-12"><Link href="/portfolio" className="btn btn-primary">View All Projects</Link></div></div></section>)}
       <section className="py-20 bg-gray-50">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl font-bold mb-4">What Our Clients Say</h2>
-            <p className="text-xl text-gray-600">Businesses building authority with content marketing.</p>
+            <h2 className="text-4xl md:text-6xl font-bold mb-4 text-center">What Our Clients <span className="text-[#f59e0b]">Say</span></h2>
+            <p className="text-xl text-gray-600 text-center">Businesses building authority with content marketing.</p>
           </div>
           <div className="grid-3">{reviews.map((review) => (<TestimonialCard key={review.id} review={review} />))}</div>
           <div className="text-center mt-12"><Link href="/testimonials" className="btn btn-primary">Read More Reviews</Link></div>
@@ -134,8 +134,8 @@ export default function ContentMarketingPage() {
       <section className="py-20 bg-gray-50">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl font-bold mb-4">Frequently Asked Questions</h2>
-            <p className="text-xl text-gray-600">Common questions about content marketing services.</p>
+            <h2 className="text-4xl md:text-6xl font-bold mb-4 text-center">Frequently Asked <span className="text-[#f59e0b]">Questions</span></h2>
+            <p className="text-xl text-gray-600 text-center">Common questions about content marketing services.</p>
           </div>
           <div className="max-w-3xl mx-auto space-y-6">{faqs.map((faq, index) => (<div key={index} className="card"><h3 className="text-lg font-bold mb-2">{faq.question}</h3><p className="text-gray-600">{faq.answer}</p></div>))}</div>
         </div>

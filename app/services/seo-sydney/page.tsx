@@ -161,8 +161,8 @@ export default function SEOServicesPage() {
       <section className="py-20">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl font-bold mb-4">
-              Comprehensive SEO Services
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">
+              Comprehensive SEO <span className="text-[#f59e0b]">Services</span>
             </h2>
             <p className="text-xl text-gray-600">
               Every aspect of SEO covered to maximize your online visibility and organic growth.
@@ -185,7 +185,7 @@ export default function SEOServicesPage() {
       <section className="py-20 bg-gray-50">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl font-bold mb-4">Our SEO Process</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Our SEO <span className="text-[#f59e0b]">Process</span></h2>
             <p className="text-xl text-gray-600">
               A proven methodology that delivers consistent, measurable results.
             </p>
@@ -214,7 +214,7 @@ export default function SEOServicesPage() {
         <section className="py-20">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="text-4xl font-bold mb-4">SEO Success Stories</h2>
+              <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">SEO Success <span className="text-[#f59e0b]">Stories</span></h2>
               <p className="text-xl text-gray-600">
                 Real results for businesses across Sydney and Australia.
               </p>
@@ -239,7 +239,7 @@ export default function SEOServicesPage() {
       <section className="py-20 bg-gray-50">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl font-bold mb-4">What Our Clients Say</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">What Our Clients <span className="text-[#f59e0b]">Say</span></h2>
             <p className="text-xl text-gray-600">
               Hear from businesses that have transformed their online presence with our SEO services.
             </p>
@@ -350,7 +350,7 @@ export default function SEOServicesPage() {
       <section className="py-20 bg-gray-50">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Frequently Asked <span className="text-[#f59e0b]">Questions</span></h2>
             <p className="text-xl text-gray-600">
               Everything you need to know about our SEO services.
             </p>

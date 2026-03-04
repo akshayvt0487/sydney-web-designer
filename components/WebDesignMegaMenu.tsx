@@ -11,7 +11,7 @@ export default function WebDesignMegaMenu() {
     { name: "Ecommerce Websites", slug: "ecommerce-websites", description: "Online stores that convert", icon: "fa-shopping-cart" },
     { name: "UI/UX Design", slug: "ui-ux-design", description: "User-centered experiences", icon: "fa-pencil-ruler" },
     { name: "Website Redesign", slug: "website-redesign", description: "Modernize your website", icon: "fa-sync-alt" },
-    { name: "WordPress Development", slug: "wordpress-development", description: "Powerful CMS solutions", icon: "fa-wordpress" },
+    { name: "WordPress Development", slug: "wordpress-development", description: "Powerful CMS solutions", icon: "fas-wordpress" },
     { name: "Vibe Code Website", slug: "vibe-code-website", description: "Modern AI-powered designs", icon: "fa-code" },
   ];
 

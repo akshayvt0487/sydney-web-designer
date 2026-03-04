@@ -265,8 +265,8 @@ export default function DigitalPRPage() {
       {/* Benefits Section */}
       <section className="py-20 bg-white">
         <div className="container">
-          <div className="section-title">
-            <h2>Why Digital PR Drives Business Growth</h2>
+          <div className="section-title text-center">
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Why Digital PR Drives Business <span className="text-[#f59e0b]">Growth</span></h2>
             <p>Combine brand awareness with powerful SEO benefits</p>
           </div>
 
@@ -295,8 +295,8 @@ export default function DigitalPRPage() {
       {/* Services Section */}
       <section className="py-20 bg-[#f8fafc]" id="services">
         <div className="container">
-          <div className="section-title">
-            <h2>Our Digital PR Services</h2>
+          <div className="section-title text-center">
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Our Digital PR <span className="text-[#f59e0b]">Services</span></h2>
             <p>Comprehensive PR strategies that earn coverage and build authority</p>
           </div>
 
@@ -326,8 +326,8 @@ export default function DigitalPRPage() {
       {/* Media Types */}
       <section className="py-20 bg-white">
         <div className="container">
-          <div className="section-title">
-            <h2>Where We Get You Featured</h2>
+          <div className="section-title text-center">
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Where We Get You <span className="text-[#f59e0b]">Featured</span></h2>
             <p>Diverse media placements across channels and publications</p>
           </div>
 
@@ -346,8 +346,8 @@ export default function DigitalPRPage() {
       {/* PR Process */}
       <section className="py-20 bg-[#f8fafc]">
         <div className="container">
-          <div className="section-title">
-            <h2>Our Digital PR Process</h2>
+          <div className="section-title text-center">
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Our Digital PR <span className="text-[#f59e0b]">Process</span></h2>
             <p>Strategic approach to earning media coverage and authority</p>
           </div>
 
@@ -390,37 +390,37 @@ export default function DigitalPRPage() {
       {/* Case Study Section */}
       <section className="py-20 bg-gradient-to-br from-[#1e293b] to-[#0f172a] text-white">
         <div className="container">
-          <div className="section-title">
-            <h2 className="text-white">Real Digital PR Results</h2>
-            <p className="text-slate-200">How we built media presence and authority from scratch</p>
+          <div className="section-title text-center">
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-4">Real Digital PR <span className="text-[#f59e0b]">Results</span></h2>
+            <p className="text-white">How we built media presence and authority from scratch</p>
           </div>
 
           <div className="max-w-5xl mx-auto">
-            <div className="card bg-white/10 backdrop-blur-sm border-2 border-[#f59e0b]">
+            <div className="card !bg-white/10 backdrop-blur-sm border-2 border-[#f59e0b]">
               <div className="grid md:grid-cols-5 gap-8">
                 <div className="md:col-span-3">
-                  <h3 className="text-3xl font-bold mb-2">{caseStudy.name}</h3>
-                  <div className="text-[#f59e0b] font-semibold mb-6">Timeline: {caseStudy.timeline}</div>
+                  <h3 className="text-3xl font-bold mb-2 text-[#1e293b]">{caseStudy.name}</h3>
+                  <div className="text-white font-semibold mb-6">Timeline: {caseStudy.timeline}</div>
 
                   <div className="space-y-4">
                     <div>
-                      <h4 className="font-bold mb-2 text-lg">Challenge:</h4>
-                      <p className="text-slate-200">{caseStudy.challenge}</p>
+                      <h4 className="font-bold mb-2 text-lg text-[#1e293b]">Challenge:</h4>
+                      <p className="text-[#334155]">{caseStudy.challenge}</p>
                     </div>
                     <div>
-                      <h4 className="font-bold mb-2 text-lg">Solution:</h4>
-                      <p className="text-slate-200">{caseStudy.solution}</p>
+                      <h4 className="font-bold mb-2 text-lg text-[#1e293b]">Solution:</h4>
+                      <p className="text-[#334155]">{caseStudy.solution}</p>
                     </div>
                   </div>
                 </div>
 
-                <div className="md:col-span-2 bg-gradient-to-br from-[#f59e0b]/20 to-[#fb923c]/20 rounded-2xl p-8">
-                  <h4 className="font-bold mb-6 text-xl">Results Achieved:</h4>
+                <div className="md:col-span-2 bg-[#f59e0b] rounded-2xl p-8">
+                  <h4 className="font-bold mb-6 text-xl text-white">Results Achieved:</h4>
                   <ul className="space-y-4">
                     {caseStudy.results.map((result, idx) => (
                       <li key={idx} className="flex items-start gap-3">
-                        <i className="fas fa-trophy text-[#f59e0b] text-xl flex-shrink-0 mt-1"></i>
-                        <span className="text-slate-100">{result}</span>
+                        <i className="fas fa-trophy text-white text-xl flex-shrink-0 mt-1"></i>
+                        <span className="text-white font-medium">{result}</span>
                       </li>
                     ))}
                   </ul>
@@ -434,8 +434,8 @@ export default function DigitalPRPage() {
       {/* FAQ Section */}
       <section className="py-20 bg-white">
         <div className="container">
-          <div className="section-title">
-            <h2>Digital PR Frequently Asked Questions</h2>
+          <div className="section-title text-center">
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Digital PR Frequently Asked <span className="text-[#f59e0b]">Questions</span></h2>
             <p>Common questions about digital PR and media outreach</p>
           </div>
 

@@ -124,7 +124,7 @@ export default function TestimonialsPage() {
       {/* Google Rating Section */}
       <section className="py-16">
         <div className="container max-w-6xl mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-[#1e293b] mb-4">Trusted by Sydney Businesses</h2>
+          <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Trusted by Sydney <span className="text-[#f59e0b]">Businesses</span></h2>
           <div className="flex items-center justify-center gap-4 mt-6">
             <div className="flex gap-1 text-5xl">
               <span><i className="fas fa-star"></i></span>
@@ -182,7 +182,7 @@ export default function TestimonialsPage() {
       {/* CTA Section */}
       <section className="bg-[#1e293b] py-20 text-center text-white">
         <div className="container max-w-4xl mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-4">Ready to Grow Your Business?</h2>
+          <h2 className="text-4xl md:text-6xl font-bold mb-4 text-white">Ready to Grow Your <span className="text-[#f59e0b]">Business</span>?</h2>
           <p className="text-xl mb-8 opacity-95">Let's create digital success together</p>
           <Link
             href="/contact"
