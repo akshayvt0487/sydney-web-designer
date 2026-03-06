@@ -22,6 +22,15 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Validate Supabase configuration
+    if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+      console.error("Supabase environment variables not configured");
+      return NextResponse.json(
+        { error: "Server configuration error" },
+        { status: 500 }
+      );
+    }
+
     // Prepare submission data
     const submissionData = {
       email,
@@ -44,8 +53,9 @@ export async function POST(request: NextRequest) {
       }
 
       console.error("Supabase insert error:", error);
+      console.error("Error details:", JSON.stringify(error));
       return NextResponse.json(
-        { error: "Failed to save subscription" },
+        { error: "Failed to save subscription", details: error.message },
         { status: 500 }
       );
     }

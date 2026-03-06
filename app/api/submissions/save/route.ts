@@ -6,6 +6,15 @@ export async function POST(request: NextRequest) {
   try {
     const submission = await request.json();
 
+    // Validate Supabase configuration
+    if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+      console.error("Supabase environment variables not configured");
+      return NextResponse.json(
+        { error: "Server configuration error" },
+        { status: 500 }
+      );
+    }
+
     // Convert camelCase to snake_case for database
     const dbSubmission = {
       id: submission.id,
@@ -31,8 +40,9 @@ export async function POST(request: NextRequest) {
 
     if (error) {
       console.error("Supabase insert error:", error);
+      console.error("Error details:", JSON.stringify(error));
       return NextResponse.json(
-        { error: "Failed to save submission" },
+        { error: "Failed to save submission", details: error.message },
         { status: 500 }
       );
     }
