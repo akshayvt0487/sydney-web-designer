@@ -45,6 +45,11 @@ interface ContactSubmissionEmailData {
   submittedAt: string;
 }
 
+interface NewsletterSubscriptionEmailData {
+  email: string;
+  submittedAt: string;
+}
+
 // Send form submission notification email
 export async function sendFormSubmissionEmail(data: FormSubmissionEmailData) {
   const typeLabels: Record<string, string> = {
@@ -280,6 +285,93 @@ export async function sendContactSubmissionEmail(data: ContactSubmissionEmailDat
     return { success: true, messageId: emailData?.id };
   } catch (error) {
     console.error("Error sending contact submission email:", error);
+    return { success: false, error };
+  }
+}
+
+// Send newsletter subscription notification email
+export async function sendNewsletterSubscriptionEmail(data: NewsletterSubscriptionEmailData) {
+  const htmlContent = `
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .header { background: #1e293b; color: white; padding: 20px; text-align: center; border-radius: 8px 8px 0 0; }
+        .header h1 { margin: 0; font-size: 24px; }
+        .content { background: #f8fafc; padding: 30px; border-radius: 0 0 8px 8px; }
+        .field { margin-bottom: 20px; }
+        .label { font-weight: bold; color: #1e293b; margin-bottom: 5px; }
+        .value { color: #64748b; }
+        .badge { background: #10b981; color: white; padding: 5px 15px; border-radius: 20px; display: inline-block; margin: 10px 0; }
+        .footer { text-align: center; margin-top: 20px; color: #64748b; font-size: 12px; }
+        .highlight { background: white; padding: 15px; border-left: 4px solid #10b981; margin: 15px 0; font-size: 18px; color: #1e293b; font-weight: bold; }
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <div class="header">
+          <h1>📬 New Newsletter Subscription</h1>
+        </div>
+        <div class="content">
+          <div class="badge">Newsletter</div>
+
+          <div class="highlight">
+            ${data.email}
+          </div>
+
+          <div class="field">
+            <div class="label">Email:</div>
+            <div class="value"><a href="mailto:${data.email}">${data.email}</a></div>
+          </div>
+
+          <div class="field">
+            <div class="label">Subscribed At:</div>
+            <div class="value">${new Date(data.submittedAt).toLocaleString('en-AU', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+              hour: '2-digit',
+              minute: '2-digit'
+            })}</div>
+          </div>
+
+          <div class="field" style="margin-top: 30px; padding: 15px; background: white; border-radius: 8px;">
+            <div class="label" style="color: #10b981;">✅ Action Required:</div>
+            <div class="value" style="margin-top: 10px;">
+              Add this email to your newsletter mailing list in your email marketing platform.
+            </div>
+          </div>
+        </div>
+        <div class="footer">
+          <p>Sydney Web Designer - Newsletter Subscription Notification</p>
+        </div>
+      </div>
+    </body>
+    </html>
+  `;
+
+  try {
+    const { data: emailData, error } = await resend.emails.send({
+      from: "Sydney Web Designer <info@sydneywebdesigner.com.au>",
+      to: "akshay@dsigns.com.au",
+      replyTo: data.email,
+      subject: `📬 New Newsletter Subscription - ${data.email}`,
+      html: htmlContent,
+    });
+
+    if (error) {
+      console.error("Error sending newsletter subscription email:", error);
+      return { success: false, error };
+    }
+
+    if (process.env.NODE_ENV === 'development') {
+      console.log("Newsletter subscription email sent:", emailData?.id);
+    }
+    return { success: true, messageId: emailData?.id };
+  } catch (error) {
+    console.error("Error sending newsletter subscription email:", error);
     return { success: false, error };
   }
 }

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import NewsletterForm from "./NewsletterForm";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -7,7 +8,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#1e293b] text-white">
       <div className="max-w-[1400px] mx-auto px-8 py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
           {/* Company Info Column */}
           <div>
             <div className="mb-6">
@@ -109,6 +110,11 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
+          </div>
+
+          {/* Newsletter Column */}
+          <div className="lg:col-span-2">
+            <NewsletterForm />
           </div>
 
           {/* Contact & Social Column */}
