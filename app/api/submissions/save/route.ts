@@ -9,8 +9,19 @@ export async function POST(request: NextRequest) {
     // Validate Supabase configuration
     if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
       console.error("Supabase environment variables not configured");
+      console.error("NEXT_PUBLIC_SUPABASE_URL:", process.env.NEXT_PUBLIC_SUPABASE_URL ? "SET" : "MISSING");
+      console.error("NEXT_PUBLIC_SUPABASE_ANON_KEY:", process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ? "SET" : "MISSING");
       return NextResponse.json(
-        { error: "Server configuration error" },
+        { error: "Server configuration error - Supabase not configured" },
+        { status: 500 }
+      );
+    }
+
+    // Check if Supabase client is initialized
+    if (!supabase) {
+      console.error("Supabase client not initialized");
+      return NextResponse.json(
+        { error: "Database connection error" },
         { status: 500 }
       );
     }

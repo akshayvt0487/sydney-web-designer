@@ -1,13 +1,20 @@
-import { createClient } from '@supabase/supabase-js';
+import { createClient, SupabaseClient } from '@supabase/supabase-js';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
 
-if (!supabaseUrl || !supabaseKey) {
-  throw new Error('Missing Supabase environment variables');
+// Create Supabase client with safe initialization
+let supabaseInstance: SupabaseClient | null = null;
+
+try {
+  if (supabaseUrl && supabaseKey) {
+    supabaseInstance = createClient(supabaseUrl, supabaseKey);
+  }
+} catch (error) {
+  console.error('Failed to initialize Supabase client:', error);
 }
 
-export const supabase = createClient(supabaseUrl, supabaseKey);
+export const supabase = supabaseInstance as SupabaseClient;
 
 // Database types
 export interface FormSubmission {
