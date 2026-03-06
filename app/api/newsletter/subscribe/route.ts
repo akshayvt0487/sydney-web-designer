@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { sendNewsletterSubscriptionEmail } from "@/lib/email";
-import fs from "fs";
-import path from "path";
+import { supabase } from "@/lib/supabase";
 
 export async function POST(request: NextRequest) {
   try {
@@ -26,45 +25,41 @@ export async function POST(request: NextRequest) {
     // Prepare submission data
     const submissionData = {
       email,
-      submittedAt: new Date().toISOString(),
+      subscribed_at: new Date().toISOString(),
     };
 
-    // Save to JSON file
-    const dataDir = path.join(process.cwd(), "data");
-    const filePath = path.join(dataDir, "newsletter-subscriptions.json");
+    // Insert into Supabase
+    const { data, error } = await supabase
+      .from('newsletter_subscriptions')
+      .insert([submissionData])
+      .select();
 
-    // Ensure data directory exists
-    if (!fs.existsSync(dataDir)) {
-      fs.mkdirSync(dataDir, { recursive: true });
-    }
+    if (error) {
+      // Check for unique constraint violation (duplicate email)
+      if (error.code === '23505') {
+        return NextResponse.json(
+          { error: "This email is already subscribed to our newsletter" },
+          { status: 400 }
+        );
+      }
 
-    // Read existing data or initialize empty array
-    let subscriptions = [];
-    if (fs.existsSync(filePath)) {
-      const fileContent = fs.readFileSync(filePath, "utf-8");
-      subscriptions = JSON.parse(fileContent);
-    }
-
-    // Check if email already subscribed
-    const alreadySubscribed = subscriptions.some(
-      (sub: any) => sub.email === email
-    );
-
-    if (alreadySubscribed) {
+      console.error("Supabase insert error:", error);
       return NextResponse.json(
-        { error: "This email is already subscribed to our newsletter" },
-        { status: 400 }
+        { error: "Failed to save subscription" },
+        { status: 500 }
       );
     }
 
-    // Add new subscription
-    subscriptions.push(submissionData);
-
-    // Write to file
-    fs.writeFileSync(filePath, JSON.stringify(subscriptions, null, 2));
-
     // Send email notification
-    await sendNewsletterSubscriptionEmail(submissionData);
+    try {
+      await sendNewsletterSubscriptionEmail({
+        email,
+        submittedAt: submissionData.subscribed_at,
+      });
+    } catch (emailError) {
+      console.error("Failed to send newsletter notification:", emailError);
+      // Don't fail the request if email fails - subscription is still saved
+    }
 
     return NextResponse.json(
       { success: true, message: "Successfully subscribed to newsletter" },

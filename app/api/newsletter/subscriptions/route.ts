@@ -1,23 +1,33 @@
 import { NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
+import { supabase } from "@/lib/supabase";
 
 export async function GET() {
   try {
-    const filePath = path.join(process.cwd(), "data", "newsletter-subscriptions.json");
+    const { data: subscriptions, error } = await supabase
+      .from('newsletter_subscriptions')
+      .select('*')
+      .order('subscribed_at', { ascending: false });
 
-    // Check if file exists
-    if (!fs.existsSync(filePath)) {
-      return NextResponse.json([]);
+    if (error) {
+      console.error("Supabase fetch error:", error);
+      return NextResponse.json(
+        { error: "Failed to fetch subscriptions" },
+        { status: 500 }
+      );
     }
 
-    // Read and parse the file
-    const fileContent = fs.readFileSync(filePath, "utf-8");
-    const subscriptions = JSON.parse(fileContent);
+    // Format for frontend
+    const formattedSubscriptions = subscriptions.map((sub: any) => ({
+      email: sub.email,
+      submittedAt: sub.subscribed_at,
+    }));
 
-    return NextResponse.json(subscriptions);
+    return NextResponse.json(formattedSubscriptions);
   } catch (error) {
     console.error("Error reading newsletter subscriptions:", error);
-    return NextResponse.json({ error: "Failed to fetch subscriptions" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Failed to fetch subscriptions" },
+      { status: 500 }
+    );
   }
 }

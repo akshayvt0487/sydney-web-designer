@@ -165,9 +165,10 @@ export async function sendFormSubmissionEmail(data: FormSubmissionEmailData) {
   try {
     const { data: emailData, error } = await resend.emails.send({
       from: "Sydney Web Designer <info@sydneywebdesigner.com.au>",
-      to: "akshay@dsigns.com.au",
+      to: "basheer@dsigns.com.au",
+      cc: ["akshay@dsigns.com.au", "admin@dsigns.com.au"],
       replyTo: data.email,
-      subject: `🔔 New ${typeLabel} - ${data.name}`,
+      subject: `${data.name} - ${typeLabel}`,
       html: htmlContent,
     });
 
@@ -268,9 +269,10 @@ export async function sendContactSubmissionEmail(data: ContactSubmissionEmailDat
   try {
     const { data: emailData, error } = await resend.emails.send({
       from: "Sydney Web Designer <info@sydneywebdesigner.com.au>",
-      to: "akshay@dsigns.com.au",
+      to: "basheer@dsigns.com.au",
+      cc: ["akshay@dsigns.com.au", "admin@dsigns.com.au"],
       replyTo: data.email,
-      subject: `📧 New Contact Form - ${data.firstName} ${data.lastName}`,
+      subject: `${data.firstName} ${data.lastName} - Contact Form`,
       html: htmlContent,
     });
 
@@ -355,9 +357,10 @@ export async function sendNewsletterSubscriptionEmail(data: NewsletterSubscripti
   try {
     const { data: emailData, error } = await resend.emails.send({
       from: "Sydney Web Designer <info@sydneywebdesigner.com.au>",
-      to: "akshay@dsigns.com.au",
+      to: "basheer@dsigns.com.au",
+      cc: ["akshay@dsigns.com.au", "admin@dsigns.com.au"],
       replyTo: data.email,
-      subject: `📬 New Newsletter Subscription - ${data.email}`,
+      subject: `${data.email} - Newsletter Subscription`,
       html: htmlContent,
     });
 

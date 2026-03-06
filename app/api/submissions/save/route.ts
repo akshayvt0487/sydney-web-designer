@@ -1,36 +1,41 @@
 import { NextRequest, NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
 import { sendFormSubmissionEmail } from "@/lib/email";
-
-const SUBMISSIONS_FILE = path.join(process.cwd(), "data", "submissions.json");
-
-// Ensure data directory exists
-function ensureDataDir() {
-  const dataDir = path.join(process.cwd(), "data");
-  if (!fs.existsSync(dataDir)) {
-    fs.mkdirSync(dataDir, { recursive: true });
-  }
-  if (!fs.existsSync(SUBMISSIONS_FILE)) {
-    fs.writeFileSync(SUBMISSIONS_FILE, JSON.stringify([]));
-  }
-}
+import { supabase } from "@/lib/supabase";
 
 export async function POST(request: NextRequest) {
   try {
     const submission = await request.json();
 
-    ensureDataDir();
+    // Convert camelCase to snake_case for database
+    const dbSubmission = {
+      id: submission.id,
+      type: submission.type,
+      name: submission.name,
+      email: submission.email,
+      phone: submission.phone,
+      website: submission.website || null,
+      project_type: submission.projectType || null,
+      seo_goal: submission.seoGoal || null,
+      ad_spend: submission.adSpend || null,
+      service: submission.service || null,
+      message: submission.message || null,
+      status: submission.status || 'new',
+      submitted_at: submission.submittedAt,
+    };
 
-    // Read existing submissions
-    const data = fs.readFileSync(SUBMISSIONS_FILE, "utf-8");
-    const submissions = JSON.parse(data);
+    // Insert into Supabase
+    const { data, error } = await supabase
+      .from('form_submissions')
+      .insert([dbSubmission])
+      .select();
 
-    // Add new submission
-    submissions.unshift(submission);
-
-    // Write back to file
-    fs.writeFileSync(SUBMISSIONS_FILE, JSON.stringify(submissions, null, 2));
+    if (error) {
+      console.error("Supabase insert error:", error);
+      return NextResponse.json(
+        { error: "Failed to save submission" },
+        { status: 500 }
+      );
+    }
 
     // Send email notification
     try {
@@ -55,13 +60,39 @@ export async function POST(request: NextRequest) {
 
 export async function GET() {
   try {
-    ensureDataDir();
+    const { data: submissions, error } = await supabase
+      .from('form_submissions')
+      .select('*')
+      .order('submitted_at', { ascending: false });
 
-    const data = fs.readFileSync(SUBMISSIONS_FILE, "utf-8");
-    const submissions = JSON.parse(data);
+    if (error) {
+      console.error("Supabase fetch error:", error);
+      return NextResponse.json(
+        { error: "Failed to fetch submissions" },
+        { status: 500 }
+      );
+    }
 
-    return NextResponse.json(submissions);
+    // Convert snake_case back to camelCase for frontend
+    const formattedSubmissions = submissions.map((sub: any) => ({
+      id: sub.id,
+      type: sub.type,
+      name: sub.name,
+      email: sub.email,
+      phone: sub.phone,
+      website: sub.website,
+      projectType: sub.project_type,
+      seoGoal: sub.seo_goal,
+      adSpend: sub.ad_spend,
+      service: sub.service,
+      message: sub.message,
+      status: sub.status,
+      submittedAt: sub.submitted_at,
+    }));
+
+    return NextResponse.json(formattedSubmissions);
   } catch (error) {
+    console.error("Error fetching submissions:", error);
     return NextResponse.json(
       { error: "Failed to fetch submissions" },
       { status: 500 }

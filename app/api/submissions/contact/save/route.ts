@@ -1,36 +1,38 @@
 import { NextRequest, NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
 import { sendContactSubmissionEmail } from "@/lib/email";
-
-const CONTACT_FILE = path.join(process.cwd(), "data", "contact-submissions.json");
-
-// Ensure data directory exists
-function ensureDataDir() {
-  const dataDir = path.join(process.cwd(), "data");
-  if (!fs.existsSync(dataDir)) {
-    fs.mkdirSync(dataDir, { recursive: true });
-  }
-  if (!fs.existsSync(CONTACT_FILE)) {
-    fs.writeFileSync(CONTACT_FILE, JSON.stringify([]));
-  }
-}
+import { supabase } from "@/lib/supabase";
 
 export async function POST(request: NextRequest) {
   try {
     const submission = await request.json();
 
-    ensureDataDir();
+    // Convert camelCase to snake_case for database
+    const dbSubmission = {
+      id: submission.id,
+      first_name: submission.firstName,
+      last_name: submission.lastName,
+      email: submission.email,
+      phone: submission.phone,
+      company: submission.company || null,
+      service: submission.service,
+      message: submission.message,
+      status: submission.status || 'new',
+      submitted_at: submission.submittedAt,
+    };
 
-    // Read existing submissions
-    const data = fs.readFileSync(CONTACT_FILE, "utf-8");
-    const submissions = JSON.parse(data);
+    // Insert into Supabase
+    const { data, error } = await supabase
+      .from('contact_submissions')
+      .insert([dbSubmission])
+      .select();
 
-    // Add new submission
-    submissions.unshift(submission);
-
-    // Write back to file
-    fs.writeFileSync(CONTACT_FILE, JSON.stringify(submissions, null, 2));
+    if (error) {
+      console.error("Supabase insert error:", error);
+      return NextResponse.json(
+        { error: "Failed to save submission" },
+        { status: 500 }
+      );
+    }
 
     // Send email notification
     try {
@@ -55,13 +57,36 @@ export async function POST(request: NextRequest) {
 
 export async function GET() {
   try {
-    ensureDataDir();
+    const { data: submissions, error } = await supabase
+      .from('contact_submissions')
+      .select('*')
+      .order('submitted_at', { ascending: false });
 
-    const data = fs.readFileSync(CONTACT_FILE, "utf-8");
-    const submissions = JSON.parse(data);
+    if (error) {
+      console.error("Supabase fetch error:", error);
+      return NextResponse.json(
+        { error: "Failed to fetch submissions" },
+        { status: 500 }
+      );
+    }
 
-    return NextResponse.json(submissions);
+    // Convert snake_case back to camelCase for frontend
+    const formattedSubmissions = submissions.map((sub: any) => ({
+      id: sub.id,
+      firstName: sub.first_name,
+      lastName: sub.last_name,
+      email: sub.email,
+      phone: sub.phone,
+      company: sub.company,
+      service: sub.service,
+      message: sub.message,
+      status: sub.status,
+      submittedAt: sub.submitted_at,
+    }));
+
+    return NextResponse.json(formattedSubmissions);
   } catch (error) {
+    console.error("Error fetching contact submissions:", error);
     return NextResponse.json(
       { error: "Failed to fetch submissions" },
       { status: 500 }
