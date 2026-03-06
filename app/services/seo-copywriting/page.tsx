@@ -266,7 +266,7 @@ export default function SEOCopywritingPage() {
       <section className="py-20 bg-white">
         <div className="container">
           <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Why SEO Copywriting Drives Business <span className="text-[#f59e0b]">Growth</span></h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Why SEO Copywriting Drives Business <span className="text-[#f59e0b]">Growth</span></h2>
             <p>Content that works for both search engines and your customers</p>
           </div>
 
@@ -296,7 +296,7 @@ export default function SEOCopywritingPage() {
       <section className="py-20 bg-[#f8fafc]" id="services">
         <div className="container">
           <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Our SEO Copywriting <span className="text-[#f59e0b]">Services</span></h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Our SEO Copywriting <span className="text-[#f59e0b]">Services</span></h2>
             <p>Comprehensive content solutions for every stage of the customer journey</p>
           </div>
 
@@ -327,7 +327,7 @@ export default function SEOCopywritingPage() {
       <section className="py-20 bg-white">
         <div className="container">
           <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Content Types We <span className="text-[#f59e0b]">Create</span></h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Content Types We <span className="text-[#f59e0b]">Create</span></h2>
             <p>From blog posts to landing pages, all optimized for search and conversion</p>
           </div>
 
@@ -347,7 +347,7 @@ export default function SEOCopywritingPage() {
       <section className="py-20 bg-gradient-to-br from-[#1e293b] to-[#0f172a] text-white">
         <div className="container">
           <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-4">Real SEO Copywriting <span className="text-[#f59e0b]">Results</span></h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center mb-4 text-white">Real SEO Copywriting <span className="text-[#f59e0b]">Results</span></h2>
             <p className="text-white">How strategic content transformed organic performance</p>
           </div>
 
@@ -391,7 +391,7 @@ export default function SEOCopywritingPage() {
       <section className="py-20 bg-white">
         <div className="container">
           <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">SEO Copywriting Frequently Asked <span className="text-[#f59e0b]">Questions</span></h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">SEO Copywriting Frequently Asked <span className="text-[#f59e0b]">Questions</span></h2>
             <p>Common questions about SEO content creation</p>
           </div>
 

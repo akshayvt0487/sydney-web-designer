@@ -205,7 +205,7 @@ export default function AboutPage() {
             {/* SEO & Digital Marketing */}
             <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all  border-t-2 border-[#f59e0b]">
               <div className="w-16 h-16 bg-[#f59e0b]/10 rounded-xl flex items-center justify-center mb-6">
-                <i className="fas fa-search text-3xl text-[#f59e0b]"></i>
+                <i className="fas fa-search text-3xl text-[#f59e0b]">00</i>
               </div>
               <h3 className="text-2xl font-bold text-[#1e293b] mb-4">SEO & Digital Marketing</h3>
               <p className="text-[#64748b] leading-relaxed">

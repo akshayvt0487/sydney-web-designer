@@ -1,4 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <rect width="100" height="100" fill="#1e293b"/>
-  <text x="50" y="70" font-family="Arial, sans-serif" font-size="60" font-weight="bold" fill="#f59e0b" text-anchor="middle">D</text>
+  <!-- Background -->
+  <rect width="100" height="100" fill="#1e293b" rx="20"/>
+  
+  <!-- Orange accent circle -->
+  <circle cx="80" cy="20" r="15" fill="#f59e0b" opacity="0.3"/>
+  
+  <!-- SWD Letters -->
+  <text x="50" y="75" font-family="Arial, sans-serif" font-size="45" font-weight="bold" fill="#f59e0b" text-anchor="middle">SWD</text>
 </svg>

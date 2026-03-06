@@ -83,7 +83,7 @@ export default function LocalSEOPage() {
       <section className="py-20">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Complete Local SEO <span className="text-[#f59e0b]">Services</span></h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Complete Local SEO <span className="text-[#f59e0b]">Services</span></h2>
             <p className="text-xl text-gray-600">Everything you need to dominate local search results.</p>
           </div>
           <div className="grid-3">{features.map((feature, index) => (<div key={index} className="card hover:shadow-card-hover transition-shadow"><div className="mb-4"><i className={`${feature.icon} text-4xl text-[#f59e0b]`}></i></div><h3 className="text-xl font-bold mb-3">{feature.title}</h3><p className="text-gray-600">{feature.description}</p></div>))}</div>
@@ -92,17 +92,17 @@ export default function LocalSEOPage() {
       <section className="py-20 bg-gray-50">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Our Local SEO <span className="text-[#f59e0b]">Process</span></h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Our Local SEO <span className="text-[#f59e0b]">Process</span></h2>
             <p className="text-xl text-gray-600">Proven methodology for local search dominance.</p>
           </div>
           <div className="grid-2 max-w-4xl mx-auto">{process.map((item) => (<div key={item.step} className="card hover:shadow-card-hover transition-shadow"><div className="flex items-start gap-4"><div className="w-12 h-12 bg-[#f59e0b] rounded-full flex items-center justify-center text-white font-bold text-xl flex-shrink-0">{item.step}</div><div><h3 className="text-xl font-bold mb-2">{item.title}</h3><p className="text-gray-600">{item.description}</p></div></div></div>))}</div>
         </div>
       </section>
-      {seoProjects.length > 0 && (<section className="py-20"><div className="container"><div className="text-center max-w-3xl mx-auto mb-12"><h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Local SEO Success <span className="text-[#f59e0b]">Stories</span></h2><p className="text-xl text-gray-600">Local businesses dominating their markets.</p></div><div className="grid-3">{seoProjects.slice(0, 6).map((project) => (<PortfolioCard key={project.id} project={project} />))}</div><div className="text-center mt-12"><Link href="/portfolio" className="btn btn-primary">View All Projects</Link></div></div></section>)}
+      {seoProjects.length > 0 && (<section className="py-20"><div className="container"><div className="text-center max-w-3xl mx-auto mb-12"><h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Local SEO Success <span className="text-[#f59e0b]">Stories</span></h2><p className="text-xl text-gray-600">Local businesses dominating their markets.</p></div><div className="grid-3">{seoProjects.slice(0, 6).map((project) => (<PortfolioCard key={project.id} project={project} />))}</div><div className="text-center mt-12"><Link href="/portfolio" className="btn btn-primary">View All Projects</Link></div></div></section>)}
       <section className="py-20 bg-gray-50">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">What Our Clients <span className="text-[#f59e0b]">Say</span></h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">What Our Clients <span className="text-[#f59e0b]">Say</span></h2>
             <p className="text-xl text-gray-600">Local businesses getting more customers with local SEO.</p>
           </div>
           <div className="grid-3">{seoReviews.map((review) => (<TestimonialCard key={review.id} review={review} />))}</div>
@@ -140,7 +140,7 @@ export default function LocalSEOPage() {
       <section className="py-20 bg-gray-50">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Frequently Asked <span className="text-[#f59e0b]">Questions</span></h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Frequently Asked <span className="text-[#f59e0b]">Questions</span></h2>
             <p className="text-xl text-gray-600">Common questions about local SEO services.</p>
           </div>
           <div className="max-w-3xl mx-auto space-y-6">{faqs.map((faq, index) => (<div key={index} className="card"><h3 className="text-lg font-bold mb-2">{faq.question}</h3><p className="text-gray-600">{faq.answer}</p></div>))}</div>

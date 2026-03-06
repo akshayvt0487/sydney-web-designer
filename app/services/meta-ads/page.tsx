@@ -300,7 +300,7 @@ export default function MetaAdsPage() {
       <section className="py-20 bg-white">
         <div className="container">
           <div className="section-title">
-            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4 text-center">Why Meta Ads for Your Sydney <span className="text-[#f59e0b]">Business</span>?</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Why Meta Ads for Your Sydney <span className="text-[#f59e0b]">Business</span>?</h2>
             <p className="text-center">The most powerful advertising platform for reaching and converting your target audience</p>
           </div>
 
@@ -330,7 +330,7 @@ export default function MetaAdsPage() {
       <section className="py-20 bg-[#f8fafc]" id="campaigns">
         <div className="container">
           <div className="section-title">
-            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4 text-center">Meta Ad Campaign Types We <span className="text-[#f59e0b]">Manage</span></h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Meta Ad Campaign Types We <span className="text-[#f59e0b]">Manage</span></h2>
             <p className="text-center">Tailored campaigns for every stage of your customer journey</p>
           </div>
 
@@ -355,7 +355,7 @@ export default function MetaAdsPage() {
       <section className="py-20 bg-white">
         <div className="container">
           <div className="section-title">
-            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4 text-center">Meta Ad Formats We <span className="text-[#f59e0b]">Create</span></h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Meta Ad Formats We <span className="text-[#f59e0b]">Create</span></h2>
             <p className="text-center">Professional creatives designed to stop the scroll and drive action</p>
           </div>
 
@@ -377,7 +377,7 @@ export default function MetaAdsPage() {
       <section className="py-20 bg-[#f8fafc]">
         <div className="container">
           <div className="section-title">
-            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4 text-center">Our Meta Ads Management <span className="text-[#f59e0b]">Process</span></h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Our Meta Ads Management <span className="text-[#f59e0b]">Process</span></h2>
             <p className="text-center">Proven methodology that delivers consistent results</p>
           </div>
 
@@ -404,7 +404,7 @@ export default function MetaAdsPage() {
       <section className="py-20 bg-white">
         <div className="container">
           <div className="section-title">
-            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4 text-center">Real Results from Meta <span className="text-[#f59e0b]">Advertising</span></h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Real Results from Meta <span className="text-[#f59e0b]">Advertising</span></h2>
             <p className="text-center">Success stories from Sydney businesses we&apos;ve helped grow</p>
           </div>
 
@@ -450,7 +450,7 @@ export default function MetaAdsPage() {
       <section className="py-20 bg-[#f8fafc]">
         <div className="container">
           <div className="section-title">
-            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4 text-center">Meta Ads Frequently Asked <span className="text-[#f59e0b]">Questions</span></h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Meta Ads Frequently Asked <span className="text-[#f59e0b]">Questions</span></h2>
             <p className="text-center">Common questions about Facebook and Instagram advertising</p>
           </div>
 

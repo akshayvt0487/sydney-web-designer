@@ -190,7 +190,7 @@ export default function SocialMediaMarketingPage() {
       {/* Stats Section */}
       <section className="py-20">
         <div className="container">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 text-[#1e293b]">
+          <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">
             Why Choose Social Media Marketing?
           </h2>
 
@@ -208,7 +208,7 @@ export default function SocialMediaMarketingPage() {
       {/* Features Section */}
       <section className="py-20 bg-gray-50">
         <div className="container">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-[#1e293b]">
+          <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">
             Our Social Media Marketing Services
           </h2>
           <p className="text-xl text-center text-gray-600 max-w-3xl mx-auto mb-16">
@@ -240,7 +240,7 @@ export default function SocialMediaMarketingPage() {
       {/* Process Section */}
       <section className="py-20" id="process">
         <div className="container">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-[#1e293b]">
+          <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">
             Our Proven Process
           </h2>
           <p className="text-xl text-center text-gray-600 max-w-3xl mx-auto mb-16">
@@ -264,7 +264,7 @@ export default function SocialMediaMarketingPage() {
       {/* Case Studies Section */}
       <section className="py-20 bg-gray-50">
         <div className="container">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-[#1e293b]">
+          <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">
             Real Results for Sydney Businesses
           </h2>
 
@@ -285,7 +285,7 @@ export default function SocialMediaMarketingPage() {
       {/* Testimonials Section */}
       <section className="py-20">
         <div className="container">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-[#1e293b]">
+          <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">
             What Our Clients Say
           </h2>
 
@@ -397,7 +397,7 @@ export default function SocialMediaMarketingPage() {
       {/* Final CTA Section */}
       <section className="py-20 bg-[#1e293b] text-white text-center">
         <div className="container">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-center">Ready to Get Started?</h2>
+          <h2 className="text-4xl md:text-6xl font-bold text-center mb-4 text-white">Ready to Get Started?</h2>
           <p className="text-xl mb-10 max-w-2xl mx-auto text-center">
             Let&apos;s discuss your project and create a custom solution for your business
           </p>

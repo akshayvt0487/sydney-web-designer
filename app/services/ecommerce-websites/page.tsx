@@ -85,7 +85,7 @@ export default function EcommerceWebsitesPage() {
       {/* Stats Section */}
       <section className="py-24">
         <div className="container">
-          <h2 className="text-5xl font-bold text-center mb-16 text-[#1e293b]">Why Choose E-commerce Websites Sydney?</h2>
+          <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Why Choose E-commerce Websites Sydney?</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
             <div className="bg-white p-10 rounded-3xl shadow-lg text-center hover:shadow-2xl transition-all border-t-4 border-[#f59e0b]">
               <div className="text-6xl font-bold text-[#f59e0b] mb-2">100+</div>
@@ -110,7 +110,7 @@ export default function EcommerceWebsitesPage() {
       {/* Features Section */}
       <section className="py-24 bg-gray-50">
         <div className="container">
-          <h2 className="text-5xl font-bold text-center mb-6 text-[#1e293b]">Our E-commerce Websites Sydney Services</h2>
+          <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Our E-commerce Websites Sydney Services</h2>
           <p className="text-xl text-center text-gray-600 max-w-3xl mx-auto mb-16">Comprehensive solutions designed to help your business succeed</p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
@@ -192,7 +192,7 @@ export default function EcommerceWebsitesPage() {
       {/* Process Section */}
       <section className="py-24" id="process">
         <div className="container">
-          <h2 className="text-5xl font-bold text-center mb-6 text-[#1e293b]">Our Proven Process</h2>
+          <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Our Proven Process</h2>
           <p className="text-xl text-center text-gray-600 max-w-3xl mx-auto mb-16">A systematic approach to deliver outstanding results</p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
@@ -219,7 +219,7 @@ export default function EcommerceWebsitesPage() {
       {/* Case Studies Section */}
       <section className="py-24 bg-gray-50">
         <div className="container">
-          <h2 className="text-5xl font-bold text-center mb-16 text-[#1e293b]">Real Results for Sydney Businesses</h2>
+          <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Real Results for Sydney Businesses</h2>
 
           <div className="space-y-12 max-w-5xl mx-auto">
             <div className="bg-white p-12 rounded-3xl shadow-lg">
@@ -244,7 +244,7 @@ export default function EcommerceWebsitesPage() {
       {/* Testimonials Section */}
       <section className="py-24">
         <div className="container">
-          <h2 className="text-5xl font-bold text-center mb-16 text-[#1e293b]">What Our Clients Say</h2>
+          <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">What Our Clients Say</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {[
@@ -374,7 +374,7 @@ export default function EcommerceWebsitesPage() {
       {/* CTA Section */}
       <section className="bg-[#1e293b] text-white py-24 text-center">
         <div className="container">
-          <h2 className="text-5xl font-bold text-center mb-6 text-white">Ready to Get Started?</h2>
+          <h2 className="text-4xl md:text-6xl font-bold text-center mb-4 text-white">Ready to Get Started?</h2>
           <p className="text-center text-2xl mb-10 opacity-95">Let&apos;s discuss your project and create a custom solution for your business</p>
           <Link href="#lead-form" className="btn btn-white text-lg">Start Your Store</Link>
         </div>

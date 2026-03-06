@@ -182,7 +182,7 @@ export default function GoogleAdsPage() {
       {/* Stats Section */}
       <section className="py-20">
         <div className="container">
-          <h2 className="text-4xl md:text-6xl font-bold text-center mb-6 text-[#1e293b]">
+          <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">
             Why Choose Google Ads Management <span className="text-[#f59e0b]">Sydney</span>?
           </h2>
 
@@ -200,7 +200,7 @@ export default function GoogleAdsPage() {
       {/* Features Section */}
       <section className="py-20 bg-gray-50">
         <div className="container">
-          <h2 className="text-4xl md:text-6xl font-bold text-center mb-4 text-[#1e293b]">
+          <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">
             Our Google Ads Management Sydney <span className="text-[#f59e0b]">Services</span>
           </h2>
           <p className="text-xl text-center text-gray-600 max-w-3xl mx-auto mb-16">
@@ -232,7 +232,7 @@ export default function GoogleAdsPage() {
       {/* Process Section */}
       <section className="py-20" id="process">
         <div className="container">
-          <h2 className="text-4xl md:text-6xl font-bold text-center mb-4 text-[#1e293b]">
+          <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">
             Our Proven <span className="text-[#f59e0b]">Process</span>
           </h2>
           <p className="text-xl text-center text-gray-600 max-w-3xl mx-auto mb-16">
@@ -256,7 +256,7 @@ export default function GoogleAdsPage() {
       {/* Case Studies Section */}
       <section className="py-20 bg-gray-50">
         <div className="container">
-          <h2 className="text-4xl md:text-6xl font-bold text-center mb-16 text-[#1e293b]">
+          <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">
             Real Results for Sydney <span className="text-[#f59e0b]">Businesses</span>
           </h2>
 
@@ -277,7 +277,7 @@ export default function GoogleAdsPage() {
       {/* Results & Proof Section */}
       <section className="py-20">
         <div className="container">
-          <h2 className="text-4xl md:text-6xl font-bold text-center mb-4 text-[#1e293b]">
+          <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">
             Real Google Ads Results - Proof of <span className="text-[#f59e0b]">Performance</span>
           </h2>
           <p className="text-xl text-center text-gray-600 max-w-3xl mx-auto mb-16">
@@ -438,7 +438,7 @@ export default function GoogleAdsPage() {
 
           {/* Call to Action */}
           <div className="text-center p-12 bg-[#1e293b] rounded-2xl text-white">
-            <h3 className="text-3xl font-bold mb-4">Ready for Results Like These?</h3>
+            <h3 className="text-3xl font-bold mb-4 text-white">Ready for Results Like These?</h3>
             <p className="text-xl mb-8 opacity-90">Get your free Google Ads audit and strategy session</p>
             <Link href="#lead-form" className="btn btn-primary">
               Get Free Ads Audit
@@ -450,7 +450,7 @@ export default function GoogleAdsPage() {
       {/* Testimonials Section */}
       <section className="py-20 bg-gray-50">
         <div className="container">
-          <h2 className="text-4xl md:text-6xl font-bold text-center mb-16 text-[#1e293b]">
+          <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">
             What Our Clients <span className="text-[#f59e0b]">Say</span>
           </h2>
 
@@ -565,7 +565,7 @@ export default function GoogleAdsPage() {
       <section className="py-20 bg-gray-50" id="lead-form">
         <div className="container">
           <div className="max-w-4xl mx-auto bg-[#1e293b] rounded-2xl p-12 text-white">
-            <h3 className="text-4xl font-bold mb-4 text-center">Get Your Free Consultation</h3>
+            <h3 className="text-4xl font-bold mb-4 text-center text-white">Get Your Free Consultation</h3>
             <p className="text-xl text-center opacity-90 mb-12">
               Tell us about your project and we&apos;ll provide expert advice and a custom quote
             </p>
@@ -612,7 +612,7 @@ export default function GoogleAdsPage() {
       {/* Final CTA Section */}
       <section className="py-20 bg-[#1e293b] text-white text-center">
         <div className="container">
-          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 text-center">Ready to Get <span className="text-[#f59e0b]">Started</span>?</h2>
+          <h2 className="text-4xl md:text-6xl font-bold text-center mb-4 text-white">Ready to Get <span className="text-[#f59e0b]">Started</span>?</h2>
           <p className="text-xl mb-10 max-w-2xl mx-auto text-center">
             Let&apos;s discuss your project and create a custom solution for your business
           </p>

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { generateMetadata } from "@/lib/metadata";
 import { generateBreadcrumbSchema, generateServiceSchema } from "@/lib/schemas";
 import CTASection from "@/components/CTASection";
+import ServiceHeroSection from "@/components/ServiceHeroSection";
 
 export const metadata = generateMetadata({
   title: "High Performance Landing Pages Sydney | Fast & Conversion-Optimized",
@@ -221,51 +222,44 @@ export default function HighPerformanceLandingPagesPage() {
       />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] text-white py-32 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#f59e0b] rounded-full mix-blend-multiply filter blur-3xl animate-blob" />
-          <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-primary-orange rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000" />
-        </div>
+      <ServiceHeroSection
+        badge={{
+          icon: "fas fa-rocket",
+          text: "High Performance Landing Pages"
+        }}
+        heading="High Performance Landing Pages Sydney"
+        description="Lightning-fast landing pages that convert. 95+ PageSpeed scores, Core Web Vitals excellence, and conversion-optimized design that drives results."
+        buttons={{
+          primary: {
+            text: "Get Free Quote",
+            dataPopup: "contact"
+          },
+          secondary: {
+            text: "Our Services",
+            href: "#services"
+          }
+        }}
+      />
 
-        <div className="container relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 bg-[#f59e0b]/10 border border-[#f59e0b]/30 rounded-full px-5 py-2 mb-8 backdrop-blur-sm">
-              <i className="fas fa-rocket text-[#f59e0b]"></i>
-              <span className="text-[#f59e0b] text-sm font-semibold">Performance Optimized</span>
+      {/* Trust Badges Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container">
+          <div className="flex flex-wrap justify-center gap-12 max-w-4xl mx-auto">
+            <div className="text-center">
+              <div className="mb-2"><i className="fas fa-bolt text-4xl text-[#f59e0b]"></i></div>
+              <div className="text-sm text-gray-600">95+ PageSpeed Score</div>
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-              High Performance Landing Pages
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-slate-100">
-              Lightning-fast landing pages that convert. 95+ PageSpeed scores, Core Web Vitals excellence, and conversion-optimized design.
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Link href="#contact" className="btn btn-primary">
-                Get Free Consultation
-              </Link>
-              <Link href="#services" className="btn btn-secondary">
-                Our Services
-              </Link>
+            <div className="text-center">
+              <div className="mb-2"><i className="fas fa-tachometer-alt text-4xl text-[#f59e0b]"></i></div>
+              <div className="text-sm text-gray-600">&lt;1.5s Load Time</div>
             </div>
-
-            {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 max-w-3xl mx-auto">
-              <div className="text-center">
-                <div className="text-4xl font-bold text-[#f59e0b] mb-2">95+</div>
-                <div className="text-sm text-slate-300">PageSpeed Score</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold text-[#f59e0b] mb-2">&lt;1.5s</div>
-                <div className="text-sm text-slate-300">Load Time</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold text-[#f59e0b] mb-2">285%</div>
-                <div className="text-sm text-slate-300">Avg Conversion Lift</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold text-[#f59e0b] mb-2">200+</div>
-                <div className="text-sm text-slate-300">Pages Built</div>
-              </div>
+            <div className="text-center">
+              <div className="mb-2"><i className="fas fa-chart-line text-4xl text-[#f59e0b]"></i></div>
+              <div className="text-sm text-gray-600">285% Avg Conversion Lift</div>
+            </div>
+            <div className="text-center">
+              <div className="mb-2"><i className="fas fa-rocket text-4xl text-[#f59e0b]"></i></div>
+              <div className="text-sm text-gray-600">200+ Pages Built</div>
             </div>
           </div>
         </div>
@@ -274,8 +268,8 @@ export default function HighPerformanceLandingPagesPage() {
       {/* Benefits Section */}
       <section className="py-20 bg-white">
         <div className="container">
-          <div className="section-title">
-            <h2>Why High Performance Landing Pages Matter</h2>
+          <div className="section-title text-center">
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Why High Performance Landing Pages Matter</h2>
             <p>Speed and conversions go hand in hand</p>
           </div>
 
@@ -304,8 +298,8 @@ export default function HighPerformanceLandingPagesPage() {
       {/* Services Section */}
       <section className="py-20 bg-[#f8fafc]" id="services">
         <div className="container">
-          <div className="section-title">
-            <h2>Our Landing Page Services</h2>
+          <div className="section-title text-center">
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Our Landing Page Services</h2>
             <p>Comprehensive solutions for high-converting pages</p>
           </div>
 
@@ -335,8 +329,8 @@ export default function HighPerformanceLandingPagesPage() {
       {/* Platforms Section */}
       <section className="py-20 bg-white">
         <div className="container">
-          <div className="section-title">
-            <h2>Technologies We Use</h2>
+          <div className="section-title text-center">
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Technologies We Use</h2>
             <p>Modern platforms and frameworks for maximum performance</p>
           </div>
 
@@ -355,8 +349,8 @@ export default function HighPerformanceLandingPagesPage() {
       {/* Case Studies Section */}
       <section className="py-20 bg-gradient-to-br from-[#1e293b] to-[#0f172a] text-gray/800">
         <div className="container">
-          <div className="section-title">
-            <h2 className="text-white" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: '1.2', textTransform: 'none' }}>Real Performance Results</h2>
+          <div className="section-title text-center">
+            <h2 className="text-4xl md:text-6xl font-bold text-center mb-4 text-white">Real Performance Results</h2>
             <p className="text-white">See how we transformed landing page performance</p>
           </div>
 
@@ -365,22 +359,22 @@ export default function HighPerformanceLandingPagesPage() {
               <div key={index} className="card bg-white/10 backdrop-blur-sm border-2 border-[#f59e0b]/50">
                 <div className="grid md:grid-cols-5 gap-8">
                   <div className="md:col-span-3">
-                    <h3 className="text-3xl font-bold mb-2 text-gray/800" style={{ fontSize: '1.875rem', lineHeight: '1.3', textTransform: 'none' }}>{study.company}</h3>
+                    <h3 className="text-3xl font-bold mb-2 text-white">{study.company}</h3>
 
                     <div className="space-y-4">
                       <div>
-                        <h4 className="font-bold mb-2 text-lg text-[#f59e0b]" style={{ fontSize: '1.125rem', lineHeight: '1.4', textTransform: 'none' }}>Challenge:</h4>
-                        <p className="text-gray/800">{study.challenge}</p>
+                        <h4 className="font-bold mb-2 text-lg text-[#f59e0b]">Challenge:</h4>
+                        <p className="text-white">{study.challenge}</p>
                       </div>
                       <div>
-                        <h4 className="font-bold mb-2 text-lg text-[#f59e0b]" style={{ fontSize: '1.125rem', lineHeight: '1.4', textTransform: 'none' }}>Solution:</h4>
-                        <p className="text-gray/800">{study.solution}</p>
+                        <h4 className="font-bold mb-2 text-lg text-[#f59e0b]">Solution:</h4>
+                        <p className="text-white">{study.solution}</p>
                       </div>
                     </div>
                   </div>
 
                   <div className="md:col-span-2 bg-[#f59e0b] rounded-2xl p-8">
-                    <h4 className="font-bold mb-6 text-xl text-white" style={{ fontSize: '1.25rem', lineHeight: '1.4', textTransform: 'none' }}>Results:</h4>
+                    <h4 className="font-bold mb-6 text-xl text-white">Results:</h4>
                     <ul className="space-y-4">
                       {study.results.map((result, idx) => (
                         <li key={idx} className="flex items-start gap-3">
@@ -400,8 +394,8 @@ export default function HighPerformanceLandingPagesPage() {
       {/* FAQ Section */}
       <section className="py-20 bg-white">
         <div className="container">
-          <div className="section-title">
-            <h2>Landing Page FAQs</h2>
+          <div className="section-title text-center">
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Landing Page FAQs</h2>
             <p>Common questions about high-performance landing pages</p>
           </div>
 

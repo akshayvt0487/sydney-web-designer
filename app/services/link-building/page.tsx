@@ -266,7 +266,7 @@ export default function LinkBuildingPage() {
       <section className="py-20 bg-white">
         <div className="container">
           <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Why Link Building Matters for <span className="text-[#f59e0b]">SEO</span></h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Why Link Building Matters for <span className="text-[#f59e0b]">SEO</span></h2>
             <p>Quality backlinks remain one of Google's most important ranking factors</p>
           </div>
 
@@ -296,7 +296,7 @@ export default function LinkBuildingPage() {
       <section className="py-20 bg-[#f8fafc]" id="services">
         <div className="container">
           <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Our Link Building <span className="text-[#f59e0b]">Services</span></h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Our Link Building <span className="text-[#f59e0b]">Services</span></h2>
             <p>Comprehensive white-hat strategies to earn authoritative backlinks</p>
           </div>
 
@@ -327,7 +327,7 @@ export default function LinkBuildingPage() {
       <section className="py-20 bg-white">
         <div className="container">
           <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Types of Links We <span className="text-[#f59e0b]">Build</span></h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Types of Links We <span className="text-[#f59e0b]">Build</span></h2>
             <p>Diverse, natural backlink profile from authoritative sources</p>
           </div>
 
@@ -347,7 +347,7 @@ export default function LinkBuildingPage() {
       <section className="py-20 bg-[#f8fafc]">
         <div className="container">
           <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Our White-Hat <span className="text-[#f59e0b]">Approach</span></h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Our White-Hat <span className="text-[#f59e0b]">Approach</span></h2>
             <p>Safe, sustainable link building that won't risk Google penalties</p>
           </div>
 
@@ -425,7 +425,7 @@ export default function LinkBuildingPage() {
       <section className="py-20 bg-gradient-to-br from-[#1e293b] to-[#0f172a] text-white">
         <div className="container">
           <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-4">Real Link Building <span className="text-[#f59e0b]">Results</span></h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center mb-4 text-white">Real Link Building <span className="text-[#f59e0b]">Results</span></h2>
             <p className="text-white">How we built authority and transformed rankings</p>
           </div>
 
@@ -469,7 +469,7 @@ export default function LinkBuildingPage() {
       <section className="py-20 bg-white">
         <div className="container">
           <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Link Building Frequently Asked <span className="text-[#f59e0b]">Questions</span></h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Link Building Frequently Asked <span className="text-[#f59e0b]">Questions</span></h2>
             <p>Common questions about earning quality backlinks</p>
           </div>
 

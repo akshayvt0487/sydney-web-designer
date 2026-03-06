@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
+import { sendContactSubmissionEmail } from "@/lib/email";
 
 const CONTACT_FILE = path.join(process.cwd(), "data", "contact-submissions.json");
 
@@ -30,6 +31,15 @@ export async function POST(request: NextRequest) {
 
     // Write back to file
     fs.writeFileSync(CONTACT_FILE, JSON.stringify(submissions, null, 2));
+
+    // Send email notification
+    try {
+      await sendContactSubmissionEmail(submission);
+      console.log("Contact email notification sent successfully");
+    } catch (emailError) {
+      console.error("Failed to send contact email notification:", emailError);
+      // Don't fail the request if email fails - submission is still saved
+    }
 
     return NextResponse.json({ success: true, id: submission.id });
   } catch (error) {

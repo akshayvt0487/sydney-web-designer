@@ -266,7 +266,7 @@ export default function DigitalPRPage() {
       <section className="py-20 bg-white">
         <div className="container">
           <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Why Digital PR Drives Business <span className="text-[#f59e0b]">Growth</span></h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Why Digital PR Drives Business <span className="text-[#f59e0b]">Growth</span></h2>
             <p>Combine brand awareness with powerful SEO benefits</p>
           </div>
 
@@ -296,7 +296,7 @@ export default function DigitalPRPage() {
       <section className="py-20 bg-[#f8fafc]" id="services">
         <div className="container">
           <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Our Digital PR <span className="text-[#f59e0b]">Services</span></h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Our Digital PR <span className="text-[#f59e0b]">Services</span></h2>
             <p>Comprehensive PR strategies that earn coverage and build authority</p>
           </div>
 
@@ -327,7 +327,7 @@ export default function DigitalPRPage() {
       <section className="py-20 bg-white">
         <div className="container">
           <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Where We Get You <span className="text-[#f59e0b]">Featured</span></h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Where We Get You <span className="text-[#f59e0b]">Featured</span></h2>
             <p>Diverse media placements across channels and publications</p>
           </div>
 
@@ -347,7 +347,7 @@ export default function DigitalPRPage() {
       <section className="py-20 bg-[#f8fafc]">
         <div className="container">
           <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Our Digital PR <span className="text-[#f59e0b]">Process</span></h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Our Digital PR <span className="text-[#f59e0b]">Process</span></h2>
             <p>Strategic approach to earning media coverage and authority</p>
           </div>
 
@@ -391,7 +391,7 @@ export default function DigitalPRPage() {
       <section className="py-20 bg-gradient-to-br from-[#1e293b] to-[#0f172a] text-white">
         <div className="container">
           <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-4">Real Digital PR <span className="text-[#f59e0b]">Results</span></h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center mb-4 text-white">Real Digital PR <span className="text-[#f59e0b]">Results</span></h2>
             <p className="text-white">How we built media presence and authority from scratch</p>
           </div>
 
@@ -435,7 +435,7 @@ export default function DigitalPRPage() {
       <section className="py-20 bg-white">
         <div className="container">
           <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Digital PR Frequently Asked <span className="text-[#f59e0b]">Questions</span></h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Digital PR Frequently Asked <span className="text-[#f59e0b]">Questions</span></h2>
             <p>Common questions about digital PR and media outreach</p>
           </div>
 

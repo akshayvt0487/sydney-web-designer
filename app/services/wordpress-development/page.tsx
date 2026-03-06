@@ -84,7 +84,7 @@ export default function WordPressDevelopmentPage() {
       {/* Stats Section */}
       <section className="py-24 px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl font-bold text-center text-[#1e293b] mb-6">
+          <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">
             Why Choose WordPress Development Sydney?
           </h2>
           <div className="grid md:grid-cols-4 gap-8 mt-16">
@@ -111,7 +111,7 @@ export default function WordPressDevelopmentPage() {
       {/* Features Section */}
       <section className="py-24 px-8 bg-[#f8fafc]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl font-bold text-center text-[#1e293b] mb-6">
+          <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">
             Our WordPress Development Sydney Services
           </h2>
           <p className="text-center text-xl text-[#64748b] max-w-3xl mx-auto mb-12">
@@ -269,7 +269,7 @@ export default function WordPressDevelopmentPage() {
       {/* Process Section */}
       <section className="py-24 px-8" id="process">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl font-bold text-center text-[#1e293b] mb-6">
+          <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">
             Our Proven Process
           </h2>
           <p className="text-center text-xl text-[#64748b] max-w-3xl mx-auto mb-12">
@@ -343,7 +343,7 @@ export default function WordPressDevelopmentPage() {
       {/* Case Studies Section */}
       <section className="py-24 px-8 bg-[#f8fafc]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl font-bold text-center text-[#1e293b] mb-16">
+          <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">
             Real Results for Sydney Businesses
           </h2>
 
@@ -374,7 +374,7 @@ export default function WordPressDevelopmentPage() {
       {/* Testimonials Section */}
       <section className="py-24 px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl font-bold text-center text-[#1e293b] mb-16">
+          <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">
             What Our Clients Say
           </h2>
 
@@ -615,7 +615,7 @@ export default function WordPressDevelopmentPage() {
       {/* CTA Section */}
       <section className="bg-[#1e293b] text-white py-24 px-8 text-center">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-5xl font-bold text-center mb-6 text-white">Ready to Get Started?</h2>
+          <h2 className="text-4xl md:text-6xl font-bold text-center mb-4 text-white">Ready to Get Started?</h2>
           <p className="text-center text-2xl mb-10 opacity-90">
             Let's discuss your project and create a custom solution for your business
           </p>

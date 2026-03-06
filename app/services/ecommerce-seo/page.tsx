@@ -265,7 +265,7 @@ export default function EcommerceSEOPage() {
       <section className="py-20 bg-white">
         <div className="container">
           <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Why Ecommerce SEO Matters for Your Online <span className="text-[#f59e0b]">Store</span></h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Why Ecommerce SEO Matters for Your Online <span className="text-[#f59e0b]">Store</span></h2>
             <p>Drive sustainable growth and reduce customer acquisition costs</p>
           </div>
 
@@ -295,7 +295,7 @@ export default function EcommerceSEOPage() {
       <section className="py-20 bg-[#f8fafc]" id="services">
         <div className="container">
           <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Our Ecommerce SEO <span className="text-[#f59e0b]">Services</span></h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Our Ecommerce SEO <span className="text-[#f59e0b]">Services</span></h2>
             <p>Comprehensive optimization for every aspect of your online store</p>
           </div>
 
@@ -326,7 +326,7 @@ export default function EcommerceSEOPage() {
       <section className="py-20 bg-white">
         <div className="container">
           <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Ecommerce Platforms We <span className="text-[#f59e0b]">Optimize</span></h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Ecommerce Platforms We <span className="text-[#f59e0b]">Optimize</span></h2>
             <p>Expert SEO for all major ecommerce platforms</p>
           </div>
 
@@ -346,7 +346,7 @@ export default function EcommerceSEOPage() {
       <section className="py-20 bg-gradient-to-br from-[#1e293b] to-[#0f172a] text-white ">
         <div className="container ">
           <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-4">Real Ecommerce SEO <span className="text-[#f59e0b]">Results</span></h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center mb-4 text-white">Real Ecommerce SEO <span className="text-[#f59e0b]">Results</span></h2>
             <p className="text-slate-200">See how we transformed a struggling online store</p>
           </div>
 
@@ -390,7 +390,7 @@ export default function EcommerceSEOPage() {
       <section className="py-20 bg-white">
         <div className="container">
           <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Ecommerce SEO Frequently Asked <span className="text-[#f59e0b]">Questions</span></h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Ecommerce SEO Frequently Asked <span className="text-[#f59e0b]">Questions</span></h2>
             <p>Common questions about optimizing online stores for search engines</p>
           </div>
 

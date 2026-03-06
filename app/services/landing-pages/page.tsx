@@ -165,7 +165,7 @@ export default function LandingPagesPage() {
       <section className="py-20">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl font-bold mb-4 text-center">
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">
               Landing Pages Built for Conversions
             </h2>
             <p className="text-xl text-gray-600 text-center">
@@ -189,7 +189,7 @@ export default function LandingPagesPage() {
       <section className="py-20 bg-gray-50">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl font-bold mb-4 text-center">Our Landing Page Process</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Our Landing Page Process</h2>
             <p className="text-xl text-gray-600 text-center">
               Strategic approach to creating landing pages that convert.
             </p>
@@ -218,7 +218,7 @@ export default function LandingPagesPage() {
         <section className="py-20">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="text-4xl font-bold mb-4 text-center">Landing Page Portfolio</h2>
+              <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Landing Page Portfolio</h2>
               <p className="text-xl text-gray-600 text-center">
                 High-performing landing pages that drive results for our clients.
               </p>
@@ -243,7 +243,7 @@ export default function LandingPagesPage() {
       <section className="py-20 bg-gray-50">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl font-bold mb-4 text-center">What Our Clients Say</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">What Our Clients Say</h2>
             <p className="text-xl text-gray-600 text-center">
               Businesses generating more leads with our landing pages.
             </p>
@@ -353,7 +353,7 @@ export default function LandingPagesPage() {
       <section className="py-20 bg-gray-50">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl font-bold mb-4 text-center">Frequently Asked Questions</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Frequently Asked Questions</h2>
             <p className="text-xl text-gray-600 text-center">
               Common questions about landing page design.
             </p>

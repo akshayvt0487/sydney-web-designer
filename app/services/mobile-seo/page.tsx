@@ -255,7 +255,7 @@ export default function MobileSEOPage() {
       <section className="py-20 bg-white">
         <div className="container">
           <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Why Mobile SEO Is Critical for Your <span className="text-[#f59e0b]">Business</span></h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Why Mobile SEO Is Critical for Your <span className="text-[#f59e0b]">Business</span></h2>
             <p>Capture the majority of search traffic with mobile-first optimization</p>
           </div>
 
@@ -285,7 +285,7 @@ export default function MobileSEOPage() {
       <section className="py-20 bg-[#f8fafc]" id="services">
         <div className="container">
           <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Our Mobile SEO <span className="text-[#f59e0b]">Services</span></h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Our Mobile SEO <span className="text-[#f59e0b]">Services</span></h2>
             <p>Comprehensive optimization for the mobile-first era</p>
           </div>
 
@@ -316,7 +316,7 @@ export default function MobileSEOPage() {
       <section className="py-20 bg-white">
         <div className="container">
           <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">The Mobile Search Landscape in <span className="text-[#f59e0b]">2026</span></h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">The Mobile Search Landscape in <span className="text-[#f59e0b]">2026</span></h2>
             <p>Understanding why mobile optimization is non-negotiable</p>
           </div>
 
@@ -372,7 +372,7 @@ export default function MobileSEOPage() {
       <section className="py-20 bg-gradient-to-br from-[#1e293b] to-[#0f172a] text-white">
         <div className="container">
           <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-4">Real Mobile SEO <span className="text-[#f59e0b]">Results</span></h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center mb-4 text-white">Real Mobile SEO <span className="text-[#f59e0b]">Results</span></h2>
             <p className="text-slate-200">How we transformed mobile performance and rankings</p>
           </div>
 
@@ -416,7 +416,7 @@ export default function MobileSEOPage() {
       <section className="py-20 bg-white">
         <div className="container">
           <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Mobile SEO Frequently Asked <span className="text-[#f59e0b]">Questions</span></h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Mobile SEO Frequently Asked <span className="text-[#f59e0b]">Questions</span></h2>
             <p>Common questions about mobile search optimization</p>
           </div>
 

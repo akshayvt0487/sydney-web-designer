@@ -321,7 +321,7 @@ export default function PayOnPerformanceSEOPage() {
       <section className="py-20 bg-white">
         <div className="container">
           <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Why Pay on Performance SEO Makes <span className="text-[#f59e0b]">Sense</span></h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Why Pay on Performance SEO Makes <span className="text-[#f59e0b]">Sense</span></h2>
             <p>Aligned incentives, reduced risk, and transparent results</p>
           </div>
 
@@ -351,7 +351,7 @@ export default function PayOnPerformanceSEOPage() {
       <section className="py-20 bg-[#f8fafc]" id="how-it-works">
         <div className="container">
           <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">How Pay on Performance SEO <span className="text-[#f59e0b]">Works</span></h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">How Pay on Performance SEO <span className="text-[#f59e0b]">Works</span></h2>
             <p>Simple, transparent process with clear success metrics</p>
           </div>
 
@@ -387,7 +387,7 @@ export default function PayOnPerformanceSEOPage() {
       <section className="py-20 bg-white">
         <div className="container">
           <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Performance Pricing <span className="text-[#f59e0b]">Models</span></h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Performance Pricing <span className="text-[#f59e0b]">Models</span></h2>
             <p>Flexible options based on what matters most to your business</p>
           </div>
 
@@ -423,7 +423,7 @@ export default function PayOnPerformanceSEOPage() {
       <section className="py-20 bg-[#f8fafc]">
         <div className="container">
           <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Is Pay on Performance SEO Right for <span className="text-[#f59e0b]">You</span>?</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Is Pay on Performance SEO Right for <span className="text-[#f59e0b]">You</span>?</h2>
             <p>Ideal for businesses that need results-driven, low-risk SEO</p>
           </div>
 
@@ -446,7 +446,7 @@ export default function PayOnPerformanceSEOPage() {
       <section className="py-20 bg-gradient-to-br from-[#1e293b] to-[#0f172a] text-white">
         <div className="container">
           <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-4">Real Pay on Performance <span className="text-[#f59e0b]">Results</span></h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center mb-4 text-white">Real Pay on Performance <span className="text-[#f59e0b]">Results</span></h2>
             <p className="text-white">How performance-based SEO delivered exceptional ROI</p>
           </div>
 
@@ -490,7 +490,7 @@ export default function PayOnPerformanceSEOPage() {
       <section className="py-20 bg-white">
         <div className="container">
           <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Pay on Performance SEO Frequently Asked <span className="text-[#f59e0b]">Questions</span></h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Pay on Performance SEO Frequently Asked <span className="text-[#f59e0b]">Questions</span></h2>
             <p>Common questions about results-based SEO pricing</p>
           </div>
 
