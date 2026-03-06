@@ -11,23 +11,39 @@ interface PageMetadata {
   publishedTime?: string;
   modifiedTime?: string;
   author?: string;
+  ogType?: string; // For dynamic OG image generation
+}
+
+// Helper function to generate OG image URL
+function generateOGImageUrl(title: string, description: string, ogType: string = "service"): string {
+  const baseUrl = "https://sydneywebdesigner.com.au";
+  const params = new URLSearchParams({
+    title,
+    description: description.slice(0, 100),
+    type: ogType,
+  });
+  return `${baseUrl}/api/og?${params.toString()}`;
 }
 
 export function generateMetadata({
   title,
   description,
   keywords,
-  ogImage = "/og-image.svg",
+  ogImage,
   canonicalUrl,
   noIndex = false,
   type = "website",
   publishedTime,
   modifiedTime,
   author,
+  ogType = "service",
 }: PageMetadata): Metadata {
   const siteName = "Sydney Web Designer";
   const fullTitle = `${title} | ${siteName}`;
   const baseUrl = "https://sydneywebdesigner.com.au";
+
+  // Use dynamic OG image if no custom image provided
+  const finalOgImage = ogImage || generateOGImageUrl(title, description, ogType);
 
   return {
     title: fullTitle,
@@ -64,7 +80,7 @@ export function generateMetadata({
       }),
       images: [
         {
-          url: ogImage,
+          url: finalOgImage,
           width: 1200,
           height: 630,
           alt: title,
@@ -75,12 +91,17 @@ export function generateMetadata({
       card: "summary_large_image",
       title: fullTitle,
       description,
-      images: [ogImage],
-      creator: "@sydneywebdesigner",
+      images: [finalOgImage],
+      creator: "@dsignsaustralia",
+      site: "@dsignsaustralia",
     },
-    // Add Google Search Console verification when available
-    // verification: {
-    //   google: "your-google-verification-code",
-    // },
+    // Verification tags
+    verification: {
+      // Add Google Search Console verification when available
+      // google: "your-google-verification-code",
+    },
+    // Additional metadata
+    metadataBase: new URL(baseUrl),
+    category: ogType,
   };
 }
