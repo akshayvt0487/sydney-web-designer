@@ -38,7 +38,9 @@ export default function ContactPage() {
       setIsSubmitting(false);
       router.push("/thank-you?type=contact");
     } catch (error) {
-      console.error("Error submitting form:", error);
+      if (process.env.NODE_ENV === 'development') {
+        console.error("Error submitting form:", error);
+      }
       setIsSubmitting(false);
     }
   };

@@ -137,7 +137,7 @@ export default function Footer() {
             <h4 className="text-lg font-bold text-white mb-4">Follow Us</h4>
             <div className="flex gap-4">
               <a
-                href="https://www.facebook.com/sydneywebdesigner"
+                href="https://facebook.com/dsignscomau"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 bg-white/10 hover:bg-[#f59e0b] rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
@@ -146,7 +146,7 @@ export default function Footer() {
                 <i className="fab fa-facebook-f text-xl"></i>
               </a>
               <a
-                href="https://www.instagram.com/sydneywebdesigner"
+                href="http://instagram.com/dsigns.australia"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 bg-white/10 hover:bg-[#f59e0b] rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
@@ -155,7 +155,7 @@ export default function Footer() {
                 <i className="fab fa-instagram text-xl"></i>
               </a>
               <a
-                href="https://www.linkedin.com/company/sydney-web-designer"
+                href="http://linkedin.com/company/dsignsaustralia"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 bg-white/10 hover:bg-[#f59e0b] rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
@@ -180,7 +180,7 @@ export default function Footer() {
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <p className="text-gray-400 text-center md:text-left">
-              © {currentYear} Sydney Web Designer. All rights reserved.
+              © {currentYear}  DSIGNS AUSTRALIA PTY LIMITED. ALL RIGHTS RESERVED
             </p>
             <div className="flex flex-wrap gap-6 justify-center">
               <Link href="/privacy-policy" className="text-gray-400 hover:text-[#f59e0b] transition-colors">

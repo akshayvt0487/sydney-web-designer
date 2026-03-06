@@ -78,8 +78,9 @@ export function generateMetadata({
       images: [ogImage],
       creator: "@sydneywebdesigner",
     },
-    verification: {
-      google: "your-google-verification-code",
-    },
+    // Add Google Search Console verification when available
+    // verification: {
+    //   google: "your-google-verification-code",
+    // },
   };
 }

@@ -152,7 +152,8 @@ export default function TermsConditionsPage() {
             <p className="text-[#64748b] mb-4">For questions about these Terms, please contact us:</p>
             <div className="bg-[#f8fafc] p-6 rounded-xl mb-6">
               <p className="text-[#1e293b] mb-2"><strong>Sydney Web Designer</strong></p>
-              <p className="text-[#64748b] mb-1">Suite 103 Level 1, 22 Hunter Street</p>
+              <p className="text-[#64748b] mb-1">Suite 611, 150 George Street
+</p>
               <p className="text-[#64748b] mb-1">Parramatta NSW 2150</p>
               <p className="text-[#64748b] mb-1">Email: <a href="mailto:hello@dsigns.com.au" className="text-[#f59e0b] hover:text-[#d97706]">hello@dsigns.com.au</a></p>
               <p className="text-[#64748b]">Phone: <a href="tel:0291918049" className="text-[#f59e0b] hover:text-[#d97706]">02 9191 8049</a></p>

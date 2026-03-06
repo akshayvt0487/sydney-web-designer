@@ -7,10 +7,10 @@ A protected admin dashboard for managing form submissions from the Sydney Web De
 **URL:** `http://localhost:3001/admin/login` (or your production URL + `/admin/login`)
 
 ### Default Credentials
-- **Email:** `admin@dsigns.com.au`
-- **Password:** `Admin@2024`
+- Configure your credentials in `.env.local` file
+- See `.env.local.example` for required environment variables
 
-> ⚠️ **Important:** Change these credentials in `.env.local` before deploying to production!
+> ⚠️ **Important:** NEVER use default or example passwords in production!
 
 ## Features
 
@@ -64,10 +64,12 @@ Submissions are stored in JSON files located in the `data/` folder:
 ### Environment Variables
 Required in `.env.local`:
 ```env
-ADMIN_EMAIL=admin@dsigns.com.au
-ADMIN_PASSWORD=Admin@2024
-ADMIN_AUTH_TOKEN=sydney-web-designer-admin-2024
+ADMIN_EMAIL=your-admin-email@example.com
+ADMIN_PASSWORD=your-strong-password-here
+ADMIN_AUTH_TOKEN=your-secure-random-token-here
 ```
+
+See `.env.local.example` for the template.
 
 ## API Endpoints
 

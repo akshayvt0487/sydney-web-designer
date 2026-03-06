@@ -35,7 +35,9 @@ export async function POST(request: NextRequest) {
     // Send email notification
     try {
       await sendFormSubmissionEmail(submission);
-      console.log("Email notification sent successfully");
+      if (process.env.NODE_ENV === 'development') {
+        console.log("Email notification sent successfully");
+      }
     } catch (emailError) {
       console.error("Failed to send email notification:", emailError);
       // Don't fail the request if email fails - submission is still saved

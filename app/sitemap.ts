@@ -3,7 +3,7 @@ import { MetadataRoute } from 'next'
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://sydneywebdesigner.com.au'
 
-  // Service pages
+  // Service pages (only include existing pages)
   const servicePages = [
     'custom-web-design',
     'wordpress-development',
@@ -11,19 +11,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'responsive-design',
     'website-redesign',
     'landing-pages',
+    'high-performance-landing-pages',
     'ui-ux-design',
-    'logo-design',
-    'brand-identity',
-    'brand-strategy',
-    'graphic-design',
-    'business-cards',
-    'marketing-materials',
     'seo-sydney',
+    'local-seo',
+    'mobile-seo',
+    'ecommerce-seo',
+    'pay-on-performance-seo',
+    'seo-copywriting',
+    'link-building',
+    'digital-pr',
     'google-ads',
+    'meta-ads',
     'social-media-marketing',
     'content-marketing',
     'email-marketing',
-    'local-seo',
     'conversion-optimization',
   ].map((slug) => ({
     url: `${baseUrl}/services/${slug}`,

@@ -66,7 +66,9 @@ export default function PopupForm({ isOpen, onClose, formType }: PopupFormProps)
         }, 2000);
       }
     } catch (error) {
-      console.error("Error submitting form:", error);
+      if (process.env.NODE_ENV === 'development') {
+        console.error("Error submitting form:", error);
+      }
       setIsSubmitting(false);
     }
   };

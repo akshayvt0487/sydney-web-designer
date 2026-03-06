@@ -5,14 +5,22 @@ export async function POST(request: NextRequest) {
   try {
     const { email, password } = await request.json();
 
-    // In production, validate against database
-    // For now, use environment variables
-    const adminEmail = process.env.ADMIN_EMAIL || "admin@dsigns.com.au";
-    const adminPassword = process.env.ADMIN_PASSWORD || "Admin@2024";
+    // Validate against environment variables - REQUIRED
+    const adminEmail = process.env.ADMIN_EMAIL;
+    const adminPassword = process.env.ADMIN_PASSWORD;
+    const authToken = process.env.ADMIN_AUTH_TOKEN;
+
+    // Ensure all credentials are configured
+    if (!adminEmail || !adminPassword || !authToken) {
+      console.error("Admin credentials not configured in environment variables");
+      return NextResponse.json(
+        { error: "Server configuration error" },
+        { status: 500 }
+      );
+    }
 
     if (email === adminEmail && password === adminPassword) {
       // Set authentication cookie
-      const authToken = process.env.ADMIN_AUTH_TOKEN || "sydney-web-designer-admin-2024";
 
       cookies().set("admin_auth", authToken, {
         httpOnly: true,

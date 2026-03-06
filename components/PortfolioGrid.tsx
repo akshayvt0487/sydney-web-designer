@@ -14,7 +14,7 @@ const CATEGORIES = [
   { label: "Web Design", value: "Web Design" },
   { label: "Landing Pages", value: "Landing Pages" },
   { label: "SEO", value: "SEO" },
-  { label: "E-commerce", value: "E-commerce" },
+  { label: "Google Ads", value: "Google Ads" },
 ];
 
 function categoryMatch(project: PortfolioProject, cat: string) {
@@ -149,7 +149,6 @@ function ProjectCard({
     "SEO": "bg-green-500/10 text-green-400 border-green-500/20",
     "Google Ads": "bg-red-500/10 text-red-400 border-red-500/20",
     "Social Media": "bg-pink-500/10 text-pink-400 border-pink-500/20",
-    "E-commerce": "bg-orange-500/10 text-orange-400 border-orange-500/20",
   };
 
   function getTagColor(service: string) {

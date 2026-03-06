@@ -15,7 +15,9 @@ const transporter = nodemailer.createTransport({
 export async function verifyEmailConfig() {
   try {
     await transporter.verify();
-    console.log("Email server is ready to send messages");
+    if (process.env.NODE_ENV === 'development') {
+      console.log("Email server is ready to send messages");
+    }
     return true;
   } catch (error) {
     console.error("Email server verification failed:", error);
@@ -170,7 +172,9 @@ export async function sendFormSubmissionEmail(data: FormSubmissionEmailData) {
 
   try {
     const info = await transporter.sendMail(mailOptions);
-    console.log("Form submission email sent:", info.messageId);
+    if (process.env.NODE_ENV === 'development') {
+      console.log("Form submission email sent:", info.messageId);
+    }
     return { success: true, messageId: info.messageId };
   } catch (error) {
     console.error("Error sending form submission email:", error);
@@ -267,7 +271,9 @@ export async function sendContactSubmissionEmail(data: ContactSubmissionEmailDat
 
   try {
     const info = await transporter.sendMail(mailOptions);
-    console.log("Contact submission email sent:", info.messageId);
+    if (process.env.NODE_ENV === 'development') {
+      console.log("Contact submission email sent:", info.messageId);
+    }
     return { success: true, messageId: info.messageId };
   } catch (error) {
     console.error("Error sending contact submission email:", error);

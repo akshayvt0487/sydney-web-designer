@@ -35,7 +35,10 @@
       "Bash(wc:*)",
       "Bash(python:*)",
       "Bash(awk:*)",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "Bash(if [ -f \"ADMIN_README.md\" ])",
+      "Bash(then cat \"ADMIN_README.md\")",
+      "Bash(else echo \"File not found\")"
     ]
   }
 }
