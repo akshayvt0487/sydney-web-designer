@@ -1,26 +1,21 @@
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 
-// Email configuration
-const transporter = nodemailer.createTransport({
-  host: process.env.EMAIL_HOST || "smtp.gmail.com",
-  port: parseInt(process.env.EMAIL_PORT || "587"),
-  secure: false, // true for 465, false for other ports
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASSWORD,
-  },
-});
+// Initialize Resend with API key
+const resend = new Resend(process.env.RESEND_API_KEY);
 
-// Verify transporter configuration
+// Verify Resend configuration
 export async function verifyEmailConfig() {
   try {
-    await transporter.verify();
+    if (!process.env.RESEND_API_KEY) {
+      console.error("RESEND_API_KEY is not configured");
+      return false;
+    }
     if (process.env.NODE_ENV === 'development') {
-      console.log("Email server is ready to send messages");
+      console.log("Resend email service is configured");
     }
     return true;
   } catch (error) {
-    console.error("Email server verification failed:", error);
+    console.error("Email service verification failed:", error);
     return false;
   }
 }
@@ -162,20 +157,24 @@ export async function sendFormSubmissionEmail(data: FormSubmissionEmailData) {
     </html>
   `;
 
-  const mailOptions = {
-    from: `"Sydney Web Designer" <noreply@sydneywebdesigner.com.au>`,
-    replyTo: process.env.EMAIL_USER,
-    to: "akshay@dsigns.com.au",
-    subject: `🔔 New ${typeLabel} - ${data.name}`,
-    html: htmlContent,
-  };
-
   try {
-    const info = await transporter.sendMail(mailOptions);
-    if (process.env.NODE_ENV === 'development') {
-      console.log("Form submission email sent:", info.messageId);
+    const { data: emailData, error } = await resend.emails.send({
+      from: "Sydney Web Designer <info@sydneywebdesigner.com.au>",
+      to: "akshay@dsigns.com.au",
+      replyTo: data.email,
+      subject: `🔔 New ${typeLabel} - ${data.name}`,
+      html: htmlContent,
+    });
+
+    if (error) {
+      console.error("Error sending form submission email:", error);
+      return { success: false, error };
     }
-    return { success: true, messageId: info.messageId };
+
+    if (process.env.NODE_ENV === 'development') {
+      console.log("Form submission email sent:", emailData?.id);
+    }
+    return { success: true, messageId: emailData?.id };
   } catch (error) {
     console.error("Error sending form submission email:", error);
     return { success: false, error };
@@ -261,20 +260,24 @@ export async function sendContactSubmissionEmail(data: ContactSubmissionEmailDat
     </html>
   `;
 
-  const mailOptions = {
-    from: `"Sydney Web Designer" <noreply@sydneywebdesigner.com.au>`,
-    replyTo: process.env.EMAIL_USER,
-    to: "akshay@dsigns.com.au",
-    subject: `📧 New Contact Form - ${data.firstName} ${data.lastName}`,
-    html: htmlContent,
-  };
-
   try {
-    const info = await transporter.sendMail(mailOptions);
-    if (process.env.NODE_ENV === 'development') {
-      console.log("Contact submission email sent:", info.messageId);
+    const { data: emailData, error } = await resend.emails.send({
+      from: "Sydney Web Designer <info@sydneywebdesigner.com.au>",
+      to: "akshay@dsigns.com.au",
+      replyTo: data.email,
+      subject: `📧 New Contact Form - ${data.firstName} ${data.lastName}`,
+      html: htmlContent,
+    });
+
+    if (error) {
+      console.error("Error sending contact submission email:", error);
+      return { success: false, error };
     }
-    return { success: true, messageId: info.messageId };
+
+    if (process.env.NODE_ENV === 'development') {
+      console.log("Contact submission email sent:", emailData?.id);
+    }
+    return { success: true, messageId: emailData?.id };
   } catch (error) {
     console.error("Error sending contact submission email:", error);
     return { success: false, error };
