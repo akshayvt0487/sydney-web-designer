@@ -79,7 +79,7 @@ export default function ThankYouPage({ searchParams }: ThankYouPageProps) {
           </div>
 
           {/* Main Title */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 md:mb-8 leading-tight">
+          <h1 className="text-4xl text-white md:text-5xl lg:text-6xl font-bold mb-6 md:mb-8 leading-tight">
             {content.title}
           </h1>
 
