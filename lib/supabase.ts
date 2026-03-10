@@ -7,11 +7,22 @@ const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
 let supabaseInstance: SupabaseClient | null = null;
 
 try {
+  console.log("🔧 [SUPABASE] Initializing Supabase client");
+  console.log("   - URL:", supabaseUrl ? `✓ ${supabaseUrl.substring(0, 50)}...` : "✗ MISSING");
+  console.log("   - Key:", supabaseKey ? `✓ ${supabaseKey.substring(0, 30)}...` : "✗ MISSING");
+
   if (supabaseUrl && supabaseKey) {
     supabaseInstance = createClient(supabaseUrl, supabaseKey);
+    console.log("✓ [SUPABASE] Client initialized successfully");
+  } else {
+    console.error("❌ [SUPABASE] Missing Supabase credentials - client will not be created");
   }
 } catch (error) {
-  console.error('Failed to initialize Supabase client:', error);
+  console.error('❌ [SUPABASE] Failed to initialize Supabase client:', error);
+  if (error instanceof Error) {
+    console.error('   - Error message:', error.message);
+    console.error('   - Stack:', error.stack);
+  }
 }
 
 export const supabase = supabaseInstance as SupabaseClient;

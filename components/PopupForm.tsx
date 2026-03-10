@@ -44,22 +44,37 @@ export default function PopupForm({ isOpen, onClose, formType }: PopupFormProps)
     setError(null); // Clear previous errors
 
     try {
+      console.log("📋 [PopupForm] Preparing form data for submission");
+      console.log("   - Form Type:", formType);
+      console.log("   - Form Data:", formData);
+
+      const submissionPayload = {
+        type: formType,
+        ...formData,
+        id: Date.now().toString(),
+        submittedAt: new Date().toISOString(),
+        status: "new",
+      };
+
+      console.log("📤 [PopupForm] Sending submission to /api/submissions/save");
+      console.log("   - Payload:", submissionPayload);
+
       // Save submission to database
       const response = await fetch("/api/submissions/save", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          type: formType,
-          ...formData,
-          id: Date.now().toString(),
-          submittedAt: new Date().toISOString(),
-          status: "new",
-        }),
+        body: JSON.stringify(submissionPayload),
       });
 
+      console.log("📥 [PopupForm] Received response from server");
+      console.log("   - Status:", response.status);
+      console.log("   - Status Text:", response.statusText);
+
       const data = await response.json();
+      console.log("   - Response Data:", data);
 
       if (response.ok) {
+        console.log("✓ [PopupForm] Form submitted successfully");
         setIsSubmitting(false);
         setIsSuccess(true);
         setTimeout(() => {
@@ -71,16 +86,23 @@ export default function PopupForm({ isOpen, onClose, formType }: PopupFormProps)
         }, 2000);
       } else {
         // Handle error response
-        const errorMessage = data?.error || "Failed to submit form. Please try again.";
+        const errorMessage = data?.error || data?.details || "Failed to submit form. Please try again.";
+        console.error("❌ [PopupForm] Server returned error");
+        console.error("   - Error Code:", data?.code);
+        console.error("   - Error Message:", errorMessage);
         setError(errorMessage);
         setIsSubmitting(false);
-        console.error("Form submission error:", errorMessage);
       }
     } catch (error) {
+      console.error("❌ [PopupForm] Exception during form submission:", error);
+      if (error instanceof Error) {
+        console.error("   - Error Type:", error.constructor.name);
+        console.error("   - Error Message:", error.message);
+        console.error("   - Stack:", error.stack);
+      }
       const errorMessage = error instanceof Error ? error.message : "Network error. Please check your connection and try again.";
       setError(errorMessage);
       setIsSubmitting(false);
-      console.error("Error submitting form:", error);
     }
   };
 
