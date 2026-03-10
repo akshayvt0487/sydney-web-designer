@@ -71,12 +71,16 @@ export async function POST(request: NextRequest) {
 
     // Send email notification
     try {
-      await sendNewsletterSubscriptionEmail({
+      const emailResult = await sendNewsletterSubscriptionEmail({
         email,
         submittedAt: submissionData.subscribed_at,
       });
+      if (!emailResult.success) {
+        console.warn("⚠️  Newsletter notification email failed:", emailResult.error);
+        // Log but don't fail - subscription is still saved in database
+      }
     } catch (emailError) {
-      console.error("Failed to send newsletter notification:", emailError);
+      console.error("❌ Exception sending newsletter notification:", emailError);
       // Don't fail the request if email fails - subscription is still saved
     }
 

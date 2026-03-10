@@ -1,13 +1,27 @@
 import { Resend } from "resend";
 
-// Initialize Resend with API key
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Initialize Resend with API key - with better error handling
+let resend: Resend | null = null;
+
+if (process.env.RESEND_API_KEY) {
+  resend = new Resend(process.env.RESEND_API_KEY);
+  if (process.env.NODE_ENV === 'development') {
+    console.log("✓ Resend email service initialized with API key");
+  }
+} else {
+  console.error("⚠️  WARNING: RESEND_API_KEY environment variable is not set. Email sending will not work.");
+  console.error("Please set RESEND_API_KEY in your environment variables.");
+}
 
 // Verify Resend configuration
 export async function verifyEmailConfig() {
   try {
     if (!process.env.RESEND_API_KEY) {
       console.error("RESEND_API_KEY is not configured");
+      return false;
+    }
+    if (!resend) {
+      console.error("Resend client not initialized");
       return false;
     }
     if (process.env.NODE_ENV === 'development') {
@@ -384,6 +398,22 @@ export async function sendFormSubmissionEmail(data: FormSubmissionEmailData) {
   `;
 
   try {
+    if (!resend) {
+      console.error("❌ Cannot send form submission email: Resend client not initialized. RESEND_API_KEY is missing.");
+      return { 
+        success: false, 
+        error: "Email service not configured. Please contact support." 
+      };
+    }
+
+    if (!process.env.RESEND_API_KEY) {
+      console.error("❌ Cannot send form submission email: RESEND_API_KEY environment variable not set.");
+      return { 
+        success: false, 
+        error: "Email service not configured. Please contact support." 
+      };
+    }
+
     const { data: emailData, error } = await resend.emails.send({
       from: "Sydney Web Designer <info@sydneywebdesigner.com.au>",
       to: "basheer@dsigns.com.au",
@@ -394,16 +424,16 @@ export async function sendFormSubmissionEmail(data: FormSubmissionEmailData) {
     });
 
     if (error) {
-      console.error("Error sending form submission email:", error);
+      console.error("❌ Error sending form submission email:", error);
       return { success: false, error };
     }
 
     if (process.env.NODE_ENV === 'development') {
-      console.log("Form submission email sent:", emailData?.id);
+      console.log("✓ Form submission email sent:", emailData?.id);
     }
     return { success: true, messageId: emailData?.id };
   } catch (error) {
-    console.error("Error sending form submission email:", error);
+    console.error("❌ Exception while sending form submission email:", error);
     return { success: false, error };
   }
 }
@@ -498,6 +528,22 @@ export async function sendContactSubmissionEmail(data: ContactSubmissionEmailDat
   `;
 
   try {
+    if (!resend) {
+      console.error("❌ Cannot send contact submission email: Resend client not initialized. RESEND_API_KEY is missing.");
+      return { 
+        success: false, 
+        error: "Email service not configured. Please contact support." 
+      };
+    }
+
+    if (!process.env.RESEND_API_KEY) {
+      console.error("❌ Cannot send contact submission email: RESEND_API_KEY environment variable not set.");
+      return { 
+        success: false, 
+        error: "Email service not configured. Please contact support." 
+      };
+    }
+
     const { data: emailData, error } = await resend.emails.send({
       from: "Sydney Web Designer <info@sydneywebdesigner.com.au>",
       to: "basheer@dsigns.com.au",
@@ -508,16 +554,16 @@ export async function sendContactSubmissionEmail(data: ContactSubmissionEmailDat
     });
 
     if (error) {
-      console.error("Error sending contact submission email:", error);
+      console.error("❌ Error sending contact submission email:", error);
       return { success: false, error };
     }
 
     if (process.env.NODE_ENV === 'development') {
-      console.log("Contact submission email sent:", emailData?.id);
+      console.log("✓ Contact submission email sent:", emailData?.id);
     }
     return { success: true, messageId: emailData?.id };
   } catch (error) {
-    console.error("Error sending contact submission email:", error);
+    console.error("❌ Exception while sending contact submission email:", error);
     return { success: false, error };
   }
 }
@@ -595,6 +641,22 @@ export async function sendNewsletterSubscriptionEmail(data: NewsletterSubscripti
   `;
 
   try {
+    if (!resend) {
+      console.error("❌ Cannot send newsletter subscription email: Resend client not initialized. RESEND_API_KEY is missing.");
+      return { 
+        success: false, 
+        error: "Email service not configured. Please contact support." 
+      };
+    }
+
+    if (!process.env.RESEND_API_KEY) {
+      console.error("❌ Cannot send newsletter subscription email: RESEND_API_KEY environment variable not set.");
+      return { 
+        success: false, 
+        error: "Email service not configured. Please contact support." 
+      };
+    }
+
     const { data: emailData, error } = await resend.emails.send({
       from: "Sydney Web Designer <info@sydneywebdesigner.com.au>",
       to: "basheer@dsigns.com.au",
@@ -605,16 +667,16 @@ export async function sendNewsletterSubscriptionEmail(data: NewsletterSubscripti
     });
 
     if (error) {
-      console.error("Error sending newsletter subscription email:", error);
+      console.error("❌ Error sending newsletter subscription email:", error);
       return { success: false, error };
     }
 
     if (process.env.NODE_ENV === 'development') {
-      console.log("Newsletter subscription email sent:", emailData?.id);
+      console.log("✓ Newsletter subscription email sent:", emailData?.id);
     }
     return { success: true, messageId: emailData?.id };
   } catch (error) {
-    console.error("Error sending newsletter subscription email:", error);
+    console.error("❌ Exception while sending newsletter subscription email:", error);
     return { success: false, error };
   }
 }
