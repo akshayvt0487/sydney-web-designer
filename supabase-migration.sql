@@ -61,6 +61,16 @@ ALTER TABLE form_submissions ENABLE ROW LEVEL SECURITY;
 ALTER TABLE contact_submissions ENABLE ROW LEVEL SECURITY;
 ALTER TABLE newsletter_subscriptions ENABLE ROW LEVEL SECURITY;
 
+-- Drop existing policies if they exist (PostgreSQL doesn't support CREATE POLICY IF NOT EXISTS)
+DROP POLICY IF EXISTS "Allow public insert" ON form_submissions;
+DROP POLICY IF EXISTS "Allow public insert" ON contact_submissions;
+DROP POLICY IF EXISTS "Allow public insert" ON newsletter_subscriptions;
+DROP POLICY IF EXISTS "Allow authenticated read" ON form_submissions;
+DROP POLICY IF EXISTS "Allow authenticated read" ON contact_submissions;
+DROP POLICY IF EXISTS "Allow authenticated read" ON newsletter_subscriptions;
+DROP POLICY IF EXISTS "Allow authenticated update" ON form_submissions;
+DROP POLICY IF EXISTS "Allow authenticated update" ON contact_submissions;
+
 -- Create policies for public insert (form submissions)
 CREATE POLICY "Allow public insert" ON form_submissions
   FOR INSERT TO anon
