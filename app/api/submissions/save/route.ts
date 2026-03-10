@@ -30,9 +30,9 @@ export async function POST(request: NextRequest) {
     const dbSubmission = {
       id: submission.id,
       type: submission.type,
-      name: submission.name,
-      email: submission.email,
-      phone: submission.phone,
+      name: submission.name || "Unknown",
+      email: submission.email || "no-email@example.com",
+      phone: submission.phone || "Not provided",
       website: submission.website || null,
       project_type: submission.projectType || null,
       seo_goal: submission.seoGoal || null,
@@ -42,6 +42,14 @@ export async function POST(request: NextRequest) {
       status: submission.status || 'new',
       submitted_at: submission.submittedAt,
     };
+
+    // Validate required fields
+    if (!submission.name || !submission.email || !submission.phone) {
+      return NextResponse.json(
+        { error: "Missing required fields: name, email, and phone are required." },
+        { status: 400 }
+      );
+    }
 
     // Insert into Supabase
     const { data, error } = await supabase
@@ -75,8 +83,9 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ success: true, id: submission.id });
   } catch (error) {
     console.error("Error saving submission:", error);
+    const errorMessage = error instanceof Error ? error.message : "An unexpected error occurred";
     return NextResponse.json(
-      { error: "Failed to save submission" },
+      { error: `Failed to save submission: ${errorMessage}` },
       { status: 500 }
     );
   }

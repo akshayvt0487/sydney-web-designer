@@ -15,6 +15,7 @@ export default function PopupForm({ isOpen, onClose, formType }: PopupFormProps)
   const [formData, setFormData] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   // Get form configuration
   const config = getFormConfig(formType);
@@ -40,6 +41,7 @@ export default function PopupForm({ isOpen, onClose, formType }: PopupFormProps)
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError(null); // Clear previous errors
 
     try {
       // Save submission to database
@@ -55,6 +57,8 @@ export default function PopupForm({ isOpen, onClose, formType }: PopupFormProps)
         }),
       });
 
+      const data = await response.json();
+
       if (response.ok) {
         setIsSubmitting(false);
         setIsSuccess(true);
@@ -62,14 +66,21 @@ export default function PopupForm({ isOpen, onClose, formType }: PopupFormProps)
           setIsSuccess(false);
           onClose();
           setFormData({});
+          setError(null);
           router.push(getFormRedirectUrl(formType));
         }, 2000);
+      } else {
+        // Handle error response
+        const errorMessage = data?.error || "Failed to submit form. Please try again.";
+        setError(errorMessage);
+        setIsSubmitting(false);
+        console.error("Form submission error:", errorMessage);
       }
     } catch (error) {
-      if (process.env.NODE_ENV === 'development') {
-        console.error("Error submitting form:", error);
-      }
+      const errorMessage = error instanceof Error ? error.message : "Network error. Please check your connection and try again.";
+      setError(errorMessage);
       setIsSubmitting(false);
+      console.error("Error submitting form:", error);
     }
   };
 
@@ -193,6 +204,31 @@ export default function PopupForm({ isOpen, onClose, formType }: PopupFormProps)
             </div>
           ) : (
             <>
+              {error && (
+                <div className="mb-6 p-4 bg-red-50 border-l-4 border-red-500 rounded animate-slideDown">
+                  <div className="flex items-start">
+                    <div className="text-red-500 mr-3 mt-0.5">
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-semibold text-red-800">Submission Failed</h4>
+                      <p className="text-red-700 text-sm mt-1">{error}</p>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => setError(null)}
+                      className="text-red-500 hover:text-red-700 ml-2"
+                      aria-label="Dismiss error"
+                    >
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              )}
               {fieldsInRows.map((row, rowIndex) => (
                 <div
                   key={rowIndex}
@@ -243,12 +279,27 @@ export default function PopupForm({ isOpen, onClose, formType }: PopupFormProps)
           }
         }
 
+        @keyframes slideDown {
+          from {
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
         .animate-fadeIn {
           animation: fadeIn 0.3s ease-out forwards;
         }
 
         .animate-slideUp {
           animation: slideUp 0.3s ease-out forwards;
+        }
+
+        .animate-slideDown {
+          animation: slideDown 0.3s ease-out forwards;
         }
       `}</style>
     </div>
