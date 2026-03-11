@@ -141,11 +141,11 @@ export default function HighPerformanceLandingPagesPage() {
   ];
 
   const platforms = [
-    { name: "Next.js", icon: "fa-react", description: "React framework for production" },
-    { name: "React", icon: "fa-react", description: "Modern JavaScript library" },
-    { name: "Unbounce", icon: "fa-rocket", description: "Landing page platform" },
-    { name: "Leadpages", icon: "fa-file-alt", description: "Conversion-focused builder" },
-    { name: "Custom HTML/CSS", icon: "fa-code", description: "Bespoke development" },
+    { name: "Next.js", icon: "fab fa-js", description: "React framework for production" },
+    { name: "React", icon: "fab fa-react", description: "Modern JavaScript library" },
+    { name: "Unbounce", icon: "fas fa-rocket", description: "Landing page platform" },
+    { name: "Leadpages", icon: "fas fa-file-alt", description: "Conversion-focused builder" },
+    { name: "Custom HTML/CSS", icon: "fas fa-code", description: "Bespoke development" },
   ];
 
   const caseStudies = [
@@ -337,7 +337,7 @@ export default function HighPerformanceLandingPagesPage() {
           <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
             {platforms.map((platform, index) => (
               <div key={index} className="card text-center hover:border-[#f59e0b] transition-all">
-                <i className={`fas ${platform.icon} text-4xl text-[#f59e0b] mb-4`}></i>
+                <i className={`${platform.icon} text-4xl text-[#f59e0b] mb-4`}></i>
                 <h3 className="font-bold text-primary-navy mb-2">{platform.name}</h3>
                 <p className="text-sm text-gray-600">{platform.description}</p>
               </div>
@@ -354,14 +354,14 @@ export default function HighPerformanceLandingPagesPage() {
             <p className="text-white">See how we transformed landing page performance</p>
           </div>
 
-          <div className="max-w-6xl mx-auto space-y-8">
+          <div className="max-w-6xl mx-auto space-y-8 bg-gray-800">
             {caseStudies.map((study, index) => (
-              <div key={index} className="card bg-white/10 backdrop-blur-sm border-2 border-[#f59e0b]/50">
+              <div key={index} className="p-8 rounded-2 bg-white/10 backdrop-blur-sm border-2 border-[#f59e0b]/50">
                 <div className="grid md:grid-cols-5 gap-8">
                   <div className="md:col-span-3">
                     <h3 className="text-3xl font-bold mb-2 text-white">{study.company}</h3>
 
-                    <div className="space-y-4">
+                    <div className="space-y-4 ">
                       <div>
                         <h4 className="font-bold mb-2 text-lg text-[#f59e0b]">Challenge:</h4>
                         <p className="text-white">{study.challenge}</p>
