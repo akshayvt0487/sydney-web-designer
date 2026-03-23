@@ -1,0 +1,40 @@
+name: Supabase Keep-Alive
+
+# Run every 5 days to prevent auto-pause (free tier pauses after 7 days)
+on:
+  schedule:
+    # Run at 9:00 AM UTC every 5 days
+    - cron: '0 9 */5 * *'
+  # Allow manual trigger
+  workflow_dispatch:
+
+jobs:
+  keepalive:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install @supabase/supabase-js
+
+      - name: Run keep-alive script
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+        run: |
+          cat > .env.local << EOF
+          NEXT_PUBLIC_SUPABASE_URL=${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY=${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          EOF
+          node scripts/supabase-keepalive.js
+
+      - name: Cleanup
+        if: always()
+        run: rm -f .env.local

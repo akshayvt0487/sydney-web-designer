@@ -79,11 +79,21 @@ export async function POST(request: NextRequest) {
       console.error("   - Error code:", error.code);
       console.error("   - Error message:", error.message);
       console.error("   - Error details:", JSON.stringify(error, null, 2));
+      console.error("   - Hint:", error.hint);
+      console.error("   - Full error object:", error);
+
+      // Return detailed error for debugging
       return NextResponse.json(
-        { 
-          error: "Failed to save submission", 
+        {
+          error: "Database error",
           details: error.message,
-          code: error.code 
+          code: error.code,
+          hint: error.hint,
+          // Include submission data for debugging (remove in production)
+          debug: {
+            submittedData: dbSubmission,
+            errorDetails: error.details
+          }
         },
         { status: 500 }
       );
