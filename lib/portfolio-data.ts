@@ -87,7 +87,7 @@ export const portfolioData: PortfolioItem[] = [
     services: ["Web Design"],
     image: "/images/Portfolio/ADL99/ADL99.webp",
     images: ["/images/Portfolio/ADL99/ADL99.webp"],
-    websiteUrl: "https://adl99.fractional-cmo.com.au",
+    websiteUrl: "https://www.adl99.com.au/",
   },
   {
     id: "demore-lending",
