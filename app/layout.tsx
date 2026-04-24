@@ -14,6 +14,9 @@ export const metadata: Metadata = {
     icon: "/favicon.svg",
     apple: "/favicon.svg",
   },
+  verification: {
+    google: "E_byFO3Fss-ps99NPqsLJ5lCbX1RDEQs7iCVDU8s0s0",
+  },
   openGraph: {
     title: "Sydney Web Designer | Professional Web Design & Digital Marketing Services",
     description: "Sydney's premier web design and digital marketing agency. 13+ years experience, 500+ websites delivered. Custom web design, SEO, branding & more.",
