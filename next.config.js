@@ -19,6 +19,27 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  // SEO and crawlability headers
+  headers: async () => {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'X-Robots-Tag',
+            value: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
+          },
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=3600, must-revalidate',
+          },
+        ],
+      },
+    ]
+  },
+  // Ensure all routes are accessible to crawlers
+  compress: true,
+  poweredByHeader: false,
 }
 
 module.exports = nextConfig

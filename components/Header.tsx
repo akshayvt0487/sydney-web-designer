@@ -158,6 +158,7 @@ export default function Header() {
             </div>
           )}
         </div>
+        <meta name="google-site-verification" content="E_byFO3Fss-ps99NPqsLJ5lCbX1RDEQs7iCVDU8s0s0" />
       </header>
     </>
   );

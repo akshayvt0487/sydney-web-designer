@@ -38,7 +38,10 @@
       "Bash(git checkout:*)",
       "Bash(if [ -f \"ADMIN_README.md\" ])",
       "Bash(then cat \"ADMIN_README.md\")",
-      "Bash(else echo \"File not found\")"
+      "Bash(else echo \"File not found\")",
+      "Bash(set:*)",
+      "Bash(ping:*)",
+      "Bash(nslookup:*)"
     ]
   }
 }
