@@ -35,12 +35,18 @@ export default function HomePage() {
             <span className="text-[#f59e0b] text-sm font-semibold">13+ Years of Excellence</span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+          {/* SEO-optimized H1 */}
+          <h1 className="text-xl md:text-2xl font-medium text-white/90 mb-4">
+            Web Design Sydney | Digital Marketing Agency
+          </h1>
+
+          {/* Large user-friendly H2 */}
+          <h2 className="text-5xl md:text-7xl lg:text-7xl font-bold text-white mb-6 leading-tight">
             Sydney&apos;s Premier
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#f59e0b] to-[#fb923c] mt-0 pb-0">
               Web Design Agency
             </span>
-          </h1>
+          </h2>
 
           <p className="text-xl md:text-2xl text-slate-300 mb-12 max-w-3xl mx-auto leading-relaxed">
             Transform your digital presence with stunning websites that convert visitors into customers. Award-winning design meets cutting-edge technology.

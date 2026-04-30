@@ -40,6 +40,7 @@ export default function EcommerceWebsitesPage() {
 
       {/* Hero Section */}
       <ServiceHeroSection
+        h1="Ecommerce Websites Sydney"
         badge={{
           icon: `fas ${service.icon}`,
           text: service.name

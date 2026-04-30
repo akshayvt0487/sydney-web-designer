@@ -132,6 +132,7 @@ export default function UIUXDesignPage() {
 
       {/* Hero Section */}
       <ServiceHeroSection
+        h1="UI UX Design Sydney"
         badge={{
           icon: `fas ${service.icon}`,
           text: service.name

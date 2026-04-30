@@ -43,9 +43,12 @@ export default function AboutPage() {
       <section className="bg-[#1e293b] text-white py-20">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+            <h1 className="text-xl md:text-2xl font-medium text-white/80 mb-3">
               About Sydney Web Designer
             </h1>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+              Sydney&apos;s Premier Web Design Agency Since 2013
+            </h2>
             <p className="text-xl text-white mb-8">
               Transforming Sydney businesses through innovative web design and digital marketing since 2013
             </p>

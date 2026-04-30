@@ -220,6 +220,7 @@ export default function DigitalPRPage() {
 
       {/* Hero Section */}
       <ServiceHeroSection
+        h1="Digital PR Services Sydney"
         badge={{
           icon: "fas fa-bullhorn",
           text: "Digital PR Specialists"

@@ -39,6 +39,7 @@ export default function WordPressDevelopmentPage() {
       />
       {/* Hero Section */}
       <ServiceHeroSection
+        h1="WordPress Development Sydney"
         badge={{
           icon: "fab fa-wordpress",
           text: "WordPress Specialists"

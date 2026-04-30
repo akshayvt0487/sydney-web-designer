@@ -43,6 +43,8 @@ export interface HeroSectionProps {
   stats?: HeroStat[];
   /** Additional CSS classes for the section */
   className?: string;
+  /** Optional SEO-optimized H1 (small, keyword-focused). If provided, main heading becomes H2 */
+  h1?: string;
 }
 
 /**
@@ -53,6 +55,7 @@ export default function HeroSection({
   data,
   stats,
   className = '',
+  h1,
 }: HeroSectionProps) {
   // Determine theme classes
   const themeClasses =
@@ -90,24 +93,57 @@ export default function HeroSection({
             </div>
           )}
 
-          {/* Heading with optional subheading */}
-          {data.subheading ? (
-            <h1
-              className={`text-5xl md:text-6xl font-bold mb-6 leading-tight ${
-                data.theme === 'light' ? 'text-primary-navy' : 'text-white'
-              }`}
-            >
-              {data.heading}
-              <span className="block text-primary-orange">{data.subheading}</span>
-            </h1>
+          {/* Dual Heading Structure - SEO-optimized H1 + User-friendly H2 */}
+          {h1 ? (
+            <>
+              {/* Small SEO-focused H1 */}
+              <h1
+                className={`text-lg md:text-xl font-medium mb-3 ${
+                  data.theme === 'light' ? 'text-primary-navy/80' : 'text-white/80'
+                }`}
+              >
+                {h1}
+              </h1>
+              {/* Large user-friendly H2 */}
+              {data.subheading ? (
+                <h2
+                  className={`text-5xl md:text-6xl font-bold mb-6 leading-tight ${
+                    data.theme === 'light' ? 'text-primary-navy' : 'text-white'
+                  }`}
+                >
+                  {data.heading}
+                  <span className="block text-primary-orange">{data.subheading}</span>
+                </h2>
+              ) : (
+                <h2
+                  className={`text-5xl md:text-6xl font-bold mb-6 leading-tight ${
+                    data.theme === 'light' ? 'text-primary-navy' : 'text-white'
+                  }`}
+                >
+                  {data.heading}
+                </h2>
+              )}
+            </>
           ) : (
-            <h1
-              className={`text-5xl md:text-6xl font-bold mb-6 leading-tight ${
-                data.theme === 'light' ? 'text-primary-navy' : 'text-white'
-              }`}
-            >
-              {data.heading}
-            </h1>
+            /* Traditional single H1 (backward compatible) */
+            data.subheading ? (
+              <h1
+                className={`text-5xl md:text-6xl font-bold mb-6 leading-tight ${
+                  data.theme === 'light' ? 'text-primary-navy' : 'text-white'
+                }`}
+              >
+                {data.heading}
+                <span className="block text-primary-orange">{data.subheading}</span>
+              </h1>
+            ) : (
+              <h1
+                className={`text-5xl md:text-6xl font-bold mb-6 leading-tight ${
+                  data.theme === 'light' ? 'text-primary-navy' : 'text-white'
+                }`}
+              >
+                {data.heading}
+              </h1>
+            )
           )}
 
           {/* Description */}

@@ -39,11 +39,12 @@ export default function CustomWebDesignPage() {
       />
       {/* Hero Section */}
       <ServiceHeroSection
+        h1="Custom Web Design Sydney"
         badge={{
           icon: "fas fa-paint-brush",
           text: "Custom Web Design"
         }}
-        heading="Custom Web Design Sydney"
+        heading="Professional Website Design Services That Convert"
         description="Bespoke website design tailored to your brand. Stand out with a unique, professional website that drives results."
         buttons={{
           primary: {

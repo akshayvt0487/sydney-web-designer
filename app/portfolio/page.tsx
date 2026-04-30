@@ -45,7 +45,10 @@ export default function PortfolioPage() {
             <span className="h-px w-10 bg-[#f59e0b]" />
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-black text-white leading-tight mb-6">
+          <h1 className="text-xl md:text-2xl font-medium text-white/80 mb-3">
+            Web Design Portfolio Sydney
+          </h1>
+          <h2 className="text-5xl md:text-7xl font-black text-white leading-tight mb-6">
             Websites That{" "}
             <span className="relative inline-block">
               <span className="text-[#f59e0b]">Convert</span>
@@ -66,7 +69,7 @@ export default function PortfolioPage() {
                 />
               </svg>
             </span>
-          </h1>
+          </h2>
 
           <p className="text-slate-300 text-lg md:text-xl max-w-2xl mx-auto mb-8">
             500+ websites delivered across 12+ industries. Real businesses, real results.

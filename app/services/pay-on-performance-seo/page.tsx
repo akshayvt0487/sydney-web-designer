@@ -275,6 +275,7 @@ export default function PayOnPerformanceSEOPage() {
 
       {/* Hero Section */}
       <ServiceHeroSection
+        h1="Pay On Performance SEO"
         badge={{
           icon: "fas fa-handshake",
           text: "Results-Based SEO"

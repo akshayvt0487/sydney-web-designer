@@ -46,9 +46,12 @@ export default function ServicesPage() {
       <section className="bg-[#1e293b] text-white py-20">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-              Our Services
+            <h1 className="text-xl md:text-2xl font-medium text-white/80 mb-3">
+              Web Design & Digital Marketing Services Sydney
             </h1>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+              Comprehensive Digital Solutions That Drive Growth
+            </h2>
             <p className="text-xl text-gray-100 mb-8">
               Comprehensive digital solutions to help your business grow. From web design to digital
               marketing, we have the expertise to drive real results.

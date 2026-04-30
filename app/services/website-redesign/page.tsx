@@ -132,6 +132,7 @@ export default function WebsiteRedesignPage() {
 
       {/* Hero Section */}
       <ServiceHeroSection
+        h1="Website Redesign Sydney"
         badge={{
           icon: `fas ${service.icon}`,
           text: service.name

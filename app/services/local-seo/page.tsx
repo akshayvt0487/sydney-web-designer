@@ -62,6 +62,7 @@ export default function LocalSEOPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessSchema()) }}
       />
       <ServiceHeroSection
+        h1="Local SEO Sydney"
         badge={{
           icon: `fas ${service.icon}`,
           text: service.name

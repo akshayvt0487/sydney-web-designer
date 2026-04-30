@@ -219,6 +219,7 @@ export default function EcommerceSEOPage() {
 
       {/* Hero Section */}
       <ServiceHeroSection
+        h1="Ecommerce SEO Services"
         badge={{
           icon: "fas fa-shopping-cart",
           text: "Ecommerce SEO Specialists"

@@ -91,6 +91,7 @@ export default function BrandIdentityPage() {
 
       {/* Hero Section */}
       <ServiceHeroSection
+        h1="Brand Identity Design Sydney"
         badge={{
           icon: "fas fa-palette",
           text: "Brand Identity"

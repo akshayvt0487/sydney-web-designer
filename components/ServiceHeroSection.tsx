@@ -18,6 +18,8 @@ interface ServiceHeroSectionProps {
       href: string;
     };
   };
+  /** Optional SEO-optimized H1 (small, keyword-focused). If provided, main heading becomes H2 */
+  h1?: string;
 }
 
 export default function ServiceHeroSection({
@@ -25,6 +27,7 @@ export default function ServiceHeroSection({
   heading,
   description,
   buttons,
+  h1,
 }: ServiceHeroSectionProps) {
   return (
     <section className="relative bg-gradient-to-br from-[#1e293b] via-[#2d3b4f] to-[#1e293b] text-white py-24 overflow-hidden">
@@ -42,10 +45,24 @@ export default function ServiceHeroSection({
             <span>{badge.text}</span>
           </div>
 
-          {/* Heading */}
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white leading-tight">
-            {heading}
-          </h1>
+          {/* Dual Heading Structure - SEO-optimized H1 + User-friendly H2 */}
+          {h1 ? (
+            <>
+              {/* Small SEO-focused H1 */}
+              <h1 className="text-lg md:text-xl font-medium mb-3 text-white/80">
+                {h1}
+              </h1>
+              {/* Large user-friendly H2 */}
+              <h2 className="text-5xl md:text-6xl font-bold mb-6 text-white leading-tight">
+                {heading}
+              </h2>
+            </>
+          ) : (
+            /* Traditional single H1 (backward compatible) */
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white leading-tight">
+              {heading}
+            </h1>
+          )}
 
           {/* Description */}
           <p className="text-xl md:text-2xl text-gray-300 mb-10 leading-relaxed max-w-3xl">

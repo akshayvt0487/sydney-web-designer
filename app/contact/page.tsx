@@ -69,9 +69,12 @@ export default function ContactPage() {
       {/* Page Hero */}
       <section className="bg-[#1e293b] text-white py-24 text-center">
         <div className="container max-w-[900px] mx-auto px-8">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white">
+          <h1 className="text-xl md:text-2xl font-medium text-white/80 mb-3">
             Contact Sydney Web Designer
           </h1>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white">
+            Get Your Free Consultation Today
+          </h2>
           <p className="text-xl md:text-2xl opacity-95">
             Get in touch for your free consultation and quote!
           </p>

@@ -220,6 +220,7 @@ export default function SEOCopywritingPage() {
 
       {/* Hero Section */}
       <ServiceHeroSection
+        h1="SEO Copywriting Services"
         badge={{
           icon: "fas fa-pen-nib",
           text: "SEO Content Specialists"
