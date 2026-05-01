@@ -16,9 +16,9 @@ export default function VibeCodeWebsitePage() {
   );
 
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Services", url: "https://sydneywebdesigner.com.au/web-design" },
-    { name: "Vibe Code Website", url: "https://sydneywebdesigner.com.au/services/vibe-code-website" },
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Services", url: "https://www.sydneywebdesigner.com.au/web-design" },
+    { name: "Vibe Code Website", url: "https://www.sydneywebdesigner.com.au/services/vibe-code-website" },
   ]);
 
   const techStacks = [

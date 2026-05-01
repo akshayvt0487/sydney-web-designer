@@ -11,7 +11,7 @@ export const metadata = generateMetadata({
   title: "Landing Page Design Sydney | High-Converting Landing Pages",
   description: "Professional landing page design in Sydney. Create conversion-focused pages that turn traffic into leads. Average 12.5% conversion rate with strategic CTAs and compelling copy.",
   keywords: "landing page design sydney, high converting landing pages, landing page development, sales page design sydney, lead generation pages, conversion landing pages sydney",
-  canonicalUrl: "https://sydneywebdesigner.com.au/services/landing-pages",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/services/landing-pages",
   ogImage: "/images/og/services.svg",
 });
 
@@ -19,9 +19,9 @@ export default function LandingPagesPage() {
   const service = services.find((s) => s.slug === "landing-pages")!;
 
   const breadcrumbs = [
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Services", url: "https://sydneywebdesigner.com.au/services" },
-    { name: "Landing Pages", url: "https://sydneywebdesigner.com.au/services/landing-pages" }
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Services", url: "https://www.sydneywebdesigner.com.au/services" },
+    { name: "Landing Pages", url: "https://www.sydneywebdesigner.com.au/services/landing-pages" }
   ];
   const webProjects = portfolioProjects.filter((p) => p.services.includes("Web Design"));
   const webReviews = googleReviews.slice(6, 9);

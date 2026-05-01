@@ -8,7 +8,7 @@ export const metadata = generateMetadata({
   title: "Google Ads vs Facebook Ads: Which Platform is Right for Your Business?",
   description: "Compare Google Ads and Facebook Ads to find the best advertising platform for your business. Expert analysis on costs, targeting, ROI, and when to use each platform.",
   keywords: "google ads vs facebook ads, ppc advertising, facebook advertising, google advertising, paid ads comparison, sydney advertising, digital advertising",
-  canonicalUrl: "https://sydneywebdesigner.com.au/blog/google-ads-vs-facebook-ads",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/blog/google-ads-vs-facebook-ads",
   ogImage: "/images/og/blog.svg",
   type: "article",
   publishedTime: "2024-08-15",
@@ -18,9 +18,9 @@ export const metadata = generateMetadata({
 
 export default function GoogleAdsVsFacebookAdsPage() {
   const breadcrumbs = [
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Blog", url: "https://sydneywebdesigner.com.au/blog" },
-    { name: "Google Ads vs Facebook Ads", url: "https://sydneywebdesigner.com.au/blog/google-ads-vs-facebook-ads" }
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Blog", url: "https://www.sydneywebdesigner.com.au/blog" },
+    { name: "Google Ads vs Facebook Ads", url: "https://www.sydneywebdesigner.com.au/blog/google-ads-vs-facebook-ads" }
   ];
 
   return (
@@ -33,7 +33,7 @@ export default function GoogleAdsVsFacebookAdsPage() {
           "DSIGNS Team",
           "2024-08-15",
           "2024-11-12",
-          "https://sydneywebdesigner.com.au/images/og/blog.svg"
+          "https://www.sydneywebdesigner.com.au/images/og/blog.svg"
         )) }}
       />
       <script

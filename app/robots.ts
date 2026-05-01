@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: '/admin/',
       },
     ],
-    sitemap: 'https://sydneywebdesigner.com.au/sitemap.xml',
+    sitemap: 'https://www.sydneywebdesigner.com.au/sitemap.xml',
   }
 }

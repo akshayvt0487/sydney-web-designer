@@ -46,8 +46,8 @@ export default function ContactPage() {
   };
 
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Contact", url: "https://sydneywebdesigner.com.au/contact" },
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Contact", url: "https://www.sydneywebdesigner.com.au/contact" },
   ]);
 
   return (

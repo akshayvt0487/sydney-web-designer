@@ -8,7 +8,7 @@ export const metadata = generateMetadata({
   title: "Local SEO for Sydney: Complete Guide to Ranking in Your Area",
   description: "Comprehensive local SEO guide for Sydney businesses. Learn how to rank higher in local search, optimize for Google Maps, and attract more customers from your area.",
   keywords: "local seo sydney, sydney local search, local rankings, google maps seo, sydney business seo, local search optimization, near me searches sydney",
-  canonicalUrl: "https://sydneywebdesigner.com.au/blog/local-seo-sydney-complete-guide",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/blog/local-seo-sydney-complete-guide",
   ogImage: "/images/og/blog.svg",
   type: "article",
   publishedTime: "2024-06-18",
@@ -18,9 +18,9 @@ export const metadata = generateMetadata({
 
 export default function LocalSEOSydneyPage() {
   const breadcrumbs = [
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Blog", url: "https://sydneywebdesigner.com.au/blog" },
-    { name: "Local SEO Sydney Complete Guide", url: "https://sydneywebdesigner.com.au/blog/local-seo-sydney-complete-guide" }
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Blog", url: "https://www.sydneywebdesigner.com.au/blog" },
+    { name: "Local SEO Sydney Complete Guide", url: "https://www.sydneywebdesigner.com.au/blog/local-seo-sydney-complete-guide" }
   ];
 
   return (
@@ -33,7 +33,7 @@ export default function LocalSEOSydneyPage() {
           "DSIGNS Team",
           "2024-06-18",
           "2024-11-05",
-          "https://sydneywebdesigner.com.au/images/og/blog.svg"
+          "https://www.sydneywebdesigner.com.au/images/og/blog.svg"
         )) }}
       />
       <script

@@ -5,7 +5,7 @@ import { generateMetadata } from "@/lib/metadata";
 export const metadata = generateMetadata({
   title: "Thank You",
   description: "Thank you for contacting Sydney Web Designer. We've received your message and will respond within 24 hours.",
-  canonicalUrl: "https://sydneywebdesigner.com.au/thank-you",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/thank-you",
   noIndex: true,
 });
 

@@ -11,7 +11,7 @@ export const metadata = generateMetadata({
   title: "Content Marketing Sydney | Strategic Content Creation Services",
   description: "Professional content marketing services in Sydney. Create valuable content that establishes authority and drives action. 1200+ content pieces, average 320% traffic increase, 92% client retention.",
   keywords: "content marketing sydney, content creation sydney, blog writing sydney, content strategy, video content sydney, seo content writing, content marketing agency",
-  canonicalUrl: "https://sydneywebdesigner.com.au/services/content-marketing",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/services/content-marketing",
   ogImage: "/images/og/services.svg",
 });
 
@@ -19,9 +19,9 @@ export default function ContentMarketingPage() {
   const service = services.find((s) => s.slug === "content-marketing")!;
 
   const breadcrumbs = [
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Services", url: "https://sydneywebdesigner.com.au/services" },
-    { name: "Content Marketing", url: "https://sydneywebdesigner.com.au/services/content-marketing" }
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Services", url: "https://www.sydneywebdesigner.com.au/services" },
+    { name: "Content Marketing", url: "https://www.sydneywebdesigner.com.au/services/content-marketing" }
   ];
   const projects = portfolioProjects.slice(0, 6);
   const reviews = googleReviews.slice(3, 6);

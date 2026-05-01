@@ -6,7 +6,7 @@ export function generateLocalBusinessSchema() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": contactInfo.companyName,
-    "image": "https://sydneywebdesigner.com.au/logo.png",
+    "image": "https://www.sydneywebdesigner.com.au/logo.png",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": `${contactInfo.address.suite}, ${contactInfo.address.street}`,
@@ -22,7 +22,7 @@ export function generateLocalBusinessSchema() {
     },
     "telephone": contactInfo.phoneLink,
     "email": contactInfo.email,
-    "url": "https://sydneywebdesigner.com.au",
+    "url": "https://www.sydneywebdesigner.com.au",
     "openingHours": "Mo-Fr 09:00-17:00",
     "priceRange": "$$",
     "aggregateRating": {
@@ -124,7 +124,7 @@ export function generateArticleSchema(
       "name": contactInfo.companyName,
       "logo": {
         "@type": "ImageObject",
-        "url": "https://sydneywebdesigner.com.au/logo.png"
+        "url": "https://www.sydneywebdesigner.com.au/logo.png"
       }
     },
     "datePublished": datePublished,
@@ -140,8 +140,8 @@ export function generateOrganizationSchema() {
     "@type": "Organization",
     "name": contactInfo.companyName,
     "alternateName": contactInfo.tradingAs,
-    "url": "https://sydneywebdesigner.com.au",
-    "logo": "https://sydneywebdesigner.com.au/logo.png",
+    "url": "https://www.sydneywebdesigner.com.au",
+    "logo": "https://www.sydneywebdesigner.com.au/logo.png",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": contactInfo.phoneLink,

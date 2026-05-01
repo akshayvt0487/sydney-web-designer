@@ -8,7 +8,7 @@ export const metadata = generateMetadata({
   title: "10 Branding Mistakes Small Businesses Make (And How to Avoid Them)",
   description: "Discover the most common branding mistakes that hurt small businesses and learn proven strategies to build a strong, memorable brand identity that drives growth.",
   keywords: "branding mistakes, small business branding, brand identity, sydney branding, business branding tips, brand strategy, brand consistency",
-  canonicalUrl: "https://sydneywebdesigner.com.au/blog/branding-mistakes-small-businesses",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/blog/branding-mistakes-small-businesses",
   ogImage: "/images/og/blog.svg",
   type: "article",
   publishedTime: "2024-10-20",
@@ -18,9 +18,9 @@ export const metadata = generateMetadata({
 
 export default function BrandingMistakesPage() {
   const breadcrumbs = [
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Blog", url: "https://sydneywebdesigner.com.au/blog" },
-    { name: "Branding Mistakes Small Businesses Make", url: "https://sydneywebdesigner.com.au/blog/branding-mistakes-small-businesses" }
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Blog", url: "https://www.sydneywebdesigner.com.au/blog" },
+    { name: "Branding Mistakes Small Businesses Make", url: "https://www.sydneywebdesigner.com.au/blog/branding-mistakes-small-businesses" }
   ];
 
   return (
@@ -33,7 +33,7 @@ export default function BrandingMistakesPage() {
           "DSIGNS Team",
           "2024-10-20",
           "2024-11-28",
-          "https://sydneywebdesigner.com.au/images/og/blog.svg"
+          "https://www.sydneywebdesigner.com.au/images/og/blog.svg"
         )) }}
       />
       <script

@@ -5,14 +5,14 @@ import { generateBreadcrumbSchema } from "@/lib/schemas";
 export const metadata = generateMetadata({
   title: "Privacy Policy",
   description: "Read our privacy policy to understand how we collect, use, and protect your personal information at Sydney Web Designer.",
-  canonicalUrl: "https://sydneywebdesigner.com.au/privacy-policy",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/privacy-policy",
   ogImage: "/images/og/homepage.svg",
 });
 
 export default function PrivacyPolicyPage() {
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Privacy Policy", url: "https://sydneywebdesigner.com.au/privacy-policy" },
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Privacy Policy", url: "https://www.sydneywebdesigner.com.au/privacy-policy" },
   ]);
 
   return (

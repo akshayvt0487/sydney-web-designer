@@ -8,7 +8,7 @@ export const metadata = generateMetadata({
   title: "Website Hosting Guide for Australian Businesses",
   description: "Choose the right website hosting for your business. Compare shared, VPS, cloud, and dedicated hosting with expert recommendations for Australian businesses.",
   keywords: "website hosting australia, web hosting sydney, shared hosting, vps hosting, dedicated hosting, cloud hosting, australian web hosting, hosting comparison",
-  canonicalUrl: "https://sydneywebdesigner.com.au/blog/website-hosting-guide-australia",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/blog/website-hosting-guide-australia",
   ogImage: "/images/og/blog.svg",
   type: "article",
   publishedTime: "2024-01-20",
@@ -18,9 +18,9 @@ export const metadata = generateMetadata({
 
 export default function WebsiteHostingPage() {
   const breadcrumbs = [
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Blog", url: "https://sydneywebdesigner.com.au/blog" },
-    { name: "Website Hosting Guide for Australia", url: "https://sydneywebdesigner.com.au/blog/website-hosting-guide-australia" }
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Blog", url: "https://www.sydneywebdesigner.com.au/blog" },
+    { name: "Website Hosting Guide for Australia", url: "https://www.sydneywebdesigner.com.au/blog/website-hosting-guide-australia" }
   ];
 
   return (
@@ -33,7 +33,7 @@ export default function WebsiteHostingPage() {
           "DSIGNS Team",
           "2024-01-20",
           "2024-10-05",
-          "https://sydneywebdesigner.com.au/images/og/blog.svg"
+          "https://www.sydneywebdesigner.com.au/images/og/blog.svg"
         )) }}
       />
       <script

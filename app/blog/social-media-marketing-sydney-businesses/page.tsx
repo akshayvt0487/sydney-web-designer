@@ -8,7 +8,7 @@ export const metadata = generateMetadata({
   title: "Social Media Marketing for Sydney Businesses: Platform Comparison Guide",
   description: "Compare Facebook, Instagram, LinkedIn, and TikTok for your business. Which platforms drive results? Expert guide to choosing and optimizing social media channels.",
   keywords: "social media marketing sydney, facebook marketing, instagram marketing, linkedin marketing, tiktok marketing, social media strategy, sydney social media",
-  canonicalUrl: "https://sydneywebdesigner.com.au/blog/social-media-marketing-sydney-businesses",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/blog/social-media-marketing-sydney-businesses",
   ogImage: "/images/og/blog.svg",
   type: "article",
   publishedTime: "2024-04-08",
@@ -18,9 +18,9 @@ export const metadata = generateMetadata({
 
 export default function SocialMediaMarketingPage() {
   const breadcrumbs = [
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Blog", url: "https://sydneywebdesigner.com.au/blog" },
-    { name: "Social Media Marketing for Sydney Businesses", url: "https://sydneywebdesigner.com.au/blog/social-media-marketing-sydney-businesses" }
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Blog", url: "https://www.sydneywebdesigner.com.au/blog" },
+    { name: "Social Media Marketing for Sydney Businesses", url: "https://www.sydneywebdesigner.com.au/blog/social-media-marketing-sydney-businesses" }
   ];
 
   return (
@@ -33,7 +33,7 @@ export default function SocialMediaMarketingPage() {
           "DSIGNS Team",
           "2024-04-08",
           "2024-10-22",
-          "https://sydneywebdesigner.com.au/images/og/blog.svg"
+          "https://www.sydneywebdesigner.com.au/images/og/blog.svg"
         )) }}
       />
       <script

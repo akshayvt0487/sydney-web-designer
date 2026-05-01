@@ -8,7 +8,7 @@ export const metadata = generateMetadata({
   title: "Website Analytics Guide for Beginners: Track What Matters",
   description: "Learn how to use Google Analytics and other tools to track website performance and make data-driven decisions. Complete beginner's guide to website analytics.",
   keywords: "website analytics, google analytics guide, web analytics, track website performance, analytics for beginners, website metrics, data-driven decisions",
-  canonicalUrl: "https://sydneywebdesigner.com.au/blog/website-analytics-guide-beginners",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/blog/website-analytics-guide-beginners",
   ogImage: "/images/og/blog.svg",
   type: "article",
   publishedTime: "2024-02-10",
@@ -18,9 +18,9 @@ export const metadata = generateMetadata({
 
 export default function WebsiteAnalyticsPage() {
   const breadcrumbs = [
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Blog", url: "https://sydneywebdesigner.com.au/blog" },
-    { name: "Website Analytics Guide for Beginners", url: "https://sydneywebdesigner.com.au/blog/website-analytics-guide-beginners" }
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Blog", url: "https://www.sydneywebdesigner.com.au/blog" },
+    { name: "Website Analytics Guide for Beginners", url: "https://www.sydneywebdesigner.com.au/blog/website-analytics-guide-beginners" }
   ];
 
   return (
@@ -33,7 +33,7 @@ export default function WebsiteAnalyticsPage() {
           "DSIGNS Team",
           "2024-02-10",
           "2024-10-12",
-          "https://sydneywebdesigner.com.au/images/og/blog.svg"
+          "https://www.sydneywebdesigner.com.au/images/og/blog.svg"
         )) }}
       />
       <script

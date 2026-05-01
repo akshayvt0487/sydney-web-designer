@@ -8,14 +8,14 @@ export const metadata = generateMetadata({
   title: "Mobile SEO Sydney | Optimize for Mobile Search & Rankings",
   description: "Expert mobile SEO services in Sydney. Optimize your website for mobile-first indexing, improve mobile rankings, and capture the growing mobile search market.",
   keywords: "mobile seo sydney, mobile-first indexing, mobile optimization, responsive seo, mobile search optimization, mobile site speed",
-  canonicalUrl: "https://sydneywebdesigner.com.au/services/mobile-seo",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/services/mobile-seo",
 });
 
 export default function MobileSEOPage() {
   const breadcrumbs = [
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Services", url: "https://sydneywebdesigner.com.au/services" },
-    { name: "Mobile SEO", url: "https://sydneywebdesigner.com.au/services/mobile-seo" }
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Services", url: "https://www.sydneywebdesigner.com.au/services" },
+    { name: "Mobile SEO", url: "https://www.sydneywebdesigner.com.au/services/mobile-seo" }
   ];
 
   const serviceData = {

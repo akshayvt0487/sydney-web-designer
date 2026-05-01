@@ -8,7 +8,7 @@ export const metadata = generateMetadata({
   title: "Customer Reviews & Online Reputation Management: Complete Guide",
   description: "Learn how to manage customer reviews and build a strong online reputation. Expert tips for handling reviews, responding to feedback, and building trust online.",
   keywords: "customer reviews, online reputation management, review management, google reviews, business reputation, sydney online reputation, customer feedback",
-  canonicalUrl: "https://sydneywebdesigner.com.au/blog/customer-reviews-online-reputation",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/blog/customer-reviews-online-reputation",
   ogImage: "/images/og/blog.svg",
   type: "article",
   publishedTime: "2024-09-25",
@@ -18,9 +18,9 @@ export const metadata = generateMetadata({
 
 export default function CustomerReviewsPage() {
   const breadcrumbs = [
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Blog", url: "https://sydneywebdesigner.com.au/blog" },
-    { name: "Customer Reviews & Online Reputation", url: "https://sydneywebdesigner.com.au/blog/customer-reviews-online-reputation" }
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Blog", url: "https://www.sydneywebdesigner.com.au/blog" },
+    { name: "Customer Reviews & Online Reputation", url: "https://www.sydneywebdesigner.com.au/blog/customer-reviews-online-reputation" }
   ];
 
   return (
@@ -33,7 +33,7 @@ export default function CustomerReviewsPage() {
           "DSIGNS Team",
           "2024-09-25",
           "2024-11-20",
-          "https://sydneywebdesigner.com.au/images/og/blog.svg"
+          "https://www.sydneywebdesigner.com.au/images/og/blog.svg"
         )) }}
       />
       <script

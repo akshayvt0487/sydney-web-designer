@@ -8,14 +8,14 @@ export const metadata = generateMetadata({
   title: "Pay on Performance SEO Sydney | Results-Based SEO Services",
   description: "Pay for SEO results, not promises. Performance-based SEO services in Sydney where you only pay when we deliver rankings, traffic, and measurable outcomes.",
   keywords: "pay on performance seo, performance based seo sydney, results based seo, seo on commission, pay per result seo",
-  canonicalUrl: "https://sydneywebdesigner.com.au/services/pay-on-performance-seo",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/services/pay-on-performance-seo",
 });
 
 export default function PayOnPerformanceSEOPage() {
   const breadcrumbs = [
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Services", url: "https://sydneywebdesigner.com.au/services" },
-    { name: "Pay on Performance SEO", url: "https://sydneywebdesigner.com.au/services/pay-on-performance-seo" }
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Services", url: "https://www.sydneywebdesigner.com.au/services" },
+    { name: "Pay on Performance SEO", url: "https://www.sydneywebdesigner.com.au/services/pay-on-performance-seo" }
   ];
 
   const serviceData = {

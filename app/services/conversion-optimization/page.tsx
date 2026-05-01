@@ -11,7 +11,7 @@ export const metadata = generateMetadata({
   title: "Conversion Optimization Sydney | CRO Services That Increase Sales",
   description: "Professional conversion rate optimization in Sydney. Maximize marketing ROI with data-driven CRO. 60+ websites optimized, 400+ tests conducted, average 127% conversion lift, $5M+ revenue.",
   keywords: "conversion optimization sydney, cro services, conversion rate optimization, ab testing sydney, landing page optimization, funnel optimization, cro agency sydney",
-  canonicalUrl: "https://sydneywebdesigner.com.au/services/conversion-optimization",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/services/conversion-optimization",
   ogImage: "/images/og/services.svg",
 });
 
@@ -19,9 +19,9 @@ export default function ConversionOptimizationPage() {
   const service = services.find((s) => s.slug === "conversion-optimization")!;
 
   const breadcrumbs = [
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Services", url: "https://sydneywebdesigner.com.au/services" },
-    { name: "Conversion Optimization", url: "https://sydneywebdesigner.com.au/services/conversion-optimization" }
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Services", url: "https://www.sydneywebdesigner.com.au/services" },
+    { name: "Conversion Optimization", url: "https://www.sydneywebdesigner.com.au/services/conversion-optimization" }
   ];
   const projects = portfolioProjects.slice(0, 6);
   const reviews = googleReviews.slice(3, 6);

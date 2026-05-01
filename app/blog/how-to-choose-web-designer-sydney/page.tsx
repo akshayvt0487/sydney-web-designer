@@ -7,7 +7,7 @@ export const metadata = generateMetadata({
   title: "How to Choose the Right Web Designer in Sydney: Complete Guide 2026",
   description: "Expert guide to choosing the perfect web designer in Sydney. Learn what to look for, questions to ask, and red flags to avoid when hiring a web design agency.",
   keywords: "choose web designer sydney, hire web designer, web design agency sydney, sydney web designer, web design questions, web designer selection guide",
-  canonicalUrl: "https://sydneywebdesigner.com.au/blog/how-to-choose-web-designer-sydney",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/blog/how-to-choose-web-designer-sydney",
   ogImage: "/images/og/blog.svg",
   type: "article",
   publishedTime: "2024-11-08",
@@ -17,9 +17,9 @@ export const metadata = generateMetadata({
 
 export default function HowToChooseWebDesigner() {
   const breadcrumbs = [
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Blog", url: "https://sydneywebdesigner.com.au/blog" },
-    { name: "How to Choose a Web Designer", url: "https://sydneywebdesigner.com.au/blog/how-to-choose-web-designer-sydney" }
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Blog", url: "https://www.sydneywebdesigner.com.au/blog" },
+    { name: "How to Choose a Web Designer", url: "https://www.sydneywebdesigner.com.au/blog/how-to-choose-web-designer-sydney" }
   ];
 
   return (
@@ -32,7 +32,7 @@ export default function HowToChooseWebDesigner() {
           "DSIGNS Team",
           "2024-11-08",
           "2024-12-03",
-          "https://sydneywebdesigner.com.au/images/blog/choose-web-designer.jpg"
+          "https://www.sydneywebdesigner.com.au/images/blog/choose-web-designer.jpg"
         )) }}
       />
       <script

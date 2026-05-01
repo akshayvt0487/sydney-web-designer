@@ -7,13 +7,13 @@ export const metadata: Metadata = generateMetadata({
   title: "Client Testimonials | DSIGNS Australia Web Design Reviews",
   description: "Read what our clients say about DSIGNS Australia's web design and digital marketing services. 5-star reviews from satisfied Sydney businesses.",
   keywords: "web designer reviews sydney, testimonials, client feedback, dsigns reviews",
-  canonicalUrl: "https://sydneywebdesigner.com.au/testimonials",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/testimonials",
 });
 
 export default function TestimonialsPage() {
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Testimonials", url: "https://sydneywebdesigner.com.au/testimonials" },
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Testimonials", url: "https://www.sydneywebdesigner.com.au/testimonials" },
   ]);
 
   // AggregateRating schema for testimonials page

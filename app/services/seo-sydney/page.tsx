@@ -12,7 +12,7 @@ export const metadata = generateMetadata({
   title: "SEO Services Sydney | Professional Search Engine Optimization",
   description: "Expert SEO services in Sydney. Dominate search results with comprehensive strategies. Average 215% traffic increase, 1,500+ keywords ranked, 94% client retention. Free SEO audit!",
   keywords: "seo services sydney, search engine optimization sydney, seo company sydney, seo expert sydney, local seo sydney, seo consultant, organic seo sydney",
-  canonicalUrl: "https://sydneywebdesigner.com.au/services/seo-sydney",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/services/seo-sydney",
   ogImage: "/images/og/services.svg",
 });
 
@@ -20,9 +20,9 @@ export default function SEOServicesPage() {
   const service = services.find((s) => s.slug === "seo-sydney")!;
 
   const breadcrumbs = [
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Services", url: "https://sydneywebdesigner.com.au/services" },
-    { name: "SEO Services", url: "https://sydneywebdesigner.com.au/services/seo-sydney" }
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Services", url: "https://www.sydneywebdesigner.com.au/services" },
+    { name: "SEO Services", url: "https://www.sydneywebdesigner.com.au/services/seo-sydney" }
   ];
   const seoProjects = portfolioProjects.filter((p) => p.services.includes("SEO"));
   const seoReviews = googleReviews.slice(0, 3);

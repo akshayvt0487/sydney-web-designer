@@ -8,14 +8,14 @@ export const metadata = generateMetadata({
   title: "Link Building Sydney | White-Hat SEO Backlink Services",
   description: "Professional link building services in Sydney. Earn high-quality, authoritative backlinks that improve rankings and drive referral traffic through white-hat strategies.",
   keywords: "link building sydney, backlink services, white hat link building, seo backlinks, authority link building, guest posting",
-  canonicalUrl: "https://sydneywebdesigner.com.au/services/link-building",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/services/link-building",
 });
 
 export default function LinkBuildingPage() {
   const breadcrumbs = [
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Services", url: "https://sydneywebdesigner.com.au/services" },
-    { name: "Link Building", url: "https://sydneywebdesigner.com.au/services/link-building" }
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Services", url: "https://www.sydneywebdesigner.com.au/services" },
+    { name: "Link Building", url: "https://www.sydneywebdesigner.com.au/services/link-building" }
   ];
 
   const serviceData = {

@@ -6,15 +6,15 @@ export const metadata = generateMetadata({
   title: "Custom Web Design Sydney | Professional Website Design Services",
   description: "Expert custom web design services in Sydney. 13+ years experience creating stunning, conversion-focused websites tailored to your brand. Get a free quote today!",
   keywords: "custom web design sydney, website design sydney, professional web design, bespoke websites sydney, custom website development, web designer sydney",
-  canonicalUrl: "https://sydneywebdesigner.com.au/services/custom-web-design",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/services/custom-web-design",
   ogImage: "/images/og/services.svg",
 });
 
 export default function CustomWebDesignPage() {
   const breadcrumbs = [
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Services", url: "https://sydneywebdesigner.com.au/services" },
-    { name: "Custom Web Design", url: "https://sydneywebdesigner.com.au/services/custom-web-design" }
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Services", url: "https://www.sydneywebdesigner.com.au/services" },
+    { name: "Custom Web Design", url: "https://www.sydneywebdesigner.com.au/services/custom-web-design" }
   ];
 
   const serviceData = {

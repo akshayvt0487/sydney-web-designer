@@ -12,7 +12,7 @@ export const metadata = generateMetadata({
   title: "Responsive Web Design Sydney | Mobile-Friendly Websites",
   description: "Professional responsive web design services in Sydney. Mobile-first designs that work flawlessly on smartphones, tablets, and desktops. 65% of traffic is mobile - get optimized today!",
   keywords: "responsive web design sydney, mobile friendly website, mobile-first design sydney, responsive website developer, mobile web design sydney",
-  canonicalUrl: "https://sydneywebdesigner.com.au/services/responsive-design",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/services/responsive-design",
   ogImage: "/images/og/services.svg",
 });
 
@@ -20,9 +20,9 @@ export default function ResponsiveDesignPage() {
   const service = services.find((s) => s.slug === "responsive-design")!;
 
   const breadcrumbs = [
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Services", url: "https://sydneywebdesigner.com.au/services" },
-    { name: "Responsive Design", url: "https://sydneywebdesigner.com.au/services/responsive-design" }
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Services", url: "https://www.sydneywebdesigner.com.au/services" },
+    { name: "Responsive Design", url: "https://www.sydneywebdesigner.com.au/services/responsive-design" }
   ];
   const webProjects = portfolioProjects.filter((p) => p.services.includes("Web Design"));
   const webReviews = googleReviews.slice(0, 3);

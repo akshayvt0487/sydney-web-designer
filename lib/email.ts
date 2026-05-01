@@ -298,7 +298,7 @@ export async function sendFormSubmissionEmail(data: FormSubmissionEmailData) {
           <!-- Header -->
           <div class="email-header">
             <div class="email-logo">
-              <img src="https://sydneywebdesigner.com.au/Sydney%20Web%20Designer%20logo.webp" alt="Sydney Web Designer" />
+              <img src="https://www.sydneywebdesigner.com.au/Sydney%20Web%20Designer%20logo.webp" alt="Sydney Web Designer" />
             </div>
             <h1 class="email-title">New Form Submission</h1>
           </div>
@@ -388,7 +388,7 @@ export async function sendFormSubmissionEmail(data: FormSubmissionEmailData) {
             <p class="footer-brand">Sydney Web Designer</p>
             <p class="footer-text">Premium Web Design & Digital Marketing Agency</p>
             <p class="footer-text">
-              <a href="https://sydneywebdesigner.com.au" class="footer-link">sydneywebdesigner.com.au</a>
+              <a href="https://www.sydneywebdesigner.com.au" class="footer-link">sydneywebdesigner.com.au</a>
             </p>
           </div>
         </div>
@@ -455,7 +455,7 @@ export async function sendContactSubmissionEmail(data: ContactSubmissionEmailDat
           <!-- Header -->
           <div class="email-header">
             <div class="email-logo">
-              <img src="https://sydneywebdesigner.com.au/Sydney%20Web%20Designer%20logo.webp" alt="Sydney Web Designer" />
+              <img src="https://www.sydneywebdesigner.com.au/Sydney%20Web%20Designer%20logo.webp" alt="Sydney Web Designer" />
             </div>
             <h1 class="email-title">Contact Form Submission</h1>
           </div>
@@ -518,7 +518,7 @@ export async function sendContactSubmissionEmail(data: ContactSubmissionEmailDat
             <p class="footer-brand">Sydney Web Designer</p>
             <p class="footer-text">Premium Web Design & Digital Marketing Agency</p>
             <p class="footer-text">
-              <a href="https://sydneywebdesigner.com.au" class="footer-link">sydneywebdesigner.com.au</a>
+              <a href="https://www.sydneywebdesigner.com.au" class="footer-link">sydneywebdesigner.com.au</a>
             </p>
           </div>
         </div>
@@ -585,7 +585,7 @@ export async function sendNewsletterSubscriptionEmail(data: NewsletterSubscripti
           <!-- Header -->
           <div class="email-header">
             <div class="email-logo">
-              <img src="https://sydneywebdesigner.com.au/Sydney%20Web%20Designer%20logo.webp" alt="Sydney Web Designer" />
+              <img src="https://www.sydneywebdesigner.com.au/Sydney%20Web%20Designer%20logo.webp" alt="Sydney Web Designer" />
             </div>
             <h1 class="email-title">Newsletter Subscription</h1>
           </div>
@@ -631,7 +631,7 @@ export async function sendNewsletterSubscriptionEmail(data: NewsletterSubscripti
             <p class="footer-brand">Sydney Web Designer</p>
             <p class="footer-text">Premium Web Design & Digital Marketing Agency</p>
             <p class="footer-text">
-              <a href="https://sydneywebdesigner.com.au" class="footer-link">sydneywebdesigner.com.au</a>
+              <a href="https://www.sydneywebdesigner.com.au" class="footer-link">sydneywebdesigner.com.au</a>
             </p>
           </div>
         </div>

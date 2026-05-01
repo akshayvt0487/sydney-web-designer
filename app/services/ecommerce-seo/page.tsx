@@ -8,14 +8,14 @@ export const metadata = generateMetadata({
   title: "Ecommerce SEO Sydney | Rank Products & Drive Online Sales",
   description: "Expert ecommerce SEO services in Sydney. Optimize product pages, category pages, and boost online sales with proven strategies. Increase product visibility and organic traffic.",
   keywords: "ecommerce seo sydney, online store seo, product seo, shopify seo sydney, woocommerce seo, ecommerce optimization",
-  canonicalUrl: "https://sydneywebdesigner.com.au/services/ecommerce-seo",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/services/ecommerce-seo",
 });
 
 export default function EcommerceSEOPage() {
   const breadcrumbs = [
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Services", url: "https://sydneywebdesigner.com.au/services" },
-    { name: "Ecommerce SEO", url: "https://sydneywebdesigner.com.au/services/ecommerce-seo" }
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Services", url: "https://www.sydneywebdesigner.com.au/services" },
+    { name: "Ecommerce SEO", url: "https://www.sydneywebdesigner.com.au/services/ecommerce-seo" }
   ];
 
   const serviceData = {

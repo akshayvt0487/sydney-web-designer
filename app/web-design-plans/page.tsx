@@ -8,13 +8,13 @@ export const metadata: Metadata = generateMetadata({
   title: "Web Design Plans & Pricing",
   description: "Transparent web design pricing for Sydney businesses. Custom packages for every budget. From startups to enterprise. Get a free quote today!",
   keywords: "web design pricing sydney, website cost, web design packages",
-  canonicalUrl: "https://sydneywebdesigner.com.au/web-design-plans",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/web-design-plans",
 });
 
 export default function WebDesignPlansPage() {
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Web Design Plans", url: "https://sydneywebdesigner.com.au/web-design-plans" },
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Web Design Plans", url: "https://www.sydneywebdesigner.com.au/web-design-plans" },
   ]);
 
   return (

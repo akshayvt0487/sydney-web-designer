@@ -9,13 +9,13 @@ export const metadata: Metadata = generateMetadata({
   title: "Professional Web Design Sydney | Custom Website Design Services",
   description: "Award-winning web design services in Sydney. We create stunning, mobile-responsive websites that convert visitors into customers. 13+ years experience, 500+ websites delivered.",
   keywords: "web design sydney, website design, custom web design, responsive web design, professional website design",
-  canonicalUrl: "https://sydneywebdesigner.com.au/web-design",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/web-design",
 });
 
 export default function WebDesignPage() {
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Web Design", url: "https://sydneywebdesigner.com.au/web-design" },
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Web Design", url: "https://www.sydneywebdesigner.com.au/web-design" },
   ]);
 
   return (

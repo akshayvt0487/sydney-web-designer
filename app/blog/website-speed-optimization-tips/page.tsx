@@ -8,7 +8,7 @@ export const metadata = generateMetadata({
   title: "Website Speed Optimization: Make Your Sydney Site Lightning Fast",
   description: "Learn how to optimize your website speed for better user experience and SEO. Practical tips to improve page load times, Core Web Vitals, and boost conversions.",
   keywords: "website speed optimization, page speed, site performance, core web vitals, website loading time, improve website speed, page load optimization",
-  canonicalUrl: "https://sydneywebdesigner.com.au/blog/website-speed-optimization-tips",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/blog/website-speed-optimization-tips",
   ogImage: "/images/og/blog.svg",
   type: "article",
   publishedTime: "2024-03-22",
@@ -18,9 +18,9 @@ export const metadata = generateMetadata({
 
 export default function WebsiteSpeedOptimizationPage() {
   const breadcrumbs = [
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Blog", url: "https://sydneywebdesigner.com.au/blog" },
-    { name: "Website Speed Optimization Tips", url: "https://sydneywebdesigner.com.au/blog/website-speed-optimization-tips" }
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Blog", url: "https://www.sydneywebdesigner.com.au/blog" },
+    { name: "Website Speed Optimization Tips", url: "https://www.sydneywebdesigner.com.au/blog/website-speed-optimization-tips" }
   ];
 
   return (
@@ -33,7 +33,7 @@ export default function WebsiteSpeedOptimizationPage() {
           "DSIGNS Team",
           "2024-03-22",
           "2024-09-15",
-          "https://sydneywebdesigner.com.au/images/og/blog.svg"
+          "https://www.sydneywebdesigner.com.au/images/og/blog.svg"
         )) }}
       />
       <script

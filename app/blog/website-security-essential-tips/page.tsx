@@ -8,7 +8,7 @@ export const metadata = generateMetadata({
   title: "Website Security: Essential Tips to Protect Your Business",
   description: "Learn essential website security tips to protect your business from hackers, malware, and data breaches. Complete security guide including SSL, backups, and monitoring.",
   keywords: "website security, website protection, ssl certificate, website backup, malware protection, cyber security, secure website, wordpress security",
-  canonicalUrl: "https://sydneywebdesigner.com.au/blog/website-security-essential-tips",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/blog/website-security-essential-tips",
   ogImage: "/images/og/blog.svg",
   type: "article",
   publishedTime: "2024-02-28",
@@ -18,9 +18,9 @@ export const metadata = generateMetadata({
 
 export default function WebsiteSecurityPage() {
   const breadcrumbs = [
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Blog", url: "https://sydneywebdesigner.com.au/blog" },
-    { name: "Website Security Essential Tips", url: "https://sydneywebdesigner.com.au/blog/website-security-essential-tips" }
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Blog", url: "https://www.sydneywebdesigner.com.au/blog" },
+    { name: "Website Security Essential Tips", url: "https://www.sydneywebdesigner.com.au/blog/website-security-essential-tips" }
   ];
 
   return (
@@ -33,7 +33,7 @@ export default function WebsiteSecurityPage() {
           "DSIGNS Team",
           "2024-02-28",
           "2024-09-20",
-          "https://sydneywebdesigner.com.au/images/og/blog.svg"
+          "https://www.sydneywebdesigner.com.au/images/og/blog.svg"
         )) }}
       />
       <script

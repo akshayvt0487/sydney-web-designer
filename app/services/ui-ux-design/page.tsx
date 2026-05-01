@@ -12,7 +12,7 @@ export const metadata = generateMetadata({
   title: "UI/UX Design Sydney | User Experience Design Services",
   description: "Professional UI/UX design services in Sydney. Create beautiful, user-friendly interfaces backed by research. Average 175% usability improvement with user-centered design.",
   keywords: "ui ux design sydney, user experience design, interface design sydney, ux designer sydney, user interface design, ux research sydney, usability testing sydney",
-  canonicalUrl: "https://sydneywebdesigner.com.au/services/ui-ux-design",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/services/ui-ux-design",
   ogImage: "/images/og/services.svg",
 });
 
@@ -20,9 +20,9 @@ export default function UIUXDesignPage() {
   const service = services.find((s) => s.slug === "ui-ux-design")!;
 
   const breadcrumbs = [
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Services", url: "https://sydneywebdesigner.com.au/services" },
-    { name: "UI/UX Design", url: "https://sydneywebdesigner.com.au/services/ui-ux-design" }
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Services", url: "https://www.sydneywebdesigner.com.au/services" },
+    { name: "UI/UX Design", url: "https://www.sydneywebdesigner.com.au/services/ui-ux-design" }
   ];
   const webProjects = portfolioProjects.filter((p) => p.services.includes("Web Design"));
   const webReviews = googleReviews.slice(0, 3);

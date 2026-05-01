@@ -8,7 +8,7 @@ export const metadata = generateMetadata({
   title: "Content Marketing Strategy: Build Authority and Drive Organic Traffic",
   description: "Learn how to create a powerful content marketing strategy that builds authority, drives organic traffic, and generates qualified leads for your business.",
   keywords: "content marketing strategy, content marketing guide, build authority, organic traffic, content creation, sydney content marketing, inbound marketing",
-  canonicalUrl: "https://sydneywebdesigner.com.au/blog/content-marketing-strategy-guide",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/blog/content-marketing-strategy-guide",
   ogImage: "/images/og/blog.svg",
   type: "article",
   publishedTime: "2024-09-18",
@@ -18,9 +18,9 @@ export const metadata = generateMetadata({
 
 export default function ContentMarketingStrategyPage() {
   const breadcrumbs = [
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Blog", url: "https://sydneywebdesigner.com.au/blog" },
-    { name: "Content Marketing Strategy Guide", url: "https://sydneywebdesigner.com.au/blog/content-marketing-strategy-guide" }
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Blog", url: "https://www.sydneywebdesigner.com.au/blog" },
+    { name: "Content Marketing Strategy Guide", url: "https://www.sydneywebdesigner.com.au/blog/content-marketing-strategy-guide" }
   ];
 
   return (
@@ -33,7 +33,7 @@ export default function ContentMarketingStrategyPage() {
           "DSIGNS Team",
           "2024-09-18",
           "2024-11-22",
-          "https://sydneywebdesigner.com.au/images/og/blog.svg"
+          "https://www.sydneywebdesigner.com.au/images/og/blog.svg"
         )) }}
       />
       <script

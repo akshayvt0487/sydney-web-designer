@@ -7,13 +7,13 @@ export const metadata: Metadata = generateMetadata({
   title: "Careers | Join Our Team",
   description: "Join Sydney's leading web design agency. Explore exciting career opportunities in web design, development, and digital marketing. View open positions.",
   keywords: "web design jobs sydney, careers, join our team, digital marketing jobs",
-  canonicalUrl: "https://sydneywebdesigner.com.au/careers",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/careers",
 });
 
 export default function CareersPage() {
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Careers", url: "https://sydneywebdesigner.com.au/careers" },
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Careers", url: "https://www.sydneywebdesigner.com.au/careers" },
   ]);
 
   const jobs = [

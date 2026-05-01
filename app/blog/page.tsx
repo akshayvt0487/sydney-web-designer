@@ -9,15 +9,15 @@ export const metadata = generateMetadata({
   title: "Blog",
   description: "Expert insights on web design, SEO, digital marketing, and business growth. Learn from Sydney's leading web design agency with 13+ years of experience.",
   keywords: "web design blog, digital marketing tips, seo advice, business growth, sydney web design, web design trends, seo tips sydney, digital marketing sydney",
-  canonicalUrl: "https://sydneywebdesigner.com.au/blog",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/blog",
   ogImage: "/images/og/blog.svg",
   type: "website",
 });
 
 export default function BlogPage() {
   const breadcrumbs = [
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Blog", url: "https://sydneywebdesigner.com.au/blog" }
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Blog", url: "https://www.sydneywebdesigner.com.au/blog" }
   ];
 
   const blogPosts = [

@@ -8,7 +8,7 @@ export const metadata = generateMetadata({
   title: "E-commerce Website Design Sydney | Online Store Development",
   description: "Professional e-commerce website design in Sydney. Build profitable online stores with WooCommerce and custom solutions. Secure payment gateways, inventory management, and more.",
   keywords: "ecommerce website sydney, online store design sydney, woocommerce sydney, ecommerce development, online shop design, shopping cart website sydney",
-  canonicalUrl: "https://sydneywebdesigner.com.au/services/ecommerce-websites",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/services/ecommerce-websites",
   ogImage: "/images/og/services.svg",
 });
 
@@ -16,9 +16,9 @@ export default function EcommerceWebsitesPage() {
   const service = services.find((s) => s.slug === "ecommerce-websites")!;
 
   const breadcrumbs = [
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Services", url: "https://sydneywebdesigner.com.au/services" },
-    { name: "E-commerce Websites", url: "https://sydneywebdesigner.com.au/services/ecommerce-websites" }
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Services", url: "https://www.sydneywebdesigner.com.au/services" },
+    { name: "E-commerce Websites", url: "https://www.sydneywebdesigner.com.au/services/ecommerce-websites" }
   ];
 
   return (

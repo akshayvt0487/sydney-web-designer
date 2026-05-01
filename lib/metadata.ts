@@ -16,7 +16,7 @@ interface PageMetadata {
 
 // Helper function to generate OG image URL
 function generateOGImageUrl(title: string, description: string, ogType: string = "service"): string {
-  const baseUrl = "https://sydneywebdesigner.com.au";
+  const baseUrl = "https://www.sydneywebdesigner.com.au";
   const params = new URLSearchParams({
     title,
     description: description.slice(0, 100),
@@ -40,7 +40,7 @@ export function generateMetadata({
 }: PageMetadata): Metadata {
   const siteName = "Sydney Web Designer";
   const fullTitle = `${title} | ${siteName}`;
-  const baseUrl = "https://sydneywebdesigner.com.au";
+  const baseUrl = "https://www.sydneywebdesigner.com.au";
 
   // Use dynamic OG image if no custom image provided
   const finalOgImage = ogImage || generateOGImageUrl(title, description, ogType);

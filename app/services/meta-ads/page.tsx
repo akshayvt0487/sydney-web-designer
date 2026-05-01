@@ -8,15 +8,15 @@ export const metadata = generateMetadata({
   title: "Meta Ads Management Sydney | Facebook & Instagram Advertising",
   description: "Expert Meta (Facebook & Instagram) advertising management in Sydney. Reach 2.8 billion users with precision-targeted campaigns. Drive sales, leads, and brand awareness with proven strategies.",
   keywords: "meta ads sydney, facebook ads sydney, instagram ads sydney, social media advertising sydney, facebook advertising agency, meta business partner sydney",
-  canonicalUrl: "https://sydneywebdesigner.com.au/services/meta-ads",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/services/meta-ads",
   ogImage: "/images/og/services.svg",
 });
 
 export default function MetaAdsPage() {
   const breadcrumbs = [
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Services", url: "https://sydneywebdesigner.com.au/services" },
-    { name: "Meta Ads", url: "https://sydneywebdesigner.com.au/services/meta-ads" }
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Services", url: "https://www.sydneywebdesigner.com.au/services" },
+    { name: "Meta Ads", url: "https://www.sydneywebdesigner.com.au/services/meta-ads" }
   ];
 
   const serviceData = {

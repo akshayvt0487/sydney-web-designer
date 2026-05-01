@@ -8,7 +8,7 @@ export const metadata = generateMetadata({
   title: "SEO Tips for Sydney Businesses: Rank Higher on Google in 2025",
   description: "Expert SEO tips for Sydney businesses. Learn proven strategies to improve Google rankings, drive organic traffic, and generate quality leads with local SEO tactics.",
   keywords: "seo tips sydney, local seo sydney, google rankings sydney, seo for sydney businesses, sydney seo strategies, organic traffic, google my business",
-  canonicalUrl: "https://sydneywebdesigner.com.au/blog/seo-tips-sydney-businesses",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/blog/seo-tips-sydney-businesses",
   ogImage: "/images/og/blog.svg",
   type: "article",
   publishedTime: "2024-11-12",
@@ -18,9 +18,9 @@ export const metadata = generateMetadata({
 
 export default function SEOTipsSydneyBusinesses() {
   const breadcrumbs = [
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Blog", url: "https://sydneywebdesigner.com.au/blog" },
-    { name: "SEO Tips for Sydney Businesses", url: "https://sydneywebdesigner.com.au/blog/seo-tips-sydney-businesses" }
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Blog", url: "https://www.sydneywebdesigner.com.au/blog" },
+    { name: "SEO Tips for Sydney Businesses", url: "https://www.sydneywebdesigner.com.au/blog/seo-tips-sydney-businesses" }
   ];
 
   return (
@@ -33,7 +33,7 @@ export default function SEOTipsSydneyBusinesses() {
           "DSIGNS Team",
           "2024-11-12",
           "2024-12-05",
-          "https://sydneywebdesigner.com.au/images/blog/seo-tips-sydney.jpg"
+          "https://www.sydneywebdesigner.com.au/images/blog/seo-tips-sydney.jpg"
         )) }}
       />
       <script

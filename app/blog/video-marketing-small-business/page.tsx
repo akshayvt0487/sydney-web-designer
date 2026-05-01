@@ -8,7 +8,7 @@ export const metadata = generateMetadata({
   title: "Video Marketing for Small Business: Drive Engagement and Sales",
   description: "Learn how to use video marketing to engage customers and grow your business. Practical tips for creating effective video content on YouTube, social media, and your website.",
   keywords: "video marketing, video content creation, youtube marketing, video advertising, business videos, video marketing strategy, sydney video marketing",
-  canonicalUrl: "https://sydneywebdesigner.com.au/blog/video-marketing-small-business",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/blog/video-marketing-small-business",
   ogImage: "/images/og/blog.svg",
   type: "article",
   publishedTime: "2024-03-15",
@@ -18,9 +18,9 @@ export const metadata = generateMetadata({
 
 export default function VideoMarketingPage() {
   const breadcrumbs = [
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Blog", url: "https://sydneywebdesigner.com.au/blog" },
-    { name: "Video Marketing for Small Business", url: "https://sydneywebdesigner.com.au/blog/video-marketing-small-business" }
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Blog", url: "https://www.sydneywebdesigner.com.au/blog" },
+    { name: "Video Marketing for Small Business", url: "https://www.sydneywebdesigner.com.au/blog/video-marketing-small-business" }
   ];
 
   return (
@@ -33,7 +33,7 @@ export default function VideoMarketingPage() {
           "DSIGNS Team",
           "2024-03-15",
           "2024-10-18",
-          "https://sydneywebdesigner.com.au/images/og/blog.svg"
+          "https://www.sydneywebdesigner.com.au/images/og/blog.svg"
         )) }}
       />
       <script

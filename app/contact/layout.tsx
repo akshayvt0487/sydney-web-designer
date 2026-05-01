@@ -5,7 +5,7 @@ export const metadata: Metadata = generateMetadata({
   title: "Contact Us",
   description: "Get in touch with Sydney's leading web design agency. Request a free quote or consultation. Call us or fill out our contact form. Fast response guaranteed!",
   keywords: "contact web designer sydney, web design quote, free consultation sydney",
-  canonicalUrl: "https://sydneywebdesigner.com.au/contact",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/contact",
   ogImage: "/images/og/contact.svg",
 });
 

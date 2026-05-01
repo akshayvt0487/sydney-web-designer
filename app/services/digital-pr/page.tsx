@@ -8,14 +8,14 @@ export const metadata = generateMetadata({
   title: "Digital PR Sydney | Media Coverage & Brand Authority",
   description: "Expert digital PR services in Sydney. Earn media coverage, authoritative backlinks, and build brand awareness through strategic PR campaigns that boost SEO.",
   keywords: "digital pr sydney, online pr services, media outreach, haro link building, brand awareness, pr seo, journalist outreach",
-  canonicalUrl: "https://sydneywebdesigner.com.au/services/digital-pr",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/services/digital-pr",
 });
 
 export default function DigitalPRPage() {
   const breadcrumbs = [
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Services", url: "https://sydneywebdesigner.com.au/services" },
-    { name: "Digital PR", url: "https://sydneywebdesigner.com.au/services/digital-pr" }
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Services", url: "https://www.sydneywebdesigner.com.au/services" },
+    { name: "Digital PR", url: "https://www.sydneywebdesigner.com.au/services/digital-pr" }
   ];
 
   const serviceData = {

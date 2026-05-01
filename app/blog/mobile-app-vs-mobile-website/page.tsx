@@ -8,7 +8,7 @@ export const metadata = generateMetadata({
   title: "Mobile App vs Mobile Website: What's Best for Your Business?",
   description: "Should you build a mobile app or mobile website? Expert comparison of costs, features, user experience, and benefits to help you make the right choice for your business.",
   keywords: "mobile app vs mobile website, mobile app development, mobile website, responsive website, native app, web app, mobile strategy, app vs website",
-  canonicalUrl: "https://sydneywebdesigner.com.au/blog/mobile-app-vs-mobile-website",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/blog/mobile-app-vs-mobile-website",
   ogImage: "/images/og/blog.svg",
   type: "article",
   publishedTime: "2024-05-12",
@@ -18,9 +18,9 @@ export const metadata = generateMetadata({
 
 export default function MobileAppVsMobileWebsitePage() {
   const breadcrumbs = [
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Blog", url: "https://sydneywebdesigner.com.au/blog" },
-    { name: "Mobile App vs Mobile Website", url: "https://sydneywebdesigner.com.au/blog/mobile-app-vs-mobile-website" }
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Blog", url: "https://www.sydneywebdesigner.com.au/blog" },
+    { name: "Mobile App vs Mobile Website", url: "https://www.sydneywebdesigner.com.au/blog/mobile-app-vs-mobile-website" }
   ];
 
   return (
@@ -33,7 +33,7 @@ export default function MobileAppVsMobileWebsitePage() {
           "DSIGNS Team",
           "2024-05-12",
           "2024-10-28",
-          "https://sydneywebdesigner.com.au/images/og/blog.svg"
+          "https://www.sydneywebdesigner.com.au/images/og/blog.svg"
         )) }}
       />
       <script

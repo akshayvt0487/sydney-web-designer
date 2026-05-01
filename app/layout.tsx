@@ -6,7 +6,7 @@ import PopupFormProvider from "@/components/PopupFormProvider";
 import { generateOrganizationSchema } from "@/lib/schemas";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sydneywebdesigner.com.au"),
+  metadataBase: new URL("https://www.sydneywebdesigner.com.au"),
   title: "Sydney Web Designer | Professional Web Design & Digital Marketing Services",
   description: "Sydney's premier web design and digital marketing agency. 13+ years experience, 500+ websites delivered. Custom web design, SEO, branding & more. Get a free quote today!",
   keywords: "web design sydney, digital marketing sydney, seo services sydney, web development sydney, sydney web designer",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Sydney Web Designer | Professional Web Design & Digital Marketing Services",
     description: "Sydney's premier web design and digital marketing agency. 13+ years experience, 500+ websites delivered. Custom web design, SEO, branding & more.",
-    url: "https://sydneywebdesigner.com.au",
+    url: "https://www.sydneywebdesigner.com.au",
     siteName: "Sydney Web Designer",
     locale: "en_AU",
     type: "website",

@@ -7,15 +7,15 @@ export const metadata = generateMetadata({
   title: "Google Ads Management Sydney | PPC Advertising Services",
   description: "Expert Google Ads management in Sydney. Deliver qualified leads and maximum ROI with professional PPC campaigns. $2M+ ad spend managed, average 300% ROI, 100+ successful campaigns.",
   keywords: "google ads management sydney, ppc advertising sydney, google adwords sydney, paid search sydney, google ads expert, ppc management sydney, sem services",
-  canonicalUrl: "https://sydneywebdesigner.com.au/services/google-ads",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/services/google-ads",
   ogImage: "/images/og/services.svg",
 });
 
 export default function GoogleAdsPage() {
   const breadcrumbs = [
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Services", url: "https://sydneywebdesigner.com.au/services" },
-    { name: "Google Ads", url: "https://sydneywebdesigner.com.au/services/google-ads" }
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Services", url: "https://www.sydneywebdesigner.com.au/services" },
+    { name: "Google Ads", url: "https://www.sydneywebdesigner.com.au/services/google-ads" }
   ];
 
   const serviceData = {

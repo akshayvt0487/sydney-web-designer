@@ -7,7 +7,7 @@ export const metadata = generateMetadata({
   title: "Web Design Trends 2026: What Sydney Businesses Need to Know",
   description: "Discover the latest web design trends for 2026. From AI-powered personalization to minimalist design, stay ahead with insights from Sydney's top web designers.",
   keywords: "web design trends 2026, website design trends, modern web design, sydney web design, future of web design, ai web design, mobile-first design",
-  canonicalUrl: "https://sydneywebdesigner.com.au/blog/web-design-trends-2026",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/blog/web-design-trends-2026",
   ogImage: "/images/og/blog.svg",
   type: "article",
   publishedTime: "2024-11-15",
@@ -17,9 +17,9 @@ export const metadata = generateMetadata({
 
 export default function WebDesignTrends2026() {
   const breadcrumbs = [
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Blog", url: "https://sydneywebdesigner.com.au/blog" },
-    { name: "Web Design Trends 2026", url: "https://sydneywebdesigner.com.au/blog/web-design-trends-2026" }
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Blog", url: "https://www.sydneywebdesigner.com.au/blog" },
+    { name: "Web Design Trends 2026", url: "https://www.sydneywebdesigner.com.au/blog/web-design-trends-2026" }
   ];
 
   return (
@@ -32,7 +32,7 @@ export default function WebDesignTrends2026() {
           "DSIGNS Team",
           "2024-11-15",
           "2024-12-01",
-          "https://sydneywebdesigner.com.au/images/blog/web-design-trends-2026.jpg"
+          "https://www.sydneywebdesigner.com.au/images/blog/web-design-trends-2026.jpg"
         )) }}
       />
       <script

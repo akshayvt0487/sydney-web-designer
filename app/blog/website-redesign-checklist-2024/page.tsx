@@ -8,7 +8,7 @@ export const metadata = generateMetadata({
   title: "Website Redesign Checklist 2026: Everything You Need to Know",
   description: "Planning a website redesign? This comprehensive checklist ensures your business website redesign project succeeds on time and budget with measurable results.",
   keywords: "website redesign checklist, website redesign guide, website redesign process, redesign your website, sydney website redesign, web design project plan",
-  canonicalUrl: "https://sydneywebdesigner.com.au/blog/website-redesign-checklist-2024",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/blog/website-redesign-checklist-2024",
   ogImage: "/images/og/blog.svg",
   type: "article",
   publishedTime: "2024-01-05",
@@ -18,9 +18,9 @@ export const metadata = generateMetadata({
 
 export default function WebsiteRedesignChecklistPage() {
   const breadcrumbs = [
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Blog", url: "https://sydneywebdesigner.com.au/blog" },
-    { name: "Website Redesign Checklist 2026", url: "https://sydneywebdesigner.com.au/blog/website-redesign-checklist-2024" }
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Blog", url: "https://www.sydneywebdesigner.com.au/blog" },
+    { name: "Website Redesign Checklist 2026", url: "https://www.sydneywebdesigner.com.au/blog/website-redesign-checklist-2024" }
   ];
 
   return (
@@ -33,7 +33,7 @@ export default function WebsiteRedesignChecklistPage() {
           "DSIGNS Team",
           "2024-01-05",
           "2024-09-28",
-          "https://sydneywebdesigner.com.au/images/og/blog.svg"
+          "https://www.sydneywebdesigner.com.au/images/og/blog.svg"
         )) }}
       />
       <script

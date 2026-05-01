@@ -8,7 +8,7 @@ export const metadata = generateMetadata({
   title: "E-commerce Website Best Practices: Drive More Sales Online",
   description: "Discover essential e-commerce best practices to increase sales and improve customer experience. Expert tips for optimizing product pages, checkout, and conversions.",
   keywords: "ecommerce best practices, online store optimization, ecommerce website design, increase ecommerce sales, sydney ecommerce, online shopping optimization",
-  canonicalUrl: "https://sydneywebdesigner.com.au/blog/ecommerce-website-best-practices",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/blog/ecommerce-website-best-practices",
   ogImage: "/images/og/blog.svg",
   type: "article",
   publishedTime: "2024-09-10",
@@ -18,9 +18,9 @@ export const metadata = generateMetadata({
 
 export default function EcommerceBestPracticesPage() {
   const breadcrumbs = [
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Blog", url: "https://sydneywebdesigner.com.au/blog" },
-    { name: "E-commerce Website Best Practices", url: "https://sydneywebdesigner.com.au/blog/ecommerce-website-best-practices" }
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Blog", url: "https://www.sydneywebdesigner.com.au/blog" },
+    { name: "E-commerce Website Best Practices", url: "https://www.sydneywebdesigner.com.au/blog/ecommerce-website-best-practices" }
   ];
 
   return (
@@ -33,7 +33,7 @@ export default function EcommerceBestPracticesPage() {
           "DSIGNS Team",
           "2024-09-10",
           "2024-11-18",
-          "https://sydneywebdesigner.com.au/images/og/blog.svg"
+          "https://www.sydneywebdesigner.com.au/images/og/blog.svg"
         )) }}
       />
       <script

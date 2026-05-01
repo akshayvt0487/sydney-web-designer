@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://sydneywebdesigner.com.au'
+  const baseUrl = 'https://www.sydneywebdesigner.com.au'
 
   // Service pages (only include existing pages)
   const servicePages = [

@@ -6,9 +6,9 @@ import { generateBreadcrumbSchema } from '@/lib/schemas';
 
 export default function CareerApplicationPage() {
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: 'Home', url: 'https://sydneywebdesigner.com.au' },
-    { name: 'Careers', url: 'https://sydneywebdesigner.com.au/careers' },
-    { name: 'Career Application', url: 'https://sydneywebdesigner.com.au/career-application' },
+    { name: 'Home', url: 'https://www.sydneywebdesigner.com.au' },
+    { name: 'Careers', url: 'https://www.sydneywebdesigner.com.au/careers' },
+    { name: 'Career Application', url: 'https://www.sydneywebdesigner.com.au/career-application' },
   ]);
   const [formData, setFormData] = useState({
     firstName: '',

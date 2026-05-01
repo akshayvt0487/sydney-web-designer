@@ -8,7 +8,7 @@ export const metadata = generateMetadata({
   title: "WordPress vs Custom Website Development: Which is Right for Your Business?",
   description: "Compare WordPress and custom web development to choose the best solution for your business. Expert analysis of costs, benefits, flexibility, and ideal use cases.",
   keywords: "wordpress vs custom development, wordpress website, custom web development, cms comparison, wordpress or custom, website platform, sydney web development",
-  canonicalUrl: "https://sydneywebdesigner.com.au/blog/wordpress-vs-custom-website-development",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/blog/wordpress-vs-custom-website-development",
   ogImage: "/images/og/blog.svg",
   type: "article",
   publishedTime: "2024-04-18",
@@ -18,9 +18,9 @@ export const metadata = generateMetadata({
 
 export default function WordPressVsCustomPage() {
   const breadcrumbs = [
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Blog", url: "https://sydneywebdesigner.com.au/blog" },
-    { name: "WordPress vs Custom Website Development", url: "https://sydneywebdesigner.com.au/blog/wordpress-vs-custom-website-development" }
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Blog", url: "https://www.sydneywebdesigner.com.au/blog" },
+    { name: "WordPress vs Custom Website Development", url: "https://www.sydneywebdesigner.com.au/blog/wordpress-vs-custom-website-development" }
   ];
 
   return (
@@ -33,7 +33,7 @@ export default function WordPressVsCustomPage() {
           "DSIGNS Team",
           "2024-04-18",
           "2024-09-10",
-          "https://sydneywebdesigner.com.au/images/og/blog.svg"
+          "https://www.sydneywebdesigner.com.au/images/og/blog.svg"
         )) }}
       />
       <script

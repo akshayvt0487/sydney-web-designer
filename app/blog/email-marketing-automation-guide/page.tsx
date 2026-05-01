@@ -8,7 +8,7 @@ export const metadata = generateMetadata({
   title: "Email Marketing Automation: Save Time and Boost Engagement",
   description: "Learn how to implement email marketing automation to nurture leads and increase sales. Complete guide to automated campaigns, workflows, and personalization.",
   keywords: "email marketing automation, email automation guide, automated email campaigns, email workflows, marketing automation, lead nurturing, sydney email marketing",
-  canonicalUrl: "https://sydneywebdesigner.com.au/blog/email-marketing-automation-guide",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/blog/email-marketing-automation-guide",
   ogImage: "/images/og/blog.svg",
   type: "article",
   publishedTime: "2024-08-22",
@@ -18,9 +18,9 @@ export const metadata = generateMetadata({
 
 export default function EmailMarketingAutomationPage() {
   const breadcrumbs = [
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Blog", url: "https://sydneywebdesigner.com.au/blog" },
-    { name: "Email Marketing Automation Guide", url: "https://sydneywebdesigner.com.au/blog/email-marketing-automation-guide" }
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Blog", url: "https://www.sydneywebdesigner.com.au/blog" },
+    { name: "Email Marketing Automation Guide", url: "https://www.sydneywebdesigner.com.au/blog/email-marketing-automation-guide" }
   ];
 
   return (
@@ -33,7 +33,7 @@ export default function EmailMarketingAutomationPage() {
           "DSIGNS Team",
           "2024-08-22",
           "2024-11-15",
-          "https://sydneywebdesigner.com.au/images/og/blog.svg"
+          "https://www.sydneywebdesigner.com.au/images/og/blog.svg"
         )) }}
       />
       <script

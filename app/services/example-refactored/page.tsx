@@ -140,7 +140,7 @@ export const metadata = generateMetadata({
     'This is a demonstration page showcasing the new data-driven architecture. Clean, maintainable, and scalable service page design.',
   keywords:
     'refactored page, architecture example, scalable design, maintainable code',
-  canonicalUrl: 'https://sydneywebdesigner.com.au/services/example-refactored',
+  canonicalUrl: 'https://www.sydneywebdesigner.com.au/services/example-refactored',
   ogImage: '/images/og/services.svg',
 });
 
@@ -154,11 +154,11 @@ export default function ExampleRefactoredPage() {
 
   // Breadcrumb schema
   const breadcrumbs = [
-    { name: 'Home', url: 'https://sydneywebdesigner.com.au' },
-    { name: 'Services', url: 'https://sydneywebdesigner.com.au/services' },
+    { name: 'Home', url: 'https://www.sydneywebdesigner.com.au' },
+    { name: 'Services', url: 'https://www.sydneywebdesigner.com.au/services' },
     {
       name: 'Example Refactored',
-      url: 'https://sydneywebdesigner.com.au/services/example-refactored',
+      url: 'https://www.sydneywebdesigner.com.au/services/example-refactored',
     },
   ];
 

@@ -8,7 +8,7 @@ export const metadata = generateMetadata({
   title: "Conversion Rate Optimization Strategies That Actually Work",
   description: "Learn proven conversion rate optimization strategies to turn more website visitors into customers. Expert CRO tips including A/B testing and user experience design.",
   keywords: "conversion rate optimization, cro strategies, conversion optimization, increase conversions, a/b testing, user experience, landing page optimization",
-  canonicalUrl: "https://sydneywebdesigner.com.au/blog/conversion-rate-optimization-strategies",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/blog/conversion-rate-optimization-strategies",
   ogImage: "/images/og/blog.svg",
   type: "article",
   publishedTime: "2024-10-25",
@@ -18,9 +18,9 @@ export const metadata = generateMetadata({
 
 export default function ConversionRateOptimizationPage() {
   const breadcrumbs = [
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Blog", url: "https://sydneywebdesigner.com.au/blog" },
-    { name: "Conversion Rate Optimization Strategies", url: "https://sydneywebdesigner.com.au/blog/conversion-rate-optimization-strategies" }
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Blog", url: "https://www.sydneywebdesigner.com.au/blog" },
+    { name: "Conversion Rate Optimization Strategies", url: "https://www.sydneywebdesigner.com.au/blog/conversion-rate-optimization-strategies" }
   ];
 
   return (
@@ -33,7 +33,7 @@ export default function ConversionRateOptimizationPage() {
           "DSIGNS Team",
           "2024-10-25",
           "2024-11-30",
-          "https://sydneywebdesigner.com.au/images/og/blog.svg"
+          "https://www.sydneywebdesigner.com.au/images/og/blog.svg"
         )) }}
       />
       <script

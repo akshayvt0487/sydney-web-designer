@@ -6,15 +6,15 @@ export const metadata = generateMetadata({
   title: "WordPress Development Sydney | Custom WordPress Websites",
   description: "Professional WordPress development services in Sydney. Custom themes, plugins, and complete WooCommerce solutions. 13+ years experience with 200+ WordPress sites delivered.",
   keywords: "wordpress development sydney, custom wordpress sydney, wordpress developer, woocommerce sydney, wordpress website design, wordpress expert sydney",
-  canonicalUrl: "https://sydneywebdesigner.com.au/services/wordpress-development",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/services/wordpress-development",
   ogImage: "/images/og/services.svg",
 });
 
 export default function WordPressDevelopmentPage() {
   const breadcrumbs = [
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Services", url: "https://sydneywebdesigner.com.au/services" },
-    { name: "WordPress Development", url: "https://sydneywebdesigner.com.au/services/wordpress-development" }
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Services", url: "https://www.sydneywebdesigner.com.au/services" },
+    { name: "WordPress Development", url: "https://www.sydneywebdesigner.com.au/services/wordpress-development" }
   ];
 
   const serviceData = {

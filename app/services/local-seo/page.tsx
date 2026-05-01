@@ -12,7 +12,7 @@ export const metadata = generateMetadata({
   title: "Local SEO Sydney | Get Found by Local Customers",
   description: "Professional local SEO services in Sydney. Dominate Google Maps and local search with targeted strategies. 1,000+ local rankings, 80+ Google Business Profiles, 285% average call increase.",
   keywords: "local seo sydney, google business profile optimization, google maps ranking, local search sydney, local seo services, near me optimization, local seo expert sydney",
-  canonicalUrl: "https://sydneywebdesigner.com.au/services/local-seo",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/services/local-seo",
   ogImage: "/images/og/services.svg",
 });
 
@@ -20,9 +20,9 @@ export default function LocalSEOPage() {
   const service = services.find((s) => s.slug === "local-seo")!;
 
   const breadcrumbs = [
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Services", url: "https://sydneywebdesigner.com.au/services" },
-    { name: "Local SEO", url: "https://sydneywebdesigner.com.au/services/local-seo" }
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Services", url: "https://www.sydneywebdesigner.com.au/services" },
+    { name: "Local SEO", url: "https://www.sydneywebdesigner.com.au/services/local-seo" }
   ];
   const seoProjects = portfolioProjects.filter((p) => p.services.includes("SEO"));
   const seoReviews = googleReviews.slice(0, 3);

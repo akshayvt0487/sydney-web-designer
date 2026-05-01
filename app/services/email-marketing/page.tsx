@@ -11,7 +11,7 @@ export const metadata = generateMetadata({
   title: "Email Marketing Sydney | Email Campaign Management Services",
   description: "Professional email marketing services in Sydney. Build customer relationships and drive repeat business. 200+ campaigns, 32% average open rate, $2M+ revenue generated. High ROI strategies.",
   keywords: "email marketing sydney, email campaign management, email newsletter design, marketing automation sydney, email marketing agency, mailchimp expert sydney",
-  canonicalUrl: "https://sydneywebdesigner.com.au/services/email-marketing",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/services/email-marketing",
   ogImage: "/images/og/services.svg",
 });
 
@@ -19,9 +19,9 @@ export default function EmailMarketingPage() {
   const service = services.find((s) => s.slug === "email-marketing")!;
 
   const breadcrumbs = [
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Services", url: "https://sydneywebdesigner.com.au/services" },
-    { name: "Email Marketing", url: "https://sydneywebdesigner.com.au/services/email-marketing" }
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Services", url: "https://www.sydneywebdesigner.com.au/services" },
+    { name: "Email Marketing", url: "https://www.sydneywebdesigner.com.au/services/email-marketing" }
   ];
   const projects = portfolioProjects.slice(0, 6);
   const reviews = googleReviews.slice(6, 9);

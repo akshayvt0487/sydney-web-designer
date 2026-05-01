@@ -9,14 +9,14 @@ export const metadata = generateMetadata({
   title: "Services | Web Design & Digital Marketing Sydney",
   description: "Comprehensive web design and digital marketing services in Sydney. 13+ years experience delivering SEO, Google Ads, social media marketing, and more. Get a free quote today!",
   keywords: "web design services sydney, digital marketing services sydney, seo sydney, google ads sydney, wordpress development, ecommerce websites, social media marketing sydney",
-  canonicalUrl: "https://sydneywebdesigner.com.au/services",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/services",
   ogImage: "/images/og/services.svg",
 });
 
 export default function ServicesPage() {
   const breadcrumbs = [
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Services", url: "https://sydneywebdesigner.com.au/services" }
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Services", url: "https://www.sydneywebdesigner.com.au/services" }
   ];
 
   const serviceData = {

@@ -6,15 +6,15 @@ export const metadata = generateMetadata({
   title: "Social Media Marketing Sydney | Facebook, Instagram & LinkedIn",
   description: "Strategic social media marketing services in Sydney. Engage your audience and grow your business. 500K+ followers managed, 15% average engagement, 1000+ posts created for 50+ clients.",
   keywords: "social media marketing sydney, facebook marketing, instagram marketing, linkedin marketing, social media management sydney, social media advertising, content creation sydney",
-  canonicalUrl: "https://sydneywebdesigner.com.au/services/social-media-marketing",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/services/social-media-marketing",
   ogImage: "/images/og/services.svg",
 });
 
 export default function SocialMediaMarketingPage() {
   const breadcrumbs = [
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Services", url: "https://sydneywebdesigner.com.au/services" },
-    { name: "Social Media Marketing", url: "https://sydneywebdesigner.com.au/services/social-media-marketing" }
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Services", url: "https://www.sydneywebdesigner.com.au/services" },
+    { name: "Social Media Marketing", url: "https://www.sydneywebdesigner.com.au/services/social-media-marketing" }
   ];
 
   const serviceData = {

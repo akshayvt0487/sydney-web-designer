@@ -8,14 +8,14 @@ export const metadata = generateMetadata({
   title: "SEO Copywriting Sydney | Content That Ranks & Converts",
   description: "Expert SEO copywriting services in Sydney. Create compelling, keyword-optimized content that ranks on Google and converts visitors into customers.",
   keywords: "seo copywriting sydney, seo content writing, keyword optimized content, conversion copywriting, content marketing, seo blog writing",
-  canonicalUrl: "https://sydneywebdesigner.com.au/services/seo-copywriting",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/services/seo-copywriting",
 });
 
 export default function SEOCopywritingPage() {
   const breadcrumbs = [
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Services", url: "https://sydneywebdesigner.com.au/services" },
-    { name: "SEO Copywriting", url: "https://sydneywebdesigner.com.au/services/seo-copywriting" }
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Services", url: "https://www.sydneywebdesigner.com.au/services" },
+    { name: "SEO Copywriting", url: "https://www.sydneywebdesigner.com.au/services/seo-copywriting" }
   ];
 
   const serviceData = {

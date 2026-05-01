@@ -9,14 +9,14 @@ export const metadata: Metadata = generateMetadata({
     "View our portfolio of 500+ successful websites. From small businesses to enterprise clients, see how we've helped Sydney businesses grow online.",
   keywords:
     "web design portfolio sydney, website examples, sydney web designer work, web design showcase",
-  canonicalUrl: "https://sydneywebdesigner.com.au/portfolio",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/portfolio",
   ogImage: "/images/og/services.svg",
 });
 
 export default function PortfolioPage() {
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Portfolio", url: "https://sydneywebdesigner.com.au/portfolio" },
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Portfolio", url: "https://www.sydneywebdesigner.com.au/portfolio" },
   ]);
 
   return (

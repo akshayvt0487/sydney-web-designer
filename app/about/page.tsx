@@ -8,13 +8,13 @@ export const metadata: Metadata = generateMetadata({
   title: "About Us | Sydney Web Design Since 2013",
   description: "Meet the team behind Sydney's premier web design agency. A division of DSIGNS Australia Pty Ltd. Since 2013, 500+ websites delivered, award-winning service.",
   keywords: "about sydney web designer, web design agency sydney, about dsigns, dsigns australia",
-  canonicalUrl: "https://sydneywebdesigner.com.au/about",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/about",
 });
 
 export default function AboutPage() {
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "About", url: "https://sydneywebdesigner.com.au/about" },
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "About", url: "https://www.sydneywebdesigner.com.au/about" },
   ]);
 
   return (

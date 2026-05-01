@@ -8,7 +8,7 @@ export const metadata = generateMetadata({
   title: "Digital Marketing Budget Planning: How to Allocate Your Spend",
   description: "Learn how to plan and allocate your digital marketing budget effectively. Expert guidance on maximizing ROI from your marketing spend with strategic budget allocation.",
   keywords: "digital marketing budget, marketing budget planning, marketing roi, advertising budget, sydney marketing budget, marketing spend allocation",
-  canonicalUrl: "https://sydneywebdesigner.com.au/blog/digital-marketing-budget-planning",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/blog/digital-marketing-budget-planning",
   ogImage: "/images/og/blog.svg",
   type: "article",
   publishedTime: "2024-10-28",
@@ -18,9 +18,9 @@ export const metadata = generateMetadata({
 
 export default function DigitalMarketingBudgetPage() {
   const breadcrumbs = [
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Blog", url: "https://sydneywebdesigner.com.au/blog" },
-    { name: "Digital Marketing Budget Planning", url: "https://sydneywebdesigner.com.au/blog/digital-marketing-budget-planning" }
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Blog", url: "https://www.sydneywebdesigner.com.au/blog" },
+    { name: "Digital Marketing Budget Planning", url: "https://www.sydneywebdesigner.com.au/blog/digital-marketing-budget-planning" }
   ];
 
   return (
@@ -33,7 +33,7 @@ export default function DigitalMarketingBudgetPage() {
           "DSIGNS Team",
           "2024-10-28",
           "2024-12-02",
-          "https://sydneywebdesigner.com.au/images/og/blog.svg"
+          "https://www.sydneywebdesigner.com.au/images/og/blog.svg"
         )) }}
       />
       <script

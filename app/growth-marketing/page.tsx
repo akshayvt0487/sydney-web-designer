@@ -7,13 +7,13 @@ export const metadata: Metadata = generateMetadata({
   title: "Growth Marketing | Data-Driven Digital Marketing Services Sydney",
   description: "Accelerate your business growth with strategic digital marketing. SEO, Google Ads, content marketing, and complete growth strategies. Results-driven monthly packages for Sydney businesses.",
   keywords: "growth marketing sydney, digital marketing strategy, performance marketing, marketing optimization, growth hacking sydney",
-  canonicalUrl: "https://sydneywebdesigner.com.au/growth-marketing",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/growth-marketing",
 });
 
 export default function GrowthMarketingPage() {
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Growth Marketing", url: "https://sydneywebdesigner.com.au/growth-marketing" },
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Growth Marketing", url: "https://www.sydneywebdesigner.com.au/growth-marketing" },
   ]);
 
   return (

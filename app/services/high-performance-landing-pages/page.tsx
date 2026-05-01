@@ -8,14 +8,14 @@ export const metadata = generateMetadata({
   title: "High Performance Landing Pages Sydney | Fast & Conversion-Optimized",
   description: "High performance landing pages in Sydney. 95+ PageSpeed scores, Core Web Vitals optimized, mobile-first design. Increase conversions with blazing-fast, SEO-friendly landing pages built for results.",
   keywords: "high performance landing pages sydney, fast landing pages, conversion optimization, page speed optimization, core web vitals, mobile-first landing pages",
-  canonicalUrl: "https://sydneywebdesigner.com.au/services/high-performance-landing-pages",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/services/high-performance-landing-pages",
 });
 
 export default function HighPerformanceLandingPagesPage() {
   const breadcrumbs = [
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Services", url: "https://sydneywebdesigner.com.au/services" },
-    { name: "High Performance Landing Pages", url: "https://sydneywebdesigner.com.au/services/high-performance-landing-pages" }
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Services", url: "https://www.sydneywebdesigner.com.au/services" },
+    { name: "High Performance Landing Pages", url: "https://www.sydneywebdesigner.com.au/services/high-performance-landing-pages" }
   ];
 
   const serviceData = {

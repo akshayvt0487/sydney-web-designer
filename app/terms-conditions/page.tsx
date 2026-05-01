@@ -5,13 +5,13 @@ import { generateBreadcrumbSchema } from "@/lib/schemas";
 export const metadata = generateMetadata({
   title: "Terms & Conditions",
   description: "Read our terms and conditions for using Sydney Web Designer services and website. Legal information and service agreements.",
-  canonicalUrl: "https://sydneywebdesigner.com.au/terms-conditions",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/terms-conditions",
 });
 
 export default function TermsConditionsPage() {
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Terms & Conditions", url: "https://sydneywebdesigner.com.au/terms-conditions" },
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Terms & Conditions", url: "https://www.sydneywebdesigner.com.au/terms-conditions" },
   ]);
 
   return (

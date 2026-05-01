@@ -8,7 +8,7 @@ export interface PageOGMetadata {
   canonicalUrl: string;
 }
 
-const baseUrl = 'https://sydneywebdesigner.com.au';
+const baseUrl = 'https://www.sydneywebdesigner.com.au';
 
 export const pageMetadata: Record<string, PageOGMetadata> = {
   // Home Page

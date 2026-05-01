@@ -11,15 +11,15 @@ export const metadata = generateMetadata({
   title: "Brand Identity Design Sydney | Logo & Branding Services",
   description: "Professional brand identity design services in Sydney. Create a memorable brand with strategic logo design, brand guidelines, and complete visual identity systems.",
   keywords: "brand identity design sydney, logo design sydney, branding services, brand guidelines, brand strategy, visual identity sydney",
-  canonicalUrl: "https://sydneywebdesigner.com.au/services/brand-identity",
+  canonicalUrl: "https://www.sydneywebdesigner.com.au/services/brand-identity",
   ogImage: "/images/og/services.svg",
 });
 
 export default function BrandIdentityPage() {
   const breadcrumbs = [
-    { name: "Home", url: "https://sydneywebdesigner.com.au" },
-    { name: "Services", url: "https://sydneywebdesigner.com.au/services" },
-    { name: "Brand Identity", url: "https://sydneywebdesigner.com.au/services/brand-identity" }
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+    { name: "Services", url: "https://www.sydneywebdesigner.com.au/services" },
+    { name: "Brand Identity", url: "https://www.sydneywebdesigner.com.au/services/brand-identity" }
   ];
 
   const stats = [
@@ -77,7 +77,7 @@ export default function BrandIdentityPage() {
             generateServiceSchema(
               "Brand Identity Design",
               "Professional brand identity and logo design services in Sydney",
-              "https://sydneywebdesigner.com.au/services/brand-identity"
+              "https://www.sydneywebdesigner.com.au/services/brand-identity"
             )
           ),
         }}
