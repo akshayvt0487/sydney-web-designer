@@ -113,7 +113,7 @@ export default function TestimonialsPage() {
       <section className="bg-[#1e293b] text-white py-32 text-center">
         <div className="container max-w-4xl mx-auto px-4">
           <h1 className="text-xl md:text-2xl font-medium text-white/80 mb-3">
-            Client Testimonials Sydney
+            Client Reviews Sydney
           </h1>
           <h2 className="text-5xl font-bold mb-6 text-white">
             What Our Clients Say

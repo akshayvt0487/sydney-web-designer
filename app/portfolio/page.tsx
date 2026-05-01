@@ -46,7 +46,7 @@ export default function PortfolioPage() {
           </div>
 
           <h1 className="text-xl md:text-2xl font-medium text-white/80 mb-3">
-            Web Design Portfolio Sydney
+            Web Design Portfolio
           </h1>
           <h2 className="text-5xl md:text-7xl font-black text-white leading-tight mb-6">
             Websites That{" "}

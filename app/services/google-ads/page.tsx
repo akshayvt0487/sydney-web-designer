@@ -137,7 +137,7 @@ export default function GoogleAdsPage() {
 
       {/* Hero Section */}
       <ServiceHeroSection
-        h1="Google Ads Management Sydney"
+        h1="Google Ads Sydney"
         badge={{
           icon: "fab fa-google",
           text: "Google Ads Specialists"

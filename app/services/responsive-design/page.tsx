@@ -132,7 +132,7 @@ export default function ResponsiveDesignPage() {
 
       {/* Hero Section */}
       <ServiceHeroSection
-        h1="Responsive Web Design Sydney"
+        h1="Mobile Responsive Website Design"
         badge={{
           icon: `fas ${service.icon}`,
           text: service.name

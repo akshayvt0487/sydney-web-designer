@@ -223,7 +223,7 @@ export default function HighPerformanceLandingPagesPage() {
 
       {/* Hero Section */}
       <ServiceHeroSection
-        h1="High Performance Landing Pages"
+        h1="Landing Page Design"
         badge={{
           icon: "fas fa-rocket",
           text: "High Performance Landing Pages"

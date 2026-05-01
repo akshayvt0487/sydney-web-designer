@@ -220,7 +220,7 @@ export default function LinkBuildingPage() {
 
       {/* Hero Section */}
       <ServiceHeroSection
-        h1="Link Building Services Sydney"
+        h1="Link Building Sydney"
         badge={{
           icon: "fas fa-link",
           text: "White-Hat Link Building Experts"

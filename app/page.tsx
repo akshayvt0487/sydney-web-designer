@@ -37,7 +37,7 @@ export default function HomePage() {
 
           {/* SEO-optimized H1 */}
           <h1 className="text-xl md:text-2xl font-medium text-white/90 mb-4">
-            Web Design Sydney | Digital Marketing Agency
+            Sydney Web Designer
           </h1>
 
           {/* Large user-friendly H2 */}

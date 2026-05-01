@@ -218,7 +218,7 @@ export default function MobileSEOPage() {
 
       {/* Hero Section */}
       <ServiceHeroSection
-        h1="Mobile SEO Services"
+        h1="Mobile SEO"
         badge={{
           icon: "fas fa-mobile-alt",
           text: "Mobile-First SEO Experts"

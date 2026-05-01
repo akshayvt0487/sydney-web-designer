@@ -39,7 +39,7 @@ export default function CustomWebDesignPage() {
       />
       {/* Hero Section */}
       <ServiceHeroSection
-        h1="Custom Web Design Sydney"
+        h1="Web Designer Sydney"
         badge={{
           icon: "fas fa-paint-brush",
           text: "Custom Web Design"

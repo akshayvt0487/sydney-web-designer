@@ -261,7 +261,7 @@ export default function MetaAdsPage() {
 
       {/* Hero Section */}
       <ServiceHeroSection
-        h1="Meta Ads Management Sydney"
+        h1="Facebook Ads Sydney"
         badge={{
           icon: "fab fa-facebook",
           text: "Meta Business Partner"

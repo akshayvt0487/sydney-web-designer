@@ -132,7 +132,7 @@ export default function SEOServicesPage() {
 
       {/* Hero Section */}
       <ServiceHeroSection
-        h1="SEO Services Sydney"
+        h1="SEO Sydney"
         badge={{
           icon: `fas ${service.icon}`,
           text: service.name

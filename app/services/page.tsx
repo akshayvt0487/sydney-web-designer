@@ -47,7 +47,7 @@ export default function ServicesPage() {
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-xl md:text-2xl font-medium text-white/80 mb-3">
-              Web Design & Digital Marketing Services Sydney
+              Digital Marketing Sydney
             </h1>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
               Comprehensive Digital Solutions That Drive Growth
