@@ -31,7 +31,7 @@ export default function PortfolioCarousel({ images, title }: PortfolioCarouselPr
       <div className="relative w-full h-64 bg-gray-100 rounded-t-3xl overflow-hidden">
         <Image
           src={images[currentIndex]}
-          alt={`${title} - Image ${currentIndex + 1}`}
+          alt={`${title} website design showcase - Professional web design by Sydney Web Designer - Screenshot ${currentIndex + 1} of ${images.length}`}
           fill
           className="object-cover"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

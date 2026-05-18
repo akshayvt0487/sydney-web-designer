@@ -1,12 +1,14 @@
 import Link from "next/link";
 import { services, portfolioProjects, googleReviews } from "@/lib/constants";
 import { generateMetadata } from "@/lib/metadata";
-import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema } from "@/lib/schemas";
+import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema, generateFAQSchema } from "@/lib/schemas";
 import StatsGrid from "@/components/StatsGrid";
 import TestimonialCard from "@/components/TestimonialCard";
 import PortfolioCard from "@/components/PortfolioCard";
 import CTASection from "@/components/CTASection";
 import ServiceHeroSection from "@/components/ServiceHeroSection";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedServices from "@/components/RelatedServices";
 
 export const metadata = generateMetadata({
   title: "SEO Services Sydney | Professional Search Engine Optimization",
@@ -96,7 +98,7 @@ export default function SEOServicesPage() {
       answer: "Most clients see initial improvements within 3-4 months, with significant results typically appearing after 6-12 months. SEO is a long-term investment that builds momentum over time.",
     },
     {
-      question: "What&apos;s included in your SEO services?",
+      question: "What's included in your SEO services?",
       answer: "Our comprehensive SEO includes technical optimization, keyword research, on-page SEO, content strategy, link building, local SEO (if applicable), and detailed monthly reporting.",
     },
     {
@@ -104,13 +106,34 @@ export default function SEOServicesPage() {
       answer: "No reputable SEO company can guarantee specific rankings as search algorithms constantly evolve. However, we focus on driving qualified traffic and measurable business results.",
     },
     {
-      question: "What&apos;s the difference between SEO and Google Ads?",
+      question: "What's the difference between SEO and Google Ads?",
       answer: "SEO is organic (free) traffic that builds over time, while Google Ads is paid traffic that starts immediately. We recommend both for maximum visibility and best results.",
     },
     {
       question: "Will SEO work for my industry?",
       answer: "Yes! We've successfully delivered SEO results across diverse industries including property, construction, hospitality, healthcare, retail, and professional services.",
     },
+  ];
+
+  const relatedServices = [
+    {
+      title: "Local SEO",
+      description: "Dominate local search results and Google Maps for Sydney-based searches.",
+      href: "/services/local-seo",
+      icon: "fas fa-map-marker-alt"
+    },
+    {
+      title: "Content Marketing",
+      description: "Strategic content that attracts, engages, and converts your target audience.",
+      href: "/services/content-marketing",
+      icon: "fas fa-pen-nib"
+    },
+    {
+      title: "Link Building",
+      description: "High-quality backlinks that boost your domain authority and rankings.",
+      href: "/services/link-building",
+      icon: "fas fa-link"
+    }
   ];
 
   return (
@@ -129,6 +152,13 @@ export default function SEOServicesPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessSchema()) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(faqs)) }}
+      />
+
+      {/* Breadcrumbs */}
+      <Breadcrumbs items={breadcrumbs} />
 
       {/* Hero Section */}
       <ServiceHeroSection
@@ -367,6 +397,9 @@ export default function SEOServicesPage() {
           </div>
         </div>
       </section>
+
+      {/* Related Services */}
+      <RelatedServices services={relatedServices} />
 
       {/* CTA Section */}
       <CTASection
