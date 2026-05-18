@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { services, portfolioProjects, googleReviews } from "@/lib/constants";
 import { generateMetadata } from "@/lib/metadata";
-import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema } from "@/lib/schemas";
+import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema, generateFAQSchema } from "@/lib/schemas";
 import ServiceHeroSection from "@/components/ServiceHeroSection";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedServices from "@/components/RelatedServices";
 
 export const metadata = generateMetadata({
   title: "E-commerce Website Design Sydney | Online Store Development",
@@ -21,6 +23,54 @@ export default function EcommerceWebsitesPage() {
     { name: "E-commerce Websites", url: "https://www.sydneywebdesigner.com.au/services/ecommerce-websites" }
   ];
 
+  const faqs = [
+    {
+      question: "Which e-commerce platform do you recommend?",
+      answer: "We primarily build on WooCommerce (WordPress) and Shopify, choosing based on your specific needs. WooCommerce offers maximum flexibility and customization for complex requirements, while Shopify provides ease of use and quick setup. We will recommend the best platform after understanding your products, volume, and business goals."
+    },
+    {
+      question: "How much does an e-commerce website cost?",
+      answer: "E-commerce websites typically range from $5,000 to $30,000+ depending on the number of products, custom features, integrations, and design complexity. We provide detailed quotes after understanding your requirements. Ongoing costs include hosting, payment gateway fees, and optional maintenance."
+    },
+    {
+      question: "Can you migrate my existing online store to a new platform?",
+      answer: "Yes! We specialize in e-commerce migrations. We can transfer your products, categories, customer data, and order history from your current platform to a new one. We ensure zero downtime and preserve your SEO rankings during the migration process."
+    },
+    {
+      question: "What payment gateways can you integrate?",
+      answer: "We integrate all major payment gateways including Stripe, PayPal, Square, Afterpay, Zip Pay, and Australian bank gateways like CommBank, Westpac, and NAB. We will recommend the best options based on your target market and transaction volumes."
+    },
+    {
+      question: "Will my e-commerce site be secure for customer payments?",
+      answer: "Absolutely! We implement SSL certificates, PCI-compliant payment processing, secure checkout flows, and regular security updates. Payment information is processed directly through certified payment gateways, never stored on your website, ensuring maximum security for your customers."
+    },
+    {
+      question: "Can you help with product photography and descriptions?",
+      answer: "Yes! We offer product photography services and professional copywriting for product descriptions. Quality images and compelling descriptions are crucial for e-commerce success. We can handle everything from product styling and photography to SEO-optimized descriptions that convert."
+    }
+  ];
+
+  const relatedServices = [
+    {
+      title: "Custom Web Design",
+      description: "Bespoke website design that perfectly showcases your brand and products.",
+      href: "/services/custom-web-design",
+      icon: "fas fa-desktop"
+    },
+    {
+      title: "SEO Services",
+      description: "Product and category optimization to drive organic traffic and sales.",
+      href: "/services/seo-sydney",
+      icon: "fas fa-search"
+    },
+    {
+      title: "Google Ads",
+      description: "PPC campaigns to drive immediate traffic and sales to your online store.",
+      href: "/services/google-ads",
+      icon: "fab fa-google"
+    }
+  ];
+
   return (
     <>
       <script
@@ -37,6 +87,15 @@ export default function EcommerceWebsitesPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessSchema()) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateFAQSchema(faqs)),
+        }}
+      />
+
+      {/* Breadcrumbs */}
+      <Breadcrumbs items={breadcrumbs} />
 
       {/* Hero Section */}
       <ServiceHeroSection
@@ -330,6 +389,30 @@ export default function EcommerceWebsitesPage() {
           </div>
         </div>
       </section> */}
+
+      {/* FAQ Section */}
+      <section className="py-24 bg-gray-50">
+        <div className="container max-w-4xl">
+          <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">
+            Frequently Asked <span className="text-[#f59e0b]">Questions</span>
+          </h2>
+          <p className="text-xl text-center text-gray-600 mb-12">
+            Everything you need to know about e-commerce websites
+          </p>
+
+          <div className="space-y-6">
+            {faqs.map((faq, index) => (
+              <div key={index} className="bg-white p-8 rounded-xl shadow-md">
+                <h3 className="text-xl font-bold text-[#1e293b] mb-4">{faq.question}</h3>
+                <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Related Services */}
+      <RelatedServices services={relatedServices} />
 
       {/* Contact Form Section */}
       <section className="py-24" id="lead-form">

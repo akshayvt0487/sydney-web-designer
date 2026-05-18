@@ -1,12 +1,14 @@
 import Link from "next/link";
 import { services, portfolioProjects, googleReviews } from "@/lib/constants";
 import { generateMetadata } from "@/lib/metadata";
-import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema } from "@/lib/schemas";
+import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema, generateFAQSchema } from "@/lib/schemas";
 import StatsGrid from "@/components/StatsGrid";
 import TestimonialCard from "@/components/TestimonialCard";
 import PortfolioCard from "@/components/PortfolioCard";
 import CTASection from "@/components/CTASection";
 import ServiceHeroSection from "@/components/ServiceHeroSection";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedServices from "@/components/RelatedServices";
 
 export const metadata = generateMetadata({
   title: "Local SEO Sydney | Get Found by Local Customers",
@@ -43,11 +45,32 @@ export default function LocalSEOPage() {
     { step: 4, title: "Monitor & Maintain", description: "Track rankings, respond to reviews, and maintain consistent local presence." },
   ];
   const faqs = [
-    { question: "What is local SEO and how is it different from regular SEO?", answer: "Local SEO focuses on appearing in location-based searches like \"plumber near me\" or \"dentist in Sydney\". It emphasizes Google Business Profile optimization, local citations, reviews, and map rankings, while traditional SEO focuses more on broader organic rankings." },
+    { question: "What is local SEO and how is it different from regular SEO?", answer: "Local SEO focuses on appearing in location-based searches like plumber near me or dentist in Sydney. It emphasizes Google Business Profile optimization, local citations, reviews, and map rankings, while traditional SEO focuses more on broader organic rankings." },
     { question: "How important are Google reviews for local SEO?", answer: "Extremely important! Reviews are a major ranking factor for local search. Both quantity and quality matter. We implement strategies to generate more 5-star reviews consistently while managing and responding to all feedback professionally." },
     { question: "What is a local citation and why do I need them?", answer: "A local citation is any online mention of your business name, address, and phone number (NAP). Consistent citations across directories like Yellow Pages, True Local, and industry-specific sites help Google verify your business and boost local rankings." },
-    { question: "Can local SEO help if I serve multiple locations?", answer: "Yes! We can optimize for multiple service areas or locations. Strategies vary depending if you have physical locations or just service areas. We'll create location-specific pages and optimize your Google Business Profile for each area." },
+    { question: "Can local SEO help if I serve multiple locations?", answer: "Yes! We can optimize for multiple service areas or locations. Strategies vary depending if you have physical locations or just service areas. We will create location-specific pages and optimize your Google Business Profile for each area." },
     { question: "How long does local SEO take to show results?", answer: "Local SEO typically shows results faster than traditional SEO. You may see improvements in Google Business Profile visibility within 2-4 weeks and significant local ranking improvements within 3-6 months with consistent optimization." },
+  ];
+
+  const relatedServices = [
+    {
+      title: "SEO Services Sydney",
+      description: "Comprehensive SEO strategies to dominate both local and broader search results.",
+      href: "/services/seo-sydney",
+      icon: "fas fa-search"
+    },
+    {
+      title: "Google Ads",
+      description: "Complement your local SEO with targeted Google Ads campaigns for immediate visibility.",
+      href: "/services/google-ads",
+      icon: "fab fa-google"
+    },
+    {
+      title: "Content Marketing",
+      description: "Create locally-focused content that engages your community and boosts rankings.",
+      href: "/services/content-marketing",
+      icon: "fas fa-pen-nib"
+    }
   ];
 
   return (
@@ -61,6 +84,16 @@ export default function LocalSEOPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessSchema()) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateFAQSchema(faqs)),
+        }}
+      />
+
+      {/* Breadcrumbs */}
+      <Breadcrumbs items={breadcrumbs} />
+
       <ServiceHeroSection
         h1="Local SEO Services"
         badge={{
@@ -147,6 +180,10 @@ export default function LocalSEOPage() {
           <div className="max-w-3xl mx-auto space-y-6">{faqs.map((faq, index) => (<div key={index} className="card"><h3 className="text-lg font-bold mb-2">{faq.question}</h3><p className="text-gray-600">{faq.answer}</p></div>))}</div>
         </div>
       </section>
+
+      {/* Related Services */}
+      <RelatedServices services={relatedServices} />
+
       <CTASection title="Ready to Dominate Local Search?" description="Get found by customers in your area and grow your local business with proven local SEO strategies." primaryButtonText="Get Free Local SEO Audit" primaryButtonAction="seoAudit" />
     </>
   );

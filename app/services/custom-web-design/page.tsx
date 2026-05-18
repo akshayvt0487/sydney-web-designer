@@ -1,6 +1,8 @@
 import { generateMetadata } from "@/lib/metadata";
-import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema } from "@/lib/schemas";
+import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema, generateFAQSchema } from "@/lib/schemas";
 import ServiceHeroSection from "@/components/ServiceHeroSection";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedServices from "@/components/RelatedServices";
 
 export const metadata = generateMetadata({
   title: "Custom Web Design Sydney | Professional Website Design Services",
@@ -23,6 +25,54 @@ export default function CustomWebDesignPage() {
     provider: "Sydney Web Designer"
   };
 
+  const faqs = [
+    {
+      question: "How long does a custom web design project take?",
+      answer: "Typically 6-12 weeks depending on complexity and requirements. This includes discovery, design, development, content integration, testing, and launch. We will provide a detailed timeline during our initial consultation based on your specific needs."
+    },
+    {
+      question: "What is the difference between custom web design and a template?",
+      answer: "Custom web design is built from scratch specifically for your business, brand, and goals. Templates are pre-made designs used by thousands of websites. Custom design gives you unique branding, tailored functionality, better SEO, and no limitations."
+    },
+    {
+      question: "Do you redesign existing websites?",
+      answer: "Yes! We offer website redesign services to modernize outdated sites, improve user experience, boost conversions, and align with your current brand. We can work with your existing content or help create fresh content."
+    },
+    {
+      question: "Will my custom website be mobile-friendly?",
+      answer: "Absolutely! All our custom websites are built with a mobile-first approach. Your site will look perfect and function flawlessly on all devices - smartphones, tablets, laptops, and desktops. Mobile responsiveness is a standard feature."
+    },
+    {
+      question: "Can I update the website content myself?",
+      answer: "Yes! We build custom websites on user-friendly content management systems (CMS) that allow you to easily update text, images, and pages without technical knowledge. We provide training and documentation to help you manage your site."
+    },
+    {
+      question: "What happens after my website is launched?",
+      answer: "After launch, we provide ongoing support, training, and maintenance options. We monitor your site for performance, security updates, and technical issues. We are also available for content updates, feature additions, and continuous improvements as your business grows."
+    }
+  ];
+
+  const relatedServices = [
+    {
+      title: "E-commerce Websites",
+      description: "Professional online stores with shopping carts, payment gateways, and inventory management.",
+      href: "/services/ecommerce-websites",
+      icon: "fas fa-shopping-cart"
+    },
+    {
+      title: "SEO Services",
+      description: "Search engine optimization to improve rankings and drive organic traffic to your website.",
+      href: "/services/seo-sydney",
+      icon: "fas fa-search"
+    },
+    {
+      title: "Brand Identity",
+      description: "Complete brand identity design including logo, colors, typography, and brand guidelines.",
+      href: "/services/brand-identity",
+      icon: "fas fa-palette"
+    }
+  ];
+
   return (
     <>
       <script
@@ -37,6 +87,16 @@ export default function CustomWebDesignPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessSchema()) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateFAQSchema(faqs)),
+        }}
+      />
+
+      {/* Breadcrumbs */}
+      <Breadcrumbs items={breadcrumbs} />
+
       {/* Hero Section */}
       <ServiceHeroSection
         h1="Web Designer Sydney"
@@ -547,6 +607,30 @@ export default function CustomWebDesignPage() {
           </div>
         </div>
       </section> */}
+
+      {/* FAQ Section */}
+      <section className="py-24 bg-gray-50">
+        <div className="container max-w-4xl">
+          <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">
+            Frequently Asked <span className="text-[#f59e0b]">Questions</span>
+          </h2>
+          <p className="text-xl text-center text-gray-600 mb-12">
+            Everything you need to know about custom web design
+          </p>
+
+          <div className="space-y-6">
+            {faqs.map((faq, index) => (
+              <div key={index} className="bg-white p-8 rounded-xl shadow-md">
+                <h3 className="text-xl font-bold text-[#1e293b] mb-4">{faq.question}</h3>
+                <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Related Services */}
+      <RelatedServices services={relatedServices} />
 
       {/* Lead Form Section */}
       <section className="py-24 px-8">

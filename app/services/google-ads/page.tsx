@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { generateMetadata } from "@/lib/metadata";
-import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema } from "@/lib/schemas";
+import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema, generateFAQSchema } from "@/lib/schemas";
 import ServiceHeroSection from "@/components/ServiceHeroSection";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedServices from "@/components/RelatedServices";
 
 export const metadata = generateMetadata({
   title: "Google Ads Management Sydney | PPC Advertising Services",
@@ -109,15 +111,52 @@ export default function GoogleAdsPage() {
     },
   ];
 
-  const setupIncludes = [
-    { title: "Marketing Strategy Development", description: "Comprehensive strategy aligned with your business goals" },
-    { title: "Landing Page Build", description: "Custom-designed, high-converting landing page" },
-    { title: "Sales Copywriting", description: "Compelling ad copy and landing page content" },
-    { title: "Campaign Setup in Google Ads", description: "Complete account and campaign configuration" },
-    { title: "Keyword & Competitor Research", description: "In-depth analysis to target the right audience" },
-    { title: "Conversion Tracking Setup", description: "Track calls, forms, and sales accurately" },
-    { title: "Negative Keywords Configuration", description: "Prevent wasted spend on irrelevant searches" },
-    { title: "Fraud Click Monitoring Setup", description: "Protect your budget from invalid clicks" },
+  const faqs = [
+    {
+      question: "How much should I budget for Google Ads?",
+      answer: "We recommend a minimum ad spend of $1,000-$2,000 per month for most industries to gather meaningful data and generate consistent leads. Your ideal budget depends on your industry, competition, target keywords, and business goals. We will provide recommendations during our consultation based on your specific situation."
+    },
+    {
+      question: "How long does it take to see results from Google Ads?",
+      answer: "You can start seeing clicks and traffic immediately once campaigns launch. However, meaningful results and optimizations typically take 2-4 weeks as we gather data and refine targeting. Most businesses see consistent lead flow within 4-8 weeks of optimization."
+    },
+    {
+      question: "What is the difference between Google Ads and SEO?",
+      answer: "Google Ads delivers immediate visibility at the top of search results through paid advertising, while SEO builds organic rankings over time. Google Ads gives you instant traffic but stops when you stop paying, while SEO provides long-term sustainable traffic. We recommend combining both strategies for maximum visibility and best results."
+    },
+    {
+      question: "Do you manage the ads or do I need to do it myself?",
+      answer: "We handle everything! Our Google Ads management includes campaign setup, keyword research, ad copywriting, bid management, ongoing optimization, conversion tracking, and detailed monthly reporting. You simply review reports and approve any major strategy changes."
+    },
+    {
+      question: "What makes your Google Ads management different?",
+      answer: "We focus on actual business results, not just clicks. We optimize for conversions and ROI with strategic keyword targeting, compelling ad copy, conversion-focused landing pages, and continuous testing. Plus, we provide transparent reporting so you always know exactly how your campaigns are performing."
+    },
+    {
+      question: "Can you help with landing page design for my ads?",
+      answer: "Yes! High-converting landing pages are crucial for Google Ads success. We design custom landing pages specifically for your campaigns with compelling copy, clear calls-to-action, fast loading speeds, and mobile optimization. This ensures your ad clicks convert into actual leads and customers."
+    }
+  ];
+
+  const relatedServices = [
+    {
+      title: "Local SEO",
+      description: "Combine paid ads with local SEO to dominate both paid and organic local search results.",
+      href: "/services/local-seo",
+      icon: "fas fa-map-marker-alt"
+    },
+    {
+      title: "SEO Services",
+      description: "Build long-term organic visibility to complement your paid advertising strategy.",
+      href: "/services/seo-sydney",
+      icon: "fas fa-search"
+    },
+    {
+      title: "Custom Web Design",
+      description: "Professional landing pages and websites designed to convert your ad traffic.",
+      href: "/services/custom-web-design",
+      icon: "fas fa-desktop"
+    }
   ];
 
   return (
@@ -134,6 +173,15 @@ export default function GoogleAdsPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessSchema()) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateFAQSchema(faqs)),
+        }}
+      />
+
+      {/* Breadcrumbs */}
+      <Breadcrumbs items={breadcrumbs} />
 
       {/* Hero Section */}
       <ServiceHeroSection
@@ -561,6 +609,30 @@ export default function GoogleAdsPage() {
           </div>
         </div>
       </section> */}
+
+      {/* FAQ Section */}
+      <section className="py-20">
+        <div className="container max-w-4xl">
+          <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">
+            Frequently Asked <span className="text-[#f59e0b]">Questions</span>
+          </h2>
+          <p className="text-xl text-center text-gray-600 mb-12">
+            Everything you need to know about Google Ads management
+          </p>
+
+          <div className="space-y-6">
+            {faqs.map((faq, index) => (
+              <div key={index} className="bg-white p-8 rounded-xl shadow-md border-l-4 border-[#f59e0b]">
+                <h3 className="text-xl font-bold text-[#1e293b] mb-4">{faq.question}</h3>
+                <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Related Services */}
+      <RelatedServices services={relatedServices} />
 
       {/* Lead Form Section */}
       <section className="py-20 bg-gray-50" id="lead-form">

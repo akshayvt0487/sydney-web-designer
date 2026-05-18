@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { services, portfolioProjects, googleReviews } from "@/lib/constants";
 import { generateMetadata } from "@/lib/metadata";
-import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema } from "@/lib/schemas";
+import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema, generateFAQSchema } from "@/lib/schemas";
 import StatsGrid from "@/components/StatsGrid";
 import TestimonialCard from "@/components/TestimonialCard";
 import CTASection from "@/components/CTASection";
 import ServiceHeroSection from "@/components/ServiceHeroSection";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedServices from "@/components/RelatedServices";
 
 export const metadata = generateMetadata({
   title: "Brand Identity Design Sydney | Logo & Branding Services",
@@ -62,6 +64,54 @@ export default function BrandIdentityPage() {
     },
   ];
 
+  const faqs = [
+    {
+      question: "What is included in a brand identity package?",
+      answer: "A complete brand identity package includes logo design (multiple concepts and revisions), color palette, typography selection, brand guidelines document, business card design, and digital assets. We can also include additional collateral like letterheads, email signatures, and social media templates based on your needs."
+    },
+    {
+      question: "How long does brand identity design take?",
+      answer: "Typically 4-8 weeks depending on the scope. This includes discovery and strategy (1-2 weeks), concept development (2-3 weeks), refinement (1-2 weeks), and finalization with brand guidelines (1 week). Rush projects can be accommodated with adjusted timelines."
+    },
+    {
+      question: "Can you refresh my existing brand without starting from scratch?",
+      answer: "Absolutely! Brand evolution or refresh is perfect when you want to modernize your look while maintaining brand recognition. We can update your logo, refresh your color palette, modernize typography, and create new brand guidelines while keeping the essence of your existing brand."
+    },
+    {
+      question: "What is the difference between logo design and brand identity?",
+      answer: "A logo is just one element of your brand identity. Brand identity is the complete visual system including your logo, colors, typography, imagery style, design elements, and guidelines for how everything works together. It is the comprehensive visual language that represents your business."
+    },
+    {
+      question: "Will I own the rights to my brand identity?",
+      answer: "Yes! Upon final payment, you receive full ownership and copyright of all brand identity elements. You can use your logo, colors, fonts, and designs across all mediums without restrictions or additional licensing fees."
+    },
+    {
+      question: "Do you provide brand strategy or just design?",
+      answer: "We provide both! Our brand identity projects start with strategic discovery including competitor analysis, target audience research, brand positioning, and messaging. This strategic foundation ensures your visual identity authentically represents your business and resonates with your ideal customers."
+    }
+  ];
+
+  const relatedServices = [
+    {
+      title: "Logo Design",
+      description: "Professional logo design with unlimited revisions and complete file package.",
+      href: "/services/logo-design",
+      icon: "fas fa-palette"
+    },
+    {
+      title: "Custom Web Design",
+      description: "Showcase your new brand identity with a custom-designed website.",
+      href: "/services/custom-web-design",
+      icon: "fas fa-desktop"
+    },
+    {
+      title: "Marketing Materials",
+      description: "Business cards, brochures, and marketing collateral with your new brand.",
+      href: "/services/graphic-design",
+      icon: "fas fa-file-pdf"
+    }
+  ];
+
   return (
     <>
       <script
@@ -88,6 +138,15 @@ export default function BrandIdentityPage() {
           __html: JSON.stringify(generateLocalBusinessSchema()),
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateFAQSchema(faqs)),
+        }}
+      />
+
+      {/* Breadcrumbs */}
+      <Breadcrumbs items={breadcrumbs} />
 
       {/* Hero Section */}
       <ServiceHeroSection
@@ -236,6 +295,30 @@ export default function BrandIdentityPage() {
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <section className="py-24 px-6">
+        <div className="container max-w-4xl mx-auto">
+          <h2 className="text-4xl md:text-6xl font-bold text-center text-slate-900 mb-4">
+            Frequently Asked <span className="text-[#f59e0b]">Questions</span>
+          </h2>
+          <p className="text-xl text-center text-slate-600 mb-12">
+            Everything you need to know about brand identity design
+          </p>
+
+          <div className="space-y-6">
+            {faqs.map((faq, index) => (
+              <div key={index} className="bg-white p-8 rounded-xl shadow-md border-l-4 border-[#f59e0b]">
+                <h3 className="text-xl font-bold text-slate-900 mb-4">{faq.question}</h3>
+                <p className="text-slate-600 leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Related Services */}
+      <RelatedServices services={relatedServices} />
 
       {/* CTA Section */}
       <CTASection
