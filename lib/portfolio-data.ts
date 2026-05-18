@@ -287,7 +287,7 @@ export const portfolioData: PortfolioItem[] = [
     services: ["Web Design", "SEO", "Google Ads"],
     image: "/images/Portfolio/Two Brothers Removalist/Two Brothers Removalist.webp",
     images: ["/images/Portfolio/Two Brothers Removalist/Two Brothers Removalist.webp"],
-    websiteUrl: "https://2brothersremovalist.com.au",
+    websiteUrl: "https://www.2brothersremovals.com.au/",
   },
   {
     id: "deepslice-pizza",
