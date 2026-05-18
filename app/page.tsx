@@ -1,19 +1,64 @@
-"use client";
-
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { Metadata } from "next";
 import { portfolioProjects } from "@/lib/constants";
 import PortfolioCarousel from "@/components/PortfolioCarousel";
+import { generateBreadcrumbSchema } from "@/lib/schemas";
+
+export const metadata: Metadata = {
+  title: "Sydney Web Designer | Award-Winning Web Design & Digital Marketing Agency",
+  description: "Transform your digital presence with Sydney's premier web design agency. Custom websites, SEO, digital marketing. 500+ projects delivered, 4.9★ Google rating. Get your free quote today!",
+  keywords: "web designer sydney, web design sydney, sydney web designer, digital marketing sydney, seo sydney, website design sydney, web development sydney",
+  alternates: {
+    canonical: "https://www.sydneywebdesigner.com.au",
+  },
+  openGraph: {
+    title: "Sydney Web Designer | Award-Winning Web Design & Digital Marketing",
+    description: "Transform your digital presence with Sydney's premier web design agency. 500+ projects delivered, 4.9★ rating.",
+    url: "https://www.sydneywebdesigner.com.au",
+    siteName: "Sydney Web Designer",
+    type: "website",
+    images: [
+      {
+        url: "https://www.sydneywebdesigner.com.au/images/og/homepage.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Sydney Web Designer - Premier Web Design & Digital Marketing Agency",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sydney Web Designer | Award-Winning Web Design Agency",
+    description: "Transform your digital presence with Sydney's premier web design agency. 500+ projects, 4.9★ rating.",
+    images: ["https://www.sydneywebdesigner.com.au/images/og/homepage.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
 export default function HomePage() {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
+  const breadcrumbs = [
+    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
+  ];
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)),
+        }}
+      />
+
       {/* ═══════════════════════════════════════════
           HERO SECTION - Modern Gradient Design
       ════════════════════════════════════════════ */}
@@ -28,7 +73,7 @@ export default function HomePage() {
         {/* Grid Pattern Overlay */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-40" />
 
-        <div className={`relative z-10 container max-w-6xl mx-auto px-6 text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div className="relative z-10 container max-w-6xl mx-auto px-6 text-center animate-fade-in">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-[#f59e0b]/10 border border-[#f59e0b]/30 rounded-full px-5 py-2 mb-8 backdrop-blur-sm">
             <span className="w-2 h-2 bg-[#f59e0b] rounded-full animate-pulse" />

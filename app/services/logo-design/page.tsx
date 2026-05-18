@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { services, portfolioProjects, googleReviews } from "@/lib/constants";
 import { generateMetadata } from "@/lib/metadata";
-import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema } from "@/lib/schemas";
+import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema, generateFAQSchema } from "@/lib/schemas";
 import StatsGrid from "@/components/StatsGrid";
 import TestimonialCard from "@/components/TestimonialCard";
 import CTASection from "@/components/CTASection";
 import ServiceHeroSection from "@/components/ServiceHeroSection";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedServices from "@/components/RelatedServices";
 
 export const metadata = generateMetadata({
   title: "Logo Design Sydney | Professional Brand Logos | Sydney Web Designer",
@@ -20,6 +22,54 @@ export default function LogoDesignPage() {
     { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
     { name: "Services", url: "https://www.sydneywebdesigner.com.au/services" },
     { name: "Logo Design", url: "https://www.sydneywebdesigner.com.au/services/logo-design" }
+  ];
+
+  const faqs = [
+    {
+      question: "How long does the logo design process take?",
+      answer: "Typically 2-3 weeks from initial consultation to final delivery. This includes time for concept development, your feedback, revisions, and finalization. Rush projects can be accommodated for an additional fee."
+    },
+    {
+      question: "What file formats will I receive?",
+      answer: "You'll receive vector files (AI, EPS, SVG, PDF) for scalability, high-resolution PNG and JPG files with transparent backgrounds, and web-optimized versions. All files are suitable for both print and digital use."
+    },
+    {
+      question: "How many logo concepts will I receive?",
+      answer: "We typically present 3-5 initial logo concepts based on our discovery session. You can then select your favorite concept for refinement through unlimited revisions until perfect."
+    },
+    {
+      question: "Do I own the copyright to my logo?",
+      answer: "Yes! Upon final payment, you receive full ownership and copyright of your logo design. You're free to use it however you wish with no restrictions or additional licensing fees."
+    },
+    {
+      question: "Can you redesign my existing logo?",
+      answer: "Absolutely! We offer logo refresh and modernization services. We can update your existing logo while maintaining brand recognition, or create an entirely new design if that better serves your business goals."
+    },
+    {
+      question: "What information do you need to get started?",
+      answer: "We'll discuss your business, target audience, brand personality, competitors, and any design preferences during our discovery session. This ensures we create a logo that truly represents your brand and resonates with your audience."
+    }
+  ];
+
+  const relatedServices = [
+    {
+      title: "Brand Identity Design",
+      description: "Complete brand identity systems including logo, color palette, typography, and brand guidelines.",
+      href: "/services/brand-identity",
+      icon: "fas fa-palette"
+    },
+    {
+      title: "Custom Web Design",
+      description: "Professional website design that showcases your new logo and brand identity perfectly.",
+      href: "/services/custom-web-design",
+      icon: "fas fa-desktop"
+    },
+    {
+      title: "UI/UX Design",
+      description: "User-centered design that brings your brand to life across digital touchpoints.",
+      href: "/services/ui-ux-design",
+      icon: "fas fa-pencil-ruler"
+    }
   ];
 
   const stats = [
@@ -111,6 +161,15 @@ export default function LogoDesignPage() {
           __html: JSON.stringify(generateLocalBusinessSchema()),
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateFAQSchema(faqs)),
+        }}
+      />
+
+      {/* Breadcrumbs */}
+      <Breadcrumbs items={breadcrumbs} />
 
       {/* Hero Section */}
       <ServiceHeroSection
@@ -322,6 +381,9 @@ export default function LogoDesignPage() {
           </div>
         </div>
       </section>
+
+      {/* Related Services */}
+      <RelatedServices services={relatedServices} />
 
       {/* CTA Section */}
       <CTASection
