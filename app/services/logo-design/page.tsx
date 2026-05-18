@@ -121,11 +121,16 @@ export default function LogoDesignPage() {
         }}
         heading="Professional Logo Design That Defines Your Brand"
         description="Create a memorable logo that captures your brand essence and stands out in your market. Custom designs with unlimited revisions until you're 100% satisfied."
-        trustBadges={[
-          { icon: "⭐", text: "4.9/5 Star Rating" },
-          { icon: "🎨", text: "500+ Logos Created" },
-          { icon: "♾️", text: "Unlimited Revisions" },
-        ]}
+        buttons={{
+          primary: {
+            text: "Get Your Free Consultation",
+            dataPopup: "contact"
+          },
+          secondary: {
+            text: "View Our Portfolio",
+            href: "/#portfolio"
+          }
+        }}
       />
 
       {/* Stats Section */}
