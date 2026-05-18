@@ -356,9 +356,9 @@ export const contactInfo = {
     country: "Australia",
   },
   social: {
-    facebook: "https://facebook.com/dsignsaustralia",
-    instagram: "https://instagram.com/dsignsaustralia",
-    linkedin: "https://linkedin.com/company/dsigns-australia",
+    facebook: "https://facebook.com/sydneywebdesigner",
+    instagram: "https://instagram.com/sydneywebdesigner",
+    linkedin: "https://linkedin.com/company/sydney-web-designer",
   },
   geo: {
     latitude: -33.8150,

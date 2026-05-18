@@ -5,8 +5,8 @@ export function generateLocalBusinessSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": contactInfo.companyName,
-    "image": "https://www.sydneywebdesigner.com.au/logo.png",
+    "name": "Sydney Web Designer",
+    "image": "https://www.sydneywebdesigner.com.au/Sydney%20Web%20Designer%20logo.webp",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": `${contactInfo.address.suite}, ${contactInfo.address.street}`,
@@ -121,10 +121,10 @@ export function generateArticleSchema(
     },
     "publisher": {
       "@type": "Organization",
-      "name": contactInfo.companyName,
+      "name": "Sydney Web Designer",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.sydneywebdesigner.com.au/logo.png"
+        "url": "https://www.sydneywebdesigner.com.au/Sydney%20Web%20Designer%20logo.webp"
       }
     },
     "datePublished": datePublished,
@@ -138,10 +138,10 @@ export function generateOrganizationSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": contactInfo.companyName,
-    "alternateName": contactInfo.tradingAs,
+    "name": "Sydney Web Designer",
+    "alternateName": contactInfo.companyName,
     "url": "https://www.sydneywebdesigner.com.au",
-    "logo": "https://www.sydneywebdesigner.com.au/logo.png",
+    "logo": "https://www.sydneywebdesigner.com.au/Sydney%20Web%20Designer%20logo.webp",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": contactInfo.phoneLink,
@@ -184,4 +184,23 @@ export function generateReviewSchema(reviews: Array<{
       "name": contactInfo.companyName
     }
   }));
+}
+
+// WebSite Schema with SearchAction
+export function generateWebSiteSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Sydney Web Designer",
+    "alternateName": contactInfo.companyName,
+    "url": "https://www.sydneywebdesigner.com.au",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://www.sydneywebdesigner.com.au/search?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  };
 }

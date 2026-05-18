@@ -21,7 +21,7 @@ export default function Footer() {
               />
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed text-base">
-              DSIGNS Australia - Sydney&apos;s premier web design and digital marketing agency. Since 2013, delivering exceptional results for businesses across Australia.
+              Sydney Web Designer is Sydney&apos;s premier web design and digital marketing studio. Specialising in custom web design, SEO, and branding - serving Sydney businesses since 2013.
             </p>
             
           </div>
@@ -186,7 +186,7 @@ export default function Footer() {
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <p className="text-gray-400 text-center md:text-left">
-              © {currentYear}  DSIGNS AUSTRALIA PTY LIMITED. ALL RIGHTS RESERVED
+              © {currentYear} Sydney Web Designer (DSIGNS Australia Pty Ltd). All Rights Reserved.
             </p>
             <div className="flex flex-wrap gap-6 justify-center">
               <Link href="/privacy-policy" className="text-gray-400 hover:text-[#f59e0b] transition-colors">

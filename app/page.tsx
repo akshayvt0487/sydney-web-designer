@@ -2,11 +2,11 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { portfolioProjects } from "@/lib/constants";
 import PortfolioCarousel from "@/components/PortfolioCarousel";
-import { generateBreadcrumbSchema } from "@/lib/schemas";
+import { generateBreadcrumbSchema, generateWebSiteSchema } from "@/lib/schemas";
 
 export const metadata: Metadata = {
-  title: "Sydney Web Designer | Award-Winning Web Design & Digital Marketing Agency",
-  description: "Transform your digital presence with Sydney's premier web design agency. Custom websites, SEO, digital marketing. 500+ projects delivered, 4.9★ Google rating. Get your free quote today!",
+  title: "Sydney Web Designer | Web Design & Digital Marketing",
+  description: "Sydney Web Designer - 13+ years delivering custom web design, SEO & digital marketing for Sydney businesses. 500+ sites delivered. Get a free quote today.",
   keywords: "web designer sydney, web design sydney, sydney web designer, digital marketing sydney, seo sydney, website design sydney, web development sydney",
   alternates: {
     canonical: "https://www.sydneywebdesigner.com.au",
@@ -58,6 +58,12 @@ export default function HomePage() {
           __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)),
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateWebSiteSchema()),
+        }}
+      />
 
       {/* ═══════════════════════════════════════════
           HERO SECTION - Modern Gradient Design
@@ -81,20 +87,15 @@ export default function HomePage() {
           </div>
 
           {/* SEO-optimized H1 */}
-          <h1 className="text-xl md:text-2xl font-medium text-white/90 mb-4">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
             Sydney Web Designer
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#f59e0b] to-[#fb923c] mt-2">
+              Award-Winning Web Design & Digital Marketing
+            </span>
           </h1>
 
-          {/* Large user-friendly H2 */}
-          <h2 className="text-5xl md:text-7xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-            Sydney&apos;s Premier
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#f59e0b] to-[#fb923c] mt-0 pb-0">
-              Web Design Agency
-            </span>
-          </h2>
-
           <p className="text-xl md:text-2xl text-slate-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Transform your digital presence with stunning websites that convert visitors into customers. Award-winning design meets cutting-edge technology.
+            Transform your digital presence with stunning websites that convert visitors into customers. Specialising in custom web design, SEO, and branding for Sydney businesses since 2013.
           </p>
 
           {/* CTA Buttons */}
@@ -144,6 +145,19 @@ export default function HomePage() {
         <div className="absolute bottom-2 left-1/2 -translate-x-1/2 animate-bounce ">
           <div className="w-6 h-10 border-2 border-white/30 rounded-full flex items-start justify-center p-2">
             <div className="w-1 h-3 bg-[#f59e0b] rounded-full animate-pulse" />
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
+          INTRO SECTION - About Sydney Web Designer
+      ════════════════════════════════════════════ */}
+      <section className="py-16 bg-white border-b border-gray-100">
+        <div className="container max-w-5xl mx-auto px-6">
+          <div className="text-center">
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+              <strong>Sydney Web Designer</strong> is a Parramatta-based web design studio with <strong>13+ years of experience</strong> helping Sydney businesses grow online. We've delivered <strong>500+ websites</strong> across industries from healthcare to retail, combining strategy, design, and SEO under one roof.
+            </p>
           </div>
         </div>
       </section>
@@ -454,6 +468,29 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════════════════════════════════════
+          ABOUT SECTION - About Sydney Web Designer
+      ════════════════════════════════════════════ */}
+      <section className="py-24 bg-gradient-to-b from-slate-50 to-white">
+        <div className="container max-w-6xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <span className="text-[#f59e0b] font-semibold text-sm tracking-widest uppercase mb-3 block">About Us</span>
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-6">
+              About <span className="text-[#f59e0b]">Sydney Web Designer</span>
+            </h2>
+          </div>
+
+          <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 border border-gray-100">
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
+              Founded in Sydney in 2013, <strong>Sydney Web Designer</strong> has grown from a boutique studio to a full-service digital agency trusted by <strong>500+ Australian businesses</strong>. Our team of designers, developers, and marketers work from our <strong>Parramatta office</strong>, close to our clients, invested in their outcomes.
+            </p>
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+              We specialise in creating custom websites, implementing SEO strategies, and building brands that resonate with Australian audiences. From local startups to established enterprises across Sydney's North Shore, Inner West, and greater metropolitan area, we deliver digital solutions that drive real business growth.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
           INDUSTRIES SECTION - Who We Serve
       ════════════════════════════════════════════ */}
       <section className="py-24 bg-white">
@@ -695,15 +732,15 @@ export default function HomePage() {
                 Sydney&apos;s Most Trusted Web Design <span className="text-[#f59e0b]">Partner</span>
               </h2>
               <p className="text-xl text-slate-600 mb-8">
-                We don&apos;t just build websites — we create digital experiences that drive real business growth.
+                We don&apos;t just build websites — we create digital experiences that drive real business growth for Sydney businesses.
               </p>
 
               <div className="space-y-6">
                 {[
-                  { icon: "fa-award", title: "Award-Winning Design", desc: "Recognized for excellence in web design and digital innovation" },
-                  { icon: "fa-clock", title: "13+ Years Experience", desc: "Over a decade serving Sydney businesses with proven results" },
-                  { icon: "fa-headset", title: "Dedicated Support", desc: "Local team providing ongoing support and maintenance" },
-                  { icon: "fa-chart-line", title: "Results-Driven", desc: "Focused on ROI, conversions, and measurable outcomes" },
+                  { icon: "fa-award", title: "Award-Winning Design", desc: "Recognised by Sydney's digital industry for excellence in web design, from local startups in Surry Hills to enterprise brands in the CBD." },
+                  { icon: "fa-clock", title: "Serving Sydney Since 2013", desc: "Over 13 years working with Sydney businesses across Parramatta, the North Shore, Inner West, and everywhere in between, with the results to prove it." },
+                  { icon: "fa-users", title: "Local Team, Local Hours", desc: "A Sydney-based team you can actually call — no outsourcing, no overseas handoffs, no time zone headaches — just real people who know your market." },
+                  { icon: "fa-chart-line", title: "Results That Matter to Sydney Businesses", desc: "We measure success the way you do: more leads, higher conversions, and ROI that justifies every dollar. Because in a competitive market like Sydney, rankings alone don't pay the bills." },
                 ].map((benefit, i) => (
                   <div key={i} className="flex gap-4 items-start group">
                     <div className="w-14 h-14 bg-[#f59e0b]/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-[#f59e0b] transition-colors duration-300">
