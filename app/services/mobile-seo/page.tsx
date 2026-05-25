@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { generateMetadata } from "@/lib/metadata";
-import { generateBreadcrumbSchema, generateServiceSchema } from "@/lib/schemas";
+import { generateBreadcrumbSchema, generateServiceSchema, generateFAQSchema } from "@/lib/schemas";
 import CTASection from "@/components/CTASection";
 import ServiceHeroSection from "@/components/ServiceHeroSection";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedServices from "@/components/RelatedServices";
 
 export const metadata = generateMetadata({
   title: "Mobile SEO Sydney | Optimize for Mobile Search & Rankings",
@@ -170,39 +172,52 @@ export default function MobileSEOPage() {
     timeline: "4 months"
   };
 
-  const faq = [
+  const faqs = [
     {
-      q: "What is mobile-first indexing and why does it matter?",
-      a: "Mobile-first indexing means Google predominantly uses the mobile version of your website for indexing and ranking. Since March 2021, all websites are indexed mobile-first. If your mobile site is inferior to desktop, your rankings will suffer. With 63% of searches happening on mobile, having a well-optimized mobile site is critical for visibility and traffic."
+      question: "What is mobile-first indexing and why does it matter?",
+      answer: "Mobile-first indexing means Google predominantly uses the mobile version of your website for indexing and ranking. Since March 2021, all websites are indexed mobile-first. If your mobile site is inferior to desktop, your rankings will suffer. With 63% of searches happening on mobile, having a well-optimized mobile site is critical for visibility and traffic."
     },
     {
-      q: "How do Core Web Vitals affect mobile SEO?",
-      a: "Core Web Vitals (LCP, FID, CLS) are critical mobile ranking factors. They measure loading speed, interactivity, and visual stability. Mobile devices often have slower connections and less processing power, making these metrics even more important. Poor Core Web Vitals on mobile can significantly hurt your rankings and user experience."
+      question: "How do Core Web Vitals affect mobile SEO?",
+      answer: "Core Web Vitals (LCP, FID, CLS) are critical mobile ranking factors. They measure loading speed, interactivity, and visual stability. Mobile devices often have slower connections and less processing power, making these metrics even more important. Poor Core Web Vitals on mobile can significantly hurt your rankings and user experience."
     },
     {
-      q: "Should I have a separate mobile site or responsive design?",
-      a: "Google recommends responsive design over separate mobile sites (m.example.com). Responsive design serves the same HTML on all devices with CSS adapting the layout. This is easier to maintain, avoids duplicate content issues, and ensures consistent content across devices - crucial for mobile-first indexing."
+      question: "Should I have a separate mobile site or responsive design?",
+      answer: "Google recommends responsive design over separate mobile sites (m.example.com). Responsive design serves the same HTML on all devices with CSS adapting the layout. This is easier to maintain, avoids duplicate content issues, and ensures consistent content across devices - crucial for mobile-first indexing."
     },
     {
-      q: "How fast should my mobile site load?",
-      a: "Ideally under 3 seconds. Google research shows 53% of mobile users abandon sites taking over 3 seconds to load. We aim for under 2 seconds for optimal results. Target: LCP under 2.5s, FID under 100ms, CLS under 0.1. Every second of delay can reduce conversions by up to 20%."
+      question: "How fast should my mobile site load?",
+      answer: "Ideally under 3 seconds. Google research shows 53% of mobile users abandon sites taking over 3 seconds to load. We aim for under 2 seconds for optimal results. Target: LCP under 2.5s, FID under 100ms, CLS under 0.1. Every second of delay can reduce conversions by up to 20%."
     },
     {
-      q: "Do I need AMP (Accelerated Mobile Pages)?",
-      a: "AMP is no longer required for Google's Top Stories feature, but it can still benefit content-heavy sites like news, blogs, and publications. AMP pages load almost instantly, reducing bounce rates and improving user experience. We evaluate whether AMP makes sense based on your site type and goals."
+      question: "Do I need AMP (Accelerated Mobile Pages)?",
+      answer: "AMP is no longer required for Google's Top Stories feature, but it can still benefit content-heavy sites like news, blogs, and publications. AMP pages load almost instantly, reducing bounce rates and improving user experience. We evaluate whether AMP makes sense based on your site type and goals."
     },
     {
-      q: "How does mobile SEO differ from desktop SEO?",
-      a: "Mobile SEO focuses on speed optimization, touch-friendly design, simplified navigation, voice search optimization, local search (70% of mobile searches lead to action within 1 hour), shorter content formats, and ensuring feature parity with desktop. Mobile users also have different search intent and behavior patterns."
+      question: "How does mobile SEO differ from desktop SEO?",
+      answer: "Mobile SEO focuses on speed optimization, touch-friendly design, simplified navigation, voice search optimization, local search (70% of mobile searches lead to action within 1 hour), shorter content formats, and ensuring feature parity with desktop. Mobile users also have different search intent and behavior patterns."
+    }
+  ];
+
+  const relatedServices = [
+    {
+      title: "SEO Sydney",
+      description: "Complete SEO strategy optimized for mobile-first indexing and rankings.",
+      href: "/services/seo-sydney",
+      icon: "fas fa-search"
     },
     {
-      q: "Will mobile optimization help my local SEO?",
-      a: "Absolutely! 76% of people who search on mobile for something nearby visit a business within 24 hours. Mobile optimization is crucial for local SEO, especially for 'near me' searches, Google Maps visibility, click-to-call functionality, and mobile-friendly directions. Most local searches happen on mobile devices."
+      title: "Local SEO",
+      description: "Dominate local mobile searches and capture customers searching on-the-go.",
+      href: "/services/local-seo-sydney",
+      icon: "fas fa-map-marker-alt"
     },
     {
-      q: "How do you optimize for voice search on mobile?",
-      a: "Voice search optimization involves targeting conversational long-tail keywords, creating FAQ content that answers questions directly, optimizing for featured snippets, using structured data markup, focusing on local SEO (voice searches are often local), and ensuring fast mobile load times since voice users expect quick results."
-    },
+      title: "Technical SEO",
+      description: "Advanced technical optimization for mobile performance and Core Web Vitals.",
+      href: "/services/technical-seo",
+      icon: "fas fa-cogs"
+    }
   ];
 
   return (
@@ -215,6 +230,12 @@ export default function MobileSEOPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(generateServiceSchema(serviceData.name, serviceData.description)) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(faqs)) }}
+      />
+
+      <Breadcrumbs items={breadcrumbs} />
 
       {/* Hero Section */}
       <ServiceHeroSection
@@ -422,15 +443,17 @@ export default function MobileSEOPage() {
           </div>
 
           <div className="max-w-4xl mx-auto space-y-6">
-            {faq.map((item, index) => (
+            {faqs.map((item, index) => (
               <div key={index} className="card">
-                <h3 className="text-xl font-bold mb-3 text-primary-navy">{item.q}</h3>
-                <p className="text-gray-700 leading-relaxed">{item.a}</p>
+                <h3 className="text-xl font-bold mb-3 text-primary-navy">{item.question}</h3>
+                <p className="text-gray-700 leading-relaxed">{item.answer}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
+
+      <RelatedServices services={relatedServices} />
 
       {/* CTA Section */}
       <CTASection

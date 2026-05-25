@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { services, portfolioProjects, googleReviews } from "@/lib/constants";
 import { generateMetadata } from "@/lib/metadata";
-import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema } from "@/lib/schemas";
+import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema, generateFAQSchema } from "@/lib/schemas";
 import StatsGrid from "@/components/StatsGrid";
 import TestimonialCard from "@/components/TestimonialCard";
 import PortfolioCard from "@/components/PortfolioCard";
 import CTASection from "@/components/CTASection";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedServices from "@/components/RelatedServices";
 
 export const metadata = generateMetadata({
   title: "Content Marketing Sydney | Strategic Content Creation Services",
@@ -42,11 +44,32 @@ export default function ContentMarketingPage() {
     { step: 4, title: "Distribution & Analysis", description: "Publish content, promote across channels, and measure performance." },
   ];
   const faqs = [
-    { question: "What types of content do you create?", answer: "We create blog posts, articles, ebooks, white papers, case studies, infographics, video scripts, social media content, email newsletters, and website copy. We'll recommend the best content types based on your audience and goals." },
-    { question: "How often should I publish new content?", answer: "Consistency matters more than volume. We typically recommend 2-4 blog posts per month minimum, plus regular social content. The ideal frequency depends on your resources, industry competitiveness, and goals. We'll develop a sustainable content calendar." },
+    { question: "What types of content do you create?", answer: "We create blog posts, articles, ebooks, white papers, case studies, infographics, video scripts, social media content, email newsletters, and website copy. We will recommend the best content types based on your audience and goals." },
+    { question: "How often should I publish new content?", answer: "Consistency matters more than volume. We typically recommend 2-4 blog posts per month minimum, plus regular social content. The ideal frequency depends on your resources, industry competitiveness, and goals. We will develop a sustainable content calendar." },
     { question: "Do you handle SEO for content?", answer: "Yes! All our content is created with SEO best practices including keyword research, optimized headlines, meta descriptions, internal linking, and proper formatting. Content marketing and SEO work hand-in-hand for maximum organic visibility." },
-    { question: "How long before content marketing shows results?", answer: "Content marketing is a long-term strategy. You'll typically see increased traffic within 3-4 months and meaningful lead generation within 6-12 months. The compounding effect means results accelerate over time as your content library grows." },
+    { question: "How long before content marketing shows results?", answer: "Content marketing is a long-term strategy. You will typically see increased traffic within 3-4 months and meaningful lead generation within 6-12 months. The compounding effect means results accelerate over time as your content library grows." },
     { question: "Can you write about technical or specialized topics?", answer: "Yes! We interview your subject matter experts and conduct research to understand technical topics. We can write about complex subjects in ways that are accurate yet accessible to your target audience, establishing your thought leadership." },
+  ];
+
+  const relatedServices = [
+    {
+      title: "SEO Sydney",
+      description: "Optimize your content for search engines and drive organic traffic to your website.",
+      href: "/services/seo-sydney",
+      icon: "fas fa-search"
+    },
+    {
+      title: "Link Building",
+      description: "Earn high-quality backlinks through valuable content that publishers want to reference.",
+      href: "/services/link-building",
+      icon: "fas fa-link"
+    },
+    {
+      title: "Copywriting",
+      description: "Persuasive copy that converts readers into customers and drives action.",
+      href: "/services/copywriting",
+      icon: "fas fa-pen"
+    }
   ];
 
   return (
@@ -60,6 +83,11 @@ export default function ContentMarketingPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessSchema()) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(faqs)) }}
+      />
+      <Breadcrumbs items={breadcrumbs} />
       <section className="bg-[#1e293b] text-white py-20">
         <div className="container">
           <div className="max-w-3xl">
@@ -140,6 +168,7 @@ export default function ContentMarketingPage() {
           <div className="max-w-3xl mx-auto space-y-6">{faqs.map((faq, index) => (<div key={index} className="card"><h3 className="text-lg font-bold mb-2">{faq.question}</h3><p className="text-gray-600">{faq.answer}</p></div>))}</div>
         </div>
       </section>
+      <RelatedServices services={relatedServices} />
       <CTASection title="Ready to Start Content Marketing?" description="Create valuable content that attracts your ideal customers and establishes your expertise." primaryButtonText="Start Content Marketing" primaryButtonAction="contact" />
     </>
   );

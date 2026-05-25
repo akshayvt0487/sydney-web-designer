@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { generateMetadata } from "@/lib/metadata";
-import { generateBreadcrumbSchema, generateServiceSchema } from "@/lib/schemas";
+import { generateBreadcrumbSchema, generateServiceSchema, generateFAQSchema } from "@/lib/schemas";
 import CTASection from "@/components/CTASection";
 import ServiceHeroSection from "@/components/ServiceHeroSection";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedServices from "@/components/RelatedServices";
 
 export const metadata = generateMetadata({
   title: "Link Building Sydney | White-Hat SEO Backlink Services",
@@ -172,39 +174,52 @@ export default function LinkBuildingPage() {
     timeline: "12 months"
   };
 
-  const faq = [
+  const faqs = [
     {
-      q: "What makes a quality backlink?",
-      a: "Quality backlinks come from authoritative, relevant websites in your industry with strong domain authority (DA 30+), genuine traffic, editorial standards, and contextual relevance. The link should be placed naturally within content, use relevant (not over-optimized) anchor text, and come from a page that's topically related to your content. One quality link from a trusted source is worth more than 100 low-quality directory links."
+      question: "What makes a quality backlink?",
+      answer: "Quality backlinks come from authoritative, relevant websites in your industry with strong domain authority (DA 30+), genuine traffic, editorial standards, and contextual relevance. The link should be placed naturally within content, use relevant (not over-optimized) anchor text, and come from a page that is topically related to your content. One quality link from a trusted source is worth more than 100 low-quality directory links."
     },
     {
-      q: "How many backlinks do I need to rank?",
-      a: "It's about quality over quantity. You might rank with 10 high-authority links while competitors with 100 low-quality links don't. The number needed depends on your competition, current authority, and target keywords. We typically see significant movement with 10-20 quality links over 6 months for moderately competitive keywords. Highly competitive terms may require 50+ authoritative backlinks over 12-18 months."
+      question: "How many backlinks do I need to rank?",
+      answer: "It is about quality over quantity. You might rank with 10 high-authority links while competitors with 100 low-quality links do not. The number needed depends on your competition, current authority, and target keywords. We typically see significant movement with 10-20 quality links over 6 months for moderately competitive keywords. Highly competitive terms may require 50+ authoritative backlinks over 12-18 months."
     },
     {
-      q: "Are paid links against Google's guidelines?",
-      a: "Yes, paying for links specifically to manipulate PageRank violates Google's guidelines and can result in penalties. However, legitimate paid placements (like sponsored content or advertising) are acceptable if they use rel='nofollow' or rel='sponsored' attributes. We only pursue white-hat tactics: creating valuable content that naturally earns links, building relationships with publishers, and providing genuine value that warrants editorial links."
+      question: "Are paid links against Google's guidelines?",
+      answer: "Yes, paying for links specifically to manipulate PageRank violates Google's guidelines and can result in penalties. However, legitimate paid placements (like sponsored content or advertising) are acceptable if they use rel='nofollow' or rel='sponsored' attributes. We only pursue white-hat tactics: creating valuable content that naturally earns links, building relationships with publishers, and providing genuine value that warrants editorial links."
     },
     {
-      q: "How long does link building take to show results?",
-      a: "Link building is a long-term strategy. You'll typically see initial ranking improvements within 3-4 months as the first quality links are indexed and valued. Significant results usually appear by month 6-8. The effects compound over time - month 12 often shows dramatically better results than month 6. Unlike paid ads, the benefits continue growing and don't stop when you pause the campaign."
+      question: "How long does link building take to show results?",
+      answer: "Link building is a long-term strategy. You will typically see initial ranking improvements within 3-4 months as the first quality links are indexed and valued. Significant results usually appear by month 6-8. The effects compound over time - month 12 often shows dramatically better results than month 6. Unlike paid ads, the benefits continue growing and do not stop when you pause the campaign."
     },
     {
-      q: "What's the difference between white-hat and black-hat link building?",
-      a: "White-hat link building earns links through valuable content, genuine relationships, and providing value to readers. Methods include guest posting on quality sites, creating linkable assets, digital PR, and broken link building. Black-hat uses manipulative tactics like buying links, PBNs (private blog networks), link farms, automated outreach, and link schemes. Black-hat risks severe Google penalties; white-hat builds sustainable, long-term authority."
+      question: "What is the difference between white-hat and black-hat link building?",
+      answer: "White-hat link building earns links through valuable content, genuine relationships, and providing value to readers. Methods include guest posting on quality sites, creating linkable assets, digital PR, and broken link building. Black-hat uses manipulative tactics like buying links, PBNs (private blog networks), link farms, automated outreach, and link schemes. Black-hat risks severe Google penalties; white-hat builds sustainable, long-term authority."
     },
     {
-      q: "Can you guarantee a specific number of links?",
-      a: "We don't guarantee specific numbers because quality matters far more than quantity. What we guarantee is effort: dedicated outreach hours, content creation, relationship building, and proven strategies. We target realistic monthly goals based on your niche and budget, but genuine editorial links can't be guaranteed like ordering widgets. We focus on earning the highest-quality links possible rather than chasing arbitrary numbers."
+      question: "Can you guarantee a specific number of links?",
+      answer: "We do not guarantee specific numbers because quality matters far more than quantity. What we guarantee is effort: dedicated outreach hours, content creation, relationship building, and proven strategies. We target realistic monthly goals based on your niche and budget, but genuine editorial links cannot be guaranteed like ordering widgets. We focus on earning the highest-quality links possible rather than chasing arbitrary numbers."
+    }
+  ];
+
+  const relatedServices = [
+    {
+      title: "SEO Sydney",
+      description: "Complete SEO strategy including on-page optimization to maximize your link building results.",
+      href: "/services/seo-sydney",
+      icon: "fas fa-search"
     },
     {
-      q: "Should I remove or disavow bad backlinks?",
-      a: "Google typically ignores low-quality links, so removal isn't always necessary. However, obviously spammy or manipulative links (from your own past SEO or negative SEO attacks) should be addressed. We audit your backlink profile, attempt to remove toxic links, and use Google's Disavow Tool for links that can't be removed. Most sites don't need aggressive disavowing unless they've engaged in black-hat tactics previously."
+      title: "Content Marketing",
+      description: "Create linkable content assets that naturally attract high-quality backlinks.",
+      href: "/services/content-marketing",
+      icon: "fas fa-bullhorn"
     },
     {
-      q: "How do you measure link building success?",
-      a: "We track multiple metrics: number and quality of acquired links (DR/DA of linking sites), growth in referring domains, improvements in domain authority, keyword ranking improvements (especially for target terms), organic traffic growth, and referral traffic from backlinks. We provide monthly reports showing new links acquired, their metrics, and the correlation to ranking and traffic improvements."
-    },
+      title: "Digital PR",
+      description: "Media outreach and PR campaigns that earn authoritative press coverage and links.",
+      href: "/services/digital-pr",
+      icon: "fas fa-newspaper"
+    }
   ];
 
   return (
@@ -217,6 +232,12 @@ export default function LinkBuildingPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(generateServiceSchema(serviceData.name, serviceData.description)) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(faqs)) }}
+      />
+
+      <Breadcrumbs items={breadcrumbs} />
 
       {/* Hero Section */}
       <ServiceHeroSection
@@ -475,15 +496,17 @@ export default function LinkBuildingPage() {
           </div>
 
           <div className="max-w-4xl mx-auto space-y-6">
-            {faq.map((item, index) => (
+            {faqs.map((item, index) => (
               <div key={index} className="card">
-                <h3 className="text-xl font-bold mb-3 text-primary-navy">{item.q}</h3>
-                <p className="text-gray-700 leading-relaxed">{item.a}</p>
+                <h3 className="text-xl font-bold mb-3 text-primary-navy">{item.question}</h3>
+                <p className="text-gray-700 leading-relaxed">{item.answer}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
+
+      <RelatedServices services={relatedServices} />
 
       {/* CTA Section */}
       <CTASection

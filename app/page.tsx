@@ -231,7 +231,7 @@ export default function HomePage() {
                 </div>
 
                 {/* Decorative Corner */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#f59e0b]/5 rounded-bl-full transform translate-x-16 -translate-y-16 group-hover:scale-150 transition-transform duration-700" />
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[#f59e0b]/5 rounded-bl-full transform translate-x-16 -translate-y-16 group-hover:scale-150 transition-transform duration-700 hidden md:block" />
               </Link>
             ))}
           </div>
@@ -767,15 +767,15 @@ export default function HomePage() {
                 </div>
 
                 {/* Floating Badge */}
-                <div className="absolute -bottom-6 -right-6 bg-[#f59e0b] text-white rounded-2xl p-6 shadow-xl transform rotate-3 hover:rotate-0 transition-transform">
+                <div className="absolute -bottom-6 -right-6 bg-[#f59e0b] text-white rounded-2xl p-6 shadow-xl transform rotate-3 hover:rotate-0 transition-transform hidden md:block">
                   <div className="text-4xl font-black">100%</div>
                   <div className="text-sm font-semibold">Satisfaction</div>
                 </div>
               </div>
 
               {/* Decorative Circle */}
-              <div className="absolute -top-10 -left-10 w-32 h-32 bg-[#f59e0b]/20 rounded-full blur-2xl" />
-              <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-[#f59e0b]/20 rounded-full blur-2xl" />
+              <div className="absolute -top-10 -left-10 w-32 h-32 bg-[#f59e0b]/20 rounded-full blur-2xl hidden md:block" />
+              <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-[#f59e0b]/20 rounded-full blur-2xl hidden md:block" />
             </div>
           </div>
         </div>
