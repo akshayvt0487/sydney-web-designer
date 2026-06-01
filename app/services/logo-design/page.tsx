@@ -8,6 +8,7 @@ import CTASection from "@/components/CTASection";
 import ServiceHeroSection from "@/components/ServiceHeroSection";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedServices from "@/components/RelatedServices";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const metadata = generateMetadata({
   title: "Logo Design Sydney | Professional Brand Logos | Sydney Web Designer",
@@ -323,62 +324,7 @@ export default function LogoDesignPage() {
           <h2 className="text-4xl md:text-5xl font-bold text-navy mb-12 text-center">
             Frequently Asked Questions
           </h2>
-
-          <div className="space-y-6">
-            <details className="bg-white p-6 rounded-xl shadow-md">
-              <summary className="text-xl font-bold text-navy cursor-pointer">
-                How long does the logo design process take?
-              </summary>
-              <p className="mt-4 text-gray-600 leading-relaxed">
-                Typically 2-3 weeks from initial consultation to final delivery. This includes time for concept development, your feedback, revisions, and finalization. Rush projects can be accommodated for an additional fee.
-              </p>
-            </details>
-
-            <details className="bg-white p-6 rounded-xl shadow-md">
-              <summary className="text-xl font-bold text-navy cursor-pointer">
-                What file formats will I receive?
-              </summary>
-              <p className="mt-4 text-gray-600 leading-relaxed">
-                You'll receive vector files (AI, EPS, SVG, PDF) for scalability, high-resolution PNG and JPG files with transparent backgrounds, and web-optimized versions. All files are suitable for both print and digital use.
-              </p>
-            </details>
-
-            <details className="bg-white p-6 rounded-xl shadow-md">
-              <summary className="text-xl font-bold text-navy cursor-pointer">
-                How many logo concepts will I receive?
-              </summary>
-              <p className="mt-4 text-gray-600 leading-relaxed">
-                We typically present 3-5 initial logo concepts based on our discovery session. You can then select your favorite concept for refinement through unlimited revisions until perfect.
-              </p>
-            </details>
-
-            <details className="bg-white p-6 rounded-xl shadow-md">
-              <summary className="text-xl font-bold text-navy cursor-pointer">
-                Do I own the copyright to my logo?
-              </summary>
-              <p className="mt-4 text-gray-600 leading-relaxed">
-                Yes! Upon final payment, you receive full ownership and copyright of your logo design. You're free to use it however you wish with no restrictions or additional licensing fees.
-              </p>
-            </details>
-
-            <details className="bg-white p-6 rounded-xl shadow-md">
-              <summary className="text-xl font-bold text-navy cursor-pointer">
-                Can you redesign my existing logo?
-              </summary>
-              <p className="mt-4 text-gray-600 leading-relaxed">
-                Absolutely! We offer logo refresh and modernization services. We can update your existing logo while maintaining brand recognition, or create an entirely new design if that better serves your business goals.
-              </p>
-            </details>
-
-            <details className="bg-white p-6 rounded-xl shadow-md">
-              <summary className="text-xl font-bold text-navy cursor-pointer">
-                What information do you need to get started?
-              </summary>
-              <p className="mt-4 text-gray-600 leading-relaxed">
-                We'll discuss your business, target audience, brand personality, competitors, and any design preferences during our discovery session. This ensures we create a logo that truly represents your brand and resonates with your audience.
-              </p>
-            </details>
-          </div>
+          <FAQAccordion faqs={faqs} />
         </div>
       </section>
 

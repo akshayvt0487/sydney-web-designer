@@ -6,6 +6,7 @@ import StatsGrid from "@/components/StatsGrid";
 import TestimonialCard from "@/components/TestimonialCard";
 import PortfolioCard from "@/components/PortfolioCard";
 import CTASection from "@/components/CTASection";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const metadata = generateMetadata({
   title: "Conversion Optimization Sydney | CRO Services That Increase Sales",
@@ -137,7 +138,7 @@ export default function ConversionOptimizationPage() {
             <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Frequently Asked Questions</h2>
             <p className="text-xl text-gray-600 text-center">Common questions about conversion optimization services.</p>
           </div>
-          <div className="max-w-3xl mx-auto space-y-6">{faqs.map((faq, index) => (<div key={index} className="card"><h3 className="text-lg font-bold mb-2">{faq.question}</h3><p className="text-gray-600">{faq.answer}</p></div>))}</div>
+          <FAQAccordion faqs={faqs} />
         </div>
       </section>
       <CTASection title="Ready to Increase Your Conversions?" description="Stop wasting traffic and start converting more visitors into customers with data-driven optimization." primaryButtonText="Get Free CRO Audit" primaryButtonAction="contact" />

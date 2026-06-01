@@ -3,6 +3,7 @@ import { generateMetadata } from "@/lib/metadata";
 import { generateBreadcrumbSchema, generateServiceSchema } from "@/lib/schemas";
 import CTASection from "@/components/CTASection";
 import ServiceHeroSection from "@/components/ServiceHeroSection";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const metadata = generateMetadata({
   title: "High Performance Landing Pages Sydney | Fast & Conversion-Optimized",
@@ -400,14 +401,12 @@ export default function HighPerformanceLandingPagesPage() {
             <p>Common questions about high-performance landing pages</p>
           </div>
 
-          <div className="max-w-4xl mx-auto space-y-6">
-            {faq.map((item, index) => (
-              <div key={index} className="card">
-                <h3 className="text-xl font-bold mb-3 text-primary-navy">{item.q}</h3>
-                <p className="text-gray-700 leading-relaxed">{item.a}</p>
-              </div>
-            ))}
-          </div>
+          <FAQAccordion
+            faqs={faq.map((item) => ({
+              question: item.q,
+              answer: item.a,
+            }))}
+          />
         </div>
       </section>
 

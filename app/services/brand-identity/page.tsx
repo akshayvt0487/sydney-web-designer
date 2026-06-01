@@ -8,6 +8,7 @@ import CTASection from "@/components/CTASection";
 import ServiceHeroSection from "@/components/ServiceHeroSection";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedServices from "@/components/RelatedServices";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const metadata = generateMetadata({
   title: "Brand Identity Design Sydney | Logo & Branding Services",
@@ -306,14 +307,7 @@ export default function BrandIdentityPage() {
             Everything you need to know about brand identity design
           </p>
 
-          <div className="space-y-6">
-            {faqs.map((faq, index) => (
-              <div key={index} className="bg-white p-8 rounded-xl shadow-md border-l-4 border-[#f59e0b]">
-                <h3 className="text-xl font-bold text-slate-900 mb-4">{faq.question}</h3>
-                <p className="text-slate-600 leading-relaxed">{faq.answer}</p>
-              </div>
-            ))}
-          </div>
+          <FAQAccordion faqs={faqs} />
         </div>
       </section>
 

@@ -1,612 +1,588 @@
+import Image from "next/image";
+import { portfolioProjects } from "@/lib/constants";
 import { generateMetadata } from "@/lib/metadata";
-import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema } from "@/lib/schemas";
+import {
+  generateBreadcrumbSchema,
+  generateServiceSchema,
+  generateLocalBusinessSchema,
+} from "@/lib/schemas";
 import ServiceHeroSection from "@/components/ServiceHeroSection";
 
 export const metadata = generateMetadata({
   title: "WordPress Development Sydney | Custom WordPress Websites",
-  description: "Professional WordPress development services in Sydney. Custom themes, plugins, and complete WooCommerce solutions. 13+ years experience with 200+ WordPress sites delivered.",
-  keywords: "wordpress development sydney, custom wordpress sydney, wordpress developer, woocommerce sydney, wordpress website design, wordpress expert sydney",
-  canonicalUrl: "https://www.sydneywebdesigner.com.au/services/wordpress-development",
+  description:
+    "Professional WordPress development services in Sydney. Custom themes, plugins, and complete WooCommerce solutions. 13+ years experience with 200+ WordPress sites delivered.",
+  keywords:
+    "wordpress development sydney, custom wordpress sydney, wordpress developer, woocommerce sydney, wordpress website design, wordpress expert sydney",
+  canonicalUrl:
+    "https://www.sydneywebdesigner.com.au/services/wordpress-development",
   ogImage: "/images/og/services.svg",
 });
 
+const trustBadges = [
+  {
+    icon: "fa-trophy",
+    text: "13+ Years Experience",
+  },
+  {
+    icon: "fa-star",
+    text: "50+ 5-Star Reviews",
+  },
+  {
+    icon: "fa-check-circle",
+    text: "Professional Service",
+  },
+  {
+    icon: "fa-chart-bar",
+    text: "Proven Results",
+  },
+];
+
+const stats = [
+  {
+    value: "200+",
+    label: "WordPress Sites",
+  },
+  {
+    value: "98%",
+    label: "Uptime",
+  },
+  {
+    value: "50%",
+    label: "Faster Loading",
+  },
+  {
+    value: "13+",
+    label: "Years Experience",
+  },
+];
+
+const features = [
+  {
+    icon: "fa-palette",
+    title: "Custom Themes",
+    description: "Unique WordPress themes",
+    points: ["Custom design", "Responsive", "Customization", "Optimized"],
+  },
+  {
+    icon: "fa-plug",
+    title: "Plugin Development",
+    description: "Custom functionality",
+    points: ["Custom plugins", "Integrations", "API connections", "Third-party"],
+  },
+  {
+    icon: "fa-shopping-cart",
+    title: "WooCommerce",
+    description: "E-commerce solutions",
+    points: [
+      "Product catalogs",
+      "Payment gateways",
+      "Shipping",
+      "Inventory",
+    ],
+  },
+  {
+    icon: "fa-bolt",
+    title: "Performance",
+    description: "Fast WordPress sites",
+    points: ["Caching", "Image optimization", "Database", "CDN"],
+  },
+  {
+    icon: "fa-lock",
+    title: "Security",
+    description: "Enterprise security",
+    points: ["Security audits", "Malware protection", "SSL", "Backups"],
+  },
+  {
+    icon: "fa-wrench",
+    title: "Maintenance",
+    description: "Ongoing support",
+    points: [
+      "Core updates",
+      "Plugin updates",
+      "Security monitoring",
+      "Performance",
+    ],
+  },
+];
+
+const processSteps = [
+  {
+    number: "1",
+    title: "Discovery",
+    description: "Deep dive into your business, goals, and requirements",
+  },
+  {
+    number: "2",
+    title: "Strategy",
+    description: "Develop custom strategy based on research and analysis",
+  },
+  {
+    number: "3",
+    title: "Planning",
+    description: "Create detailed roadmap and project timeline",
+  },
+  {
+    number: "4",
+    title: "Execution",
+    description: "Implement solution with attention to detail",
+  },
+  {
+    number: "5",
+    title: "Testing",
+    description: "Thorough quality assurance and optimization",
+  },
+  {
+    number: "6",
+    title: "Launch & Support",
+    description: "Deploy and provide ongoing support",
+  },
+];
+
+const testimonials = [
+  {
+    text: "Professional, responsive, and delivered exactly what we needed. The results have been fantastic and we've seen significant improvements.",
+    name: "Sydney Business Owner",
+    detail: "Professional Services",
+  },
+  {
+    text: "The team at Sydney Web Designer took the time to understand our business. Their expertise and transparent approach made the entire process smooth.",
+    name: "Local Business",
+    detail: "Parramatta, NSW",
+  },
+  {
+    text: "Highly recommend Sydney Web Designer for their professionalism and quality of work. They exceeded our expectations in every way.",
+    name: "Sydney Client",
+    detail: "Service Provider",
+  },
+];
+
 export default function WordPressDevelopmentPage() {
   const breadcrumbs = [
-    { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
-    { name: "Services", url: "https://www.sydneywebdesigner.com.au/services" },
-    { name: "WordPress Development", url: "https://www.sydneywebdesigner.com.au/services/wordpress-development" }
+    {
+      name: "Home",
+      url: "https://www.sydneywebdesigner.com.au",
+    },
+    {
+      name: "Services",
+      url: "https://www.sydneywebdesigner.com.au/services",
+    },
+    {
+      name: "WordPress Development",
+      url: "https://www.sydneywebdesigner.com.au/services/wordpress-development",
+    },
   ];
 
   const serviceData = {
     name: "WordPress Development",
-    description: "Expert WordPress development services including custom themes, plugin development, WooCommerce integration, and complete WordPress solutions for Sydney businesses. Fast, secure, and optimized.",
-    provider: "Sydney Web Designer"
+    description:
+      "Expert WordPress development services including custom themes, plugin development, WooCommerce integration, and complete WordPress solutions for Sydney businesses. Fast, secure, and optimized.",
+    provider: "Sydney Web Designer",
   };
+
+  /*
+   * Uses real project records already stored in portfolioProjects.
+   * No fake project content or duplicate hard-coded image paths.
+   */
+    const resultProjects = portfolioProjects
+    .filter((project) => {
+      const projectIdentifier = `${project.id} ${project.name}`.toLowerCase();
+
+      const isAdl99Project =
+        projectIdentifier.includes("adl99") ||
+        projectIdentifier.includes("ald99") ||
+        projectIdentifier.includes("adl 99") ||
+        projectIdentifier.includes("ald 99");
+
+      const hasPreviewImage = Boolean(project.images?.[0] || project.image);
+
+      return hasPreviewImage && !isAdl99Project;
+    })
+    .slice(0, 6);
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)),
+        }}
       />
+
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateServiceSchema(serviceData.name, serviceData.description)) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateServiceSchema(serviceData.name, serviceData.description)
+          ),
+        }}
       />
+
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessSchema()) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateLocalBusinessSchema()),
+        }}
       />
+
       {/* Hero Section */}
       <ServiceHeroSection
         h1="WordPress Developer Sydney"
         badge={{
           icon: "fab fa-wordpress",
-          text: "WordPress Specialists"
+          text: "WordPress Specialists",
         }}
         heading="WordPress Development Sydney"
         description="Expert WordPress development for Sydney businesses. Custom themes, plugins, and complete solutions tailored to your needs."
         buttons={{
           primary: {
             text: "Start WordPress Project",
-            dataPopup: "contact"
+            dataPopup: "contact",
           },
           secondary: {
             text: "Our Process",
-            href: "#process"
-          }
+            href: "#process",
+          },
         }}
       />
 
       {/* Trust Badges Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="border-b border-slate-200 bg-white py-10 md:py-12">
         <div className="container">
-          <div className="flex flex-wrap justify-center gap-12 max-w-4xl mx-auto">
-            <div className="text-center">
-              <div className="mb-2"><i className="fas fa-trophy text-4xl text-[#f59e0b]"></i></div>
-              <div className="text-sm text-gray-600">13+ Years Experience</div>
-            </div>
-            <div className="text-center">
-              <div className="mb-2"><i className="fas fa-star text-4xl text-[#f59e0b]"></i></div>
-              <div className="text-sm text-gray-600">50+ 5-Star Reviews</div>
-            </div>
-            <div className="text-center">
-              <div className="mb-2"><i className="fas fa-check-circle text-4xl text-[#f59e0b]"></i></div>
-              <div className="text-sm text-gray-600">Professional Service</div>
-            </div>
-            <div className="text-center">
-              <div className="mb-2"><i className="fas fa-chart-bar text-4xl text-[#f59e0b]"></i></div>
-              <div className="text-sm text-gray-600">Proven Results</div>
-            </div>
+          <div className="mx-auto grid max-w-5xl grid-cols-2 gap-6 md:grid-cols-4 md:gap-8">
+            {trustBadges.map((badge) => (
+              <div
+                key={badge.text}
+                className="flex flex-col items-center justify-center gap-3 text-center"
+              >
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary-orange/10 text-primary-orange">
+                  <i className={`fas ${badge.icon} text-lg`} aria-hidden="true" />
+                </div>
+
+                <div className="text-sm font-bold text-slate-600">
+                  {badge.text}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-24 px-8">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">
+      <section className="bg-slate-50 py-16 md:py-24">
+        <div className="container">
+          <h2 className="mb-10 text-center font-heading text-3xl font-bold text-primary-navy md:mb-14 md:text-5xl">
             Why Choose WordPress Development Sydney?
           </h2>
-          <div className="grid md:grid-cols-4 gap-8 mt-16">
-            <div className="bg-white p-10 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] text-center border-t-4 border-[#f59e0b]">
-              <div className="text-6xl font-bold text-[#f59e0b] mb-2">200+</div>
-              <div className="text-[#64748b] text-lg">WordPress Sites</div>
-            </div>
-            <div className="bg-white p-10 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] text-center border-t-4 border-[#f59e0b]">
-              <div className="text-6xl font-bold text-[#f59e0b] mb-2">98%</div>
-              <div className="text-[#64748b] text-lg">Uptime</div>
-            </div>
-            <div className="bg-white p-10 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] text-center border-t-4 border-[#f59e0b]">
-              <div className="text-6xl font-bold text-[#f59e0b] mb-2">50%</div>
-              <div className="text-[#64748b] text-lg">Faster Loading</div>
-            </div>
-            <div className="bg-white p-10 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] text-center border-t-4 border-[#f59e0b]">
-              <div className="text-6xl font-bold text-[#f59e0b] mb-2">13+</div>
-              <div className="text-[#64748b] text-lg">Years Experience</div>
-            </div>
+
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {stats.map((stat) => (
+              <article
+                key={stat.label}
+                className="rounded-2xl border border-slate-200 border-t-4 border-t-primary-orange bg-white p-6 text-center shadow-sm transition-all hover:border-primary-orange/30 hover:shadow-card-hover md:p-8"
+              >
+                <div className="mb-2 font-heading text-4xl font-bold text-primary-orange md:text-5xl">
+                  {stat.value}
+                </div>
+
+                <div className="text-base font-medium text-slate-600 md:text-lg">
+                  {stat.label}
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-24 px-8 bg-[#f8fafc]">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">
-            Our WordPress Development Sydney Services
-          </h2>
-          <p className="text-center text-xl text-[#64748b] max-w-3xl mx-auto mb-12">
-            Comprehensive solutions designed to help your business succeed
-          </p>
+      <section className="bg-white py-16 md:py-24">
+        <div className="container">
+          <div className="mb-10 text-center md:mb-14">
+            <h2 className="mb-5 font-heading text-3xl font-bold text-primary-navy md:text-5xl">
+              Our WordPress Development Sydney Services
+            </h2>
 
-          <div className="grid md:grid-cols-3 gap-12 mt-16">
-            <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border border-[#f59e0b]/30">
-              <div className="mb-6"><i className="fas fa-palette text-5xl text-[#f59e0b]"></i></div>
-              <h3 className="text-2xl font-bold text-[#1e293b] mb-3">Custom Themes</h3>
-              <p className="text-[#64748b] mb-6">Unique WordPress themes</p>
-              <ul className="space-y-3">
-                <li className="flex items-start gap-3">
-                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
-                  <span>Custom design</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
-                  <span>Responsive</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
-                  <span>Customization</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
-                  <span>Optimized</span>
-                </li>
-              </ul>
-            </div>
+            <p className="mx-auto max-w-3xl text-base text-slate-600 md:text-xl">
+              Comprehensive solutions designed to help your business succeed
+            </p>
+          </div>
 
-            <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border border-[#f59e0b]/30">
-              <div className="mb-6"><i className="fas fa-plug text-5xl text-[#f59e0b]"></i></div>
-              <h3 className="text-2xl font-bold text-[#1e293b] mb-3">Plugin Development</h3>
-              <p className="text-[#64748b] mb-6">Custom functionality</p>
-              <ul className="space-y-3">
-                <li className="flex items-start gap-3">
-                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
-                  <span>Custom plugins</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
-                  <span>Integrations</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
-                  <span>API connections</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
-                  <span>Third-party</span>
-                </li>
-              </ul>
-            </div>
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {features.map((feature) => (
+              <article
+                key={feature.title}
+                className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:border-primary-orange/30 hover:shadow-card-hover md:p-8"
+              >
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary-orange/10 text-primary-orange">
+                  <i
+                    className={`fas ${feature.icon} text-xl`}
+                    aria-hidden="true"
+                  />
+                </div>
 
-            <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border border-[#f59e0b]/30">
-              <div className="mb-6"><i className="fas fa-shopping-cart text-5xl text-[#f59e0b]"></i></div>
-              <h3 className="text-2xl font-bold text-[#1e293b] mb-3">WooCommerce</h3>
-              <p className="text-[#64748b] mb-6">E-commerce solutions</p>
-              <ul className="space-y-3">
-                <li className="flex items-start gap-3">
-                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
-                  <span>Product catalogs</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
-                  <span>Payment gateways</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
-                  <span>Shipping</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
-                  <span>Inventory</span>
-                </li>
-              </ul>
-            </div>
+                <h3 className="mb-2 font-heading text-xl font-bold text-primary-navy md:text-2xl">
+                  {feature.title}
+                </h3>
 
-            <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border border-[#f59e0b]/30">
-              <div className="mb-6"><i className="fas fa-bolt text-5xl text-[#f59e0b]"></i></div>
-              <h3 className="text-2xl font-bold text-[#1e293b] mb-3">Performance</h3>
-              <p className="text-[#64748b] mb-6">Fast WordPress sites</p>
-              <ul className="space-y-3">
-                <li className="flex items-start gap-3">
-                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
-                  <span>Caching</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
-                  <span>Image optimization</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
-                  <span>Database</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
-                  <span>CDN</span>
-                </li>
-              </ul>
-            </div>
+                <p className="mb-5 text-slate-600">{feature.description}</p>
 
-            <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border border-[#f59e0b]/30">
-              <div className="mb-6"><i className="fas fa-lock text-5xl text-[#f59e0b]"></i></div>
-              <h3 className="text-2xl font-bold text-[#1e293b] mb-3">Security</h3>
-              <p className="text-[#64748b] mb-6">Enterprise security</p>
-              <ul className="space-y-3">
-                <li className="flex items-start gap-3">
-                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
-                  <span>Security audits</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
-                  <span>Malware protection</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
-                  <span>SSL</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
-                  <span>Backups</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border border-[#f59e0b]/30">
-              <div className="mb-6"><i className="fas fa-wrench text-5xl text-[#f59e0b]"></i></div>
-              <h3 className="text-2xl font-bold text-[#1e293b] mb-3">Maintenance</h3>
-              <p className="text-[#64748b] mb-6">Ongoing support</p>
-              <ul className="space-y-3">
-                <li className="flex items-start gap-3">
-                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
-                  <span>Core updates</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
-                  <span>Plugin updates</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
-                  <span>Security monitoring</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <i className="fas fa-check text-[#f59e0b] text-xl"></i>
-                  <span>Performance</span>
-                </li>
-              </ul>
-            </div>
+                <ul className="space-y-3">
+                  {feature.points.map((point) => (
+                    <li
+                      key={point}
+                      className="flex items-start gap-3 text-slate-600"
+                    >
+                      <i
+                        className="fas fa-check mt-1 text-sm text-primary-orange"
+                        aria-hidden="true"
+                      />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Process Section */}
-      <section className="py-24 px-8" id="process">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">
-            Our Proven Process
-          </h2>
-          <p className="text-center text-xl text-[#64748b] max-w-3xl mx-auto mb-12">
-            A systematic approach to deliver outstanding results
-          </p>
+      <section className="bg-slate-50 py-16 md:py-24" id="process">
+        <div className="container">
+          <div className="mb-10 text-center md:mb-14">
+            <h2 className="mb-5 font-heading text-3xl font-bold text-primary-navy md:text-5xl">
+              Our Proven Process
+            </h2>
 
-          <div className="grid md:grid-cols-3 gap-12 mt-16">
-            <div className="text-center bg-white p-10 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
-              <div className="w-24 h-24 bg-[#1e293b] text-white rounded-full flex items-center justify-center text-4xl font-bold mx-auto mb-8 shadow-lg">
-                1
-              </div>
-              <h3 className="text-2xl font-bold text-[#1e293b] mb-4">Discovery</h3>
-              <p className="text-[#64748b]">
-                Deep dive into your business, goals, and requirements
-              </p>
-            </div>
+            <p className="mx-auto max-w-3xl text-base text-slate-600 md:text-xl">
+              A systematic approach to deliver outstanding results
+            </p>
+          </div>
 
-            <div className="text-center bg-white p-10 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
-              <div className="w-24 h-24 bg-[#1e293b] text-white rounded-full flex items-center justify-center text-4xl font-bold mx-auto mb-8 shadow-lg">
-                2
-              </div>
-              <h3 className="text-2xl font-bold text-[#1e293b] mb-4">Strategy</h3>
-              <p className="text-[#64748b]">
-                Develop custom strategy based on research and analysis
-              </p>
-            </div>
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {processSteps.map((step) => (
+              <article
+                key={step.number}
+                className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:border-primary-orange/30 hover:shadow-card-hover md:p-8"
+              >
+                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary-navy font-heading text-xl font-bold text-white">
+                  {step.number}
+                </div>
 
-            <div className="text-center bg-white p-10 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
-              <div className="w-24 h-24 bg-[#1e293b] text-white rounded-full flex items-center justify-center text-4xl font-bold mx-auto mb-8 shadow-lg">
-                3
-              </div>
-              <h3 className="text-2xl font-bold text-[#1e293b] mb-4">Planning</h3>
-              <p className="text-[#64748b]">
-                Create detailed roadmap and project timeline
-              </p>
-            </div>
+                <h3 className="mb-3 font-heading text-xl font-bold text-primary-navy md:text-2xl">
+                  {step.title}
+                </h3>
 
-            <div className="text-center bg-white p-10 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
-              <div className="w-24 h-24 bg-[#1e293b] text-white rounded-full flex items-center justify-center text-4xl font-bold mx-auto mb-8 shadow-lg">
-                4
-              </div>
-              <h3 className="text-2xl font-bold text-[#1e293b] mb-4">Execution</h3>
-              <p className="text-[#64748b]">
-                Implement solution with attention to detail
-              </p>
-            </div>
-
-            <div className="text-center bg-white p-10 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
-              <div className="w-24 h-24 bg-[#1e293b] text-white rounded-full flex items-center justify-center text-4xl font-bold mx-auto mb-8 shadow-lg">
-                5
-              </div>
-              <h3 className="text-2xl font-bold text-[#1e293b] mb-4">Testing</h3>
-              <p className="text-[#64748b]">
-                Thorough quality assurance and optimization
-              </p>
-            </div>
-
-            <div className="text-center bg-white p-10 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
-              <div className="w-24 h-24 bg-[#1e293b] text-white rounded-full flex items-center justify-center text-4xl font-bold mx-auto mb-8 shadow-lg">
-                6
-              </div>
-              <h3 className="text-2xl font-bold text-[#1e293b] mb-4">Launch & Support</h3>
-              <p className="text-[#64748b]">
-                Deploy and provide ongoing support
-              </p>
-            </div>
+                <p className="leading-7 text-slate-600">{step.description}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Case Studies Section */}
-      <section className="py-24 px-8 bg-[#f8fafc]">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">
-            Real Results for Sydney Businesses
-          </h2>
+            {/* Results Section */}
+      <section className="bg-white py-16 md:py-24">
+        <div className="container">
+          <div className="mb-10 text-center md:mb-14">
+            <span className="mb-3 block text-xs font-bold uppercase tracking-[0.28em] text-primary-orange">
+              Results
+            </span>
 
-          <div className="space-y-12">
-            <div className="bg-white p-12 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
-              <div className="border-b-4 border-[#f59e0b] pb-6 mb-8">
-                <h3 className="text-3xl font-bold text-[#1e293b] mb-2">The Tspoon Cafe</h3>
-                <div className="text-[#f59e0b] font-semibold text-lg">Restaurant</div>
-              </div>
-              <p className="text-[#64748b] text-lg">
-                Custom WordPress theme with menu integration and 40% online order increase
-              </p>
-            </div>
+            <h2 className="font-heading text-3xl font-bold text-primary-navy md:text-5xl">
+              Real Results for Sydney{" "}
+              <span className="text-primary-orange">Businesses</span>
+            </h2>
+          </div>
 
-            <div className="bg-white p-12 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
-              <div className="border-b-4 border-[#f59e0b] pb-6 mb-8">
-                <h3 className="text-3xl font-bold text-[#1e293b] mb-2">Deepslice Pizza</h3>
-                <div className="text-[#f59e0b] font-semibold text-lg">Pizza Restaurant</div>
-              </div>
-              <p className="text-[#64748b] text-lg">
-                WooCommerce integration driving online sales and customer engagement
-              </p>
-            </div>
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {resultProjects.map((project) => {
+              const previewImage = project.images?.[0] || project.image;
+
+              return (
+                <article
+                  key={project.id}
+                  className="group overflow-hidden rounded-2xl border border-slate-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-primary-orange/30 hover:shadow-card-hover active:scale-[0.99]"
+                >
+                  <div className="relative h-[230px] overflow-hidden bg-slate-100 sm:h-[260px]">
+                    <Image
+                      src={previewImage}
+                      alt={`${project.name} website design result`}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                      sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw"
+                    />
+
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/25 via-transparent to-transparent" />
+
+                    {project.websiteUrl && (
+                      <a
+                        href={project.websiteUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-primary-navy shadow-lg transition-colors hover:bg-primary-orange hover:text-white"
+                      >
+                        View Website
+                        <i
+                          className="fas fa-arrow-up-right-from-square text-xs"
+                          aria-hidden="true"
+                        />
+                      </a>
+                    )}
+                  </div>
+
+                  <div className="p-6">
+                    <span className="mb-4 inline-flex rounded-full bg-primary-orange/10 px-3 py-1 text-xs font-semibold text-primary-orange">
+                      {project.industry}
+                    </span>
+
+                    <h3 className="mb-3 font-heading text-xl font-bold text-primary-navy transition-colors group-hover:text-primary-orange sm:text-2xl">
+                      {project.name}
+                    </h3>
+
+                    <p className="line-clamp-3 text-sm leading-7 text-slate-600 sm:text-base">
+                      {project.description}
+                    </p>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-24 px-8">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">
+      <section className="bg-slate-50 py-16 md:py-24">
+        <div className="container">
+          <h2 className="mb-10 text-center font-heading text-3xl font-bold text-primary-navy md:mb-14 md:text-5xl">
             What Our Clients Say
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-12">
-            <div className="bg-white p-12 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border-t-4 border-[#f59e0b]">
-              <div className="text-[#f59e0b] text-2xl mb-6">
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-              </div>
-              <p className="text-[#64748b] italic text-lg leading-relaxed mb-8">
-                "Professional, responsive, and delivered exactly what we needed. The results have been fantastic and we've seen significant improvements."
-              </p>
-              <div className="font-semibold text-[#1e293b]">Sydney Business Owner</div>
-              <div className="text-[#64748b] text-sm">Professional Services</div>
-            </div>
+          <div className="grid gap-5 md:grid-cols-3">
+            {testimonials.map((testimonial) => (
+              <article
+                key={testimonial.name}
+                className="rounded-2xl border border-slate-200 border-t-4 border-t-primary-orange bg-white p-6 shadow-sm transition-all hover:shadow-card-hover md:p-8"
+              >
+                <div className="mb-5 flex gap-1 text-lg text-primary-orange">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <i
+                      key={star}
+                      className="fas fa-star"
+                      aria-hidden="true"
+                    />
+                  ))}
+                </div>
 
-            <div className="bg-white p-12 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border-t-4 border-[#f59e0b]">
-              <div className="text-[#f59e0b] text-2xl mb-6">
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-              </div>
-              <p className="text-[#64748b] italic text-lg leading-relaxed mb-8">
-                "The team at Sydney Web Designer took the time to understand our business. Their expertise and transparent approach made the entire process smooth."
-              </p>
-              <div className="font-semibold text-[#1e293b]">Local Business</div>
-              <div className="text-[#64748b] text-sm">Parramatta, NSW</div>
-            </div>
+                <p className="mb-7 text-base italic leading-8 text-slate-700">
+                  &quot;{testimonial.text}&quot;
+                </p>
 
-            <div className="bg-white p-12 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border-t-4 border-[#f59e0b]">
-              <div className="text-[#f59e0b] text-2xl mb-6">
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-              </div>
-              <p className="text-[#64748b] italic text-lg leading-relaxed mb-8">
-                "Highly recommend Sydney Web Designer for their professionalism and quality of work. They exceeded our expectations in every way."
-              </p>
-              <div className="font-semibold text-[#1e293b]">Sydney Client</div>
-              <div className="text-[#64748b] text-sm">Service Provider</div>
-            </div>
+                <div className="font-bold text-primary-navy">
+                  {testimonial.name}
+                </div>
+
+                <div className="text-sm text-slate-500">
+                  {testimonial.detail}
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Pricing Section */}
-      {/* <section className="py-24 px-8 bg-[#f8fafc]">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-5xl font-bold text-[#1e293b] mb-4">
-              WordPress Development Sydney Pricing
-            </h2>
-            <p className="text-[#64748b] text-xl">
-              Choose the package that fits your needs and budget
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div className="bg-white p-10 rounded-2xl border-2 border-gray-200 text-center hover:border-[#f59e0b] transition-all">
-              <h3 className="text-2xl font-bold text-[#1e293b] mb-4">Starter</h3>
-              <div className="text-4xl font-bold text-[#f59e0b] mb-2">$4,000-$7,000</div>
-              <div className="text-[#64748b] mb-8">one-time</div>
-              <ul className="text-left space-y-3 mb-8">
-                <li className="flex items-start gap-3">
-                  <i className="fas fa-check text-[#f59e0b]"></i>
-                  <span>Custom theme</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <i className="fas fa-check text-[#f59e0b]"></i>
-                  <span>Plugin setup</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <i className="fas fa-check text-[#f59e0b]"></i>
-                  <span>Basic customization</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <i className="fas fa-check text-[#f59e0b]"></i>
-                  <span>Security setup</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <i className="fas fa-check text-[#f59e0b]"></i>
-                  <span>Training</span>
-                </li>
-              </ul>
-              <button data-popup="contact" className="w-full bg-transparent border-2 border-[#1e293b] text-[#1e293b] px-8 py-3 rounded-full font-semibold hover:bg-[#1e293b] hover:text-white transition-all">
-                Get Started
-              </button>
-            </div>
-
-            <div className="bg-white p-10 rounded-2xl border-2 border-[#f59e0b] text-center relative shadow-xl">
-              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#f59e0b] text-white px-6 py-2 rounded-full text-sm font-semibold">
-                Most Popular
-              </div>
-              <h3 className="text-2xl font-bold text-[#1e293b] mb-4 mt-4">Growth</h3>
-              <div className="text-4xl font-bold text-[#f59e0b] mb-2">$8,000-$15,000</div>
-              <div className="text-[#64748b] mb-8">one-time</div>
-              <ul className="text-left space-y-3 mb-8">
-                <li className="flex items-start gap-3">
-                  <i className="fas fa-check text-[#f59e0b]"></i>
-                  <span>Advanced theme</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <i className="fas fa-check text-[#f59e0b]"></i>
-                  <span>Custom plugins</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <i className="fas fa-check text-[#f59e0b]"></i>
-                  <span>WooCommerce</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <i className="fas fa-check text-[#f59e0b]"></i>
-                  <span>Performance optimization</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <i className="fas fa-check text-[#f59e0b]"></i>
-                  <span>3 months support</span>
-                </li>
-              </ul>
-              <button data-popup="contact" className="w-full bg-[#f59e0b] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#d97706] transition-all">
-                Get Started
-              </button>
-            </div>
-
-            <div className="bg-white p-10 rounded-2xl border-2 border-gray-200 text-center hover:border-[#f59e0b] transition-all">
-              <h3 className="text-2xl font-bold text-[#1e293b] mb-4">Enterprise</h3>
-              <div className="text-4xl font-bold text-[#f59e0b] mb-2">$20,000+</div>
-              <div className="text-[#64748b] mb-8">one-time</div>
-              <ul className="text-left space-y-3 mb-8">
-                <li className="flex items-start gap-3">
-                  <i className="fas fa-check text-[#f59e0b]"></i>
-                  <span>Fully custom build</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <i className="fas fa-check text-[#f59e0b]"></i>
-                  <span>Complex features</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <i className="fas fa-check text-[#f59e0b]"></i>
-                  <span>Integrations</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <i className="fas fa-check text-[#f59e0b]"></i>
-                  <span>Enterprise security</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <i className="fas fa-check text-[#f59e0b]"></i>
-                  <span>6 months support</span>
-                </li>
-              </ul>
-              <button data-popup="contact" className="w-full bg-transparent border-2 border-[#1e293b] text-[#1e293b] px-8 py-3 rounded-full font-semibold hover:bg-[#1e293b] hover:text-white transition-all">
-                Get Started
-              </button>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
       {/* Lead Form Section */}
-      <section className="py-24 px-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-[#1e293b] p-16 rounded-3xl text-white">
-            <h3 className="text-4xl font-bold mb-4 text-center text-white">
-              Get Your Free Consultation
-            </h3>
-            <p className="text-center text-lg mb-12 opacity-90">
-              Tell us about your project and we'll provide expert advice and a custom quote
-            </p>
+      <section className="bg-white py-16 md:py-24">
+        <div className="container">
+          <div className="mx-auto max-w-5xl rounded-3xl bg-primary-navy p-6 text-white shadow-xl sm:p-10 md:p-14">
+            <div className="mb-9 text-center md:mb-12">
+              <h3 className="mb-4 font-heading text-3xl font-bold text-white md:text-4xl">
+                Get Your Free Consultation
+              </h3>
 
-            <form className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
+              <p className="text-base text-slate-300 md:text-lg">
+                Tell us about your project and we&apos;ll provide expert advice
+                and a custom quote
+              </p>
+            </div>
+
+            <form className="mx-auto max-w-3xl space-y-6">
+              <div className="grid gap-6 md:grid-cols-2">
                 <div>
-                  <label className="block mb-2 font-semibold">Full Name *</label>
+                  <label className="mb-2 block text-sm font-bold text-slate-300">
+                    Full Name *
+                  </label>
+
                   <input
                     type="text"
                     required
                     placeholder="Your name"
-                    className="w-full px-4 py-3 rounded-xl border-none text-[#1e293b]"
+                    className="form-input rounded-xl border-slate-700 bg-slate-800/50 text-white placeholder-slate-500 focus:border-primary-orange focus:bg-slate-800 focus:ring-primary-orange/20"
                   />
                 </div>
+
                 <div>
-                  <label className="block mb-2 font-semibold">Email *</label>
+                  <label className="mb-2 block text-sm font-bold text-slate-300">
+                    Email *
+                  </label>
+
                   <input
                     type="email"
                     required
                     placeholder="your@email.com"
-                    className="w-full px-4 py-3 rounded-xl border-none text-[#1e293b]"
+                    className="form-input rounded-xl border-slate-700 bg-slate-800/50 text-white placeholder-slate-500 focus:border-primary-orange focus:bg-slate-800 focus:ring-primary-orange/20"
                   />
                 </div>
+
                 <div>
-                  <label className="block mb-2 font-semibold">Phone *</label>
+                  <label className="mb-2 block text-sm font-bold text-slate-300">
+                    Phone *
+                  </label>
+
                   <input
                     type="tel"
                     required
                     placeholder="04XX XXX XXX"
-                    className="w-full px-4 py-3 rounded-xl border-none text-[#1e293b]"
+                    className="form-input rounded-xl border-slate-700 bg-slate-800/50 text-white placeholder-slate-500 focus:border-primary-orange focus:bg-slate-800 focus:ring-primary-orange/20"
                   />
                 </div>
+
                 <div>
-                  <label className="block mb-2 font-semibold">Company</label>
+                  <label className="mb-2 block text-sm font-bold text-slate-300">
+                    Company
+                  </label>
+
                   <input
                     type="text"
                     placeholder="Your company (optional)"
-                    className="w-full px-4 py-3 rounded-xl border-none text-[#1e293b]"
+                    className="form-input rounded-xl border-slate-700 bg-slate-800/50 text-white placeholder-slate-500 focus:border-primary-orange focus:bg-slate-800 focus:ring-primary-orange/20"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block mb-2 font-semibold">Tell us about your project</label>
+                <label className="mb-2 block text-sm font-bold text-slate-300">
+                  Tell us about your project
+                </label>
+
                 <textarea
                   placeholder="What are you looking to achieve?"
                   rows={4}
-                  className="w-full px-4 py-3 rounded-xl border-none text-[#1e293b] resize-none"
+                  className="form-textarea rounded-xl border-slate-700 bg-slate-800/50 text-white placeholder-slate-500 focus:border-primary-orange focus:bg-slate-800 focus:ring-primary-orange/20"
                 />
               </div>
 
-              <div className="text-center">
-                <button
-                  type="submit"
-                  className="bg-white text-[#1e293b] px-6 md:px-10 lg:px-12 py-3 md:py-4 rounded-full font-semibold hover:bg-gray-100 transition-all w-full sm:w-auto text-center"
-                >
+              <div className="pt-4 text-center">
+                <button type="submit" className="btn btn-primary btn-lg">
                   Start WordPress Project
                 </button>
-                <p className="mt-4 text-sm opacity-80"><i className="fas fa-comment-dots"></i> We'll respond within 24 hours</p>
+
+                <p className="mt-4 text-sm text-slate-400">
+                  <i
+                    className="fas fa-comment-dots mr-2"
+                    aria-hidden="true"
+                  />
+                  We&apos;ll respond within 24 hours
+                </p>
               </div>
             </form>
           </div>
@@ -614,15 +590,26 @@ export default function WordPressDevelopmentPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-[#1e293b] text-white py-24 px-8 text-center">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-6xl font-bold text-center mb-4 text-white">Ready to Get Started?</h2>
-          <p className="text-center text-2xl mb-10 opacity-90">
-            Let's discuss your project and create a custom solution for your business
-          </p>
-          <button data-popup="contact" className="bg-transparent border-2 border-white text-white px-6 md:px-10 lg:px-12 py-3 md:py-4 lg:py-5 rounded-full font-semibold text-base md:text-lg lg:text-xl hover:bg-white hover:text-[#1e293b] transition-all w-full sm:w-auto text-center">
-            Start WordPress Project
-          </button>
+      <section className="bg-primary-navy py-16 text-center text-white md:py-24">
+        <div className="container">
+          <div className="mx-auto max-w-4xl">
+            <h2 className="mb-5 font-heading text-3xl font-bold text-white md:text-5xl">
+              Ready to Get Started?
+            </h2>
+
+            <p className="mx-auto mb-9 max-w-2xl text-base text-slate-300 md:text-xl">
+              Let&apos;s discuss your project and create a custom solution for
+              your business
+            </p>
+
+            <button
+              type="button"
+              data-popup="contact"
+              className="btn btn-outline-light btn-lg"
+            >
+              Start WordPress Project
+            </button>
+          </div>
         </div>
       </section>
     </>

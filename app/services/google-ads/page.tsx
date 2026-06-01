@@ -4,6 +4,7 @@ import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessS
 import ServiceHeroSection from "@/components/ServiceHeroSection";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedServices from "@/components/RelatedServices";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const metadata = generateMetadata({
   title: "Google Ads Management Sydney | PPC Advertising Services",
@@ -620,14 +621,7 @@ export default function GoogleAdsPage() {
             Everything you need to know about Google Ads management
           </p>
 
-          <div className="space-y-6">
-            {faqs.map((faq, index) => (
-              <div key={index} className="bg-white p-8 rounded-xl shadow-md border-l-4 border-[#f59e0b]">
-                <h3 className="text-xl font-bold text-[#1e293b] mb-4">{faq.question}</h3>
-                <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
-              </div>
-            ))}
-          </div>
+          <FAQAccordion faqs={faqs} />
         </div>
       </section>
 

@@ -9,6 +9,7 @@ import CTASection from "@/components/CTASection";
 import ServiceHeroSection from "@/components/ServiceHeroSection";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedServices from "@/components/RelatedServices";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const metadata = generateMetadata({
   title: "SEO Services Sydney | Professional Search Engine Optimization",
@@ -387,14 +388,7 @@ export default function SEOServicesPage() {
             </p>
           </div>
 
-          <div className="max-w-3xl mx-auto space-y-6">
-            {faqs.map((faq, index) => (
-              <div key={index} className="card">
-                <h3 className="text-lg font-bold mb-2">{faq.question}</h3>
-                <p className="text-gray-600">{faq.answer}</p>
-              </div>
-            ))}
-          </div>
+          <FAQAccordion faqs={faqs} />
         </div>
       </section>
 

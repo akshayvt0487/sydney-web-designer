@@ -6,6 +6,7 @@ import StatsGrid from "@/components/StatsGrid";
 import TestimonialCard from "@/components/TestimonialCard";
 import PortfolioCard from "@/components/PortfolioCard";
 import CTASection from "@/components/CTASection";
+import FAQAccordion from "@/components/FAQAccordion";
 import ServiceHeroSection from "@/components/ServiceHeroSection";
 
 export const metadata = generateMetadata({
@@ -357,14 +358,7 @@ export default function ResponsiveDesignPage() {
             </p>
           </div>
 
-          <div className="max-w-3xl mx-auto space-y-6">
-            {faqs.map((faq, index) => (
-              <div key={index} className="card">
-                <h3 className="text-lg font-bold mb-2">{faq.question}</h3>
-                <p className="text-gray-600">{faq.answer}</p>
-              </div>
-            ))}
-          </div>
+          <FAQAccordion faqs={faqs} />
         </div>
       </section>
 

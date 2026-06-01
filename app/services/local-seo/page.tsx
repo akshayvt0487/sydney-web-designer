@@ -9,6 +9,7 @@ import CTASection from "@/components/CTASection";
 import ServiceHeroSection from "@/components/ServiceHeroSection";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedServices from "@/components/RelatedServices";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const metadata = generateMetadata({
   title: "Local SEO Sydney | Get Found by Local Customers",
@@ -177,7 +178,7 @@ export default function LocalSEOPage() {
             <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Frequently Asked <span className="text-[#f59e0b]">Questions</span></h2>
             <p className="text-xl text-gray-600">Common questions about local SEO services.</p>
           </div>
-          <div className="max-w-3xl mx-auto space-y-6">{faqs.map((faq, index) => (<div key={index} className="card"><h3 className="text-lg font-bold mb-2">{faq.question}</h3><p className="text-gray-600">{faq.answer}</p></div>))}</div>
+          <FAQAccordion faqs={faqs} />
         </div>
       </section>
 

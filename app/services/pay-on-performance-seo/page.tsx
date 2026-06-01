@@ -3,6 +3,7 @@ import { generateMetadata } from "@/lib/metadata";
 import { generateBreadcrumbSchema, generateServiceSchema } from "@/lib/schemas";
 import CTASection from "@/components/CTASection";
 import ServiceHeroSection from "@/components/ServiceHeroSection";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const metadata = generateMetadata({
   title: "Pay on Performance SEO Sydney | Results-Based SEO Services",
@@ -452,20 +453,20 @@ export default function PayOnPerformanceSEOPage() {
           </div>
 
           <div className="max-w-5xl mx-auto">
-            <div className="card !bg-white/10 backdrop-blur-sm border-2 border-[#f59e0b]">
+            <div className="rounded-3xl border border-primary-orange/35 bg-white p-6 shadow-[0_20px_48px_rgba(15,23,42,0.24)] sm:p-8 md:p-10">
               <div className="grid md:grid-cols-5 gap-8">
                 <div className="md:col-span-3">
                   <h3 className="text-3xl font-bold mb-2 text-[#1e293b]">{caseStudy.name}</h3>
-                  <div className="text-white font-semibold mb-6">Timeline: {caseStudy.timeline}</div>
+                  <div className="text-primary-orange font-semibold mb-6">Timeline: {caseStudy.timeline}</div>
 
                   <div className="space-y-4">
                     <div>
                       <h4 className="font-bold mb-2 text-lg text-[#1e293b]">Challenge:</h4>
-                      <p className="text-[#334155]">{caseStudy.challenge}</p>
+                      <p className="text-slate-600 leading-relaxed">{caseStudy.challenge}</p>
                     </div>
                     <div>
                       <h4 className="font-bold mb-2 text-lg text-[#1e293b]">Solution:</h4>
-                      <p className="text-[#334155]">{caseStudy.solution}</p>
+                      <p className="text-slate-600 leading-relaxed">{caseStudy.solution}</p>
                     </div>
                   </div>
                 </div>
@@ -495,14 +496,12 @@ export default function PayOnPerformanceSEOPage() {
             <p>Common questions about results-based SEO pricing</p>
           </div>
 
-          <div className="max-w-4xl mx-auto space-y-6">
-            {faq.map((item, index) => (
-              <div key={index} className="card">
-                <h3 className="text-xl font-bold mb-3 text-primary-navy">{item.q}</h3>
-                <p className="text-gray-700 leading-relaxed">{item.a}</p>
-              </div>
-            ))}
-          </div>
+          <FAQAccordion
+            faqs={faq.map((item) => ({
+              question: item.q,
+              answer: item.a,
+            }))}
+          />
         </div>
       </section>
 

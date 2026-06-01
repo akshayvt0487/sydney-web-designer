@@ -5,6 +5,7 @@ import CTASection from "@/components/CTASection";
 import ServiceHeroSection from "@/components/ServiceHeroSection";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedServices from "@/components/RelatedServices";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const metadata = generateMetadata({
   title: "Mobile SEO Sydney | Optimize for Mobile Search & Rankings",
@@ -442,14 +443,7 @@ export default function MobileSEOPage() {
             <p>Common questions about mobile search optimization</p>
           </div>
 
-          <div className="max-w-4xl mx-auto space-y-6">
-            {faqs.map((item, index) => (
-              <div key={index} className="card">
-                <h3 className="text-xl font-bold mb-3 text-primary-navy">{item.question}</h3>
-                <p className="text-gray-700 leading-relaxed">{item.answer}</p>
-              </div>
-            ))}
-          </div>
+          <FAQAccordion faqs={faqs} />
         </div>
       </section>
 
