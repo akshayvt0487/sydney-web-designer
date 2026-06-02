@@ -1,201 +1,184 @@
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import NewsletterForm from "./NewsletterForm";
+
+const quickLinks = [
+  { name: "Home", href: "/" },
+  { name: "About Us", href: "/about" },
+  { name: "Portfolio", href: "/portfolio" },
+  { name: "Testimonials", href: "/testimonials" },
+  { name: "Blog", href: "/blog" },
+  { name: "Careers", href: "/careers" },
+];
+
+const serviceLinks = [
+  { name: "Web Design", href: "/services/custom-web-design" },
+  { name: "SEO Services", href: "/services/seo-sydney" },
+  { name: "Google Ads", href: "/services/google-ads" },
+  { name: "Branding", href: "/services/logo-design" },
+  { name: "Social Media", href: "/services/social-media-marketing" },
+  { name: "Content Marketing", href: "/services/content-marketing" },
+];
+
+const socialLinks = [
+  {
+    name: "Facebook",
+    href: "https://facebook.com/dsignscomau",
+    icon: "fab fa-facebook-f",
+  },
+  {
+    name: "Instagram",
+    href: "http://instagram.com/dsigns.australia",
+    icon: "fab fa-instagram",
+  },
+  {
+    name: "LinkedIn",
+    href: "http://linkedin.com/company/dsignsaustralia",
+    icon: "fab fa-linkedin-in",
+  },
+  {
+    name: "DSIGNS Website",
+    href: "https://dsigns.com.au",
+    icon: "fas fa-globe",
+  },
+];
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#1e293b] text-white">
-      <div className="max-w-[1400px] mx-auto px-8 py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
-          {/* Company Info Column */}
-          <div>
-            <div className="mb-6">
+    <footer className="paper-footer">
+      <div className="container paper-footer__inner">
+        {/* Brand / Main Navigation / Newsletter */}
+        <div className="paper-footer__main">
+          {/* Brand Column */}
+          <div className="paper-footer__brand">
+            <Link
+              href="/"
+              aria-label="Sydney Web Designer home"
+              className="paper-footer__logo"
+            >
               <Image
-                src="/Sydney Web Designer logo.webp"
+                src="/Sydney Web Designer logo1.webp"
                 alt="DSIGNS Australia - Sydney Web Designer"
-                width={200}
-                height={60}
-                className="h-24 w-auto rounded-2xl w-full h-auto"
+                width={220}
+                height={92}
+                className="paper-footer__logo-image"
               />
-            </div>
-            <p className="text-gray-300 mb-6 leading-relaxed text-base">
-              Sydney Web Designer is Sydney&apos;s premier web design and digital marketing studio. Specialising in custom web design, SEO, and branding - serving Sydney businesses since 2013.
+            </Link>
+
+            <p className="paper-footer__description">
+              Sydney Web Designer is Sydney&apos;s premier web design and
+              digital marketing studio. Specialising in custom web design, SEO,
+              and branding - serving Sydney businesses since 2013.
             </p>
-            
           </div>
 
-          {/* Quick Links Column */}
-          <div>
-            <h3 className="text-xl font-bold mb-6 text-white">Quick Links</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link href="/" className="text-gray-300 hover:text-[#f59e0b] transition-colors inline-flex items-center gap-2">
-                  <i className="fas fa-chevron-right text-xs"></i>
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="text-gray-300 hover:text-[#f59e0b] transition-colors inline-flex items-center gap-2">
-                  <i className="fas fa-chevron-right text-xs"></i>
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/portfolio" className="text-gray-300 hover:text-[#f59e0b] transition-colors inline-flex items-center gap-2">
-                  <i className="fas fa-chevron-right text-xs"></i>
-                  Portfolio
-                </Link>
-              </li>
-              <li>
-                <Link href="/testimonials" className="text-gray-300 hover:text-[#f59e0b] transition-colors inline-flex items-center gap-2">
-                  <i className="fas fa-chevron-right text-xs"></i>
-                  Testimonials
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog" className="text-gray-300 hover:text-[#f59e0b] transition-colors inline-flex items-center gap-2">
-                  <i className="fas fa-chevron-right text-xs"></i>
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link href="/careers" className="text-gray-300 hover:text-[#f59e0b] transition-colors inline-flex items-center gap-2">
-                  <i className="fas fa-chevron-right text-xs"></i>
-                  Careers
-                </Link>
-              </li>
+          {/* Quick Links */}
+          <nav className="paper-footer__nav" aria-label="Quick links">
+            <h3>Quick Links</h3>
+
+            <ul>
+              {quickLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href}>
+                    <span className="paper-footer__link-mark" aria-hidden="true" />
+                    <span>{link.name}</span>
+                  </Link>
+                </li>
+              ))}
             </ul>
-          </div>
+          </nav>
 
-          {/* Services Column */}
-          <div>
-            <h3 className="text-xl font-bold mb-6 text-white">Our Services</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link href="/services/custom-web-design" className="text-gray-300 hover:text-[#f59e0b] transition-colors inline-flex items-center gap-2">
-                  <i className="fas fa-chevron-right text-xs"></i>
-                  Web Design
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/seo-sydney" className="text-gray-300 hover:text-[#f59e0b] transition-colors inline-flex items-center gap-2">
-                  <i className="fas fa-chevron-right text-xs"></i>
-                  SEO Services
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/google-ads" className="text-gray-300 hover:text-[#f59e0b] transition-colors inline-flex items-center gap-2">
-                  <i className="fas fa-chevron-right text-xs"></i>
-                  Google Ads
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/logo-design" className="text-gray-300 hover:text-[#f59e0b] transition-colors inline-flex items-center gap-2">
-                  <i className="fas fa-chevron-right text-xs"></i>
-                  Branding
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/social-media-marketing" className="text-gray-300 hover:text-[#f59e0b] transition-colors inline-flex items-center gap-2">
-                  <i className="fas fa-chevron-right text-xs"></i>
-                  Social Media
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/content-marketing" className="text-gray-300 hover:text-[#f59e0b] transition-colors inline-flex items-center gap-2">
-                  <i className="fas fa-chevron-right text-xs"></i>
-                  Content Marketing
-                </Link>
-              </li>
+          {/* Services */}
+          <nav className="paper-footer__nav" aria-label="Our services">
+            <h3>Our Services</h3>
+
+            <ul>
+              {serviceLinks.map((service) => (
+                <li key={service.href}>
+                  <Link href={service.href}>
+                    <span className="paper-footer__link-mark" aria-hidden="true" />
+                    <span>{service.name}</span>
+                  </Link>
+                </li>
+              ))}
             </ul>
-          </div>
+          </nav>
 
-          {/* Newsletter Column */}
-          <div className="lg:col-span-2">
+          {/* Newsletter */}
+          <div className="paper-footer__newsletter">
             <NewsletterForm />
           </div>
+        </div>
 
-          {/* Contact & Social Column */}
-          <div>
-            <h3 className="text-xl font-bold mb-6 text-white">Get In Touch</h3>
-            <div className="space-y-4 mb-6">
-              <p className="text-gray-300">
-                <i className="fas fa-envelope text-[#f59e0b] mr-3 w-4"></i>
-                <a href="mailto:hello@dsigns.com.au" className="hover:text-[#f59e0b] transition-colors">
-                  hello@dsigns.com.au
-                </a>
-              </p>
-              <p className="text-gray-300">
-                <i className="fas fa-phone text-[#f59e0b] mr-3 w-4"></i>
-                <a href="tel:0291918049" className="hover:text-[#f59e0b] transition-colors">
-                  02 9191 8049
-                </a>
-              </p>
-               <p className="text-gray-300">
-                <i className="fas fa-map-marker-alt text-[#f59e0b] mr-3 w-4"></i>
-                Suite 611, 150 George Street<br />
-                <span className="ml-7">Parramatta NSW 2150</span>
-              </p>
+        {/* Contact / Social Row */}
+        <div className="paper-footer__contact-row">
+          <div className="paper-footer__contact">
+            <h3>Get In Touch</h3>
+
+            <div className="paper-footer__contact-items">
+              <a href="mailto:hello@dsigns.com.au">
+                <span className="paper-footer__contact-icon">
+                  <i className="fas fa-envelope" aria-hidden="true" />
+                </span>
+
+                <span>hello@dsigns.com.au</span>
+              </a>
+
+              <a href="tel:0291918049">
+                <span className="paper-footer__contact-icon">
+                  <i className="fas fa-phone" aria-hidden="true" />
+                </span>
+
+                <span>02 9191 8049</span>
+              </a>
+
+              <div className="paper-footer__address">
+                <span className="paper-footer__contact-icon">
+                  <i className="fas fa-map-marker-alt" aria-hidden="true" />
+                </span>
+
+                <p>
+                  Suite 611, 150 George Street
+                  <br className="paper-footer__mobile-break" />
+                  <span className="paper-footer__desktop-comma">, </span>
+                  Parramatta NSW 2150
+                </p>
+              </div>
             </div>
+          </div>
 
-            <h4 className="text-lg font-bold text-white mb-4">Follow Us</h4>
-            <div className="flex gap-4">
-              <a
-                href="https://facebook.com/dsignscomau"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-12 h-12 bg-white/10 hover:bg-[#f59e0b] rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
-                aria-label="Facebook"
-              >
-                <i className="fab fa-facebook-f text-xl"></i>
-              </a>
-              <a
-                href="http://instagram.com/dsigns.australia"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-12 h-12 bg-white/10 hover:bg-[#f59e0b] rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
-                aria-label="Instagram"
-              >
-                <i className="fab fa-instagram text-xl"></i>
-              </a>
-              <a
-                href="http://linkedin.com/company/dsignsaustralia"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-12 h-12 bg-white/10 hover:bg-[#f59e0b] rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
-                aria-label="LinkedIn"
-              >
-                <i className="fab fa-linkedin-in text-xl"></i>
-              </a>
-              <a
-                href="https://dsigns.com.au"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-12 h-12 bg-white/10 hover:bg-[#f59e0b] rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
-                aria-label="DSIGNS Website"
-              >
-                <i className="fas fa-globe text-xl"></i>
-              </a>
+          <div className="paper-footer__social">
+            <h4>Follow Us</h4>
+
+            <div className="paper-footer__social-links">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.name}
+                >
+                  <i className={social.icon} aria-hidden="true" />
+                </a>
+              ))}
             </div>
           </div>
         </div>
 
-        {/* Footer Bottom */}
-        <div className="border-t border-white/10 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <p className="text-gray-400 text-center md:text-left">
-              © {currentYear} Sydney Web Designer (DSIGNS Australia Pty Ltd). All Rights Reserved.
-            </p>
-            <div className="flex flex-wrap gap-6 justify-center">
-              <Link href="/privacy-policy" className="text-gray-400 hover:text-[#f59e0b] transition-colors">
-                Privacy Policy
-              </Link>
-              <Link href="/terms-conditions" className="text-gray-400 hover:text-[#f59e0b] transition-colors">
-                Terms & Conditions
-              </Link>
-            </div>
+        {/* Copyright Row */}
+        <div className="paper-footer__bottom">
+          <p>
+            © {currentYear} Sydney Web Designer (DSIGNS Australia Pty Ltd). All
+            Rights Reserved.
+          </p>
+
+          <div className="paper-footer__legal">
+            <Link href="/privacy-policy">Privacy Policy</Link>
+            <span aria-hidden="true" />
+            <Link href="/terms-conditions">Terms &amp; Conditions</Link>
           </div>
         </div>
       </div>

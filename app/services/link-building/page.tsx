@@ -5,6 +5,7 @@ import CTASection from "@/components/CTASection";
 import ServiceHeroSection from "@/components/ServiceHeroSection";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedServices from "@/components/RelatedServices";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const metadata = generateMetadata({
   title: "Link Building Sydney | White-Hat SEO Backlink Services",
@@ -223,7 +224,7 @@ export default function LinkBuildingPage() {
   ];
 
   return (
-    <>
+    <div className="seo-paper-route seo-paper-route--link-building paper-grain">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
@@ -261,7 +262,7 @@ export default function LinkBuildingPage() {
       />
 
       {/* Stats Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="seo-route-stats py-16 bg-gray-50">
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
             <div className="text-center">
@@ -285,7 +286,7 @@ export default function LinkBuildingPage() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-white">
+      <section className="seo-route-cards py-20 bg-white">
         <div className="container">
           <div className="section-title text-center">
             <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Why Link Building Matters for <span className="text-[#f59e0b]">SEO</span></h2>
@@ -315,7 +316,7 @@ export default function LinkBuildingPage() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-[#f8fafc]" id="services">
+      <section className="seo-route-lists py-20 bg-[#f8fafc]" id="services">
         <div className="container">
           <div className="section-title text-center">
             <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Our Link Building <span className="text-[#f59e0b]">Services</span></h2>
@@ -346,7 +347,7 @@ export default function LinkBuildingPage() {
       </section>
 
       {/* Link Types */}
-      <section className="py-20 bg-white">
+      <section className="seo-route-support py-20 bg-white">
         <div className="container">
           <div className="section-title text-center">
             <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Types of Links We <span className="text-[#f59e0b]">Build</span></h2>
@@ -366,11 +367,13 @@ export default function LinkBuildingPage() {
       </section>
 
       {/* White-Hat vs Black-Hat */}
-      <section className="py-20 bg-[#f8fafc]">
+      <section className="seo-route-compare py-20 bg-[#f8fafc]">
         <div className="container">
-          <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Our White-Hat <span className="text-[#f59e0b]">Approach</span></h2>
-            <p>Safe, sustainable link building that won't risk Google penalties</p>
+          <div className="seo-compare-header">
+            <h2>
+              Our White-Hat <span>Approach</span>
+            </h2>
+            <p>Safe, sustainable link building that won&apos;t risk Google penalties</p>
           </div>
 
           <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
@@ -444,11 +447,13 @@ export default function LinkBuildingPage() {
       </section>
 
       {/* Case Study Section */}
-      <section className="py-20 bg-gradient-to-br from-[#1e293b] to-[#0f172a] text-white">
+      <section className="seo-route-case py-20 bg-gradient-to-br from-[#1e293b] to-[#0f172a] text-white">
         <div className="container">
-          <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-center mb-4 text-white">Real Link Building <span className="text-[#f59e0b]">Results</span></h2>
-            <p className="text-white">How we built authority and transformed rankings</p>
+          <div className="seo-results-header">
+            <h2>
+              Real Link Building <span>Results</span>
+            </h2>
+            <p>How we built authority and transformed rankings</p>
           </div>
 
           <div className="max-w-5xl mx-auto">
@@ -488,21 +493,14 @@ export default function LinkBuildingPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-white">
+      <section className="seo-route-faq py-20 bg-white">
         <div className="container">
           <div className="section-title text-center">
             <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Link Building Frequently Asked <span className="text-[#f59e0b]">Questions</span></h2>
             <p>Common questions about earning quality backlinks</p>
           </div>
 
-          <div className="max-w-4xl mx-auto space-y-6">
-            {faqs.map((item, index) => (
-              <div key={index} className="card">
-                <h3 className="text-xl font-bold mb-3 text-primary-navy">{item.question}</h3>
-                <p className="text-gray-700 leading-relaxed">{item.answer}</p>
-              </div>
-            ))}
-          </div>
+          <FAQAccordion faqs={faqs} />
         </div>
       </section>
 
@@ -516,6 +514,8 @@ export default function LinkBuildingPage() {
         primaryButtonAction="seoAudit"
         secondaryButtonText="View Our Work"
       />
-    </>
+    </div>
   );
 }
+
+

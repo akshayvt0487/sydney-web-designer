@@ -15,34 +15,34 @@ export default function CTASection({
   primaryButtonAction = "contact",
   secondaryButtonText,
   secondaryButtonAction,
-  gradient = true,
 }: CTASectionProps) {
   return (
-    <section className={gradient ? "bg-[#1e293b] text-white py-20" : "bg-gray-50 py-20"}>
-      <div className="container text-center">
-        <h2 className={`text-3xl md:text-6xl font-bold mb-4 ${gradient ? 'text-white' : 'text-primary-navy'}`}>
-          {title}
-        </h2>
-        {description && (
-          <p className={`text-lg mb-8 max-w-2xl mx-auto ${gradient ? 'text-gray-100' : 'text-gray-600'}`}>
-            {description}
-          </p>
-        )}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button
-            data-popup={primaryButtonAction}
-            className={gradient ? "btn btn-white" : "btn btn-primary"}
-          >
-            {primaryButtonText}
-          </button>
-          {secondaryButtonText && (
+    <section className="paper-cta paper-grain">
+      <div className="container">
+        <div className="paper-cta__frame">
+          <h2>{title}</h2>
+
+          {description && <p>{description}</p>}
+
+          <div className="paper-cta__actions">
             <button
-              data-popup={secondaryButtonAction}
-              className={gradient ? "btn btn-secondary border-white text-black hover:bg-white hover:text-primary-navy" : "btn btn-secondary"}
+              type="button"
+              data-popup={primaryButtonAction}
+              className="paper-button paper-button--rust"
             >
-              {secondaryButtonText}
+              {primaryButtonText}
             </button>
-          )}
+
+            {secondaryButtonText && (
+              <button
+                type="button"
+                data-popup={secondaryButtonAction}
+                className="paper-button paper-cta__secondary"
+              >
+                {secondaryButtonText}
+              </button>
+            )}
+          </div>
         </div>
       </div>
     </section>

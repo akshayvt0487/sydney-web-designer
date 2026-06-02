@@ -5,6 +5,7 @@ import CTASection from "@/components/CTASection";
 import ServiceHeroSection from "@/components/ServiceHeroSection";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedServices from "@/components/RelatedServices";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const metadata = generateMetadata({
   title: "Mobile SEO Sydney | Optimize for Mobile Search & Rankings",
@@ -221,7 +222,7 @@ export default function MobileSEOPage() {
   ];
 
   return (
-    <>
+    <div className="seo-paper-route seo-paper-route--mobile-seo paper-grain">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
@@ -259,7 +260,7 @@ export default function MobileSEOPage() {
       />
 
       {/* Mobile Stats Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="seo-route-stats py-16 bg-gray-50">
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
             {mobileStats.map((item, index) => (
@@ -274,7 +275,7 @@ export default function MobileSEOPage() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-white">
+      <section className="seo-route-cards py-20 bg-white">
         <div className="container">
           <div className="section-title text-center">
             <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Why Mobile SEO Is Critical for Your <span className="text-[#f59e0b]">Business</span></h2>
@@ -304,7 +305,7 @@ export default function MobileSEOPage() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-[#f8fafc]" id="services">
+      <section className="seo-route-lists py-20 bg-[#f8fafc]" id="services">
         <div className="container">
           <div className="section-title text-center">
             <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Our Mobile SEO <span className="text-[#f59e0b]">Services</span></h2>
@@ -335,7 +336,7 @@ export default function MobileSEOPage() {
       </section>
 
       {/* Why Mobile Matters */}
-      <section className="py-20 bg-white">
+      <section className="seo-route-support py-20 bg-white">
         <div className="container">
           <div className="section-title text-center">
             <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">The Mobile Search Landscape in <span className="text-[#f59e0b]">2026</span></h2>
@@ -391,11 +392,13 @@ export default function MobileSEOPage() {
       </section>
 
       {/* Case Study Section */}
-      <section className="py-20 bg-gradient-to-br from-[#1e293b] to-[#0f172a] text-white">
+      <section className="seo-route-case py-20 bg-gradient-to-br from-[#1e293b] to-[#0f172a] text-white">
         <div className="container">
-          <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-center mb-4 text-white">Real Mobile SEO <span className="text-[#f59e0b]">Results</span></h2>
-            <p className="text-slate-200">How we transformed mobile performance and rankings</p>
+          <div className="seo-results-header">
+            <h2>
+              Real Mobile SEO <span>Results</span>
+            </h2>
+            <p>How we transformed mobile performance and rankings</p>
           </div>
 
           <div className="max-w-5xl mx-auto">
@@ -435,21 +438,14 @@ export default function MobileSEOPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-white">
+      <section className="seo-route-faq py-20 bg-white">
         <div className="container">
           <div className="section-title text-center">
             <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Mobile SEO Frequently Asked <span className="text-[#f59e0b]">Questions</span></h2>
             <p>Common questions about mobile search optimization</p>
           </div>
 
-          <div className="max-w-4xl mx-auto space-y-6">
-            {faqs.map((item, index) => (
-              <div key={index} className="card">
-                <h3 className="text-xl font-bold mb-3 text-primary-navy">{item.question}</h3>
-                <p className="text-gray-700 leading-relaxed">{item.answer}</p>
-              </div>
-            ))}
-          </div>
+          <FAQAccordion faqs={faqs} />
         </div>
       </section>
 
@@ -463,6 +459,8 @@ export default function MobileSEOPage() {
         primaryButtonAction="seoAudit"
         secondaryButtonText="View Our Work"
       />
-    </>
+    </div>
   );
 }
+
+

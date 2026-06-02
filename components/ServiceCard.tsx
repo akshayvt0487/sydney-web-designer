@@ -16,44 +16,34 @@ export default function ServiceCard({
   features,
 }: ServiceCardProps) {
   return (
-    <div className="card group hover:border-primary-orange hover:border-2 transition-all h-full flex flex-col">
-      {/* Icon */}
-      <div className="mb-4 bg-gradient-orange rounded-full w-20 h-20 flex items-center justify-center">
-        <i className={`fas ${icon} text-4xl text-white`}></i>
+    <article className="service-index-card">
+      <div className="service-index-card__top">
+        <span className="service-index-card__icon">
+          <i className={`fas ${icon}`} aria-hidden="true" />
+        </span>
+
+        <span className="service-index-card__line" aria-hidden="true" />
       </div>
 
-      {/* Title */}
-      <h3 className="text-xl font-bold text-primary-navy mb-3 group-hover:text-primary-orange transition-colors">
-        {title}
-      </h3>
+      <h3 className="service-index-card__title">{title}</h3>
 
-      {/* Description */}
-      <p className="text-gray-700 mb-4 flex-grow">{description}</p>
+      <p className="service-index-card__description">{description}</p>
 
-      {/* Features */}
       {features && features.length > 0 && (
-        <ul className="space-y-2 mb-4">
+        <ul className="service-index-card__features">
           {features.map((feature, index) => (
-            <li key={index} className="flex items-start gap-2 text-sm text-gray-600">
-              <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-              </svg>
+            <li key={index}>
+              <i className="fas fa-check" aria-hidden="true" />
               <span>{feature}</span>
             </li>
           ))}
         </ul>
       )}
 
-      {/* Link */}
-      <Link
-        href={link}
-        className="text-primary-orange font-semibold flex items-center gap-2 group-hover:gap-3 transition-all mt-auto"
-      >
+      <Link href={link} className="service-index-card__link">
         Learn More
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-        </svg>
+        <i className="fas fa-arrow-right" aria-hidden="true" />
       </Link>
-    </div>
+    </article>
   );
 }

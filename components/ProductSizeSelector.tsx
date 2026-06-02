@@ -27,7 +27,9 @@ export default function ProductSizeSelector({
   onSizeSelect,
   disabled = false,
 }: ProductSizeSelectorProps) {
-  const [internalSelectedSize, setInternalSelectedSize] = useState<string | undefined>(selectedSize);
+  const [internalSelectedSize, setInternalSelectedSize] = useState<
+    string | undefined
+  >(selectedSize);
 
   // Sort sizes properly
   const sortedSizes = sortSizes(sizes);
@@ -41,14 +43,16 @@ export default function ProductSizeSelector({
     }
   };
 
-  const currentSelected = selectedSize !== undefined ? selectedSize : internalSelectedSize;
+  const currentSelected =
+    selectedSize !== undefined ? selectedSize : internalSelectedSize;
 
   return (
-    <div className="space-y-3">
-      <label className="text-sm font-semibold text-gray-700">
+    <div className="paper-size-selector">
+      <label className="paper-size-selector__label">
         Select Size
       </label>
-      <div className="flex flex-wrap gap-3">
+
+      <div className="paper-size-selector__options">
         {sortedSizes.map((size) => {
           const isSelected = currentSelected === size;
 
@@ -57,17 +61,9 @@ export default function ProductSizeSelector({
               key={size}
               onClick={() => handleSizeClick(size)}
               disabled={disabled}
-              className={`
-                min-w-[60px] px-5 py-3 rounded-lg font-semibold text-base
-                border-2 transition-all duration-200
-                ${
-                  isSelected
-                    ? 'border-primary-orange bg-primary-orange text-white shadow-md scale-105'
-                    : 'border-gray-300 bg-white text-gray-700 hover:border-primary-orange hover:bg-orange-50'
-                }
-                ${disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}
-                focus:outline-none focus:ring-2 focus:ring-primary-orange focus:ring-offset-2
-              `}
+              className={`paper-size-selector__button ${
+                isSelected ? "is-selected" : ""
+              } ${disabled ? "is-disabled" : ""}`}
               aria-pressed={isSelected}
               aria-label={`Size ${size}`}
             >

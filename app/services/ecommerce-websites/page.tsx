@@ -1,10 +1,17 @@
-import Link from "next/link";
-import { services, portfolioProjects, googleReviews } from "@/lib/constants";
+import { services } from "@/lib/constants";
 import { generateMetadata } from "@/lib/metadata";
 import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema, generateFAQSchema } from "@/lib/schemas";
 import ServiceHeroSection from "@/components/ServiceHeroSection";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedServices from "@/components/RelatedServices";
+import ServiceTrustStrip from "@/components/service-page/ServiceTrustStrip";
+import ServiceStatsSection from "@/components/service-page/ServiceStatsSection";
+import ServiceFeaturesSection from "@/components/service-page/ServiceFeaturesSection";
+import ServiceProcessSection from "@/components/service-page/ServiceProcessSection";
+import ServiceResultsSection from "@/components/service-page/ServiceResultsSection";
+import ServiceTestimonialsSection from "@/components/service-page/ServiceTestimonialsSection";
+import ServiceFAQSection from "@/components/service-page/ServiceFAQSection";
+import ServiceLeadPanel from "@/components/service-page/ServiceLeadPanel";
 
 export const metadata = generateMetadata({
   title: "E-commerce Website Design Sydney | Online Store Development",
@@ -71,398 +78,119 @@ export default function EcommerceWebsitesPage() {
     }
   ];
 
+  const trustBadges = [
+    { icon: "fa-trophy", text: "13+ Years Experience" },
+    { icon: "fa-star", text: "50+ 5-Star Reviews" },
+    { icon: "fa-check", text: "Professional Service" },
+    { icon: "fa-chart-line", text: "Proven Results" },
+  ];
+
+  const stats = [
+    { value: "100+", text: "Stores Launched" },
+    { value: "$5M+", text: "Revenue Generated" },
+    { value: "3.2%", text: "Avg Conversion" },
+    { value: "50+", text: "Integrations" },
+  ];
+
+  const features = [
+    { icon: "fas fa-shopping-cart", title: "Store Setup", description: "Complete store build", points: ["Product catalogs", "Categories", "Filters", "Search"] },
+    { icon: "fas fa-credit-card", title: "Payments", description: "Secure payment processing", points: ["Multiple gateways", "Secure checkout", "Currency support", "Subscriptions"] },
+    { icon: "fas fa-box", title: "Shipping", description: "Shipping integration", points: ["Shipping zones", "Rate calculation", "Tracking", "Fulfillment"] },
+    { icon: "fas fa-chart-bar", title: "Inventory", description: "Stock management", points: ["Inventory tracking", "Low stock alerts", "SKU management", "Variants"] },
+    { icon: "fas fa-mobile-alt", title: "Mobile Commerce", description: "Mobile shopping", points: ["Mobile optimized", "App-like UX", "Fast checkout", "Touch-friendly"] },
+    { icon: "fas fa-search", title: "E-commerce SEO", description: "Product visibility", points: ["Product optimization", "Schema markup", "Site speed", "Content strategy"] },
+  ];
+
+  const process = [
+    { number: "1", title: "Discovery", description: "Deep dive into your business, goals, and requirements" },
+    { number: "2", title: "Strategy", description: "Develop custom strategy based on research and analysis" },
+    { number: "3", title: "Planning", description: "Create detailed roadmap and project timeline" },
+    { number: "4", title: "Execution", description: "Implement solution with attention to detail" },
+    { number: "5", title: "Testing", description: "Thorough quality assurance and optimization" },
+    { number: "6", title: "Launch & Support", description: "Deploy and provide ongoing support" },
+  ];
+
+  const caseStudies = [
+    { name: "Castor Master", industry: "Industrial Equipment", description: "E-commerce store with complex product configurations and wholesale ordering" },
+    { name: "Online Retailer", industry: "Fashion & Apparel", description: "Multi-category store with 500+ products and seamless checkout experience" },
+  ];
+
+  const testimonials = [
+    { text: "Professional, responsive, and delivered exactly what we needed. The results have been fantastic and we've seen significant improvements.", name: "Sydney Business Owner", detail: "Professional Services" },
+    { text: "The team at Sydney Web Designer took the time to understand our business. Their expertise and transparent approach made the entire process smooth.", name: "Local Business", detail: "Parramatta, NSW" },
+    { text: "Highly recommend Sydney Web Designer for their professionalism and quality of work. They exceeded our expectations in every way.", name: "Sydney Client", detail: "Service Provider" },
+  ];
+
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(generateServiceSchema(service.name, service.heroDescription)),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessSchema()) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(generateFAQSchema(faqs)),
-        }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateServiceSchema(service.name, service.heroDescription)) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessSchema()) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(faqs)) }} />
 
-      {/* Breadcrumbs */}
       <Breadcrumbs items={breadcrumbs} />
 
-      {/* Hero Section */}
       <ServiceHeroSection
         h1="Ecommerce Website Development"
-        badge={{
-          icon: `fas ${service.icon}`,
-          text: service.name
-        }}
+        badge={{ icon: `fas ${service.icon}`, text: service.name }}
         heading="E-commerce Websites Sydney"
         description="Build a profitable online store with expert e-commerce solutions. From products to payments, we handle everything."
         buttons={{
-          primary: {
-            text: "Start Your Store",
-            dataPopup: "contact"
-          },
-          secondary: {
-            text: "Our Process",
-            href: "#process"
-          }
+          primary: { text: "Start Your Store", dataPopup: "contact" },
+          secondary: { text: "Our Process", href: "#process" },
         }}
       />
 
-      {/* Trust Badges Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container">
-          <div className="flex justify-center gap-12 flex-wrap max-w-4xl mx-auto">
-            <div className="text-center">
-              <div className="text-4xl mb-2"><i className="fas fa-trophy text-[#f59e0b]"></i></div>
-              <div className="text-sm text-gray-600">13+ Years Experience</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl mb-2"><i className="fas fa-star text-[#f59e0b]"></i></div>
-              <div className="text-sm text-gray-600">50+ 5-Star Reviews</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl mb-2"><i className="fas fa-check text-[#f59e0b]"></i></div>
-              <div className="text-sm text-gray-600">Professional Service</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl mb-2"><i className="fas fa-chart-line text-[#f59e0b]"></i></div>
-              <div className="text-sm text-gray-600">Proven Results</div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServiceTrustStrip badges={trustBadges} />
 
-      {/* Stats Section */}
-      <section className="py-24">
-        <div className="container">
-          <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Why Choose E-commerce Websites Sydney?</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-            <div className="bg-white p-10 rounded-3xl shadow-lg text-center hover:shadow-2xl transition-all border-t-4 border-[#f59e0b]">
-              <div className="text-6xl font-bold text-[#f59e0b] mb-2">100+</div>
-              <div className="text-gray-600 text-lg">Stores Launched</div>
-            </div>
-            <div className="bg-white p-10 rounded-3xl shadow-lg text-center hover:shadow-2xl transition-all border-t-4 border-[#f59e0b]">
-              <div className="text-6xl font-bold text-[#f59e0b] mb-2">$5M+</div>
-              <div className="text-gray-600 text-lg">Revenue Generated</div>
-            </div>
-            <div className="bg-white p-10 rounded-3xl shadow-lg text-center hover:shadow-2xl transition-all border-t-4 border-[#f59e0b]">
-              <div className="text-6xl font-bold text-[#f59e0b] mb-2">3.2%</div>
-              <div className="text-gray-600 text-lg">Avg Conversion</div>
-            </div>
-            <div className="bg-white p-10 rounded-3xl shadow-lg text-center hover:shadow-2xl transition-all border-t-4 border-[#f59e0b]">
-              <div className="text-6xl font-bold text-[#f59e0b] mb-2">50+</div>
-              <div className="text-gray-600 text-lg">Integrations</div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServiceStatsSection title={<>Why Choose E-commerce Websites <span>Sydney</span>?</>} stats={stats} />
 
-      {/* Features Section */}
-      <section className="py-24 bg-gray-50">
-        <div className="container">
-          <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Our E-commerce Websites Sydney Services</h2>
-          <p className="text-xl text-center text-gray-600 max-w-3xl mx-auto mb-16">Comprehensive solutions designed to help your business succeed</p>
+      <ServiceFeaturesSection
+        title={<>Our E-commerce Websites Sydney <span>Services</span></>}
+        description="Comprehensive solutions designed to help your business succeed"
+        features={features}
+      />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-            <div className="bg-white p-12 rounded-3xl shadow-lg hover:shadow-2xl transition-all border border-[#f59e0b]/30">
-              <div className="text-6xl mb-6"><i className="fas fa-shopping-cart text-[#f59e0b]"></i></div>
-              <h3 className="text-2xl font-bold mb-4 text-[#1e293b]">Store Setup</h3>
-              <p className="text-gray-600 mb-6">Complete store build</p>
-              <ul className="space-y-3">
-                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Product catalogs</span></li>
-                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Categories</span></li>
-                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Filters</span></li>
-                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Search</span></li>
-              </ul>
-            </div>
+      <ServiceProcessSection
+        title={<>Our Proven <span>Process</span></>}
+        description="A systematic approach to deliver outstanding results"
+        steps={process}
+      />
 
-            <div className="bg-white p-12 rounded-3xl shadow-lg hover:shadow-2xl transition-all border border-[#f59e0b]/30">
-              <div className="text-6xl mb-6"><i className="fas fa-credit-card text-[#f59e0b]"></i></div>
-              <h3 className="text-2xl font-bold mb-4 text-[#1e293b]">Payments</h3>
-              <p className="text-gray-600 mb-6">Secure payment processing</p>
-              <ul className="space-y-3">
-                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Multiple gateways</span></li>
-                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Secure checkout</span></li>
-                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Currency support</span></li>
-                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Subscriptions</span></li>
-              </ul>
-            </div>
+      <ServiceResultsSection title={<>Real Results for Sydney <span>Businesses</span></>} projects={caseStudies} />
 
-            <div className="bg-white p-12 rounded-3xl shadow-lg hover:shadow-2xl transition-all border border-[#f59e0b]/30">
-              <div className="text-6xl mb-6"><i className="fas fa-box text-[#f59e0b]"></i></div>
-              <h3 className="text-2xl font-bold mb-4 text-[#1e293b]">Shipping</h3>
-              <p className="text-gray-600 mb-6">Shipping integration</p>
-              <ul className="space-y-3">
-                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Shipping zones</span></li>
-                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Rate calculation</span></li>
-                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Tracking</span></li>
-                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Fulfillment</span></li>
-              </ul>
-            </div>
+      <ServiceTestimonialsSection title={<>What Our Clients <span>Say</span></>} testimonials={testimonials} />
 
-            <div className="bg-white p-12 rounded-3xl shadow-lg hover:shadow-2xl transition-all border border-[#f59e0b]/30">
-              <div className="text-6xl mb-6"><i className="fas fa-chart-bar text-[#f59e0b]"></i></div>
-              <h3 className="text-2xl font-bold mb-4 text-[#1e293b]">Inventory</h3>
-              <p className="text-gray-600 mb-6">Stock management</p>
-              <ul className="space-y-3">
-                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Inventory tracking</span></li>
-                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Low stock alerts</span></li>
-                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>SKU management</span></li>
-                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Variants</span></li>
-              </ul>
-            </div>
+      <ServiceFAQSection
+        title={<>Frequently Asked <span>Questions</span></>}
+        description="Everything you need to know about e-commerce websites"
+        faqs={faqs}
+      />
 
-            <div className="bg-white p-12 rounded-3xl shadow-lg hover:shadow-2xl transition-all border border-[#f59e0b]/30">
-              <div className="text-6xl mb-6"><i className="fas fa-mobile-alt text-[#f59e0b]"></i></div>
-              <h3 className="text-2xl font-bold mb-4 text-[#1e293b]">Mobile Commerce</h3>
-              <p className="text-gray-600 mb-6">Mobile shopping</p>
-              <ul className="space-y-3">
-                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Mobile optimized</span></li>
-                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>App-like UX</span></li>
-                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Fast checkout</span></li>
-                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Touch-friendly</span></li>
-              </ul>
-            </div>
-
-            <div className="bg-white p-12 rounded-3xl shadow-lg hover:shadow-2xl transition-all border border-[#f59e0b]/30">
-              <div className="text-6xl mb-6"><i className="fas fa-search text-[#f59e0b]"></i></div>
-              <h3 className="text-2xl font-bold mb-4 text-[#1e293b]">E-commerce SEO</h3>
-              <p className="text-gray-600 mb-6">Product visibility</p>
-              <ul className="space-y-3">
-                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Product optimization</span></li>
-                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Schema markup</span></li>
-                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Site speed</span></li>
-                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Content strategy</span></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Process Section */}
-      <section className="py-24" id="process">
-        <div className="container">
-          <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Our Proven Process</h2>
-          <p className="text-xl text-center text-gray-600 max-w-3xl mx-auto mb-16">A systematic approach to deliver outstanding results</p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-            {[
-              { num: 1, title: "Discovery", desc: "Deep dive into your business, goals, and requirements" },
-              { num: 2, title: "Strategy", desc: "Develop custom strategy based on research and analysis" },
-              { num: 3, title: "Planning", desc: "Create detailed roadmap and project timeline" },
-              { num: 4, title: "Execution", desc: "Implement solution with attention to detail" },
-              { num: 5, title: "Testing", desc: "Thorough quality assurance and optimization" },
-              { num: 6, title: "Launch & Support", desc: "Deploy and provide ongoing support" }
-            ].map((step) => (
-              <div key={step.num} className="bg-white p-10 rounded-3xl shadow-lg text-center hover:scale-105 transition-all">
-                <div className="w-24 h-24 bg-[#1e293b] text-white rounded-full flex items-center justify-center text-4xl font-bold mx-auto mb-8 shadow-lg">
-                  {step.num}
-                </div>
-                <h3 className="text-2xl font-bold mb-4 text-[#1e293b]">{step.title}</h3>
-                <p className="text-gray-600">{step.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Case Studies Section */}
-      <section className="py-24 bg-gray-50">
-        <div className="container">
-          <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Real Results for Sydney Businesses</h2>
-
-          <div className="space-y-12 max-w-5xl mx-auto">
-            <div className="bg-white p-12 rounded-3xl shadow-lg">
-              <div className="border-b-4 border-[#f59e0b] pb-6 mb-8">
-                <h3 className="text-3xl font-bold mb-2 text-[#1e293b]">Castor Master</h3>
-                <div className="text-[#f59e0b] font-semibold text-lg">Industrial Equipment</div>
-              </div>
-              <p className="text-gray-600 text-lg">E-commerce store with complex product configurations and wholesale ordering</p>
-            </div>
-
-            <div className="bg-white p-12 rounded-3xl shadow-lg">
-              <div className="border-b-4 border-[#f59e0b] pb-6 mb-8">
-                <h3 className="text-3xl font-bold mb-2 text-[#1e293b]">Online Retailer</h3>
-                <div className="text-[#f59e0b] font-semibold text-lg">Fashion & Apparel</div>
-              </div>
-              <p className="text-gray-600 text-lg">Multi-category store with 500+ products and seamless checkout experience</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-24">
-        <div className="container">
-          <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">What Our Clients Say</h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {[
-              { text: "Professional, responsive, and delivered exactly what we needed. The results have been fantastic and we've seen significant improvements.", author: "Sydney Business Owner", role: "Professional Services" },
-              { text: "The team at Sydney Web Designer took the time to understand our business. Their expertise and transparent approach made the entire process smooth.", author: "Local Business", role: "Parramatta, NSW" },
-              { text: "Highly recommend Sydney Web Designer for their professionalism and quality of work. They exceeded our expectations in every way.", author: "Sydney Client", role: "Service Provider" }
-            ].map((review, i) => (
-              <div key={i} className="bg-white p-12 rounded-3xl shadow-lg border-t-4 border-[#f59e0b]">
-                <div className="text-3xl mb-6">
-                  <i className="fas fa-star text-[#f59e0b]"></i>
-                  <i className="fas fa-star text-[#f59e0b]"></i>
-                  <i className="fas fa-star text-[#f59e0b]"></i>
-                  <i className="fas fa-star text-[#f59e0b]"></i>
-                  <i className="fas fa-star text-[#f59e0b]"></i>
-                </div>
-                <p className="text-gray-700 italic mb-8 text-lg leading-relaxed">&quot;{review.text}&quot;</p>
-                <div className="font-bold text-[#1e293b]">{review.author}</div>
-                <div className="text-gray-600 text-sm">{review.role}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      {/* <section className="py-24 bg-gray-50">
-        <div className="container">
-          <h2 className="text-5xl font-bold text-center mb-6 text-[#1e293b]">E-commerce Websites Sydney Pricing</h2>
-          <p className="text-center text-gray-600 mb-16">Choose the package that fits your needs and budget</p>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div className="bg-white p-10 rounded-3xl border-2 border-gray-200 hover:border-[#f59e0b] hover:-translate-y-2 transition-all">
-              <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold mb-4 text-[#1e293b]">Starter</h3>
-                <div className="text-5xl font-bold text-[#f59e0b] mb-2">$5,000-$8,000</div>
-                <div className="text-gray-600">one-time</div>
-              </div>
-              <ul className="space-y-4 mb-10">
-                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Up to 50 products</span></li>
-                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Payment gateway</span></li>
-                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Shipping setup</span></li>
-                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Mobile responsive</span></li>
-                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Basic SEO</span></li>
-              </ul>
-              <button data-popup="contact" className="btn btn-outline w-full">Get Started</button>
-            </div>
-
-            <div className="bg-white p-10 rounded-3xl border-2 border-[#f59e0b] hover:-translate-y-2 transition-all relative shadow-xl">
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#f59e0b] text-white px-6 py-2 rounded-full text-sm font-bold">
-                Most Popular
-              </div>
-              <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold mb-4 text-[#1e293b]">Growth</h3>
-                <div className="text-5xl font-bold text-[#f59e0b] mb-2">$10,000-$20,000</div>
-                <div className="text-gray-600">one-time</div>
-              </div>
-              <ul className="space-y-4 mb-10">
-                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Up to 500 products</span></li>
-                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Advanced features</span></li>
-                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Multiple gateways</span></li>
-                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Custom integrations</span></li>
-                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Advanced SEO</span></li>
-              </ul>
-              <button data-popup="contact" className="btn btn-primary w-full">Get Started</button>
-            </div>
-
-            <div className="bg-white p-10 rounded-3xl border-2 border-gray-200 hover:border-[#f59e0b] hover:-translate-y-2 transition-all">
-              <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold mb-4 text-[#1e293b]">Enterprise</h3>
-                <div className="text-5xl font-bold text-[#f59e0b] mb-2">$30,000+</div>
-                <div className="text-gray-600">one-time</div>
-              </div>
-              <ul className="space-y-4 mb-10">
-                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Unlimited products</span></li>
-                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Custom features</span></li>
-                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>ERP integration</span></li>
-                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Multi-currency</span></li>
-                <li className="flex items-start"><i className="fas fa-check text-[#f59e0b] mt-1 mr-3"></i><span>Dedicated support</span></li>
-              </ul>
-              <button data-popup="contact" className="btn btn-outline w-full">Get Started</button>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
-      {/* FAQ Section */}
-      <section className="py-24 bg-gray-50">
-        <div className="container max-w-4xl">
-          <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">
-            Frequently Asked <span className="text-[#f59e0b]">Questions</span>
-          </h2>
-          <p className="text-xl text-center text-gray-600 mb-12">
-            Everything you need to know about e-commerce websites
-          </p>
-
-          <div className="space-y-6">
-            {faqs.map((faq, index) => (
-              <div key={index} className="bg-white p-8 rounded-xl shadow-md">
-                <h3 className="text-xl font-bold text-[#1e293b] mb-4">{faq.question}</h3>
-                <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Related Services */}
       <RelatedServices services={relatedServices} />
 
-      {/* Contact Form Section */}
-      <section className="py-24" id="lead-form">
-        <div className="container max-w-5xl">
-          <div className="bg-[#1e293b] text-white p-16 rounded-3xl">
-            <h3 className="text-4xl font-bold mb-4 text-center text-white">Get Your Free Consultation</h3>
-            <p className="text-center opacity-90 mb-12 text-lg">Tell us about your project and we&apos;ll provide expert advice and a custom quote</p>
-
-            <form className="space-y-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block mb-2 font-semibold">Full Name *</label>
-                  <input type="text" required placeholder="Your name" className="w-full p-4 rounded-xl border-0 text-gray-900" />
-                </div>
-                <div>
-                  <label className="block mb-2 font-semibold">Email *</label>
-                  <input type="email" required placeholder="your@email.com" className="w-full p-4 rounded-xl border-0 text-gray-900" />
-                </div>
-                <div>
-                  <label className="block mb-2 font-semibold">Phone *</label>
-                  <input type="tel" required placeholder="04XX XXX XXX" className="w-full p-4 rounded-xl border-0 text-gray-900" />
-                </div>
-                <div>
-                  <label className="block mb-2 font-semibold">Company</label>
-                  <input type="text" placeholder="Your company (optional)" className="w-full p-4 rounded-xl border-0 text-gray-900" />
-                </div>
-              </div>
-              <div>
-                <label className="block mb-2 font-semibold">Tell us about your project</label>
-                <textarea placeholder="What are you looking to achieve?" rows={4} className="w-full p-4 rounded-xl border-0 text-gray-900"></textarea>
-              </div>
-              <div className="text-center">
-                <button type="submit" className="bg-white text-[#1e293b] px-6 md:px-10 lg:px-12 py-3 md:py-4 rounded-full font-bold text-base md:text-lg hover:bg-gray-100 transition-all w-full sm:w-auto text-center">
-                  Start Your Store
-                </button>
-                <p className="mt-4 text-sm opacity-80"><i className="fas fa-comment mr-2"></i>We&apos;ll respond within 24 hours</p>
-              </div>
-            </form>
+      <ServiceLeadPanel
+        id="lead-form"
+        title="Get Your Free Consultation"
+        description="Tell us about your project and we'll provide expert advice and a custom quote"
+      >
+        <form className="service-detail-lead__form">
+          <div className="service-detail-lead__grid">
+            <div><label>Full Name *</label><input type="text" required placeholder="Your name" className="form-input" /></div>
+            <div><label>Email *</label><input type="email" required placeholder="your@email.com" className="form-input" /></div>
+            <div><label>Phone *</label><input type="tel" required placeholder="04XX XXX XXX" className="form-input" /></div>
+            <div><label>Company</label><input type="text" placeholder="Your company (optional)" className="form-input" /></div>
           </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="bg-[#1e293b] text-white py-24 text-center">
-        <div className="container">
-          <h2 className="text-4xl md:text-6xl font-bold text-center mb-4 text-white">Ready to Get Started?</h2>
-          <p className="text-center text-2xl mb-10 opacity-95">Let&apos;s discuss your project and create a custom solution for your business</p>
-          <Link href="#lead-form" className="btn btn-white text-lg">Start Your Store</Link>
-        </div>
-      </section>
+          <div className="service-detail-lead__message">
+            <label>Tell us about your project</label>
+            <textarea placeholder="What are you looking to achieve?" rows={7} className="form-textarea" />
+          </div>
+          <div className="service-detail-lead__submit">
+            <button type="submit" className="paper-button paper-button--rust">Start Your Store</button>
+            <p><i className="fas fa-comment" aria-hidden="true" />We&apos;ll respond within 24 hours</p>
+          </div>
+        </form>
+      </ServiceLeadPanel>
     </>
   );
 }

@@ -1,164 +1,460 @@
 "use client";
 
-import Link from "next/link";
-import { useState, useEffect } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { contactInfo } from "@/lib/constants";
-import WebDesignMegaMenu from "./WebDesignMegaMenu";
+import BrandingMegaMenu from "./BrandingMegaMenu";
 import GrowthMarketingMegaMenu from "./GrowthMarketingMegaMenu";
+import WebDesignMegaMenu from "./WebDesignMegaMenu";
+import { usePopupForm } from "./PopupFormProvider";
+
+type MobileSection = "web-design" | "growth-marketing" | "branding" | null;
+
+const webDesignLinks = [
+  { name: "Web Design Overview", href: "/web-design" },
+  { name: "Web Design Plans", href: "/web-design-plans" },
+  { name: "Custom Web Design", href: "/services/custom-web-design" },
+  { name: "Website Redesign", href: "/services/website-redesign" },
+  { name: "UI/UX Design", href: "/services/ui-ux-design" },
+  { name: "Responsive Design", href: "/services/responsive-design" },
+  { name: "Landing Pages", href: "/services/landing-pages" },
+  { name: "WordPress Development", href: "/services/wordpress-development" },
+  { name: "Ecommerce Websites", href: "/services/ecommerce-websites" },
+  {
+    name: "High Performance Landing Pages",
+    href: "/services/high-performance-landing-pages",
+  },
+  { name: "Vibe Code Website", href: "/services/vibe-code-website" },
+];
+
+const growthMarketingLinks = [
+  { name: "SEO Sydney", href: "/services/seo-sydney" },
+  { name: "Local SEO", href: "/services/local-seo" },
+  { name: "Ecommerce SEO", href: "/services/ecommerce-seo" },
+  { name: "Mobile SEO", href: "/services/mobile-seo" },
+  {
+    name: "Pay on Performance SEO",
+    href: "/services/pay-on-performance-seo",
+  },
+  { name: "SEO Copywriting", href: "/services/seo-copywriting" },
+  { name: "Link Building", href: "/services/link-building" },
+  { name: "Digital PR", href: "/services/digital-pr" },
+  { name: "Content Marketing", href: "/services/content-marketing" },
+  { name: "Google Ads", href: "/services/google-ads" },
+  { name: "Meta Ads", href: "/services/meta-ads" },
+  {
+    name: "Social Media Marketing",
+    href: "/services/social-media-marketing",
+  },
+  { name: "Email Marketing", href: "/services/email-marketing" },
+  {
+    name: "Conversion Optimization",
+    href: "/services/conversion-optimization",
+  },
+];
+
+const brandingLinks = [
+  { name: "Brand Identity", href: "/services/brand-identity" },
+  { name: "Logo Design", href: "/services/logo-design" },
+];
+
+const secondaryLinks = [
+  { name: "About Us", href: "/about" },
+  { name: "Testimonials", href: "/testimonials" },
+  { name: "Careers", href: "/careers" },
+  { name: "Blog", href: "/blog" },
+  { name: "Portfolio", href: "/portfolio" },
+];
+
+function Chevron({ open }: { open: boolean }) {
+  return (
+    <svg
+      className={`h-4 w-4 transition-transform duration-200 ${open ? "rotate-180" : ""
+        }`}
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M19 9l-7 7-7-7"
+      />
+    </svg>
+  );
+}
+
+function MobileAccordion({
+  title,
+  open,
+  onToggle,
+  links,
+}: {
+  title: string;
+  open: boolean;
+  onToggle: () => void;
+  links: Array<{ name: string; href: string }>;
+}) {
+  return (
+    <div className="paper-mobile__section">
+      <button
+        type="button"
+        className="paper-mobile__accordion"
+        aria-expanded={open}
+        onClick={onToggle}
+      >
+        {title}
+        <Chevron open={open} />
+      </button>
+
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            className="paper-mobile__subitems"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          >
+            {links.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="paper-mobile__subitem"
+              >
+                {link.name}
+              </Link>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
 
 export default function Header() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+  const { openForm } = usePopupForm();
+
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [pendingMobileQuote, setPendingMobileQuote] = useState(false);
+  const [openMobileSection, setOpenMobileSection] =
+    useState<MobileSection>(null);
+
+  const closeMobileMenu = () => {
+    setMobileOpen(false);
+    setOpenMobileSection(null);
+  };
+
+  const handleMobileQuoteClick = () => {
+    setPendingMobileQuote(true);
+    closeMobileMenu();
+  };
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+    const updateScrolledState = () => {
+      setScrolled(window.scrollY > 12);
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    updateScrolledState();
+    window.addEventListener("scroll", updateScrolledState, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", updateScrolledState);
+    };
   }, []);
+
+  useEffect(() => {
+    setMobileOpen(false);
+    setPendingMobileQuote(false);
+    setOpenMobileSection(null);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!mobileOpen) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [mobileOpen]);
 
   return (
     <>
-      {/* Top Bar */}
-      <div className="bg-dark-navy text-white py-2 text-sm">
-        <div className="container">
-          <div className="flex flex-wrap items-center justify-between">
-            <div className="flex items-center gap-6">
-              <a href={`mailto:${contactInfo.email}`} className="hover:text-primary-orange transition-colors">
-                <i className="fas fa-envelope"></i> {contactInfo.email}
+      <header className="paper-header">
+        <div className="paper-topbar">
+          <div className="container paper-topbar__inner">
+            <div className="paper-topbar__group">
+              <a href={`mailto:${contactInfo.email}`}>
+                <i className="fas fa-envelope" aria-hidden="true" />
+                {contactInfo.email}
               </a>
-              <a href={`tel:${contactInfo.phoneLink}`} className="hover:text-primary-orange transition-colors">
-                <i className="fas fa-phone"></i> {contactInfo.phone}
+
+              <a href={`tel:${contactInfo.phoneLink}`}>
+                <i className="fas fa-phone" aria-hidden="true" />
+                {contactInfo.phone}
               </a>
             </div>
-            <nav className="hidden md:flex items-center gap-4">
-              <Link href="/about" className="hover:text-primary-orange transition-colors">
-                About Us
-              </Link>
-              <Link href="/testimonials" className="hover:text-primary-orange transition-colors">
-                Testimonials
-              </Link>
-              <Link href="/careers" className="hover:text-primary-orange transition-colors">
-                Careers
-              </Link>
-              <Link href="/blog" className="hover:text-primary-orange transition-colors">
-                Blog
-              </Link>
-              <Link href="/contact" className="hover:text-primary-orange transition-colors">
-                Contact
-              </Link>
+
+            <nav
+              className="paper-topbar__group"
+              aria-label="Secondary navigation"
+            >
+              {secondaryLinks.map((link) => (
+                <Link key={link.href} href={link.href}>
+                  {link.name}
+                </Link>
+              ))}
             </nav>
           </div>
         </div>
-      </div>
 
-      {/* Main Header */}
-      <header className="bg-white shadow-md sticky top-0 z-40 transition-all duration-300">
-        <div className="container">
-          <div className={`flex items-center justify-between transition-all duration-300 ${isScrolled ? 'py-2' : 'py-4'}`}>
-            {/* Logo */}
-            <Link href="/" className="flex items-center">
+        <div
+          className={`paper-navbar paper-grain ${scrolled ? "is-scrolled" : ""
+            }`}
+        >
+          <div className="container paper-navbar__row">
+            <Link
+              href="/"
+              aria-label="Sydney Web Designer home"
+              className="paper-logo"
+            >
               <Image
                 src="/Sydney Web Designer logo.webp"
                 alt="Sydney Web Designer"
-                width={200}
-                height={60}
-                className={`w-auto transition-all duration-300 ${isScrolled ? 'lg:h-16 h-12' : 'h-14 md:h-16 lg:h-24'}`}
+                width={210}
+                height={72}
                 priority
               />
             </Link>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-8">
-              <Link href="/" className="text-primary-navy hover:text-primary-orange transition-colors font-medium">
+            <nav className="paper-nav" aria-label="Main navigation">
+              <Link
+                href="/"
+                className="paper-nav__link"
+                aria-current={pathname === "/" ? "page" : undefined}
+              >
                 Home
               </Link>
+
               <WebDesignMegaMenu />
+
               <GrowthMarketingMegaMenu />
-              <Link href="/portfolio" className="text-primary-navy hover:text-primary-orange transition-colors font-medium">
-                Portfolio
+
+              <BrandingMegaMenu />
+              <Link
+                href="/contact"
+                className="paper-nav__link"
+                aria-current={
+                  pathname.startsWith("/contact") ? "page" : undefined
+                }
+              >
+                Contact
               </Link>
             </nav>
 
-            {/* CTA Buttons */}
-            <div className="hidden lg:flex items-center gap-3">
+            <div className="paper-nav__actions">
               <button
+                type="button"
                 data-popup="contact"
-                className="btn btn-primary"
+                className="paper-button paper-button--rust"
               >
-                Get Quote
+                Get Free Quote
               </button>
+
               <a
                 href={`tel:${contactInfo.phoneLink}`}
-                className="btn btn-secondary"
+                className="paper-button"
               >
-               02 9191 8049
+                Call {contactInfo.phone}
               </a>
             </div>
 
-            {/* Mobile Menu Button */}
             <button
-              className="lg:hidden text-primary-navy"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label="Toggle menu"
+              type="button"
+              className="paper-menu-button"
+              onClick={() => setMobileOpen(true)}
+              aria-label="Open menu"
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-navigation-panel"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                {isMobileMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
+              <svg
+                className="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 7h16M4 12h16M4 17h16"
+                />
               </svg>
             </button>
           </div>
-
-          {/* Mobile Menu */}
-          {isMobileMenuOpen && (
-            <div className="lg:hidden py-4 border-t border-gray-200">
-              <nav className="flex flex-col gap-3">
-                <Link href="/" className="text-primary-navy hover:text-primary-orange transition-colors py-2">
-                  Home
-                </Link>
-                <Link href="/web-design" className="text-primary-navy hover:text-primary-orange transition-colors py-2">
-                  Web Design
-                </Link>
-                <Link href="/growth-marketing" className="text-primary-navy hover:text-primary-orange transition-colors py-2">
-                  Growth Marketing
-                </Link>
-                <Link href="/portfolio" className="text-primary-navy hover:text-primary-orange transition-colors py-2">
-                  Portfolio
-                </Link>
-                <Link href="/about" className="text-primary-navy hover:text-primary-orange transition-colors py-2">
-                  About Us
-                </Link>
-                <Link href="/testimonials" className="text-primary-navy hover:text-primary-orange transition-colors py-2">
-                  Testimonials
-                </Link>
-                <Link href="/careers" className="text-primary-navy hover:text-primary-orange transition-colors py-2">
-                  Careers
-                </Link>
-                <Link href="/blog" className="text-primary-navy hover:text-primary-orange transition-colors py-2">
-                  Blog
-                </Link>
-                <Link href="/#contact" className="text-primary-navy hover:text-primary-orange transition-colors py-2">
-                  Contact
-                </Link>
-                <div className="flex flex-col gap-2 mt-3">
-                  <button data-popup="contact" className="btn btn-primary w-full">
-                    Get Quote
-                  </button>
-                  <a href={`tel:${contactInfo.phoneLink}`} className="btn btn-secondary w-full">
-                    Call Now
-                  </a>
-                </div>
-              </nav>
-            </div>
-          )}
         </div>
       </header>
+
+      <AnimatePresence
+        onExitComplete={() => {
+          if (pendingMobileQuote) {
+            openForm("contact");
+            setPendingMobileQuote(false);
+          }
+        }}
+      >
+        {mobileOpen && (
+          <motion.div
+            className="paper-mobile"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.18 }}
+          >
+            <button
+              type="button"
+              className="paper-mobile__backdrop"
+              onClick={closeMobileMenu}
+              aria-label="Close menu"
+            />
+
+            <motion.aside
+              id="mobile-navigation-panel"
+              className="paper-mobile__panel paper-grain"
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{
+                type: "spring",
+                stiffness: 300,
+                damping: 30,
+              }}
+            >
+              <div className="paper-mobile__header">
+                <Image
+                  src="/Sydney Web Designer logo.webp"
+                  alt="Sydney Web Designer"
+                  width={175}
+                  height={54}
+                />
+
+                <button
+                  type="button"
+                  className="paper-menu-button"
+                  onClick={closeMobileMenu}
+                  aria-label="Close menu"
+                >
+                  <svg
+                    className="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
+
+              <nav
+                className="paper-mobile__body"
+                aria-label="Mobile navigation"
+              >
+                <Link href="/" className="paper-mobile__item">
+                  Home
+                </Link>
+
+                <MobileAccordion
+                  title="Web Design"
+                  open={openMobileSection === "web-design"}
+                  onToggle={() =>
+                    setOpenMobileSection(
+                      openMobileSection === "web-design"
+                        ? null
+                        : "web-design"
+                    )
+                  }
+                  links={webDesignLinks}
+                />
+
+                <MobileAccordion
+                  title="Growth Marketing"
+                  open={openMobileSection === "growth-marketing"}
+                  onToggle={() =>
+                    setOpenMobileSection(
+                      openMobileSection === "growth-marketing"
+                        ? null
+                        : "growth-marketing"
+                    )
+                  }
+                  links={growthMarketingLinks}
+                />
+
+                <MobileAccordion
+                  title="Branding"
+                  open={openMobileSection === "branding"}
+                  onToggle={() =>
+                    setOpenMobileSection(
+                      openMobileSection === "branding"
+                        ? null
+                        : "branding"
+                    )
+                  }
+                  links={brandingLinks}
+                />
+
+                <Link href="/portfolio" className="paper-mobile__item">
+                  Portfolio
+                </Link>
+
+                <Link href="/contact" className="paper-mobile__item">
+                  Contact
+                </Link>
+
+                <div className="paper-mobile__secondary">
+                  {secondaryLinks.map((link) => (
+                    <Link key={link.href} href={link.href}>
+                      {link.name}
+                    </Link>
+                  ))}
+                </div>
+              </nav>
+
+              <div className="paper-mobile__footer">
+                <button
+                  type="button"
+                  onClick={handleMobileQuoteClick}
+                  className="paper-button paper-button--rust"
+                >
+                  Get Free Quote
+                </button>
+
+                <a
+                  href={`tel:${contactInfo.phoneLink}`}
+                  className="paper-button"
+                >
+                  Call {contactInfo.phone}
+                </a>
+              </div>
+            </motion.aside>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

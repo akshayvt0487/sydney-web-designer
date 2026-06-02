@@ -1,12 +1,16 @@
+import Breadcrumbs from "@/components/Breadcrumbs";
 import Link from "next/link";
 import { services, portfolioProjects, googleReviews } from "@/lib/constants";
 import { generateMetadata } from "@/lib/metadata";
-import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema } from "@/lib/schemas";
-import StatsGrid from "@/components/StatsGrid";
-import TestimonialCard from "@/components/TestimonialCard";
-import PortfolioCard from "@/components/PortfolioCard";
+import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema, generateFAQSchema } from "@/lib/schemas";
 import CTASection from "@/components/CTASection";
 import ServiceHeroSection from "@/components/ServiceHeroSection";
+import ServiceStatsSection from "@/components/service-page/ServiceStatsSection";
+import ServiceFeaturesSection from "@/components/service-page/ServiceFeaturesSection";
+import ServiceProcessSection from "@/components/service-page/ServiceProcessSection";
+import ServicePortfolioSection from "@/components/service-page/ServicePortfolioSection";
+import ServiceTestimonialsSection from "@/components/service-page/ServiceTestimonialsSection";
+import ServiceFAQSection from "@/components/service-page/ServiceFAQSection";
 
 export const metadata = generateMetadata({
   title: "UI/UX Design Sydney | User Experience Design Services",
@@ -92,12 +96,12 @@ export default function UIUXDesignPage() {
 
   const faqs = [
     {
-      question: "What&apos;s the difference between UI and UX design?",
+      question: "What's the difference between UI and UX design?",
       answer: "UX (User Experience) design focuses on how users interact with your product - the overall experience, flow, and functionality. UI (User Interface) design focuses on the visual elements - colors, typography, buttons, and layout. Both are essential for creating successful digital products.",
     },
     {
       question: "Do I need UI/UX design if I already have a website?",
-      answer: "If users struggle to find information, have high bounce rates, or don&apos;t convert, UI/UX improvements can significantly boost performance. Even existing websites benefit from UX audits to identify friction points and optimization opportunities.",
+      answer: "If users struggle to find information, have high bounce rates, or don't convert, UI/UX improvements can significantly boost performance. Even existing websites benefit from UX audits to identify friction points and optimization opportunities.",
     },
     {
       question: "How long does the UI/UX design process take?",
@@ -115,259 +119,57 @@ export default function UIUXDesignPage() {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(generateServiceSchema(service.name, service.heroDescription)),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessSchema()) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateServiceSchema(service.name, service.heroDescription)) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessSchema()) }} />
 
-      {/* Hero Section */}
+      <Breadcrumbs items={breadcrumbs} />
+
       <ServiceHeroSection
         h1="UI UX Designer Sydney"
-        badge={{
-          icon: `fas ${service.icon}`,
-          text: service.name
-        }}
+        badge={{ icon: `fas ${service.icon}`, text: service.name }}
         heading="UI/UX Design That Creates Intuitive Digital Experiences"
         description="Craft beautiful, user-friendly interfaces backed by research and best practices in user experience. Design that users love and that drives business results."
         buttons={{
-          primary: {
-            text: "Start Your UX Project",
-            dataPopup: "contact"
-          },
-          secondary: {
-            text: "View UX Portfolio",
-            href: "/portfolio"
-          }
+          primary: { text: "Start Your UX Project", dataPopup: "contact" },
+          secondary: { text: "View UX Portfolio", href: "/portfolio" },
         }}
       />
 
-      {/* Stats Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container">
-          <StatsGrid stats={stats} columns={4} />
-        </div>
-      </section>
+      <ServiceStatsSection stats={stats.map((stat) => ({ value: stat.number, text: stat.label }))} />
 
-      {/* Features Section */}
-      <section className="py-20">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">
-              Complete UI/UX Design Services
-            </h2>
-            <p className="text-xl text-gray-600">
-              From research to implementation, we cover every aspect of user experience design.
-            </p>
-          </div>
+      <ServiceFeaturesSection
+        title={<>Complete UI/UX Design <span>Services</span></>}
+        description="From research to implementation, we cover every aspect of user experience design."
+        features={features}
+      />
 
-          <div className="grid-3">
-            {features.map((feature, index) => (
-              <div key={index} className="card hover:shadow-card-hover transition-shadow">
-                <div className="mb-4"><i className={`${feature.icon} text-4xl text-[#f59e0b]`}></i></div>
-                <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceProcessSection
+        title={<>Our UI/UX Design <span>Process</span></>}
+        description="User-centered methodology that delivers exceptional experiences."
+        columns={4}
+        steps={process.map((step) => ({ number: String(step.step), title: step.title, description: step.description }))}
+      />
 
-      {/* Process Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Our UI/UX Design Process</h2>
-            <p className="text-xl text-gray-600">
-              User-centered methodology that delivers exceptional experiences.
-            </p>
-          </div>
+      <ServicePortfolioSection
+        title={<>UI/UX Design <span>Portfolio</span></>}
+        description="User-centered designs that deliver exceptional experiences."
+        projects={webProjects.slice(0, 6)}
+        buttonText="View All Projects"
+      />
 
-          <div className="grid-2 max-w-4xl mx-auto">
-            {process.map((item) => (
-              <div key={item.step} className="card hover:shadow-card-hover transition-shadow">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-[#f59e0b] rounded-full flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
-                    {item.step}
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                    <p className="text-gray-600">{item.description}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceTestimonialsSection
+        title={<>What Our Clients <span>Say</span></>}
+        description="Businesses succeeding with user-centered design."
+        testimonials={webReviews.map((review) => ({ text: review.text, name: review.name, detail: review.company, rating: review.rating }))}
+      />
 
-      {/* Portfolio Section */}
-      {webProjects.length > 0 && (
-        <section className="py-20">
-          <div className="container">
-            <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">UI/UX Design Portfolio</h2>
-              <p className="text-xl text-gray-600">
-                User-centered designs that deliver exceptional experiences.
-              </p>
-            </div>
+      <div className="service-inline-action service-inline-action--paper">
+        <Link href="/testimonials" className="paper-button paper-button--rust">Read More Reviews<i className="fas fa-arrow-right" aria-hidden="true" /></Link>
+      </div>
 
-            <div className="grid-3">
-              {webProjects.slice(0, 6).map((project) => (
-                <PortfolioCard key={project.id} project={project} />
-              ))}
-            </div>
+      <ServiceFAQSection title={<>Frequently Asked <span>Questions</span></>} description="Common questions about UI/UX design services." faqs={faqs} />
 
-            <div className="text-center mt-12">
-              <Link href="/portfolio" className="btn btn-primary">
-                View All Projects
-              </Link>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Testimonials Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">What Our Clients Say</h2>
-            <p className="text-xl text-gray-600">
-              Businesses succeeding with user-centered design.
-            </p>
-          </div>
-
-          <div className="grid-3">
-            {webReviews.map((review) => (
-              <TestimonialCard key={review.id} review={review} />
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Link href="/testimonials" className="btn btn-primary">
-              Read More Reviews
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* <section className="py-20">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl font-bold mb-4">UI/UX Design Pricing</h2>
-            <p className="text-xl text-gray-600">
-              Transparent pricing for user experience design services.
-            </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <div className="card border-2 border-primary-orange">
-              <div className="text-center mb-8">
-                <div className="text-primary-orange font-bold mb-2">Complete Package</div>
-                <h3 className="text-3xl font-bold mb-2">UI/UX Design Project</h3>
-                <div className="text-5xl font-bold text-primary-orange mb-4">$6,000<span className="text-xl text-gray-600">+</span></div>
-                <p className="text-gray-600">Comprehensive user experience design</p>
-              </div>
-
-              <div className="grid-2 gap-4 mb-8">
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">User research & analysis</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Information architecture</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Wireframing & user flows</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Visual interface design</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Interactive prototypes</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Usability testing</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Design system documentation</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Developer handoff</span>
-                </div>
-              </div>
-
-              <div className="text-center">
-                <button data-popup="contact" className="btn btn-primary w-full sm:w-auto">
-                  Get Started
-                </button>
-              </div>
-            </div>
-
-            <p className="text-center text-gray-600 mt-6">
-              Need a UX audit or consultation?{" "}
-              <button data-popup="contact" className="text-primary-orange font-semibold hover:underline">
-                Contact us for custom pricing
-              </button>
-            </p>
-          </div>
-        </div>
-      </section> */}
-
-      {/* FAQ Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Frequently Asked Questions</h2>
-            <p className="text-xl text-gray-600">
-              Common questions about UI/UX design services.
-            </p>
-          </div>
-
-          <div className="max-w-3xl mx-auto space-y-6">
-            {faqs.map((faq, index) => (
-              <div key={index} className="card">
-                <h3 className="text-lg font-bold mb-2">{faq.question}</h3>
-                <p className="text-gray-600">{faq.answer}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
       <CTASection
         title="Ready to Improve Your User Experience?"
         description="Create intuitive, user-friendly designs that delight your users and drive business results."

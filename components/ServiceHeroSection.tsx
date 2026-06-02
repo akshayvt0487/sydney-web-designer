@@ -18,8 +18,11 @@ interface ServiceHeroSectionProps {
       href: string;
     };
   };
-  /** Optional SEO-optimized H1 (small, keyword-focused). If provided, main heading becomes H2 */
+  /** Retained for compatibility with existing pages; not displayed as duplicate hero copy. */
   h1?: string;
+  /** Retained for compatibility. Service heroes now use an editorial art composition. */
+  heroImage?: string;
+  heroImageAlt?: string;
 }
 
 export default function ServiceHeroSection({
@@ -27,68 +30,100 @@ export default function ServiceHeroSection({
   heading,
   description,
   buttons,
-  h1,
 }: ServiceHeroSectionProps) {
   return (
-    <section className="relative bg-gradient-to-br from-[#1e293b] via-[#2d3b4f] to-[#1e293b] text-white py-24 overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 right-20 w-72 h-72 bg-primary-orange rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-20 w-96 h-96 bg-primary-orange rounded-full blur-3xl"></div>
-      </div>
+    <section className="service-cover paper-grain">
+      <div className="container">
+        <div className="service-cover__grid">
+          <div className="service-cover__content">
+            <div className="service-cover__badge">
+              <i className={badge.icon} aria-hidden="true" />
+              <span>{badge.text}</span>
+            </div>
 
-      <div className="container relative z-10">
-        <div className="max-w-4xl">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-primary-orange/10 border border-primary-orange/30 text-primary-orange px-5 py-2.5 rounded-full text-sm font-semibold mb-8 backdrop-blur-sm">
-            <i className={badge.icon}></i>
-            <span>{badge.text}</span>
+            <h1 className="service-cover__title">{heading}</h1>
+
+            <p className="service-cover__description">{description}</p>
+
+            <div className="service-cover__actions">
+              {buttons.primary.dataPopup ? (
+                <button
+                  type="button"
+                  data-popup={buttons.primary.dataPopup}
+                  className="paper-button paper-button--rust"
+                >
+                  {buttons.primary.text}
+                  <i className="fas fa-arrow-right" aria-hidden="true" />
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  onClick={buttons.primary.onClick}
+                  className="paper-button paper-button--rust"
+                >
+                  {buttons.primary.text}
+                  <i className="fas fa-arrow-right" aria-hidden="true" />
+                </button>
+              )}
+
+              <Link href={buttons.secondary.href} className="paper-button service-cover__secondary">
+                {buttons.secondary.text}
+                <i className="fas fa-arrow-right" aria-hidden="true" />
+              </Link>
+            </div>
           </div>
 
-          {/* Dual Heading Structure - SEO-optimized H1 + User-friendly H2 */}
-          {h1 ? (
-            <>
-              {/* Small SEO-focused H1 */}
-              <h1 className="text-lg md:text-xl font-medium mb-3 text-white/80">
-                {h1}
-              </h1>
-              {/* Large user-friendly H2 */}
-              <h2 className="text-5xl md:text-6xl font-bold mb-6 text-white leading-tight">
-                {heading}
-              </h2>
-            </>
-          ) : (
-            /* Traditional single H1 (backward compatible) */
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white leading-tight">
-              {heading}
-            </h1>
-          )}
+          <div className="service-cover__composition" aria-hidden="true">
+            <div className="service-art">
+              <div className="service-art__browser">
+                <div className="service-art__browser-dots">
+                  <span />
+                  <span />
+                  <span />
+                </div>
 
-          {/* Description */}
-          <p className="text-xl md:text-2xl text-gray-300 mb-10 leading-relaxed max-w-3xl">
-            {description}
-          </p>
+                <div className="service-art__browser-bar" />
+              </div>
 
-          {/* Buttons */}
-          <div className="flex flex-wrap gap-4">
-            {buttons.primary.dataPopup ? (
-              <button
-                data-popup={buttons.primary.dataPopup}
-                className="btn btn-primary btn-lg"
-              >
-                {buttons.primary.text}
-              </button>
-            ) : (
-              <button
-                onClick={buttons.primary.onClick}
-                className="btn btn-primary btn-lg"
-              >
-                {buttons.primary.text}
-              </button>
-            )}
-            <Link href={buttons.secondary.href} className="btn btn-white btn-lg">
-              {buttons.secondary.text}
-            </Link>
+              <div className="service-art__layout">
+                <div className="service-art__sidebar">
+                  <div className="service-art__icon">
+                    <i className={badge.icon} />
+                  </div>
+
+                  <div className="service-art__nav">
+                    <span className="active" />
+                    <span />
+                    <span />
+                    <span />
+                  </div>
+                </div>
+
+                <div className="service-art__main">
+                  <div className="service-art__hero">
+                    <div className="service-art__copy">
+                      <span className="service-art__copy-title" />
+                      <span className="service-art__copy-line" />
+                      <span className="service-art__copy-line service-art__copy-line--short" />
+                      <span className="service-art__button" />
+                    </div>
+
+                    <div className="service-art__visual">
+                      <div className="service-art__visual-circle" />
+                      <div className="service-art__visual-card" />
+                    </div>
+                  </div>
+
+                  <div className="service-art__cards">
+                    <span />
+                    <span />
+                    <span />
+                  </div>
+                </div>
+              </div>
+
+              <span className="service-art__accent" />
+            </div>
           </div>
         </div>
       </div>
