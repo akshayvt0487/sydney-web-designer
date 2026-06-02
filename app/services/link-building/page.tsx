@@ -513,6 +513,7 @@ export default function LinkBuildingPage() {
         primaryButtonText="Get Link Building Strategy"
         primaryButtonAction="seoAudit"
         secondaryButtonText="View Our Work"
+        secondaryButtonHref="/portfolio"
       />
     </div>
   );

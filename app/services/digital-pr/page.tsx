@@ -466,6 +466,7 @@ export default function DigitalPRPage() {
         primaryButtonText="Get PR Strategy"
         primaryButtonAction="seoAudit"
         secondaryButtonText="View Our Work"
+        secondaryButtonHref="/portfolio"
       />
     </div>
   );

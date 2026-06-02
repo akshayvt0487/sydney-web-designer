@@ -517,6 +517,7 @@ export default function PayOnPerformanceSEOPage() {
         primaryButtonText="Discuss Your Goals"
         primaryButtonAction="seoAudit"
         secondaryButtonText="View Our Work"
+        secondaryButtonHref="/portfolio"
       />
     </div>
   );

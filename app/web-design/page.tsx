@@ -462,7 +462,7 @@ export default function WebDesignPage() {
       />
 
       <div className="web-design-editorial paper-grain">
-        {/* Hero Section */}
+        {/* Hero */}
         <section className="wde-hero">
           <div className="container wde-hero__grid">
             <div className="wde-hero__content">
@@ -540,7 +540,7 @@ export default function WebDesignPage() {
           </div>
         </section>
 
-        {/* Portfolio Showcase Section */}
+        {/* Portfolio Showcase */}
         <section className="wde-section wde-projects">
           <div className="container">
             <SectionHeading
@@ -557,13 +557,17 @@ export default function WebDesignPage() {
                     {String(index + 1).padStart(2, "0")}
                   </span>
 
-                  <div className="wde-project-card__image">
-                    <Image
-                      src={project.image}
-                      alt={project.name}
-                      fill
-                      className="object-contain"
-                    />
+                  <div className="wde-project-card__frame">
+                    <div className="wde-project-card__image">
+                      <Image
+                        src={project.image}
+                        alt={project.name}
+                        fill
+                        priority={index === 0}
+                        sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 33vw"
+                        className="object-contain"
+                      />
+                    </div>
                   </div>
 
                   <div className="wde-project-card__body">
@@ -583,7 +587,7 @@ export default function WebDesignPage() {
           </div>
         </section>
 
-        {/* Why Choose Us Section */}
+        {/* Why Choose Us */}
         <section className="wde-section wde-proof">
           <div className="container">
             <SectionHeading
@@ -609,7 +613,7 @@ export default function WebDesignPage() {
           </div>
         </section>
 
-        {/* Our Web Design Services */}
+        {/* Services */}
         <section className="wde-section wde-services">
           <div className="container">
             <SectionHeading
@@ -635,7 +639,7 @@ export default function WebDesignPage() {
           </div>
         </section>
 
-        {/* Our Design Process */}
+        {/* Process */}
         <section className="wde-section wde-process">
           <div className="container">
             <SectionHeading
@@ -664,7 +668,7 @@ export default function WebDesignPage() {
           </div>
         </section>
 
-        {/* Performance & Results */}
+        {/* Performance */}
         <section className="wde-section wde-performance">
           <div className="container">
             <SectionHeading
@@ -696,7 +700,7 @@ export default function WebDesignPage() {
           </div>
         </section>
 
-        {/* Features Included */}
+        {/* Included */}
         <section className="wde-section wde-included">
           <div className="container">
             <SectionHeading
@@ -721,7 +725,7 @@ export default function WebDesignPage() {
           </div>
         </section>
 
-        {/* Responsive Design Showcase */}
+        {/* Devices */}
         <section className="wde-section wde-devices">
           <div className="container">
             <SectionHeading
@@ -788,7 +792,7 @@ export default function WebDesignPage() {
           </div>
         </section>
 
-        {/* Technologies We Use */}
+        {/* Tech */}
         <section className="wde-section wde-tech">
           <div className="container">
             <SectionHeading
@@ -834,28 +838,34 @@ export default function WebDesignPage() {
             />
 
             <div className="wde-stories__grid">
-              {successStories.map((story) => (
+              {successStories.map((story, index) => (
                 <article key={story.name} className="wde-story-card">
-                  <div className="wde-story-card__image">
-                    <Image
-                      src={story.image}
-                      alt={story.alt}
-                      fill
-                      className="object-contain"
-                    />
+                  <div className="wde-story-card__frame">
+                    <div className="wde-story-card__image">
+                      <Image
+                        src={story.image}
+                        alt={story.alt}
+                        fill
+                        priority={index === 0}
+                        sizes="(max-width: 767px) 100vw, 50vw"
+                        className="object-contain"
+                      />
+                    </div>
                   </div>
 
-                  <span className="wde-story-card__category">
-                    {story.category}
-                  </span>
+                  <div className="wde-story-card__content">
+                    <span className="wde-story-card__category">
+                      {story.category}
+                    </span>
 
-                  <h3>{story.name}</h3>
-                  <p>{story.description}</p>
+                    <h3>{story.name}</h3>
+                    <p>{story.description}</p>
 
-                  <div className="wde-story-card__tags">
-                    {story.tags.map((tag) => (
-                      <span key={tag}>{tag}</span>
-                    ))}
+                    <div className="wde-story-card__tags">
+                      {story.tags.map((tag) => (
+                        <span key={tag}>{tag}</span>
+                      ))}
+                    </div>
                   </div>
                 </article>
               ))}
@@ -870,7 +880,7 @@ export default function WebDesignPage() {
           </div>
         </section>
 
-        {/* Industries We Serve */}
+        {/* Industries */}
         <section className="wde-section wde-industries">
           <div className="container">
             <SectionHeading
@@ -899,7 +909,7 @@ export default function WebDesignPage() {
           </div>
         </section>
 
-        {/* Growth Plans Section */}
+        {/* Growth Plans */}
         <section className="wde-section wde-growth">
           <div className="container">
             <SectionHeading
@@ -914,8 +924,7 @@ export default function WebDesignPage() {
               {growthPlans.map((plan, index) => (
                 <article
                   key={plan.title}
-                  className={`wde-growth-card ${plan.featured ? "wde-growth-card--featured" : ""
-                    }`}
+                  className={`wde-growth-card ${plan.featured ? "wde-growth-card--featured" : ""}`}
                 >
                   <div className="wde-growth-card__header">
                     <span className="wde-growth-card__number">
@@ -942,7 +951,7 @@ export default function WebDesignPage() {
                   <button
                     type="button"
                     data-popup={plan.popup}
-                    className="paper-button paper-button--rust wde-growth-card__button"
+                    className="paper-button wde-growth-card__button"
                   >
                     Get Started
                     <i className="fas fa-arrow-right" aria-hidden="true" />
@@ -955,8 +964,7 @@ export default function WebDesignPage() {
               {recommendations.map((recommendation, index) => (
                 <article
                   key={recommendation.title}
-                  className={`wde-recommendation ${index === 1 ? "wde-recommendation--accent" : ""
-                    }`}
+                  className={`wde-recommendation ${index === 1 ? "wde-recommendation--accent" : ""}`}
                 >
                   <h3>{recommendation.title}</h3>
                   <p>{recommendation.description}</p>
@@ -975,7 +983,7 @@ export default function WebDesignPage() {
           </div>
         </section>
 
-        {/* FAQ Section */}
+        {/* FAQ */}
         <section className="service-paper-faq paper-grain wde-shared-faq">
           <div className="container">
             <div className="service-paper-heading service-paper-heading--center">
@@ -997,13 +1005,10 @@ export default function WebDesignPage() {
           </div>
         </section>
 
-        {/* CTA Section */}
-        {/* CTA Section */}
-        <section className="wde-final-cta">
+        {/* Final CTA - LIGHT */}
+        <section className="wde-final-cta wde-final-cta--light paper-grain">
           <div className="container">
             <div className="wde-final-cta__content">
-              <span className="wde-final-cta__eyebrow">Next Step</span>
-
               <h2>
                 Ready to Build Your <span>Dream Website?</span>
               </h2>
@@ -1023,7 +1028,7 @@ export default function WebDesignPage() {
                   <i className="fas fa-arrow-right" aria-hidden="true" />
                 </button>
 
-                <Link href="/portfolio" className="paper-button wde-final-cta__secondary">
+                <Link href="/portfolio" className="paper-button">
                   View Our Portfolio
                   <i className="fas fa-arrow-right" aria-hidden="true" />
                 </Link>

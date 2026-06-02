@@ -458,6 +458,7 @@ export default function MobileSEOPage() {
         primaryButtonText="Get Mobile SEO Audit"
         primaryButtonAction="seoAudit"
         secondaryButtonText="View Our Work"
+        secondaryButtonHref="/portfolio"
       />
     </div>
   );

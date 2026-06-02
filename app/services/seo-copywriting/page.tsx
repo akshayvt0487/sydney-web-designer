@@ -420,6 +420,7 @@ export default function SEOCopywritingPage() {
         primaryButtonText="Get Content Strategy"
         primaryButtonAction="seoAudit"
         secondaryButtonText="View Our Work"
+        secondaryButtonHref="/portfolio"
       />
     </div>
   );

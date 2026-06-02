@@ -417,6 +417,7 @@ export default function EcommerceSEOPage() {
         primaryButtonText="Get Free SEO Audit"
         primaryButtonAction="seoAudit"
         secondaryButtonText="View Our Work"
+        secondaryButtonHref="/portfolio"
       />
     </div>
   );

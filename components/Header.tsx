@@ -61,6 +61,10 @@ const brandingLinks = [
   { name: "Logo Design", href: "/services/logo-design" },
 ];
 
+/*
+  Portfolio remains here because desktop currently shows it
+  inside the upper secondary navigation.
+*/
 const secondaryLinks = [
   { name: "About Us", href: "/about" },
   { name: "Testimonials", href: "/testimonials" },
@@ -69,11 +73,23 @@ const secondaryLinks = [
   { name: "Portfolio", href: "/portfolio" },
 ];
 
+/*
+  Do not repeat Portfolio inside the mobile utility links because
+  it already appears as a primary mobile navigation item.
+*/
+const mobileSecondaryLinks = [
+  { name: "About Us", href: "/about" },
+  { name: "Testimonials", href: "/testimonials" },
+  { name: "Careers", href: "/careers" },
+  { name: "Blog", href: "/blog" },
+];
+
 function Chevron({ open }: { open: boolean }) {
   return (
     <svg
-      className={`h-4 w-4 transition-transform duration-200 ${open ? "rotate-180" : ""
-        }`}
+      className={`h-4 w-4 transition-transform duration-200 ${
+        open ? "rotate-180" : ""
+      }`}
       fill="none"
       stroke="currentColor"
       viewBox="0 0 24 24"
@@ -93,11 +109,13 @@ function MobileAccordion({
   title,
   open,
   onToggle,
+  onNavigate,
   links,
 }: {
   title: string;
   open: boolean;
   onToggle: () => void;
+  onNavigate: () => void;
   links: Array<{ name: string; href: string }>;
 }) {
   return (
@@ -126,6 +144,7 @@ function MobileAccordion({
                 key={link.href}
                 href={link.href}
                 className="paper-mobile__subitem"
+                onClick={onNavigate}
               >
                 {link.name}
               </Link>
@@ -176,14 +195,38 @@ export default function Header() {
     setOpenMobileSection(null);
   }, [pathname]);
 
+  /*
+    iPhone-safe scroll locking:
+    overflow:hidden alone does not reliably prevent the page moving
+    behind a fixed drawer in iOS Safari.
+  */
   useEffect(() => {
     if (!mobileOpen) return;
 
-    const previousOverflow = document.body.style.overflow;
+    const scrollY = window.scrollY;
+    const previousBodyPosition = document.body.style.position;
+    const previousBodyTop = document.body.style.top;
+    const previousBodyLeft = document.body.style.left;
+    const previousBodyRight = document.body.style.right;
+    const previousBodyWidth = document.body.style.width;
+    const previousBodyOverflow = document.body.style.overflow;
+
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.left = "0";
+    document.body.style.right = "0";
+    document.body.style.width = "100%";
     document.body.style.overflow = "hidden";
 
     return () => {
-      document.body.style.overflow = previousOverflow;
+      document.body.style.position = previousBodyPosition;
+      document.body.style.top = previousBodyTop;
+      document.body.style.left = previousBodyLeft;
+      document.body.style.right = previousBodyRight;
+      document.body.style.width = previousBodyWidth;
+      document.body.style.overflow = previousBodyOverflow;
+
+      window.scrollTo(0, scrollY);
     };
   }, [mobileOpen]);
 
@@ -218,8 +261,9 @@ export default function Header() {
         </div>
 
         <div
-          className={`paper-navbar paper-grain ${scrolled ? "is-scrolled" : ""
-            }`}
+          className={`paper-navbar paper-grain ${
+            scrolled ? "is-scrolled" : ""
+          }`}
         >
           <div className="container paper-navbar__row">
             <Link
@@ -246,10 +290,9 @@ export default function Header() {
               </Link>
 
               <WebDesignMegaMenu />
-
               <GrowthMarketingMegaMenu />
-
               <BrandingMegaMenu />
+
               <Link
                 href="/contact"
                 className="paper-nav__link"
@@ -341,12 +384,14 @@ export default function Header() {
               }}
             >
               <div className="paper-mobile__header">
-                <Image
-                  src="/Sydney Web Designer logo.webp"
-                  alt="Sydney Web Designer"
-                  width={175}
-                  height={54}
-                />
+                <Link href="/" onClick={closeMobileMenu}>
+                  <Image
+                    src="/Sydney Web Designer logo.webp"
+                    alt="Sydney Web Designer"
+                    width={175}
+                    height={54}
+                  />
+                </Link>
 
                 <button
                   type="button"
@@ -375,7 +420,11 @@ export default function Header() {
                 className="paper-mobile__body"
                 aria-label="Mobile navigation"
               >
-                <Link href="/" className="paper-mobile__item">
+                <Link
+                  href="/"
+                  className="paper-mobile__item"
+                  onClick={closeMobileMenu}
+                >
                   Home
                 </Link>
 
@@ -389,6 +438,7 @@ export default function Header() {
                         : "web-design"
                     )
                   }
+                  onNavigate={closeMobileMenu}
                   links={webDesignLinks}
                 />
 
@@ -402,6 +452,7 @@ export default function Header() {
                         : "growth-marketing"
                     )
                   }
+                  onNavigate={closeMobileMenu}
                   links={growthMarketingLinks}
                 />
 
@@ -410,26 +461,38 @@ export default function Header() {
                   open={openMobileSection === "branding"}
                   onToggle={() =>
                     setOpenMobileSection(
-                      openMobileSection === "branding"
-                        ? null
-                        : "branding"
+                      openMobileSection === "branding" ? null : "branding"
                     )
                   }
+                  onNavigate={closeMobileMenu}
                   links={brandingLinks}
                 />
 
-                <Link href="/portfolio" className="paper-mobile__item">
+                <Link
+                  href="/portfolio"
+                  className="paper-mobile__item"
+                  onClick={closeMobileMenu}
+                >
                   Portfolio
                 </Link>
 
-                <Link href="/contact" className="paper-mobile__item">
+                <Link
+                  href="/contact"
+                  className="paper-mobile__item"
+                  onClick={closeMobileMenu}
+                >
                   Contact
                 </Link>
 
                 <div className="paper-mobile__secondary">
-                  {secondaryLinks.map((link) => (
-                    <Link key={link.href} href={link.href}>
-                      {link.name}
+                  {mobileSecondaryLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={closeMobileMenu}
+                    >
+                      <span>{link.name}</span>
+                      <i className="fas fa-arrow-right" aria-hidden="true" />
                     </Link>
                   ))}
                 </div>
