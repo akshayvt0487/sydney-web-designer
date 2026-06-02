@@ -5,10 +5,12 @@ import CTASection from "@/components/CTASection";
 import { generateMetadata } from "@/lib/metadata";
 import { generateBreadcrumbSchema } from "@/lib/schemas";
 
-export const metadata = generateMetadata({
+export const metadata: Metadata = generateMetadata({
   title: "Blog",
-  description: "Expert insights on web design, SEO, digital marketing, and business growth. Learn from Sydney's leading web design agency with 13+ years of experience.",
-  keywords: "web design blog, digital marketing tips, seo advice, business growth, sydney web design, web design trends, seo tips sydney, digital marketing sydney",
+  description:
+    "Expert insights on web design, SEO, digital marketing, and business growth. Learn from Sydney's leading web design agency with 13+ years of experience.",
+  keywords:
+    "web design blog, digital marketing tips, seo advice, business growth, sydney web design, web design trends, seo tips sydney, digital marketing sydney",
   canonicalUrl: "https://www.sydneywebdesigner.com.au/blog",
   ogImage: "/images/og/blog.svg",
   type: "website",
@@ -17,14 +19,15 @@ export const metadata = generateMetadata({
 export default function BlogPage() {
   const breadcrumbs = [
     { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
-    { name: "Blog", url: "https://www.sydneywebdesigner.com.au/blog" }
+    { name: "Blog", url: "https://www.sydneywebdesigner.com.au/blog" },
   ];
 
   const blogPosts = [
     {
       slug: "web-design-trends-2026",
       title: "Web Design Trends to Watch in 2026",
-      excerpt: "Discover the latest web design trends that will shape the digital landscape in 2026 and beyond.",
+      excerpt:
+        "Discover the latest web design trends that will shape the digital landscape in 2026 and beyond.",
       date: "January 15, 2026",
       readTime: "8 min read",
       category: "Web Design",
@@ -33,7 +36,8 @@ export default function BlogPage() {
     {
       slug: "seo-tips-sydney-businesses",
       title: "SEO Tips for Sydney Businesses",
-      excerpt: "Local SEO strategies to help your Sydney business rank higher and attract more customers.",
+      excerpt:
+        "Local SEO strategies to help your Sydney business rank higher and attract more customers.",
       date: "January 12, 2026",
       readTime: "10 min read",
       category: "SEO",
@@ -42,7 +46,8 @@ export default function BlogPage() {
     {
       slug: "how-to-choose-web-designer-sydney",
       title: "How to Choose the Right Web Designer",
-      excerpt: "Essential factors to consider when selecting a web design agency for your business.",
+      excerpt:
+        "Essential factors to consider when selecting a web design agency for your business.",
       date: "January 8, 2026",
       readTime: "6 min read",
       category: "Web Design",
@@ -50,135 +55,186 @@ export default function BlogPage() {
     },
   ];
 
+  const categories = [
+    "Web Design & Development",
+    "SEO & Local Marketing",
+    "Digital Marketing & Advertising",
+    "Conversion & Analytics",
+    "Branding & Strategy",
+    "Business Growth",
+    "WordPress Tips",
+    "Social Media Marketing",
+  ];
+
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)),
+        }}
       />
 
-      {/* Hero Section */}
-      <section className="bg-[#1e293b] text-white py-20">
-        <div className="container">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-              Sydney Web Designer Blog
-            </h1>
-            <p className="text-xl text-gray-100 mb-8">
-              Expert insights, tips, and strategies for web design, digital marketing, and business
-              growth from our 13+ years of experience.
-            </p>
-          </div>
-        </div>
-      </section>
+      <div className="blog-editorial-page">
+        {/* Hero Section */}
+        <section className="blog-hero">
+          <div className="container blog-hero__inner">
+            <div className="blog-hero__content">
+              <h1>Sydney Web Designer Blog</h1>
 
-      {/* Featured Posts Section */}
-      <section className="py-20">
-        <div className="container">
-          <div className="section-title">
-            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Latest <span className="text-[#f59e0b]">Articles</span></h2>
-            <p>Stay informed with our latest insights and tips</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post) => (
-              <div key={post.slug} className="card group hover:shadow-card-hover h-full flex flex-col">
-                <div className="relative h-48 bg-[#1e293b] rounded-lg mb-4 overflow-hidden">
-                  <Image
-                    src={post.image}
-                    alt={post.title}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
-                <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
-                  <span><i className="fas fa-calendar"></i> {post.date}</span>
-                  <span><i className="fas fa-clock"></i> {post.readTime}</span>
-                </div>
-                <span className="inline-block px-3 py-1 bg-primary-orange text-white text-xs rounded-full mb-3 self-start">
-                  {post.category}
-                </span>
-                <h3 className="text-xl font-bold mb-3 group-hover:text-primary-orange transition-colors">
-                  {post.title}
-                </h3>
-                <p className="text-gray-600 mb-4 flex-grow">{post.excerpt}</p>
-                <Link
-                  href={`/blog/${post.slug}`}
-                  className="text-primary-orange font-semibold flex items-center gap-2 group-hover:gap-3 transition-all"
-                >
-                  Read More
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Categories Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container">
-          <div className="section-title">
-            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Browse by <span className="text-[#f59e0b]">Category</span></h2>
-            <p>Find articles on topics that matter to your business</p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {[
-              "Web Design & Development",
-              "SEO & Local Marketing",
-              "Digital Marketing & Advertising",
-              "Conversion & Analytics",
-              "Branding & Strategy",
-              "Business Growth",
-              "WordPress Tips",
-              "Social Media Marketing",
-            ].map((category, index) => (
-              <div key={index} className="card text-center hover:border-primary-orange hover:border-2 transition-all cursor-pointer">
-                <p className="font-semibold text-primary-navy">{category}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Newsletter Section */}
-      <section className="py-20">
-        <div className="container">
-          <div className="max-w-3xl mx-auto text-center">
-            <div className="card">
-              <div className="text-5xl mb-4"><i className="fas fa-envelope"></i></div>
-              <h2 className="text-2xl font-bold mb-4 text-primary-navy">Stay Updated</h2>
-              <p className="text-gray-700 mb-6">
-                Subscribe to our newsletter to receive the latest tips, insights, and updates on web
-                design and digital marketing.
+              <p>
+                Expert insights, tips, and strategies for web design, digital
+                marketing, and business growth from our 13+ years of
+                experience.
               </p>
-              <form className="flex flex-col sm:flex-row gap-3">
+            </div>
+          </div>
+        </section>
+
+        {/* Featured Posts Section */}
+        <section className="blog-section blog-articles paper-grain">
+          <div className="container">
+            <header className="blog-heading">
+              <h2>
+                Latest <span>Articles</span>
+              </h2>
+
+              <p>Stay informed with our latest insights and tips</p>
+            </header>
+
+            <div className="blog-articles__grid">
+              {blogPosts.map((post) => (
+                <article key={post.slug} className="blog-post-card">
+                  <div className="blog-post-card__image">
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      fill
+                      sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                      className="blog-post-card__photo"
+                    />
+                  </div>
+
+                  <div className="blog-post-card__body">
+                    <div className="blog-post-card__meta">
+                      <span>
+                        <i className="fas fa-calendar" aria-hidden="true" />
+                        {post.date}
+                      </span>
+
+                      <span>
+                        <i className="fas fa-clock" aria-hidden="true" />
+                        {post.readTime}
+                      </span>
+                    </div>
+
+                    <span className="blog-post-card__category">
+                      {post.category}
+                    </span>
+
+                    <h3>{post.title}</h3>
+
+                    <p>{post.excerpt}</p>
+
+                    <Link
+                      href={`/blog/${post.slug}`}
+                      className="blog-post-card__link"
+                    >
+                      Read More
+
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
+                    </Link>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Categories Section */}
+        <section className="blog-section blog-categories">
+          <div className="container">
+            <header className="blog-heading blog-heading--dark">
+              <h2>
+                Browse by <span>Category</span>
+              </h2>
+
+              <p>Find articles on topics that matter to your business</p>
+            </header>
+
+            <div className="blog-categories__grid">
+              {categories.map((category, index) => (
+                <article key={category} className="blog-category-card">
+                  <span className="blog-category-card__number">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+
+                  <p>{category}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Newsletter Section */}
+        <section className="blog-section blog-newsletter paper-grain">
+          <div className="container">
+            <div className="blog-newsletter__panel">
+              <div className="blog-newsletter__icon">
+                <i className="fas fa-envelope" aria-hidden="true" />
+              </div>
+
+              <h2>Stay Updated</h2>
+
+              <p>
+                Subscribe to our newsletter to receive the latest tips,
+                insights, and updates on web design and digital marketing.
+              </p>
+
+              <form className="blog-newsletter__form">
+                <label htmlFor="blog-newsletter-email" className="sr-only">
+                  Enter your email address
+                </label>
+
                 <input
+                  id="blog-newsletter-email"
                   type="email"
                   placeholder="Enter your email address"
-                  className="form-input flex-grow"
                   required
                 />
-                <button type="submit" className="btn btn-primary whitespace-nowrap">
+
+                <button
+                  type="submit"
+                  className="paper-button paper-button--rust"
+                >
                   Subscribe
                 </button>
               </form>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* CTA Section */}
-      <CTASection
-        title="Need Professional Help?"
-        description="Let our experts handle your web design and digital marketing. Get a free consultation today."
-        primaryButtonText="Get Free Quote"
-        primaryButtonAction="contact"
-        secondaryButtonText="View Our Services"
-      />
+        {/* CTA Section */}
+        <CTASection
+          title="Need Professional Help?"
+          description="Let our experts handle your web design and digital marketing. Get a free consultation today."
+          primaryButtonText="Get Free Quote"
+          primaryButtonAction="contact"
+          secondaryButtonText="View Our Services"
+        />
+      </div>
     </>
   );
 }

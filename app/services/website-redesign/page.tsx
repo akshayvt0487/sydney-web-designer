@@ -1,13 +1,16 @@
+import Breadcrumbs from "@/components/Breadcrumbs";
 import Link from "next/link";
 import { services, portfolioProjects, googleReviews } from "@/lib/constants";
 import { generateMetadata } from "@/lib/metadata";
 import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema } from "@/lib/schemas";
-import StatsGrid from "@/components/StatsGrid";
-import TestimonialCard from "@/components/TestimonialCard";
-import PortfolioCard from "@/components/PortfolioCard";
 import CTASection from "@/components/CTASection";
-import FAQAccordion from "@/components/FAQAccordion";
 import ServiceHeroSection from "@/components/ServiceHeroSection";
+import ServiceStatsSection from "@/components/service-page/ServiceStatsSection";
+import ServiceFeaturesSection from "@/components/service-page/ServiceFeaturesSection";
+import ServiceProcessSection from "@/components/service-page/ServiceProcessSection";
+import ServicePortfolioSection from "@/components/service-page/ServicePortfolioSection";
+import ServiceTestimonialsSection from "@/components/service-page/ServiceTestimonialsSection";
+import ServiceFAQSection from "@/components/service-page/ServiceFAQSection";
 
 export const metadata = generateMetadata({
   title: "Website Redesign Sydney | Modernize Your Outdated Website",
@@ -116,252 +119,57 @@ export default function WebsiteRedesignPage() {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(generateServiceSchema(service.name, service.heroDescription)),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessSchema()) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateServiceSchema(service.name, service.heroDescription)) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessSchema()) }} />
 
-      {/* Hero Section */}
+      <Breadcrumbs items={breadcrumbs} />
+
       <ServiceHeroSection
         h1="Website Redesign Services"
-        badge={{
-          icon: `fas ${service.icon}`,
-          text: service.name
-        }}
+        badge={{ icon: `fas ${service.icon}`, text: service.name }}
         heading="Transform Your Outdated Website Into a Modern Digital Asset"
         description="Modernize your website with fresh design, improved functionality, and better performance. Turn your aging site into a high-converting marketing tool."
         buttons={{
-          primary: {
-            text: "Start Your Redesign",
-            dataPopup: "contact"
-          },
-          secondary: {
-            text: "View Redesign Projects",
-            href: "/portfolio"
-          }
+          primary: { text: "Start Your Redesign", dataPopup: "contact" },
+          secondary: { text: "View Redesign Projects", href: "/portfolio" },
         }}
       />
 
-      {/* Stats Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container">
-          <StatsGrid stats={stats} columns={4} />
-        </div>
-      </section>
+      <ServiceStatsSection stats={stats.map((stat) => ({ value: stat.number, text: stat.label }))} />
 
-      {/* Features Section */}
-      <section className="py-20">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">
-              What&apos;s Included in Website Redesign
-            </h2>
-            <p className="text-xl text-gray-600">
-              Complete transformation that addresses design, functionality, and performance.
-            </p>
-          </div>
+      <ServiceFeaturesSection
+        title={<>What&apos;s Included in Website <span>Redesign</span></>}
+        description="Complete transformation that addresses design, functionality, and performance."
+        features={features}
+      />
 
-          <div className="grid-3">
-            {features.map((feature, index) => (
-              <div key={index} className="card hover:shadow-card-hover transition-shadow">
-                <div className="mb-4"><i className={`${feature.icon} text-4xl text-[#f59e0b]`}></i></div>
-                <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceProcessSection
+        title={<>Our Redesign <span>Process</span></>}
+        description="Strategic approach to modernizing your website without disrupting your business."
+        columns={4}
+        steps={process.map((step) => ({ number: String(step.step), title: step.title, description: step.description }))}
+      />
 
-      {/* Process Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Our Redesign Process</h2>
-            <p className="text-xl text-gray-600">
-              Strategic approach to modernizing your website without disrupting your business.
-            </p>
-          </div>
+      <ServicePortfolioSection
+        title={<>Website Redesign <span>Portfolio</span></>}
+        description="Before and after transformations that drive real business results."
+        projects={webProjects.slice(0, 6)}
+        buttonText="View All Projects"
+      />
 
-          <div className="grid-2 max-w-4xl mx-auto">
-            {process.map((item) => (
-              <div key={item.step} className="card hover:shadow-card-hover transition-shadow">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-[#f59e0b] rounded-full flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
-                    {item.step}
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                    <p className="text-gray-600">{item.description}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceTestimonialsSection
+        title={<>What Our Clients <span>Say</span></>}
+        description="Businesses thriving after their website redesign."
+        testimonials={webReviews.map((review) => ({ text: review.text, name: review.name, detail: review.company, rating: review.rating }))}
+      />
 
-      {/* Portfolio Section */}
-      {webProjects.length > 0 && (
-        <section className="py-20">
-          <div className="container">
-            <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Website Redesign Portfolio</h2>
-              <p className="text-xl text-gray-600">
-                Before and after transformations that drive real business results.
-              </p>
-            </div>
+      <div className="service-inline-action service-inline-action--paper">
+        <Link href="/testimonials" className="paper-button paper-button--rust">Read More Reviews<i className="fas fa-arrow-right" aria-hidden="true" /></Link>
+      </div>
 
-            <div className="grid-3">
-              {webProjects.slice(0, 6).map((project) => (
-                <PortfolioCard key={project.id} project={project} />
-              ))}
-            </div>
+      <ServiceFAQSection title={<>Frequently Asked <span>Questions</span></>} description="Common questions about website redesign services." faqs={faqs} />
 
-            <div className="text-center mt-12">
-              <Link href="/portfolio" className="btn btn-primary">
-                View All Projects
-              </Link>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Testimonials Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">What Our Clients Say</h2>
-            <p className="text-xl text-gray-600">
-              Businesses thriving after their website redesign.
-            </p>
-          </div>
-
-          <div className="grid-3">
-            {webReviews.map((review) => (
-              <TestimonialCard key={review.id} review={review} />
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Link href="/testimonials" className="btn btn-primary">
-              Read More Reviews
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* <section className="py-20">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl font-bold mb-4">Website Redesign Pricing</h2>
-            <p className="text-xl text-gray-600">
-              Transparent pricing based on your website size and needs.
-            </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <div className="card border-2 border-primary-orange">
-              <div className="text-center mb-8">
-                <div className="text-primary-orange font-bold mb-2">Complete Redesign</div>
-                <h3 className="text-3xl font-bold mb-2">Website Redesign</h3>
-                <div className="text-5xl font-bold text-primary-orange mb-4">$6,500<span className="text-xl text-gray-600">+</span></div>
-                <p className="text-gray-600">Modern redesign with improved performance</p>
-              </div>
-
-              <div className="grid-2 gap-4 mb-8">
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Comprehensive site audit</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Modern custom design</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Mobile responsive redesign</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Content migration & optimization</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">SEO preservation & enhancement</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Performance optimization</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">301 redirects & URL migration</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">60 days post-launch support</span>
-                </div>
-              </div>
-
-              <div className="text-center">
-                <button data-popup="contact" className="btn btn-primary w-full sm:w-auto">
-                  Get Started
-                </button>
-              </div>
-            </div>
-
-            <p className="text-center text-gray-600 mt-6">
-              Large or complex website?{" "}
-              <button data-popup="contact" className="text-primary-orange font-semibold hover:underline">
-                Contact us for custom quote
-              </button>
-            </p>
-          </div>
-        </div>
-      </section> */}
-
-      {/* FAQ Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Frequently Asked Questions</h2>
-            <p className="text-xl text-gray-600">
-              Common questions about website redesign services.
-            </p>
-          </div>
-
-          <FAQAccordion faqs={faqs} />
-        </div>
-      </section>
-
-      {/* CTA Section */}
       <CTASection
         title="Ready to Modernize Your Website?"
         description="Transform your outdated website into a modern, high-performing digital asset that drives results."

@@ -1,8 +1,11 @@
-import Link from "next/link";
-import { services, portfolioProjects, googleReviews } from "@/lib/constants";
+import { googleReviews } from "@/lib/constants";
 import { generateMetadata } from "@/lib/metadata";
-import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema, generateFAQSchema } from "@/lib/schemas";
-import StatsGrid from "@/components/StatsGrid";
+import {
+  generateBreadcrumbSchema,
+  generateServiceSchema,
+  generateLocalBusinessSchema,
+  generateFAQSchema,
+} from "@/lib/schemas";
 import TestimonialCard from "@/components/TestimonialCard";
 import CTASection from "@/components/CTASection";
 import ServiceHeroSection from "@/components/ServiceHeroSection";
@@ -12,8 +15,10 @@ import FAQAccordion from "@/components/FAQAccordion";
 
 export const metadata = generateMetadata({
   title: "Logo Design Sydney | Professional Brand Logos | Sydney Web Designer",
-  description: "Memorable logo design that captures your brand essence. Professional logo creation with unlimited revisions. Get a distinctive logo that stands out.",
-  keywords: "logo design sydney, professional logo design, custom logo design, brand logo, logo designer sydney, business logo design",
+  description:
+    "Memorable logo design that captures your brand essence. Professional logo creation with unlimited revisions. Get a distinctive logo that stands out.",
+  keywords:
+    "logo design sydney, professional logo design, custom logo design, brand logo, logo designer sydney, business logo design",
   canonicalUrl: "https://www.sydneywebdesigner.com.au/services/logo-design",
   ogImage: "/images/og/services.svg",
 });
@@ -22,55 +27,67 @@ export default function LogoDesignPage() {
   const breadcrumbs = [
     { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
     { name: "Services", url: "https://www.sydneywebdesigner.com.au/services" },
-    { name: "Logo Design", url: "https://www.sydneywebdesigner.com.au/services/logo-design" }
+    {
+      name: "Logo Design",
+      url: "https://www.sydneywebdesigner.com.au/services/logo-design",
+    },
   ];
 
   const faqs = [
     {
       question: "How long does the logo design process take?",
-      answer: "Typically 2-3 weeks from initial consultation to final delivery. This includes time for concept development, your feedback, revisions, and finalization. Rush projects can be accommodated for an additional fee."
+      answer:
+        "Typically 2-3 weeks from initial consultation to final delivery. This includes time for concept development, your feedback, revisions, and finalization. Rush projects can be accommodated for an additional fee.",
     },
     {
       question: "What file formats will I receive?",
-      answer: "You'll receive vector files (AI, EPS, SVG, PDF) for scalability, high-resolution PNG and JPG files with transparent backgrounds, and web-optimized versions. All files are suitable for both print and digital use."
+      answer:
+        "You'll receive vector files (AI, EPS, SVG, PDF) for scalability, high-resolution PNG and JPG files with transparent backgrounds, and web-optimized versions. All files are suitable for both print and digital use.",
     },
     {
       question: "How many logo concepts will I receive?",
-      answer: "We typically present 3-5 initial logo concepts based on our discovery session. You can then select your favorite concept for refinement through unlimited revisions until perfect."
+      answer:
+        "We typically present 3-5 initial logo concepts based on our discovery session. You can then select your favorite concept for refinement through unlimited revisions until perfect.",
     },
     {
       question: "Do I own the copyright to my logo?",
-      answer: "Yes! Upon final payment, you receive full ownership and copyright of your logo design. You're free to use it however you wish with no restrictions or additional licensing fees."
+      answer:
+        "Yes! Upon final payment, you receive full ownership and copyright of your logo design. You're free to use it however you wish with no restrictions or additional licensing fees.",
     },
     {
       question: "Can you redesign my existing logo?",
-      answer: "Absolutely! We offer logo refresh and modernization services. We can update your existing logo while maintaining brand recognition, or create an entirely new design if that better serves your business goals."
+      answer:
+        "Absolutely! We offer logo refresh and modernization services. We can update your existing logo while maintaining brand recognition, or create an entirely new design if that better serves your business goals.",
     },
     {
       question: "What information do you need to get started?",
-      answer: "We'll discuss your business, target audience, brand personality, competitors, and any design preferences during our discovery session. This ensures we create a logo that truly represents your brand and resonates with your audience."
-    }
+      answer:
+        "We'll discuss your business, target audience, brand personality, competitors, and any design preferences during our discovery session. This ensures we create a logo that truly represents your brand and resonates with your audience.",
+    },
   ];
 
   const relatedServices = [
     {
       title: "Brand Identity Design",
-      description: "Complete brand identity systems including logo, color palette, typography, and brand guidelines.",
+      description:
+        "Complete brand identity systems including logo, color palette, typography, and brand guidelines.",
       href: "/services/brand-identity",
-      icon: "fas fa-palette"
+      icon: "fas fa-palette",
     },
     {
       title: "Custom Web Design",
-      description: "Professional website design that showcases your new logo and brand identity perfectly.",
+      description:
+        "Professional website design that showcases your new logo and brand identity perfectly.",
       href: "/services/custom-web-design",
-      icon: "fas fa-desktop"
+      icon: "fas fa-desktop",
     },
     {
       title: "UI/UX Design",
-      description: "User-centered design that brings your brand to life across digital touchpoints.",
+      description:
+        "User-centered design that brings your brand to life across digital touchpoints.",
       href: "/services/ui-ux-design",
-      icon: "fas fa-pencil-ruler"
-    }
+      icon: "fas fa-pencil-ruler",
+    },
   ];
 
   const stats = [
@@ -83,32 +100,38 @@ export default function LogoDesignPage() {
   const features = [
     {
       title: "Custom Logo Design",
-      description: "Original, unique logos tailored to your brand identity and business goals.",
+      description:
+        "Original, unique logos tailored to your brand identity and business goals.",
       icon: "fas fa-palette",
     },
     {
       title: "Unlimited Revisions",
-      description: "We refine your logo until it perfectly captures your brand essence.",
+      description:
+        "We refine your logo until it perfectly captures your brand essence.",
       icon: "fas fa-sync-alt",
     },
     {
       title: "Multiple Concepts",
-      description: "Choose from multiple initial design concepts crafted specifically for your business.",
+      description:
+        "Choose from multiple initial design concepts crafted specifically for your business.",
       icon: "fas fa-lightbulb",
     },
     {
       title: "Vector Files Included",
-      description: "Receive high-quality vector files (AI, EPS, SVG, PDF) for unlimited scalability.",
+      description:
+        "Receive high-quality vector files (AI, EPS, SVG, PDF) for unlimited scalability.",
       icon: "fas fa-file-image",
     },
     {
       title: "Brand Color Palette",
-      description: "Professional color palette development that aligns with your brand strategy.",
+      description:
+        "Professional color palette development that aligns with your brand strategy.",
       icon: "fas fa-palette",
     },
     {
       title: "Typography Selection",
-      description: "Carefully selected fonts that complement your logo and brand personality.",
+      description:
+        "Carefully selected fonts that complement your logo and brand personality.",
       icon: "fas fa-font",
     },
   ];
@@ -117,22 +140,49 @@ export default function LogoDesignPage() {
     {
       step: "01",
       title: "Discovery",
-      description: "Deep dive into your brand, values, target audience, and competition.",
+      description:
+        "Deep dive into your brand, values, target audience, and competition.",
     },
     {
       step: "02",
       title: "Concept Development",
-      description: "Create multiple logo concepts based on strategic insights.",
+      description:
+        "Create multiple logo concepts based on strategic insights.",
     },
     {
       step: "03",
       title: "Refinement",
-      description: "Refine your selected concept through unlimited revision rounds.",
+      description:
+        "Refine your selected concept through unlimited revision rounds.",
     },
     {
       step: "04",
       title: "Finalization",
-      description: "Deliver final logo files in all formats with usage guidelines.",
+      description:
+        "Deliver final logo files in all formats with usage guidelines.",
+    },
+  ];
+
+  const reasons = [
+    {
+      title: "Strategic Design Approach",
+      description:
+        "We don't just create pretty logos. Every design decision is backed by strategy, market research, and understanding of your target audience. Your logo will work hard to communicate your brand values and differentiate you from competitors.",
+    },
+    {
+      title: "Unlimited Revisions",
+      description:
+        "Your satisfaction is our priority. We include unlimited revisions in every package, ensuring your logo perfectly captures your brand essence. We'll refine and adjust until you're 100% happy with the result.",
+    },
+    {
+      title: "Complete File Package",
+      description:
+        "Receive your logo in all essential formats: vector files (AI, EPS, SVG), high-resolution PNG and JPG files, and web-optimized versions. Plus, you'll get full ownership and copyright of your logo design.",
+    },
+    {
+      title: "Experienced Design Team",
+      description:
+        "Our designers have created over 500 logos across 50+ industries. We understand what works in different markets and how to create logos that stand the test of time while remaining modern and relevant.",
     },
   ];
 
@@ -144,6 +194,7 @@ export default function LogoDesignPage() {
           __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)),
         }}
       />
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -156,12 +207,14 @@ export default function LogoDesignPage() {
           ),
         }}
       />
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(generateLocalBusinessSchema()),
         }}
       />
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -169,173 +222,167 @@ export default function LogoDesignPage() {
         }}
       />
 
-      {/* Breadcrumbs */}
-      <Breadcrumbs items={breadcrumbs} />
+      <div className="branding-paper-page branding-paper-page--logo">
+        {/* Breadcrumbs */}
+        <Breadcrumbs items={breadcrumbs} />
 
-      {/* Hero Section */}
-      <ServiceHeroSection
-        h1="Logo Design Sydney"
-        badge={{
-          icon: "fas fa-palette",
-          text: "Logo Design"
-        }}
-        heading="Professional Logo Design That Defines Your Brand"
-        description="Create a memorable logo that captures your brand essence and stands out in your market. Custom designs with unlimited revisions until you're 100% satisfied."
-        buttons={{
-          primary: {
-            text: "Get Your Free Consultation",
-            dataPopup: "contact"
-          },
-          secondary: {
-            text: "View Our Portfolio",
-            href: "/#portfolio"
-          }
-        }}
-      />
+        {/* Hero Section */}
+        <ServiceHeroSection
+          h1="Logo Design Sydney"
+          badge={{
+            icon: "fas fa-palette",
+            text: "Logo Design",
+          }}
+          heading="Professional Logo Design That Defines Your Brand"
+          description="Create a memorable logo that captures your brand essence and stands out in your market. Custom designs with unlimited revisions until you're 100% satisfied."
+          buttons={{
+            primary: {
+              text: "Get Your Free Consultation",
+              dataPopup: "contact",
+            },
+            secondary: {
+              text: "View Our Portfolio",
+              href: "/#portfolio",
+            },
+          }}
+        />
 
-      {/* Stats Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container">
-          <StatsGrid stats={stats} />
-        </div>
-      </section>
-
-      {/* What We Offer */}
-      <section className="py-20">
-        <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-navy mb-6">
-              Comprehensive Logo Design Services
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Every logo design package includes everything you need to establish a strong brand identity
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <div
-                key={index}
-                className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-orange"
-              >
-                <i className={`${feature.icon} text-5xl text-orange mb-6 block`}></i>
-                <h3 className="text-2xl font-bold text-navy mb-4">{feature.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{feature.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Logo Design Process */}
-      <section className="py-20 bg-gradient-to-br from-navy to-navy-light text-white">
-        <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Our Logo Design Process
-            </h2>
-            <p className="text-xl opacity-90 max-w-3xl mx-auto">
-              A proven methodology that delivers exceptional logo designs every time
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {process.map((item, index) => (
-              <div key={index} className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl">
-                <div className="text-6xl font-bold text-orange mb-4">{item.step}</div>
-                <h3 className="text-2xl font-bold mb-4">{item.title}</h3>
-                <p className="opacity-90 leading-relaxed">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us */}
-      <section className="py-20">
-        <div className="container">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-navy mb-12 text-center">
-              Why Choose Sydney Web Designer for Your Logo?
-            </h2>
-
-            <div className="space-y-8">
-              <div className="bg-gray-50 p-8 rounded-2xl">
-                <h3 className="text-2xl font-bold text-navy mb-4 flex items-center">
-                  <i className="fas fa-check-circle text-orange mr-4"></i>
-                  Strategic Design Approach
-                </h3>
-                <p className="text-gray-600 leading-relaxed ml-12">
-                  We don't just create pretty logos. Every design decision is backed by strategy, market research, and understanding of your target audience. Your logo will work hard to communicate your brand values and differentiate you from competitors.
-                </p>
-              </div>
-
-              <div className="bg-gray-50 p-8 rounded-2xl">
-                <h3 className="text-2xl font-bold text-navy mb-4 flex items-center">
-                  <i className="fas fa-check-circle text-orange mr-4"></i>
-                  Unlimited Revisions
-                </h3>
-                <p className="text-gray-600 leading-relaxed ml-12">
-                  Your satisfaction is our priority. We include unlimited revisions in every package, ensuring your logo perfectly captures your brand essence. We'll refine and adjust until you're 100% happy with the result.
-                </p>
-              </div>
-
-              <div className="bg-gray-50 p-8 rounded-2xl">
-                <h3 className="text-2xl font-bold text-navy mb-4 flex items-center">
-                  <i className="fas fa-check-circle text-orange mr-4"></i>
-                  Complete File Package
-                </h3>
-                <p className="text-gray-600 leading-relaxed ml-12">
-                  Receive your logo in all essential formats: vector files (AI, EPS, SVG), high-resolution PNG and JPG files, and web-optimized versions. Plus, you'll get full ownership and copyright of your logo design.
-                </p>
-              </div>
-
-              <div className="bg-gray-50 p-8 rounded-2xl">
-                <h3 className="text-2xl font-bold text-navy mb-4 flex items-center">
-                  <i className="fas fa-check-circle text-orange mr-4"></i>
-                  Experienced Design Team
-                </h3>
-                <p className="text-gray-600 leading-relaxed ml-12">
-                  Our designers have created over 500 logos across 50+ industries. We understand what works in different markets and how to create logos that stand the test of time while remaining modern and relevant.
-                </p>
-              </div>
+        {/* Stats Section */}
+        <section className="branding-stats paper-grain">
+          <div className="container">
+            <div className="branding-stats__grid">
+              {stats.map((stat) => (
+                <article key={stat.label} className="branding-stat">
+                  <strong>{stat.number}</strong>
+                  <span>{stat.label}</span>
+                </article>
+              ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Testimonials */}
-      <section className="py-20 bg-gray-50">
-        <div className="container">
-          <h2 className="text-4xl md:text-5xl font-bold text-navy mb-16 text-center">
-            What Our Clients Say
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {googleReviews.slice(0, 3).map((review, index) => (
-              <TestimonialCard key={index} review={review} />
-            ))}
+        {/* What We Offer */}
+        <section className="branding-section branding-offer paper-grain">
+          <div className="container">
+            <div className="branding-heading">
+              <h2>
+                Comprehensive Logo Design <span>Services</span>
+              </h2>
+
+              <p>
+                Every logo design package includes everything you need to
+                establish a strong brand identity
+              </p>
+            </div>
+
+            <div className="branding-features__grid">
+              {features.map((feature) => (
+                <article key={feature.title} className="branding-feature">
+                  <div className="branding-feature__icon">
+                    <i className={feature.icon} aria-hidden="true" />
+                  </div>
+
+                  <h3>{feature.title}</h3>
+                  <p>{feature.description}</p>
+                </article>
+              ))}
+            </div>
           </div>
+        </section>
+
+        {/* Logo Design Process */}
+        <section className="branding-section branding-process">
+          <div className="container">
+            <div className="branding-heading branding-heading--dark">
+              <h2>
+                Our Logo Design <span>Process</span>
+              </h2>
+
+              <p>
+                A proven methodology that delivers exceptional logo designs
+                every time
+              </p>
+            </div>
+
+            <div className="branding-process__grid">
+              {process.map((item) => (
+                <article key={item.step} className="branding-process__card">
+                  <span className="branding-process__number">{item.step}</span>
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Why Choose Us */}
+        <section className="branding-section branding-reasons paper-grain">
+          <div className="container">
+            <div className="branding-heading">
+              <h2>
+                Why Choose Sydney Web Designer for Your <span>Logo</span>?
+              </h2>
+            </div>
+
+            <div className="branding-reasons__grid">
+              {reasons.map((reason, index) => (
+                <article key={reason.title} className="branding-reason">
+                  <span className="branding-reason__number">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+
+                  <div>
+                    <h3>{reason.title}</h3>
+                    <p>{reason.description}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials */}
+        <section className="branding-section branding-reviews paper-grain">
+          <div className="container">
+            <div className="branding-heading">
+              <h2>
+                What Our Clients <span>Say</span>
+              </h2>
+            </div>
+
+            <div className="branding-reviews__grid">
+              {googleReviews.slice(0, 3).map((review) => (
+                <TestimonialCard key={review.id} review={review} />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="service-paper-faq paper-grain branding-faq">
+          <div className="container">
+            <div className="service-paper-heading service-paper-heading--center">
+              <h2>
+                Frequently Asked <span>Questions</span>
+              </h2>
+            </div>
+
+            <FAQAccordion faqs={faqs} />
+          </div>
+        </section>
+
+        {/* Related Services */}
+        <RelatedServices services={relatedServices} />
+
+        {/* CTA Section */}
+        <div className="branding-cta">
+          <CTASection
+            title="Ready to Create Your Perfect Logo?"
+            description="Let's design a logo that captures your brand essence and makes you stand out. Get started with a free consultation today."
+          />
         </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-20">
-        <div className="container max-w-4xl">
-          <h2 className="text-4xl md:text-5xl font-bold text-navy mb-12 text-center">
-            Frequently Asked Questions
-          </h2>
-          <FAQAccordion faqs={faqs} />
-        </div>
-      </section>
-
-      {/* Related Services */}
-      <RelatedServices services={relatedServices} />
-
-      {/* CTA Section */}
-      <CTASection
-        title="Ready to Create Your Perfect Logo?"
-        description="Let's design a logo that captures your brand essence and makes you stand out. Get started with a free consultation today."
-      />
+      </div>
     </>
   );
 }

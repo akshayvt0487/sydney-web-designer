@@ -1,3 +1,4 @@
+import Breadcrumbs from "@/components/Breadcrumbs";
 import Link from "next/link";
 import { generateMetadata } from "@/lib/metadata";
 import { generateBreadcrumbSchema, generateServiceSchema } from "@/lib/schemas";
@@ -264,7 +265,7 @@ export default function PayOnPerformanceSEOPage() {
   ];
 
   return (
-    <>
+    <div className="seo-paper-route seo-paper-route--pay-on-performance-seo paper-grain">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
@@ -273,6 +274,8 @@ export default function PayOnPerformanceSEOPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(generateServiceSchema(serviceData.name, serviceData.description)) }}
       />
+
+      <Breadcrumbs items={breadcrumbs} />
 
       {/* Hero Section */}
       <ServiceHeroSection
@@ -296,7 +299,7 @@ export default function PayOnPerformanceSEOPage() {
       />
 
       {/* Stats Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="seo-route-stats py-16 bg-gray-50">
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
             <div className="text-center">
@@ -320,7 +323,7 @@ export default function PayOnPerformanceSEOPage() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-white">
+      <section className="seo-route-cards py-20 bg-white">
         <div className="container">
           <div className="section-title text-center">
             <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Why Pay on Performance SEO Makes <span className="text-[#f59e0b]">Sense</span></h2>
@@ -350,43 +353,44 @@ export default function PayOnPerformanceSEOPage() {
       </section>
 
       {/* How It Works */}
-      <section className="py-20 bg-[#f8fafc]" id="how-it-works">
+      <section className="popseo-process paper-grain" id="how-it-works">
         <div className="container">
-          <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">How Pay on Performance SEO <span className="text-[#f59e0b]">Works</span></h2>
+          <div className="editorial-service-heading">
+            <h2>
+              How Pay on Performance SEO <span>Works</span>
+            </h2>
             <p>Simple, transparent process with clear success metrics</p>
           </div>
 
-          <div className="max-w-5xl mx-auto space-y-8">
-            {howItWorks.map((item, index) => (
-              <div key={index} className="card hover:shadow-xl transition-all">
-                <div className="flex flex-col md:flex-row gap-6">
-                  <div className="flex-shrink-0">
-                    <div className="w-20 h-20 bg-[#f59e0b] text-white rounded-2xl flex items-center justify-center text-3xl font-bold">
-                      {item.step}
-                    </div>
-                  </div>
-                  <div className="flex-grow">
-                    <h3 className="text-2xl font-bold mb-3 text-primary-navy">{item.title}</h3>
-                    <p className="text-gray-600 mb-4 text-lg">{item.description}</p>
-                    <ul className="grid md:grid-cols-2 gap-3">
-                      {item.details.map((detail, idx) => (
-                        <li key={idx} className="flex items-start gap-2">
-                          <i className="fas fa-check-circle text-[#f59e0b] mt-1 flex-shrink-0"></i>
-                          <span className="text-gray-700">{detail}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
+          <div className="popseo-process__grid">
+            {howItWorks.map((item) => (
+              <article key={item.step} className="popseo-process__card">
+                <span className="popseo-process__number">
+                  {String(item.step).padStart(2, "0")}
+                </span>
+
+                <h3>{item.title}</h3>
+
+                <p className="popseo-process__description">
+                  {item.description}
+                </p>
+
+                <ul>
+                  {item.details.map((detail) => (
+                    <li key={detail}>
+                      <i className="fas fa-check" aria-hidden="true" />
+                      <span>{detail}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
       {/* Pricing Models */}
-      <section className="py-20 bg-white">
+      <section className="seo-route-support py-20 bg-white">
         <div className="container">
           <div className="section-title text-center">
             <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Performance Pricing <span className="text-[#f59e0b]">Models</span></h2>
@@ -422,7 +426,7 @@ export default function PayOnPerformanceSEOPage() {
       </section>
 
       {/* Ideal For */}
-      <section className="py-20 bg-[#f8fafc]">
+      <section className="seo-route-lists py-20 bg-[#f8fafc]">
         <div className="container">
           <div className="section-title text-center">
             <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Is Pay on Performance SEO Right for <span className="text-[#f59e0b]">You</span>?</h2>
@@ -445,51 +449,52 @@ export default function PayOnPerformanceSEOPage() {
       </section>
 
       {/* Case Study Section */}
-      <section className="py-20 bg-gradient-to-br from-[#1e293b] to-[#0f172a] text-white">
+      <section className="editorial-proof editorial-proof--performance-seo">
         <div className="container">
-          <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-center mb-4 text-white">Real Pay on Performance <span className="text-[#f59e0b]">Results</span></h2>
-            <p className="text-white">How performance-based SEO delivered exceptional ROI</p>
+          <div className="editorial-service-heading editorial-service-heading--dark">
+            <h2>
+              Real Pay on Performance <span>Results</span>
+            </h2>
+            <p>How performance-based SEO delivered exceptional ROI</p>
           </div>
 
-          <div className="max-w-5xl mx-auto">
-            <div className="rounded-3xl border border-primary-orange/35 bg-white p-6 shadow-[0_20px_48px_rgba(15,23,42,0.24)] sm:p-8 md:p-10">
-              <div className="grid md:grid-cols-5 gap-8">
-                <div className="md:col-span-3">
-                  <h3 className="text-3xl font-bold mb-2 text-[#1e293b]">{caseStudy.name}</h3>
-                  <div className="text-primary-orange font-semibold mb-6">Timeline: {caseStudy.timeline}</div>
+          <article className="editorial-proof__card">
+            <div className="editorial-proof__story">
+              <h3>{caseStudy.name}</h3>
 
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="font-bold mb-2 text-lg text-[#1e293b]">Challenge:</h4>
-                      <p className="text-slate-600 leading-relaxed">{caseStudy.challenge}</p>
-                    </div>
-                    <div>
-                      <h4 className="font-bold mb-2 text-lg text-[#1e293b]">Solution:</h4>
-                      <p className="text-slate-600 leading-relaxed">{caseStudy.solution}</p>
-                    </div>
-                  </div>
-                </div>
+              <p className="editorial-proof__timeline">
+                Timeline: {caseStudy.timeline}
+              </p>
 
-                <div className="md:col-span-2 bg-[#f59e0b] rounded-2xl p-8">
-                  <h4 className="font-bold mb-6 text-xl text-white">Results Achieved:</h4>
-                  <ul className="space-y-4">
-                    {caseStudy.results.map((result, idx) => (
-                      <li key={idx} className="flex items-start gap-3">
-                        <i className="fas fa-trophy text-white text-xl flex-shrink-0 mt-1"></i>
-                        <span className="text-white font-medium">{result}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+              <div className="editorial-proof__block">
+                <h4>Challenge:</h4>
+                <p>{caseStudy.challenge}</p>
+              </div>
+
+              <div className="editorial-proof__block">
+                <h4>Solution:</h4>
+                <p>{caseStudy.solution}</p>
               </div>
             </div>
-          </div>
+
+            <div className="editorial-proof__results">
+              <h4>Results Achieved:</h4>
+
+              <ul>
+                {caseStudy.results.map((result) => (
+                  <li key={result}>
+                    <i className="fas fa-trophy" aria-hidden="true" />
+                    <span>{result}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </article>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-white">
+      <section className="seo-route-faq py-20 bg-white">
         <div className="container">
           <div className="section-title text-center">
             <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Pay on Performance SEO Frequently Asked <span className="text-[#f59e0b]">Questions</span></h2>
@@ -513,6 +518,8 @@ export default function PayOnPerformanceSEOPage() {
         primaryButtonAction="seoAudit"
         secondaryButtonText="View Our Work"
       />
-    </>
+    </div>
   );
 }
+
+

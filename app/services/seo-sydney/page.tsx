@@ -2,14 +2,16 @@ import Link from "next/link";
 import { services, portfolioProjects, googleReviews } from "@/lib/constants";
 import { generateMetadata } from "@/lib/metadata";
 import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema, generateFAQSchema } from "@/lib/schemas";
-import StatsGrid from "@/components/StatsGrid";
-import TestimonialCard from "@/components/TestimonialCard";
-import PortfolioCard from "@/components/PortfolioCard";
 import CTASection from "@/components/CTASection";
 import ServiceHeroSection from "@/components/ServiceHeroSection";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedServices from "@/components/RelatedServices";
-import FAQAccordion from "@/components/FAQAccordion";
+import ServiceStatsSection from "@/components/service-page/ServiceStatsSection";
+import ServiceFeaturesSection from "@/components/service-page/ServiceFeaturesSection";
+import ServiceProcessSection from "@/components/service-page/ServiceProcessSection";
+import ServiceResultsSection from "@/components/service-page/ServiceResultsSection";
+import ServiceTestimonialsSection from "@/components/service-page/ServiceTestimonialsSection";
+import ServiceFAQSection from "@/components/service-page/ServiceFAQSection";
 
 export const metadata = generateMetadata({
   title: "SEO Services Sydney | Professional Search Engine Optimization",
@@ -141,264 +143,126 @@ export default function SEOServicesPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
-      />
-      <script
-        type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(generateServiceSchema(service.name, service.heroDescription)),
+          __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)),
         }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessSchema()) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateServiceSchema(service.name, service.heroDescription)
+          ),
+        }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(faqs)) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateLocalBusinessSchema()),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateFAQSchema(faqs)),
+        }}
       />
 
-      {/* Breadcrumbs */}
       <Breadcrumbs items={breadcrumbs} />
 
-      {/* Hero Section */}
       <ServiceHeroSection
         h1="SEO Sydney"
         badge={{
           icon: `fas ${service.icon}`,
-          text: service.name
+          text: service.name,
         }}
         heading="SEO Services That Drive Real Results in Sydney"
         description="Dominate search results and drive qualified traffic with comprehensive SEO strategies. Get found by customers actively searching for your products and services."
         buttons={{
           primary: {
             text: "Get Free SEO Audit",
-            dataPopup: "seoAudit"
+            dataPopup: "seoAudit",
           },
           secondary: {
             text: "View SEO Case Studies",
-            href: "/portfolio"
-          }
+            href: "/portfolio",
+          },
         }}
       />
 
-      {/* Stats Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container">
-          <StatsGrid stats={stats} columns={4} />
-        </div>
-      </section>
+      <ServiceStatsSection
+        stats={stats.map((stat) => ({ value: stat.number, text: stat.label }))}
+      />
 
-      {/* Features Section */}
-      <section className="py-20">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">
-              Comprehensive SEO <span className="text-[#f59e0b]">Services</span>
-            </h2>
-            <p className="text-xl text-gray-600">
-              Every aspect of SEO covered to maximize your online visibility and organic growth.
-            </p>
-          </div>
+      <ServiceFeaturesSection
+        title={<>Comprehensive SEO <span>Services</span></>}
+        description="Every aspect of SEO covered to maximize your online visibility and organic growth."
+        features={features.map((feature) => ({
+          icon: feature.icon,
+          title: feature.title,
+          description: feature.description,
+        }))}
+      />
 
-          <div className="grid-3">
-            {features.map((feature, index) => (
-              <div key={index} className="card hover:shadow-card-hover transition-shadow">
-                <div className="mb-4"><i className={`${feature.icon} text-4xl text-[#f59e0b]`}></i></div>
-                <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceProcessSection
+        title={<>Our SEO <span>Process</span></>}
+        description="A proven methodology that delivers consistent, measurable results."
+        columns={4}
+        steps={process.map((step) => ({
+          number: String(step.step),
+          title: step.title,
+          description: step.description,
+        }))}
+      />
 
-      {/* Process Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Our SEO <span className="text-[#f59e0b]">Process</span></h2>
-            <p className="text-xl text-gray-600">
-              A proven methodology that delivers consistent, measurable results.
-            </p>
-          </div>
-
-          <div className="grid-2 max-w-4xl mx-auto">
-            {process.map((item) => (
-              <div key={item.step} className="card hover:shadow-card-hover transition-shadow">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-[#f59e0b] rounded-full flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
-                    {item.step}
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                    <p className="text-gray-600">{item.description}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Portfolio Section */}
       {seoProjects.length > 0 && (
-        <section className="py-20">
-          <div className="container">
-            <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">SEO Success <span className="text-[#f59e0b]">Stories</span></h2>
-              <p className="text-xl text-gray-600">
-                Real results for businesses across Sydney and Australia.
-              </p>
-            </div>
+        <>
+          <ServiceResultsSection
+            title={<>SEO Success <span>Stories</span></>}
+            projects={seoProjects.slice(0, 6).map((project) => ({
+              name: project.name,
+              industry: project.industry,
+              description: project.description,
+              image: project.images?.[0] || project.image,
+              websiteUrl: project.websiteUrl,
+            }))}
+          />
 
-            <div className="grid-3">
-              {seoProjects.slice(0, 6).map((project) => (
-                <PortfolioCard key={project.id} project={project} />
-              ))}
-            </div>
-
-            <div className="text-center mt-12">
-              <Link href="/portfolio" className="btn btn-primary">
-                View All Projects
-              </Link>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Testimonials Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">What Our Clients <span className="text-[#f59e0b]">Say</span></h2>
-            <p className="text-xl text-gray-600">
-              Hear from businesses that have transformed their online presence with our SEO services.
-            </p>
-          </div>
-
-          <div className="grid-3">
-            {seoReviews.map((review) => (
-              <TestimonialCard key={review.id} review={review} />
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Link href="/testimonials" className="btn btn-primary">
-              Read More Reviews
+          <div className="seo-section-action">
+            <Link href="/portfolio" className="paper-button paper-button--rust">
+              View All Projects
             </Link>
           </div>
-        </div>
-      </section>
+        </>
+      )}
 
-      {/* Pricing Section */}
-      {/* <section className="py-20">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl font-bold mb-4">SEO Pricing</h2>
-            <p className="text-xl text-gray-600">
-              Transparent monthly packages with no lock-in contracts.
-            </p>
-          </div>
+      <ServiceTestimonialsSection
+        title={<>What Our Clients <span>Say</span></>}
+        description="Hear from businesses that have transformed their online presence with our SEO services."
+        testimonials={seoReviews.map((review) => ({
+          text: review.text,
+          name: review.name,
+          detail: review.company,
+          rating: review.rating,
+        }))}
+      />
 
-          <div className="max-w-4xl mx-auto">
-            <div className="card border-2 border-primary-orange">
-              <div className="text-center mb-8">
-                <div className="text-primary-orange font-bold mb-2">Most Popular</div>
-                <h3 className="text-3xl font-bold mb-2">Professional SEO</h3>
-                <div className="text-5xl font-bold text-primary-orange mb-4">$3,000<span className="text-xl text-gray-600">/month</span></div>
-                <p className="text-gray-600">Complete SEO solution for growing businesses</p>
-              </div>
+      <div className="seo-section-action">
+        <Link href="/testimonials" className="paper-button paper-button--rust">
+          Read More Reviews
+        </Link>
+      </div>
 
-              <div className="grid-2 gap-4 mb-8">
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Comprehensive SEO audit</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Technical SEO optimization</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Keyword research & strategy</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">On-page optimization</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Link building campaigns</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Content optimization</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Local SEO (Google Business)</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Monthly performance reports</span>
-                </div>
-              </div>
+      <ServiceFAQSection
+        title={<>Frequently Asked <span>Questions</span></>}
+        faqs={faqs}
+      />
 
-              <div className="text-center">
-                <button data-popup="seoAudit" className="btn btn-primary w-full sm:w-auto">
-                  Get Started with SEO
-                </button>
-              </div>
-            </div>
-
-            <p className="text-center text-gray-600 mt-6">
-              Custom packages available for enterprise clients.{" "}
-              <button data-popup="contact" className="text-primary-orange font-semibold hover:underline">
-                Contact us
-              </button>
-            </p>
-          </div>
-        </div>
-      </section> */}
-
-      {/* FAQ Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Frequently Asked <span className="text-[#f59e0b]">Questions</span></h2>
-            <p className="text-xl text-gray-600">
-              Everything you need to know about our SEO services.
-            </p>
-          </div>
-
-          <FAQAccordion faqs={faqs} />
-        </div>
-      </section>
-
-      {/* Related Services */}
       <RelatedServices services={relatedServices} />
 
-      {/* CTA Section */}
       <CTASection
-        title="Ready to Dominate Search Results?"
-        description="Get your free SEO audit and discover how we can help you rank higher and attract more customers."
+        title="Ready to Grow Your Organic Traffic?"
+        description="Get a free SEO audit and discover exactly how we can improve your rankings, traffic, and revenue."
         primaryButtonText="Get Free SEO Audit"
         primaryButtonAction="seoAudit"
       />

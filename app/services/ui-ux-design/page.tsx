@@ -1,13 +1,16 @@
+import Breadcrumbs from "@/components/Breadcrumbs";
 import Link from "next/link";
 import { services, portfolioProjects, googleReviews } from "@/lib/constants";
 import { generateMetadata } from "@/lib/metadata";
 import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema, generateFAQSchema } from "@/lib/schemas";
-import StatsGrid from "@/components/StatsGrid";
-import TestimonialCard from "@/components/TestimonialCard";
-import PortfolioCard from "@/components/PortfolioCard";
 import CTASection from "@/components/CTASection";
 import ServiceHeroSection from "@/components/ServiceHeroSection";
-import FAQAccordion from "@/components/FAQAccordion";
+import ServiceStatsSection from "@/components/service-page/ServiceStatsSection";
+import ServiceFeaturesSection from "@/components/service-page/ServiceFeaturesSection";
+import ServiceProcessSection from "@/components/service-page/ServiceProcessSection";
+import ServicePortfolioSection from "@/components/service-page/ServicePortfolioSection";
+import ServiceTestimonialsSection from "@/components/service-page/ServiceTestimonialsSection";
+import ServiceFAQSection from "@/components/service-page/ServiceFAQSection";
 
 export const metadata = generateMetadata({
   title: "UI/UX Design Sydney | User Experience Design Services",
@@ -116,179 +119,57 @@ export default function UIUXDesignPage() {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(generateServiceSchema(service.name, service.heroDescription)),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessSchema()) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(generateFAQSchema(faqs)),
-        }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateServiceSchema(service.name, service.heroDescription)) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessSchema()) }} />
 
-      {/* Hero Section */}
+      <Breadcrumbs items={breadcrumbs} />
+
       <ServiceHeroSection
         h1="UI UX Designer Sydney"
-        badge={{
-          icon: `fas ${service.icon}`,
-          text: service.name
-        }}
+        badge={{ icon: `fas ${service.icon}`, text: service.name }}
         heading="UI/UX Design That Creates Intuitive Digital Experiences"
         description="Craft beautiful, user-friendly interfaces backed by research and best practices in user experience. Design that users love and that drives business results."
         buttons={{
-          primary: {
-            text: "Start Your UX Project",
-            dataPopup: "contact"
-          },
-          secondary: {
-            text: "View UX Portfolio",
-            href: "/portfolio"
-          }
+          primary: { text: "Start Your UX Project", dataPopup: "contact" },
+          secondary: { text: "View UX Portfolio", href: "/portfolio" },
         }}
       />
 
-      {/* Stats Section */}
-      <section className="bg-slate-50 py-16">
-        <div className="container mx-auto px-6">
-          <StatsGrid stats={stats} columns={4} />
-        </div>
-      </section>
+      <ServiceStatsSection stats={stats.map((stat) => ({ value: stat.number, text: stat.label }))} />
 
-      {/* Features Section */}
-      <section className="bg-white py-24 md:py-32">
-        <div className="container mx-auto max-w-7xl px-6">
-          <div className="mb-16 text-center">
-            <h2 className="mb-6 font-heading text-4xl font-bold text-slate-900 md:text-5xl">
-              Complete UI/UX Design <span className="text-primary-orange">Services</span>
-            </h2>
-            <p className="mx-auto max-w-3xl text-lg text-slate-600 md:text-xl">
-              From research to implementation, we cover every aspect of user experience design.
-            </p>
-          </div>
+      <ServiceFeaturesSection
+        title={<>Complete UI/UX Design <span>Services</span></>}
+        description="From research to implementation, we cover every aspect of user experience design."
+        features={features}
+      />
 
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {features.map((feature, index) => (
-              <div key={index} className="flex flex-col items-center text-center sm:items-start sm:text-left rounded-2xl border border-slate-200 bg-white p-10 shadow-sm transition-all hover:border-primary-orange/30 hover:shadow-card-hover">
-                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary-orange/10 text-primary-orange">
-                  <i className={`${feature.icon} text-2xl`} />
-                </div>
-                <h3 className="mb-3 font-heading text-2xl font-bold text-slate-900">{feature.title}</h3>
-                <p className="text-slate-600 leading-relaxed">{feature.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceProcessSection
+        title={<>Our UI/UX Design <span>Process</span></>}
+        description="User-centered methodology that delivers exceptional experiences."
+        columns={4}
+        steps={process.map((step) => ({ number: String(step.step), title: step.title, description: step.description }))}
+      />
 
-      {/* Process Section */}
-      <section className="bg-slate-50 py-24 md:py-32" id="process">
-        <div className="container mx-auto max-w-5xl px-6">
-          <div className="mb-16 text-center">
-            <h2 className="mb-6 font-heading text-4xl font-bold text-slate-900 md:text-5xl">
-              Our UI/UX Design <span className="text-primary-orange">Process</span>
-            </h2>
-            <p className="mx-auto max-w-2xl text-lg text-slate-600 md:text-xl">
-              User-centered methodology that delivers exceptional experiences.
-            </p>
-          </div>
+      <ServicePortfolioSection
+        title={<>UI/UX Design <span>Portfolio</span></>}
+        description="User-centered designs that deliver exceptional experiences."
+        projects={webProjects.slice(0, 6)}
+        buttonText="View All Projects"
+      />
 
-          <div className="grid gap-8 md:grid-cols-2">
-            {process.map((item) => (
-              <div key={item.step} className="flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left gap-6 rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition-all hover:border-primary-orange/30 hover:shadow-md">
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-slate-900 text-xl font-bold text-white shadow-md">
-                  {item.step}
-                </div>
-                <div>
-                  <h3 className="mb-2 font-heading text-xl font-bold text-slate-900">{item.title}</h3>
-                  <p className="text-slate-600 leading-relaxed">{item.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceTestimonialsSection
+        title={<>What Our Clients <span>Say</span></>}
+        description="Businesses succeeding with user-centered design."
+        testimonials={webReviews.map((review) => ({ text: review.text, name: review.name, detail: review.company, rating: review.rating }))}
+      />
 
-      {/* Portfolio Section */}
-      {webProjects.length > 0 && (
-        <section className="bg-white py-24 md:py-32">
-          <div className="container mx-auto max-w-7xl px-6">
-            <div className="mb-16 text-center">
-              <h2 className="mb-6 font-heading text-4xl font-bold text-slate-900 md:text-5xl">
-                UI/UX Design <span className="text-primary-orange">Portfolio</span>
-              </h2>
-              <p className="mx-auto max-w-2xl text-lg text-slate-600 md:text-xl">
-                User-centered designs that deliver exceptional experiences.
-              </p>
-            </div>
+      <div className="service-inline-action service-inline-action--paper">
+        <Link href="/testimonials" className="paper-button paper-button--rust">Read More Reviews<i className="fas fa-arrow-right" aria-hidden="true" /></Link>
+      </div>
 
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {webProjects.slice(0, 6).map((project) => (
-                <PortfolioCard key={project.id} project={project} />
-              ))}
-            </div>
+      <ServiceFAQSection title={<>Frequently Asked <span>Questions</span></>} description="Common questions about UI/UX design services." faqs={faqs} />
 
-            <div className="mt-16 text-center">
-              <Link href="/portfolio" className="btn btn-primary btn-lg rounded-lg shadow-sm">
-                View All Projects
-              </Link>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Testimonials Section */}
-      <section className="bg-slate-50 py-24 md:py-32">
-        <div className="container mx-auto max-w-7xl px-6">
-          <div className="mb-16 text-center">
-            <h2 className="mb-6 font-heading text-4xl font-bold text-slate-900 md:text-5xl">
-              What Our Clients <span className="text-primary-orange">Say</span>
-            </h2>
-            <p className="mx-auto max-w-2xl text-lg text-slate-600 md:text-xl">
-              Businesses succeeding with user-centered design.
-            </p>
-          </div>
-
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {webReviews.map((review) => (
-              <TestimonialCard key={review.id} review={review} />
-            ))}
-          </div>
-
-          <div className="mt-16 text-center">
-            <Link href="/testimonials" className="btn btn-primary btn-lg rounded-lg shadow-sm">
-              Read More Reviews
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="bg-white py-24 md:py-32">
-        <div className="container mx-auto px-6">
-          <div className="mb-16 text-center">
-            <h2 className="mb-6 font-heading text-4xl font-bold text-slate-900 md:text-5xl">
-              Frequently Asked <span className="text-primary-orange">Questions</span>
-            </h2>
-            <p className="mx-auto max-w-2xl text-lg text-slate-600 md:text-xl">
-              Common questions about UI/UX design services.
-            </p>
-          </div>
-          <FAQAccordion faqs={faqs} />
-        </div>
-      </section>
-
-      {/* CTA Section */}
       <CTASection
         title="Ready to Improve Your User Experience?"
         description="Create intuitive, user-friendly designs that delight your users and drive business results."

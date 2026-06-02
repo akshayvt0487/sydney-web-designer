@@ -1,13 +1,16 @@
+import Breadcrumbs from "@/components/Breadcrumbs";
 import Link from "next/link";
 import { services, portfolioProjects, googleReviews } from "@/lib/constants";
 import { generateMetadata } from "@/lib/metadata";
 import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema } from "@/lib/schemas";
-import StatsGrid from "@/components/StatsGrid";
-import TestimonialCard from "@/components/TestimonialCard";
-import PortfolioCard from "@/components/PortfolioCard";
 import CTASection from "@/components/CTASection";
-import FAQAccordion from "@/components/FAQAccordion";
 import ServiceHeroSection from "@/components/ServiceHeroSection";
+import ServiceStatsSection from "@/components/service-page/ServiceStatsSection";
+import ServiceFeaturesSection from "@/components/service-page/ServiceFeaturesSection";
+import ServiceProcessSection from "@/components/service-page/ServiceProcessSection";
+import ServicePortfolioSection from "@/components/service-page/ServicePortfolioSection";
+import ServiceTestimonialsSection from "@/components/service-page/ServiceTestimonialsSection";
+import ServiceFAQSection from "@/components/service-page/ServiceFAQSection";
 
 export const metadata = generateMetadata({
   title: "Responsive Web Design Sydney | Mobile-Friendly Websites",
@@ -116,257 +119,61 @@ export default function ResponsiveDesignPage() {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(generateServiceSchema(service.name, service.heroDescription)),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessSchema()) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateServiceSchema(service.name, service.heroDescription)) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessSchema()) }} />
 
-      {/* Hero Section */}
+      <Breadcrumbs items={breadcrumbs} />
+
       <ServiceHeroSection
         h1="Mobile Responsive Website Design"
-        badge={{
-          icon: `fas ${service.icon}`,
-          text: service.name
-        }}
+        badge={{ icon: `fas ${service.icon}`, text: service.name }}
         heading="Responsive Design That Works Perfectly On Every Device"
         description="Ensure your website delivers a flawless experience across smartphones, tablets, and desktops. Mobile-first approach that captures all your visitors."
         buttons={{
-          primary: {
-            text: "Get Mobile-Friendly Website",
-            dataPopup: "contact"
-          },
-          secondary: {
-            text: "View Responsive Designs",
-            href: "/portfolio"
-          }
+          primary: { text: "Get Mobile-Friendly Website", dataPopup: "contact" },
+          secondary: { text: "View Responsive Designs", href: "/portfolio" },
         }}
       />
 
-      {/* Stats Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container">
-          <StatsGrid stats={stats} columns={4} />
-        </div>
-      </section>
+      <ServiceStatsSection stats={stats.map((stat) => ({ value: stat.number, text: stat.label }))} />
 
-      {/* Features Section */}
-      <section className="py-20">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">
-              Complete Responsive Solutions
-            </h2>
-            <p className="text-xl text-gray-600">
-              Every element optimized for perfect display on any screen size.
-            </p>
-          </div>
+      <ServiceFeaturesSection
+        title={<>Complete Responsive <span>Solutions</span></>}
+        description="Every element optimized for perfect display on any screen size."
+        features={features}
+      />
 
-          <div className="grid-3">
-            {features.map((feature, index) => (
-              <div key={index} className="card hover:shadow-card-hover transition-shadow">
-                <div className="mb-4"><i className={`${feature.icon} text-4xl text-[#f59e0b]`}></i></div>
-                <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceProcessSection
+        title={<>Our Responsive Design <span>Process</span></>}
+        description="Mobile-first methodology for maximum reach and engagement."
+        columns={4}
+        steps={process.map((step) => ({ number: String(step.step), title: step.title, description: step.description }))}
+      />
 
-      {/* Process Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Our Responsive Design Process</h2>
-            <p className="text-xl text-gray-600">
-              Mobile-first methodology for maximum reach and engagement.
-            </p>
-          </div>
+      <ServicePortfolioSection
+        title={<>Responsive Design <span>Portfolio</span></>}
+        description="Websites that look perfect on every device and screen size."
+        projects={webProjects.slice(0, 6)}
+        buttonText="View All Projects"
+      />
 
-          <div className="grid-2 max-w-4xl mx-auto">
-            {process.map((item) => (
-              <div key={item.step} className="card hover:shadow-card-hover transition-shadow">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-[#f59e0b] rounded-full flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
-                    {item.step}
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                    <p className="text-gray-600">{item.description}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceTestimonialsSection
+        title={<>What Our Clients <span>Say</span></>}
+        description="Businesses reaching more customers with responsive design."
+        testimonials={webReviews.map((review) => ({ text: review.text, name: review.name, detail: review.company, rating: review.rating }))}
+      />
 
-      {/* Portfolio Section */}
-      {webProjects.length > 0 && (
-        <section className="py-20">
-          <div className="container">
-            <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Responsive Design Portfolio</h2>
-              <p className="text-xl text-gray-600">
-                Websites that look perfect on every device and screen size.
-              </p>
-            </div>
+      <div className="service-inline-action service-inline-action--paper">
+        <Link href="/testimonials" className="paper-button paper-button--rust">Read More Reviews<i className="fas fa-arrow-right" aria-hidden="true" /></Link>
+      </div>
 
-            <div className="grid-3">
-              {webProjects.slice(0, 6).map((project) => (
-                <PortfolioCard key={project.id} project={project} />
-              ))}
-            </div>
+      <ServiceFAQSection title={<>Frequently Asked <span>Questions</span></>} description="Common questions about responsive web design." faqs={faqs} />
 
-            <div className="text-center mt-12">
-              <Link href="/portfolio" className="btn btn-primary">
-                View All Projects
-              </Link>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Testimonials Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">What Our Clients Say</h2>
-            <p className="text-xl text-gray-600">
-              Businesses reaching more customers with responsive websites.
-            </p>
-          </div>
-
-          <div className="grid-3">
-            {webReviews.map((review) => (
-              <TestimonialCard key={review.id} review={review} />
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Link href="/testimonials" className="btn btn-primary">
-              Read More Reviews
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      {/* <section className="py-20">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl font-bold mb-4">Responsive Design Pricing</h2>
-            <p className="text-xl text-gray-600">
-              Affordable mobile-friendly websites for every business.
-            </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <div className="card border-2 border-primary-orange">
-              <div className="text-center mb-8">
-                <div className="text-primary-orange font-bold mb-2">Complete Package</div>
-                <h3 className="text-3xl font-bold mb-2">Responsive Website</h3>
-                <div className="text-5xl font-bold text-primary-orange mb-4">$4,500<span className="text-xl text-gray-600">+</span></div>
-                <p className="text-gray-600">Mobile-first design for all devices</p>
-              </div>
-
-              <div className="grid-2 gap-4 mb-8">
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Mobile-first design approach</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Tablet & desktop optimization</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Touch-optimized interface</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Cross-browser testing</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Performance optimization</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Google mobile-friendly certified</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Real device testing</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">30 days post-launch support</span>
-                </div>
-              </div>
-
-              <div className="text-center">
-                <button data-popup="contact" className="btn btn-primary w-full sm:w-auto">
-                  Get Started
-                </button>
-              </div>
-            </div>
-
-            <p className="text-center text-gray-600 mt-6">
-              Need to make existing website responsive?{" "}
-              <button data-popup="contact" className="text-primary-orange font-semibold hover:underline">
-                Contact us for retrofit pricing
-              </button>
-            </p>
-          </div>
-        </div>
-      </section> */}
-
-      {/* FAQ Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Frequently Asked Questions</h2>
-            <p className="text-xl text-gray-600">
-              Common questions about responsive web design.
-            </p>
-          </div>
-
-          <FAQAccordion faqs={faqs} />
-        </div>
-      </section>
-
-      {/* CTA Section */}
       <CTASection
         title="Ready for a Mobile-Friendly Website?"
-        description="Reach more customers with a responsive website that works perfectly on every device."
-        primaryButtonText="Get Responsive Design"
+        description="Capture every visitor with a responsive website that works perfectly on all devices."
+        primaryButtonText="Get Mobile-Friendly Website"
         primaryButtonAction="contact"
       />
     </>

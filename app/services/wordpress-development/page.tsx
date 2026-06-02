@@ -7,6 +7,13 @@ import {
   generateLocalBusinessSchema,
 } from "@/lib/schemas";
 import ServiceHeroSection from "@/components/ServiceHeroSection";
+import ServiceTrustStrip from "@/components/service-page/ServiceTrustStrip";
+import ServiceStatsSection from "@/components/service-page/ServiceStatsSection";
+import ServiceFeaturesSection from "@/components/service-page/ServiceFeaturesSection";
+import ServiceProcessSection from "@/components/service-page/ServiceProcessSection";
+import ServiceResultsSection from "@/components/service-page/ServiceResultsSection";
+import ServiceTestimonialsSection from "@/components/service-page/ServiceTestimonialsSection";
+import ServiceLeadPanel from "@/components/service-page/ServiceLeadPanel";
 
 export const metadata = generateMetadata({
   title: "WordPress Development Sydney | Custom WordPress Websites",
@@ -225,7 +232,6 @@ export default function WordPressDevelopmentPage() {
         }}
       />
 
-      {/* Hero Section */}
       <ServiceHeroSection
         h1="WordPress Developer Sydney"
         badge={{
@@ -246,372 +252,121 @@ export default function WordPressDevelopmentPage() {
         }}
       />
 
-      {/* Trust Badges Section */}
-      <section className="border-b border-slate-200 bg-white py-10 md:py-12">
-        <div className="container">
-          <div className="mx-auto grid max-w-5xl grid-cols-2 gap-6 md:grid-cols-4 md:gap-8">
-            {trustBadges.map((badge) => (
-              <div
-                key={badge.text}
-                className="flex flex-col items-center justify-center gap-3 text-center"
-              >
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary-orange/10 text-primary-orange">
-                  <i className={`fas ${badge.icon} text-lg`} aria-hidden="true" />
-                </div>
+      <ServiceTrustStrip badges={trustBadges} />
 
-                <div className="text-sm font-bold text-slate-600">
-                  {badge.text}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceStatsSection
+        title={<>Why Choose WordPress Development <span>Sydney</span>?</>}
+        stats={stats.map((stat) => ({ value: stat.value, text: stat.label }))}
+      />
 
-      {/* Stats Section */}
-      <section className="bg-slate-50 py-16 md:py-24">
-        <div className="container">
-          <h2 className="mb-10 text-center font-heading text-3xl font-bold text-primary-navy md:mb-14 md:text-5xl">
-            Why Choose WordPress Development Sydney?
-          </h2>
+      <ServiceFeaturesSection
+        title={<>Our WordPress Development Sydney <span>Services</span></>}
+        description="Comprehensive solutions designed to help your business succeed"
+        features={features.map((feature) => ({
+          icon: `fas ${feature.icon}`,
+          title: feature.title,
+          description: feature.description,
+          points: feature.points,
+        }))}
+      />
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {stats.map((stat) => (
-              <article
-                key={stat.label}
-                className="rounded-2xl border border-slate-200 border-t-4 border-t-primary-orange bg-white p-6 text-center shadow-sm transition-all hover:border-primary-orange/30 hover:shadow-card-hover md:p-8"
-              >
-                <div className="mb-2 font-heading text-4xl font-bold text-primary-orange md:text-5xl">
-                  {stat.value}
-                </div>
+      <ServiceProcessSection
+        title={<>Our Proven <span>Process</span></>}
+        description="A systematic approach to deliver outstanding results"
+        steps={processSteps.map((step) => ({
+          number: step.number,
+          title: step.title,
+          description: step.description,
+        }))}
+      />
 
-                <div className="text-base font-medium text-slate-600 md:text-lg">
-                  {stat.label}
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceResultsSection
+        kicker="Results"
+        title={<>Real Results for Sydney <span>Businesses</span></>}
+        projects={resultProjects.map((project) => ({
+          name: project.name,
+          industry: project.industry,
+          description: project.description,
+          image: project.images?.[0] || project.image,
+          websiteUrl: project.websiteUrl,
+        }))}
+      />
 
-      {/* Features Section */}
-      <section className="bg-white py-16 md:py-24">
-        <div className="container">
-          <div className="mb-10 text-center md:mb-14">
-            <h2 className="mb-5 font-heading text-3xl font-bold text-primary-navy md:text-5xl">
-              Our WordPress Development Sydney Services
-            </h2>
+      <ServiceTestimonialsSection
+        title={<>What Our Clients <span>Say</span></>}
+        testimonials={testimonials.map((testimonial) => ({
+          text: testimonial.text,
+          name: testimonial.name,
+          detail: testimonial.detail,
+        }))}
+      />
 
-            <p className="mx-auto max-w-3xl text-base text-slate-600 md:text-xl">
-              Comprehensive solutions designed to help your business succeed
-            </p>
-          </div>
-
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {features.map((feature) => (
-              <article
-                key={feature.title}
-                className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:border-primary-orange/30 hover:shadow-card-hover md:p-8"
-              >
-                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary-orange/10 text-primary-orange">
-                  <i
-                    className={`fas ${feature.icon} text-xl`}
-                    aria-hidden="true"
-                  />
-                </div>
-
-                <h3 className="mb-2 font-heading text-xl font-bold text-primary-navy md:text-2xl">
-                  {feature.title}
-                </h3>
-
-                <p className="mb-5 text-slate-600">{feature.description}</p>
-
-                <ul className="space-y-3">
-                  {feature.points.map((point) => (
-                    <li
-                      key={point}
-                      className="flex items-start gap-3 text-slate-600"
-                    >
-                      <i
-                        className="fas fa-check mt-1 text-sm text-primary-orange"
-                        aria-hidden="true"
-                      />
-                      <span>{point}</span>
-                    </li>
-                  ))}
-                </ul>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Process Section */}
-      <section className="bg-slate-50 py-16 md:py-24" id="process">
-        <div className="container">
-          <div className="mb-10 text-center md:mb-14">
-            <h2 className="mb-5 font-heading text-3xl font-bold text-primary-navy md:text-5xl">
-              Our Proven Process
-            </h2>
-
-            <p className="mx-auto max-w-3xl text-base text-slate-600 md:text-xl">
-              A systematic approach to deliver outstanding results
-            </p>
-          </div>
-
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {processSteps.map((step) => (
-              <article
-                key={step.number}
-                className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:border-primary-orange/30 hover:shadow-card-hover md:p-8"
-              >
-                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary-navy font-heading text-xl font-bold text-white">
-                  {step.number}
-                </div>
-
-                <h3 className="mb-3 font-heading text-xl font-bold text-primary-navy md:text-2xl">
-                  {step.title}
-                </h3>
-
-                <p className="leading-7 text-slate-600">{step.description}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-            {/* Results Section */}
-      <section className="bg-white py-16 md:py-24">
-        <div className="container">
-          <div className="mb-10 text-center md:mb-14">
-            <span className="mb-3 block text-xs font-bold uppercase tracking-[0.28em] text-primary-orange">
-              Results
-            </span>
-
-            <h2 className="font-heading text-3xl font-bold text-primary-navy md:text-5xl">
-              Real Results for Sydney{" "}
-              <span className="text-primary-orange">Businesses</span>
-            </h2>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {resultProjects.map((project) => {
-              const previewImage = project.images?.[0] || project.image;
-
-              return (
-                <article
-                  key={project.id}
-                  className="group overflow-hidden rounded-2xl border border-slate-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-primary-orange/30 hover:shadow-card-hover active:scale-[0.99]"
-                >
-                  <div className="relative h-[230px] overflow-hidden bg-slate-100 sm:h-[260px]">
-                    <Image
-                      src={previewImage}
-                      alt={`${project.name} website design result`}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                      sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw"
-                    />
-
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/25 via-transparent to-transparent" />
-
-                    {project.websiteUrl && (
-                      <a
-                        href={project.websiteUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-primary-navy shadow-lg transition-colors hover:bg-primary-orange hover:text-white"
-                      >
-                        View Website
-                        <i
-                          className="fas fa-arrow-up-right-from-square text-xs"
-                          aria-hidden="true"
-                        />
-                      </a>
-                    )}
-                  </div>
-
-                  <div className="p-6">
-                    <span className="mb-4 inline-flex rounded-full bg-primary-orange/10 px-3 py-1 text-xs font-semibold text-primary-orange">
-                      {project.industry}
-                    </span>
-
-                    <h3 className="mb-3 font-heading text-xl font-bold text-primary-navy transition-colors group-hover:text-primary-orange sm:text-2xl">
-                      {project.name}
-                    </h3>
-
-                    <p className="line-clamp-3 text-sm leading-7 text-slate-600 sm:text-base">
-                      {project.description}
-                    </p>
-                  </div>
-                </article>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="bg-slate-50 py-16 md:py-24">
-        <div className="container">
-          <h2 className="mb-10 text-center font-heading text-3xl font-bold text-primary-navy md:mb-14 md:text-5xl">
-            What Our Clients Say
-          </h2>
-
-          <div className="grid gap-5 md:grid-cols-3">
-            {testimonials.map((testimonial) => (
-              <article
-                key={testimonial.name}
-                className="rounded-2xl border border-slate-200 border-t-4 border-t-primary-orange bg-white p-6 shadow-sm transition-all hover:shadow-card-hover md:p-8"
-              >
-                <div className="mb-5 flex gap-1 text-lg text-primary-orange">
-                  {[1, 2, 3, 4, 5].map((star) => (
-                    <i
-                      key={star}
-                      className="fas fa-star"
-                      aria-hidden="true"
-                    />
-                  ))}
-                </div>
-
-                <p className="mb-7 text-base italic leading-8 text-slate-700">
-                  &quot;{testimonial.text}&quot;
-                </p>
-
-                <div className="font-bold text-primary-navy">
-                  {testimonial.name}
-                </div>
-
-                <div className="text-sm text-slate-500">
-                  {testimonial.detail}
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Lead Form Section */}
-      <section className="bg-white py-16 md:py-24">
-        <div className="container">
-          <div className="mx-auto max-w-5xl rounded-3xl bg-primary-navy p-6 text-white shadow-xl sm:p-10 md:p-14">
-            <div className="mb-9 text-center md:mb-12">
-              <h3 className="mb-4 font-heading text-3xl font-bold text-white md:text-4xl">
-                Get Your Free Consultation
-              </h3>
-
-              <p className="text-base text-slate-300 md:text-lg">
-                Tell us about your project and we&apos;ll provide expert advice
-                and a custom quote
-              </p>
+      <ServiceLeadPanel
+        title="Get Your Free Consultation"
+        description="Tell us about your project and we'll provide expert advice and a custom quote"
+      >
+        <form className="service-detail-lead__form">
+          <div className="service-detail-lead__grid">
+            <div>
+              <label>Full Name *</label>
+              <input
+                type="text"
+                required
+                placeholder="Your name"
+                className="form-input"
+              />
             </div>
 
-            <form className="mx-auto max-w-3xl space-y-6">
-              <div className="grid gap-6 md:grid-cols-2">
-                <div>
-                  <label className="mb-2 block text-sm font-bold text-slate-300">
-                    Full Name *
-                  </label>
+            <div>
+              <label>Email *</label>
+              <input
+                type="email"
+                required
+                placeholder="your@email.com"
+                className="form-input"
+              />
+            </div>
 
-                  <input
-                    type="text"
-                    required
-                    placeholder="Your name"
-                    className="form-input rounded-xl border-slate-700 bg-slate-800/50 text-white placeholder-slate-500 focus:border-primary-orange focus:bg-slate-800 focus:ring-primary-orange/20"
-                  />
-                </div>
+            <div>
+              <label>Phone *</label>
+              <input
+                type="tel"
+                required
+                placeholder="04XX XXX XXX"
+                className="form-input"
+              />
+            </div>
 
-                <div>
-                  <label className="mb-2 block text-sm font-bold text-slate-300">
-                    Email *
-                  </label>
-
-                  <input
-                    type="email"
-                    required
-                    placeholder="your@email.com"
-                    className="form-input rounded-xl border-slate-700 bg-slate-800/50 text-white placeholder-slate-500 focus:border-primary-orange focus:bg-slate-800 focus:ring-primary-orange/20"
-                  />
-                </div>
-
-                <div>
-                  <label className="mb-2 block text-sm font-bold text-slate-300">
-                    Phone *
-                  </label>
-
-                  <input
-                    type="tel"
-                    required
-                    placeholder="04XX XXX XXX"
-                    className="form-input rounded-xl border-slate-700 bg-slate-800/50 text-white placeholder-slate-500 focus:border-primary-orange focus:bg-slate-800 focus:ring-primary-orange/20"
-                  />
-                </div>
-
-                <div>
-                  <label className="mb-2 block text-sm font-bold text-slate-300">
-                    Company
-                  </label>
-
-                  <input
-                    type="text"
-                    placeholder="Your company (optional)"
-                    className="form-input rounded-xl border-slate-700 bg-slate-800/50 text-white placeholder-slate-500 focus:border-primary-orange focus:bg-slate-800 focus:ring-primary-orange/20"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="mb-2 block text-sm font-bold text-slate-300">
-                  Tell us about your project
-                </label>
-
-                <textarea
-                  placeholder="What are you looking to achieve?"
-                  rows={4}
-                  className="form-textarea rounded-xl border-slate-700 bg-slate-800/50 text-white placeholder-slate-500 focus:border-primary-orange focus:bg-slate-800 focus:ring-primary-orange/20"
-                />
-              </div>
-
-              <div className="pt-4 text-center">
-                <button type="submit" className="btn btn-primary btn-lg">
-                  Start WordPress Project
-                </button>
-
-                <p className="mt-4 text-sm text-slate-400">
-                  <i
-                    className="fas fa-comment-dots mr-2"
-                    aria-hidden="true"
-                  />
-                  We&apos;ll respond within 24 hours
-                </p>
-              </div>
-            </form>
+            <div>
+              <label>Company</label>
+              <input
+                type="text"
+                placeholder="Your company (optional)"
+                className="form-input"
+              />
+            </div>
           </div>
-        </div>
-      </section>
 
-      {/* CTA Section */}
-      <section className="bg-primary-navy py-16 text-center text-white md:py-24">
-        <div className="container">
-          <div className="mx-auto max-w-4xl">
-            <h2 className="mb-5 font-heading text-3xl font-bold text-white md:text-5xl">
-              Ready to Get Started?
-            </h2>
+          <div className="service-detail-lead__message">
+            <label>Tell us about your project</label>
+            <textarea
+              placeholder="What are you looking to achieve?"
+              rows={7}
+              className="form-textarea"
+            />
+          </div>
 
-            <p className="mx-auto mb-9 max-w-2xl text-base text-slate-300 md:text-xl">
-              Let&apos;s discuss your project and create a custom solution for
-              your business
-            </p>
-
-            <button
-              type="button"
-              data-popup="contact"
-              className="btn btn-outline-light btn-lg"
-            >
+          <div className="service-detail-lead__submit">
+            <button type="submit" className="paper-button paper-button--rust">
               Start WordPress Project
             </button>
+            <p>
+              <i className="fas fa-comment-dots" aria-hidden="true" />
+              We&apos;ll respond within 24 hours
+            </p>
           </div>
-        </div>
-      </section>
+        </form>
+      </ServiceLeadPanel>
     </>
   );
 }

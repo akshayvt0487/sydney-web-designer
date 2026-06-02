@@ -1,79 +1,133 @@
 "use client";
 
+import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-const webDesignServices = [
+const webDesignGroups = [
   {
-    name: "Custom Web Design",
-    slug: "custom-web-design",
-    description: "Bespoke designs for your brand",
-    icon: "fa-palette",
-    iconType: "fas",
+    title: "Overview",
+    links: [
+      {
+        name: "Web Design Overview",
+        href: "/web-design",
+        description: "Our complete web design approach",
+        icon: "fa-window-maximize",
+      },
+      {
+        name: "Web Design Plans",
+        href: "/web-design-plans",
+        description: "Packages and transparent pricing",
+        icon: "fa-receipt",
+      },
+    ],
   },
   {
-    name: "Ecommerce Websites",
-    slug: "ecommerce-websites",
-    description: "Online stores that convert",
-    icon: "fa-shopping-cart",
-    iconType: "fas",
+    title: "Design & UX",
+    links: [
+      {
+        name: "Custom Web Design",
+        href: "/services/custom-web-design",
+        description: "Bespoke designs for your brand",
+        icon: "fa-palette",
+      },
+      {
+        name: "Website Redesign",
+        href: "/services/website-redesign",
+        description: "Modernise your existing website",
+        icon: "fa-arrows-rotate",
+      },
+      {
+        name: "UI/UX Design",
+        href: "/services/ui-ux-design",
+        description: "User-centred digital experiences",
+        icon: "fa-pencil-ruler",
+      },
+      {
+        name: "Responsive Design",
+        href: "/services/responsive-design",
+        description: "Layouts for every screen size",
+        icon: "fa-mobile-screen-button",
+      },
+      {
+        name: "Landing Pages",
+        href: "/services/landing-pages",
+        description: "Conversion-focused campaign pages",
+        icon: "fa-file-lines",
+      },
+    ],
   },
   {
-    name: "UI/UX Design",
-    slug: "ui-ux-design",
-    description: "User-centered experiences",
-    icon: "fa-pencil-ruler",
-    iconType: "fas",
-  },
-  {
-    name: "Website Redesign",
-    slug: "website-redesign",
-    description: "Modernize your website",
-    icon: "fa-sync-alt",
-    iconType: "fas",
-  },
-  {
-    name: "WordPress Development",
-    slug: "wordpress-development",
-    description: "Powerful CMS solutions",
-    icon: "fa-wordpress",
-    iconType: "fab",
-  },
-  {
-    name: "Vibe Code Website",
-    slug: "vibe-code-website",
-    description: "Modern AI-powered designs",
-    icon: "fa-code",
-    iconType: "fas",
-  },
-];
-
-const specialtyServices = [
-  {
-    name: "Landing Pages",
-    slug: "high-performance-landing-pages",
-    description: "High-converting pages",
-    icon: "fa-rocket",
-    iconType: "fas",
+    title: "Development",
+    links: [
+      {
+        name: "WordPress Development",
+        href: "/services/wordpress-development",
+        description: "Flexible CMS development",
+        icon: "fa-wordpress",
+        brand: true,
+      },
+      {
+        name: "Ecommerce Websites",
+        href: "/services/ecommerce-websites",
+        description: "Online stores that convert",
+        icon: "fa-cart-shopping",
+      },
+      {
+        name: "High Performance Landing Pages",
+        href: "/services/high-performance-landing-pages",
+        description: "Fast pages built for results",
+        icon: "fa-rocket",
+      },
+      {
+        name: "Vibe Code Website",
+        href: "/services/vibe-code-website",
+        description: "Modern AI-powered builds",
+        icon: "fa-code",
+      },
+    ],
   },
 ];
 
 export default function WebDesignMegaMenu() {
   const [isOpen, setIsOpen] = useState(false);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
+
+  const openMenu = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+
+    setIsOpen(true);
+  };
+
+  const closeMenu = () => {
+    timeoutRef.current = setTimeout(() => {
+      setIsOpen(false);
+    }, 170);
+  };
 
   return (
     <div
-      className="flex h-full items-center"
-      onMouseEnter={() => setIsOpen(true)}
-      onMouseLeave={() => setIsOpen(false)}
+      className="paper-nav__menu"
+      onMouseEnter={openMenu}
+      onMouseLeave={closeMenu}
+      onFocusCapture={openMenu}
+      onBlurCapture={closeMenu}
     >
       <button
         type="button"
         aria-expanded={isOpen}
-        className={`flex h-full items-center gap-1.5 whitespace-nowrap border-b-2 text-[15px] font-semibold transition-colors ${isOpen
-            ? "border-primary-orange text-primary-orange"
-            : "border-transparent text-primary-navy hover:text-primary-orange"
-          }`}
+        className="paper-nav__trigger"
+        data-open={isOpen}
       >
         Web Design
 
@@ -94,117 +148,63 @@ export default function WebDesignMegaMenu() {
         </svg>
       </button>
 
-      {isOpen && (
-        <div className="absolute left-1/2 top-full z-50 w-[1120px] max-w-[calc(100vw-2rem)] -translate-x-1/2">
-          <div className="overflow-hidden rounded-b-2xl border border-t-2 border-slate-200 border-t-primary-orange bg-white shadow-[0_24px_55px_rgba(15,23,42,0.13)]">
-            <div className="grid grid-cols-[255px_1fr_270px]">
-              {/* Menu Introduction */}
-              <div className="border-r border-slate-200 bg-white px-7 py-8">
-                <p className="mb-4 text-[11px] font-bold uppercase tracking-[0.28em] text-primary-orange">
-                  Web Design
-                </p>
-
-                <h2 className="text-[25px] font-bold leading-[1.2] text-primary-navy">
-                  Website Design
-                </h2>
-
-                <p className="mt-4 text-sm leading-7 text-slate-500">
-                  Website design and development services
-                </p>
-
-                <Link
-                  href="/web-design"
-                  onClick={() => setIsOpen(false)}
-                  className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-primary-orange transition-colors hover:text-[#d97706]"
-                >
-                  View Web Design
-                  <i className="fas fa-arrow-right text-xs" aria-hidden="true" />
-                </Link>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            className="paper-mega paper-mega--grouped paper-mega--web-grouped"
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 5 }}
+            transition={{ duration: 0.16, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <div className="paper-mega-grouped__header">
+              <div>
+                <span className="paper-mega__eyebrow">Web Design</span>
+                <h2 className="paper-mega__intro-title">Website Design Services</h2>
               </div>
 
-              {/* Main Services */}
-              <div className="bg-white px-7 py-8">
-                <div className="mb-5 flex items-center justify-between border-b border-slate-200 pb-4">
-                  <h3 className="text-lg font-bold text-primary-navy">
-                    Web Design Services
-                  </h3>
-                  <span className="text-xs font-medium text-slate-400">
-                    6 Services
-                  </span>
-                </div>
-
-                <div className="grid grid-cols-2 gap-x-7 gap-y-1">
-                  {webDesignServices.map((service) => (
-                    <Link
-                      key={service.slug}
-                      href={`/services/${service.slug}`}
-                      onClick={() => setIsOpen(false)}
-                      className="group flex items-start gap-3 rounded-xl px-2 py-3 transition-colors hover:bg-orange-50"
-                    >
-                      <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-primary-navy transition-colors group-hover:bg-primary-orange group-hover:text-white">
-                        <i
-                          className={`${service.iconType} ${service.icon} text-sm`}
-                          aria-hidden="true"
-                        />
-                      </div>
-
-                      <div className="min-w-0">
-                        <p className="text-sm font-semibold leading-5 text-primary-navy transition-colors group-hover:text-primary-orange">
-                          {service.name}
-                        </p>
-                        <p className="mt-1 text-xs leading-5 text-slate-500">
-                          {service.description}
-                        </p>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-
-              {/* Specialty Services */}
-              <div className="border-l border-slate-200 bg-slate-50 px-6 py-8">
-                <div className="mb-5 border-b border-slate-200 pb-4">
-                  <h3 className="text-lg font-bold text-primary-navy">
-                    Specialty Services
-                  </h3>
-                </div>
-
-                {specialtyServices.map((service) => (
-                  <Link
-                    key={service.slug}
-                    href={`/services/${service.slug}`}
-                    onClick={() => setIsOpen(false)}
-                    className="group block rounded-xl border border-slate-200 bg-white p-4 transition-colors hover:border-primary-orange/40"
-                  >
-                    <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-primary-orange/10 text-primary-orange">
-                      <i
-                        className={`${service.iconType} ${service.icon} text-sm`}
-                        aria-hidden="true"
-                      />
-                    </div>
-
-                    <p className="text-sm font-semibold text-primary-navy transition-colors group-hover:text-primary-orange">
-                      {service.name}
-                    </p>
-
-                    <p className="mt-1 text-xs leading-5 text-slate-500">
-                      {service.description}
-                    </p>
-                  </Link>
-                ))}
-
-                <button
-                  type="button"
-                  data-popup="contact"
-                  className="mt-6 inline-flex min-h-[46px] w-full items-center justify-center rounded-xl bg-primary-orange px-4 text-sm font-semibold text-white transition-colors hover:bg-[#d97706]"
-                >
-                  Get Quote
-                </button>
-              </div>
+              <Link href="/web-design" className="paper-mega__intro-link">
+                View Web Design
+                <i className="fas fa-arrow-right" aria-hidden="true" />
+              </Link>
             </div>
-          </div>
-        </div>
-      )}
+
+            <div className="paper-mega-grouped__grid">
+              {webDesignGroups.map((group) => (
+                <section key={group.title} className="paper-mega-grouped__column">
+                  <div className="paper-mega__column-heading">
+                    <h3>{group.title}</h3>
+                    <span>{group.links.length} Services</span>
+                  </div>
+
+                  <div className="paper-mega-grouped__cards">
+                    {group.links.map((service) => (
+                      <Link
+                        key={service.href}
+                        href={service.href}
+                        className="paper-mega__service"
+                      >
+                        <span className="paper-mega__service-icon">
+                          <i
+                            className={`${service.brand ? "fab" : "fas"} ${service.icon
+                              }`}
+                            aria-hidden="true"
+                          />
+                        </span>
+
+                        <span className="paper-mega__service-copy">
+                          <strong>{service.name}</strong>
+                          <small>{service.description}</small>
+                        </span>
+                      </Link>
+                    ))}
+                  </div>
+                </section>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

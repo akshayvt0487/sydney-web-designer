@@ -1,124 +1,89 @@
 /**
  * FeaturesGrid Component
  *
- * A reusable component for displaying feature grids across the site.
- * Accepts feature data from centralized data structures and supports
- * flexible column layouts with consistent styling.
- *
- * @example
- * ```tsx
- * import { featureGroups } from '@/lib/data/features';
- * import FeaturesGrid from '@/components/sections/FeaturesGrid';
- *
- * <FeaturesGrid
- *   data={featureGroups.webDesignServices}
- *   columns={3}
- * />
- * ```
+ * Visual markup is redesigned only. Feature data, titles, descriptions
+ * and links continue to come from the existing centralized data object.
  */
 
-import Link from 'next/link';
-import type { FeatureGroup } from '@/lib/data/features';
+import Link from "next/link";
+import type { FeatureGroup } from "@/lib/data/features";
 
 export interface FeaturesGridProps {
-  /** Feature group data containing title, description, and features */
   data: FeatureGroup;
-  /** Number of columns in the grid (2, 3, or 4) */
   columns?: 2 | 3 | 4;
-  /** Additional CSS classes for the section */
   className?: string;
-  /** Show title and description */
   showHeader?: boolean;
-  /** Center align the header text */
   centerHeader?: boolean;
 }
 
-/**
- * Displays a grid of features with icons, titles, and descriptions.
- * Supports 2, 3, and 4 column layouts with responsive behavior.
- */
 export default function FeaturesGrid({
   data,
   columns = 3,
-  className = '',
+  className = "",
   showHeader = true,
   centerHeader = false,
 }: FeaturesGridProps) {
-  const gridClass = columns === 2 ? 'grid-2' : columns === 3 ? 'grid-3' : 'grid-4';
-  const headerAlign = centerHeader ? 'text-center mx-auto' : '';
-
   return (
-    <section className={`py-16 ${className}`}>
+    <section
+      className={`service-paper-section service-paper-features paper-grain ${className}`}
+    >
       <div className="container">
         {showHeader && (data.title || data.description) && (
-          <div className={`section-title ${headerAlign}`}>
-            {data.title && (
-              <h2 className="text-3xl md:text-4xl font-bold text-primary-navy mb-4">
-                {data.title}
-              </h2>
-            )}
-            {data.description && (
-              <p className="text-lg text-text-light max-w-3xl">
-                {data.description}
-              </p>
-            )}
+          <div
+            className={`service-paper-heading ${
+              centerHeader ? "service-paper-heading--center" : ""
+            }`}
+          >
+            {data.title && <h2>{data.title}</h2>}
+            {data.description && <p>{data.description}</p>}
           </div>
         )}
 
-        <div className={gridClass}>
+        <div
+          className={`service-paper-features__grid service-paper-features__grid--${columns}`}
+        >
           {data.features.map((feature, index) => {
             const content = (
               <>
-                {/* Icon */}
-                <div className="mb-5">
-                  <div className="w-14 h-14 rounded-xl bg-primary-orange/10 flex items-center justify-center text-primary-orange text-2xl">
-                    <i className={`fas ${feature.icon}`}></i>
-                  </div>
+                <div className="service-paper-feature__top">
+                  <span className="service-paper-feature__number">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <i className={`fas ${feature.icon}`} aria-hidden="true" />
                 </div>
 
-                {/* Title */}
-                <h3 className="text-xl font-bold text-primary-navy mb-3">
-                  {feature.title}
-                </h3>
+                <h3>{feature.title}</h3>
 
-                {/* Description */}
-                {feature.description && (
-                  <p className="text-text-light leading-relaxed">
-                    {feature.description}
-                  </p>
-                )}
+                {feature.description && <p>{feature.description}</p>}
 
-                {/* Link indicator */}
                 {feature.link && (
-                  <div className="mt-4 inline-flex items-center text-primary-orange font-semibold text-sm group-hover:gap-2 transition-all duration-300">
-                    <span>Learn More</span>
-                    <i className="fas fa-arrow-right ml-1.5 group-hover:translate-x-1 transition-transform duration-300"></i>
-                  </div>
+                  <span className="service-paper-feature__link">
+                    Learn More
+                    <i className="fas fa-arrow-right" aria-hidden="true" />
+                  </span>
                 )}
               </>
             );
 
-            // Wrap in Link if feature has a link
             if (feature.link) {
               return (
                 <Link
-                  key={index}
+                  key={`${feature.title}-${index}`}
                   href={feature.link}
-                  className="card group hover:shadow-lg hover:border-primary-orange/20 transition-all duration-300 hover:-translate-y-1"
+                  className="service-paper-feature"
                 >
                   {content}
                 </Link>
               );
             }
 
-            // Otherwise render as plain card
             return (
-              <div
-                key={index}
-                className="card hover:shadow-lg hover:border-primary-orange/20 transition-all duration-300"
+              <article
+                key={`${feature.title}-${index}`}
+                className="service-paper-feature"
               >
                 {content}
-              </div>
+              </article>
             );
           })}
         </div>

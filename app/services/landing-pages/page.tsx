@@ -1,12 +1,16 @@
+import Breadcrumbs from "@/components/Breadcrumbs";
 import Link from "next/link";
 import { services, portfolioProjects, googleReviews } from "@/lib/constants";
 import { generateMetadata } from "@/lib/metadata";
 import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema } from "@/lib/schemas";
-import StatsGrid from "@/components/StatsGrid";
-import TestimonialCard from "@/components/TestimonialCard";
-import PortfolioCard from "@/components/PortfolioCard";
 import CTASection from "@/components/CTASection";
-import FAQAccordion from "@/components/FAQAccordion";
+import ServiceHeroSection from "@/components/ServiceHeroSection";
+import ServiceStatsSection from "@/components/service-page/ServiceStatsSection";
+import ServiceFeaturesSection from "@/components/service-page/ServiceFeaturesSection";
+import ServiceProcessSection from "@/components/service-page/ServiceProcessSection";
+import ServicePortfolioSection from "@/components/service-page/ServicePortfolioSection";
+import ServiceTestimonialsSection from "@/components/service-page/ServiceTestimonialsSection";
+import ServiceFAQSection from "@/components/service-page/ServiceFAQSection";
 
 export const metadata = generateMetadata({
   title: "Landing Page Design Sydney | High-Converting Landing Pages",
@@ -115,259 +119,60 @@ export default function LandingPagesPage() {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(generateServiceSchema(service.name, service.heroDescription)),
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateServiceSchema(service.name, service.heroDescription)) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessSchema()) }} />
+
+      <Breadcrumbs items={breadcrumbs} />
+
+      <ServiceHeroSection
+        h1="Landing Page Design"
+        badge={{ icon: `fas ${service.icon}`, text: service.name }}
+        heading="High-Converting Landing Pages That Turn Traffic Into Leads"
+        description="Design focused landing pages that maximize conversions with compelling copy, strategic CTAs, and conversion-optimized layouts."
+        buttons={{
+          primary: { text: "Get Your Landing Page", dataPopup: "contact" },
+          secondary: { text: "View Landing Pages", href: "/portfolio" },
         }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessSchema()) }}
+
+      <ServiceStatsSection stats={stats.map((stat) => ({ value: stat.number, text: stat.label }))} />
+
+      <ServiceFeaturesSection
+        title={<>Landing Pages Built for <span>Conversions</span></>}
+        description="Every element designed to maximize your conversion rate."
+        features={features}
       />
 
-      {/* Hero Section */}
-      <section className="bg-[#1e293b] text-white py-20">
-        <div className="container">
-          <div className="max-w-3xl">
-            <div className="inline-block bg-primary-orange/20 text-primary-orange px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              <i className={`fas ${service.icon} mr-2`}></i> {service.name}
-            </div>
-            <h1 className="text-5xl font-bold mb-6 text-white">
-              High-Converting Landing Pages That Turn Traffic Into Leads
-            </h1>
-            <p className="text-xl text-white mb-8">
-              Design focused landing pages that maximize conversions with compelling copy, strategic CTAs, and conversion-optimized layouts.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <button data-popup="contact" className="btn btn-primary">
-                Get Your Landing Page
-              </button>
-              <Link href="/portfolio" className="btn btn-white">
-                View Landing Pages
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServiceProcessSection
+        title={<>Our Landing Page <span>Process</span></>}
+        description="Data-driven approach to building high-converting landing pages."
+        columns={4}
+        steps={process.map((step) => ({ number: String(step.step), title: step.title, description: step.description }))}
+      />
 
-      {/* Stats Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container">
-          <StatsGrid stats={stats} columns={4} />
-        </div>
-      </section>
+      <ServicePortfolioSection
+        title={<>Landing Page <span>Portfolio</span></>}
+        description="Conversion-focused pages that generate leads and sales."
+        projects={webProjects.slice(0, 6)}
+        buttonText="View All Projects"
+      />
 
-      {/* Features Section */}
-      <section className="py-20">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">
-              Landing Pages Built for Conversions
-            </h2>
-            <p className="text-xl text-gray-600 text-center">
-              Every element strategically designed to guide visitors toward taking action.
-            </p>
-          </div>
+      <ServiceTestimonialsSection
+        title={<>What Our Clients <span>Say</span></>}
+        description="Businesses generating more leads with optimized landing pages."
+        testimonials={webReviews.map((review) => ({ text: review.text, name: review.name, detail: review.company, rating: review.rating }))}
+      />
 
-          <div className="grid-3">
-            {features.map((feature, index) => (
-              <div key={index} className="card hover:shadow-card-hover transition-shadow">
-                <div className="mb-4"><i className={`${feature.icon} text-4xl text-[#f59e0b]`}></i></div>
-                <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <div className="service-inline-action service-inline-action--paper">
+        <Link href="/testimonials" className="paper-button paper-button--rust">Read More Reviews<i className="fas fa-arrow-right" aria-hidden="true" /></Link>
+      </div>
 
-      {/* Process Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Our Landing Page Process</h2>
-            <p className="text-xl text-gray-600 text-center">
-              Strategic approach to creating landing pages that convert.
-            </p>
-          </div>
+      <ServiceFAQSection title={<>Frequently Asked <span>Questions</span></>} description="Common questions about landing page design." faqs={faqs} />
 
-          <div className="grid-2 max-w-4xl mx-auto">
-            {process.map((item) => (
-              <div key={item.step} className="card hover:shadow-card-hover transition-shadow">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-[#f59e0b] rounded-full flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
-                    {item.step}
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                    <p className="text-gray-600">{item.description}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Portfolio Section */}
-      {webProjects.length > 0 && (
-        <section className="py-20">
-          <div className="container">
-            <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Landing Page Portfolio</h2>
-              <p className="text-xl text-gray-600 text-center">
-                High-performing landing pages that drive results for our clients.
-              </p>
-            </div>
-
-            <div className="grid-3">
-              {webProjects.slice(0, 6).map((project) => (
-                <PortfolioCard key={project.id} project={project} />
-              ))}
-            </div>
-
-            <div className="text-center mt-12">
-              <Link href="/portfolio" className="btn btn-primary">
-                View All Projects
-              </Link>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Testimonials Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">What Our Clients Say</h2>
-            <p className="text-xl text-gray-600 text-center">
-              Businesses generating more leads with our landing pages.
-            </p>
-          </div>
-
-          <div className="grid-3">
-            {webReviews.map((review) => (
-              <TestimonialCard key={review.id} review={review} />
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Link href="/testimonials" className="btn btn-primary">
-              Read More Reviews
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* <section className="py-20">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl font-bold mb-4">Landing Page Pricing</h2>
-            <p className="text-xl text-gray-600">
-              Affordable landing pages optimized for conversions.
-            </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <div className="card border-2 border-primary-orange">
-              <div className="text-center mb-8">
-                <div className="text-primary-orange font-bold mb-2">Complete Package</div>
-                <h3 className="text-3xl font-bold mb-2">Conversion Landing Page</h3>
-                <div className="text-5xl font-bold text-primary-orange mb-4">$1,500<span className="text-xl text-gray-600">/page</span></div>
-                <p className="text-gray-600">Professional landing page that converts</p>
-              </div>
-
-              <div className="grid-2 gap-4 mb-8">
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Custom conversion-focused design</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Persuasive copywriting</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Mobile responsive</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Lead capture form</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">Analytics integration</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">CRM/email integration</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">A/B testing setup</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm">30 days support</span>
-                </div>
-              </div>
-
-              <div className="text-center">
-                <button data-popup="contact" className="btn btn-primary w-full sm:w-auto">
-                  Get Started
-                </button>
-              </div>
-            </div>
-
-            <p className="text-center text-gray-600 mt-6">
-              Need multiple landing pages?{" "}
-              <button data-popup="contact" className="text-primary-orange font-semibold hover:underline">
-                Contact us for package pricing
-              </button>
-            </p>
-          </div>
-        </div>
-      </section> */}
-
-      {/* FAQ Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Frequently Asked Questions</h2>
-            <p className="text-xl text-gray-600 text-center">
-              Common questions about landing page design.
-            </p>
-          </div>
-
-          <FAQAccordion faqs={faqs} />
-        </div>
-      </section>
-
-      {/* CTA Section */}
       <CTASection
         title="Ready to Generate More Leads?"
-        description="Get a high-converting landing page that turns your traffic into leads and customers."
+        description="Create a high-converting landing page that turns your traffic into customers."
         primaryButtonText="Get Your Landing Page"
         primaryButtonAction="contact"
       />

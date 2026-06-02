@@ -1,9 +1,12 @@
+import Breadcrumbs from "@/components/Breadcrumbs";
 import Link from "next/link";
 import { generateMetadata } from "@/lib/metadata";
 import { generateBreadcrumbSchema, generateServiceSchema } from "@/lib/schemas";
 import CTASection from "@/components/CTASection";
 import ServiceHeroSection from "@/components/ServiceHeroSection";
-import FAQAccordion from "@/components/FAQAccordion";
+import ServiceTrustStrip from "@/components/service-page/ServiceTrustStrip";
+import ServiceFeaturesSection from "@/components/service-page/ServiceFeaturesSection";
+import ServiceFAQSection from "@/components/service-page/ServiceFAQSection";
 
 export const metadata = generateMetadata({
   title: "High Performance Landing Pages Sydney | Fast & Conversion-Optimized",
@@ -211,213 +214,115 @@ export default function HighPerformanceLandingPagesPage() {
     },
   ];
 
+  const trustBadges = [
+    { icon: "fa-bolt", text: "95+ PageSpeed Score" },
+    { icon: "fa-tachometer-alt", text: "<1.5s Load Time" },
+    { icon: "fa-chart-line", text: "285% Avg Conversion Lift" },
+    { icon: "fa-rocket", text: "200+ Pages Built" },
+  ];
+
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateServiceSchema(serviceData.name, serviceData.description)) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateServiceSchema(serviceData.name, serviceData.description)) }} />
 
-      {/* Hero Section */}
-      <ServiceHeroSection
+            <div className="high-performance-landing-editorial">
+        <Breadcrumbs items={breadcrumbs} />
+
+        <ServiceHeroSection
         h1="Landing Page Design"
-        badge={{
-          icon: "fas fa-rocket",
-          text: "High Performance Landing Pages"
-        }}
+        badge={{ icon: "fas fa-rocket", text: "High Performance Landing Pages" }}
         heading="High Performance Landing Pages Sydney"
         description="Lightning-fast landing pages that convert. 95+ PageSpeed scores, Core Web Vitals excellence, and conversion-optimized design that drives results."
         buttons={{
-          primary: {
-            text: "Get Free Quote",
-            dataPopup: "contact"
-          },
-          secondary: {
-            text: "Our Services",
-            href: "#services"
-          }
+          primary: { text: "Get Free Quote", dataPopup: "contact" },
+          secondary: { text: "Our Services", href: "#services" },
         }}
       />
 
-      {/* Trust Badges Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container">
-          <div className="flex flex-wrap justify-center gap-12 max-w-4xl mx-auto">
-            <div className="text-center">
-              <div className="mb-2"><i className="fas fa-bolt text-4xl text-[#f59e0b]"></i></div>
-              <div className="text-sm text-gray-600">95+ PageSpeed Score</div>
-            </div>
-            <div className="text-center">
-              <div className="mb-2"><i className="fas fa-tachometer-alt text-4xl text-[#f59e0b]"></i></div>
-              <div className="text-sm text-gray-600">&lt;1.5s Load Time</div>
-            </div>
-            <div className="text-center">
-              <div className="mb-2"><i className="fas fa-chart-line text-4xl text-[#f59e0b]"></i></div>
-              <div className="text-sm text-gray-600">285% Avg Conversion Lift</div>
-            </div>
-            <div className="text-center">
-              <div className="mb-2"><i className="fas fa-rocket text-4xl text-[#f59e0b]"></i></div>
-              <div className="text-sm text-gray-600">200+ Pages Built</div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServiceTrustStrip badges={trustBadges} />
 
-      {/* Benefits Section */}
-      <section className="py-20 bg-white">
-        <div className="container">
-          <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Why High Performance Landing Pages Matter</h2>
-            <p>Speed and conversions go hand in hand</p>
-          </div>
+      <ServiceFeaturesSection
+        title={<>Why High Performance Landing Pages <span>Matter</span></>}
+        description="Speed and conversions go hand in hand"
+        features={benefits.map((benefit) => ({ ...benefit, icon: `fas ${benefit.icon}` }))}
+      />
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {benefits.map((benefit, index) => (
-              <div key={index} className="card hover:shadow-xl transition-all border border-[#f59e0b]/30">
-                <div className="w-16 h-16 bg-[#f59e0b]/10 rounded-2xl flex items-center justify-center mb-6">
-                  <i className={`fas ${benefit.icon} text-3xl text-[#f59e0b]`}></i>
-                </div>
-                <h3 className="text-2xl font-bold mb-3 text-primary-navy">{benefit.title}</h3>
-                <p className="text-gray-600 mb-6">{benefit.description}</p>
-                <ul className="space-y-3">
-                  {benefit.points.map((point, idx) => (
-                    <li key={idx} className="flex items-start gap-3">
-                      <i className="fas fa-check text-[#f59e0b] mt-1 flex-shrink-0"></i>
-                      <span className="text-gray-700">{point}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section className="py-20 bg-[#f8fafc]" id="services">
+      <section className="service-paper-section service-specialty paper-grain" id="services">
         <div className="container">
-          <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Our Landing Page Services</h2>
+          <div className="service-paper-heading service-paper-heading--center">
+            <h2>Our Landing Page <span>Services</span></h2>
             <p>Comprehensive solutions for high-converting pages</p>
           </div>
-
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {services.map((service, index) => (
-              <div key={index} className="card hover:shadow-xl transition-all">
-                <h3 className="text-2xl font-bold mb-6 text-primary-navy flex items-center gap-3">
-                  <span className="w-10 h-10 bg-[#f59e0b] text-white rounded-lg flex items-center justify-center text-lg">
-                    {index + 1}
-                  </span>
-                  {service.title}
-                </h3>
-                <ul className="space-y-3">
-                  {service.items.map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-3">
-                      <i className="fas fa-check-circle text-[#f59e0b] mt-1 flex-shrink-0"></i>
-                      <span className="text-gray-700">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+          <div className="service-specialty__grid service-specialty__grid--two">
+            {services.map((item, index) => (
+              <article key={item.title} className="service-specialty__card">
+                <div className="service-specialty__top"><span>{String(index + 1).padStart(2, "0")}</span><h3>{item.title}</h3></div>
+                <ul>{item.items.map((point) => <li key={point}><i className="fas fa-check" aria-hidden="true" />{point}</li>)}</ul>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Platforms Section */}
-      <section className="py-20 bg-white">
+      <section className="service-paper-section service-technology paper-grain">
         <div className="container">
-          <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Technologies We Use</h2>
+          <div className="service-paper-heading service-paper-heading--center">
+            <h2>Technologies We <span>Use</span></h2>
             <p>Modern platforms and frameworks for maximum performance</p>
           </div>
-
-          <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
+          <div className="service-technology__grid">
             {platforms.map((platform, index) => (
-              <div key={index} className="card text-center hover:border-[#f59e0b] transition-all">
-                <i className={`${platform.icon} text-4xl text-[#f59e0b] mb-4`}></i>
-                <h3 className="font-bold text-primary-navy mb-2">{platform.name}</h3>
-                <p className="text-sm text-gray-600">{platform.description}</p>
-              </div>
+              <article key={platform.name} className="service-technology__card">
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <i className={platform.icon} aria-hidden="true" />
+                <h3>{platform.name}</h3>
+                <p>{platform.description}</p>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Case Studies Section */}
-      <section className="py-20 bg-gradient-to-br from-[#1e293b] to-[#0f172a] text-gray/800">
+      <section className="service-case-studies paper-grain">
         <div className="container">
-          <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-center mb-4 text-white">Real Performance Results</h2>
-            <p className="text-white">See how we transformed landing page performance</p>
+          <div className="service-paper-heading service-paper-heading--dark service-paper-heading--center">
+            <h2>Real Performance <span>Results</span></h2>
+            <p>See how we transformed landing page performance</p>
           </div>
-
-          <div className="max-w-6xl mx-auto space-y-8 bg-gray-800">
+          <div className="service-case-studies__grid">
             {caseStudies.map((study, index) => (
-              <div key={index} className="p-8 rounded-2 bg-white/10 backdrop-blur-sm border-2 border-[#f59e0b]/50">
-                <div className="grid md:grid-cols-5 gap-8">
-                  <div className="md:col-span-3">
-                    <h3 className="text-3xl font-bold mb-2 text-white">{study.company}</h3>
-
-                    <div className="space-y-4 ">
-                      <div>
-                        <h4 className="font-bold mb-2 text-lg text-[#f59e0b]">Challenge:</h4>
-                        <p className="text-white">{study.challenge}</p>
-                      </div>
-                      <div>
-                        <h4 className="font-bold mb-2 text-lg text-[#f59e0b]">Solution:</h4>
-                        <p className="text-white">{study.solution}</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="md:col-span-2 bg-[#f59e0b] rounded-2xl p-8">
-                    <h4 className="font-bold mb-6 text-xl text-white">Results:</h4>
-                    <ul className="space-y-4">
-                      {study.results.map((result, idx) => (
-                        <li key={idx} className="flex items-start gap-3">
-                          <i className="fas fa-trophy text-white text-xl flex-shrink-0 mt-1"></i>
-                          <span className="text-white font-medium">{result}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+              <article key={study.company} className="service-case-study">
+                <div className="service-case-study__copy">
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <h3>{study.company}</h3>
+                  <h4>Challenge:</h4><p>{study.challenge}</p>
+                  <h4>Solution:</h4><p>{study.solution}</p>
                 </div>
-              </div>
+                <div className="service-case-study__results">
+                  <h4>Results:</h4>
+                  <ul>{study.results.map((result) => <li key={result}><i className="fas fa-trophy" aria-hidden="true" />{result}</li>)}</ul>
+                </div>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-20 bg-white">
-        <div className="container">
-          <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Landing Page FAQs</h2>
-            <p>Common questions about high-performance landing pages</p>
-          </div>
-
-          <FAQAccordion
-            faqs={faq.map((item) => ({
-              question: item.q,
-              answer: item.a,
-            }))}
-          />
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <CTASection
-        title="Ready to Build a High-Converting Landing Page?"
-        description="Get a free consultation and discover how a high-performance landing page can transform your conversion rates and grow your business."
-        primaryButtonText="Get Free Consultation"
-        primaryButtonAction="contact"
-        secondaryButtonText="View Our Work"
+      <ServiceFAQSection
+        title={<>Landing Page <span>FAQs</span></>}
+        description="Common questions about high-performance landing pages"
+        faqs={faq.map((item) => ({ question: item.q, answer: item.a }))}
       />
+
+              <CTASection
+          title="Ready to Build a High-Converting Landing Page?"
+          description="Get a free consultation and discover how a high-performance landing page can transform your conversion rates and grow your business."
+          primaryButtonText="Get Free Consultation"
+          primaryButtonAction="contact"
+          secondaryButtonText="View Our Work"
+        />
+      </div>
     </>
   );
 }

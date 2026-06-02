@@ -1,14 +1,19 @@
-import Link from "next/link";
 import { services } from "@/lib/constants";
 import ServiceCard from "@/components/ServiceCard";
 import CTASection from "@/components/CTASection";
 import { generateMetadata } from "@/lib/metadata";
-import { generateBreadcrumbSchema, generateServiceSchema, generateLocalBusinessSchema } from "@/lib/schemas";
+import {
+  generateBreadcrumbSchema,
+  generateServiceSchema,
+  generateLocalBusinessSchema,
+} from "@/lib/schemas";
 
 export const metadata = generateMetadata({
   title: "Services | Web Design & Digital Marketing Sydney",
-  description: "Comprehensive web design and digital marketing services in Sydney. 13+ years experience delivering SEO, Google Ads, social media marketing, and more. Get a free quote today!",
-  keywords: "web design services sydney, digital marketing services sydney, seo sydney, google ads sydney, wordpress development, ecommerce websites, social media marketing sydney",
+  description:
+    "Comprehensive web design and digital marketing services in Sydney. 13+ years experience delivering SEO, Google Ads, social media marketing, and more. Get a free quote today!",
+  keywords:
+    "web design services sydney, digital marketing services sydney, seo sydney, google ads sydney, wordpress development, ecommerce websites, social media marketing sydney",
   canonicalUrl: "https://www.sydneywebdesigner.com.au/services",
   ogImage: "/images/og/services.svg",
 });
@@ -16,209 +21,269 @@ export const metadata = generateMetadata({
 export default function ServicesPage() {
   const breadcrumbs = [
     { name: "Home", url: "https://www.sydneywebdesigner.com.au" },
-    { name: "Services", url: "https://www.sydneywebdesigner.com.au/services" }
+    {
+      name: "Services",
+      url: "https://www.sydneywebdesigner.com.au/services",
+    },
   ];
 
   const serviceData = {
     name: "Web Design & Digital Marketing Services",
-    description: "Comprehensive digital solutions including web design and digital marketing services for Sydney businesses. 13+ years of proven expertise.",
-    provider: "Sydney Web Designer"
+    description:
+      "Comprehensive digital solutions including web design and digital marketing services for Sydney businesses. 13+ years of proven expertise.",
+    provider: "Sydney Web Designer",
   };
-  const webDesignServices = services.filter(s => s.category === "web-design");
-  const marketingServices = services.filter(s => s.category === "digital-marketing");
+
+  const webDesignServices = services.filter(
+    (service) => service.category === "web-design"
+  );
+
+  const marketingServices = services.filter(
+    (service) => service.category === "digital-marketing"
+  );
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)),
+        }}
       />
+
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateServiceSchema(serviceData.name, serviceData.description)) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateServiceSchema(serviceData.name, serviceData.description)
+          ),
+        }}
       />
+
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessSchema()) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateLocalBusinessSchema()),
+        }}
       />
 
-      {/* Hero Section */}
-      <section className="bg-[#1e293b] text-white py-20">
-        <div className="container">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-xl md:text-2xl font-medium text-white/80 mb-3">
-              Digital Marketing Sydney
-            </h1>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-              Comprehensive Digital Solutions That Drive Growth
-            </h2>
-            <p className="text-xl text-gray-100 mb-8">
-              Comprehensive digital solutions to help your business grow. From web design to digital
-              marketing, we have the expertise to drive real results.
-            </p>
-          </div>
-        </div>
-      </section>
+      <div className="services-index-paper paper-grain">
+        {/* Hero Section */}
+        <section className="services-index-hero">
+          <div className="container">
+            <div className="services-index-hero__content">
+              <span className="services-index-hero__kicker">
+                Digital Marketing Sydney
+              </span>
 
-      {/* Web Design Services */}
-      <section className="py-20">
-        <div className="container">
-          <div className="section-title">
-            <h2><i className="fas fa-laptop-code text-[#f59e0b]"></i> Web Design & Development</h2>
-            <p>Professional websites that convert visitors into customers</p>
-          </div>
+              <h1 className="services-index-hero__title">
+                Comprehensive Digital Solutions That Drive Growth
+              </h1>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-            {webDesignServices.map((service) => (
-              <ServiceCard
-                key={service.id}
-                icon={service.icon}
-                title={service.name}
-                description={service.shortDescription}
-                link={`/services/${service.slug}`}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
+              <p className="services-index-hero__description">
+                Comprehensive digital solutions to help your business grow. From
+                web design to digital marketing, we have the expertise to drive
+                real results.
+              </p>
+            </div>
 
-      {/* Digital Marketing Services */}
-      <section className="py-20 bg-gray-50">
-        <div className="container">
-          <div className="section-title">
-            <h2><i className="fas fa-chart-line text-[#f59e0b]"></i> Digital Marketing</h2>
-            <p>Drive traffic, generate leads, and grow your revenue</p>
-          </div>
+            <div className="services-index-hero__art" aria-hidden="true">
+              <div className="services-index-hero__art-inner">
+                <span className="services-index-hero__art-label">
+                  Digital Solutions
+                </span>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-            {marketingServices.map((service) => (
-              <ServiceCard
-                key={service.id}
-                icon={service.icon}
-                title={service.name}
-                description={service.shortDescription}
-                link={`/services/${service.slug}`}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
+                <div className="services-index-hero__art-rule" />
 
-      {/* Why Choose Us */}
-      <section className="py-20 bg-gray-50">
-        <div className="container">
-          <div className="section-title">
-            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Why Choose Sydney Web Designer for Your Digital <span className="text-[#f59e0b]">Services</span>?</h2>
-            <p>Experience and expertise you can trust</p>
-          </div>
+                <div className="services-index-hero__art-grid">
+                  <span />
+                  <span />
+                  <span />
+                  <span />
+                </div>
 
-          <div className="grid-3">
-            <div className="card text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#f59e0b] to-[#fb923c] rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <i className="fas fa-star text-3xl text-white"></i>
+                <div className="services-index-hero__art-circle" />
               </div>
-              <h3 className="text-xl font-bold mb-3">13+ Years Experience</h3>
-              <p className="text-gray-600">
-                Over a decade of proven success in web design, branding, and digital marketing across
-                50+ industries.
-              </p>
-            </div>
-
-            <div className="card text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#f59e0b] to-[#fb923c] rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <i className="fas fa-bullseye text-3xl text-white"></i>
-              </div>
-              <h3 className="text-xl font-bold mb-3">Results-Driven</h3>
-              <p className="text-gray-600">
-                We focus on measurable outcomes that impact your bottom line, not just vanity metrics.
-              </p>
-            </div>
-
-            <div className="card text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#f59e0b] to-[#fb923c] rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <i className="fas fa-dollar-sign text-3xl text-white"></i>
-              </div>
-              <h3 className="text-xl font-bold mb-3">Transparent Pricing</h3>
-              <p className="text-gray-600">
-                Clear, upfront pricing with no hidden fees. Know exactly what you&apos;re paying for.
-              </p>
-            </div>
-
-            <div className="card text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#f59e0b] to-[#fb923c] rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <i className="fas fa-handshake text-3xl text-white"></i>
-              </div>
-              <h3 className="text-xl font-bold mb-3">Personalized Service</h3>
-              <p className="text-gray-600">
-                Work directly with our founder. No call centers, no junior staff. Just experienced
-                professionals.
-              </p>
-            </div>
-
-            <div className="card text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#f59e0b] to-[#fb923c] rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <i className="fas fa-bolt text-3xl text-white"></i>
-              </div>
-              <h3 className="text-xl font-bold mb-3">Fast Turnaround</h3>
-              <p className="text-gray-600">
-                Projects delivered on time, every time. We respect your deadlines and business needs.
-              </p>
-            </div>
-
-            <div className="card text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#f59e0b] to-[#fb923c] rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <i className="fas fa-headset text-3xl text-white"></i>
-              </div>
-              <h3 className="text-xl font-bold mb-3">Ongoing Support</h3>
-              <p className="text-gray-600">
-                24-hour response time and dedicated support long after your project launches.
-              </p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Pricing Options - HIDDEN */}
-      {/* <section className="py-20">
-        <div className="container">
-          <div className="section-title">
-            <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-4">Flexible Pricing <span className="text-[#f59e0b]">Options</span></h2>
-            <p>Choose the solution that fits your needs and budget</p>
-          </div>
+        {/* Web Design Services */}
+        <section className="services-index-section services-index-section--light">
+          <div className="container">
+            <header className="services-index-heading">
+              <span className="services-index-heading__kicker">
+                Web Design
+              </span>
 
-          <div className="grid-2 max-w-4xl mx-auto">
-            <div className="card text-center hover:shadow-card-hover transition-all">
-              <h3 className="text-2xl font-bold mb-4 text-primary-navy">Web Design Plans</h3>
-              <p className="text-gray-700 mb-6">
-                One-time website projects with flexible packages starting from $3,000. Perfect for
-                businesses launching a new website.
+              <h2 className="services-index-heading__title">
+                Web Design &amp; <span>Development</span>
+              </h2>
+
+              <p className="services-index-heading__copy">
+                Professional websites that convert visitors into customers
               </p>
-              <Link href="/web-design-plans" className="btn btn-primary">
-                View Web Design Plans
-              </Link>
-            </div>
+            </header>
 
-            <div className="card text-center hover:shadow-card-hover transition-all">
-              <h3 className="text-2xl font-bold mb-4 text-primary-navy">Growth Plans</h3>
-              <p className="text-gray-700 mb-6">
-                Monthly retainer packages from $250/month. Ongoing support, marketing, and optimization
-                to grow your business.
-              </p>
-              <Link href="/growth-plans" className="btn btn-primary">
-                View Growth Plans
-              </Link>
+            <div className="services-index-grid">
+              {webDesignServices.map((service) => (
+                <ServiceCard
+                  key={service.id}
+                  icon={service.icon}
+                  title={service.name}
+                  description={service.shortDescription}
+                  link={`/services/${service.slug}`}
+                />
+              ))}
             </div>
           </div>
-        </div>
-      </section> */}
+        </section>
 
-      {/* CTA Section */}
-      <CTASection
-        title="Ready to Get Started?"
-        description="Let&apos;s discuss which services are right for your business. Get a free consultation and custom quote."
-        primaryButtonText="Get Free Quote"
-        primaryButtonAction="contact"
-      />
+        {/* Digital Marketing Services */}
+        <section className="services-index-section services-index-section--dark">
+          <div className="container">
+            <header className="services-index-heading services-index-heading--dark">
+              <span className="services-index-heading__kicker">
+                Growth Marketing
+              </span>
+
+              <h2 className="services-index-heading__title">
+                Digital <span>Marketing</span>
+              </h2>
+
+              <p className="services-index-heading__copy">
+                Drive traffic, generate leads, and grow your revenue
+              </p>
+            </header>
+
+            <div className="services-index-grid">
+              {marketingServices.map((service) => (
+                <ServiceCard
+                  key={service.id}
+                  icon={service.icon}
+                  title={service.name}
+                  description={service.shortDescription}
+                  link={`/services/${service.slug}`}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Why Choose Us */}
+        <section className="services-index-section services-index-benefits">
+          <div className="container">
+            <header className="services-index-heading services-index-heading--center">
+              <span className="services-index-heading__kicker">
+                Why Choose Us
+              </span>
+
+              <h2 className="services-index-heading__title">
+                Why Choose Sydney Web Designer for Your Digital{" "}
+                <span>Services</span>?
+              </h2>
+
+              <p className="services-index-heading__copy">
+                Experience and expertise you can trust
+              </p>
+            </header>
+
+            <div className="services-index-benefits__grid">
+              <article className="services-index-benefit">
+                <div className="services-index-benefit__top">
+                  <span>01</span>
+                  <i className="fas fa-star" aria-hidden="true" />
+                </div>
+
+                <h3>13+ Years Experience</h3>
+
+                <p>
+                  Over a decade of proven success in web design, branding, and
+                  digital marketing across 50+ industries.
+                </p>
+              </article>
+
+              <article className="services-index-benefit">
+                <div className="services-index-benefit__top">
+                  <span>02</span>
+                  <i className="fas fa-bullseye" aria-hidden="true" />
+                </div>
+
+                <h3>Results-Driven</h3>
+
+                <p>
+                  We focus on measurable outcomes that impact your bottom line,
+                  not just vanity metrics.
+                </p>
+              </article>
+
+              <article className="services-index-benefit">
+                <div className="services-index-benefit__top">
+                  <span>03</span>
+                  <i className="fas fa-dollar-sign" aria-hidden="true" />
+                </div>
+
+                <h3>Transparent Pricing</h3>
+
+                <p>
+                  Clear, upfront pricing with no hidden fees. Know exactly what
+                  you&apos;re paying for.
+                </p>
+              </article>
+
+              <article className="services-index-benefit">
+                <div className="services-index-benefit__top">
+                  <span>04</span>
+                  <i className="fas fa-handshake" aria-hidden="true" />
+                </div>
+
+                <h3>Personalized Service</h3>
+
+                <p>
+                  Work directly with our founder. No call centers, no junior
+                  staff. Just experienced professionals.
+                </p>
+              </article>
+
+              <article className="services-index-benefit">
+                <div className="services-index-benefit__top">
+                  <span>05</span>
+                  <i className="fas fa-bolt" aria-hidden="true" />
+                </div>
+
+                <h3>Fast Turnaround</h3>
+
+                <p>
+                  Projects delivered on time, every time. We respect your
+                  deadlines and business needs.
+                </p>
+              </article>
+
+              <article className="services-index-benefit">
+                <div className="services-index-benefit__top">
+                  <span>06</span>
+                  <i className="fas fa-headset" aria-hidden="true" />
+                </div>
+
+                <h3>Ongoing Support</h3>
+
+                <p>
+                  24-hour response time and dedicated support long after your
+                  project launches.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <CTASection
+          title="Ready to Get Started?"
+          description="Let&apos;s discuss which services are right for your business. Get a free consultation and custom quote."
+          primaryButtonText="Get Free Quote"
+          primaryButtonAction="contact"
+        />
+      </div>
     </>
   );
 }

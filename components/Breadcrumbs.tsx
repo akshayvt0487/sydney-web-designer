@@ -11,14 +11,14 @@ interface BreadcrumbsProps {
 
 export default function Breadcrumbs({ items }: BreadcrumbsProps) {
   return (
-    <nav aria-label="Breadcrumb" className="py-4 border-b border-gray-200 bg-gray-50">
+    <nav aria-label="Breadcrumb" className="service-paper-breadcrumbs paper-grain">
       <div className="container">
-        <ol className="flex items-center gap-2 text-sm flex-wrap">
+        <ol className="service-paper-breadcrumbs__list">
           {items.map((item, index) => (
-            <li key={index} className="flex items-center gap-2">
+            <li key={`${item.name}-${index}`} className="service-paper-breadcrumbs__item">
               {index > 0 && (
                 <svg
-                  className="w-4 h-4 text-gray-400"
+                  className="service-paper-breadcrumbs__chevron"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -32,15 +32,13 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
                   />
                 </svg>
               )}
+
               {index === items.length - 1 ? (
-                <span className="text-gray-600 font-medium" aria-current="page">
+                <span className="service-paper-breadcrumbs__current" aria-current="page">
                   {item.name}
                 </span>
               ) : (
-                <Link
-                  href={item.url}
-                  className="text-primary-orange hover:text-dark-orange hover:underline transition-colors"
-                >
+                <Link href={item.url} className="service-paper-breadcrumbs__link">
                   {item.name}
                 </Link>
               )}

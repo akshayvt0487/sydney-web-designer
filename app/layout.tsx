@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { Inter, Libre_Baskerville, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -16,6 +16,14 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-heading",
+});
+
+const libreBaskerville = Libre_Baskerville({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
+  display: "swap",
+  variable: "--font-editorial",
 });
 
 export const metadata: Metadata = {
@@ -53,11 +61,11 @@ export default function RootLayout({
     <html
       lang="en-AU"
       suppressHydrationWarning
-      className={`${inter.variable} ${plusJakartaSans.variable}`}
+      className={`${inter.variable} ${plusJakartaSans.variable} ${libreBaskerville.variable}`}
     >
       <head>
-        <meta name="msapplication-TileColor" content="#f59e0b" />
-        <meta name="theme-color" content="#1e293b" />
+        <meta name="msapplication-TileColor" content="#c85c2c" />
+        <meta name="theme-color" content="#181d26" />
 
         <script
           type="application/ld+json"

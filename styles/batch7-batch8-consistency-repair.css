@@ -1,0 +1,434 @@
+/* ==========================================================================
+   Batch 7 + Batch 8 Consistency Repair
+   Fixes: dark section override, section headings, icon states and breadcrumbs.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Breadcrumb navigation — applies wherever existing breadcrumb data is rendered
+   -------------------------------------------------------------------------- */
+
+main nav[aria-label="Breadcrumb"] {
+  border-top: 1px solid rgba(245, 158, 11, 0.16) !important;
+  border-bottom: 1px solid var(--rule) !important;
+  background-color: var(--paper) !important;
+  background-image:
+    radial-gradient(rgba(16, 20, 28, 0.045) 0.7px, transparent 0.7px),
+    radial-gradient(rgba(245, 158, 11, 0.02) 0.7px, transparent 0.7px) !important;
+  background-position: 0 0, 2px 2px !important;
+  background-size: 4px 4px !important;
+  padding-block: clamp(0.9rem, 1.7vw, 1.2rem) !important;
+}
+
+main nav[aria-label="Breadcrumb"] ol {
+  column-gap: 0.7rem;
+  row-gap: 0.45rem;
+  font-size: clamp(0.76rem, 1vw, 0.85rem);
+  font-weight: 650;
+}
+
+main nav[aria-label="Breadcrumb"] a {
+  color: var(--rust-bright) !important;
+  text-decoration: none !important;
+}
+
+main nav[aria-label="Breadcrumb"] span[aria-current="page"] {
+  color: var(--ink) !important;
+}
+
+/* --------------------------------------------------------------------------
+   SEO route headings — consistent centred, contained typography
+   -------------------------------------------------------------------------- */
+
+.seo-paper-route :is(
+  .seo-route-cards,
+  .seo-route-lists,
+  .seo-route-support,
+  .seo-route-compare,
+  .seo-route-process,
+  .seo-route-case,
+  .seo-route-faq,
+  .seo-route-portfolio,
+  .seo-route-testimonials
+) {
+  padding-block: clamp(3.6rem, 6vw, 5.15rem) !important;
+}
+
+.seo-paper-route :is(
+  .seo-route-cards,
+  .seo-route-lists,
+  .seo-route-support,
+  .seo-route-compare,
+  .seo-route-process,
+  .seo-route-case,
+  .seo-route-faq,
+  .seo-route-portfolio,
+  .seo-route-testimonials
+) :is(.section-title, .text-center.max-w-3xl.mx-auto.mb-12) {
+  display: flex;
+  max-width: min(100%, 1040px) !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto clamp(2rem, 4vw, 2.75rem) !important;
+  padding-inline: clamp(0.15rem, 1vw, 0.5rem);
+  text-align: center;
+}
+
+.seo-paper-route :is(
+  .seo-route-cards,
+  .seo-route-lists,
+  .seo-route-support,
+  .seo-route-compare,
+  .seo-route-process,
+  .seo-route-case,
+  .seo-route-faq,
+  .seo-route-portfolio,
+  .seo-route-testimonials
+) :is(.section-title, .text-center.max-w-3xl.mx-auto.mb-12) h2 {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 !important;
+  color: var(--ink) !important;
+  font-family: var(--font-heading), sans-serif !important;
+  font-size: clamp(1.95rem, 3.8vw, 3.35rem) !important;
+  font-weight: 790 !important;
+  letter-spacing: -0.065em !important;
+  line-height: 1.08 !important;
+  text-wrap: balance;
+}
+
+.seo-paper-route .seo-route-support :is(.section-title, .text-center.max-w-3xl.mx-auto.mb-12) h2,
+.seo-paper-route .seo-route-lists :is(.section-title, .text-center.max-w-3xl.mx-auto.mb-12) h2 {
+  font-size: clamp(1.8rem, 3.45vw, 3rem) !important;
+}
+
+.seo-paper-route :is(
+  .seo-route-cards,
+  .seo-route-lists,
+  .seo-route-support,
+  .seo-route-compare,
+  .seo-route-process,
+  .seo-route-case,
+  .seo-route-faq,
+  .seo-route-portfolio,
+  .seo-route-testimonials
+) :is(.section-title, .text-center.max-w-3xl.mx-auto.mb-12) h2::before {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 3px;
+  margin: 0 auto clamp(1rem, 2vw, 1.2rem);
+  background: var(--rust-bright);
+}
+
+.seo-paper-route :is(
+  .seo-route-cards,
+  .seo-route-lists,
+  .seo-route-support,
+  .seo-route-compare,
+  .seo-route-process,
+  .seo-route-case,
+  .seo-route-faq,
+  .seo-route-portfolio,
+  .seo-route-testimonials
+) :is(.section-title, .text-center.max-w-3xl.mx-auto.mb-12) > p {
+  max-width: 760px;
+  margin: clamp(0.95rem, 1.8vw, 1.15rem) auto 0 !important;
+  color: var(--muted) !important;
+  font-size: clamp(0.9rem, 1.2vw, 1rem) !important;
+  line-height: 1.72;
+  text-wrap: balance;
+}
+
+/* --------------------------------------------------------------------------
+   Dark editorial sections
+   Earlier generic cream selector had higher specificity; these fix that.
+   -------------------------------------------------------------------------- */
+
+.seo-paper-route > .seo-route-process,
+.seo-paper-route > .seo-route-case,
+.seo-paper-route > .seo-route-compare {
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(245, 158, 11, 0.24) !important;
+  border-bottom: 1px solid rgba(245, 238, 226, 0.15) !important;
+  background-color: var(--ink) !important;
+  background-image:
+    radial-gradient(rgba(245, 238, 226, 0.05) 0.68px, transparent 0.68px),
+    radial-gradient(rgba(245, 158, 11, 0.03) 0.68px, transparent 0.68px) !important;
+  background-position: 0 0, 2px 2px !important;
+  background-size: 4px 4px !important;
+  color: var(--paper) !important;
+}
+
+.seo-paper-route > .seo-route-process::after,
+.seo-paper-route > .seo-route-case::after,
+.seo-paper-route > .seo-route-compare::after {
+  position: absolute;
+  top: 0.35rem;
+  right: -0.35rem;
+  color: rgba(245, 238, 226, 0.034);
+  font-family: var(--font-heading), sans-serif;
+  font-size: clamp(4rem, 12vw, 10rem);
+  font-weight: 800;
+  letter-spacing: -0.1em;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.seo-paper-route > .seo-route-process::after {
+  content: "PROCESS";
+}
+
+.seo-paper-route > .seo-route-case::after {
+  content: "RESULTS";
+}
+
+.seo-paper-route > .seo-route-compare::after {
+  content: "TRUST";
+}
+
+.seo-paper-route > :is(.seo-route-process, .seo-route-case, .seo-route-compare) > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.seo-paper-route > :is(.seo-route-process, .seo-route-case, .seo-route-compare)
+  :is(.section-title, .text-center.max-w-3xl.mx-auto.mb-12) h2 {
+  color: var(--paper) !important;
+}
+
+.seo-paper-route > :is(.seo-route-process, .seo-route-case, .seo-route-compare)
+  :is(.section-title, .text-center.max-w-3xl.mx-auto.mb-12) > p {
+  color: #cbbfa9 !important;
+}
+
+/* Result board left content was unreadable while background stayed cream. */
+.seo-paper-route > .seo-route-case .card {
+  border: 2px solid rgba(245, 238, 226, 0.28) !important;
+  background: rgba(245, 238, 226, 0.035) !important;
+  box-shadow: 9px 9px 0 var(--rust) !important;
+}
+
+.seo-paper-route > .seo-route-case .card > .grid > div:first-child :is(h3, h4) {
+  color: var(--paper) !important;
+}
+
+.seo-paper-route > .seo-route-case .card > .grid > div:first-child p {
+  color: #cbbfa9 !important;
+}
+
+.seo-paper-route > .seo-route-case .card > .grid > div:last-child {
+  background: var(--rust) !important;
+}
+
+.seo-paper-route > .seo-route-case .card > .grid > div:last-child :is(h3, h4, p, span, li, i) {
+  color: var(--ink) !important;
+}
+
+/* --------------------------------------------------------------------------
+   Light cards — icon composition and headings
+   -------------------------------------------------------------------------- */
+
+.seo-paper-route :is(.seo-route-cards, .seo-route-lists, .seo-route-support) .card {
+  height: 100%;
+}
+
+.seo-paper-route :is(.seo-route-cards, .seo-route-support) .card > div:first-child:has(> i),
+.seo-paper-route .seo-route-support .card > i {
+  display: flex !important;
+  width: 3.6rem !important;
+  height: 3.6rem !important;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.15rem !important;
+  border: 1px solid rgba(245, 158, 11, 0.42) !important;
+  border-radius: 0 !important;
+  background: rgba(245, 158, 11, 0.08) !important;
+  color: var(--rust-bright) !important;
+  font-size: 1.42rem !important;
+  transition:
+    background-color 210ms ease,
+    border-color 210ms ease,
+    color 210ms ease,
+    transform 210ms var(--paper-ease);
+}
+
+.seo-paper-route :is(.seo-route-cards, .seo-route-support) .card > div:first-child:has(> i) > i {
+  color: var(--rust-bright) !important;
+  font-size: 1.42rem !important;
+}
+
+.seo-paper-route .seo-route-lists .card h3 {
+  align-items: center;
+  margin-bottom: clamp(1.1rem, 2vw, 1.35rem) !important;
+  font-size: clamp(1.1rem, 1.55vw, 1.35rem) !important;
+  line-height: 1.32 !important;
+}
+
+.seo-paper-route .seo-route-lists .card h3 > span {
+  display: inline-flex !important;
+  width: 2.7rem !important;
+  height: 2.7rem !important;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--rust-bright) !important;
+  border-radius: 0 !important;
+  background: rgba(245, 158, 11, 0.08) !important;
+  color: var(--rust-bright) !important;
+  font-size: 0.95rem !important;
+  font-weight: 780;
+  transition:
+    background-color 210ms ease,
+    border-color 210ms ease,
+    color 210ms ease;
+}
+
+.seo-paper-route :is(.seo-route-cards, .seo-route-lists) .card li {
+  line-height: 1.55;
+}
+
+.seo-paper-route :is(.seo-route-cards, .seo-route-lists) .card li i {
+  color: var(--rust-bright) !important;
+  font-size: 0.8rem !important;
+}
+
+/* --------------------------------------------------------------------------
+   Hover and mobile press — icons remain clean and controlled
+   -------------------------------------------------------------------------- */
+
+@media (hover: hover) and (pointer: fine) {
+  .seo-paper-route :is(.seo-route-cards, .seo-route-lists, .seo-route-support) .card:hover {
+    border-color: var(--ink) !important;
+    background: var(--rust) !important;
+    box-shadow: 10px 10px 0 var(--ink) !important;
+    transform: translate(-4px, -4px);
+  }
+
+  .seo-paper-route :is(.seo-route-cards, .seo-route-lists, .seo-route-support) .card:hover
+    :is(h3, h4, p, li, span) {
+    color: var(--ink) !important;
+  }
+
+  .seo-paper-route :is(.seo-route-cards, .seo-route-support) .card:hover > div:first-child:has(> i),
+  .seo-paper-route .seo-route-support .card:hover > i {
+    border-color: var(--ink) !important;
+    background: var(--ink) !important;
+    color: var(--rust-bright) !important;
+    transform: translateY(-2px);
+  }
+
+  .seo-paper-route :is(.seo-route-cards, .seo-route-support) .card:hover > div:first-child:has(> i) > i {
+    color: var(--rust-bright) !important;
+  }
+
+  .seo-paper-route .seo-route-lists .card:hover h3 > span {
+    border-color: var(--ink) !important;
+    background: var(--ink) !important;
+    color: var(--rust-bright) !important;
+  }
+
+  .seo-paper-route :is(.seo-route-cards, .seo-route-lists) .card:hover li i {
+    color: var(--ink) !important;
+  }
+
+  .seo-paper-route > .seo-route-process .card:hover {
+    border-color: var(--rust-bright) !important;
+    background: var(--rust) !important;
+    box-shadow: 9px 9px 0 #070b12 !important;
+    transform: translate(-4px, -4px);
+  }
+
+  .seo-paper-route > .seo-route-process .card:hover :is(h3, h4, p, span, i) {
+    color: var(--ink) !important;
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .seo-paper-route :is(.seo-route-cards, .seo-route-lists, .seo-route-support) .card:active {
+    border-color: var(--ink) !important;
+    background: var(--rust) !important;
+    box-shadow: 4px 4px 0 var(--ink) !important;
+    transform: translate(-2px, -2px) scale(0.993);
+  }
+
+  .seo-paper-route :is(.seo-route-cards, .seo-route-lists, .seo-route-support) .card:active
+    :is(h3, h4, p, li, span) {
+    color: var(--ink) !important;
+  }
+
+  .seo-paper-route :is(.seo-route-cards, .seo-route-support) .card:active > div:first-child:has(> i),
+  .seo-paper-route .seo-route-support .card:active > i {
+    border-color: var(--ink) !important;
+    background: var(--ink) !important;
+    color: var(--rust-bright) !important;
+  }
+
+  .seo-paper-route :is(.seo-route-cards, .seo-route-support) .card:active > div:first-child:has(> i) > i {
+    color: var(--rust-bright) !important;
+  }
+
+  .seo-paper-route .seo-route-lists .card:active h3 > span {
+    border-color: var(--ink) !important;
+    background: var(--ink) !important;
+    color: var(--rust-bright) !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Responsive containment
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 767px) {
+  .seo-paper-route :is(
+    .seo-route-cards,
+    .seo-route-lists,
+    .seo-route-support,
+    .seo-route-compare,
+    .seo-route-process,
+    .seo-route-case,
+    .seo-route-faq,
+    .seo-route-portfolio,
+    .seo-route-testimonials
+  ) {
+    padding-block: 3rem !important;
+  }
+
+  .seo-paper-route :is(
+    .seo-route-cards,
+    .seo-route-lists,
+    .seo-route-support,
+    .seo-route-compare,
+    .seo-route-process,
+    .seo-route-case,
+    .seo-route-faq
+  ) :is(.section-title, .text-center.max-w-3xl.mx-auto.mb-12) h2 {
+    font-size: clamp(1.75rem, 9vw, 2.15rem) !important;
+    letter-spacing: -0.055em !important;
+  }
+
+  .seo-paper-route > .seo-route-process::after,
+  .seo-paper-route > .seo-route-case::after,
+  .seo-paper-route > .seo-route-compare::after {
+    display: none;
+  }
+
+  .seo-paper-route > .seo-route-case .card {
+    box-shadow: 5px 5px 0 var(--rust) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .seo-paper-route .card,
+  .seo-paper-route .card i,
+  .seo-paper-route .card > div:first-child,
+  .seo-paper-route .card h3 > span {
+    transition: none !important;
+  }
+
+  .seo-paper-route .card:hover,
+  .seo-paper-route .card:active {
+    transform: none !important;
+  }
+}

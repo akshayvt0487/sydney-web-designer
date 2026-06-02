@@ -26,67 +26,51 @@ export default function PortfolioPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
-      {/* ── HERO ────────────────────────────────── */}
-      <section className="relative bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] overflow-hidden" style={{ height: 500 }}>
-        {/* Animated background pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-20 w-96 h-96 bg-[#f59e0b] rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-20 right-20 w-80 h-80 bg-[#f59e0b] rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-        </div>
+      <div className="portfolio-editorial">
+        {/* Hero */}
+        <section className="portfolio-hero">
+          <div className="container portfolio-hero__inner">
+            <div className="portfolio-hero__eyebrow">
+              <span />
+              <p>Our Work</p>
+              <span />
+            </div>
 
-        {/* Content */}
-        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
-          {/* Eyebrow */}
-          <div className="flex items-center gap-3 mb-6">
-            <span className="h-px w-10 bg-[#f59e0b]" />
-            <span className="text-[#f59e0b] text-sm font-semibold tracking-[0.2em] uppercase">
-              Our Work
-            </span>
-            <span className="h-px w-10 bg-[#f59e0b]" />
-          </div>
+            <p className="portfolio-hero__label">Web Design Portfolio</p>
 
-          <h1 className="text-xl md:text-2xl font-medium text-white/80 mb-3">
-            Web Design Portfolio
-          </h1>
-          <h2 className="text-5xl md:text-7xl font-black text-white leading-tight mb-6">
-            Websites That{" "}
-            <span className="relative inline-block">
-              <span className="text-[#f59e0b]">Convert</span>
-              {/* Underline squiggle */}
+            <h1>
+              Websites That <span>Convert</span>
+            </h1>
+
+            <p className="portfolio-hero__copy">
+              500+ websites delivered across 12+ industries. Real businesses,
+              real results.
+            </p>
+
+            <div className="portfolio-hero__scroll">
+              <span>Scroll to explore</span>
+
               <svg
-                className="absolute -bottom-2 left-0 w-full"
-                viewBox="0 0 200 8"
+                className="w-4 h-4"
                 fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
               >
                 <path
-                  d="M2 6 C50 2, 100 8, 150 4, 198 2"
-                  stroke="#f59e0b"
-                  strokeWidth="2.5"
                   strokeLinecap="round"
-                  fill="none"
-                  opacity="0.6"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
                 />
               </svg>
-            </span>
-          </h2>
-
-          <p className="text-slate-300 text-lg md:text-xl max-w-2xl mx-auto mb-8">
-            500+ websites delivered across 12+ industries. Real businesses, real results.
-          </p>
-
-          {/* Scroll indicator */}
-          <div className="flex flex-col items-center gap-2 text-slate-500 text-xs animate-bounce mt-2">
-            <span>Scroll to explore</span>
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-            </svg>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ── PORTFOLIO GRID ──────────────────────── */}
-      <PortfolioGrid />
+        {/* Portfolio Grid */}
+        <PortfolioGrid />
+      </div>
     </>
   );
 }

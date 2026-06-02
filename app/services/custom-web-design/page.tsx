@@ -283,6 +283,9 @@ export default function CustomWebDesignPage() {
     },
   ];
 
+  const heroProject = resultProjects[0].project;
+  const heroImage = heroProject?.images?.[0] || heroProject?.image;
+
   return (
     <>
       <script
@@ -315,10 +318,8 @@ export default function CustomWebDesignPage() {
         }}
       />
 
-      {/* Breadcrumbs */}
       <Breadcrumbs items={breadcrumbs} />
 
-      {/* Hero Section */}
       <ServiceHeroSection
         h1="Web Designer Sydney"
         badge={{
@@ -337,100 +338,69 @@ export default function CustomWebDesignPage() {
             href: "#process",
           },
         }}
+        heroImage={heroImage}
+        heroImageAlt="OSAN Ability website project"
       />
 
-      {/* Trust Badges Section */}
-      <section className="border-b border-slate-200 bg-white py-10 md:py-12">
-        <div className="container mx-auto px-6">
-          <div className="mx-auto grid max-w-5xl grid-cols-2 gap-6 md:grid-cols-4 md:gap-8">
-            {trustBadges.map((badge) => (
-              <div
-                key={badge.text}
-                className="flex flex-col items-center justify-center gap-3 text-center"
-              >
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary-orange/10 text-primary-orange">
-                  <i className={`fas ${badge.icon} text-lg`} aria-hidden="true" />
-                </div>
-
-                <div className="text-sm font-bold text-slate-600">
-                  {badge.text}
-                </div>
+      <section className="service-detail-trust paper-grain">
+        <div className="container">
+          <div className="service-detail-trust__grid">
+            {trustBadges.map((badge, index) => (
+              <div key={badge.text} className="service-detail-trust__item">
+                <span className="service-detail-trust__number">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <i className={`fas ${badge.icon}`} aria-hidden="true" />
+                <p>{badge.text}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="bg-slate-50 py-16 md:py-24">
-        <div className="container mx-auto max-w-7xl px-6">
-          <h2 className="mb-10 text-center font-heading text-3xl font-bold text-slate-900 md:mb-14 md:text-5xl">
-            Why Choose Custom Web Design{" "}
-            <span className="text-primary-orange">Sydney</span>?
-          </h2>
-
-          <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4">
-            {stats.map((stat) => (
-              <div
-                key={stat.text}
-                className="rounded-2xl border border-slate-200 border-t-4 border-t-primary-orange bg-white p-6 text-center shadow-sm transition-all hover:border-primary-orange/30 hover:shadow-card-hover md:p-8"
-              >
-                <div className="mb-2 font-heading text-4xl font-bold text-primary-orange md:text-5xl">
-                  {stat.value}
-                </div>
-
-                <div className="text-base font-medium text-slate-600 md:text-lg">
-                  {stat.text}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="bg-white py-16 md:py-24">
-        <div className="container mx-auto max-w-7xl px-6">
-          <div className="mb-10 text-center md:mb-14">
-            <h2 className="mb-5 font-heading text-3xl font-bold text-slate-900 md:text-5xl">
-              Our Custom Web Design Sydney{" "}
-              <span className="text-primary-orange">Services</span>
+      <section className="service-paper-section service-detail-stats paper-grain">
+        <div className="container">
+          <div className="service-paper-heading service-paper-heading--center">
+            <h2>
+              Why Choose Custom Web Design <span>Sydney</span>?
             </h2>
-
-            <p className="mx-auto max-w-3xl text-base text-slate-600 md:text-xl">
-              Comprehensive solutions designed to help your business succeed
-            </p>
           </div>
 
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {features.map((feature) => (
-              <article
-                key={feature.title}
-                className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:border-primary-orange/30 hover:shadow-card-hover md:p-8"
-              >
-                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary-orange/10 text-primary-orange">
-                  <i
-                    className={`fas ${feature.icon} text-xl`}
-                    aria-hidden="true"
-                  />
+          <div className="service-detail-stats__grid">
+            {stats.map((stat) => (
+              <article key={stat.text} className="service-detail-stat">
+                <div className="service-detail-stat__value">{stat.value}</div>
+                <div className="service-detail-stat__text">{stat.text}</div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="service-paper-section service-detail-features paper-grain">
+        <div className="container">
+          <div className="service-paper-heading service-paper-heading--center">
+            <h2>
+              Our Custom Web Design Sydney <span>Services</span>
+            </h2>
+            <p>Comprehensive solutions designed to help your business succeed</p>
+          </div>
+
+          <div className="service-detail-features__grid">
+            {features.map((feature, index) => (
+              <article key={feature.title} className="service-detail-feature">
+                <div className="service-detail-feature__top">
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <i className={`fas ${feature.icon}`} aria-hidden="true" />
                 </div>
 
-                <h3 className="mb-2 font-heading text-xl font-bold text-slate-900 md:text-2xl">
-                  {feature.title}
-                </h3>
+                <h3>{feature.title}</h3>
+                <p>{feature.description}</p>
 
-                <p className="mb-5 text-slate-600">{feature.description}</p>
-
-                <ul className="space-y-3">
+                <ul>
                   {feature.points.map((point) => (
-                    <li
-                      key={point}
-                      className="flex items-start gap-3 text-slate-600"
-                    >
-                      <i
-                        className="fas fa-check mt-1 text-sm text-primary-orange"
-                        aria-hidden="true"
-                      />
+                    <li key={point}>
+                      <i className="fas fa-check" aria-hidden="true" />
                       <span>{point}</span>
                     </li>
                   ))}
@@ -441,86 +411,67 @@ export default function CustomWebDesignPage() {
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="bg-slate-50 py-16 md:py-24" id="process">
-        <div className="container mx-auto max-w-7xl px-6">
-          <div className="mb-10 text-center md:mb-14">
-            <h2 className="mb-5 font-heading text-3xl font-bold text-slate-900 md:text-5xl">
-              Our Proven <span className="text-primary-orange">Process</span>
+      <section className="service-detail-process paper-grain" id="process">
+        <div className="container">
+          <div className="service-paper-heading service-paper-heading--dark service-paper-heading--center">
+            <h2>
+              Our Proven <span>Process</span>
             </h2>
-
-            <p className="mx-auto max-w-3xl text-base text-slate-600 md:text-xl">
-              A systematic approach to deliver outstanding results
-            </p>
+            <p>A systematic approach to deliver outstanding results</p>
           </div>
 
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <div className="service-detail-process__grid">
             {processSteps.map((step) => (
-              <article
-                key={step.number}
-                className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:border-primary-orange/30 hover:shadow-card-hover md:p-8"
-              >
-                <div className="mb-6 flex h-13 w-13 items-center justify-center rounded-xl bg-slate-900 px-4 py-3 font-heading text-xl font-bold text-white">
-                  {step.number}
+              <article key={step.number} className="service-detail-process__card">
+                <div className="service-detail-process__head">
+                  <span>{step.number.padStart(2, "0")}</span>
+                  <b aria-hidden="true" />
                 </div>
 
-                <h3 className="mb-3 font-heading text-xl font-bold text-slate-900 md:text-2xl">
-                  {step.title}
-                </h3>
-
-                <p className="leading-7 text-slate-600">{step.description}</p>
+                <h3>{step.title}</h3>
+                <p>{step.description}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Case Studies Section */}
-      <section className="bg-white py-16 md:py-24">
-        <div className="container mx-auto max-w-7xl px-6">
-          <div className="mb-10 text-center md:mb-14">
-            <span className="mb-3 block text-xs font-bold uppercase tracking-[0.28em] text-primary-orange">
-              Results
-            </span>
-
-            <h2 className="font-heading text-3xl font-bold text-slate-900 md:text-5xl">
-              Real Results for Sydney{" "}
-              <span className="text-primary-orange">Businesses</span>
+      <section className="service-paper-section service-detail-results paper-grain">
+        <div className="container">
+          <div className="service-paper-heading service-paper-heading--center">
+            <span className="service-detail-results__kicker">Results</span>
+            <h2>
+              Real Results for Sydney <span>Businesses</span>
             </h2>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="service-detail-results__grid">
             {resultProjects.map((result) => {
               const previewImage =
                 result.project?.images?.[0] || result.project?.image;
 
               return (
-                <article
-                  key={result.name}
-                  className="group overflow-hidden rounded-2xl border border-slate-200 bg-white transition-all duration-300 hover:border-primary-orange/30 hover:shadow-card-hover"
-                >
+                <article key={result.name} className="service-detail-result">
                   {previewImage && (
-                    <div className="relative h-[220px] overflow-hidden bg-slate-100 sm:h-[280px]">
+                    <div className="service-detail-result__media">
                       <Image
                         src={previewImage}
                         alt={`${result.name} website design result`}
                         fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                        className="object-contain"
                         sizes="(max-width: 767px) 100vw, 50vw"
                       />
-
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/30 via-transparent to-transparent" />
 
                       {result.project?.websiteUrl && (
                         <a
                           href={result.project.websiteUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-primary-navy shadow-lg transition-colors hover:bg-primary-orange hover:text-white"
+                          className="service-detail-result__website"
                         >
                           View Website
                           <i
-                            className="fas fa-arrow-up-right-from-square text-xs"
+                            className="fas fa-arrow-up-right-from-square"
                             aria-hidden="true"
                           />
                         </a>
@@ -528,18 +479,13 @@ export default function CustomWebDesignPage() {
                     </div>
                   )}
 
-                  <div className="p-6 md:p-8">
-                    <span className="mb-4 inline-flex rounded-full bg-primary-orange/10 px-3 py-1 text-xs font-semibold text-primary-orange">
+                  <div className="service-detail-result__body">
+                    <span className="service-detail-result__industry">
                       {result.industry}
                     </span>
 
-                    <h3 className="mb-3 font-heading text-2xl font-bold text-slate-900 transition-colors group-hover:text-primary-orange md:text-3xl">
-                      {result.name}
-                    </h3>
-
-                    <p className="text-base leading-7 text-slate-600 md:text-lg">
-                      {result.description}
-                    </p>
+                    <h3>{result.name}</h3>
+                    <p>{result.description}</p>
                   </div>
                 </article>
               );
@@ -548,188 +494,127 @@ export default function CustomWebDesignPage() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="bg-slate-50 py-16 md:py-24">
-        <div className="container mx-auto max-w-7xl px-6">
-          <h2 className="mb-10 text-center font-heading text-3xl font-bold text-slate-900 md:mb-14 md:text-5xl">
-            What Our Clients <span className="text-primary-orange">Say</span>
-          </h2>
+      <section className="service-paper-section service-detail-testimonials paper-grain">
+        <div className="container">
+          <div className="service-paper-heading service-paper-heading--center">
+            <h2>
+              What Our Clients <span>Say</span>
+            </h2>
+          </div>
 
-          <div className="grid gap-5 md:grid-cols-3">
-            {testimonials.map((testimonial) => (
-              <article
-                key={testimonial.name}
-                className="rounded-2xl border border-slate-200 border-t-4 border-t-primary-orange bg-white p-6 shadow-sm transition-all hover:shadow-card-hover md:p-8"
-              >
-                <div className="mb-5 flex gap-1 text-lg text-primary-orange">
-                  {[1, 2, 3, 4, 5].map((star) => (
-                    <i
-                      key={star}
-                      className="fas fa-star"
-                      aria-hidden="true"
-                    />
-                  ))}
+          <div className="service-detail-testimonials__grid">
+            {testimonials.map((testimonial, index) => (
+              <article key={testimonial.name} className="service-detail-testimonial">
+                <div className="service-detail-testimonial__top">
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <div aria-label="5 stars">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <i key={star} className="fas fa-star" aria-hidden="true" />
+                    ))}
+                  </div>
                 </div>
 
-                <p className="mb-7 text-base italic leading-8 text-slate-700">
-                  &quot;{testimonial.text}&quot;
-                </p>
+                <p>&quot;{testimonial.text}&quot;</p>
 
-                <div className="font-bold text-slate-900">
-                  {testimonial.name}
-                </div>
-
-                <div className="text-sm text-slate-500">
-                  {testimonial.detail}
-                </div>
+                <footer>
+                  <strong>{testimonial.name}</strong>
+                  <span>{testimonial.detail}</span>
+                </footer>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Interactive FAQ Section */}
-      <section className="bg-white py-16 md:py-24">
-        <div className="container mx-auto max-w-4xl px-6">
-          <div className="mb-10 text-center md:mb-14">
-            <h2 className="mb-5 font-heading text-3xl font-bold text-slate-900 md:text-5xl">
-              Frequently Asked{" "}
-              <span className="text-primary-orange">Questions</span>
+      <section className="service-paper-section service-faq-section paper-grain">
+        <div className="container">
+          <div className="service-paper-heading service-paper-heading--center">
+            <h2>
+              Frequently Asked <span>Questions</span>
             </h2>
-
-            <p className="mx-auto max-w-2xl text-base text-slate-600 md:text-xl">
-              Everything you need to know about custom web design
-            </p>
+            <p>Everything you need to know about custom web design</p>
           </div>
 
           <FAQAccordion faqs={faqs} />
         </div>
       </section>
 
-      {/* Related Services */}
       <RelatedServices services={relatedServices} />
 
-      {/* Lead Form Section */}
-      <section className="bg-slate-50 py-16 md:py-24">
-        <div className="container mx-auto max-w-5xl px-6">
-          <div className="rounded-3xl bg-dark-navy p-6 shadow-xl sm:p-10 md:p-16">
-            <div className="mb-9 text-center md:mb-12">
-              <h3 className="mb-4 font-heading text-3xl font-bold text-white md:text-4xl">
-                Get Your Free Consultation
-              </h3>
-
-              <p className="text-base text-slate-300 md:text-lg">
+            <section className="service-detail-lead paper-grain">
+        <div className="container">
+          <div className="service-detail-lead__frame">
+            <div className="service-detail-lead__heading">
+              <h3>Get Your Free Consultation</h3>
+              <p>
                 Tell us about your project and we&apos;ll provide expert advice
                 and a custom quote
               </p>
             </div>
 
-            <form className="mx-auto max-w-3xl space-y-6">
-              <div className="grid gap-6 md:grid-cols-2">
+            <form className="service-detail-lead__form">
+              <div className="service-detail-lead__grid">
                 <div>
-                  <label className="mb-2 block text-sm font-bold text-slate-300">
-                    Full Name *
-                  </label>
-
+                  <label>Full Name *</label>
                   <input
                     type="text"
                     required
                     placeholder="Your name"
-                    className="form-input rounded-xl border-slate-700 bg-slate-800/50 text-white placeholder-slate-500 focus:border-primary-orange focus:bg-slate-800 focus:ring-primary-orange/20"
+                    className="form-input"
                   />
                 </div>
 
                 <div>
-                  <label className="mb-2 block text-sm font-bold text-slate-300">
-                    Email *
-                  </label>
-
+                  <label>Email *</label>
                   <input
                     type="email"
                     required
                     placeholder="your@email.com"
-                    className="form-input rounded-xl border-slate-700 bg-slate-800/50 text-white placeholder-slate-500 focus:border-primary-orange focus:bg-slate-800 focus:ring-primary-orange/20"
+                    className="form-input"
                   />
                 </div>
 
                 <div>
-                  <label className="mb-2 block text-sm font-bold text-slate-300">
-                    Phone *
-                  </label>
-
+                  <label>Phone *</label>
                   <input
                     type="tel"
                     required
                     placeholder="04XX XXX XXX"
-                    className="form-input rounded-xl border-slate-700 bg-slate-800/50 text-white placeholder-slate-500 focus:border-primary-orange focus:bg-slate-800 focus:ring-primary-orange/20"
+                    className="form-input"
                   />
                 </div>
 
                 <div>
-                  <label className="mb-2 block text-sm font-bold text-slate-300">
-                    Company
-                  </label>
-
+                  <label>Company</label>
                   <input
                     type="text"
                     placeholder="Your company (optional)"
-                    className="form-input rounded-xl border-slate-700 bg-slate-800/50 text-white placeholder-slate-500 focus:border-primary-orange focus:bg-slate-800 focus:ring-primary-orange/20"
+                    className="form-input"
                   />
                 </div>
               </div>
 
-              <div>
-                <label className="mb-2 block text-sm font-bold text-slate-300">
-                  Tell us about your project
-                </label>
-
+              <div className="service-detail-lead__message">
+                <label>Tell us about your project</label>
                 <textarea
                   placeholder="What are you looking to achieve?"
-                  rows={4}
-                  className="form-textarea rounded-xl border-slate-700 bg-slate-800/50 text-white placeholder-slate-500 focus:border-primary-orange focus:bg-slate-800 focus:ring-primary-orange/20"
+                  rows={7}
+                  className="form-textarea"
                 />
               </div>
 
-              <div className="pt-4 text-center">
-                <button
-                  type="submit"
-                  className="btn btn-primary btn-lg rounded-lg shadow-sm"
-                >
+              <div className="service-detail-lead__submit">
+                <button type="submit" className="paper-button paper-button--rust">
                   Get Free Quote
                 </button>
 
-                <p className="mt-4 text-sm text-slate-400">
-                  <i
-                    className="fas fa-comment-dots mr-2"
-                    aria-hidden="true"
-                  />
+                <p>
+                  <i className="fas fa-comment-dots" aria-hidden="true" />
                   We&apos;ll respond within 24 hours
                 </p>
               </div>
             </form>
           </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="bg-primary-orange py-16 md:py-24">
-        <div className="container mx-auto max-w-4xl px-6 text-center">
-          <h2 className="mb-5 font-heading text-3xl font-bold text-white md:text-5xl">
-            Ready to Get <span className="text-slate-900">Started</span>?
-          </h2>
-
-          <p className="mx-auto mb-9 max-w-2xl text-base text-white/90 md:text-xl">
-            Let&apos;s discuss your project and create a custom solution for
-            your business
-          </p>
-
-          <button
-            type="button"
-            data-popup="contact"
-            className="btn btn-lg rounded-lg bg-slate-900 text-white shadow-sm hover:bg-slate-800"
-          >
-            Get Free Quote
-          </button>
         </div>
       </section>
     </>

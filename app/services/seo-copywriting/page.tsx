@@ -1,9 +1,10 @@
+import Breadcrumbs from "@/components/Breadcrumbs";
 import Link from "next/link";
 import { generateMetadata } from "@/lib/metadata";
 import { generateBreadcrumbSchema, generateServiceSchema } from "@/lib/schemas";
 import CTASection from "@/components/CTASection";
 import ServiceHeroSection from "@/components/ServiceHeroSection";
-
+import FAQAccordion from "@/components/FAQAccordion";
 export const metadata = generateMetadata({
   title: "SEO Copywriting Sydney | Content That Ranks & Converts",
   description: "Expert SEO copywriting services in Sydney. Create compelling, keyword-optimized content that ranks on Google and converts visitors into customers.",
@@ -150,7 +151,7 @@ export default function SEOCopywritingPage() {
 
   const contentTypes = [
     { icon: "fa-file-alt", type: "Blog Posts", description: "Engaging articles that rank and convert" },
-    { icon: "fa-browser", type: "Landing Pages", description: "High-converting SEO landing pages" },
+    { icon: "fa-window-maximize", type: "Landing Pages", description: "High-converting SEO landing pages" },
     { icon: "fa-shopping-cart", type: "Product Descriptions", description: "SEO-optimized product copy" },
     { icon: "fa-book", type: "Pillar Content", description: "Comprehensive topic authority pages" },
     { icon: "fa-question-circle", type: "FAQ Content", description: "Answer user questions, rank for voice search" },
@@ -208,7 +209,7 @@ export default function SEOCopywritingPage() {
   ];
 
   return (
-    <>
+    <div className="seo-paper-route seo-paper-route--seo-copywriting paper-grain">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
@@ -217,6 +218,8 @@ export default function SEOCopywritingPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(generateServiceSchema(serviceData.name, serviceData.description)) }}
       />
+
+      <Breadcrumbs items={breadcrumbs} />
 
       {/* Hero Section */}
       <ServiceHeroSection
@@ -240,7 +243,7 @@ export default function SEOCopywritingPage() {
       />
 
       {/* Stats Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="seo-route-stats py-16 bg-gray-50">
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
             <div className="text-center">
@@ -264,7 +267,7 @@ export default function SEOCopywritingPage() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-white">
+      <section className="seo-route-cards py-20 bg-white">
         <div className="container">
           <div className="section-title text-center">
             <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Why SEO Copywriting Drives Business <span className="text-[#f59e0b]">Growth</span></h2>
@@ -294,7 +297,7 @@ export default function SEOCopywritingPage() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-[#f8fafc]" id="services">
+      <section className="seo-route-lists py-20 bg-[#f8fafc]" id="services">
         <div className="container">
           <div className="section-title text-center">
             <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Our SEO Copywriting <span className="text-[#f59e0b]">Services</span></h2>
@@ -325,7 +328,7 @@ export default function SEOCopywritingPage() {
       </section>
 
       {/* Content Types */}
-      <section className="py-20 bg-white">
+      <section className="seo-route-support py-20 bg-white">
         <div className="container">
           <div className="section-title text-center">
             <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Content Types We <span className="text-[#f59e0b]">Create</span></h2>
@@ -345,11 +348,13 @@ export default function SEOCopywritingPage() {
       </section>
 
       {/* Case Study Section */}
-      <section className="py-20 bg-gradient-to-br from-[#1e293b] to-[#0f172a] text-white">
+      <section className="seo-route-case py-20 bg-gradient-to-br from-[#1e293b] to-[#0f172a] text-white">
         <div className="container">
-          <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-center mb-4 text-white">Real SEO Copywriting <span className="text-[#f59e0b]">Results</span></h2>
-            <p className="text-white">How strategic content transformed organic performance</p>
+          <div className="seo-results-header">
+            <h2>
+              Real SEO Copywriting <span>Results</span>
+            </h2>
+            <p>How strategic content transformed organic performance</p>
           </div>
 
           <div className="max-w-5xl mx-auto">
@@ -389,21 +394,22 @@ export default function SEOCopywritingPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-white">
+      <section className="seo-route-faq py-20 bg-white">
         <div className="container">
           <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">SEO Copywriting Frequently Asked <span className="text-[#f59e0b]">Questions</span></h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">
+              SEO Copywriting Frequently Asked{" "}
+              <span className="text-[#f59e0b]">Questions</span>
+            </h2>
             <p>Common questions about SEO content creation</p>
           </div>
 
-          <div className="max-w-4xl mx-auto space-y-6">
-            {faq.map((item, index) => (
-              <div key={index} className="card">
-                <h3 className="text-xl font-bold mb-3 text-primary-navy">{item.q}</h3>
-                <p className="text-gray-700 leading-relaxed">{item.a}</p>
-              </div>
-            ))}
-          </div>
+          <FAQAccordion
+            faqs={faq.map((item) => ({
+              question: item.q,
+              answer: item.a,
+            }))}
+          />
         </div>
       </section>
 
@@ -415,6 +421,8 @@ export default function SEOCopywritingPage() {
         primaryButtonAction="seoAudit"
         secondaryButtonText="View Our Work"
       />
-    </>
+    </div>
   );
 }
+
+

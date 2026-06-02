@@ -1,3 +1,4 @@
+import Breadcrumbs from "@/components/Breadcrumbs";
 import Link from "next/link";
 import { generateMetadata } from "@/lib/metadata";
 import { generateBreadcrumbSchema, generateServiceSchema } from "@/lib/schemas";
@@ -209,7 +210,7 @@ export default function DigitalPRPage() {
   ];
 
   return (
-    <>
+    <div className="seo-paper-route seo-paper-route--digital-pr paper-grain">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }}
@@ -218,6 +219,8 @@ export default function DigitalPRPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(generateServiceSchema(serviceData.name, serviceData.description)) }}
       />
+
+      <Breadcrumbs items={breadcrumbs} />
 
       {/* Hero Section */}
       <ServiceHeroSection
@@ -241,7 +244,7 @@ export default function DigitalPRPage() {
       />
 
       {/* Stats Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="seo-route-stats py-16 bg-gray-50">
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
             <div className="text-center">
@@ -265,7 +268,7 @@ export default function DigitalPRPage() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-white">
+      <section className="seo-route-cards py-20 bg-white">
         <div className="container">
           <div className="section-title text-center">
             <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Why Digital PR Drives Business <span className="text-[#f59e0b]">Growth</span></h2>
@@ -295,7 +298,7 @@ export default function DigitalPRPage() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-[#f8fafc]" id="services">
+      <section className="seo-route-lists py-20 bg-[#f8fafc]" id="services">
         <div className="container">
           <div className="section-title text-center">
             <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Our Digital PR <span className="text-[#f59e0b]">Services</span></h2>
@@ -326,7 +329,7 @@ export default function DigitalPRPage() {
       </section>
 
       {/* Media Types */}
-      <section className="py-20 bg-white">
+      <section className="seo-route-support py-20 bg-white">
         <div className="container">
           <div className="section-title text-center">
             <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Where We Get You <span className="text-[#f59e0b]">Featured</span></h2>
@@ -345,96 +348,102 @@ export default function DigitalPRPage() {
         </div>
       </section>
 
-      {/* PR Process */}
-      <section className="py-20 bg-[#f8fafc]">
+            {/* PR Process */}
+      <section className="dpr-process paper-grain">
         <div className="container">
-          <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Our Digital PR <span className="text-[#f59e0b]">Process</span></h2>
+          <div className="editorial-service-heading">
+            <h2>
+              Our Digital PR <span>Process</span>
+            </h2>
             <p>Strategic approach to earning media coverage and authority</p>
           </div>
 
-          <div className="max-w-5xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="card text-center">
-              <div className="w-16 h-16 bg-[#f59e0b] text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                1
-              </div>
-              <h3 className="font-bold text-lg mb-3 text-primary-navy">Research & Strategy</h3>
-              <p className="text-sm text-gray-600">Identify news angles, target publications, and develop campaign strategy</p>
-            </div>
+          <div className="dpr-process__grid">
+            {[
+              {
+                number: "01",
+                title: "Research & Strategy",
+                description:
+                  "Identify news angles, target publications, and develop campaign strategy",
+              },
+              {
+                number: "02",
+                title: "Content Creation",
+                description:
+                  "Develop press releases, data research, and newsworthy assets",
+              },
+              {
+                number: "03",
+                title: "Outreach & Pitching",
+                description:
+                  "Contact journalists, respond to HARO, and pitch story angles",
+              },
+              {
+                number: "04",
+                title: "Track & Optimize",
+                description:
+                  "Monitor placements, measure impact, and refine strategy",
+              },
+            ].map((step) => (
+              <article key={step.number} className="dpr-process__card">
+                <span className="dpr-process__number">{step.number}</span>
 
-            <div className="card text-center">
-              <div className="w-16 h-16 bg-[#f59e0b] text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                2
-              </div>
-              <h3 className="font-bold text-lg mb-3 text-primary-navy">Content Creation</h3>
-              <p className="text-sm text-gray-600">Develop press releases, data research, and newsworthy assets</p>
-            </div>
+                <h3>{step.title}</h3>
 
-            <div className="card text-center">
-              <div className="w-16 h-16 bg-[#f59e0b] text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                3
-              </div>
-              <h3 className="font-bold text-lg mb-3 text-primary-navy">Outreach & Pitching</h3>
-              <p className="text-sm text-gray-600">Contact journalists, respond to HARO, and pitch story angles</p>
-            </div>
-
-            <div className="card text-center">
-              <div className="w-16 h-16 bg-[#f59e0b] text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                4
-              </div>
-              <h3 className="font-bold text-lg mb-3 text-primary-navy">Track & Optimize</h3>
-              <p className="text-sm text-gray-600">Monitor placements, measure impact, and refine strategy</p>
-            </div>
+                <p>{step.description}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Case Study Section */}
-      <section className="py-20 bg-gradient-to-br from-[#1e293b] to-[#0f172a] text-white">
+            {/* Case Study Section */}
+      <section className="editorial-proof editorial-proof--digital-pr">
         <div className="container">
-          <div className="section-title text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-center mb-4 text-white">Real Digital PR <span className="text-[#f59e0b]">Results</span></h2>
-            <p className="text-white">How we built media presence and authority from scratch</p>
+          <div className="editorial-service-heading editorial-service-heading--dark">
+            <h2>
+              Real Digital PR <span>Results</span>
+            </h2>
+            <p>How we built media presence and authority from scratch</p>
           </div>
 
-          <div className="max-w-5xl mx-auto">
-            <div className="rounded-3xl border border-primary-orange/35 bg-white p-6 shadow-[0_20px_48px_rgba(15,23,42,0.24)] sm:p-8 md:p-10">
-              <div className="grid md:grid-cols-5 gap-8">
-                <div className="md:col-span-3">
-                  <h3 className="text-3xl font-bold mb-2 text-[#1e293b]">{caseStudy.name}</h3>
-                  <div className="text-primary-orange font-semibold mb-6">Timeline: {caseStudy.timeline}</div>
+          <article className="editorial-proof__card">
+            <div className="editorial-proof__story">
+              <h3>{caseStudy.name}</h3>
 
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="font-bold mb-2 text-lg text-[#1e293b]">Challenge:</h4>
-                      <p className="text-slate-600 leading-relaxed">{caseStudy.challenge}</p>
-                    </div>
-                    <div>
-                      <h4 className="font-bold mb-2 text-lg text-[#1e293b]">Solution:</h4>
-                      <p className="text-slate-600 leading-relaxed">{caseStudy.solution}</p>
-                    </div>
-                  </div>
-                </div>
+              <p className="editorial-proof__timeline">
+                Timeline: {caseStudy.timeline}
+              </p>
 
-                <div className="md:col-span-2 bg-[#f59e0b] rounded-2xl p-8">
-                  <h4 className="font-bold mb-6 text-xl text-white">Results Achieved:</h4>
-                  <ul className="space-y-4">
-                    {caseStudy.results.map((result, idx) => (
-                      <li key={idx} className="flex items-start gap-3">
-                        <i className="fas fa-trophy text-white text-xl flex-shrink-0 mt-1"></i>
-                        <span className="text-white font-medium">{result}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+              <div className="editorial-proof__block">
+                <h4>Challenge:</h4>
+                <p>{caseStudy.challenge}</p>
+              </div>
+
+              <div className="editorial-proof__block">
+                <h4>Solution:</h4>
+                <p>{caseStudy.solution}</p>
               </div>
             </div>
-          </div>
+
+            <div className="editorial-proof__results">
+              <h4>Results Achieved:</h4>
+
+              <ul>
+                {caseStudy.results.map((result) => (
+                  <li key={result}>
+                    <i className="fas fa-trophy" aria-hidden="true" />
+                    <span>{result}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </article>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-white">
+      <section className="seo-route-faq py-20 bg-white">
         <div className="container">
           <div className="section-title text-center">
             <h2 className="text-4xl md:text-6xl font-bold text-center text-[#1e293b] mb-4">Digital PR Frequently Asked <span className="text-[#f59e0b]">Questions</span></h2>
@@ -458,6 +467,8 @@ export default function DigitalPRPage() {
         primaryButtonAction="seoAudit"
         secondaryButtonText="View Our Work"
       />
-    </>
+    </div>
   );
 }
+
+
