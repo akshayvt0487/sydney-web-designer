@@ -215,7 +215,7 @@ export default function TestimonialsPage() {
             <p>Let&apos;s create digital success together</p>
 
             <Link href="/contact" className="tm-cta__button">
-              Get Your Free Consultation
+              Get Your Free Consultation.
             </Link>
           </div>
         </section>
