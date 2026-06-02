@@ -321,6 +321,7 @@ export default function HighPerformanceLandingPagesPage() {
           primaryButtonText="Get Free Consultation"
           primaryButtonAction="contact"
           secondaryButtonText="View Our Work"
+          secondaryButtonHref="/portfolio"
         />
       </div>
     </>
