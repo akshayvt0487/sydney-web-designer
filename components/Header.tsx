@@ -31,6 +31,7 @@ const webDesignLinks = [
 ];
 
 const growthMarketingLinks = [
+  { name: "Growth Marketing Overview", href: "/growth-marketing" },
   { name: "SEO Sydney", href: "/services/seo-sydney" },
   { name: "Local SEO", href: "/services/local-seo" },
   { name: "Ecommerce SEO", href: "/services/ecommerce-seo" },

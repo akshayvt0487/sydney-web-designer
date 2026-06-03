@@ -3,6 +3,7 @@ import { Inter, Libre_Baskerville, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import BackToTopButton from "@/components/BackToTopButton";
 import PopupFormProvider from "@/components/PopupFormProvider";
 import { generateOrganizationSchema } from "@/lib/schemas";
 
@@ -80,6 +81,7 @@ export default function RootLayout({
           <Header />
           <main>{children}</main>
           <Footer />
+          <BackToTopButton />
         </PopupFormProvider>
       </body>
     </html>
