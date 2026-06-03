@@ -123,15 +123,30 @@ export default function GrowthMarketingMegaMenu() {
   const openMenu = () => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
     }
 
     setIsOpen(true);
   };
 
   const closeMenu = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+
     timeoutRef.current = setTimeout(() => {
       setIsOpen(false);
+      timeoutRef.current = null;
     }, 170);
+  };
+
+  const closeMenuImmediately = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+
+    setIsOpen(false);
   };
 
   return (
@@ -186,6 +201,7 @@ export default function GrowthMarketingMegaMenu() {
               <Link
                 href="/growth-marketing"
                 className="paper-mega__intro-link"
+                onClick={closeMenuImmediately}
               >
                 View Growth Marketing
                 <i className="fas fa-arrow-right" aria-hidden="true" />
@@ -206,6 +222,7 @@ export default function GrowthMarketingMegaMenu() {
                         key={service.href}
                         href={service.href}
                         className="paper-mega__service"
+                        onClick={closeMenuImmediately}
                       >
                         <span className="paper-mega__service-icon">
                           <i

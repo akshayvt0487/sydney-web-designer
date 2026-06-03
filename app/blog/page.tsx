@@ -104,60 +104,64 @@ export default function BlogPage() {
 
             <div className="blog-articles__grid">
               {blogPosts.map((post) => (
-                <article key={post.slug} className="blog-post-card">
-                  <div className="blog-post-card__image">
-                    <Image
-                      src={post.image}
-                      alt={post.title}
-                      fill
-                      sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
-                      className="blog-post-card__photo"
-                    />
-                  </div>
-
-                  <div className="blog-post-card__body">
-                    <div className="blog-post-card__meta">
-                      <span>
-                        <i className="fas fa-calendar" aria-hidden="true" />
-                        {post.date}
-                      </span>
-
-                      <span>
-                        <i className="fas fa-clock" aria-hidden="true" />
-                        {post.readTime}
-                      </span>
+                <Link
+                  key={post.slug}
+                  href={`/blog/${post.slug}`}
+                  className="blog-post-card__clickable"
+                  aria-label={`Read ${post.title}`}
+                >
+                  <article className="blog-post-card">
+                    <div className="blog-post-card__image">
+                      <Image
+                        src={post.image}
+                        alt={post.title}
+                        fill
+                        sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                        className="blog-post-card__photo"
+                      />
                     </div>
 
-                    <span className="blog-post-card__category">
-                      {post.category}
-                    </span>
+                    <div className="blog-post-card__body">
+                      <div className="blog-post-card__meta">
+                        <span>
+                          <i className="fas fa-calendar" aria-hidden="true" />
+                          {post.date}
+                        </span>
 
-                    <h3>{post.title}</h3>
+                        <span>
+                          <i className="fas fa-clock" aria-hidden="true" />
+                          {post.readTime}
+                        </span>
+                      </div>
 
-                    <p>{post.excerpt}</p>
+                      <span className="blog-post-card__category">
+                        {post.category}
+                      </span>
 
-                    <Link
-                      href={`/blog/${post.slug}`}
-                      className="blog-post-card__link"
-                    >
-                      Read More
+                      <h3>{post.title}</h3>
 
-                      <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        aria-hidden="true"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
-                    </Link>
-                  </div>
-                </article>
+                      <p>{post.excerpt}</p>
+
+                      <span className="blog-post-card__link">
+                        Read More
+
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          aria-hidden="true"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M9 5l7 7-7 7"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                  </article>
+                </Link>
               ))}
             </div>
           </div>

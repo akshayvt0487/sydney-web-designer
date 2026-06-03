@@ -7,6 +7,7 @@ import {
   generateLocalBusinessSchema,
 } from "@/lib/schemas";
 import TestimonialCard from "@/components/TestimonialCard";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import PortfolioCard from "@/components/PortfolioCard";
 import CTASection from "@/components/CTASection";
 import FAQAccordion from "@/components/FAQAccordion";
@@ -164,7 +165,9 @@ export default function EmailMarketingPage() {
       />
 
       <div className="marketing-service-page marketing-service-page--email">
-                {/* Hero Section */}
+        <Breadcrumbs items={breadcrumbs} />
+
+        {/* Hero Section */}
         <section className="msp-hero msp-hero--email paper-grain">
           <div className="container msp-hero__layout">
             <div className="msp-hero__content">

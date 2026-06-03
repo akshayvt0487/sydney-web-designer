@@ -31,6 +31,7 @@ const webDesignLinks = [
 ];
 
 const growthMarketingLinks = [
+  { name: "Growth Marketing Overview", href: "/growth-marketing" },
   { name: "SEO Sydney", href: "/services/seo-sydney" },
   { name: "Local SEO", href: "/services/local-seo" },
   { name: "Ecommerce SEO", href: "/services/ecommerce-seo" },
@@ -87,9 +88,8 @@ const mobileSecondaryLinks = [
 function Chevron({ open }: { open: boolean }) {
   return (
     <svg
-      className={`h-4 w-4 transition-transform duration-200 ${
-        open ? "rotate-180" : ""
-      }`}
+      className={`h-4 w-4 transition-transform duration-200 ${open ? "rotate-180" : ""
+        }`}
       fill="none"
       stroke="currentColor"
       viewBox="0 0 24 24"
@@ -261,9 +261,8 @@ export default function Header() {
         </div>
 
         <div
-          className={`paper-navbar paper-grain ${
-            scrolled ? "is-scrolled" : ""
-          }`}
+          className={`paper-navbar paper-grain ${scrolled ? "is-scrolled" : ""
+            }`}
         >
           <div className="container paper-navbar__row">
             <Link
@@ -289,9 +288,9 @@ export default function Header() {
                 Home
               </Link>
 
-              <WebDesignMegaMenu />
-              <GrowthMarketingMegaMenu />
-              <BrandingMegaMenu />
+              <WebDesignMegaMenu key={`web-design-${pathname}`} />
+              <GrowthMarketingMegaMenu key={`growth-marketing-${pathname}`} />
+              <BrandingMegaMenu key={`branding-${pathname}`} />
 
               <Link
                 href="/contact"
