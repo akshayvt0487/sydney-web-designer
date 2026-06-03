@@ -5,6 +5,7 @@ import {
   generateServiceSchema,
 } from "@/lib/schemas";
 import CTASection from "@/components/CTASection";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import ServiceHeroSection from "@/components/ServiceHeroSection";
 import FAQAccordion from "@/components/FAQAccordion";
 
@@ -320,24 +321,26 @@ export default function MetaAdsPage() {
       />
 
       <div className="meta-ads-editorial">
+        <Breadcrumbs items={breadcrumbs} />
+
         {/* Hero Section */}
         <ServiceHeroSection
           h1="Facebook Ads Sydney"
           badge={{
             icon: "fab fa-facebook",
-            text: "Meta Business Partner",
+            text: "Meta Business Partner"
           }}
           heading="Meta Ads Management Sydney"
           description="Drive sales and leads with precision-targeted Facebook & Instagram advertising. Reach 2.8 billion users. Target your ideal customers. Measure real results."
           buttons={{
             primary: {
               text: "Get Free Strategy Session",
-              dataPopup: "contact",
+              dataPopup: "contact"
             },
             secondary: {
               text: "View Campaign Types",
-              href: "#campaigns",
-            },
+              href: "#campaigns"
+            }
           }}
         />
 

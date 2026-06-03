@@ -104,15 +104,30 @@ export default function WebDesignMegaMenu() {
   const openMenu = () => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
     }
 
     setIsOpen(true);
   };
 
   const closeMenu = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+
     timeoutRef.current = setTimeout(() => {
       setIsOpen(false);
+      timeoutRef.current = null;
     }, 170);
+  };
+
+  const closeMenuImmediately = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+
+    setIsOpen(false);
   };
 
   return (
@@ -132,8 +147,9 @@ export default function WebDesignMegaMenu() {
         Web Design
 
         <svg
-          className={`h-4 w-4 transition-transform duration-200 ${isOpen ? "rotate-180" : ""
-            }`}
+          className={`h-4 w-4 transition-transform duration-200 ${
+            isOpen ? "rotate-180" : ""
+          }`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -160,10 +176,16 @@ export default function WebDesignMegaMenu() {
             <div className="paper-mega-grouped__header">
               <div>
                 <span className="paper-mega__eyebrow">Web Design</span>
-                <h2 className="paper-mega__intro-title">Website Design Services</h2>
+                <h2 className="paper-mega__intro-title">
+                  Website Design Services
+                </h2>
               </div>
 
-              <Link href="/web-design" className="paper-mega__intro-link">
+              <Link
+                href="/web-design"
+                className="paper-mega__intro-link"
+                onClick={closeMenuImmediately}
+              >
                 View Web Design
                 <i className="fas fa-arrow-right" aria-hidden="true" />
               </Link>
@@ -183,11 +205,13 @@ export default function WebDesignMegaMenu() {
                         key={service.href}
                         href={service.href}
                         className="paper-mega__service"
+                        onClick={closeMenuImmediately}
                       >
                         <span className="paper-mega__service-icon">
                           <i
-                            className={`${service.brand ? "fab" : "fas"} ${service.icon
-                              }`}
+                            className={`${service.brand ? "fab" : "fas"} ${
+                              service.icon
+                            }`}
                             aria-hidden="true"
                           />
                         </span>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { generateMetadata } from "@/lib/metadata";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import {
   generateBreadcrumbSchema,
   generateServiceSchema,
@@ -249,6 +250,8 @@ export default function SocialMediaMarketingPage() {
       />
 
       <div className="social-media-editorial">
+        <Breadcrumbs items={breadcrumbs} />
+
         {/* Hero Section */}
         <section className="smm-hero paper-grain">
           <div className="container smm-hero__layout">
@@ -559,7 +562,7 @@ export default function SocialMediaMarketingPage() {
           </div>
         </section>
 
-        
+
       </div>
     </>
   );

@@ -36622,3 +36622,1029 @@ html body main #local-seo-process-board .lse-process-step p {
     transform: none !important;
   }
 }
+/* ==========================================================================
+   FINAL HERO TYPOGRAPHY + LAYOUT REPLACEMENT
+   Replace older hero typography/alignment override blocks with this one.
+   - Keeps headings left aligned
+   - Removes forced balanced wrapping
+   - Uses available mobile width properly
+   - Keeps buttons compact
+   - Preserves all content and functionality
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Shared heading safety
+   -------------------------------------------------------------------------- */
+
+.paper-hero__heading,
+.paper-hero__heading-accent,
+.web-design-editorial .wde-hero h1,
+.web-design-plans-editorial .wdp-hero h1,
+.growth-marketing-editorial .gm-hero h1,
+.service-cover__title,
+.marketing-service-page .msp-hero h1,
+.social-media-editorial .smm-hero h1 {
+  font-family: var(--font-heading), sans-serif;
+  font-weight: 780;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+  text-wrap: wrap !important;
+}
+
+/* ==========================================================================
+   DESKTOP
+   ========================================================================== */
+
+@media (min-width: 1024px) {
+  /* ------------------------------------------------------------------------
+     Homepage Hero
+     ------------------------------------------------------------------------ */
+
+  .paper-hero__layout {
+    display: grid !important;
+    grid-template-columns: minmax(540px, 1.05fr) minmax(360px, 0.75fr) !important;
+    align-items: center !important;
+    gap: clamp(2.8rem, 4.5vw, 4.8rem) !important;
+  }
+
+  .paper-hero__content {
+    width: 100% !important;
+    max-width: 760px !important;
+    text-align: left !important;
+  }
+
+  .paper-hero__heading {
+    width: 100% !important;
+    max-width: 720px !important;
+    margin: 0 !important;
+    font-size: clamp(3.3rem, 4.4vw, 4.65rem) !important;
+    letter-spacing: -0.056em !important;
+    line-height: 1.07 !important;
+    text-align: left !important;
+  }
+
+  .paper-hero__heading-accent {
+    display: block !important;
+    width: 100% !important;
+    max-width: 760px !important;
+    margin: 0.82rem 0 0 !important;
+    font-size: clamp(2.28rem, 3.12vw, 3.1rem) !important;
+    letter-spacing: -0.044em !important;
+    line-height: 1.14 !important;
+    text-align: left !important;
+  }
+
+  .paper-hero__description {
+    max-width: 610px !important;
+    margin: 1.2rem 0 0 !important;
+    font-size: 0.98rem !important;
+    line-height: 1.72 !important;
+    text-align: left !important;
+  }
+
+  /* ------------------------------------------------------------------------
+     Web Design Hero
+     ------------------------------------------------------------------------ */
+
+  .web-design-editorial .wde-hero {
+    padding-block: clamp(3.6rem, 5vw, 4.8rem) !important;
+  }
+
+  .web-design-editorial .wde-hero__grid {
+    display: grid !important;
+    grid-template-columns: minmax(560px, 1.08fr) minmax(340px, 0.72fr) !important;
+    align-items: center !important;
+    gap: clamp(2.5rem, 4vw, 4.3rem) !important;
+  }
+
+  .web-design-editorial .wde-hero__content {
+    width: 100% !important;
+    max-width: 740px !important;
+    text-align: left !important;
+  }
+
+  .web-design-editorial .wde-hero h1 {
+    width: 100% !important;
+    max-width: 730px !important;
+    margin: 0 !important;
+    font-size: clamp(3rem, 4.15vw, 4.2rem) !important;
+    letter-spacing: -0.055em !important;
+    line-height: 1.08 !important;
+    text-align: left !important;
+  }
+
+  .web-design-editorial .wde-hero h1 span {
+    display: inline !important;
+    margin: 0 !important;
+    color: var(--rust-bright) !important;
+  }
+
+  .web-design-editorial .wde-hero__copy,
+  .web-design-editorial .wde-hero__content > p {
+    max-width: 600px !important;
+    margin: 1.05rem 0 0 !important;
+    font-size: 0.97rem !important;
+    line-height: 1.7 !important;
+    text-align: left !important;
+  }
+
+  /* ------------------------------------------------------------------------
+     Web Design Plans Hero
+     ------------------------------------------------------------------------ */
+
+  .web-design-plans-editorial .wdp-hero h1,
+  .web-design-plans-editorial .wdp-hero__content h1 {
+    width: 100% !important;
+    max-width: 760px !important;
+    margin: 0 !important;
+    font-size: clamp(3rem, 4.2vw, 4.25rem) !important;
+    letter-spacing: -0.055em !important;
+    line-height: 1.08 !important;
+    text-align: left !important;
+  }
+
+  .web-design-plans-editorial .wdp-hero h1 span,
+  .web-design-plans-editorial .wdp-hero__content h1 span {
+    display: inline !important;
+    margin: 0 !important;
+  }
+
+  .web-design-plans-editorial .wdp-hero p,
+  .web-design-plans-editorial .wdp-hero__content p {
+    max-width: 610px !important;
+    margin: 1rem 0 0 !important;
+    font-size: 0.97rem !important;
+    line-height: 1.7 !important;
+    text-align: left !important;
+  }
+
+  /* ------------------------------------------------------------------------
+     Growth Marketing Hero
+     ------------------------------------------------------------------------ */
+
+  .growth-marketing-editorial .gm-hero h1 {
+    width: 100% !important;
+    max-width: 930px !important;
+    margin: 0 auto !important;
+    font-size: clamp(3rem, 4.2vw, 4.25rem) !important;
+    letter-spacing: -0.055em !important;
+    line-height: 1.09 !important;
+  }
+
+  .growth-marketing-editorial .gm-hero__copy {
+    max-width: 690px !important;
+    margin: 1rem auto 0 !important;
+    font-size: 0.97rem !important;
+    line-height: 1.7 !important;
+  }
+
+  /* ------------------------------------------------------------------------
+     Shared ServiceHeroSection Pages
+     ------------------------------------------------------------------------ */
+
+  .service-cover__grid {
+    display: grid !important;
+    grid-template-columns: minmax(570px, 1.1fr) minmax(340px, 0.7fr) !important;
+    align-items: center !important;
+    gap: clamp(2.5rem, 4vw, 4.2rem) !important;
+    padding-block: clamp(3.6rem, 5vw, 4.8rem) !important;
+  }
+
+  .service-cover__content {
+    width: 100% !important;
+    max-width: 760px !important;
+    text-align: left !important;
+  }
+
+  .service-cover__title {
+    width: 100% !important;
+    max-width: 760px !important;
+    margin-top: 1.08rem !important;
+    font-size: clamp(2.8rem, 3.7vw, 3.9rem) !important;
+    letter-spacing: -0.052em !important;
+    line-height: 1.11 !important;
+    text-align: left !important;
+  }
+
+  .service-cover__description {
+    max-width: 610px !important;
+    margin: 0.94rem 0 0 !important;
+    font-size: 0.96rem !important;
+    line-height: 1.7 !important;
+    text-align: left !important;
+  }
+
+  .service-cover__composition {
+    display: flex !important;
+    width: 100% !important;
+    max-width: 455px !important;
+    justify-self: end !important;
+    justify-content: flex-end !important;
+  }
+
+  /* ------------------------------------------------------------------------
+     Content Marketing / Email Marketing / Conversion Optimization
+     ------------------------------------------------------------------------ */
+
+  .marketing-service-page .msp-hero {
+    padding-block: clamp(3.6rem, 5vw, 4.8rem) !important;
+  }
+
+  .marketing-service-page .msp-hero__layout {
+    display: grid !important;
+    grid-template-columns: minmax(580px, 1.12fr) minmax(340px, 0.68fr) !important;
+    align-items: center !important;
+    gap: clamp(2.5rem, 4vw, 4.3rem) !important;
+  }
+
+  .marketing-service-page .msp-hero__content {
+    width: 100% !important;
+    max-width: 790px !important;
+    text-align: left !important;
+  }
+
+  .marketing-service-page .msp-hero h1 {
+    width: 100% !important;
+    max-width: 790px !important;
+    margin-top: 1.08rem !important;
+    font-size: clamp(2.65rem, 3.45vw, 3.55rem) !important;
+    letter-spacing: -0.05em !important;
+    line-height: 1.12 !important;
+    text-align: left !important;
+  }
+
+  .marketing-service-page .msp-hero__copy {
+    max-width: 620px !important;
+    margin: 0.95rem 0 0 !important;
+    font-size: 0.96rem !important;
+    line-height: 1.7 !important;
+    text-align: left !important;
+  }
+
+  .marketing-service-page .msp-hero-art {
+    display: block !important;
+    width: 100% !important;
+    max-width: 450px !important;
+    justify-self: end !important;
+  }
+
+  /* ------------------------------------------------------------------------
+     Social Media Marketing Hero
+     ------------------------------------------------------------------------ */
+
+  .social-media-editorial .smm-hero__layout {
+    display: grid !important;
+    grid-template-columns: minmax(560px, 1.08fr) minmax(340px, 0.72fr) !important;
+    align-items: center !important;
+    gap: clamp(2.5rem, 4vw, 4.3rem) !important;
+  }
+
+  .social-media-editorial .smm-hero__content {
+    width: 100% !important;
+    max-width: 760px !important;
+    text-align: left !important;
+  }
+
+  .social-media-editorial .smm-hero h1 {
+    width: 100% !important;
+    max-width: 760px !important;
+    font-size: clamp(2.8rem, 3.7vw, 3.85rem) !important;
+    letter-spacing: -0.052em !important;
+    line-height: 1.11 !important;
+    text-align: left !important;
+  }
+
+  .social-media-editorial .smm-hero__copy {
+    max-width: 600px !important;
+    margin: 0.96rem 0 0 !important;
+    font-size: 0.96rem !important;
+    line-height: 1.7 !important;
+    text-align: left !important;
+  }
+}
+
+/* ==========================================================================
+   MOBILE HERO LAYOUT
+   Left aligned and allowed to use available screen width.
+   ========================================================================== */
+
+@media (max-width: 767px) {
+  /* ------------------------------------------------------------------------
+     Shared containers — normal margins, no narrow centred text column
+     ------------------------------------------------------------------------ */
+
+  .paper-hero .container,
+  .web-design-editorial .wde-hero .container,
+  .web-design-plans-editorial .wdp-hero .container,
+  .growth-marketing-editorial .gm-hero .container,
+  .service-cover .container,
+  .marketing-service-page .msp-hero .container,
+  .social-media-editorial .smm-hero .container {
+    width: calc(100% - 2rem) !important;
+    max-width: none !important;
+    margin-inline: auto !important;
+    padding-inline: 0 !important;
+  }
+
+  .paper-hero,
+  .web-design-editorial .wde-hero,
+  .web-design-plans-editorial .wdp-hero,
+  .growth-marketing-editorial .gm-hero,
+  .service-cover,
+  .marketing-service-page .msp-hero,
+  .social-media-editorial .smm-hero {
+    min-height: 0 !important;
+    padding-block: 2.25rem 2.5rem !important;
+  }
+
+  .paper-hero__layout,
+  .web-design-editorial .wde-hero__grid,
+  .web-design-plans-editorial .wdp-hero__layout,
+  .web-design-plans-editorial .wdp-hero .container,
+  .growth-marketing-editorial .gm-hero__inner,
+  .service-cover__grid,
+  .marketing-service-page .msp-hero__layout,
+  .social-media-editorial .smm-hero__layout {
+    display: block !important;
+    width: 100% !important;
+    min-height: 0 !important;
+    padding-block: 0 !important;
+  }
+
+  .paper-hero__content,
+  .web-design-editorial .wde-hero__content,
+  .web-design-plans-editorial .wdp-hero__content,
+  .growth-marketing-editorial .gm-hero__content,
+  .service-cover__content,
+  .marketing-service-page .msp-hero__content,
+  .social-media-editorial .smm-hero__content {
+    width: 100% !important;
+    max-width: none !important;
+    text-align: left !important;
+  }
+
+  /* ------------------------------------------------------------------------
+     Badges remain left aligned
+     ------------------------------------------------------------------------ */
+
+  .paper-hero__badge,
+  .web-design-editorial .wde-hero__badge,
+  .web-design-plans-editorial .wdp-hero__eyebrow,
+  .growth-marketing-editorial .gm-hero__eyebrow,
+  .service-cover__badge,
+  .marketing-service-page .msp-hero__badge {
+    display: inline-flex !important;
+    width: fit-content !important;
+    max-width: 100% !important;
+    justify-content: flex-start !important;
+    margin: 0 0 1rem !important;
+    padding: 0.4rem 0.54rem !important;
+    font-size: 0.5rem !important;
+    letter-spacing: 0.17em !important;
+    line-height: 1.38 !important;
+    text-align: left !important;
+  }
+
+  /* ------------------------------------------------------------------------
+     Homepage Hero
+     ------------------------------------------------------------------------ */
+
+  .paper-hero__heading {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    font-size: clamp(2.12rem, 9.5vw, 3.15rem) !important;
+    letter-spacing: -0.048em !important;
+    line-height: 1.11 !important;
+    text-align: left !important;
+  }
+
+  .paper-hero__heading-accent {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0.68rem 0 0 !important;
+    font-size: clamp(1.58rem, 7vw, 2.3rem) !important;
+    letter-spacing: -0.032em !important;
+    line-height: 1.2 !important;
+    text-align: left !important;
+  }
+
+  .paper-hero__description {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0.92rem 0 0 !important;
+    font-size: clamp(0.78rem, 2.35vw, 0.9rem) !important;
+    line-height: 1.64 !important;
+    text-align: left !important;
+  }
+
+  /* ------------------------------------------------------------------------
+     Web Design Hero
+     Allows "Design Sydney" to stay together when room exists.
+     ------------------------------------------------------------------------ */
+
+  .web-design-editorial .wde-hero h1 {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    font-size: clamp(2rem, 8.8vw, 3.05rem) !important;
+    letter-spacing: -0.046em !important;
+    line-height: 1.13 !important;
+    text-align: left !important;
+  }
+
+  .web-design-editorial .wde-hero h1 span {
+    display: inline !important;
+    margin: 0 !important;
+    color: var(--rust-bright) !important;
+  }
+
+  .web-design-editorial .wde-hero__copy,
+  .web-design-editorial .wde-hero__content > p {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0.84rem 0 0 !important;
+    font-size: clamp(0.77rem, 2.28vw, 0.88rem) !important;
+    line-height: 1.64 !important;
+    text-align: left !important;
+  }
+
+  /* ------------------------------------------------------------------------
+     Web Design Plans Hero
+     ------------------------------------------------------------------------ */
+
+  .web-design-plans-editorial .wdp-hero h1,
+  .web-design-plans-editorial .wdp-hero__content h1 {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    font-size: clamp(2rem, 8.9vw, 3.08rem) !important;
+    letter-spacing: -0.046em !important;
+    line-height: 1.13 !important;
+    text-align: left !important;
+  }
+
+  .web-design-plans-editorial .wdp-hero h1 span,
+  .web-design-plans-editorial .wdp-hero__content h1 span {
+    display: inline !important;
+    margin: 0 !important;
+  }
+
+  .web-design-plans-editorial .wdp-hero p,
+  .web-design-plans-editorial .wdp-hero__content p {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0.84rem 0 0 !important;
+    font-size: clamp(0.77rem, 2.28vw, 0.88rem) !important;
+    line-height: 1.64 !important;
+    text-align: left !important;
+  }
+
+  /* ------------------------------------------------------------------------
+     Growth Marketing Hero
+     ------------------------------------------------------------------------ */
+
+  .growth-marketing-editorial .gm-hero h1 {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    font-size: clamp(2rem, 8.9vw, 3.08rem) !important;
+    letter-spacing: -0.046em !important;
+    line-height: 1.13 !important;
+    text-align: left !important;
+  }
+
+  .growth-marketing-editorial .gm-hero__copy {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0.84rem 0 0 !important;
+    font-size: clamp(0.77rem, 2.28vw, 0.88rem) !important;
+    line-height: 1.64 !important;
+    text-align: left !important;
+  }
+
+  /* ------------------------------------------------------------------------
+     Shared ServiceHeroSection Pages
+     ------------------------------------------------------------------------ */
+
+  .service-cover__title {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    font-size: clamp(1.96rem, 8.7vw, 3rem) !important;
+    letter-spacing: -0.045em !important;
+    line-height: 1.14 !important;
+    text-align: left !important;
+  }
+
+  .service-cover__title::after {
+    display: block !important;
+    width: 2.45rem !important;
+    height: 2px !important;
+    margin: 0.75rem 0 0 !important;
+  }
+
+  .service-cover__description {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0.82rem 0 0 !important;
+    font-size: clamp(0.77rem, 2.28vw, 0.88rem) !important;
+    line-height: 1.63 !important;
+    text-align: left !important;
+  }
+
+  /* ------------------------------------------------------------------------
+     Content / Email / Conversion Heroes
+     ------------------------------------------------------------------------ */
+
+  .marketing-service-page .msp-hero h1 {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    font-size: clamp(1.86rem, 8.2vw, 2.82rem) !important;
+    letter-spacing: -0.043em !important;
+    line-height: 1.15 !important;
+    text-align: left !important;
+  }
+
+  .marketing-service-page .msp-hero__copy {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0.82rem 0 0 !important;
+    font-size: clamp(0.76rem, 2.28vw, 0.88rem) !important;
+    line-height: 1.63 !important;
+    text-align: left !important;
+  }
+
+  /* ------------------------------------------------------------------------
+     Social Media Marketing Hero
+     ------------------------------------------------------------------------ */
+
+  .social-media-editorial .smm-hero h1 {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    font-size: clamp(1.96rem, 8.7vw, 3rem) !important;
+    letter-spacing: -0.045em !important;
+    line-height: 1.14 !important;
+    text-align: left !important;
+  }
+
+  .social-media-editorial .smm-hero__copy {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0.82rem 0 0 !important;
+    font-size: clamp(0.77rem, 2.28vw, 0.88rem) !important;
+    line-height: 1.63 !important;
+    text-align: left !important;
+  }
+
+  /* ------------------------------------------------------------------------
+     Buttons — left aligned and compact
+     ------------------------------------------------------------------------ */
+
+  .paper-hero__actions,
+  .web-design-editorial .wde-hero__actions,
+  .web-design-plans-editorial .wdp-hero__actions,
+  .growth-marketing-editorial .gm-hero__actions,
+  .service-cover__actions,
+  .marketing-service-page .msp-hero__actions,
+  .social-media-editorial .smm-hero__actions {
+    display: flex !important;
+    width: 100% !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    gap: 0.48rem !important;
+    margin-top: 1.12rem !important;
+  }
+
+  .paper-hero__actions .paper-button,
+  .web-design-editorial .wde-hero__actions .paper-button,
+  .web-design-plans-editorial .wdp-hero__actions .paper-button,
+  .growth-marketing-editorial .gm-hero__actions .paper-button,
+  .service-cover__actions .paper-button,
+  .marketing-service-page .msp-hero__actions .paper-button,
+  .social-media-editorial .smm-hero__actions .paper-button {
+    display: inline-flex !important;
+    width: auto !important;
+    min-width: 0 !important;
+    min-height: 41px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.42rem !important;
+    padding: 0.58rem 0.72rem !important;
+    font-size: 0.68rem !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+  }
+
+  /* ------------------------------------------------------------------------
+     Mobile artwork hidden so the text uses full available width
+     ------------------------------------------------------------------------ */
+
+  .paper-hero__visual,
+  .web-design-editorial .wde-hero__art,
+  .web-design-plans-editorial .wdp-hero__visual,
+  .service-cover__composition,
+  .marketing-service-page .msp-hero-art,
+  .social-media-editorial .smm-hero-art {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   VERY SMALL MOBILES
+   Only stack buttons when they genuinely do not fit.
+   ========================================================================== */
+
+@media (max-width: 350px) {
+  .paper-hero__actions,
+  .web-design-editorial .wde-hero__actions,
+  .web-design-plans-editorial .wdp-hero__actions,
+  .growth-marketing-editorial .gm-hero__actions,
+  .service-cover__actions,
+  .marketing-service-page .msp-hero__actions,
+  .social-media-editorial .smm-hero__actions {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  .paper-hero__actions .paper-button,
+  .web-design-editorial .wde-hero__actions .paper-button,
+  .web-design-plans-editorial .wdp-hero__actions .paper-button,
+  .growth-marketing-editorial .gm-hero__actions .paper-button,
+  .service-cover__actions .paper-button,
+  .marketing-service-page .msp-hero__actions .paper-button,
+  .social-media-editorial .smm-hero__actions .paper-button {
+    width: 100% !important;
+    justify-content: space-between !important;
+  }
+}
+/* ==========================================================================
+   HERO ACTION ROW + BOTTOM SPACING FIX
+   Keeps existing button sizing and button visual design unchanged.
+   Makes mobile hero spacing consistent with /web-design.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Desktop: keep hero buttons separated from paragraph and following content
+   -------------------------------------------------------------------------- */
+
+@media (min-width: 768px) {
+  .paper-hero__actions,
+  .web-design-editorial .wde-hero__actions,
+  .web-design-plans-editorial .wdp-hero__actions,
+  .growth-marketing-editorial .gm-hero__actions,
+  .service-cover__actions,
+  .marketing-service-page .msp-hero__actions,
+  .social-media-editorial .smm-hero__actions {
+    margin-top: 1.55rem !important;
+  }
+
+  .paper-hero,
+  .web-design-editorial .wde-hero,
+  .web-design-plans-editorial .wdp-hero,
+  .growth-marketing-editorial .gm-hero,
+  .service-cover,
+  .marketing-service-page .msp-hero,
+  .social-media-editorial .smm-hero {
+    padding-bottom: clamp(3.5rem, 5vw, 4.75rem) !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Mobile: match the clean Web Design hero button arrangement
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 767px) {
+  /* Keep every hero compact, but leave space below the CTA row */
+  .paper-hero,
+  .web-design-editorial .wde-hero,
+  .web-design-plans-editorial .wdp-hero,
+  .growth-marketing-editorial .gm-hero,
+  .service-cover,
+  .marketing-service-page .msp-hero,
+  .social-media-editorial .smm-hero {
+    padding-bottom: 2.75rem !important;
+  }
+
+  /* Consistent gap between paragraph and buttons */
+  .paper-hero__actions,
+  .web-design-editorial .wde-hero__actions,
+  .web-design-plans-editorial .wdp-hero__actions,
+  .growth-marketing-editorial .gm-hero__actions,
+  .service-cover__actions,
+  .marketing-service-page .msp-hero__actions,
+  .social-media-editorial .smm-hero__actions {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    gap: 0.48rem !important;
+    margin-top: 1.45rem !important;
+    margin-bottom: 0 !important;
+  }
+
+  /*
+    Do not resize buttons here.
+    This only prevents older CSS from forcing buttons full-width or centred.
+  */
+  .paper-hero__actions .paper-button,
+  .web-design-editorial .wde-hero__actions .paper-button,
+  .web-design-plans-editorial .wdp-hero__actions .paper-button,
+  .growth-marketing-editorial .gm-hero__actions .paper-button,
+  .service-cover__actions .paper-button,
+  .marketing-service-page .msp-hero__actions .paper-button,
+  .social-media-editorial .smm-hero__actions .paper-button {
+    width: auto !important;
+    flex: 0 0 auto !important;
+  }
+
+  /* Homepage: separate hero buttons from the image/card below */
+  .paper-hero__layout {
+    row-gap: 2.35rem !important;
+  }
+
+  .paper-hero__visual,
+  .paper-hero__media,
+  .paper-hero__showcase {
+    margin-top: 2.35rem !important;
+  }
+
+  /*
+    Web Design Plans:
+    The pricing support panel/list below the CTA must not touch the button row.
+  */
+  .web-design-plans-editorial .wdp-hero .container {
+    row-gap: 2.15rem !important;
+  }
+
+  .web-design-plans-editorial :is(
+    .wdp-hero__features,
+    .wdp-hero__included,
+    .wdp-hero__panel,
+    .wdp-hero__aside
+  ) {
+    margin-top: 2.15rem !important;
+  }
+
+  /*
+    Shared service heroes such as SEO:
+    stop older rules centring or stacking the two CTA buttons.
+  */
+  .service-cover__actions,
+  .marketing-service-page .msp-hero__actions,
+  .social-media-editorial .smm-hero__actions {
+    justify-content: flex-start !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Very narrow screens only: stack buttons only when there is not enough room
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 340px) {
+  .paper-hero__actions,
+  .web-design-editorial .wde-hero__actions,
+  .web-design-plans-editorial .wdp-hero__actions,
+  .growth-marketing-editorial .gm-hero__actions,
+  .service-cover__actions,
+  .marketing-service-page .msp-hero__actions,
+  .social-media-editorial .smm-hero__actions {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+  }
+}
+/* --------------------------------------------------------------------------
+   Homepage mobile hero - add space below CTA buttons only
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+  .paper-hero .paper-hero__actions {
+    margin-bottom: 1.25rem !important;
+  }
+
+  .paper-hero {
+    padding-bottom: 1.5rem !important;
+  }
+}
+/* --------------------------------------------------------------------------
+   Desktop
+   -------------------------------------------------------------------------- */
+
+@media (min-width: 1024px) {
+  /* Content, Email and Conversion pages */
+  :is(
+    .marketing-service-page--content,
+    .marketing-service-page--email,
+    .marketing-service-page--conversion
+  ) .msp-hero {
+    min-height: 0 !important;
+    padding-block: 0 !important;
+  }
+
+  :is(
+    .marketing-service-page--content,
+    .marketing-service-page--email,
+    .marketing-service-page--conversion
+  ) .msp-hero__layout {
+    min-height: 0 !important;
+    align-items: center !important;
+    padding-block: clamp(3.15rem, 4.6vw, 4.1rem) !important;
+  }
+
+  :is(
+    .marketing-service-page--content,
+    .marketing-service-page--email,
+    .marketing-service-page--conversion
+  ) .msp-hero__content {
+    align-self: center !important;
+  }
+
+  :is(
+    .marketing-service-page--content,
+    .marketing-service-page--email,
+    .marketing-service-page--conversion
+  ) .msp-hero h1 {
+    margin-top: 1.02rem !important;
+    max-width: 720px !important;
+    font-size: clamp(2.55rem, 3.1vw, 3.35rem) !important;
+    letter-spacing: -0.05em !important;
+    line-height: 1.13 !important;
+  }
+
+  :is(
+    .marketing-service-page--content,
+    .marketing-service-page--email,
+    .marketing-service-page--conversion
+  ) .msp-hero__copy {
+    max-width: 610px !important;
+    margin-top: 0.9rem !important;
+  }
+
+  /* Social Media page */
+  .social-media-editorial .smm-hero {
+    min-height: 0 !important;
+    padding-block: 0 !important;
+  }
+
+  .social-media-editorial .smm-hero__layout {
+    min-height: 0 !important;
+    align-items: center !important;
+    padding-block: clamp(3.15rem, 4.6vw, 4.1rem) !important;
+  }
+
+  .social-media-editorial .smm-hero__content {
+    align-self: center !important;
+  }
+
+  .social-media-editorial .smm-hero h1 {
+    max-width: 700px !important;
+    font-size: clamp(2.55rem, 3.2vw, 3.45rem) !important;
+    letter-spacing: -0.05em !important;
+    line-height: 1.13 !important;
+  }
+
+  .social-media-editorial .smm-hero__copy {
+    max-width: 600px !important;
+    margin-top: 0.9rem !important;
+  }
+
+  /* Meta Ads page using the shared ServiceHeroSection */
+  .meta-ads-editorial .service-cover {
+    min-height: 0 !important;
+    padding-block: 0 !important;
+  }
+
+  .meta-ads-editorial .service-cover__grid {
+    min-height: 0 !important;
+    align-items: center !important;
+    padding-block: clamp(3.15rem, 4.6vw, 4.1rem) !important;
+  }
+
+  .meta-ads-editorial .service-cover__content {
+    align-self: center !important;
+  }
+
+  .meta-ads-editorial .service-cover__title {
+    max-width: 700px !important;
+    font-size: clamp(2.55rem, 3.2vw, 3.45rem) !important;
+    letter-spacing: -0.05em !important;
+    line-height: 1.13 !important;
+  }
+
+  .meta-ads-editorial .service-cover__description {
+    max-width: 610px !important;
+    margin-top: 0.9rem !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Mobile
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 767px) {
+  /* Do not allow a giant empty hero area below the breadcrumb */
+  :is(
+    .marketing-service-page--content,
+    .marketing-service-page--email,
+    .marketing-service-page--conversion
+  ) .msp-hero {
+    min-height: 0 !important;
+    padding-block: 0 !important;
+  }
+
+  :is(
+    .marketing-service-page--content,
+    .marketing-service-page--email,
+    .marketing-service-page--conversion
+  ) .msp-hero__layout {
+    min-height: 0 !important;
+    padding-block: 2.15rem 2.45rem !important;
+  }
+
+  :is(
+    .marketing-service-page--content,
+    .marketing-service-page--email,
+    .marketing-service-page--conversion
+  ) .msp-hero h1 {
+    width: 100% !important;
+    max-width: none !important;
+    font-size: clamp(1.78rem, 8.1vw, 2.06rem) !important;
+    letter-spacing: -0.042em !important;
+    line-height: 1.16 !important;
+  }
+
+  :is(
+    .marketing-service-page--content,
+    .marketing-service-page--email,
+    .marketing-service-page--conversion
+  ) .msp-hero__copy {
+    width: 100% !important;
+    max-width: none !important;
+    margin-top: 0.78rem !important;
+    font-size: 0.76rem !important;
+    line-height: 1.62 !important;
+  }
+
+  /* Social Media mobile hero */
+  .social-media-editorial .smm-hero {
+    min-height: 0 !important;
+    padding-block: 0 !important;
+  }
+
+  .social-media-editorial .smm-hero__layout {
+    min-height: 0 !important;
+    padding-block: 2.15rem 1.15rem !important;
+  }
+
+  .social-media-editorial .smm-hero h1 {
+    width: 100% !important;
+    max-width: none !important;
+    font-size: clamp(1.85rem, 8.45vw, 2.14rem) !important;
+    letter-spacing: -0.043em !important;
+    line-height: 1.15 !important;
+  }
+
+  .social-media-editorial .smm-hero__copy {
+    width: 100% !important;
+    max-width: none !important;
+    margin-top: 0.78rem !important;
+    font-size: 0.76rem !important;
+    line-height: 1.62 !important;
+  }
+
+  .social-media-editorial .smm-trust {
+    margin-top: 1.1rem !important;
+  }
+
+  /* Meta Ads mobile hero */
+  .meta-ads-editorial .service-cover {
+    min-height: 0 !important;
+    padding-block: 0 !important;
+  }
+
+  .meta-ads-editorial .service-cover__grid {
+    min-height: 0 !important;
+    padding-block: 2.15rem 2.45rem !important;
+  }
+
+  .meta-ads-editorial .service-cover__title {
+    width: 100% !important;
+    max-width: none !important;
+    font-size: clamp(1.84rem, 8.35vw, 2.12rem) !important;
+    letter-spacing: -0.043em !important;
+    line-height: 1.15 !important;
+  }
+
+  .meta-ads-editorial .service-cover__description {
+    width: 100% !important;
+    max-width: none !important;
+    margin-top: 0.78rem !important;
+    font-size: 0.76rem !important;
+    line-height: 1.62 !important;
+  }
+}

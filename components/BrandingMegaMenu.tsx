@@ -34,15 +34,30 @@ export default function BrandingMegaMenu() {
   const openMenu = () => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
     }
 
     setIsOpen(true);
   };
 
   const closeMenu = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+
     timeoutRef.current = setTimeout(() => {
       setIsOpen(false);
+      timeoutRef.current = null;
     }, 170);
+  };
+
+  const closeMenuImmediately = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+
+    setIsOpen(false);
   };
 
   return (
@@ -92,9 +107,7 @@ export default function BrandingMegaMenu() {
               <aside className="paper-mega__intro">
                 <span className="paper-mega__eyebrow">Branding</span>
 
-                <h2 className="paper-mega__intro-title">
-                  Brand Design
-                </h2>
+                <h2 className="paper-mega__intro-title">Brand Design</h2>
 
                 <p className="paper-mega__intro-copy">
                   Visual identities that make businesses recognisable
@@ -113,6 +126,7 @@ export default function BrandingMegaMenu() {
                       key={service.href}
                       href={service.href}
                       className="paper-mega__service"
+                      onClick={closeMenuImmediately}
                     >
                       <span className="paper-mega__service-icon">
                         <i
