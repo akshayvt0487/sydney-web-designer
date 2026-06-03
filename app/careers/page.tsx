@@ -208,8 +208,8 @@ export default function CareersPage() {
             </div>
 
             <div className="careers-jobs__list">
-              {jobs.map((job, index) => (
-                <article key={index} className="careers-job">
+              {jobs.map((job) => (
+                <article key={job.slug} className="careers-job">
                   <h3>{job.title}</h3>
 
                   <p className="careers-job__location">{job.location}</p>
@@ -222,10 +222,10 @@ export default function CareersPage() {
                     <h4>Requirements:</h4>
 
                     <ul>
-                      {job.requirements.map((req, idx) => (
-                        <li key={idx}>
+                      {job.requirements.map((requirement) => (
+                        <li key={requirement}>
                           <i className="fas fa-check" aria-hidden="true" />
-                          <span>{req}</span>
+                          <span>{requirement}</span>
                         </li>
                       ))}
                     </ul>
@@ -250,12 +250,12 @@ export default function CareersPage() {
                 resume!
               </p>
 
-              <a
-                href="mailto:hello@dsigns.com.au"
+              <Link
+                href="/career-application?position=general-application"
                 className="paper-button paper-button--rust"
               >
                 Email Your Resume
-              </a>
+              </Link>
             </div>
           </div>
         </section>

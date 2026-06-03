@@ -1,45 +1,10 @@
-import { Resend } from "resend";
-
-// Initialize Resend with API key - with better error handling
-let resend: Resend | null = null;
-
-if (process.env.RESEND_API_KEY) {
-  resend = new Resend(process.env.RESEND_API_KEY);
-  if (process.env.NODE_ENV === 'development') {
-    console.log("✓ Resend email service initialized with API key");
-  }
-} else {
-  console.error("⚠️  WARNING: RESEND_API_KEY environment variable is not set. Email sending will not work.");
-  console.error("Please set RESEND_API_KEY in your environment variables.");
-}
-
-// Verify Resend configuration
-export async function verifyEmailConfig() {
-  try {
-    if (!process.env.RESEND_API_KEY) {
-      console.error("RESEND_API_KEY is not configured");
-      return false;
-    }
-    if (!resend) {
-      console.error("Resend client not initialized");
-      return false;
-    }
-    if (process.env.NODE_ENV === 'development') {
-      console.log("Resend email service is configured");
-    }
-    return true;
-  } catch (error) {
-    console.error("Email service verification failed:", error);
-    return false;
-  }
-}
-
 interface FormSubmissionEmailData {
   type: string;
   name: string;
   email: string;
   phone: string;
   website?: string;
+  company?: string;
   projectType?: string;
   seoGoal?: string;
   adSpend?: string;
@@ -53,7 +18,7 @@ interface ContactSubmissionEmailData {
   lastName: string;
   email: string;
   phone: string;
-  company?: string;
+  website?: string;
   service: string;
   message: string;
   submittedAt: string;
@@ -64,83 +29,120 @@ interface NewsletterSubscriptionEmailData {
   submittedAt: string;
 }
 
-// Common email styles matching website branding
-const emailStyles = `
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+interface CareerApplicationEmailData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  positionLabel: string;
+  experience: string;
+  currentPosition?: string;
+  currentCompany?: string;
+  workLocation: string;
+  employmentType: string;
+  daysAvailable: string;
+  hoursAvailable: string;
+  startAvailability: string;
+  linkedin?: string;
+  portfolio?: string;
+  whyJoin: string;
+  keyStrengths: string;
+  additionalComments?: string;
+  resumeUrl: string;
+  coverLetterUrl?: string;
+  submittedAt: string;
+}
 
+interface BrevoRecipient {
+  email: string;
+  name?: string;
+}
+
+interface BrevoEmailPayload {
+  sender: BrevoRecipient;
+  to: BrevoRecipient[];
+  cc?: BrevoRecipient[];
+  replyTo?: BrevoRecipient;
+  subject: string;
+  htmlContent: string;
+}
+
+interface BrevoSuccessResponse {
+  messageId?: string;
+}
+
+const emailStyles = `
   body {
     margin: 0;
     padding: 0;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-    background-color: #f1f5f9;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f6f1e8;
     line-height: 1.6;
   }
 
   .email-wrapper {
     width: 100%;
-    background-color: #f1f5f9;
-    padding: 40px 20px;
+    background-color: #f6f1e8;
+    padding: 36px 16px;
   }
 
   .email-container {
-    max-width: 600px;
+    max-width: 640px;
     margin: 0 auto;
-    background-color: #ffffff;
-    border-radius: 16px;
+    background-color: #fffaf2;
+    border: 1px solid #e7dac5;
     overflow: hidden;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   }
 
   .email-header {
-    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-    padding: 40px 30px;
-    text-align: center;
-    border-bottom: 4px solid #f59e0b;
+    background-color: #181d26;
+    padding: 36px 30px;
+    border-bottom: 4px solid #ff9f2d;
   }
 
-  .email-logo {
-    margin-bottom: 20px;
-  }
-
-  .email-logo img {
-    max-width: 180px;
-    height: auto;
+  .email-eyebrow {
+    color: #ff9f2d;
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 14px;
+    text-transform: uppercase;
   }
 
   .email-title {
-    color: #ffffff;
-    font-size: 24px;
+    color: #fffaf2;
+    font-size: 27px;
     font-weight: 700;
+    line-height: 1.2;
     margin: 0;
-    letter-spacing: -0.5px;
+  }
+
+  .email-content {
+    padding: 34px 30px;
   }
 
   .email-badge {
     display: inline-block;
-    background: #f59e0b;
-    color: #ffffff;
-    padding: 8px 20px;
-    border-radius: 50px;
-    font-size: 14px;
-    font-weight: 600;
-    margin: 20px 0;
+    border: 1px solid #ff9f2d;
+    color: #ff9f2d;
+    padding: 8px 14px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 28px;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
   }
 
   .email-badge.newsletter {
-    background: #10b981;
-  }
-
-  .email-content {
-    padding: 40px 30px;
-    background-color: #ffffff;
+    color: #181d26;
+    background-color: #ff9f2d;
   }
 
   .field {
-    margin-bottom: 24px;
-    padding-bottom: 24px;
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: 1px solid #eadfce;
+    margin-bottom: 18px;
+    padding-bottom: 18px;
   }
 
   .field:last-child {
@@ -150,132 +152,300 @@ const emailStyles = `
   }
 
   .field-label {
-    color: #1e293b;
-    font-size: 13px;
-    font-weight: 600;
+    color: #ff9f2d;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    margin-bottom: 6px;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 8px;
   }
 
   .field-value {
-    color: #475569;
+    color: #181d26;
     font-size: 16px;
-    margin-top: 4px;
-    word-wrap: break-word;
+    word-break: break-word;
   }
 
   .field-value a {
-    color: #f59e0b;
-    text-decoration: none;
-    font-weight: 500;
-  }
-
-  .field-value a:hover {
+    color: #181d26;
     text-decoration: underline;
   }
 
   .message-box {
-    background: #f8fafc;
-    padding: 20px;
-    border-left: 4px solid #f59e0b;
-    border-radius: 8px;
+    color: #3b4047;
+    background-color: #f8f2e8;
+    border-left: 3px solid #ff9f2d;
     margin-top: 8px;
-    font-size: 15px;
-    line-height: 1.7;
-    color: #334155;
+    padding: 14px 16px;
+    white-space: pre-wrap;
   }
 
   .highlight-box {
-    background: #fef3c7;
-    border: 2px solid #f59e0b;
-    padding: 20px;
-    border-radius: 12px;
-    margin: 24px 0;
-    text-align: center;
-  }
-
-  .highlight-box.newsletter {
-    background: #d1fae5;
-    border-color: #10b981;
+    background-color: #f8f2e8;
+    border: 1px solid #eadfce;
+    margin: 0 0 24px;
+    padding: 18px;
   }
 
   .highlight-email {
-    font-size: 20px;
+    color: #181d26;
+    font-size: 19px;
     font-weight: 700;
-    color: #1e293b;
     margin: 0;
-  }
-
-  .action-box {
-    background: #f8fafc;
-    border: 2px solid #cbd5e1;
-    border-radius: 12px;
-    padding: 20px;
-    margin-top: 30px;
-  }
-
-  .action-title {
-    color: #10b981;
-    font-weight: 700;
-    font-size: 14px;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-
-  .action-text {
-    color: #475569;
-    font-size: 14px;
-    margin: 0;
-    line-height: 1.6;
   }
 
   .email-footer {
-    background: #f8fafc;
-    padding: 30px;
-    text-align: center;
-    border-top: 1px solid #e2e8f0;
-  }
-
-  .footer-text {
-    color: #64748b;
-    font-size: 13px;
-    margin: 0 0 12px 0;
+    background-color: #181d26;
+    border-top: 3px solid #ff9f2d;
+    padding: 24px 30px;
   }
 
   .footer-brand {
-    color: #1e293b;
-    font-weight: 600;
-    font-size: 14px;
-    margin: 0;
+    color: #fffaf2;
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0 0 4px;
   }
 
-  .footer-link {
-    color: #f59e0b;
-    text-decoration: none;
-    font-weight: 500;
+  .footer-text {
+    color: #c8c1b6;
+    font-size: 13px;
+    margin: 0;
   }
 
   @media only screen and (max-width: 600px) {
     .email-wrapper {
-      padding: 20px 10px;
+      padding: 14px 8px;
     }
 
-    .email-header, .email-content, .email-footer {
-      padding: 30px 20px;
+    .email-header,
+    .email-content,
+    .email-footer {
+      padding-left: 20px;
+      padding-right: 20px;
     }
 
     .email-title {
-      font-size: 20px;
+      font-size: 23px;
     }
   }
 `;
 
-// Send form submission notification email
+function escapeHtml(value?: string): string {
+  return String(value || "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+function formatDate(dateValue: string): string {
+  const date = new Date(dateValue);
+
+  if (Number.isNaN(date.getTime())) {
+    return escapeHtml(dateValue);
+  }
+
+  return date.toLocaleString("en-AU", {
+    timeZone: "Australia/Sydney",
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+}
+
+function getBrevoConfig() {
+  const apiKey = process.env.BREVO_API_KEY;
+  const senderEmail = process.env.BREVO_SENDER_EMAIL;
+  const senderName =
+    process.env.BREVO_SENDER_NAME || "Sydney Web Designer";
+  const notifyEmail = process.env.BREVO_NOTIFY_EMAIL;
+  const notifyName = process.env.BREVO_NOTIFY_NAME || "DSIGNS Leads";
+
+  if (!apiKey || !senderEmail || !notifyEmail) {
+    return null;
+  }
+
+  const cc = (process.env.BREVO_CC_EMAILS || "")
+    .split(",")
+    .map((email) => email.trim())
+    .filter(Boolean)
+    .map((email) => ({ email }));
+
+  return {
+    apiKey,
+    sender: {
+      email: senderEmail,
+      name: senderName,
+    },
+    to: [
+      {
+        email: notifyEmail,
+        name: notifyName,
+      },
+    ],
+    cc,
+  };
+}
+
+async function sendBrevoEmail(
+  payload: Omit<BrevoEmailPayload, "sender" | "to" | "cc">
+) {
+  const config = getBrevoConfig();
+
+  if (!config) {
+    console.error(
+      "Brevo email not configured. Required: BREVO_API_KEY, BREVO_SENDER_EMAIL, BREVO_NOTIFY_EMAIL."
+    );
+
+    return {
+      success: false,
+      error: "Email service is not configured.",
+    };
+  }
+
+  try {
+    const response = await fetch("https://api.brevo.com/v3/smtp/email", {
+      method: "POST",
+      headers: {
+        accept: "application/json",
+        "api-key": config.apiKey,
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        sender: config.sender,
+        to: config.to,
+        ...(config.cc.length > 0 ? { cc: config.cc } : {}),
+        ...payload,
+      }),
+      cache: "no-store",
+    });
+
+    const result = (await response.json().catch(() => ({}))) as
+      | BrevoSuccessResponse
+      | { message?: string; code?: string };
+
+    if (!response.ok) {
+      console.error("Brevo transactional email failed:", result);
+
+      return {
+        success: false,
+        error:
+          "message" in result && result.message
+            ? result.message
+            : "Brevo email request failed.",
+      };
+    }
+
+    return {
+      success: true,
+      messageId:
+        "messageId" in result ? result.messageId : undefined,
+    };
+  } catch (error) {
+    console.error("Brevo transactional email exception:", error);
+
+    return {
+      success: false,
+      error:
+        error instanceof Error
+          ? error.message
+          : "Brevo email request failed.",
+    };
+  }
+}
+
+function emailShell(
+  title: string,
+  badge: string,
+  content: string,
+  badgeClass = ""
+): string {
+  return `
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style>${emailStyles}</style>
+      </head>
+      <body>
+        <div class="email-wrapper">
+          <div class="email-container">
+            <div class="email-header">
+              <span class="email-eyebrow">Sydney Web Designer</span>
+              <h1 class="email-title">${escapeHtml(title)}</h1>
+            </div>
+
+            <div class="email-content">
+              <span class="email-badge ${badgeClass}">${escapeHtml(badge)}</span>
+              ${content}
+            </div>
+
+            <div class="email-footer">
+              <p class="footer-brand">Sydney Web Designer by DSIGNS</p>
+              <p class="footer-text">
+                New website enquiry notification
+              </p>
+            </div>
+          </div>
+        </div>
+      </body>
+    </html>
+  `;
+}
+
+function field(label: string, value?: string): string {
+  if (!value) {
+    return "";
+  }
+
+  return `
+    <div class="field">
+      <div class="field-label">${escapeHtml(label)}</div>
+      <div class="field-value">${escapeHtml(value)}</div>
+    </div>
+  `;
+}
+
+function linkField(label: string, value?: string, prefix = ""): string {
+  if (!value) {
+    return "";
+  }
+
+  const safeValue = escapeHtml(value);
+  const safeHref = escapeHtml(`${prefix}${value}`);
+
+  return `
+    <div class="field">
+      <div class="field-label">${escapeHtml(label)}</div>
+      <div class="field-value">
+        <a href="${safeHref}">${safeValue}</a>
+      </div>
+    </div>
+  `;
+}
+
+function messageField(label: string, message?: string): string {
+  if (!message) {
+    return "";
+  }
+
+  return `
+    <div class="field">
+      <div class="field-label">${escapeHtml(label)}</div>
+      <div class="message-box">${escapeHtml(message)}</div>
+    </div>
+  `;
+}
+
 export async function sendFormSubmissionEmail(data: FormSubmissionEmailData) {
   const typeLabels: Record<string, string> = {
-    contact: "General Contact",
+    contact: "General Enquiry",
     seoAudit: "SEO Audit Request",
     adsAudit: "Google Ads Audit Request",
     consultation: "Consultation Request",
@@ -283,400 +453,126 @@ export async function sendFormSubmissionEmail(data: FormSubmissionEmailData) {
 
   const typeLabel = typeLabels[data.type] || data.type;
 
-  const htmlContent = `
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>New Form Submission - Sydney Web Designer</title>
-      <style>${emailStyles}</style>
-    </head>
-    <body>
-      <div class="email-wrapper">
-        <div class="email-container">
-          <!-- Header -->
-          <div class="email-header">
-            <div class="email-logo">
-              <img src="https://www.sydneywebdesigner.com.au/Sydney%20Web%20Designer%20logo.webp" alt="Sydney Web Designer" />
-            </div>
-            <h1 class="email-title">New Form Submission</h1>
-          </div>
+  const htmlContent = emailShell(
+    "New Form Submission",
+    typeLabel,
+    [
+      field("Name", data.name),
+      linkField("Email Address", data.email, "mailto:"),
+      linkField("Phone Number", data.phone, "tel:"),
+      linkField("Website", data.website),
+      field("Company", data.company),
+      field("Project Type", data.projectType),
+      field("SEO Goal", data.seoGoal),
+      field("Monthly Ad Spend", data.adSpend),
+      field("Service Interested", data.service),
+      messageField("Message", data.message),
+      field("Submitted At", formatDate(data.submittedAt)),
+    ].join("")
+  );
 
-          <!-- Content -->
-          <div class="email-content">
-            <div class="email-badge">${typeLabel}</div>
-
-            <div class="field">
-              <div class="field-label">Name</div>
-              <div class="field-value">${data.name}</div>
-            </div>
-
-            <div class="field">
-              <div class="field-label">Email Address</div>
-              <div class="field-value">
-                <a href="mailto:${data.email}">${data.email}</a>
-              </div>
-            </div>
-
-            <div class="field">
-              <div class="field-label">Phone Number</div>
-              <div class="field-value">
-                <a href="tel:${data.phone}">${data.phone}</a>
-              </div>
-            </div>
-
-            ${data.website ? `
-              <div class="field">
-                <div class="field-label">Website</div>
-                <div class="field-value">
-                  <a href="${data.website}" target="_blank">${data.website}</a>
-                </div>
-              </div>
-            ` : ''}
-
-            ${data.projectType ? `
-              <div class="field">
-                <div class="field-label">Project Type</div>
-                <div class="field-value">${data.projectType}</div>
-              </div>
-            ` : ''}
-
-            ${data.seoGoal ? `
-              <div class="field">
-                <div class="field-label">SEO Goal</div>
-                <div class="field-value">${data.seoGoal}</div>
-              </div>
-            ` : ''}
-
-            ${data.adSpend ? `
-              <div class="field">
-                <div class="field-label">Monthly Ad Spend</div>
-                <div class="field-value">${data.adSpend}</div>
-              </div>
-            ` : ''}
-
-            ${data.service ? `
-              <div class="field">
-                <div class="field-label">Service Interested</div>
-                <div class="field-value">${data.service}</div>
-              </div>
-            ` : ''}
-
-            ${data.message ? `
-              <div class="field">
-                <div class="field-label">Message</div>
-                <div class="message-box">${data.message}</div>
-              </div>
-            ` : ''}
-
-            <div class="field">
-              <div class="field-label">Submitted At</div>
-              <div class="field-value">${new Date(data.submittedAt).toLocaleString('en-AU', {
-                weekday: 'long',
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-                hour: '2-digit',
-                minute: '2-digit'
-              })}</div>
-            </div>
-          </div>
-
-          <!-- Footer -->
-          <div class="email-footer">
-            <p class="footer-brand">Sydney Web Designer</p>
-            <p class="footer-text">Premium Web Design & Digital Marketing Agency</p>
-            <p class="footer-text">
-              <a href="https://www.sydneywebdesigner.com.au" class="footer-link">sydneywebdesigner.com.au</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </body>
-    </html>
-  `;
-
-  try {
-    if (!resend) {
-      console.error("❌ Cannot send form submission email: Resend client not initialized. RESEND_API_KEY is missing.");
-      return { 
-        success: false, 
-        error: "Email service not configured. Please contact support." 
-      };
-    }
-
-    if (!process.env.RESEND_API_KEY) {
-      console.error("❌ Cannot send form submission email: RESEND_API_KEY environment variable not set.");
-      return { 
-        success: false, 
-        error: "Email service not configured. Please contact support." 
-      };
-    }
-
-    const { data: emailData, error } = await resend.emails.send({
-      from: "Sydney Web Designer <info@sydneywebdesigner.com.au>",
-      to: "basheer@dsigns.com.au",
-      cc: ["akshay@dsigns.com.au", "admin@dsigns.com.au"],
-      replyTo: data.email,
-      subject: `${data.name} - ${typeLabel}`,
-      html: htmlContent,
-    });
-
-    if (error) {
-      console.error("❌ Error sending form submission email:", error);
-      return { success: false, error };
-    }
-
-    if (process.env.NODE_ENV === 'development') {
-      console.log("✓ Form submission email sent:", emailData?.id);
-    }
-    return { success: true, messageId: emailData?.id };
-  } catch (error) {
-    console.error("❌ Exception while sending form submission email:", error);
-    return { success: false, error };
-  }
+  return sendBrevoEmail({
+    replyTo: {
+      email: data.email,
+      name: data.name,
+    },
+    subject: `${data.name} - ${typeLabel}`,
+    htmlContent,
+  });
 }
 
-// Send contact form submission notification email
-export async function sendContactSubmissionEmail(data: ContactSubmissionEmailData) {
-  const htmlContent = `
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>New Contact Form Submission - Sydney Web Designer</title>
-      <style>${emailStyles}</style>
-    </head>
-    <body>
-      <div class="email-wrapper">
-        <div class="email-container">
-          <!-- Header -->
-          <div class="email-header">
-            <div class="email-logo">
-              <img src="https://www.sydneywebdesigner.com.au/Sydney%20Web%20Designer%20logo.webp" alt="Sydney Web Designer" />
-            </div>
-            <h1 class="email-title">Contact Form Submission</h1>
-          </div>
+export async function sendContactSubmissionEmail(
+  data: ContactSubmissionEmailData
+) {
+  const fullName = `${data.firstName} ${data.lastName}`.trim();
 
-          <!-- Content -->
-          <div class="email-content">
-            <div class="email-badge">Contact Page</div>
+  const htmlContent = emailShell(
+    "Contact Form Submission",
+    "Contact Page",
+    [
+      field("Full Name", fullName),
+      linkField("Email Address", data.email, "mailto:"),
+      linkField("Phone Number", data.phone, "tel:"),
+      linkField("Website", data.website),
+      field("Service Interested", data.service || "Not selected"),
+      messageField("Message", data.message),
+      field("Submitted At", formatDate(data.submittedAt)),
+    ].join("")
+  );
 
-            <div class="field">
-              <div class="field-label">Full Name</div>
-              <div class="field-value">${data.firstName} ${data.lastName}</div>
-            </div>
-
-            <div class="field">
-              <div class="field-label">Email Address</div>
-              <div class="field-value">
-                <a href="mailto:${data.email}">${data.email}</a>
-              </div>
-            </div>
-
-            <div class="field">
-              <div class="field-label">Phone Number</div>
-              <div class="field-value">
-                <a href="tel:${data.phone}">${data.phone}</a>
-              </div>
-            </div>
-
-            ${data.company ? `
-              <div class="field">
-                <div class="field-label">Company</div>
-                <div class="field-value">${data.company}</div>
-              </div>
-            ` : ''}
-
-            <div class="field">
-              <div class="field-label">Service Interested</div>
-              <div class="field-value">${data.service}</div>
-            </div>
-
-            <div class="field">
-              <div class="field-label">Message</div>
-              <div class="message-box">${data.message}</div>
-            </div>
-
-            <div class="field">
-              <div class="field-label">Submitted At</div>
-              <div class="field-value">${new Date(data.submittedAt).toLocaleString('en-AU', {
-                weekday: 'long',
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-                hour: '2-digit',
-                minute: '2-digit'
-              })}</div>
-            </div>
-          </div>
-
-          <!-- Footer -->
-          <div class="email-footer">
-            <p class="footer-brand">Sydney Web Designer</p>
-            <p class="footer-text">Premium Web Design & Digital Marketing Agency</p>
-            <p class="footer-text">
-              <a href="https://www.sydneywebdesigner.com.au" class="footer-link">sydneywebdesigner.com.au</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </body>
-    </html>
-  `;
-
-  try {
-    if (!resend) {
-      console.error("❌ Cannot send contact submission email: Resend client not initialized. RESEND_API_KEY is missing.");
-      return { 
-        success: false, 
-        error: "Email service not configured. Please contact support." 
-      };
-    }
-
-    if (!process.env.RESEND_API_KEY) {
-      console.error("❌ Cannot send contact submission email: RESEND_API_KEY environment variable not set.");
-      return { 
-        success: false, 
-        error: "Email service not configured. Please contact support." 
-      };
-    }
-
-    const { data: emailData, error } = await resend.emails.send({
-      from: "Sydney Web Designer <info@sydneywebdesigner.com.au>",
-      to: "basheer@dsigns.com.au",
-      cc: ["akshay@dsigns.com.au", "admin@dsigns.com.au"],
-      replyTo: data.email,
-      subject: `${data.firstName} ${data.lastName} - Contact Form`,
-      html: htmlContent,
-    });
-
-    if (error) {
-      console.error("❌ Error sending contact submission email:", error);
-      return { success: false, error };
-    }
-
-    if (process.env.NODE_ENV === 'development') {
-      console.log("✓ Contact submission email sent:", emailData?.id);
-    }
-    return { success: true, messageId: emailData?.id };
-  } catch (error) {
-    console.error("❌ Exception while sending contact submission email:", error);
-    return { success: false, error };
-  }
+  return sendBrevoEmail({
+    replyTo: {
+      email: data.email,
+      name: fullName,
+    },
+    subject: `${fullName} - Contact Form`,
+    htmlContent,
+  });
 }
 
-// Send newsletter subscription notification email
-export async function sendNewsletterSubscriptionEmail(data: NewsletterSubscriptionEmailData) {
-  const htmlContent = `
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>New Newsletter Subscription - Sydney Web Designer</title>
-      <style>${emailStyles}</style>
-    </head>
-    <body>
-      <div class="email-wrapper">
-        <div class="email-container">
-          <!-- Header -->
-          <div class="email-header">
-            <div class="email-logo">
-              <img src="https://www.sydneywebdesigner.com.au/Sydney%20Web%20Designer%20logo.webp" alt="Sydney Web Designer" />
-            </div>
-            <h1 class="email-title">Newsletter Subscription</h1>
-          </div>
-
-          <!-- Content -->
-          <div class="email-content">
-            <div class="email-badge newsletter">New Subscriber</div>
-
-            <div class="highlight-box newsletter">
-              <p class="highlight-email">${data.email}</p>
-            </div>
-
-            <div class="field">
-              <div class="field-label">Email Address</div>
-              <div class="field-value">
-                <a href="mailto:${data.email}">${data.email}</a>
-              </div>
-            </div>
-
-            <div class="field">
-              <div class="field-label">Subscribed At</div>
-              <div class="field-value">${new Date(data.submittedAt).toLocaleString('en-AU', {
-                weekday: 'long',
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-                hour: '2-digit',
-                minute: '2-digit'
-              })}</div>
-            </div>
-
-            <div class="action-box">
-              <div class="action-title">✓ Action Required</div>
-              <p class="action-text">
-                Add this email address to your newsletter mailing list in your email marketing platform
-                (Mailchimp, SendGrid, or your preferred service).
-              </p>
-            </div>
-          </div>
-
-          <!-- Footer -->
-          <div class="email-footer">
-            <p class="footer-brand">Sydney Web Designer</p>
-            <p class="footer-text">Premium Web Design & Digital Marketing Agency</p>
-            <p class="footer-text">
-              <a href="https://www.sydneywebdesigner.com.au" class="footer-link">sydneywebdesigner.com.au</a>
-            </p>
-          </div>
-        </div>
+export async function sendNewsletterSubscriptionEmail(
+  data: NewsletterSubscriptionEmailData
+) {
+  const htmlContent = emailShell(
+    "Newsletter Subscription",
+    "New Subscriber",
+    `
+      <div class="highlight-box">
+        <p class="highlight-email">${escapeHtml(data.email)}</p>
       </div>
-    </body>
-    </html>
-  `;
+      ${linkField("Email Address", data.email, "mailto:")}
+      ${field("Subscribed At", formatDate(data.submittedAt))}
+    `,
+    "newsletter"
+  );
 
-  try {
-    if (!resend) {
-      console.error("❌ Cannot send newsletter subscription email: Resend client not initialized. RESEND_API_KEY is missing.");
-      return { 
-        success: false, 
-        error: "Email service not configured. Please contact support." 
-      };
-    }
+  return sendBrevoEmail({
+    replyTo: {
+      email: data.email,
+    },
+    subject: `${data.email} - Newsletter Subscription`,
+    htmlContent,
+  });
+}
 
-    if (!process.env.RESEND_API_KEY) {
-      console.error("❌ Cannot send newsletter subscription email: RESEND_API_KEY environment variable not set.");
-      return { 
-        success: false, 
-        error: "Email service not configured. Please contact support." 
-      };
-    }
+export async function sendCareerApplicationEmail(
+  data: CareerApplicationEmailData
+) {
+  const fullName = `${data.firstName} ${data.lastName}`.trim();
 
-    const { data: emailData, error } = await resend.emails.send({
-      from: "Sydney Web Designer <info@sydneywebdesigner.com.au>",
-      to: "basheer@dsigns.com.au",
-      cc: ["akshay@dsigns.com.au", "admin@dsigns.com.au"],
-      replyTo: data.email,
-      subject: `${data.email} - Newsletter Subscription`,
-      html: htmlContent,
-    });
+  const htmlContent = emailShell(
+    "New Career Application",
+    "Career Application",
+    [
+      field("Position Applied For", data.positionLabel),
+      field("Applicant Name", fullName),
+      linkField("Email Address", data.email, "mailto:"),
+      linkField("Phone Number", data.phone, "tel:"),
+      field("Years of Experience", data.experience),
+      field("Current Position", data.currentPosition),
+      field("Current Company", data.currentCompany),
+      field("Preferred Work Location", data.workLocation),
+      field("Employment Type", data.employmentType),
+      field("Days Available", data.daysAvailable),
+      field("Hours Available", data.hoursAvailable),
+      field("Start Availability", data.startAvailability),
+      linkField("LinkedIn Profile", data.linkedin),
+      linkField("Portfolio / Website", data.portfolio),
+      messageField("Why They Want To Join", data.whyJoin),
+      messageField("Key Strengths", data.keyStrengths),
+      messageField("Additional Comments", data.additionalComments),
+      linkField("Resume File", data.resumeUrl),
+      linkField("Cover Letter File", data.coverLetterUrl),
+      field("Submitted At", formatDate(data.submittedAt)),
+    ].join("")
+  );
 
-    if (error) {
-      console.error("❌ Error sending newsletter subscription email:", error);
-      return { success: false, error };
-    }
-
-    if (process.env.NODE_ENV === 'development') {
-      console.log("✓ Newsletter subscription email sent:", emailData?.id);
-    }
-    return { success: true, messageId: emailData?.id };
-  } catch (error) {
-    console.error("❌ Exception while sending newsletter subscription email:", error);
-    return { success: false, error };
-  }
+  return sendBrevoEmail({
+    replyTo: {
+      email: data.email,
+      name: fullName,
+    },
+    subject: `${fullName} - ${data.positionLabel} Application`,
+    htmlContent,
+  });
 }

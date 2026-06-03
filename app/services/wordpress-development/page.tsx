@@ -14,6 +14,7 @@ import ServiceProcessSection from "@/components/service-page/ServiceProcessSecti
 import ServiceResultsSection from "@/components/service-page/ServiceResultsSection";
 import ServiceTestimonialsSection from "@/components/service-page/ServiceTestimonialsSection";
 import ServiceLeadPanel from "@/components/service-page/ServiceLeadPanel";
+import ServiceInlineLeadForm from "@/components/service-page/ServiceInlineLeadForm";
 
 export const metadata = generateMetadata({
   title: "WordPress Development Sydney | Custom WordPress Websites",
@@ -191,7 +192,7 @@ export default function WordPressDevelopmentPage() {
    * Uses real project records already stored in portfolioProjects.
    * No fake project content or duplicate hard-coded image paths.
    */
-    const resultProjects = portfolioProjects
+  const resultProjects = portfolioProjects
     .filter((project) => {
       const projectIdentifier = `${project.id} ${project.name}`.toLowerCase();
 
@@ -305,67 +306,10 @@ export default function WordPressDevelopmentPage() {
         title="Get Your Free Consultation"
         description="Tell us about your project and we'll provide expert advice and a custom quote"
       >
-        <form className="service-detail-lead__form">
-          <div className="service-detail-lead__grid">
-            <div>
-              <label>Full Name *</label>
-              <input
-                type="text"
-                required
-                placeholder="Your name"
-                className="form-input"
-              />
-            </div>
-
-            <div>
-              <label>Email *</label>
-              <input
-                type="email"
-                required
-                placeholder="your@email.com"
-                className="form-input"
-              />
-            </div>
-
-            <div>
-              <label>Phone *</label>
-              <input
-                type="tel"
-                required
-                placeholder="04XX XXX XXX"
-                className="form-input"
-              />
-            </div>
-
-            <div>
-              <label>Company</label>
-              <input
-                type="text"
-                placeholder="Your company (optional)"
-                className="form-input"
-              />
-            </div>
-          </div>
-
-          <div className="service-detail-lead__message">
-            <label>Tell us about your project</label>
-            <textarea
-              placeholder="What are you looking to achieve?"
-              rows={7}
-              className="form-textarea"
-            />
-          </div>
-
-          <div className="service-detail-lead__submit">
-            <button type="submit" className="paper-button paper-button--rust">
-              Start WordPress Project
-            </button>
-            <p>
-              <i className="fas fa-comment-dots" aria-hidden="true" />
-              We&apos;ll respond within 24 hours
-            </p>
-          </div>
-        </form>
+        <ServiceInlineLeadForm
+          service="wordpress-development"
+          buttonText="Start WordPress Project"
+        />
       </ServiceLeadPanel>
     </>
   );

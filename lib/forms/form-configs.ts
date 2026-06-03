@@ -218,9 +218,9 @@ export const seoAuditFormConfig: FormConfig = {
     {
       name: 'website',
       type: 'url',
-      label: 'Website URL *',
+      label: 'Website URL',
       placeholder: 'https://yourwebsite.com.au',
-      required: true,
+      required: false,
       gridColumn: '2',
     },
     {
@@ -293,9 +293,9 @@ export const adsAuditFormConfig: FormConfig = {
     {
       name: 'website',
       type: 'url',
-      label: 'Website URL *',
+      label: 'Website URL',
       placeholder: 'https://yourwebsite.com.au',
-      required: true,
+      required: false,
       gridColumn: '2',
     },
     {

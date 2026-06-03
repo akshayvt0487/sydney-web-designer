@@ -4,6 +4,7 @@ import Image from "next/image";
 import CTASection from "@/components/CTASection";
 import { generateMetadata } from "@/lib/metadata";
 import { generateBreadcrumbSchema } from "@/lib/schemas";
+import BlogNewsletterForm from "@/components/BlogNewsletterForm";
 
 export const metadata: Metadata = generateMetadata({
   title: "Blog",
@@ -207,25 +208,7 @@ export default function BlogPage() {
                 insights, and updates on web design and digital marketing.
               </p>
 
-              <form className="blog-newsletter__form">
-                <label htmlFor="blog-newsletter-email" className="sr-only">
-                  Enter your email address
-                </label>
-
-                <input
-                  id="blog-newsletter-email"
-                  type="email"
-                  placeholder="Enter your email address"
-                  required
-                />
-
-                <button
-                  type="submit"
-                  className="paper-button paper-button--rust"
-                >
-                  Subscribe
-                </button>
-              </form>
+              <BlogNewsletterForm />
             </div>
           </div>
         </section>

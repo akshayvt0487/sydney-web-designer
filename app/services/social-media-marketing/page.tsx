@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { generateMetadata } from "@/lib/metadata";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import ServiceInlineLeadForm from "@/components/service-page/ServiceInlineLeadForm";
 import {
   generateBreadcrumbSchema,
   generateServiceSchema,
@@ -490,74 +491,11 @@ export default function SocialMediaMarketingPage() {
                 </p>
               </div>
 
-              <form className="smm-lead__form">
-                <div className="smm-lead__grid">
-                  <div>
-                    <label htmlFor="smm-full-name">Full Name *</label>
-                    <input
-                      id="smm-full-name"
-                      type="text"
-                      required
-                      placeholder="Your name"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="smm-email">Email *</label>
-                    <input
-                      id="smm-email"
-                      type="email"
-                      required
-                      placeholder="your@email.com"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="smm-phone">Phone *</label>
-                    <input
-                      id="smm-phone"
-                      type="tel"
-                      required
-                      placeholder="04XX XXX XXX"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="smm-company">Company</label>
-                    <input
-                      id="smm-company"
-                      type="text"
-                      placeholder="Your company (optional)"
-                    />
-                  </div>
-                </div>
-
-                <div className="smm-lead__message">
-                  <label htmlFor="smm-project">
-                    Tell us about your project
-                  </label>
-
-                  <textarea
-                    id="smm-project"
-                    placeholder="What are you looking to achieve?"
-                    rows={4}
-                  />
-                </div>
-
-                <div className="smm-lead__submit">
-                  <button
-                    type="submit"
-                    className="paper-button paper-button--rust"
-                  >
-                    Boost Social Media
-                  </button>
-
-                  <p>
-                    <i className="fas fa-comments" aria-hidden="true" />
-                    We&apos;ll respond within 24 hours
-                  </p>
-                </div>
-              </form>
+              <ServiceInlineLeadForm
+                service="social-media-marketing"
+                buttonText="Boost Social Media"
+                variant="social-media"
+              />
             </div>
           </div>
         </section>

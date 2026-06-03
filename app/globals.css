@@ -37648,3 +37648,265 @@ html body main #local-seo-process-board .lse-process-step p {
     line-height: 1.62 !important;
   }
 }
+/* =========================================================
+   Submission Loading Overlay
+   ========================================================= */
+
+.submit-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483000;
+  display: grid;
+  place-items: center;
+  min-height: 100dvh;
+  padding:
+    max(24px, env(safe-area-inset-top))
+    max(18px, env(safe-area-inset-right))
+    max(24px, env(safe-area-inset-bottom))
+    max(18px, env(safe-area-inset-left));
+}
+
+.submit-overlay__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(12, 16, 23, 0.8);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.submit-overlay__panel {
+  position: relative;
+  z-index: 1;
+  width: min(470px, 100%);
+  overflow: hidden;
+  border: 1px solid rgba(255, 159, 45, 0.42);
+  background: #fffaf2;
+  box-shadow:
+    10px 10px 0 #ff9f2d,
+    0 30px 90px rgba(0, 0, 0, 0.34);
+  padding: clamp(38px, 6vw, 52px) clamp(24px, 6vw, 46px);
+  text-align: center;
+}
+
+.submit-overlay__panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 84px;
+  height: 4px;
+  background: #ff9f2d;
+}
+
+.submit-overlay__eyebrow {
+  display: block;
+  margin-bottom: 28px;
+  color: #ff9f2d;
+  font-family: var(--font-body), Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.submit-overlay__animation {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 30px;
+}
+
+.submit-overlay__ring {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255, 159, 45, 0.25);
+  border-top-color: #ff9f2d;
+  border-radius: 50%;
+  animation: submit-overlay-spin 1.2s linear infinite;
+}
+
+.submit-overlay__ring--two {
+  inset: 10px;
+  border-color: rgba(24, 29, 38, 0.1);
+  border-bottom-color: #181d26;
+  animation-duration: 0.9s;
+  animation-direction: reverse;
+}
+
+.submit-overlay__icon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  background: #181d26;
+  color: #ff9f2d;
+  font-size: 17px;
+}
+
+.submit-overlay__icon i {
+  animation: submit-overlay-plane 1.4s ease-in-out infinite;
+}
+
+.submit-overlay__panel h2 {
+  margin: 0 0 13px;
+  color: #181d26;
+  font-family: var(--font-heading), Arial, sans-serif;
+  font-size: clamp(27px, 5vw, 34px);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.055em;
+}
+
+.submit-overlay__panel p {
+  max-width: 330px;
+  margin: 0 auto 27px;
+  color: #5f5a52;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.submit-overlay__progress {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.submit-overlay__progress span {
+  display: block;
+  width: 34px;
+  height: 3px;
+  background: rgba(24, 29, 38, 0.14);
+  overflow: hidden;
+  position: relative;
+}
+
+.submit-overlay__progress span::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #ff9f2d;
+  transform: translateX(-100%);
+  animation: submit-overlay-bar 1.35s ease-in-out infinite;
+}
+
+.submit-overlay__progress span:nth-child(2)::after {
+  animation-delay: 0.16s;
+}
+
+.submit-overlay__progress span:nth-child(3)::after {
+  animation-delay: 0.32s;
+}
+
+.submit-overlay__panel small {
+  color: #837b70;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+}
+
+@keyframes submit-overlay-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes submit-overlay-plane {
+  0%,
+  100% {
+    transform: translate(-1px, 1px);
+  }
+
+  50% {
+    transform: translate(3px, -3px);
+  }
+}
+
+@keyframes submit-overlay-bar {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  42%,
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@media (max-width: 767px) {
+  .submit-overlay {
+    align-items: center;
+    padding:
+      max(20px, env(safe-area-inset-top))
+      18px
+      max(24px, env(safe-area-inset-bottom));
+  }
+
+  .submit-overlay__panel {
+    width: 100%;
+    max-width: 370px;
+    padding: 38px 22px 35px;
+    box-shadow:
+      6px 6px 0 #ff9f2d,
+      0 24px 65px rgba(0, 0, 0, 0.32);
+  }
+
+  .submit-overlay__eyebrow {
+    margin-bottom: 24px;
+    font-size: 10px;
+  }
+
+  .submit-overlay__animation {
+    width: 84px;
+    height: 84px;
+    margin-bottom: 25px;
+  }
+
+  .submit-overlay__icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .submit-overlay__panel h2 {
+    font-size: 28px;
+  }
+
+  .submit-overlay__panel p {
+    margin-bottom: 24px;
+    font-size: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .submit-overlay__ring,
+  .submit-overlay__icon i,
+  .submit-overlay__progress span::after {
+    animation-duration: 2.5s;
+  }
+}
+/* =========================================================
+   Career Application Form Error
+   ========================================================= */
+
+.application-form__error {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin: 0 0 1.45rem;
+  padding: 0.95rem 1rem;
+  border: 1px solid rgba(190, 54, 39, 0.25);
+  background: #fff1ed;
+  color: #8e3026;
+}
+
+.application-form__error i {
+  margin-top: 0.15rem;
+  color: #c45336;
+}
+
+.application-form__error p {
+  margin: 0;
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
