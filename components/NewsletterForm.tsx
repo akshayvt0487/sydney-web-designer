@@ -41,7 +41,11 @@ export default function NewsletterForm() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({
+          email,
+          sourcePage: window.location.pathname,
+          sourceUrl: window.location.href,
+        }),
       });
 
       const data: { error?: string } = await response.json();
@@ -121,11 +125,10 @@ export default function NewsletterForm() {
         {message && (
           <p
             role="status"
-            className={`paper-newsletter__message ${
-              status === "success"
+            className={`paper-newsletter__message ${status === "success"
                 ? "paper-newsletter__message--success"
                 : "paper-newsletter__message--error"
-            }`}
+              }`}
           >
             {status === "success" && (
               <i className="fas fa-check-circle" aria-hidden="true" />

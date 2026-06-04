@@ -11,6 +11,7 @@ import ServiceHeroSection from "@/components/ServiceHeroSection";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedServices from "@/components/RelatedServices";
 import FAQAccordion from "@/components/FAQAccordion";
+import ServiceInlineLeadForm from "@/components/service-page/ServiceInlineLeadForm";
 
 export const metadata = generateMetadata({
   title: "Custom Web Design Sydney | Professional Website Design Services",
@@ -541,7 +542,7 @@ export default function CustomWebDesignPage() {
 
       <RelatedServices services={relatedServices} />
 
-            <section className="service-detail-lead paper-grain">
+      <section className="service-detail-lead paper-grain">
         <div className="container">
           <div className="service-detail-lead__frame">
             <div className="service-detail-lead__heading">
@@ -552,68 +553,10 @@ export default function CustomWebDesignPage() {
               </p>
             </div>
 
-            <form className="service-detail-lead__form">
-              <div className="service-detail-lead__grid">
-                <div>
-                  <label>Full Name *</label>
-                  <input
-                    type="text"
-                    required
-                    placeholder="Your name"
-                    className="form-input"
-                  />
-                </div>
-
-                <div>
-                  <label>Email *</label>
-                  <input
-                    type="email"
-                    required
-                    placeholder="your@email.com"
-                    className="form-input"
-                  />
-                </div>
-
-                <div>
-                  <label>Phone *</label>
-                  <input
-                    type="tel"
-                    required
-                    placeholder="04XX XXX XXX"
-                    className="form-input"
-                  />
-                </div>
-
-                <div>
-                  <label>Company</label>
-                  <input
-                    type="text"
-                    placeholder="Your company (optional)"
-                    className="form-input"
-                  />
-                </div>
-              </div>
-
-              <div className="service-detail-lead__message">
-                <label>Tell us about your project</label>
-                <textarea
-                  placeholder="What are you looking to achieve?"
-                  rows={7}
-                  className="form-textarea"
-                />
-              </div>
-
-              <div className="service-detail-lead__submit">
-                <button type="submit" className="paper-button paper-button--rust">
-                  Get Free Quote
-                </button>
-
-                <p>
-                  <i className="fas fa-comment-dots" aria-hidden="true" />
-                  We&apos;ll respond within 24 hours
-                </p>
-              </div>
-            </form>
+            <ServiceInlineLeadForm
+              service="custom-web-design"
+              buttonText="Get Free Quote"
+            />
           </div>
         </div>
       </section>

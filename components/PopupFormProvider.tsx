@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useContext, useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import PopupForm from "./PopupForm";
 
 type FormType = "contact" | "seoAudit" | "adsAudit" | "consultation" | null;
@@ -22,6 +23,11 @@ export function usePopupForm() {
 
 export default function PopupFormProvider({ children }: { children: React.ReactNode }) {
   const [activeForm, setActiveForm] = useState<FormType>(null);
+  const pathname = usePathname();
+
+useEffect(() => {
+  setActiveForm(null);
+}, [pathname]);
 
   useEffect(() => {
     // Add click handlers to all elements with data-popup attribute

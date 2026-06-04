@@ -34,9 +34,31 @@ export const metadata: Metadata = {
     "Sydney Web Designer is Sydney's premier web design and digital marketing studio. Specialising in custom web design, SEO, and branding - serving Sydney businesses since 2013.",
   keywords:
     "web design sydney, digital marketing sydney, seo services sydney, web development sydney, sydney web designer",
+  manifest: "/favicon/site.webmanifest",
   icons: {
-    icon: "/favicon.svg",
-    apple: "/favicon.svg",
+    icon: [
+      {
+        url: "/favicon/favicon.ico",
+        type: "image/x-icon",
+      },
+      {
+        url: "/favicon/favicon-16x16.png",
+        sizes: "16x16",
+        type: "image/png",
+      },
+      {
+        url: "/favicon/favicon-32x32.png",
+        sizes: "32x32",
+        type: "image/png",
+      },
+    ],
+    apple: [
+      {
+        url: "/favicon/apple-touch-icon.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
+    ],
   },
   verification: {
     google: "E_byFO3Fss-ps99NPqsLJ5lCbX1RDEQs7iCVDU8s0s0",
