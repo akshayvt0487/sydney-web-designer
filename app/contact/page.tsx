@@ -597,7 +597,7 @@ export default function ContactPage() {
               </a>
 
               <a
-                href="https://www.instagram.com/dsignsaustralia"
+                href="https://www.instagram.com/dsigns.australia"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contact-social__link"
@@ -615,7 +615,7 @@ export default function ContactPage() {
               </a>
 
               <a
-                href="https://www.linkedin.com/company/dsigns-australia"
+                href="https://www.linkedin.com/company/dsignsaustralia"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contact-social__link"
