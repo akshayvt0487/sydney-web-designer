@@ -188,6 +188,9 @@ export default function EmailMarketingPage() {
                 <button
                   type="button"
                   data-popup="contact"
+                  data-service-slug="email-marketing"
+                  data-service-name="Email Marketing"
+                  data-service-group="growth-marketing"
                   className="paper-button paper-button--rust"
                 >
                   Start Email Marketing
@@ -360,6 +363,9 @@ export default function EmailMarketingPage() {
             description="Build customer relationships and drive repeat business with strategic email campaigns."
             primaryButtonText="Start Email Marketing"
             primaryButtonAction="contact"
+            primaryButtonService="email-marketing"
+            primaryButtonServiceName="Email Marketing"
+            primaryButtonGroup="growth-marketing"
           />
         </div>
       </div>

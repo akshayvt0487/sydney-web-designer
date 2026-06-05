@@ -240,8 +240,11 @@ export default function BrandIdentityPage() {
           description="Craft a distinctive brand identity backed by strategy and design excellence. Logos, visual systems, and brand guidelines that define your market presence."
           buttons={{
             primary: {
-              text: "Start Your Brand Project",
+              text: "Get Your Free Consultation",
               dataPopup: "contact",
+              serviceGroup: "branding",
+              serviceSlug: "brand-identity",
+              serviceName: "Branding Design",
             },
             secondary: {
               text: "View Our Portfolio",
@@ -385,7 +388,9 @@ export default function BrandIdentityPage() {
             title="Ready to Create Your Brand?"
             description="Let's develop a distinctive brand identity that sets you apart and resonates with your customers."
             primaryButtonText="Get Your Free Brand Consultation"
-            primaryButtonAction="contact"
+            primaryButtonAction="service"
+            primaryButtonService="brand-identity"
+            primaryButtonGroup="branding-design"
           />
         </div>
       </div>

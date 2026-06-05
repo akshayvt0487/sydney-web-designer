@@ -277,7 +277,9 @@ const growthPlans = [
   {
     title: "Website Care",
     description: "Keep your website secure and updated",
-    popup: "contact",
+    popup: "service",
+    serviceSlug: "website-care",
+    serviceGroup: "web-design",
     features: [
       "Security updates & monitoring",
       "Weekly backups",
@@ -290,7 +292,9 @@ const growthPlans = [
   {
     title: "Website Care & CRM",
     description: "Website care + customer management",
-    popup: "contact",
+    popup: "service",
+    serviceSlug: "crm-automation",
+    serviceGroup: "digital-marketing",
     featured: true,
     features: [
       "Everything in Website Care",
@@ -304,7 +308,9 @@ const growthPlans = [
   {
     title: "Paid Ads Management",
     description: "Google OR Facebook Ads management",
-    popup: "adsAudit",
+    popup: "service",
+    serviceSlug: "google-ads",
+    serviceGroup: "digital-marketing",
     badge: "Most Popular",
     features: [
       "Google OR Facebook Ads (one platform)",
@@ -320,7 +326,9 @@ const growthPlans = [
   {
     title: "SEO Package",
     description: "Complete SEO & content marketing",
-    popup: "seoAudit",
+    popup: "service",
+    serviceSlug: "seo-sydney",
+    serviceGroup: "digital-marketing",
     features: [
       "Complete SEO audit & strategy",
       "On-page SEO optimization",
@@ -335,7 +343,9 @@ const growthPlans = [
   {
     title: "Complete Marketing",
     description: "Everything you need to dominate",
-    popup: "consultation",
+    popup: "service",
+    serviceSlug: "digital-marketing",
+    serviceGroup: "digital-marketing",
     badge: "Ultimate Package",
     featured: true,
     features: [
@@ -484,7 +494,9 @@ export default function WebDesignPage() {
               <div className="wde-hero__actions">
                 <button
                   type="button"
-                  data-popup="contact"
+                  data-popup="service"
+                  data-popup-service="web-design"
+                  data-popup-group="web-design"
                   className="paper-button paper-button--rust"
                 >
                   Get Your Free Quote
@@ -951,6 +963,9 @@ export default function WebDesignPage() {
                   <button
                     type="button"
                     data-popup={plan.popup}
+                    data-popup-service={plan.serviceSlug}
+                    data-popup-group={plan.serviceGroup}
+                    data-popup-plan={plan.title}
                     className="paper-button wde-growth-card__button"
                   >
                     Get Started
@@ -1021,7 +1036,9 @@ export default function WebDesignPage() {
               <div className="wde-final-cta__actions">
                 <button
                   type="button"
-                  data-popup="contact"
+                  data-popup="service"
+                  data-popup-service="web-design"
+                  data-popup-group="web-design"
                   className="paper-button paper-button--rust"
                 >
                   Get Free Quote
