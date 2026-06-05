@@ -13,7 +13,7 @@ export const metadata: Metadata = generateMetadata({
   canonicalUrl: "https://www.sydneywebdesigner.com.au/growth-marketing",
 });
 
-type PopupAction = "contact" | "seoAudit" | "adsAudit" | "consultation";
+type PopupAction = "service";
 
 interface PlanFeature {
   text: string;
@@ -25,6 +25,8 @@ interface Plan {
   description: string;
   features: PlanFeature[];
   action: PopupAction;
+  serviceSlug: string;
+  serviceGroup: "web-design" | "digital-marketing" | "branding-design";
   badge?: string;
   variant?: "featured" | "dark";
 }
@@ -33,7 +35,9 @@ const plans: Plan[] = [
   {
     title: "Website Care",
     description: "Keep your website secure and updated",
-    action: "contact",
+    action: "service",
+    serviceSlug: "website-care",
+    serviceGroup: "web-design",
     features: [
       { text: "Security updates & monitoring" },
       { text: "Weekly backups" },
@@ -46,7 +50,9 @@ const plans: Plan[] = [
   {
     title: "Website Care & CRM",
     description: "Website care + customer management",
-    action: "contact",
+    action: "service",
+    serviceSlug: "crm-automation",
+    serviceGroup: "digital-marketing",
     variant: "featured",
     features: [
       { text: "Everything in Website Care" },
@@ -60,7 +66,9 @@ const plans: Plan[] = [
   {
     title: "Paid Ads Management",
     description: "Google OR Facebook Ads management",
-    action: "adsAudit",
+    action: "service",
+    serviceSlug: "google-ads",
+    serviceGroup: "digital-marketing",
     badge: "Popular",
     variant: "featured",
     features: [
@@ -77,7 +85,9 @@ const plans: Plan[] = [
   {
     title: "SEO Package",
     description: "Complete SEO & content marketing",
-    action: "seoAudit",
+    action: "service",
+    serviceSlug: "seo-sydney",
+    serviceGroup: "digital-marketing",
     features: [
       { text: "Complete SEO audit & strategy" },
       { text: "On-page SEO optimization" },
@@ -92,7 +102,9 @@ const plans: Plan[] = [
   {
     title: "Complete Marketing",
     description: "Everything you need to dominate",
-    action: "consultation",
+    action: "service",
+    serviceSlug: "digital-marketing",
+    serviceGroup: "digital-marketing",
     badge: "Ultimate Package",
     variant: "dark",
     features: [
@@ -395,9 +407,8 @@ export default function GrowthMarketingPage() {
               {plans.map((plan) => (
                 <article
                   key={plan.title}
-                  className={`gm-plan ${
-                    plan.variant ? `gm-plan--${plan.variant}` : ""
-                  }`}
+                  className={`gm-plan ${plan.variant ? `gm-plan--${plan.variant}` : ""
+                    }`}
                 >
                   {plan.badge && (
                     <span className="gm-plan__badge">{plan.badge}</span>
@@ -426,6 +437,9 @@ export default function GrowthMarketingPage() {
                     <button
                       type="button"
                       data-popup={plan.action}
+                      data-popup-service={plan.serviceSlug}
+                      data-popup-group={plan.serviceGroup}
+                      data-popup-plan={plan.title}
                       className="paper-button paper-button--rust gm-plan__button"
                     >
                       Get Started
@@ -581,9 +595,8 @@ export default function GrowthMarketingPage() {
               {audienceGroups.map((group) => (
                 <article
                   key={group.title}
-                  className={`gm-audience__card ${
-                    group.dark ? "gm-audience__card--dark" : ""
-                  }`}
+                  className={`gm-audience__card ${group.dark ? "gm-audience__card--dark" : ""
+                    }`}
                 >
                   <h3>{group.title}</h3>
                   <p>{group.description}</p>
@@ -623,8 +636,11 @@ export default function GrowthMarketingPage() {
             title="Ready to Accelerate Your Growth?"
             description="Let&apos;s create a data-driven marketing strategy tailored to your business goals. Get a free growth consultation and custom roadmap."
             primaryButtonText="Get Growth Strategy"
-            primaryButtonAction="consultation"
+            primaryButtonAction="service"
+            primaryButtonService="digital-marketing"
+            primaryButtonGroup="digital-marketing"
             secondaryButtonText="View Our Portfolio"
+            secondaryButtonHref="/portfolio"
           />
         </div>
       </div>
