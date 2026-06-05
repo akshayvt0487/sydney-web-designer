@@ -218,7 +218,7 @@ export default function WebDesignPlansPage() {
               <button
                 type="button"
                 data-popup="contact"
-                data-service-slug="web-design"
+                data-service-slug="web-design-plans"
                 data-service-name="Web Design"
                 data-source-label="Web Design Plans Page"
                 className="paper-button paper-button--rust"
@@ -400,7 +400,7 @@ export default function WebDesignPlansPage() {
                 <button
                   type="button"
                   data-popup="contact"
-                  data-service-slug="web-design"
+                  data-service-slug="web-design-plans"
                   data-service-name="Web Design"
                   data-source-label="Web Design Plans Page"
                   className="paper-button paper-button--rust"
