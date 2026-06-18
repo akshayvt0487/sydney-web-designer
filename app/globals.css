@@ -13796,7 +13796,7 @@ html body main #local-seo-process-board .lse-process-step p {
 
 @media (prefers-reduced-motion: reduce) {
   .home-editorial-tech__track {
-    animation-play-state: paused;
+    animation-duration: 80s;
   }
 
   .home-editorial-industry-card,
