@@ -62,16 +62,11 @@ const brandingLinks = [
   { name: "Logo Design", href: "/services/logo-design" },
 ];
 
-/*
-  Portfolio remains here because desktop currently shows it
-  inside the upper secondary navigation.
-*/
 const secondaryLinks = [
   { name: "About Us", href: "/about" },
   { name: "Testimonials", href: "/testimonials" },
   { name: "Careers", href: "/careers" },
   { name: "Blog", href: "/blog" },
-  { name: "Portfolio", href: "/portfolio" },
 ];
 
 /*
@@ -288,6 +283,14 @@ export default function Header() {
                 Home
               </Link>
 
+              <Link
+                href="/portfolio"
+                className="paper-nav__link"
+                aria-current={pathname.startsWith("/portfolio") ? "page" : undefined}
+              >
+                Portfolio
+              </Link>
+
               <WebDesignMegaMenu key={`web-design-${pathname}`} />
               <GrowthMarketingMegaMenu key={`growth-marketing-${pathname}`} />
               <BrandingMegaMenu key={`branding-${pathname}`} />
@@ -426,6 +429,13 @@ export default function Header() {
                 >
                   Home
                 </Link>
+                <Link
+                  href="/portfolio"
+                  className="paper-mobile__item"
+                  onClick={closeMobileMenu}
+                >
+                  Portfolio
+                </Link>
 
                 <MobileAccordion
                   title="Web Design"
@@ -466,14 +476,6 @@ export default function Header() {
                   onNavigate={closeMobileMenu}
                   links={brandingLinks}
                 />
-
-                <Link
-                  href="/portfolio"
-                  className="paper-mobile__item"
-                  onClick={closeMobileMenu}
-                >
-                  Portfolio
-                </Link>
 
                 <Link
                   href="/contact"

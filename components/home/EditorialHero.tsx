@@ -40,7 +40,7 @@ export default function EditorialHero() {
   );
 
   useEffect(() => {
-    if (reduceMotion || isPaused || featuredProjects.length <= 1) return;
+    if (isPaused || featuredProjects.length <= 1) return;
 
     const interval = window.setInterval(() => {
       setActiveIndex((current) => (current + 1) % featuredProjects.length);
@@ -56,7 +56,8 @@ export default function EditorialHero() {
       <div className="container">
         <div className="paper-hero__layout">
           <motion.div
-            initial={reduceMotion ? false : { opacity: 0, y: 22 }}
+            className="paper-hero__content"
+            initial={false}
             animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
             transition={{ duration: 0.56, ease: [0.22, 1, 0.36, 1] }}
           >
@@ -90,7 +91,7 @@ export default function EditorialHero() {
           {activeProject && (
             <motion.div
               className="paper-poster"
-              initial={reduceMotion ? false : { opacity: 0, y: 18 }}
+              initial={false}
               animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
               transition={{ duration: 0.58, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
               onMouseEnter={() => setIsPaused(true)}
@@ -160,7 +161,7 @@ export default function EditorialHero() {
 
         <motion.div
           className="paper-hero__stats"
-          initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+          initial={false}
           animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
           transition={{ duration: 0.52, delay: 0.17, ease: [0.22, 1, 0.36, 1] }}
         >
