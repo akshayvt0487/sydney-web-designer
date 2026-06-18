@@ -218,6 +218,9 @@ export default function WebDesignPlansPage() {
               <button
                 type="button"
                 data-popup="contact"
+                data-service-slug="web-design-plans"
+                data-service-name="Web Design"
+                data-source-label="Web Design Plans Page"
                 className="paper-button paper-button--rust"
               >
                 Get Free Quote
@@ -291,6 +294,12 @@ export default function WebDesignPlansPage() {
                   <button
                     type="button"
                     data-popup="contact"
+                    data-service-slug="web-design"
+                    data-service-name="Web Design"
+                    data-plan-name={plan.name}
+                    data-plan-description={plan.audience}
+                    data-plan-features={JSON.stringify(plan.features)}
+                    data-source-label="Web Design Plans Page"
                     className={`paper-button ${
                       plan.featured ? "paper-button--rust" : ""
                     } wdp-plan-card__button`}
@@ -391,13 +400,19 @@ export default function WebDesignPlansPage() {
                 <button
                   type="button"
                   data-popup="contact"
+                  data-service-slug="web-design-plans"
+                  data-service-name="Web Design"
+                  data-source-label="Web Design Plans Page"
                   className="paper-button paper-button--rust"
                 >
                   Get Free Quote
                   <i className="fas fa-arrow-right" aria-hidden="true" />
                 </button>
 
-                <Link href="/portfolio" className="paper-button wdp-final-cta__secondary">
+                <Link
+                  href="/portfolio"
+                  className="paper-button wdp-final-cta__secondary"
+                >
                   View Our Portfolio
                   <i className="fas fa-arrow-right" aria-hidden="true" />
                 </Link>

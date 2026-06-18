@@ -328,19 +328,22 @@ export default function MetaAdsPage() {
           h1="Facebook Ads Sydney"
           badge={{
             icon: "fab fa-facebook",
-            text: "Meta Business Partner"
+            text: "Meta Business Partner",
           }}
           heading="Meta Ads Management Sydney"
           description="Drive sales and leads with precision-targeted Facebook & Instagram advertising. Reach 2.8 billion users. Target your ideal customers. Measure real results."
           buttons={{
             primary: {
               text: "Get Free Strategy Session",
-              dataPopup: "contact"
+              dataPopup: "contact",
+              serviceSlug: "meta-ads",
+              serviceName: "Meta Ads",
+              serviceGroup: "growth-marketing",
             },
             secondary: {
               text: "View Campaign Types",
-              href: "#campaigns"
-            }
+              href: "#campaigns",
+            },
           }}
         />
 
@@ -580,7 +583,11 @@ export default function MetaAdsPage() {
             description="Get a free Meta Ads strategy session and discover how we can help you reach more customers, generate qualified leads, and grow your Sydney business with Facebook and Instagram advertising."
             primaryButtonText="Get Free Strategy Session"
             primaryButtonAction="consultation"
+            primaryButtonService="meta-ads"
+            primaryButtonServiceName="Meta Ads"
+            primaryButtonGroup="growth-marketing"
             secondaryButtonText="View Our Portfolio"
+            secondaryButtonHref="/portfolio"
           />
         </div>
       </div>

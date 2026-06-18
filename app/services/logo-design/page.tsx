@@ -239,6 +239,9 @@ export default function LogoDesignPage() {
             primary: {
               text: "Get Your Free Consultation",
               dataPopup: "contact",
+              serviceGroup: "branding",
+              serviceSlug: "logo-design",
+              serviceName: "Logo Design",
             },
             secondary: {
               text: "View Our Portfolio",
@@ -380,6 +383,10 @@ export default function LogoDesignPage() {
           <CTASection
             title="Ready to Create Your Perfect Logo?"
             description="Let's design a logo that captures your brand essence and makes you stand out. Get started with a free consultation today."
+            primaryButtonText="Get Free Consultation"
+            primaryButtonAction="service"
+            primaryButtonService="logo-design"
+            primaryButtonGroup="branding-design"
           />
         </div>
       </div>

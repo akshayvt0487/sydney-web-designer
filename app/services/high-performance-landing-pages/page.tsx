@@ -226,100 +226,111 @@ export default function HighPerformanceLandingPagesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateServiceSchema(serviceData.name, serviceData.description)) }} />
 
-            <div className="high-performance-landing-editorial">
+      <div className="high-performance-landing-editorial">
         <Breadcrumbs items={breadcrumbs} />
 
         <ServiceHeroSection
-        h1="Landing Page Design"
-        badge={{ icon: "fas fa-rocket", text: "High Performance Landing Pages" }}
-        heading="High Performance Landing Pages Sydney"
-        description="Lightning-fast landing pages that convert. 95+ PageSpeed scores, Core Web Vitals excellence, and conversion-optimized design that drives results."
-        buttons={{
-          primary: { text: "Get Free Quote", dataPopup: "contact" },
-          secondary: { text: "Our Services", href: "#services" },
-        }}
-      />
+          h1="Landing Page Design"
+          badge={{ icon: "fas fa-rocket", text: "High Performance Landing Pages" }}
+          heading="High Performance Landing Pages Sydney"
+          description="Lightning-fast landing pages that convert."
+          buttons={{
+            primary: {
+              text: "Get Free Quote",
+              dataPopup: "contact",
+              serviceGroup: "web-design",
+              serviceSlug: "high-performance-landing-pages",
+              serviceName: "High Performance Landing Pages",
+            },
+            secondary: {
+              text: "Our Services",
+              href: "#services",
+            },
+          }}
+        />
 
-      <ServiceTrustStrip badges={trustBadges} />
+        <ServiceTrustStrip badges={trustBadges} />
 
-      <ServiceFeaturesSection
-        title={<>Why High Performance Landing Pages <span>Matter</span></>}
-        description="Speed and conversions go hand in hand"
-        features={benefits.map((benefit) => ({ ...benefit, icon: `fas ${benefit.icon}` }))}
-      />
+        <ServiceFeaturesSection
+          title={<>Why High Performance Landing Pages <span>Matter</span></>}
+          description="Speed and conversions go hand in hand"
+          features={benefits.map((benefit) => ({ ...benefit, icon: `fas ${benefit.icon}` }))}
+        />
 
-      <section className="service-paper-section service-specialty paper-grain" id="services">
-        <div className="container">
-          <div className="service-paper-heading service-paper-heading--center">
-            <h2>Our Landing Page <span>Services</span></h2>
-            <p>Comprehensive solutions for high-converting pages</p>
+        <section className="service-paper-section service-specialty paper-grain" id="services">
+          <div className="container">
+            <div className="service-paper-heading service-paper-heading--center">
+              <h2>Our Landing Page <span>Services</span></h2>
+              <p>Comprehensive solutions for high-converting pages</p>
+            </div>
+            <div className="service-specialty__grid service-specialty__grid--two">
+              {services.map((item, index) => (
+                <article key={item.title} className="service-specialty__card">
+                  <div className="service-specialty__top"><span>{String(index + 1).padStart(2, "0")}</span><h3>{item.title}</h3></div>
+                  <ul>{item.items.map((point) => <li key={point}><i className="fas fa-check" aria-hidden="true" />{point}</li>)}</ul>
+                </article>
+              ))}
+            </div>
           </div>
-          <div className="service-specialty__grid service-specialty__grid--two">
-            {services.map((item, index) => (
-              <article key={item.title} className="service-specialty__card">
-                <div className="service-specialty__top"><span>{String(index + 1).padStart(2, "0")}</span><h3>{item.title}</h3></div>
-                <ul>{item.items.map((point) => <li key={point}><i className="fas fa-check" aria-hidden="true" />{point}</li>)}</ul>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="service-paper-section service-technology paper-grain">
-        <div className="container">
-          <div className="service-paper-heading service-paper-heading--center">
-            <h2>Technologies We <span>Use</span></h2>
-            <p>Modern platforms and frameworks for maximum performance</p>
-          </div>
-          <div className="service-technology__grid">
-            {platforms.map((platform, index) => (
-              <article key={platform.name} className="service-technology__card">
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <i className={platform.icon} aria-hidden="true" />
-                <h3>{platform.name}</h3>
-                <p>{platform.description}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="service-case-studies paper-grain">
-        <div className="container">
-          <div className="service-paper-heading service-paper-heading--dark service-paper-heading--center">
-            <h2>Real Performance <span>Results</span></h2>
-            <p>See how we transformed landing page performance</p>
-          </div>
-          <div className="service-case-studies__grid">
-            {caseStudies.map((study, index) => (
-              <article key={study.company} className="service-case-study">
-                <div className="service-case-study__copy">
+        <section className="service-paper-section service-technology paper-grain">
+          <div className="container">
+            <div className="service-paper-heading service-paper-heading--center">
+              <h2>Technologies We <span>Use</span></h2>
+              <p>Modern platforms and frameworks for maximum performance</p>
+            </div>
+            <div className="service-technology__grid">
+              {platforms.map((platform, index) => (
+                <article key={platform.name} className="service-technology__card">
                   <span>{String(index + 1).padStart(2, "0")}</span>
-                  <h3>{study.company}</h3>
-                  <h4>Challenge:</h4><p>{study.challenge}</p>
-                  <h4>Solution:</h4><p>{study.solution}</p>
-                </div>
-                <div className="service-case-study__results">
-                  <h4>Results:</h4>
-                  <ul>{study.results.map((result) => <li key={result}><i className="fas fa-trophy" aria-hidden="true" />{result}</li>)}</ul>
-                </div>
-              </article>
-            ))}
+                  <i className={platform.icon} aria-hidden="true" />
+                  <h3>{platform.name}</h3>
+                  <p>{platform.description}</p>
+                </article>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <ServiceFAQSection
-        title={<>Landing Page <span>FAQs</span></>}
-        description="Common questions about high-performance landing pages"
-        faqs={faq.map((item) => ({ question: item.q, answer: item.a }))}
-      />
+        <section className="service-case-studies paper-grain">
+          <div className="container">
+            <div className="service-paper-heading service-paper-heading--dark service-paper-heading--center">
+              <h2>Real Performance <span>Results</span></h2>
+              <p>See how we transformed landing page performance</p>
+            </div>
+            <div className="service-case-studies__grid">
+              {caseStudies.map((study, index) => (
+                <article key={study.company} className="service-case-study">
+                  <div className="service-case-study__copy">
+                    <span>{String(index + 1).padStart(2, "0")}</span>
+                    <h3>{study.company}</h3>
+                    <h4>Challenge:</h4><p>{study.challenge}</p>
+                    <h4>Solution:</h4><p>{study.solution}</p>
+                  </div>
+                  <div className="service-case-study__results">
+                    <h4>Results:</h4>
+                    <ul>{study.results.map((result) => <li key={result}><i className="fas fa-trophy" aria-hidden="true" />{result}</li>)}</ul>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
 
-              <CTASection
+        <ServiceFAQSection
+          title={<>Landing Page <span>FAQs</span></>}
+          description="Common questions about high-performance landing pages"
+          faqs={faq.map((item) => ({ question: item.q, answer: item.a }))}
+        />
+
+        <CTASection
           title="Ready to Build a High-Converting Landing Page?"
           description="Get a free consultation and discover how a high-performance landing page can transform your conversion rates and grow your business."
           primaryButtonText="Get Free Consultation"
-          primaryButtonAction="contact"
+          primaryButtonAction="service"
+          primaryButtonService="high-performance-landing-pages"
+          primaryButtonGroup="web-design"
           secondaryButtonText="View Our Work"
           secondaryButtonHref="/portfolio"
         />

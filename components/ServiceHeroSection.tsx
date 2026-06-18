@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { ServiceGroup } from "@/lib/forms/service-popup-config";
 
 interface ServiceHeroSectionProps {
   badge: {
@@ -12,6 +13,14 @@ interface ServiceHeroSectionProps {
       text: string;
       onClick?: () => void;
       dataPopup?: string;
+
+      serviceSlug?: string;
+      serviceName?: string;
+      serviceGroup?: ServiceGroup | string;
+      planName?: string;
+      planDescription?: string;
+      planFeatures?: string[];
+      sourceLabel?: string;
     };
     secondary: {
       text: string;
@@ -31,6 +40,8 @@ export default function ServiceHeroSection({
   description,
   buttons,
 }: ServiceHeroSectionProps) {
+  const primary = buttons.primary;
+
   return (
     <section className="service-cover paper-grain">
       <div className="container">
@@ -46,27 +57,41 @@ export default function ServiceHeroSection({
             <p className="service-cover__description">{description}</p>
 
             <div className="service-cover__actions">
-              {buttons.primary.dataPopup ? (
+              {primary.dataPopup ? (
                 <button
                   type="button"
-                  data-popup={buttons.primary.dataPopup}
+                  data-popup={primary.dataPopup}
+                  data-service-slug={primary.serviceSlug}
+                  data-service-name={primary.serviceName}
+                  data-service-group={primary.serviceGroup}
+                  data-plan-name={primary.planName}
+                  data-plan-description={primary.planDescription}
+                  data-plan-features={
+                    primary.planFeatures
+                      ? JSON.stringify(primary.planFeatures)
+                      : undefined
+                  }
+                  data-source-label={primary.sourceLabel}
                   className="paper-button paper-button--rust"
                 >
-                  {buttons.primary.text}
+                  {primary.text}
                   <i className="fas fa-arrow-right" aria-hidden="true" />
                 </button>
               ) : (
                 <button
                   type="button"
-                  onClick={buttons.primary.onClick}
+                  onClick={primary.onClick}
                   className="paper-button paper-button--rust"
                 >
-                  {buttons.primary.text}
+                  {primary.text}
                   <i className="fas fa-arrow-right" aria-hidden="true" />
                 </button>
               )}
 
-              <Link href={buttons.secondary.href} className="paper-button service-cover__secondary">
+              <Link
+                href={buttons.secondary.href}
+                className="paper-button service-cover__secondary"
+              >
                 {buttons.secondary.text}
                 <i className="fas fa-arrow-right" aria-hidden="true" />
               </Link>
